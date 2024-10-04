@@ -12,7 +12,7 @@ st.title("Castara AgroEconomy")
 st.title("Welcome to the Castara AgroEconomy Venture")
 st.image("Castara AgroEconomy Mobile App.jpg", caption="C-Suite functions for CEO / CFO / CMO / CTO / CIO roles to guide and execute the pursuit of the Castara AgroEconomy virtual farming venture", use_column_width=True)
 st.write(" ")
-st.write("Spin up expert, experienced, insightful, IPDT teams, to tackle difficult, short duration - less than 3 months long - projects and disband them on successful completion of their assignments thereafter.")
+st.write("Features are aligned with roles and desired outcomes.")
 st.write(" ")
 # Placeholder for user authentication (to be integrated later)
 def authenticate_user(username, password):
