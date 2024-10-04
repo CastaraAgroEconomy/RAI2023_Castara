@@ -1,1 +1,3 @@
-# Requirements
+streamlit==1.14.0  # For building the interactive interface
+pandas==1.3.3      # For data manipulation and handling
+requests==2.26.0   # For making API calls
