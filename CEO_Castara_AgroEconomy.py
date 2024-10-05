@@ -3,6 +3,9 @@ import pandas as pd     # Pandas for data handling
 import requests         # Requests for API calls
 import datetime         # Date and time functions
 
+# Import the yield tracking function from the get_yield_data script
+from get_yield_data import yield_tracking
+
 # App title
 st.title("Castara AgroEconomy C-Suite pilot")
 
