@@ -4,7 +4,7 @@ import requests         # Requests for API calls
 import datetime         # Date and time functions
 
 # App title
-st.title("Castara AgroEconomy")
+st.title("Castara AgroEconomy Venture")
 
 st.write("Welcome to the Castara AgroEconomy Venture")
 st.image("Castara_AgroEconomy_Mobile_App.jpg", caption="C-Suite functions for CEO / CFO / CMO / CTO / CIO roles to guide and execute the pursuit of the Castara AgroEconomy virtual farming venture", use_column_width=True)
