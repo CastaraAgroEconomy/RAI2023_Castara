@@ -38,10 +38,10 @@ def main_menu(user_role):
         st.sidebar.write("Select a valid user role.")
 
 # Placeholder function for user dashboard
-def display_dashboard(user_role):
-    """ Display the dashboard based on user role. """
-    st.header(f"{user_role} Dashboard")
-    st.write("Welcome to the Castara AgroEconomy dashboard.")
+# def display_dashboard(user_role):
+    # """ Display the dashboard based on user role. """
+    # st.header(f"{user_role} Dashboard")
+    # st.write("Welcome to the Castara AgroEconomy dashboard.")
     # Display additional content for each user role
 
 # Update display_dashboard() function to include yield tracking for Franchisee
