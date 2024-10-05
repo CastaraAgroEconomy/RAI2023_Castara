@@ -4,7 +4,7 @@ import streamlit as st
 # Example yield data
 def get_yield_data():
     data = {
-        'Date': ['2024-09-01', '2024-09-15', '2024-09-30', '2024-09-14'],
+        'Date': ['2024-09-01', '2024-09-15', '2024-09-30', '2024-10-14'],
         'Yield (kg)': [1000, 1200, 1100, 1300]
     }
     df = pd.DataFrame(data)
