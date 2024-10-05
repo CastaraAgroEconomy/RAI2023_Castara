@@ -44,6 +44,16 @@ def display_dashboard(user_role):
     st.write("Welcome to the Castara AgroEconomy dashboard.")
     # Display additional content for each user role
 
+# Update display_dashboard() function to include yield tracking for Franchisee
+def display_dashboard(user_role):
+    """ Display the dashboard based on user role. """
+    st.header(f"{user_role} Dashboard")
+    
+    if user_role == "Franchisee":
+        yield_tracking()  # This will call the function from get_yield_data.py
+    else:
+        st.write("Welcome to the Castara AgroEconomy dashboard.")
+
 # Main app function
 def main():
     # Placeholder for authentication (to be expanded)
