@@ -9,6 +9,9 @@ import datetime         # Date and time functions
 # App title
 st.title("Castara AgroEconomy C-Suite pilot")
 
+st.image("Castara_AgroEconomy_Mobile_App.jpg", caption="Vertical Farming franchise master control center for key management roles", use_column_width=True)
+st.write(" ")
+
 # Placeholder for user authentication (to be integrated later)
 def authenticate_user(username, password):
     """ Placeholder function for user authentication. """
