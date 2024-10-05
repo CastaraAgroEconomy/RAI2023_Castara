@@ -4,6 +4,8 @@ import requests         # Requests for API calls
 import datetime         # Date and time functions
 # Import the yield tracking function from the get_yield_data script
 from Get_yield_data import yield_tracking
+# Import the financial data function from the Get_financial_data script
+from Get_finantial_data import financial_data
 
 # App title
 st.title("Castara AgroEconomy C-Suite pilot")
