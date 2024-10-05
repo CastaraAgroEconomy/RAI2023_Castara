@@ -6,6 +6,8 @@ import datetime         # Date and time functions
 from Get_yield_data import yield_tracking
 # Import the financial data function from the Get_financial_data script
 from Get_financial_data import financial_data
+# Import the performance data function from the Get_performance_data script
+from Get_performance_data import performance_data
 
 # App title
 st.title("Castara AgroEconomy C-Suite pilot")
