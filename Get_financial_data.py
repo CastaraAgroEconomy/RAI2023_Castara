@@ -14,7 +14,7 @@ def get_financial_data():
 
 # Financial dashboard for management
 def financial_data():
-    st.header("Financial Dashboard")
+    st.header("Financial Data")
     
     # Display financial data
     st.subheader("Franchise Financial Overview")
