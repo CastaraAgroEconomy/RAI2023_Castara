@@ -4,10 +4,10 @@ import pandas as pd
 # Example financial data for franchises
 def get_financial_data():
     data = {
-        'Franchise': ['Franchise A', 'Franchise B', 'Franchise C'],
-        'Revenue ($)': [50000, 62000, 55000],
-        'Profit ($)': [12000, 15000, 13000],
-        'Profit Share (%)': [24, 25, 23]
+        'Franchise': ['Franchise A', 'Franchise B', 'Franchise C', 'Franchise D', 'Franchise E','Franchise F'],
+        'Revenue ($)': [50000, 62000, 55000, 57000, 59000, 63000],
+        'Profit ($)': [12000, 15000, 13000, 14500, 15000, 16000],
+        'Profit Share (%)': [24, 25, 23, 24, 24, 23, 25]
     }
     df = pd.DataFrame(data)
     return df
