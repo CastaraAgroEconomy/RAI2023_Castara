@@ -1,6 +1,3 @@
-# CEO_Castara_AgroEconomy.py
-
-# Imports
 import streamlit as st  # Streamlit for app interface
 import pandas as pd     # Pandas for data handling
 import requests         # Requests for API calls
