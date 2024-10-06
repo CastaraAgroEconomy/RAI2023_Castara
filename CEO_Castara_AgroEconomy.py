@@ -42,7 +42,7 @@ def main_menu(user_role, option):
     elif user_role == "Investor":
         option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"])
         st.write(f"{option} coming soon.")
-     elif user_role == "Technical Staff":
+    elif user_role == "Technical Staff":
         option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"])
         st.write(f"{option} coming soon.")
 
