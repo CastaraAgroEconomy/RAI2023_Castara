@@ -22,14 +22,36 @@ def authenticate_user(username, password):
     return True
 
 # User role selection and main menu
+# Sidebar menu function
 def main_menu(user_role):
-    """ Displays the main menu based on user role. """
-    st.write(" ")
-    st.write(" ")
-    display_dashboard(user_role)
-    #if user_role ==
-        
+    st.sidebar.title("Navigation")
+    
+    if user_role == "Franchisee":
+        option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"])
+        if option == "Yield Management":
+            yield_tracking()  # Assuming this function exists for franchisees
+        elif option == "Financial Performance":
+            st.write("Financial performance coming soon.")
+    
+    elif user_role == "Management":
+        option = st.sidebar.selectbox("Choose Action", ["Franchise Performance", "Strategic Planning"])
+        if option == "Franchise Performance":
+            franchise_performance()  # Show franchise performance tracking
+        elif option == "Strategic Planning":
+            st.write("Strategic planning coming soon.")
+    
+    elif user_role == "Investor":
+        option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"])
+        st.write(f"{option} coming soon.")
+    
+    elif user_role == "Technical Staff":
+        option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"])
+        st.write(f"{option} coming soon.")
+    
+    else:
+        st.sidebar.write("Select a valid user role.")
 
+    
 # Update display_dashboard() function to include yield tracking for Franchisee
 def display_dashboard(user_role):
     """ Display the dashboard based on user role. """
