@@ -45,7 +45,7 @@ def main_menu(user_role):
 def display_dashboard(user_role):
     """ Display the dashboard based on user role. """
     st.header(f"{user_role} Dashboard")
-    
+    st.write(" ")
     if user_role == "Franchisee":
         yield_tracking()  # This will call the function from get_yield_data.py
     elif user_role == "Management":
