@@ -33,22 +33,18 @@ def main_menu(user_role):
             yield_tracking()  # Assuming this function exists for franchisees
         elif option == "Financial Performance":
             st.write("Financial performance coming soon.")
-    
     elif user_role == "Management":
         option = st.sidebar.selectbox("Choose Action", ["Franchise Performance", "Strategic Planning"])
         if option == "Franchise Performance":
             franchise_performance()  # Show franchise performance tracking
         elif option == "Strategic Planning":
             st.write("Strategic planning coming soon.")
-    
     elif user_role == "Investor":
         option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"])
         st.write(f"{option} coming soon.")
-    
     elif user_role == "Technical Staff":
         option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"])
         st.write(f"{option} coming soon.")
-    
     else:
         st.sidebar.write("Select a valid user role.")
 
