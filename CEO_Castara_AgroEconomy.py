@@ -23,7 +23,7 @@ def authenticate_user(username, password):
 
 # User role selection and main menu
 # Sidebar menu function
-def main_menu(user_role):
+def main_menu(user_role, option):
     st.sidebar.title("Navigation")
     st.write(" ")
     st.write(" ")
@@ -72,7 +72,8 @@ def main():
         user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
         display_dashboard(user_role)
         st.write(" ")
-        main_menu(user_role)
+        option == " "
+        main_menu(user_role, option )
     else:
         st.error("Authentication failed.")
 
