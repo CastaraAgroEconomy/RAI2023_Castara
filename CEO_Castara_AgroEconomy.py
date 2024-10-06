@@ -30,13 +30,13 @@ def main_menu(user_role):
     if user_role == "Franchisee":
         option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"])
         if option == "Yield Management":
-            yield_tracking()  # Assuming this function exists for franchisees
+            st.write("Refer to Dashboard - KPIs to be added")  # Function to show yield KPIs to be added
         elif option == "Financial Performance":
             st.write("Financial performance coming soon.")
     elif user_role == "Management":
         option = st.sidebar.selectbox("Choose Action", ["Franchise Performance", "Strategic Planning"])
         if option == "Franchise Performance":
-            franchise_performance()  # Show franchise performance tracking
+            st.write(Refer to Dashboard - KPIs to be added")  # Show franchise performance tracking KPIs
         elif option == "Strategic Planning":
             st.write("Strategic planning coming soon.")
     elif user_role == "Investor":
