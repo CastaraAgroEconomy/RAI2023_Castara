@@ -64,9 +64,9 @@ def display_dashboard(user_role):
 
 # Main app function
 def main():
-st.write(" ")
-st.write("⚠️ - Remember to look for the dropdown menu icon '>' at the top left of your screen to access additional features.")
-st.write(" ")
+    st.write(" ")
+    st.write("⚠️ - Remember to look for the dropdown menu icon '>' at the top left of your screen to access additional features.")
+    st.write(" ")
     # Placeholder for authentication (to be expanded)
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
