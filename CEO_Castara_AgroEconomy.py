@@ -73,7 +73,7 @@ def main():
         display_dashboard(user_role)
         st.write(" ")
         option = " "
-        main_menu(user_role, option )
+        main_menu(user_role, option)
     else:
         st.error("Authentication failed.")
 
