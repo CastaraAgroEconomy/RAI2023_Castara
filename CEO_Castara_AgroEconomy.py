@@ -39,14 +39,12 @@ def main_menu(user_role, option):
             st.write("⚠️ - Refer to Dashboard - KPIs to be added")  # Show franchise performance tracking KPIs
         elif option == "Strategic Planning":
             st.write("Strategic planning coming soon.")
-    elif user_role == "Investor":
+     elif user_role == "Investor":
         option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"])
         st.write(f"{option} coming soon.")
-    elif user_role == "Technical Staff":
+     elif user_role == "Technical Staff":
         option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"])
         st.write(f"{option} coming soon.")
-    else:
-        st.sidebar.write("Select a valid user role.")
 
     
 # Update display_dashboard() function to include yield tracking for Franchisee
@@ -54,7 +52,6 @@ def display_dashboard(user_role):
     """ Display the dashboard based on user role. """
     st.write(" ")
     st.header(f"{user_role} Dashboard")
-    st.write(" ")
     st.write("⚠️ - Remember to look for the dropdown menu icons '>' and '<' at the top left and right of your screen to access additional features and return to the previous view respectively.")
     st.write(" ")
     st.write(" ")
