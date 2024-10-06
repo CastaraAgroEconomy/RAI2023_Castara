@@ -72,7 +72,7 @@ def main():
         user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
         display_dashboard(user_role)
         st.write(" ")
-        option == " ":
+        option = " "
         main_menu(user_role, option )
     else:
         st.error("Authentication failed.")
