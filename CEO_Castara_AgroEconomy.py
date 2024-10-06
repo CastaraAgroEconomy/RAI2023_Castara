@@ -39,7 +39,7 @@ def main_menu(user_role, option):
             st.write("⚠️ - Refer to Dashboard - KPIs to be added")  # Show franchise performance tracking KPIs
         elif option == "Strategic Planning":
             st.write("Strategic planning coming soon.")
-     elif user_role == "Investor":
+    elif user_role == "Investor":
         option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"])
         st.write(f"{option} coming soon.")
      elif user_role == "Technical Staff":
