@@ -55,6 +55,9 @@ def display_dashboard(user_role):
     st.write(" ")
     st.header(f"{user_role} Dashboard")
     st.write(" ")
+    st.write("⚠️ - Remember to look for the dropdown menu icon '>' at the top left of your screen to access additional features.")
+    st.write(" ")
+    st.write(" ")
     if user_role == "Franchisee":
         yield_tracking()  # This will call the function from get_yield_data.py
     elif user_role == "Management":
@@ -64,9 +67,6 @@ def display_dashboard(user_role):
 
 # Main app function
 def main():
-    st.write(" ")
-    st.write("⚠️ - Remember to look for the dropdown menu icon '>' at the top left of your screen to access additional features.")
-    st.write(" ")
     # Placeholder for authentication (to be expanded)
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
