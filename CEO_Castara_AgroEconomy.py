@@ -24,7 +24,7 @@ def authenticate_user(username, password):
 # User role selection and main menu
 # Sidebar menu function
 def main_menu(user_role, option):
-    st.sidebar.title("Navigation")
+    st.sidebar.title(" Navigation")
     st.write(" ")
     st.write(" ")
     if user_role == "Franchisee":
