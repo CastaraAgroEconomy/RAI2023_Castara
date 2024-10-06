@@ -25,7 +25,8 @@ def authenticate_user(username, password):
 # Sidebar menu function
 def main_menu(user_role):
     st.sidebar.title("Navigation")
-    
+    st.write(" ")
+    st.write(" ")
     if user_role == "Franchisee":
         option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"])
         if option == "Yield Management":
@@ -55,6 +56,7 @@ def main_menu(user_role):
 # Update display_dashboard() function to include yield tracking for Franchisee
 def display_dashboard(user_role):
     """ Display the dashboard based on user role. """
+    st.write(" ")
     st.header(f"{user_role} Dashboard")
     st.write(" ")
     if user_role == "Franchisee":
