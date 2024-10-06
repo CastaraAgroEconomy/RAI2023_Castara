@@ -55,7 +55,7 @@ def display_dashboard(user_role):
     st.write(" ")
     st.header(f"{user_role} Dashboard")
     st.write(" ")
-    st.write("⚠️ - Remember to look for the dropdown menu icon '>' at the top left of your screen to access additional features.")
+    st.write("⚠️ - Remember to look for the dropdown menu icons '>' and '<' at the top left and right of your screen to access additional features and return to the previous view respectively.")
     st.write(" ")
     st.write(" ")
     if user_role == "Franchisee":
