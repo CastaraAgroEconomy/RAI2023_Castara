@@ -24,6 +24,8 @@ def authenticate_user(username, password):
 # User role selection and main menu
 def main_menu(user_role):
     """ Displays the main menu based on user role. """
+    st.write(" ")
+    st.write(" ")
     st.sidebar.title("Navigation")
     if user_role == "Franchisee":
         st.sidebar.button("Yield Management")
