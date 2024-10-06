@@ -70,13 +70,13 @@ def main():
     # Placeholder for authentication (to be expanded)
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
+    uset_role = " "
+    option = " "
     if authenticate_user(username, password):
-        user_role = " "
         # Select user role (for demo purposes)
         user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
         display_dashboard(user_role)
         st.write(" ")
-        option = " "
         main_menu(user_role, option)
     else:
         st.error("Authentication failed.")
