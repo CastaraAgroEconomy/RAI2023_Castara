@@ -26,21 +26,8 @@ def main_menu(user_role):
     """ Displays the main menu based on user role. """
     st.write(" ")
     st.write(" ")
-    st.sidebar.title("Navigation")
-    if user_role == "Franchisee":
-        st.sidebar.button("Yield Management")
-        st.sidebar.button("Financial Performance")
-    elif user_role == "Management":
-        st.sidebar.button("Franchise Performance")
-        st.sidebar.button("Strategic Planning")
-    elif user_role == "Investor":
-        st.sidebar.button("Financial Overview")
-        st.sidebar.button("Sustainability Impact")
-    elif user_role == "Technical Staff":
-        st.sidebar.button("Equipment Monitoring")
-        st.sidebar.button("Maintenance Logs")
-    else:
-        st.sidebar.write("Select a valid user role.")
+    display_dashboard(user_role)
+    #if user_role ==
         
 
 # Update display_dashboard() function to include yield tracking for Franchisee
