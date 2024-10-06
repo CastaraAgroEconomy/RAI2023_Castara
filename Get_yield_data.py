@@ -24,12 +24,3 @@ def yield_tracking():
     st.subheader("Yield Trend")
     st.line_chart(yield_df.set_index('Date')['Yield (kg)'])
 
-# Add yield tracking to the franchisee dashboard
-def display_dashboard(user_role):
-    """ Display the dashboard based on user role. """
-    st.header(f"{user_role} Dashboard")
-    
-    if user_role == "Franchisee":
-        yield_tracking()
-    else:
-        st.write("Welcome to the Castara AgroEconomy dashboard.")
