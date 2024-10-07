@@ -56,15 +56,16 @@ def main_menu(user_role, option):
 def display_dashboard(user_role):
     """ Display the dashboard based on user role. """
         # Clear the display before showing new content
-    reset_screen = Clear_screen()
     st.header(f"{user_role} Dashboard")
     st.write("⚠️ - Remember to look for the dropdown menu icons '>' and '<' at the top left and right of your screen to access additional features and return to the previous view respectively.")
     st.write(" ")
     st.write(" ")
     if user_role == "Franchisee":
-        yield_tracking() # This will call the function from get_yield_data.py
+        reset_screen = Clear_screen()
+        yield_tracking() with reset_screen # This will call the function from get_yield_data.py
     elif user_role == "Management":
-        financial_data() # This will call the function from get_financial_data.py
+        reset_screen = Clear_screen() 
+        financial_data() with reset_screen # This will call the function from get_financial_data.py
     else:
         st.write("Welcome to the Castara AgroEconomy dashboard.")
 
