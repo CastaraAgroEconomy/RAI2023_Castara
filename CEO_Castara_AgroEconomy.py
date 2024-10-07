@@ -77,9 +77,11 @@ def main():
     if authenticate_user(username, password):
         # Select user role (for demo purposes)
         user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
-        display_dashboard(user_role)
+        reset_screen = clear_display()
+        display_dashboard(user_role) with reset_screen
         st.write(" ")
-        main_menu(user_role, option)
+        reset_screen = clear_display()
+        main_menu(user_role, option) with reset_screen
     else:
         st.error("Authentication failed.")
 
