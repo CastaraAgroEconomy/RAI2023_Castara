@@ -24,6 +24,7 @@ def authenticate_user(username, password):
 # User role selection and main menu
 # Sidebar menu function
 def main_menu(user_role, option):
+    reset_screen = Clear_screen()
     st.sidebar.title("Navigation")
     st.write(" ")
     st.write(" ")
