@@ -24,7 +24,7 @@ def authenticate_user(username, password):
 # User role selection and main menu
 # Sidebar menu function
 def main_menu(user_role, option):
-    reset_screen = Clear_screen()
+    reset_screen = clear_display()
     st.sidebar.title("Navigation")
     st.write(" ")
     st.write(" ")
@@ -60,11 +60,10 @@ def display_dashboard(user_role):
     st.write("⚠️ - Remember to look for the dropdown menu icons '>' and '<' at the top left and right of your screen to access additional features and return to the previous view respectively.")
     st.write(" ")
     st.write(" ")
+    reset_screen = clear_display
     if user_role == "Franchisee":
-        reset_screen = Clear_screen()
         yield_tracking() with reset_screen # This will call the function from get_yield_data.py
     elif user_role == "Management":
-        reset_screen = Clear_screen() 
         financial_data() with reset_screen # This will call the function from get_financial_data.py
     else:
         st.write("Welcome to the Castara AgroEconomy dashboard.")
