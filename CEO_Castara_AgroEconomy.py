@@ -60,7 +60,7 @@ def display_dashboard(user_role):
     st.write(" ")
     st.write(" ")
     # Clear the display before showing new content
-    reset_screen = Clear_screen()
+    reset_screen = clear_display()
     if user_role == "Franchisee":
         with reset_screen: # This will call the function from get_yield_data.py
             yield_tracking() 
