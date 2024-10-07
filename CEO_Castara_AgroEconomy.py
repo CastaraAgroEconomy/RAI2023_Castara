@@ -55,11 +55,11 @@ def main_menu(user_role, option):
 # Update display_dashboard() function to include yield tracking for Franchisee
 def display_dashboard(user_role):
     """ Display the dashboard based on user role. """
-        # Clear the display before showing new content
     st.header(f"{user_role} Dashboard")
     st.write("⚠️ - Remember to look for the dropdown menu icons '>' and '<' at the top left and right of your screen to access additional features and return to the previous view respectively.")
     st.write(" ")
     st.write(" ")
+    # Clear the display before showing new content
     reset_screen = clear_display()
     if user_role == "Franchisee":
         with reset_screen: # This will call the function from get_yield_data.py
