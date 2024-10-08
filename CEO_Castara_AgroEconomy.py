@@ -65,8 +65,7 @@ def main_menu(user_role, option):
 # Reset menu selection
       user_role = " "
       option = " " 
-
-    
+   
 # Update display_dashboard() function to include yield tracking for Franchisee
 def display_dashboard(user_role):
     """ Display the dashboard based on user role. """
@@ -101,7 +100,6 @@ def main():
         main_menu(user_role, option)
     else:
         st.error("Authentication failed.")
-
 # Run app
 if __name__ == "__main__":
     main()
