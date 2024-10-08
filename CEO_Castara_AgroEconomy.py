@@ -17,6 +17,7 @@ def authenticate_user(username, password):
 # Use session state to control clearing and pausing
 def clear_display():
     if st.button("Next"):
+        # Update session state to trigger the next screen
         st.session_state['next'] = True
 
 # Main menu with role and action selection
@@ -44,12 +45,16 @@ def main_menu(user_role):
 def display_dashboard(user_role, option):
     st.header(f"{user_role} Dashboard")
 
-    # Check if we should pause before clearing
-    if 'next' not in st.session_state or not st.session_state['next']:
-        clear_display()
-        st.stop()
+    # If this is the first run or 'next' is False, display the "Next" button
+    if 'next' not in st.session_state:
+        st.session_state['next'] = False
 
-    # After clearing, display the new content
+    if not st.session_state['next']:
+        # Wait for user input to trigger the next action
+        clear_display()
+        st.stop()  # Stop execution until button is pressed
+
+    # After the first click, reset 'next' and display the new content
     st.session_state['next'] = False  # Reset for next round
 
     if user_role == "Franchisee":
@@ -78,6 +83,7 @@ def display_dashboard(user_role, option):
 
 # Main app function
 def main():
+    # Initialize session state if it doesn't exist
     if 'next' not in st.session_state:
         st.session_state['next'] = False
     
