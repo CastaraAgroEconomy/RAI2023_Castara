@@ -89,8 +89,7 @@ def display_dashboard(user_role):
           financial_data()
     user_role = " "
     option = " "
-    else:
-    st.write("Welcome to the Castara AgroEconomy dashboard.")
+    
 
 # Main app function
 def main():
