@@ -34,7 +34,7 @@ def main_menu(user_role, option):
    st.sidebar.title("Navigation")
    st.write(" ")
    st.write(" ")
-  placeholder = clear_display()
+   placeholder = clear_display()
    if user_role == "Franchisee":
       option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"])
       if option == "Yield Management":
@@ -86,9 +86,11 @@ def display_dashboard(user_role):
     elif user_role == "Management":
        with placeholder:
           # This will call the function from get_financial_data.py
-          financial_data() 
+          financial_data()
+    user_role = " "
+    option = " "
     else:
-        st.write("Welcome to the Castara AgroEconomy dashboard.")
+    st.write("Welcome to the Castara AgroEconomy dashboard.")
 
 # Main app function
 def main():
