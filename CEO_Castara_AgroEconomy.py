@@ -64,11 +64,11 @@ def display_dashboard(user_role):
     if user_role == "Franchisee":
         with reset_screen:
         # This will call the function from get_yield_data.py
-        yield_tracking() 
+             yield_tracking() 
     elif user_role == "Management":
         with reset_screen:
         # This will call the function from get_financial_data.py
-        financial_data() 
+            financial_data() 
     else:
         st.write("Welcome to the Castara AgroEconomy dashboard.")
 
