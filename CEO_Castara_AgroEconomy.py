@@ -24,10 +24,11 @@ def authenticate_user(username, password):
    return True
 
  # Wait for user input to trigger the next action
-    if st.button("Next"):
-        # Clear the screen
-        placeholder = st.empty()
-        return placeholder
+def clear_display()
+   if st.button("Next"):
+# Clear the screen
+      placeholder = st.empty()
+      return placeholder
 
 # User role selection and main menu
 # Sidebar menu function
