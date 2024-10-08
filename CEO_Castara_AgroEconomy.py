@@ -4,9 +4,75 @@ from Get_yield_data import yield_tracking
 from Get_financial_data import financial_data
 from Get_performance_data import franchise_performance
 
-# App title
-st.title("Castara AgroEconomy C-Suite Pilot")
-st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key management roles", use_column_width=True)
+# Function to control clearing the display
+def clear_display():
+    st.session_state.clear_screen = True
+    st.experimental_rerun()
+
+# Login screen
+def login_screen():
+    st.title("Castara AgroEconomy C-Suite Pilot")
+    st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key management roles", use_column_width=True)
+    
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    
+    if st.button("Login"):
+        if authenticate_user(username, password):
+            st.session_state.logged_in = True
+            clear_display()
+
+# Role selection screen
+def role_selection_screen():
+    st.header("Select Your Role")
+    user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
+    if st.button("Next"):
+        st.session_state.user_role = user_role
+        clear_display()
+
+# Display role-specific dashboard
+def display_dashboard():
+    st.header(f"{st.session_state.user_role} Dashboard")
+    st.write("Dashboard content here...")
+    if st.button("Proceed to Options"):
+        clear_display()
+
+# Display the main menu for role and options
+def main_menu():
+    st.sidebar.title("Navigation")
+    user_role = st.session_state.user_role
+    
+    if user_role == "Franchisee":
+        option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"])
+    elif user_role == "Management":
+        option = st.sidebar.selectbox("Choose Action", ["Franchise Performance", "Strategic Planning"])
+    elif user_role == "Investor":
+        option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"])
+    elif user_role == "Technical Staff":
+        option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"])
+    
+    if st.button("Select Option"):
+        st.session_state.option = option
+        clear_display()
+
+# Display content based on selected role and option
+def display_content():
+    st.header(f"{st.session_state.user_role} - {st.session_state.option}")
+    
+    if st.session_state.user_role == "Franchisee":
+        if st.session_state.option == "Yield Management":
+            yield_tracking()
+        elif st.session_state.option == "Financial Performance":
+            st.write("Financial Performance: Coming soon.")
+    elif st.session_state.user_role == "Management":
+        if st.session_state.option == "Franchise Performance":
+            franchise_performance()
+        elif st.session_state.option == "Strategic Planning":
+            st.write("Strategic Planning: Coming soon.")
+    
+    # Add similar branches for Investor and Technical Staff roles
+    if st.button("Return to Dashboard"):
+        clear_display()
 
 # Placeholder for user authentication (to be integrated later)
 def authenticate_user(username, password):
@@ -14,90 +80,34 @@ def authenticate_user(username, password):
     # Authentication logic to be added
     return True
 
-# Use session state to control clearing and pausing
-def clear_display():
-    if st.button("Next"):
-        # Update session state to trigger the next screen
-        st.session_state['next'] = True
-
-# Main menu with role and action selection
-def main_menu(user_role):
-    st.sidebar.title("Navigation")
-    
-    if user_role == "Franchisee":
-        option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"])
-        return option
-    
-    elif user_role == "Management":
-        option = st.sidebar.selectbox("Choose Action", ["Franchise Performance", "Strategic Planning"])
-        return option
-    
-    elif user_role == "Investor":
-        option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"])
-        return option
-    
-    elif user_role == "Technical Staff":
-        option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"])
-        return option
-    return None
-
-# Display the dashboard based on role and action
-def display_dashboard(user_role, option):
-    st.header(f"{user_role} Dashboard")
-
-    # If this is the first run or 'next' is False, display the "Next" button
-    if 'next' not in st.session_state:
-        st.session_state['next'] = False
-
-    if not st.session_state['next']:
-        # Wait for user input to trigger the next action
-        clear_display()
-        st.stop()  # Stop execution until button is pressed
-
-    # After the first click, reset 'next' and display the new content
-    st.session_state['next'] = False  # Reset for next round
-
-    if user_role == "Franchisee":
-        if option == "Yield Management":
-            yield_tracking()
-        elif option == "Financial Performance":
-            st.write("Financial Performance: Coming soon.")
-
-    elif user_role == "Management":
-        if option == "Franchise Performance":
-            franchise_performance()
-        elif option == "Strategic Planning":
-            st.write("Strategic Planning: Coming soon.")
-
-    elif user_role == "Investor":
-        if option == "Financial Overview":
-            st.write("Financial Overview: Coming soon.")
-        elif option == "Sustainability Impact":
-            st.write("Sustainability Impact: Coming soon.")
-
-    elif user_role == "Technical Staff":
-        if option == "Equipment Monitoring":
-            st.write("Equipment Monitoring: Coming soon.")
-        elif option == "Maintenance Logs":
-            st.write("Maintenance Logs: Coming soon.")
-
 # Main app function
 def main():
-    # Initialize session state if it doesn't exist
-    if 'next' not in st.session_state:
-        st.session_state['next'] = False
-    
-    # Authentication placeholder
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
-    
-    if authenticate_user(username, password):
-        user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
-        option = main_menu(user_role)
-        display_dashboard(user_role, option)
-    else:
-        st.error("Authentication failed.")
+    # Initialize session state variables if not already set
+    if 'logged_in' not in st.session_state:
+        st.session_state.logged_in = False
+    if 'clear_screen' not in st.session_state:
+        st.session_state.clear_screen = False
+    if 'user_role' not in st.session_state:
+        st.session_state.user_role = None
+    if 'option' not in st.session_state:
+        st.session_state.option = None
 
-# Run app
+    # Clear the screen if necessary
+    if st.session_state.clear_screen:
+        st.session_state.clear_screen = False
+        st.empty()
+
+    # Control the flow of the app based on session state
+    if not st.session_state.logged_in:
+        login_screen()
+    elif not st.session_state.user_role:
+        role_selection_screen()
+    elif not st.session_state.option:
+        display_dashboard()
+        main_menu()
+    else:
+        display_content()
+
+# Run the app
 if __name__ == "__main__":
     main()
