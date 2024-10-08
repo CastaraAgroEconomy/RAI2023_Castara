@@ -23,7 +23,10 @@ def authenticate_user(username, password):
     # Authentication logic to be added
    return True
 
-
+# Function to clear the display
+def clear_display():
+    placeholder = st.empty()
+    return placeholder
 
 # User role selection and main menu
 # Sidebar menu function
