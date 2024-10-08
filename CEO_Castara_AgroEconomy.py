@@ -9,7 +9,7 @@ from Get_financial_data import financial_data
 # Import the performance data function from the Get_performance_data script
 from Get_performance_data import franchise_performance
 # Import the clear_display instruction from the Clear_screen instruction script
-from Clear_screen inport clear_display
+from Clear_screen import clear_display
 
 # App title
 st.title("Castara AgroEconomy C-Suite pilot")
