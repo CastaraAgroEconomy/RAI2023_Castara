@@ -49,7 +49,7 @@ def main_menu(user_role, option):
         option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"])
         if option == "Financial Overview":
            with reset_screen:
-              write(f"⚠️ - {option} coming soon.") 
+              write(f"⚠️ - {option} coming soon.")
         elif 
            if option == "Sustainibility Impact":
               with reset_screen:
