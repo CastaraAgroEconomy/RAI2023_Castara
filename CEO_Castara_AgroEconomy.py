@@ -62,8 +62,8 @@ def main_menu(user_role, option):
              with reset_screen:
                 write(f"⚠️ - {option} coming soon.")
 # Reset menu selection
-  user_role = " "
-  option = " " 
+       user_role = " "
+       option = " " 
 
     
 # Update display_dashboard() function to include yield tracking for Franchisee
