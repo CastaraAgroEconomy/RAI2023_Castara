@@ -24,7 +24,7 @@ def authenticate_user(username, password):
    return True
 
  # Wait for user input to trigger the next action
-def clear_display()
+def clear_display():
    if st.button("Next"):
 # Clear the screen
       placeholder = st.empty()
