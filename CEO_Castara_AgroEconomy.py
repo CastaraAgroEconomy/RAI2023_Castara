@@ -29,38 +29,38 @@ def main_menu(user_role, option):
    st.sidebar.title("Navigation")
    st.write(" ")
    st.write(" ")
-   reset_screen = clear_display()
+  placeholder = clear_display()
    if user_role == "Franchisee":
       option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"])
       if option == "Yield Management":
-         with reset_screen:
+         with placeholder:
             st.write("⚠️ - Refer to KPIs, coming soon") # Function to show yield KPIs to be added
       elif option == "Financial Performance":
-         with reset_screen:
+         with placeholder:
             st.write("⚠️ - Specific individual Financial performance reports coming soon.") # component module to be added later
    elif user_role == "Management":
       option = st.sidebar.selectbox("Choose Action", ["Franchise Performance", "Strategic Planning"])
       if option == "Franchise Performance":
-         with reset_screen:
+         with placeholder:
             st.write("⚠️ - Refer to KPIs, coming soon") # Show franchise performance tracking KPIs
       elif option == "Strategic Planning":
-         with reset_screen:
+         with placeholder:
             st.write("⚠️ - Strategic planning coming soon.") # component module to be added later
    elif user_role == "Investor":
       option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"])
       if option == "Financial Overview":
-         with reset_screen:
+         with placeholder:
             write(f"⚠️ - {option} coming soon.")
       elif option == "Sustainibility Impact":
-         with reset_screen:
+         with placeholder:
             write(f"⚠️ - {option} coming soon.")
    elif user_role == "Technical Staff":
       option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"])
       if option == "Equipment Monitoring":
-         with reset_screen:
+         with placeholder:
             write(f"⚠️ - {option} coming soon.")
       elif option == "Maintenance Logs":
-         with reset_screen:
+         with placeholder:
             write(f"⚠️ - {option} coming soon.")
 # Reset menu selection
       user_role = " "
@@ -73,13 +73,13 @@ def display_dashboard(user_role):
     st.write("⚠️ - Remember to look for the dropdown menu icons '>' and '<' at the top left and right of your screen to access additional features and return to the previous view respectively.")
     st.write(" ")
     st.write(" ")
-    reset_screen = clear_display() 
+    placeholder = clear_display() 
     if user_role == "Franchisee":
-       with reset_screen:
+       with placeholder:
           # This will call the function from get_yield_data.py
           yield_tracking() 
     elif user_role == "Management":
-       with reset_screen:
+       with placeholder:
           # This will call the function from get_financial_data.py
           financial_data() 
     else:
