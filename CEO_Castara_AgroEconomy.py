@@ -8,7 +8,7 @@ from Get_performance_data import franchise_performance
 def clear_display():
     st.session_state.clear_screen = True
 
-# Login screen
+# Login screen without st.experimental_rerun
 def login_screen():
     st.title("Castara AgroEconomy C-Suite Pilot")
     st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key management roles", use_column_width=True)
@@ -20,7 +20,6 @@ def login_screen():
         if authenticate_user(username, password):
             st.session_state.logged_in = True
             clear_display()
-            st.experimental_rerun()  # Only rerun after successful login
 
 # Role selection screen
 def role_selection_screen():
@@ -29,7 +28,6 @@ def role_selection_screen():
     if st.button("Next"):
         st.session_state.user_role = user_role
         clear_display()
-        st.experimental_rerun()  # Rerun after role selection
 
 # Display role-specific dashboard
 def display_dashboard():
@@ -37,7 +35,6 @@ def display_dashboard():
     st.write("Dashboard content here...")
     if st.button("Proceed to Options"):
         clear_display()
-        st.experimental_rerun()  # Rerun after showing dashboard
 
 # Display the main menu for role and options
 def main_menu():
@@ -56,7 +53,6 @@ def main_menu():
     if st.button("Select Option"):
         st.session_state.option = option
         clear_display()
-        st.experimental_rerun()  # Rerun after selecting the option
 
 # Display content based on selected role and option
 def display_content():
@@ -75,7 +71,6 @@ def display_content():
     
     if st.button("Return to Dashboard"):
         clear_display()
-        st.experimental_rerun()
 
 # Placeholder for user authentication
 def authenticate_user(username, password):
