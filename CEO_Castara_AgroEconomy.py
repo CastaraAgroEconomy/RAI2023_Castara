@@ -42,7 +42,7 @@ def main_menu(user_role, option):
        if option == "Franchise Performance":
           with reset_screen:
              st.write("⚠️ - Refer to KPIs, coming soon") # Show franchise performance tracking KPIs
-        elif option == "Strategic Planning":
+       elif option == "Strategic Planning":
            with reset_screen:
               st.write("⚠️ - Strategic planning coming soon.") # component module to be added later
     elif user_role == "Investor":
