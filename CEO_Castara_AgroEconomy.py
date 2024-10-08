@@ -90,4 +90,8 @@ def main():
         option = main_menu(user_role)
         display_dashboard(user_role, option)
     else:
-        st​⬤
+        st.error("Authentication failed.")
+
+# Run app
+if __name__ == "__main__":
+    main()
