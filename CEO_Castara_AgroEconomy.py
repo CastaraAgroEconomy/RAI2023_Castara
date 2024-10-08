@@ -18,10 +18,10 @@ st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchi
 st.write(" ")
 
 # Placeholder for user authentication (to be integrated later)
-def authenticate_user(username, password):
-    """ Placeholder function for user authentication. """
+# def authenticate_user(username, password):
+   # """ Placeholder function for user authentication. """
     # Authentication logic to be added
-    return True
+    # return True
 
 # User role selection and main menu
 # Sidebar menu function
@@ -60,10 +60,13 @@ def display_dashboard(user_role):
     st.write("⚠️ - Remember to look for the dropdown menu icons '>' and '<' at the top left and right of your screen to access additional features and return to the previous view respectively.")
     st.write(" ")
     st.write(" ")
+    reset_screen = clear_display() 
     if user_role == "Franchisee":
+        with reset_screen:
         # This will call the function from get_yield_data.py
         yield_tracking() 
     elif user_role == "Management":
+        with reset_screen:
         # This will call the function from get_financial_data.py
         financial_data() 
     else:
@@ -79,11 +82,9 @@ def main():
     if authenticate_user(username, password):
         # Select user role (for demo purposes)
         user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
-        reset_screen = clear_display()
-        display_dashboard(user_role) with reset_screen
+        display_dashboard(user_role)
         st.write(" ")
-        reset_screen = clear_display()
-        main_menu(user_role, option) with reset_screen
+        main_menu(user_role, option)
     else:
         st.error("Authentication failed.")
 
