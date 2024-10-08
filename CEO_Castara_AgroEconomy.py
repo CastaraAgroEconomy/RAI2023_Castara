@@ -18,10 +18,10 @@ st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchi
 st.write(" ")
 
 # Placeholder for user authentication (to be integrated later)
-# def authenticate_user(username, password):
-   # """ Placeholder function for user authentication. """
+def authenticate_user(username, password):
+   """ Placeholder function for user authentication. """
     # Authentication logic to be added
-    # return True
+   return True
 
 # User role selection and main menu
 # Sidebar menu function
