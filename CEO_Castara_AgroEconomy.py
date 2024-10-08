@@ -7,7 +7,6 @@ from Get_performance_data import franchise_performance
 # Function to control clearing the display
 def clear_display():
     st.session_state.clear_screen = True
-    st.experimental_rerun()
 
 # Login screen
 def login_screen():
@@ -21,6 +20,7 @@ def login_screen():
         if authenticate_user(username, password):
             st.session_state.logged_in = True
             clear_display()
+            st.experimental_rerun()  # Only rerun after successful login
 
 # Role selection screen
 def role_selection_screen():
@@ -29,6 +29,7 @@ def role_selection_screen():
     if st.button("Next"):
         st.session_state.user_role = user_role
         clear_display()
+        st.experimental_rerun()  # Rerun after role selection
 
 # Display role-specific dashboard
 def display_dashboard():
@@ -36,6 +37,7 @@ def display_dashboard():
     st.write("Dashboard content here...")
     if st.button("Proceed to Options"):
         clear_display()
+        st.experimental_rerun()  # Rerun after showing dashboard
 
 # Display the main menu for role and options
 def main_menu():
@@ -54,6 +56,7 @@ def main_menu():
     if st.button("Select Option"):
         st.session_state.option = option
         clear_display()
+        st.experimental_rerun()  # Rerun after selecting the option
 
 # Display content based on selected role and option
 def display_content():
@@ -70,11 +73,11 @@ def display_content():
         elif st.session_state.option == "Strategic Planning":
             st.write("Strategic Planning: Coming soon.")
     
-    # Add similar branches for Investor and Technical Staff roles
     if st.button("Return to Dashboard"):
         clear_display()
+        st.experimental_rerun()
 
-# Placeholder for user authentication (to be integrated later)
+# Placeholder for user authentication
 def authenticate_user(username, password):
     """ Placeholder function for user authentication. """
     # Authentication logic to be added
