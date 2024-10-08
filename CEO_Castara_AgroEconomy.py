@@ -58,8 +58,7 @@ def main_menu(user_role, option):
        if option == "Equipment Monitoring":
           with reset_screen:
              write(f"⚠️ - {option} coming soon.")
-       elif 
-          if option == "Maintenance Logs":
+       elif option == "Maintenance Logs":
              with reset_screen:
                 write(f"⚠️ - {option} coming soon.")
 # Reset menu selection
