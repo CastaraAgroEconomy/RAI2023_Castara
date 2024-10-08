@@ -50,8 +50,7 @@ def main_menu(user_role, option):
         if option == "Financial Overview":
            with reset_screen:
               write(f"⚠️ - {option} coming soon.")
-        elif 
-           if option == "Sustainibility Impact":
+        elif option == "Sustainibility Impact":
               with reset_screen:
                  write(f"⚠️ - {option} coming soon.")
     elif user_role == "Technical Staff":
