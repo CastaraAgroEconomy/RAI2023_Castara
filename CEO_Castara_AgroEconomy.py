@@ -6,20 +6,16 @@ def clear_display():
 
 # Placeholder for user authentication
 def authenticate_user(username, password):
-    """ Placeholder function for user authentication. """
-    # Authentication logic to be added
-    return True
+    return True  # Simplified for testing
 
 # Login screen with validation
 def login_screen():
     st.title("Castara AgroEconomy C-Suite Pilot")
-    st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key management roles", use_column_width=True)
+    st.image("Castara_AgroEconomy_Mobile_App.JPG", use_column_width=True)
     
-    # User input fields
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     
-    # Validation: Ensure both fields are filled before proceeding
     if st.button("Login"):
         if not username or not password:
             st.error("Please enter both Username and Password.")
@@ -41,11 +37,11 @@ def role_selection_screen():
 # Display role-specific dashboard
 def display_dashboard():
     st.header(f"{st.session_state.user_role} Dashboard")
-    st.write("Dashboard content here...")
+    st.write(f"Welcome to the {st.session_state.user_role} dashboard.")
     if st.button("Proceed to Options"):
         clear_display()
 
-# Display the main menu for role and options
+# Main menu with role options
 def main_menu():
     st.sidebar.title("Navigation")
     user_role = st.session_state.user_role
@@ -63,27 +59,16 @@ def main_menu():
         st.session_state.option = option
         clear_display()
 
-# Display content based on selected role and option
+# Display content based on selected option
 def display_content():
     st.header(f"{st.session_state.user_role} - {st.session_state.option}")
-    
-    if st.session_state.user_role == "Franchisee":
-        if st.session_state.option == "Yield Management":
-            st.write("Yield Management content goes here.")
-        elif st.session_state.option == "Financial Performance":
-            st.write("Financial Performance: Coming soon.")
-    elif st.session_state.user_role == "Management":
-        if st.session_state.option == "Franchise Performance":
-            st.write("Franchise Performance: Coming soon.")
-        elif st.session_state.option == "Strategic Planning":
-            st.write("Strategic Planning: Coming soon.")
+    st.write(f"Displaying content for {st.session_state.user_role}'s {st.session_state.option}.")
     
     if st.button("Return to Dashboard"):
         clear_display()
 
 # Main app function
 def main():
-    # Initialize session state variables if not already set
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
     if 'clear_screen' not in st.session_state:
@@ -93,12 +78,10 @@ def main():
     if 'option' not in st.session_state:
         st.session_state.option = None
 
-    # Clear the screen if necessary
     if st.session_state.clear_screen:
         st.session_state.clear_screen = False
         st.empty()
 
-    # Control the flow of the app based on session state
     if not st.session_state.logged_in:
         login_screen()
     elif not st.session_state.user_role:
@@ -109,6 +92,6 @@ def main():
     else:
         display_content()
 
-# Run the app
+# Run app
 if __name__ == "__main__":
     main()
