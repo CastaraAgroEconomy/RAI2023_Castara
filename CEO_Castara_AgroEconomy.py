@@ -11,7 +11,6 @@ def authenticate_user(username, password):
 # Login screen with validation
 def login_screen():
     st.title("Castara AgroEconomy C-Suite Pilot")
-    st.image("Castara_AgroEconomy_Mobile_App.JPG", use_column_width=True)
     
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
@@ -36,8 +35,17 @@ def role_selection_screen():
 
 # Display role-specific dashboard
 def display_dashboard():
-    st.header(f"{st.session_state.user_role} Dashboard")
-    st.write(f"Welcome to the {st.session_state.user_role} dashboard.")
+    user_role = st.session_state.user_role
+    if user_role == "Franchisee":
+        st.header("Franchisee Dashboard")
+        st.write("Welcome to the Franchisee Dashboard.")
+    elif user_role == "Management":
+        st.header("Management Dashboard")
+        st.write("Welcome to the Management Dashboard.")
+    else:
+        st.header(f"{user_role} Dashboard")
+        st.write(f"Welcome to the {user_role} Dashboard.")
+    
     if st.button("Proceed to Options"):
         clear_display()
 
