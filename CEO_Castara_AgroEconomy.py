@@ -39,11 +39,11 @@ def role_selection_screen():
     if st.button("Next"):
         st.session_state.user_role = user_role
         clear_display()
-        display_dashboard()
+        display_dashboard(user_role)
    
 
 # Display role-specific dashboard
-def display_dashboard():
+def display_dashboard(user_role):
     user_role = st.session_state.user_role
     if user_role == "Franchisee":
         clear_display()
@@ -60,10 +60,10 @@ def display_dashboard():
     
     if st.button("Proceed to Options"):
         clear_display()
-        main_menu()
+        main_menu(user_role)
 
 # Main menu with role options
-def main_menu():
+def main_menu(user_role):
     st.sidebar.title("Navigation")
     user_role = st.session_state.user_role
     
@@ -79,10 +79,10 @@ def main_menu():
     if st.button("Select Option"):
         st.session_state.option = option
         clear_display()
-        display_content()
+        display_content(user_role, option)
 
 # Display content based on selected option
-def display_content():
+def display_content(user_role, option):
     st.header(f"{st.session_state.user_role} - {st.session_state.option}")
     st.write(f"Displaying content for {st.session_state.user_role}'s {st.session_state.option}.")
 
@@ -110,7 +110,7 @@ def display_content():
     
     if st.button("Return to Dashboard"):
         clear_display()
-        display_dashboard()
+        display_dashboard(user_role)
 
 # Main app function
 def main():
@@ -135,11 +135,11 @@ def main():
         role_selection_screen()
     elif not st.session_state.option:
         clear_display()
-        display_dashboard()
-        main_menu()
+        display_dashboard(uset_role)
+        main_menu(user_role, option)
     else:
         clear_display()
-        display_content()
+        display_content(user_role, option)
 
 # Run app
 if __name__ == "__main__":
