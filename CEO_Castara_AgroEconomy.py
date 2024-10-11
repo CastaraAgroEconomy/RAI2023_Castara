@@ -127,10 +127,8 @@ def main():
         st.empty()
 
     if not st.session_state.logged_in:
-        clear_screen = True
         clear_display()
         login_screen()
-        clear_screen = False
     elif not st.session_state.user_role:
         clear_screen = True
         clear_display()
