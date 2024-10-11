@@ -3,12 +3,12 @@ import streamlit as st
 from Get_yield_data import yield_tracking
 from Get_performance_data  import franchise_performance
 from Get_financial_data import financial_data
-#from 
+from Clear_screen import clear_display
 
 
 # Function to clear the display
-def clear_display():
-    st.session_state.clear_screen = True
+#def clear_display():
+#    st.session_state.clear_screen = True
 
 # Placeholder for user authentication
 def authenticate_user(username, password):
