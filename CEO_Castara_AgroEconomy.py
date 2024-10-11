@@ -107,7 +107,7 @@ def main():
         st.session_state.option = None
 
     if st.session_state.clear_screen:
-        st.session_state.clear_screen = True
+        st.session_state.clear_screen = False
         st.empty()
 
     if not st.session_state.logged_in:
