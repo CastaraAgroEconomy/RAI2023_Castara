@@ -38,7 +38,6 @@ def role_selection_screen():
     if st.button("Next"):
         st.session_state.user_role = user_role
         clear_display()
-        st.button = ""
    
 
 # Display role-specific dashboard
