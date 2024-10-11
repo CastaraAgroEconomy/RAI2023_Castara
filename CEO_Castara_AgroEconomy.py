@@ -44,10 +44,10 @@ def display_dashboard():
     user_role = st.session_state.user_role
     if user_role == "Franchisee":
         st.header("Franchisee Dashboard")
-        Get_yield_data()
+        yield_tracking()
     elif user_role == "Management":
         st.header("Management Dashboard")
-        Get_performance_data()
+        franchise_performance()
     
     else:
         st.header(f"{user_role} Dashboard")
