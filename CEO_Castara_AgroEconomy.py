@@ -40,6 +40,7 @@ def role_selection_screen():
         clear_screen = True
         clear_display()
         display_dashboard()
+        clear_screen = False
    
 
 # Display role-specific dashboard
@@ -50,22 +51,26 @@ def display_dashboard():
         clear_display()
         st.header("Franchisee Dashboard")
         yield_tracking()
+        clear_screen = False
     elif user_role == "Management":
         clear_acreen = True
         clear_display()
         st.header("Management Dashboard")
         franchise_performance()
+        clear_screen = False
     
     else:
         st.header(f"{user_role} Dashboard")
         clear_screen = True
         clear_display()
         st.write(f"Welcome to the {user_role} Dashboard.")
+        clear_screen = False
     
     if st.button("Proceed to Options"):
         clear_screen = True
         clear_display()
         main_menu()
+        clear_screen = False
 
 # Main menu with role options
 def main_menu():
@@ -86,6 +91,7 @@ def main_menu():
         clear_screen = True
         clear_display()
         display_content()
+        clear_screen = False
 
 # Display content based on selected option
 def display_content():
@@ -97,11 +103,13 @@ def display_content():
             clear_screen = True
             clear_display()
             financial_data()
+            clear_screen = False
     
     if st.button("Return to Dashboard"):
         clear_screen = True
         clear_display()
         display_dashboard()
+        clear_screen = False
 
 # Main app function
 def main():
@@ -122,19 +130,23 @@ def main():
         clear_screen = True
         clear_display()
         login_screen()
+        clear_screen = False
     elif not st.session_state.user_role:
         clear_screen = True
         clear_display()
         role_selection_screen()
+        clear_screen = False
     elif not st.session_state.option:
         clear_screen = True
         clear_display()
         display_dashboard()
         main_menu()
+        clear_screen = False
     else:
         clear_screen = True
         clear_display()
         display_content()
+        clear_screen = False
 
 # Run app
 if __name__ == "__main__":
