@@ -93,15 +93,23 @@ def display_content():
             clear_display()
             st.write("⚠️ - Feature not yet implemented")
     elif st.session_state.user_role == "Investor"
-         if st.session_state.option == "Strategic Planning":
+        if st.session_state.option == "Financial Overview":
+            clear_display()
+            st.write("⚠️ - Feature not yet implemented")
+        elif st.session_state.option == "Sustainability Impact":
+            clear_display()
+            st.write("⚠️ - Feature not yet implemented")
+    elif st.session_state.user_role == "Technical Staff"
+        if st.session_state.option == "Equipment Monitoring":
+            clear_display()
+            st.write("⚠️ - Feature not yet implemented")
+        elif st.session_state.option == "Monitoring Logs":
             clear_display()
             st.write("⚠️ - Feature not yet implemented")
     
     if st.button("Return to Dashboard"):
-        clear_screen = True
         clear_display()
         display_dashboard()
-        clear_screen = False
 
 # Main app function
 def main():
