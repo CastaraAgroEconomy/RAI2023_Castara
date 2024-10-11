@@ -92,14 +92,14 @@ def display_content():
         elif st.session_state.option == "Strategic Planning":
             clear_display()
             st.write("⚠️ - Feature not yet implemented")
-    elif st.session_state.user_role == "Investor"
+    elif st.session_state.user_role == "Investor":
         if st.session_state.option == "Financial Overview":
             clear_display()
             st.write("⚠️ - Feature not yet implemented")
         elif st.session_state.option == "Sustainability Impact":
             clear_display()
             st.write("⚠️ - Feature not yet implemented")
-    elif st.session_state.user_role == "Technical Staff"
+    elif st.session_state.user_role == "Technical Staff":
         if st.session_state.option == "Equipment Monitoring":
             clear_display()
             st.write("⚠️ - Feature not yet implemented")
