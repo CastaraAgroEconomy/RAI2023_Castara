@@ -1,4 +1,7 @@
 import streamlit as st
+from functions.yield_management import yield_tracking
+from functions.financial_dashboard import financial_data
+
 
 # Function to clear the display
 def clear_display():
