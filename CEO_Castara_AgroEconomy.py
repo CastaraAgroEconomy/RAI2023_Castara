@@ -39,10 +39,11 @@ def display_dashboard():
     user_role = st.session_state.user_role
     if user_role == "Franchisee":
         st.header("Franchisee Dashboard")
-        st.write("Welcome to the Franchisee Dashboard.")
+        franchisee_dashboard()
     elif user_role == "Management":
         st.header("Management Dashboard")
-        st.write("Welcome to the Management Dashboard.")
+        management_dashboard()
+    
     else:
         st.header(f"{user_role} Dashboard")
         st.write(f"Welcome to the {user_role} Dashboard.")
