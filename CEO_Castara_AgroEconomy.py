@@ -135,7 +135,7 @@ def main():
         role_selection_screen()
     elif not st.session_state.option:
         clear_display()
-        display_dashboard(uset_role)
+        display_dashboard(user_role)
         main_menu(user_role, option)
     else:
         clear_display()
