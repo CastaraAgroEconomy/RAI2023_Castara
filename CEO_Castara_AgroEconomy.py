@@ -1,8 +1,8 @@
 import streamlit as st
 
-from Get_yield_management import yield_tracking
-from Get_performance_data import franchise_performance
-from Get_financial_dashboard import financial_data
+from Get_yield_management() import yield_tracking
+from Get_performance_data() import franchise_performance
+from Get_financial_dashboard() import financial_data
 
 
 # Function to clear the display
