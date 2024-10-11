@@ -37,40 +37,29 @@ def role_selection_screen():
     user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
     if st.button("Next"):
         st.session_state.user_role = user_role
-        clear_screen = True
         clear_display()
         display_dashboard()
-        clear_screen = False
    
 
 # Display role-specific dashboard
 def display_dashboard():
     user_role = st.session_state.user_role
     if user_role == "Franchisee":
-        clear_screen = True
         clear_display()
         st.header("Franchisee Dashboard")
         yield_tracking()
-        clear_screen = False
     elif user_role == "Management":
-        clear_acreen = True
         clear_display()
         st.header("Management Dashboard")
         franchise_performance()
-        clear_screen = False
-    
     else:
         st.header(f"{user_role} Dashboard")
-        clear_screen = True
         clear_display()
         st.write(f"Welcome to the {user_role} Dashboard.")
-        clear_screen = False
     
     if st.button("Proceed to Options"):
-        clear_screen = True
         clear_display()
         main_menu()
-        clear_screen = False
 
 # Main menu with role options
 def main_menu():
@@ -88,10 +77,8 @@ def main_menu():
     
     if st.button("Select Option"):
         st.session_state.option = option
-        clear_screen = True
         clear_display()
         display_content()
-        clear_screen = False
 
 # Display content based on selected option
 def display_content():
@@ -100,10 +87,15 @@ def display_content():
 
     if st.session_state.user_role == "Management":
         if st.session_state.option == "Financial Performance":
-            clear_screen = True
             clear_display()
             financial_data()
-            clear_screen = False
+        elif st.session_state.option == "Strategic Planning":
+            clear_display()
+            st.write("⚠️ - Feature not yet implemented")
+    elif st.session_state.user_role == "Investor"
+         if st.session_state.option == "Strategic Planning":
+            clear_display()
+            st.write("⚠️ - Feature not yet implemented")
     
     if st.button("Return to Dashboard"):
         clear_screen = True
