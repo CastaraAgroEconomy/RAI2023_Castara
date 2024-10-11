@@ -83,7 +83,7 @@ def display_content():
 
     if st.session_state.user_role == "Management":
         if st.session_state.option == "Financial Performance":
-        financal_data()
+        financial_data()
     
     if st.button("Return to Dashboard"):
         clear_display()
