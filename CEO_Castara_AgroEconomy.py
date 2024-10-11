@@ -74,7 +74,7 @@ def main_menu():
     if st.button("Select Option"):
         st.session_state.option = option
         clear_display()
-        display_conyent()
+        display_content()
 
 # Display content based on selected option
 def display_content():
