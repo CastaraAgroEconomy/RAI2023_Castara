@@ -85,6 +85,7 @@ def display_content():
 
     if st.session_state.user_role == "Management":
         if st.session_state.option == "Financial Performance":
+            clear_display()
             financial_data()
     
     if st.button("Return to Dashboard"):
@@ -107,10 +108,13 @@ def main():
         st.empty()
 
     if not st.session_state.logged_in:
+        clear_display()
         login_screen()
     elif not st.session_state.user_role:
+        clear_display()
         role_selection_screen()
     elif not st.session_state.option:
+        clear_display()
         display_dashboard()
         main_menu()
     else:
