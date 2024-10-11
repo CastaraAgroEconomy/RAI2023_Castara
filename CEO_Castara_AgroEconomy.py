@@ -11,6 +11,7 @@ def authenticate_user(username, password):
 # Login screen with validation
 def login_screen():
     st.title("Castara AgroEconomy C-Suite Pilot")
+    st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key management roles", use_column_width=True)
     
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
