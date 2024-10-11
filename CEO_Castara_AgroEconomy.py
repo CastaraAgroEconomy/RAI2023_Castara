@@ -80,7 +80,7 @@ def display_content():
     st.header(f"{st.session_state.user_role} - {st.session_state.option}")
     st.write(f"Displaying content for {st.session_state.user_role}'s {st.session_state.option}.")
 
-    if st.session_state.user_role = "Management":
+    if st.session_state.user_role == "Management":
         if st.session_state.option == "Financial Performance":
         financal_data()
     
