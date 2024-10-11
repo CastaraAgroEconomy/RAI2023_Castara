@@ -7,8 +7,8 @@ from Clear_screen import clear_display
 
 
 # Function to clear the display
-#def clear_display():
-#    st.session_state.clear_screen = True
+def clear_display():
+    st.session_state.clear_screen = True
 
 # Placeholder for user authentication
 def authenticate_user(username, password):
