@@ -81,6 +81,7 @@ def display_content():
     
     if st.button("Return to Dashboard"):
         clear_display()
+        display_dashboard()
 
 # Main app function
 def main():
