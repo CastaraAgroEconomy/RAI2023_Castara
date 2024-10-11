@@ -45,14 +45,17 @@ def role_selection_screen():
 def display_dashboard():
     user_role = st.session_state.user_role
     if user_role == "Franchisee":
+        clear_display()
         st.header("Franchisee Dashboard")
         yield_tracking()
     elif user_role == "Management":
+        clear_display()
         st.header("Management Dashboard")
         franchise_performance()
     
     else:
         st.header(f"{user_role} Dashboard")
+        clear_display()
         st.write(f"Welcome to the {user_role} Dashboard.")
     
     if st.button("Proceed to Options"):
@@ -118,6 +121,7 @@ def main():
         display_dashboard()
         main_menu()
     else:
+        clear_display()
         display_content()
 
 # Run app
