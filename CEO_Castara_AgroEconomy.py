@@ -130,21 +130,15 @@ def main():
         clear_display()
         login_screen()
     elif not st.session_state.user_role:
-        clear_screen = True
         clear_display()
         role_selection_screen()
-        clear_screen = False
     elif not st.session_state.option:
-        clear_screen = True
         clear_display()
         display_dashboard()
         main_menu()
-        clear_screen = False
     else:
-        clear_screen = True
         clear_display()
         display_content()
-        clear_screen = False
 
 # Run app
 if __name__ == "__main__":
