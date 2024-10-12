@@ -30,8 +30,8 @@ def financial_data():
     st.line_chart(financial_df.set_index('Franchise')['Profit ($)'])
 
 # Update the management dashboard to include financial tracking
-def display_dashboard(user_role):
-    """ Display the dashboard based on user role. """
+def display_management_dashboard(user_role):
+    """ Display the management dashboard based on user role. """
     st.header(f"{user_role} Dashboard")
     
     if user_role == "Management":
