@@ -40,6 +40,8 @@ def role_selection_screen():
         st.session_state.user_role = user_role
         clear_display()
         display_dashboard()
+    else
+        st.write("press button to advance")
    
 
 # Display role-specific dashboard
@@ -61,6 +63,8 @@ def display_dashboard():
     if st.button("Proceed to Options"):
         clear_display()
         main_menu()
+    else
+        st.write("press button to advance")
 
 # Main menu with role options
 def main_menu():
@@ -80,6 +84,8 @@ def main_menu():
         st.session_state.option = option
         clear_display()
         display_content()
+    else
+        st.write("press button to advance")
 
 # Display content based on selected option
 def display_content():
@@ -118,6 +124,8 @@ def display_content():
     if st.button("Return to Dashboard"):
         clear_display()
         display_dashboard()
+    else
+        st.write("press button to advance")
 
 # Main app function
 def main():
