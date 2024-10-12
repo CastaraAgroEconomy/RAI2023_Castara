@@ -59,7 +59,6 @@ def display_dashboard():
         st.write(f"Welcome to the {user_role} Dashboard.")
     
     if st.button("Proceed to Options", key="proceed_option_select_button"):
-        clear_display()
         main_menu()
     else:
         st.write("press button to advance")
@@ -80,43 +79,35 @@ def main_menu():
     
     if st.button("Select Option", key="option_select_button"):
         st.session_state.option = option
-        clear_display()
-        display_content()
+        display_content(user_role, option)
     else:
         st.write("press button to advance")
 
 # Display content based on selected option
-def display_content():
+def display_content(user_role, option):
+    clear_display()
     #st.header(f"{st.session_state.user_role} - {st.session_state.option}")
     st.write(f"Displaying content for {st.session_state.user_role} & {st.session_state.option}.")
     
-    if st.session_state.user_role == "Franchisee":
-        if st.session_state.option == "Yield Management":
-            clear_display()
+    if user_role == "Franchisee":
+        if option == "Yield Management":
             st.write("⚠️ - Yield Management feature to be implemented here")
-        elif st.session_state.option == "Financial Performance":
-            clear_display()
+        elif option == "Financial Performance":
             st.write("⚠️ - Financial Performance feature to be implemented here")
-    if st.session_state.user_role == "Management":
-        if st.session_state.option == "Financial Performance":
-            clear_display()
+    if user_role == "Management":
+        if option == "Financial Performance":
             st.write("⚠️ - Financial Performance feature to be implemented here")
-        elif st.session_state.option == "Strategic Planning":
-            clear_display()
+        elif option == "Strategic Planning":
             st.write("⚠️ - Strategic Planning feature to be implemented here")
-    elif st.session_state.user_role == "Investor":
-        if st.session_state.option == "Financial Overview":
-            clear_display()
+    elif user_role == "Investor":
+        if option == "Financial Overview":
             st.write("⚠️ - Financial Overview feature to be implemented here")
-        elif st.session_state.option == "Sustainability Impact":
-            clear_display()
+        elif option == "Sustainability Impact":
             st.write("⚠️ - Sustainability Impact feature to be implemented here")
-    elif st.session_state.user_role == "Technical Staff":
-        if st.session_state.option == "Equipment Monitoring":
-            clear_display()
+    elif user_role == "Technical Staff":
+        if option == "Equipment Monitoring":
             st.write("⚠️ - Equipment Monitoring feature to be implemented here")
-        elif st.session_state.option == "Monitoring Logs":
-            clear_display()
+        elif option == "Monitoring Logs":
             st.write("⚠️ - Monitoring Logs feature to be implemented here")
     
     if st.button("Return to Dashboard", key="RTD_select_button"):
