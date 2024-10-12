@@ -35,6 +35,6 @@ def display_management_dashboard(user_role):
     st.header(f"{user_role} Dashboard")
     
     if user_role == "Management":
-        financial_data()  # Management function for financial data
+        financial_data()  # Management function's display of financial data
     else:
         st.write("Welcome to the Castara AgroEconomy dashboard.")
