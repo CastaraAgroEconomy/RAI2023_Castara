@@ -89,7 +89,7 @@ def display_content():
     if st.session_state.user_role == "Franchisee":
         if st.session_state.option == "Yield Management":
             clear_display()
-            st.write("Implement Yield Management feature here")
+            st.write("⚠️ - Feature not yet implemented")
         elif st.session_state.option == "Financial Performance":
             clear_display()
             financial_data()   
