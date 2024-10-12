@@ -93,31 +93,31 @@ def display_content():
     if st.session_state.user_role == "Franchisee":
         if st.session_state.option == "Yield Management":
             clear_display()
-            st.write("⚠️ - Feature not yet implemented")
+            st.write("⚠️ - Yield Management feature to be implemented here")
         elif st.session_state.option == "Financial Performance":
             clear_display()
-            financial_data()   
+            st.write("⚠️ - Financial Performance feature to be implemented here")
     if st.session_state.user_role == "Management":
         if st.session_state.option == "Financial Performance":
             clear_display()
-            financial_data()
+            st.write("⚠️ - Financial Performance feature to be implemented here")
         elif st.session_state.option == "Strategic Planning":
             clear_display()
-            st.write("⚠️ - Feature not yet implemented")
+            st.write("⚠️ - Strategic Planning feature to be implemented here")
     elif st.session_state.user_role == "Investor":
         if st.session_state.option == "Financial Overview":
             clear_display()
-            st.write("⚠️ - Feature not yet implemented")
+            st.write("⚠️ - Financial Overview feature to be implemented here")
         elif st.session_state.option == "Sustainability Impact":
             clear_display()
-            st.write("⚠️ - Feature not yet implemented")
+            st.write("⚠️ - Sustainability Impact feature to be implemented here")
     elif st.session_state.user_role == "Technical Staff":
         if st.session_state.option == "Equipment Monitoring":
             clear_display()
-            st.write("⚠️ - Feature not yet implemented")
+            st.write("⚠️ - Equipment Monitoring feature to be implemented here")
         elif st.session_state.option == "Monitoring Logs":
             clear_display()
-            st.write("⚠️ - Feature not yet implemented")
+            st.write("⚠️ - Monitoring Logs feature to be implemented here")
     
     if st.button("Return to Dashboard", key="RTD_select_button"):
         clear_display()
