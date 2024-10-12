@@ -22,7 +22,7 @@ def login_screen():
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     
-    if st.button("Login"):
+    if st.button("Login", key="login_process_button"):
         if not username or not password:
             st.error("Please enter both Username and Password.")
         else:
@@ -36,7 +36,7 @@ def login_screen():
 def role_selection_screen():
     st.header("Select Your Role")
     user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"], key="user_role_selection")
-    if st.button("Next"):
+    if st.button("Next", key="role_select_button"):
         st.session_state.user_role = user_role
         clear_display()
         display_dashboard()
@@ -60,7 +60,7 @@ def display_dashboard():
         clear_display()
         st.write(f"Welcome to the {user_role} Dashboard.")
     
-    if st.button("Proceed to Options"):
+    if st.button("Proceed to Options", key="proceed_option_select_button"):
         clear_display()
         main_menu()
     else:
@@ -80,7 +80,7 @@ def main_menu():
     elif user_role == "Technical Staff":
         option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"], key="Technical_Staff_option_select")
     
-    if st.button("Select Option"):
+    if st.button("Select Option", key="option_select_button"):
         st.session_state.option = option
         clear_display()
         display_content()
@@ -121,7 +121,7 @@ def display_content():
             clear_display()
             st.write("⚠️ - Feature not yet implemented")
     
-    if st.button("Return to Dashboard"):
+    if st.button("Return to Dashboard", key="RTD_select_button"):
         clear_display()
         display_dashboard()
     else:
