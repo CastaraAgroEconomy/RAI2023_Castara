@@ -38,13 +38,13 @@ def role_selection_screen():
     user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"], key="user_role_selection")
     if st.button("Next", key="user_role_select_button"):
         st.session_state.user_role = user_role
-        display_dashboard(user_role)
+        display_dashboard_internal(user_role)
     else:
         st.write("press button to advance")
    
 
 # Display role-specific dashboard
-def internal_display_dashboard(user_role, option):
+def display_dashboard_internal(user_role, option):
     clear_display()
     user_role = st.session_state.user_role
     if user_role == "Franchisee":
