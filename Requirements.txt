@@ -1,3 +1,3 @@
 streamlit==1.25.0  # Or whichever version you're using
 pandas==2.0.1      # If you're using Pandas
-requests           # If you're using Requests for API callsRequirements
+requests           # If you're using Requests for API calls Requirements
