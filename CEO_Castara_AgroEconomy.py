@@ -36,7 +36,7 @@ def login_screen():
 def role_selection_screen():
     st.header("Select Your Role")
     user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"], key="user_role_selection")
-    if st.button("Next", key="role_select_button"):
+    if st.button("Next", key="user_role_select_button"):
         st.session_state.user_role = user_role
         clear_display()
         display_dashboard()
