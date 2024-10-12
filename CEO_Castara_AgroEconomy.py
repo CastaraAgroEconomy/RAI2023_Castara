@@ -39,7 +39,7 @@ def role_selection_screen():
     if st.button("Next", key="user_role_select_button"):
         st.session_state.user_role = user_role
         clear_display()
-        display_dashboard()
+        #display_dashboard(user_role)
     else:
         st.write("press button to advance")
    
