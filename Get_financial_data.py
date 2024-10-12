@@ -31,6 +31,7 @@ def financial_data():
 
 # Update the management dashboard to include financial tracking
 def display_management_dashboard(user_role):
+    clear_display()
     """ Display the management dashboard based on user role. """
     st.header(f"{user_role} Dashboard")
     
