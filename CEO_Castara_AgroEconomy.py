@@ -122,31 +122,31 @@ def display_content():
 # Main app function
 def main():
     if 'logged_in' not in st.session_state:
-        st.session_state.logged_in = False
+        st.session_state.logged_in = False # sets off
     if 'clear_screen' not in st.session_state:
-        st.session_state.clear_screen = False
+        st.session_state.clear_screen = False # sets off
     if 'user_role' not in st.session_state:
-        st.session_state.user_role = None
+        st.session_state.user_role = None # sets null
     if 'option' not in st.session_state:
-        st.session_state.option = None
+        st.session_state.option = None # sets null
 
     if st.session_state.clear_screen:
-        st.session_state.clear_screen = False
+        st.session_state.clear_screen = False # sets off
         st.empty()
 
-    if not st.session_state.logged_in:
-        clear_display()
-        login_screen()
+    if not st.session_state.logged_in: 
+        clear_display() # clears display if not logged in
+        login_screen() # presents the login screen
     elif not st.session_state.user_role:
-        clear_display()
-        role_selection_screen()
+        clear_display() # clears the display if user_role is null
+        role_selection_screen() # request a user_role
     elif not st.session_state.option:
-        clear_display()
-        display_dashboard()
-        main_menu()
+        clear_display() # clears the display if option is null
+        display_dashboard() # displays the default user_role dashboard
+        clear_display() # clears the display if option is null
+        main_menu() # selects from a choice of options for a given user_role
     else:
-        clear_display()
-        display_content(user_role, option)
+        display_content() # displays the appropriate content for a given user_role and option combination
 
 # Run app
 if __name__ == "__main__":
