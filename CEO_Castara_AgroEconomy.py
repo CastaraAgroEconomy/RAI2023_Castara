@@ -35,7 +35,7 @@ def login_screen():
 # Role selection screen
 def role_selection_screen():
     st.header("Select Your Role")
-    user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
+    user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"], key="user_role_selection")
     if st.button("Next"):
         st.session_state.user_role = user_role
         clear_display()
@@ -72,17 +72,13 @@ def main_menu():
     user_role = st.session_state.user_role
     
     if user_role == "Franchisee":
-        option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"]),
-        key="Franchisee_option_select"
+        option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"], key="Franchisee_option_select")
     elif user_role == "Management":
-        option = st.sidebar.selectbox("Choose Action", ["Franchise Performance", "Strategic Planning"]),
-        key="Management_option_select"
+        option = st.sidebar.selectbox("Choose Action", ["Franchise Performance", "Strategic Planning"], key="Management_option_select")
     elif user_role == "Investor":
-        option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"]),
-        key="Investor_option_select"
+        option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"], key="Investor_option_select")
     elif user_role == "Technical Staff":
-        option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"]),
-        key="Technical_Staff_option_select"
+        option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"], key="Technical_Staff_option_select")
     
     if st.button("Select Option"):
         st.session_state.option = option
