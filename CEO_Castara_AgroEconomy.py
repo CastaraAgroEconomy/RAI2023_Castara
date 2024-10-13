@@ -111,6 +111,7 @@ def display_content(user_role, option):
             st.write("⚠️ - Monitoring Logs feature to be implemented here")
     
     if st.button("Return to Dashboard", key="RTD_select_button"):
+        st.session_state.option == None # resets to null 
         clear_display()
         display_dashboard_internal(user_role)
     else:
