@@ -38,25 +38,26 @@ def role_selection_screen():
     user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"], key="user_role_selection")
     if st.button("Next", key="user_role_select_button"):
         st.session_state.user_role = user_role
+        clear_display()
         display_dashboard_internal(user_role)
     else:
-        st.write("press button to advance")
+        st.write("press to advance")
    
 
 # Display role-specific dashboard
 def display_dashboard_internal(user_role):
-    clear_display()
     if user_role == "Franchisee":
         st.header("Franchisee Dashboard")
         yield_tracking()
     elif user_role == "Management":
-        st.header("Management of Dashboard")
+        st.header("Management Dashboard")
         franchise_performance()
     else:
         st.header(f"{user_role} Dashboard")
         st.write(f"Welcome to the {user_role} Dashboard.")
     
     if st.button("Proceed to Options", key="proceed_option_select_button"):
+        clear_display()
         main_menu()
     else:
         st.write("press button to advance")
@@ -77,13 +78,13 @@ def main_menu():
     
     if st.button("Select Option", key="option_select_button"):
         st.session_state.option = option
+        clear_display()
         display_content(user_role, option)
     else:
         st.write("press button to advance")
 
 # Display content based on selected option
 def display_content(user_role, option):
-    clear_display()
     #st.header(f"{st.session_state.user_role} - {st.session_state.option}")
     st.write(f"Displaying content for {st.session_state.user_role} & {st.session_state.option}.")
     
