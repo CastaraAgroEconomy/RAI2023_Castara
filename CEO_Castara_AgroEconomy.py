@@ -11,7 +11,7 @@ def clear_display():
 
 def home_screen():
     st.title("Castara AgroEconomy C-Suite Pilot")
-    st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key operations roles", use_column_width=True)
+    st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key user & operations roles & options", use_column_width=True)
 
 # Placeholder for user authentication
 def authenticate_user(username, password):
