@@ -90,7 +90,9 @@ def options_menu(user_role):
         st.write("press button to advance")
         display_content(user_role, option)
     else:
-        st.write("press button to advance")
+        st.write("⚠️ . Returning to user role selection screen")
+        clear_display()
+        role_selection_screen()
 
 # Display content based on selected option
 def display_content(user_role, option):
