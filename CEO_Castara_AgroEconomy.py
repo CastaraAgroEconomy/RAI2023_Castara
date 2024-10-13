@@ -5,10 +5,13 @@ from Get_performance_data  import franchise_performance
 from Get_financial_data import financial_data
 from Clear_screen import clear_display
 
-
 # Function to clear the display
 def clear_display():
     st.session_state.clear_display = True
+
+def home_screen():
+    st.title("Castara AgroEconomy C-Suite Pilot")
+    st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key management roles", use_column_width=True)
 
 # Placeholder for user authentication
 def authenticate_user(username, password):
@@ -16,9 +19,6 @@ def authenticate_user(username, password):
 
 # Login screen with validation
 def login_screen():
-    st.title("Castara AgroEconomy C-Suite Pilot")
-    st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key management roles", use_column_width=True)
-    
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     
