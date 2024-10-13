@@ -68,11 +68,11 @@ def display_dashboard_internal(user_role):
         st.write("⚠️ Select option")
         st.write(" ")
         clear_display()
-        main_menu(user_role)
+        options_menu(user_role)
 
 
-# Main menu with role options
-def main_menu(user_role):
+# Options menu with role options
+def options_menu(user_role):
     st.sidebar.title("Navigation")
     
     if user_role == "Franchisee":
@@ -118,12 +118,12 @@ def display_content(user_role, option):
         elif option == "Monitoring Logs":
             st.write("⚠️ - Monitoring Logs feature to be implemented here")
     
-    if st.button("Return to Dashboard", key="RTD_select_button"):
+    else st.button("Return to Dashboard", key="RTD_select_button"):
+        st.write("press button to advance")        
         st.session_state.option == None # resets to null
         clear_display()
         display_dashboard_internal(user_role)
-    else:
-        st.write("press button to advance")
+
 
 # Main app function
 # checks & resets
@@ -145,7 +145,7 @@ def main():
         clear_display()
         display_dashboard_internal(user_role) # re-displays the dashboard for a given user's role
         clear_display()
-        main_menu(user_role) # selects from a choice of options for a given user_role
+        options_menu(user_role) # selects from a choice of options for a given user_role
         clear_display()
         display_content(user_role, option) # displays user's role and selected option specific content  
         
