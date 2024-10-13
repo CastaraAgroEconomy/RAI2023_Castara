@@ -128,7 +128,6 @@ def main():
         st.session_state.clear_screen = False # set off
     if 'user_role' not in st.session_state:
         st.session_state.user_role = None # sets null
-
 # resets
     if not st.session_state.clear_display:
         st.session_state.clear_display = clear_display() # reset on
