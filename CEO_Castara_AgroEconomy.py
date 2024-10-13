@@ -25,7 +25,8 @@ def login_screen():
     if st.button("Login", key="login_process_button"):
         if not username or not password:
             st.error("Please enter both Username and Password.")
-    elif:
+            return
+    elif
         if authenticate_user(username, password):
             st.session_state.logged_in = True
             clear_display()
