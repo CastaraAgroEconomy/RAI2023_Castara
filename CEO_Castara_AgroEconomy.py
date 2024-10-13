@@ -130,7 +130,7 @@ def main():
         st.session_state.user_role = None # sets null
     #if 'option' not in st.session_state:
         #st.session_state.option = None # sets null
-        option == " "
+        option = None
 # resets
     if not st.session_state.clear_display:
         st.session_state.clear_display = True
