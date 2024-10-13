@@ -30,7 +30,7 @@ def login_screen():
             clear_display()
         else:
             st.error("Authentication failed. Please check your credentials.")
-        return
+            return
 
 # Role selection screen
 def role_selection_screen():
