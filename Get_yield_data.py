@@ -12,11 +12,11 @@ def get_yield_data():
 
 # Yield tracking function for franchisees
 def yield_tracking():
-    st.write(" ")
     st.header("Yield Tracking")
 
     # Display yield data
     st.subheader("Current Yield Data")
+    st.write(" ")
     yield_df = get_yield_data()
     st.dataframe(yield_df)
     
