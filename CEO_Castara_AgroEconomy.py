@@ -112,7 +112,7 @@ def display_content(user_role, option):
         clear_display()
         display_dashboard_internal(user_role)
     else:
-        st.write("press to advance")
+        st.write("press button to advance")
 
 # Main app function
 def main():
