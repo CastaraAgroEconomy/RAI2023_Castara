@@ -84,10 +84,10 @@ def main_menu(user_role):
     elif user_role == "Technical Staff":
         option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"], key="Technical_Staff_option_select")
     
-    if st.button("Select Option", key="option_select_button"):
-        st.write("⚠️ - Select Option")
+    if st.button("Info Display", key="info_display_select_button"):
         st.session_state.option = option
         clear_display()
+        st.write("⚠️ - press button to advance")
         display_content(user_role, option)
     else:
         st.write("press button to advance")
