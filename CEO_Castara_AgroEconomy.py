@@ -44,9 +44,8 @@ def role_selection_screen():
    
 
 # Display role-specific dashboard
-def display_dashboard_internal(user_role, option):
+def display_dashboard_internal(user_role):
     clear_display()
-    user_role = st.session_state.user_role
     if user_role == "Franchisee":
         st.header("Franchisee Dashboard")
         yield_tracking()
