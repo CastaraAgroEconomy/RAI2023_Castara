@@ -28,7 +28,7 @@ def login_screen():
             if authenticate_user(username, password):
                 st.session_state.logged_in = True
                 clear_display()
-        else:
+            else:
             st.error("Authentication failed. Please check your credentials.")
 
 # Role selection screen
