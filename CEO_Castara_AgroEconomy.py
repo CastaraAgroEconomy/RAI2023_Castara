@@ -130,7 +130,7 @@ def main():
         st.session_state.option = None # sets null
 
 # resets
-    if not st.session_state.clear_display:
+    if not st.session_state.clear_screen:
         st.session_state.clear_display = True
     if not st.session_state.logged_in: 
         clear_display()
