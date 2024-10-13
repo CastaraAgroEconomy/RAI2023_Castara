@@ -125,13 +125,13 @@ def main():
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False # sets off
     if 'clear_screen' not in st.session_state:
-        st.session_state.clear_screen = False # sets off
+        st.session_state.clear_screen = False # set off
     if 'user_role' not in st.session_state:
         st.session_state.user_role = None # sets null
 
 # resets
     if not st.session_state.clear_display:
-        st.session_state.clear_display = True
+        st.session_state.clear_display = clear_display() # reset on
     elif not st.session_state.logged_in: 
         login_screen() # presents the login screen
     elif not st.session_state.user_role:
