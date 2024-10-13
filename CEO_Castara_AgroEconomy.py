@@ -136,9 +136,7 @@ def main():
     if not st.session_state.logged_in: 
         login_screen() # presents the login screen
     elif not st.session_state.user_role:
-        role_selection_screen() # request a user_role  
-    if option == None:
-        st.session_state.option = option
+        role_selection_screen() # request a user_role
         main_menu(user_role) # selects from a choice of options for a given user_role   
     else:
         user_role = st.session_state.user_role
