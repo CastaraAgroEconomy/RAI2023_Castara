@@ -131,6 +131,9 @@ def display_content(user_role, option):
 # checks & resets
 
 def main():
+    clear_display()
+    home_screen()
+    
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False # sets off
     if 'clear_screen' not in st.session_state:
@@ -140,6 +143,7 @@ def main():
 # resets
     clear_display() # reset on
     if not st.session_state.logged_in: 
+        clear_display()
         login_screen() # presents the login screen
     elif not st.session_state.user_role:
         clear_display()
