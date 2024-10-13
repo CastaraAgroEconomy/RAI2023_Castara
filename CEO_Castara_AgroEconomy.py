@@ -130,8 +130,9 @@ def main():
         st.session_state.user_role = None # sets null
 
 # resets
-
-    if not st.session_state.logged_in: 
+    if not st.session_state.clear_display:
+        st.session_state.clear_display = True
+    elif not st.session_state.logged_in: 
         login_screen() # presents the login screen
     elif not st.session_state.user_role:
         role_selection_screen() # request a user_role
