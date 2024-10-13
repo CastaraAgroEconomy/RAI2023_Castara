@@ -57,16 +57,15 @@ def display_dashboard_internal(user_role):
         st.header(f"{user_role} Dashboard")
         st.write(f"Welcome to the {user_role} Dashboard.")
     
-    if st.button("Proceed to Options", key="proceed_option_select_button"):
+    if st.button("Select option", key="option_select_button"):
         st.write("⚠️ Select option")
         st.write(" ")
-        main_menu()
+        main_menu(user_role)
 
 
 # Main menu with role options
-def main_menu():
+def main_menu(user_role):
     st.sidebar.title("Navigation")
-    user_role = st.session_state.user_role
     
     if user_role == "Franchisee":
         option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"], key="Franchisee_option_select")
@@ -118,6 +117,8 @@ def display_content(user_role, option):
         st.write("press button to advance")
 
 # Main app function
+# checks & resets
+
 def main():
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False # sets off
@@ -128,11 +129,9 @@ def main():
     if 'option' not in st.session_state:
         st.session_state.option = None # sets null
 
-    if st.session_state.clear_screen:
-        st.session_state.clear_screen = False # sets off
-        st.empty()
-        clear_display()  # sets on
-    
+# resets
+    if not st.session_state.clear_display:
+        st.session_state.clear_display = True
     if not st.session_state.logged_in: 
         clear_display()
         login_screen() # presents the login screen
