@@ -29,7 +29,7 @@ def login_screen():
                 st.session_state.logged_in = True
                 clear_display()
             else:
-            st.error("Authentication failed. Please check your credentials.")
+                st.error("Authentication failed. Please check your credentials.")
 
 # Role selection screen
 def role_selection_screen():
