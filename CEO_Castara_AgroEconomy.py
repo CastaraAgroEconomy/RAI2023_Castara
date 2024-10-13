@@ -128,17 +128,20 @@ def main():
     if st.session_state.clear_screen:
         st.session_state.clear_screen = False # sets off
         st.empty()
-
+        clear_display()  # sets on
+    
     if not st.session_state.logged_in: 
-        clear_display() # clears display if not logged in
+        clear_display()
         login_screen() # presents the login screen
     elif not st.session_state.user_role:
         clear_display() # clears the display if user_role is null
         role_selection_screen() # request a user_role
     elif not st.session_state.option:
+        clear_display()
         main_menu() # selects from a choice of options for a given user_role
     else:
         clear_display()
+        display_dashboard_internal(user_role, option) # defaults to current user role and option
 
 # Run app
 if __name__ == "__main__":
