@@ -137,7 +137,7 @@ def main():
         role_selection_screen() # request a user_role
     elif not st.session_state.option:
         clear_display() # clears the display if option is null
-        display_dashboard() # displays the default user_role dashboard
+        display_dashboard_internal() # displays the default user_role dashboard
         clear_display() # clears the display if option is null
         main_menu() # selects from a choice of options for a given user_role
     else:
