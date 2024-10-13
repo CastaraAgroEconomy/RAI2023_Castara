@@ -60,7 +60,7 @@ def display_dashboard_internal(user_role):
         clear_display()
         main_menu()
     else:
-        st.write("press button to advance")
+        st.write("⚠️ Select option")
 
 # Main menu with role options
 def main_menu():
