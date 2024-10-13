@@ -132,7 +132,7 @@ def main():
         st.session_state.option = None # sets null
 
 # resets
-    if not st.session_state.Clear_screen:
+    if not st.session_state.clear_display:
         st.session_state.clear_display = True
     elif not st.session_state.logged_in: 
         login_screen() # presents the login screen
