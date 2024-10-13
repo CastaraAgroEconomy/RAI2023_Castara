@@ -118,7 +118,8 @@ def display_content(user_role, option):
         elif option == "Monitoring Logs":
             st.write("⚠️ - Monitoring Logs feature to be implemented here")
     
-    else st.button("Return to Dashboard", key="RTD_select_button"):
+    else: 
+        st.button("Return to Dashboard", key="RTD_select_button"):
         st.write("press button to advance")        
         st.session_state.option == None # resets to null
         clear_display()
