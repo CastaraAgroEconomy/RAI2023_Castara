@@ -14,10 +14,11 @@ def get_performance_data():
 
 # Franchise performance dashboard for management
 def franchise_performance():
-    st.header("Franchise Performance Dashboard")
+    st.write(" ")
+    st.header("Franchise Performance")
     
     # Display performance data
-    st.subheader("Franchise Performance Overview")
+    st.subheader("FOverview")
     performance_df = get_performance_data()
     st.dataframe(performance_df)
     
