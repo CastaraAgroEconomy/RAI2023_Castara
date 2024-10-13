@@ -8,7 +8,7 @@ from Clear_screen import clear_display
 
 # Function to clear the display
 def clear_display():
-    st.session_state.clear_screen = True
+    st.session_state.clear_display = True
 
 # Placeholder for user authentication
 def authenticate_user(username, password):
@@ -77,6 +77,7 @@ def main_menu(user_role):
         option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"], key="Technical_Staff_option_select")
     
     if st.button("Select Option", key="option_select_button"):
+        st.write("⚠️ - Select Option")
         st.session_state.option = option
         clear_display()
         display_content(user_role, option)
@@ -130,9 +131,9 @@ def main():
         st.session_state.option = None # sets null
 
 # resets
-    if not st.session_state.clear_screen:
+    if not st.session_state.clear_display:
         st.session_state.clear_display = True
-    if not st.session_state.logged_in: 
+    elif not st.session_state.logged_in: 
         clear_display()
         login_screen() # presents the login screen
     elif not st.session_state.user_role:
