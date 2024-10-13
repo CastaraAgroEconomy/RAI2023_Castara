@@ -111,9 +111,9 @@ def display_content(user_role, option):
     
     if st.button("Return to Dashboard", key="RTD_select_button"):
         clear_display()
-        display_dashboard()
+        display_dashboard_internal(user_role)
     else:
-        st.write("press button to advance")
+        st.write("press to advance")
 
 # Main app function
 def main():
