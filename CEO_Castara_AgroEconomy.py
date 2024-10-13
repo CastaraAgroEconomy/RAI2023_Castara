@@ -40,8 +40,7 @@ def role_selection_screen():
         st.session_state.user_role = user_role
         clear_display()
         display_dashboard_internal(user_role)
-    else:
-        st.write("press to advance")
+        st.write("press button to advance")
    
 
 # Display role-specific dashboard
@@ -57,10 +56,10 @@ def display_dashboard_internal(user_role):
         st.write(f"Welcome to the {user_role} Dashboard.")
     
     if st.button("Proceed to Options", key="proceed_option_select_button"):
-        clear_display()
-        main_menu()
-    else:
         st.write("⚠️ Select option")
+        st.write(" ")
+        main_menu()
+
 
 # Main menu with role options
 def main_menu():
