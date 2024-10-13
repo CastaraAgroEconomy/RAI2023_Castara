@@ -18,7 +18,7 @@ def franchise_performance():
     st.header("Franchise Performance")
     
     # Display performance data
-    st.subheader("FOverview")
+    st.subheader("Overview")
     performance_df = get_performance_data()
     st.dataframe(performance_df)
     
