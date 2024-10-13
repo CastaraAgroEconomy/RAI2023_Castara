@@ -40,21 +40,24 @@ def role_selection_screen():
     user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"], key="user_role_selection")
     if st.button("Next", key="user_role_select_button"):
         st.session_state.user_role = user_role
+        clear_display()
         display_dashboard_internal(user_role)
         st.write("press button to advance")
    
 
 # Display role-specific dashboard
 def display_dashboard_internal(user_role):
-    clear_display()
     if user_role == "Franchisee":
         st.header("Franchisee Dashboard")
+        clear_display()
         yield_tracking()
     elif user_role == "Management":
         st.header("Management Dashboard")
+        clear_display()
         franchise_performance()
     else:
         st.header(f"{user_role} Dashboard")
+        clear_display()
         st.write(f"Welcome to the {user_role} Dashboard.")
         st.write(" ")
         st.write(f"⚠️ The {user_role} Dashboard will be installed at a future date")
@@ -64,12 +67,12 @@ def display_dashboard_internal(user_role):
     if st.button("Select option", key="option_select_button"):
         st.write("⚠️ Select option")
         st.write(" ")
+        clear_display()
         main_menu(user_role)
 
 
 # Main menu with role options
 def main_menu(user_role):
-    clear_display()
     st.sidebar.title("Navigation")
     
     if user_role == "Franchisee":
@@ -84,13 +87,13 @@ def main_menu(user_role):
     if st.button("Select Option", key="option_select_button"):
         st.write("⚠️ - Select Option")
         st.session_state.option = option
+        clear_display()
         display_content(user_role, option)
     else:
         st.write("press button to advance")
 
 # Display content based on selected option
 def display_content(user_role, option):
-    clear_display()
     #st.header(f"{st.session_state.user_role} - {st.session_state.option}")
     st.write(f"Displaying content for {st.session_state.user_role} & {st.session_state.option}.")
     
@@ -117,6 +120,7 @@ def display_content(user_role, option):
     
     if st.button("Return to Dashboard", key="RTD_select_button"):
         st.session_state.option == None # resets to null
+        clear_display()
         display_dashboard_internal(user_role)
     else:
         st.write("press button to advance")
@@ -136,15 +140,19 @@ def main():
     if not st.session_state.logged_in: 
         login_screen() # presents the login screen
     elif not st.session_state.user_role:
+        clear_display()
         role_selection_screen() # request a user_role
+        clear_display()
         display_dashboard_internal(user_role) # re-displays the dashboard for a given user's role
+        clear_display()
         main_menu(user_role) # selects from a choice of options for a given user_role
-        display_content(user_role, option) # displays user's role and selected option specific content
-        
+        clear_display()
+        display_content(user_role, option) # displays user's role and selected option specific content  
         
     else:
         user_role = st.session_state.user_role
         option = st.session_state.option
+        clear_display()
         display_dashboard_internal(user_role) # defaults to current user role dashboard
 
 # Run app
