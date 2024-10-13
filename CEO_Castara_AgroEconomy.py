@@ -9,10 +9,12 @@ from Clear_screen import clear_display
 def clear_display():
     st.session_state.clear_display = True
 
+#initial App screen when first executed
 def home_screen():
     st.title("Castara AgroEconomy C-Suite Pilot")
     st.image("Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key user & operations roles & options", use_column_width=True)
-
+    login_screen()
+    
 # Placeholder for user authentication
 def authenticate_user(username, password):
     return True  # Simplified for testing
@@ -135,16 +137,16 @@ def main():
     home_screen()
     
     if 'logged_in' not in st.session_state:
-        st.session_state.logged_in = False # sets off
+        st.session_state.logged_in = False # set off
     if 'clear_screen' not in st.session_state:
         st.session_state.clear_screen = False # set off
     if 'user_role' not in st.session_state:
-        st.session_state.user_role = None # sets null
+        st.session_state.user_role = None # set to null
 # resets
     clear_display() # reset on
     if not st.session_state.logged_in: 
         clear_display()
-        login_screen() # presents the login screen
+        login_screen() # presents the login screen to gain access or change user's role
     elif not st.session_state.user_role:
         clear_display()
         role_selection_screen() # request a user_role
