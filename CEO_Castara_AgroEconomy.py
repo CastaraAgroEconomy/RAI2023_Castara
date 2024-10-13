@@ -129,7 +129,7 @@ def display_content(user_role, option):
             display_dashboard_internal(user_role)
 
 
-# Main app function
+# Main app execution -
 # checks & resets
 
 def main():
@@ -143,7 +143,7 @@ def main():
     if 'user_role' not in st.session_state:
         st.session_state.user_role = None # set to null
 # resets
-    clear_display() # reset on
+    st.session_state.clear_display = True # reset on
     if not st.session_state.logged_in: 
         clear_display()
         login_screen() # presents the login screen to gain access or change user's role
