@@ -137,7 +137,6 @@ def main():
         login_screen() # presents the login screen
     elif not st.session_state.user_role:
         role_selection_screen() # request a user_role
-        clear_display()
         display_dashboard_internal(user_role) # re-displays the dashboard for a given user's role
         main_menu(user_role) # selects from a choice of options for a given user_role
         display_content(user_role, option) # displays user's role and selected option specific content
