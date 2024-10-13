@@ -140,6 +140,8 @@ def main():
         clear_display()
         main_menu() # selects from a choice of options for a given user_role
     else:
+        user_role = st.session_state.user_role
+        optiom = st.session_state.option
         clear_display()
         display_dashboard_internal(user_role, option) # defaults to current user role and option
 
