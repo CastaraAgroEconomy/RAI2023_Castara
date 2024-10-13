@@ -47,6 +47,7 @@ def role_selection_screen():
 
 # Display role-specific dashboard
 def display_dashboard_internal(user_role):
+    clear_display()
     if user_role == "Franchisee":
         st.header("Franchisee Dashboard")
         yield_tracking()
@@ -60,12 +61,12 @@ def display_dashboard_internal(user_role):
     if st.button("Select option", key="option_select_button"):
         st.write("⚠️ Select option")
         st.write(" ")
-        clear_display()
         main_menu(user_role)
 
 
 # Main menu with role options
 def main_menu(user_role):
+    clear_display()
     st.sidebar.title("Navigation")
     
     if user_role == "Franchisee":
@@ -80,13 +81,13 @@ def main_menu(user_role):
     if st.button("Select Option", key="option_select_button"):
         st.write("⚠️ - Select Option")
         st.session_state.option = option
-        clear_display()
         display_content(user_role, option)
     else:
         st.write("press button to advance")
 
 # Display content based on selected option
 def display_content(user_role, option):
+    clear_display()
     #st.header(f"{st.session_state.user_role} - {st.session_state.option}")
     st.write(f"Displaying content for {st.session_state.user_role} & {st.session_state.option}.")
     
@@ -112,8 +113,7 @@ def display_content(user_role, option):
             st.write("⚠️ - Monitoring Logs feature to be implemented here")
     
     if st.button("Return to Dashboard", key="RTD_select_button"):
-        st.session_state.option == None # resets to null 
-        clear_display()
+        st.session_state.option == None # resets to null
         display_dashboard_internal(user_role)
     else:
         st.write("press button to advance")
