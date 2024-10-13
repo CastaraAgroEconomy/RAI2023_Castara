@@ -87,7 +87,7 @@ def options_menu(user_role):
     if st.button("Info Display", key="info_display_select_button"):
         st.session_state.option = option
         clear_display()
-        st.write("⚠️ - press button to advance")
+        st.write("press button to advance")
         display_content(user_role, option)
     else:
         st.write("press button to advance")
