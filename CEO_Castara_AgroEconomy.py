@@ -134,20 +134,15 @@ def main():
 # resets
     if not st.session_state.clear_display:
         st.session_state.clear_display = True
-        clear_display()
     elif not st.session_state.logged_in: 
-        clear_display()
         login_screen() # presents the login screen
     elif not st.session_state.user_role:
-        clear_display() # clears the display if user_role is null
         role_selection_screen() # request a user_role
     elif not st.session_state.option:
-        clear_display() # clears the display if option is null
         main_menu(user_role) # selects from a choice of options for a given user_role
     else:
         user_role = st.session_state.user_role
         option = st.session_state.option
-        clear_display()
         display_dashboard_internal(user_role) # defaults to current user role dashboard
 
 # Run app
