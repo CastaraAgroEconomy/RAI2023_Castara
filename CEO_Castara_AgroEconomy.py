@@ -25,12 +25,11 @@ def login_screen():
     if st.button("Login", key="login_process_button"):
         if not username or not password:
             st.error("Please enter both Username and Password.")
-        if authenticate_user(username, password):
-            st.session_state.logged_in = True
-            clear_display()
+            if authenticate_user(username, password):
+                st.session_state.logged_in = True
+                clear_display()
         else:
             st.error("Authentication failed. Please check your credentials.")
-            return
 
 # Role selection screen
 def role_selection_screen():
