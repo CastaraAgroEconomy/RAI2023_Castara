@@ -1,9 +1,9 @@
 import streamlit as st
 
-from RAI2023-Castara/features/weather_yield_estimation/Get_yield_data import yield_tracking
-from RAI2023-Castara/features/weather_yield_estimation/Get_performance_data import franchise_performance
-from RAI2023-Castara/features/weather_yield_estimation/Get_financial_data import financial_data
-from RAI2023-Castara/features/Utility/Clear_screen import clear_display
+from CastaraAgroEconomy/RAI2023-Castara/features/weather_yield_estimation/Get_yield_data import yield_tracking
+from CastaraAgroEconomy/RAI2023-Castara/features/weather_yield_estimation/Get_performance_data import franchise_performance
+from CastaraAgroEconomy/RAI2023-Castara/features/weather_yield_estimation/Get_financial_data import financial_data
+from CastaraAgroEconomy/RAI2023-Castara/features/Utility/Clear_screen import clear_display
 
 # Function to clear the display
 def clear_display():
