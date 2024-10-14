@@ -1,6 +1,6 @@
 import streamlit as st
 
-from features/weather_api_scripts/Get_yield_data import yield_tracking
+from features/weather_yield_estimation/Get_yield_data import yield_tracking
 from Get_performance_data  import franchise_performance
 from Get_financial_data import financial_data
 from Clear_screen import clear_display
