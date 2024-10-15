@@ -135,38 +135,29 @@ def display_content(user_role, option):
 # checks & resets
 
 def main():
+    # Initialize state variables
+    if 'logged_in' not in st.session_state:
+        st.session_state.logged_in = False
+    if 'user_role' not in st.session_state:
+        st.session_state.user_role = None
+    if 'option' not in st.session_state:
+        st.session_state.option = None
+
+    # Home screen
     home_screen()
     
-    if 'logged_in' not in st.session_state:
-        st.session_state.logged_in = False # set off
-    if 'clear_screen' not in st.session_state:
-        st.session_state.clear_screen = False # set off
-    if 'user_role' not in st.session_state:
-        st.session_state.user_role = None # set to null
-    if 'option' not in st.session_state:
-        st.session_state.option = None # set to null
-# resets
-    if not st.session_state.clear_display:
-        st.session_state.clear_display = True
-        st.empty() # cleara screen
+    # Logic to show appropriate screens based on the state
     if not st.session_state.logged_in: 
-        clear_display()
-        login_screen() # presents the login screen to gain access or change user's role
+        login_screen()
     elif not st.session_state.user_role:
-        clear_display()
-        role_selection_screen() # request a user_role
-        clear_display()
-        display_dashboard_internal(user_role) # re-displays the dashboard for a given user's role
-        clear_display()
-        options_menu(user_role) # selects from a choice of options for a given user_role
-        clear_display()
-        display_content(user_role, option) # displays user's role and selected option specific content  
+        role_selection_screen()
     else:
         user_role = st.session_state.user_role
-        option = st.session_state.option
-        clear_display()
-        display_dashboard_internal(user_role) # defaults to current user role dashboard
-
+        if not st.session_state.option:
+            display_dashboard_internal(user_role)
+            options_menu(user_role)
+        else:
+            display_content(user_role, st.session_state.option)
 # Run app
 if __name__ == "__main__":
     main()
