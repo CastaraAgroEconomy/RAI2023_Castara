@@ -1,103 +1,87 @@
 import streamlit as st
-from features.weather_yield_estimation.Get_yield_data import yield_tracking
-from features.weather_yield_estimation.Get_performance_data import franchise_performance
-from features.Utility.Clear_screen import clear_display
 
-# Function to clear the display
-def clear_display():
-    st.empty()  # Clear the Streamlit display
-    return
+# Initialize a counter to keep track of the current screen
+screen_counter = 0
 
-# Initial App screen when first executed
-def home_screen():
-    st.title("Castara AgroEconomy C-Suite Pilot")
-    st.image("Assets/Media/Images/Castara_AgroEconomy_Mobile_App.JPG",
-              caption="Vertical Farming franchise master control center for key user & operations roles & options",
-              use_column_width=True)
-
-# Placeholder for user authentication
+# Function to authenticate user credentials (placeholder)
 def authenticate_user(username, password):
-    return True  # Simplified for testing
+    # In a real application, replace this with proper authentication logic
+    return username == "admin" and password == "password"  # Example validation
 
-# Login screen with validation
-def login_screen():
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
+# Login screen function
+def login_screen(counter):
+    # Generate a unique key suffix using the counter
+    unique_key_suffix = f"_{counter}"
+    
+    # Text input for username with a unique key
+    username = st.text_input("Username", key=f"username_input{unique_key_suffix}")
+    
+    # Text input for password with a unique key
+    password = st.text_input("Password", type="password", key=f"password_input{unique_key_suffix}")
 
-    if st.button("Login"):
+    # Login button with a unique key
+    if st.button("Login", key=f"login_button{unique_key_suffix}"):
+        # Check for empty inputs
         if not username or not password:
             st.error("Please enter both Username and Password.")
         else:
+            # Authenticate user
             if authenticate_user(username, password):
                 return True  # Indicate successful login
             else:
                 st.error("Authentication failed. Please check your credentials.")
+    
     return False  # Indicate failed login
 
-# Role selection screen
-def role_selection_screen():
-    st.header("Select Your Role")
-    user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
-    if st.button("Next"):
-        return user_role  # Return selected role
-    return None  # No role selected
+# Function to display the home screen after login
+def home_screen(counter):
+    unique_key_suffix = f"_{counter}"
+    
+    st.title("Home Screen")  # Title for the home screen
+    
+    # Button to navigate to the dashboard with a unique key
+    if st.button("Go to Dashboard", key=f"dashboard_button{unique_key_suffix}"):
+        # Logic for transitioning to the dashboard
+        return "dashboard"  # Indicate transition to the dashboard
 
-# Display role-specific dashboard
-def display_dashboard(user_role):
-    if user_role == "Franchisee":
-        st.header("Franchisee Dashboard")
-        yield_tracking()
-    elif user_role == "Management":
-        st.header("Management Dashboard")
-        franchise_performance()
-    else:
-        st.header(f"{user_role} Dashboard")
-        st.write(f"Welcome to the {user_role} Dashboard. This feature will be developed in future.")
+    # Display additional content on the home screen
+    st.write("Welcome to the Castara AgroEconomy application!")
 
-# Options menu with role options
-def options_menu(user_role):
-    st.sidebar.title("Navigation")
-    options = {
-        "Franchisee": ["Yield Management", "Financial Performance"],
-        "Management": ["Franchise Performance", "Strategic Planning"],
-        "Investor": ["Financial Overview", "Sustainability Impact"],
-        "Technical Staff": ["Equipment Monitoring", "Maintenance Logs"],
-    }
-    selected_option = st.sidebar.selectbox("Choose Action", options.get(user_role, []))
+# Function to display the dashboard
+def dashboard_screen(counter):
+    unique_key_suffix = f"_{counter}"
+    
+    st.title("Dashboard")  # Title for the dashboard
+    
+    # Button to return to the home screen with a unique key
+    if st.button("Back to Home", key=f"back_home_button{unique_key_suffix}"):
+        return "home"  # Indicate transition back to the home screen
 
-    if st.button("Select"):
-        return selected_option  # Return selected option
-    return None  # No option selected
+    # Display dashboard content
+    st.write("Here is your dashboard with relevant data and insights.")
 
-# Display content based on selected option
-def display_content(user_role, selected_option):
-    st.write(f"Displaying content for {user_role} - {selected_option}.")
-    # Placeholder for future implementations
-    st.write("⚠️ This feature will be implemented here.")
-
-# Main app execution
+# Main function to control the application flow
 def main():
-    clear_display()  # Clear display at start
-    home_screen()  # Show home screen
-
-    logged_in = False
-    user_role = None
-
-    # Main loop
+    global screen_counter  # Access the global counter
+    
+    # Main loop to handle screen transitions
     while True:
-        if not logged_in:
-            logged_in = login_screen()  # Handle login
-        else:
-            if user_role is None:
-                user_role = role_selection_screen()  # Role selection
-            else:
-                display_dashboard(user_role)  # Show dashboard
-                selected_option = options_menu(user_role)  # Get option selection
-                if selected_option:
-                    display_content(user_role, selected_option)  # Display content for selected option
-            if st.button("Logout"):
-                logged_in = False  # Reset for next login
+        if screen_counter == 0:  # Initial screen
+            logged_in = login_screen(screen_counter)
+            if logged_in:
+                screen_counter += 1  # Increment counter on successful login
 
-# Run app
+        elif screen_counter == 1:  # Home screen after login
+            next_screen = home_screen(screen_counter)
+            if next_screen == "dashboard":
+                screen_counter += 1  # Move to dashboard screen
+
+        elif screen_counter == 2:  # Dashboard screen
+            next_screen = dashboard_screen(screen_counter)
+            if next_screen == "home":
+                screen_counter -= 1  # Return to home screen
+
+        # To exit the loop, consider adding a condition to break (like a logout option)
+
 if __name__ == "__main__":
-    main()
+    main()  # Run the main function to start the application
