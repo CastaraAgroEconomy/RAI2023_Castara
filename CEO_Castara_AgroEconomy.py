@@ -3,70 +3,68 @@ from features.weather_yield_estimation.Get_yield_data import yield_tracking
 from features.weather_yield_estimation.Get_performance_data import franchise_performance
 from features.weather_yield_estimation.Get_financial_data import financial_data
 
-# Function to handle clearing of the display
-def clear_screen(placeholder):
-    placeholder.empty()  # Clears all content in the placeholder
+# Function to clear and replace content in screen placeholder
+def clear_screen_and_show_content(screen_placeholder, content_func, *args):
+    screen_placeholder.empty()  # Clear screen
+    with screen_placeholder:    # Refill with new content
+        content_func(*args)
 
 # Home screen function
-def home_screen(placeholder):
-    placeholder.title("Castara AgroEconomy C-Suite Pilot")
-    placeholder.image("Assets/Media/Images/Castara_AgroEconomy_Mobile_App.JPG",
-                      caption="Vertical Farming franchise master control center for key user & operations roles & options",
-                      use_column_width=True)
+def home_screen():
+    st.title("Castara AgroEconomy C-Suite Pilot")
+    st.image("Assets/Media/Images/Castara_AgroEconomy_Mobile_App.JPG", 
+             caption="Vertical Farming franchise master control center for key user & operations roles & options", 
+             use_column_width=True)
+
+# Authentication placeholder function
+def authenticate_user(username, password):
+    return True  # Placeholder for testing
 
 # Login screen function with validation
-def login_screen(placeholder):
-    username = placeholder.text_input("Username")
-    password = placeholder.text_input("Password", type="password")
+def login_screen(screen_placeholder):
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
     
-    if placeholder.button("Login"):
+    if st.button("Login"):
         if not username or not password:
-            placeholder.error("Please enter both Username and Password.")
+            st.error("Please enter both Username and Password.")
         else:
             if authenticate_user(username, password):
                 st.session_state.logged_in = True
-                placeholder.empty()  # Clear the screen after successful login
-                role_selection_screen(placeholder)
+                clear_screen_and_show_content(screen_placeholder, role_selection_screen, screen_placeholder)
             else:
-                placeholder.error("Authentication failed. Please check your credentials.")
-
-# Simple authentication placeholder function
-def authenticate_user(username, password):
-    return True  # Simplified for demonstration
+                st.error("Authentication failed. Please check your credentials.")
 
 # Role selection screen function
-def role_selection_screen(placeholder):
-    placeholder.header("Select Your Role")
-    user_role = placeholder.selectbox("Select your role", 
-                                      ["Franchisee", "Management", "Investor", "Technical Staff"])
+def role_selection_screen(screen_placeholder):
+    st.header("Select Your Role")
+    user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"])
 
-    if placeholder.button("Next"):
+    if st.button("Next"):
         st.session_state.user_role = user_role
-        placeholder.empty()  # Clear the screen before showing the dashboard
-        display_dashboard_internal(placeholder, user_role)
+        clear_screen_and_show_content(screen_placeholder, display_dashboard_internal, screen_placeholder, user_role)
 
 # Function to display the dashboard based on user role
-def display_dashboard_internal(placeholder, user_role):
+def display_dashboard_internal(screen_placeholder, user_role):
     if user_role == "Franchisee":
-        placeholder.header("Franchisee Dashboard")
+        st.header("Franchisee Dashboard")
         yield_tracking()
     elif user_role == "Management":
-        placeholder.header("Management Dashboard")
+        st.header("Management Dashboard")
         franchise_performance()
     else:
-        placeholder.header(f"{user_role} Dashboard")
-        placeholder.write(f"⚠️ The {user_role} Dashboard will be installed at a future date.")
+        st.header(f"{user_role} Dashboard")
+        st.write(f"⚠️ The {user_role} Dashboard will be installed at a future date.")
     
-    # After showing dashboard, move to options
-    options_menu(placeholder, user_role)
+    # After showing the dashboard, navigate to options
+    options_menu(screen_placeholder, user_role)
 
 # Options menu function
-def options_menu(placeholder, user_role):
-    option = placeholder.sidebar.selectbox("Choose Action", 
-                                           get_user_role_options(user_role))
-    if placeholder.button("Select Option"):
-        placeholder.empty()  # Clear the screen before showing selected option content
-        display_content(placeholder, user_role, option)
+def options_menu(screen_placeholder, user_role):
+    option = st.sidebar.selectbox("Choose Action", 
+                                  get_user_role_options(user_role))
+    if st.button("Select Option"):
+        clear_screen_and_show_content(screen_placeholder, display_content, user_role, option)
 
 # Fetches role-specific options
 def get_user_role_options(user_role):
@@ -79,13 +77,13 @@ def get_user_role_options(user_role):
     return role_options.get(user_role, [])
 
 # Function to display content based on selected option
-def display_content(placeholder, user_role, option):
-    placeholder.write(f"Displaying content for {user_role} - {option}.")
-    # Placeholder for real implementation of options
+def display_content(user_role, option):
+    st.write(f"Displaying content for {user_role} - {option}.")
     if option == "Yield Management":
-        placeholder.write("⚠️ - Yield Management feature to be implemented.")
+        st.write("⚠️ - Yield Management feature to be implemented.")
     elif option == "Financial Performance":
-        placeholder.write("⚠️ - Financial Performance feature to be implemented.")
+        st.write("⚠️ - Financial Performance feature to be implemented.")
+    # Implement more as needed
 
 # Main app execution
 def main():
@@ -95,19 +93,18 @@ def main():
     if 'user_role' not in st.session_state:
         st.session_state.user_role = None
     
-    # Create an empty placeholder to manage screen transitions
-    placeholder = st.empty()
+    # Create an empty placeholder for managing content
+    screen_placeholder = st.empty()
     
-    # Logic for managing different app screens
+    # Show the appropriate screen based on login state
     if not st.session_state.logged_in:
-        home_screen(placeholder)  # Displays home screen
-        login_screen(placeholder)  # User can log in
+        home_screen()  # Displays home screen
+        login_screen(screen_placeholder)  # Shows login form in placeholder
     elif not st.session_state.user_role:
-        role_selection_screen(placeholder)  # User can select their role
+        role_selection_screen(screen_placeholder)  # Shows role selection in placeholder
     else:
-        # Display dashboard based on the user role
-        user_role = st.session_state.user_role
-        display_dashboard_internal(placeholder, user_role)
+        # Show the dashboard for the user's role
+        display_dashboard_internal(screen_placeholder, st.session_state.user_role)
 
 # Run the app
 if __name__ == "__main__":
