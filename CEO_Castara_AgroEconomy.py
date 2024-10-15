@@ -134,7 +134,7 @@ def display_content(user_role, option):
 # Main app execution -
 # checks & resets
 
-def main()
+def main():
     home_screen()
     
     if 'logged_in' not in st.session_state:
