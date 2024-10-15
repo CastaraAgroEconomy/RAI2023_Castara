@@ -2,7 +2,7 @@ import streamlit as st
 from features.weather_yield_estimation.Get_yield_data import get_yield_data  # Import your data retrieval functions
 from features.weather_yield_estimation.Get_performance_data import get_performance_data
 from features.weather_yield_estimation.Get_financial_data import get_financial_data
-from features.weather_api_scripts.Get_weather_data import get_weather_data
+#from features.weather_api_scripts.Get_weather_data import get_weather_data
 
 # Initialize the global counter to track the current screen
 screen_counter = 0  # This will control the flow of screens
