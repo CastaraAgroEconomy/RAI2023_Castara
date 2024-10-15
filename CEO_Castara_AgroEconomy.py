@@ -8,6 +8,7 @@ from features.Utility.Clear_screen import clear_display
 # Function to clear the display
 def clear_display():
     st.session_state.clear_display = True
+    st.empty()
 
 #initial App screen when first executed
 def home_screen():
