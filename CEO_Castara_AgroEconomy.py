@@ -142,6 +142,8 @@ def main():
         st.session_state.clear_screen = False # set off
     if 'user_role' not in st.session_state:
         st.session_state.user_role = None # set to null
+    if 'option' not in st.session_state:
+        st.session_state.option = None # set to null
 # resets
     st.session_state.clear_display = True # reset on
     if not st.session_state.logged_in: 
@@ -156,7 +158,6 @@ def main():
         options_menu(user_role) # selects from a choice of options for a given user_role
         clear_display()
         display_content(user_role, option) # displays user's role and selected option specific content  
-        
     else:
         user_role = st.session_state.user_role
         option = st.session_state.option
