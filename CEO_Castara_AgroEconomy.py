@@ -147,7 +147,7 @@ def main():
     if 'option' not in st.session_state:
         st.session_state.option = None # set to null
 # resets
-    if not st.session_state.clear_display = True
+    if not st.session_state.clear_display:
         st.session_state.clear_display = True# reset on
     if not st.session_state.logged_in: 
         clear_display()
