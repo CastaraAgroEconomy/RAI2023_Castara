@@ -1,27 +1,46 @@
 import streamlit as st
 
+# Importing feature modules for weather, yield tracking, performance, and utility
 from features.weather_yield_estimation.Get_yield_data import yield_tracking
 from features.weather_yield_estimation.Get_performance_data import franchise_performance
 from features.weather_yield_estimation.Get_financial_data import financial_data
 from features.Utility.Clear_screen import clear_display
 
-# Function to clear the display
+# -----------------------------------------------------------------------------
+# SCREEN CLEAR FUNCTIONALITY & DESIGN
+# -----------------------------------------------------------------------------
+# The purpose of this function is to clear the current content from the screen 
+# before loading the next screen. This is essential for navigation between views.
 def clear_display():
     st.session_state.clear_display = True
-    st.empty()
+    st.empty()  # Clears the screen by creating an empty placeholder
     return
 
-#initial App screen when first executed
+# -----------------------------------------------------------------------------
+# HOME SCREEN - INITIAL STARTUP SCREEN
+# -----------------------------------------------------------------------------
+# The app starts here when executed for the first time. It displays a welcome 
+# message and an image to provide an overview of the app's functionality.
 def home_screen():
     st.title("Castara AgroEconomy C-Suite Pilot")
-    st.image("Assets/Media/Images/Castara_AgroEconomy_Mobile_App.JPG", caption="Vertical Farming franchise master control center for key user & operations roles & options", use_column_width=True)
+    st.image("Assets/Media/Images/Castara_AgroEconomy_Mobile_App.JPG", 
+             caption="Vertical Farming franchise master control center for key user & operations roles & options", 
+             use_column_width=True)
     return False
     
-# Placeholder for user authentication
+# -----------------------------------------------------------------------------
+# AUTHENTICATION FUNCTION
+# -----------------------------------------------------------------------------
+# Placeholder authentication for simplicity during testing. 
+# In the future, this would connect to a user database or API.
 def authenticate_user(username, password):
     return True  # Simplified for testing
 
-# Login screen with validation
+# -----------------------------------------------------------------------------
+# LOGIN SCREEN
+# -----------------------------------------------------------------------------
+# This function collects the user's credentials and handles login. It clears the 
+# screen and proceeds to the role selection screen upon successful login.
 def login_screen():
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
@@ -32,85 +51,86 @@ def login_screen():
         else:
             if authenticate_user(username, password):
                 st.session_state.logged_in = True
-                clear_display()
+                clear_display()  # Clear screen after login
                 role_selection_screen()
-                st.write("press button to advance")
             else:
-               st.error("Authentication failed. Please check your credentials.")
+                st.error("Authentication failed. Please check your credentials.")
 
-# Role selection screen
+# -----------------------------------------------------------------------------
+# ROLE SELECTION SCREEN
+# -----------------------------------------------------------------------------
+# After login, users are required to select their role, which will determine 
+# which dashboard and options are presented to them.
 def role_selection_screen():
     st.header("Select Your Role")
-    user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"], key="user_role_selection")
+    user_role = st.selectbox("Select your role", ["Franchisee", "Management", "Investor", "Technical Staff"], 
+                             key="user_role_selection")
     if st.button("Next", key="user_role_select_button"):
         st.session_state.user_role = user_role
-        clear_display()
+        clear_display()  # Clear screen before displaying the dashboard
         display_dashboard_internal(user_role)
-        st.write("press button to advance")
-   
 
-# Display role-specific dashboard
+# -----------------------------------------------------------------------------
+# ROLE-SPECIFIC DASHBOARD
+# -----------------------------------------------------------------------------
+# This function loads role-specific dashboards with relevant features.
+# Each role has different performance and management options.
 def display_dashboard_internal(user_role):
     if user_role == "Franchisee":
         st.header("Franchisee Dashboard")
-        clear_display()
-        yield_tracking()
+        yield_tracking()  # Load Franchisee-specific yield tracking data
     elif user_role == "Management":
         st.header("Management Dashboard")
-        clear_display()
-        franchise_performance()
+        franchise_performance()  # Load performance data for Management
     else:
         st.header(f"{user_role} Dashboard")
-        clear_display()
         st.write(f"Welcome to the {user_role} Dashboard.")
-        st.write(" ")
-        st.write(f"⚠️ The {user_role} Dashboard will be installed at a future date")
-        st.write(" ")
-        st.write(" ")
+        st.write("⚠️ The {user_role} Dashboard will be installed at a future date.")
     
-    if st.button("Select option", key="option_select_button"):
-        st.write("⚠️ Select option")
-        st.write(" ")
-        clear_display()
-        options_menu(user_role)
+    # After loading the dashboard, show options menu based on role
+    options_menu(user_role)
 
-
-# Options menu with role options
+# -----------------------------------------------------------------------------
+# OPTIONS MENU FOR ROLE-SPECIFIC ACTIONS
+# -----------------------------------------------------------------------------
+# Users can choose from available actions based on their role.
+# The function displays a sidebar with relevant options.
 def options_menu(user_role):
     st.sidebar.title("Navigation")
     
     if user_role == "Franchisee":
-        option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"], key="Franchisee_option_select")
+        option = st.sidebar.selectbox("Choose Action", ["Yield Management", "Financial Performance"], 
+                                      key="Franchisee_option_select")
     elif user_role == "Management":
-        option = st.sidebar.selectbox("Choose Action", ["Franchise Performance", "Strategic Planning"], key="Management_option_select")
+        option = st.sidebar.selectbox("Choose Action", ["Franchise Performance", "Strategic Planning"], 
+                                      key="Management_option_select")
     elif user_role == "Investor":
-        option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"], key="Investor_option_select")
+        option = st.sidebar.selectbox("Choose Action", ["Financial Overview", "Sustainability Impact"], 
+                                      key="Investor_option_select")
     elif user_role == "Technical Staff":
-        option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"], key="Technical_Staff_option_select")
+        option = st.sidebar.selectbox("Choose Action", ["Equipment Monitoring", "Maintenance Logs"], 
+                                      key="Technical_Staff_option_select")
     
-    if st.button("Info Display", key="info_display_select_button"):
+    if st.button("Select Option", key="option_select_button"):
         st.session_state.option = option
-        clear_display()
-        st.write("press button to advance")
+        clear_display()  # Clear screen before displaying content
         display_content(user_role, option)
-    else:
-        st.write("⚠️ . Returning to user's role selection screen")
-        clear_display()
-        role_selection_screen()
 
-# Display content based on selected option
+# -----------------------------------------------------------------------------
+# DISPLAY CONTENT BASED ON SELECTED OPTIONS
+# -----------------------------------------------------------------------------
+# The function loads role and option-specific content based on user selections.
 def display_content(user_role, option):
-    #st.header(f"{st.session_state.user_role} - {st.session_state.option}")
-    st.write(f"Displaying content for {st.session_state.user_role} & {st.session_state.option}.")
+    st.write(f"Displaying content for {user_role} - {option}.")
     
     if user_role == "Franchisee":
         if option == "Yield Management":
             st.write("⚠️ - Yield Management feature to be implemented here")
         elif option == "Financial Performance":
             st.write("⚠️ - Financial Performance feature to be implemented here")
-    if user_role == "Management":
-        if option == "Financial Performance":
-            st.write("⚠️ - Financial Performance feature to be implemented here")
+    elif user_role == "Management":
+        if option == "Franchise Performance":
+            st.write("⚠️ - Franchise Performance feature to be implemented here")
         elif option == "Strategic Planning":
             st.write("⚠️ - Strategic Planning feature to be implemented here")
     elif user_role == "Investor":
@@ -121,43 +141,40 @@ def display_content(user_role, option):
     elif user_role == "Technical Staff":
         if option == "Equipment Monitoring":
             st.write("⚠️ - Equipment Monitoring feature to be implemented here")
-        elif option == "Monitoring Logs":
-            st.write("⚠️ - Monitoring Logs feature to be implemented here")
-    else:
-        if st.button("Return to Dashboard", key="RTD_select_button"):
-            st.write("press button to advance")        
-            st.session_state.option == None # resets to null
-            clear_display()
-            display_dashboard_internal(user_role)
+        elif option == "Maintenance Logs":
+            st.write("⚠️ - Maintenance Logs feature to be implemented here")
 
-
-# Main app execution -
-# checks & resets
-
+# -----------------------------------------------------------------------------
+# MAIN FUNCTION - ENTRY POINT FOR APP
+# -----------------------------------------------------------------------------
+# This function manages the application flow and ensures the state of the app 
+# persists across reruns.
 def main():
-    # Initialize state variables
+    home_screen()
+    
+    # Initialize session states if not already set
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
+    if 'clear_screen' not in st.session_state:
+        st.session_state.clear_screen = False
     if 'user_role' not in st.session_state:
         st.session_state.user_role = None
     if 'option' not in st.session_state:
         st.session_state.option = None
 
-    # Home screen
-    home_screen()
+    # Clear screen initially
+    if not st.session_state.clear_display:
+        clear_display()
     
-    # Logic to show appropriate screens based on the state
-    if not st.session_state.logged_in: 
-        login_screen()
+    # Control flow based on session state
+    if not st.session_state.logged_in:
+        login_screen()  # Show login if not logged in
     elif not st.session_state.user_role:
-        role_selection_screen()
+        role_selection_screen()  # Show role selection if no role is selected
     else:
         user_role = st.session_state.user_role
-        if not st.session_state.option:
-            display_dashboard_internal(user_role)
-            options_menu(user_role)
-        else:
-            display_content(user_role, st.session_state.option)
-# Run app
+        display_dashboard_internal(user_role)  # Load dashboard for selected role
+
+# Run the Streamlit app
 if __name__ == "__main__":
     main()
