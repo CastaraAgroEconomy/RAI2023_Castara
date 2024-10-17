@@ -18,7 +18,7 @@ if user_role == 'Franchisee':
         st.header("Yield Estimation")
         st.write("This feature allows you to estimate crop yield based on historical data and current weather trends.")
         # Media asset call (example, uncomment when the file is ready)
-        st.image('features/Media/Images/Yield_Estimation.png')
+        st.image('features/Media/Images/Yield_Estimation.jpg')
         # Add the yield estimation script or logic here
 
     elif franchisee_option == 'Weather Analysis':
