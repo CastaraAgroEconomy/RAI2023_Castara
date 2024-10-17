@@ -7,28 +7,28 @@ st.write("⚠️ - Note: use the navigation icons ‘>’ & ‘<‘ at the top l
 st.title("Castara AgroEconomy")
 
 # Main menu options for user roles
-user_role = st.radio("Select your user role:", ['Farmer', 'Administrator', 'Researcher', 'Consultant'])
+user_role = st.radio("Select your user role:", ['Franchisee', 'Administrator', 'Researcher', 'Consultant'])
 
 # Conditional menus based on the selected user role
-if user_role == 'Farmer':
-    st.header("Farmer Dashboard")
-    farmer_option = st.radio("Choose an action:", ['Yield Estimation', 'Weather Analysis', 'Inventory Management'])
+if user_role == 'Franchisee':
+    st.header("Franchisee Dashboard")
+    franchisee_option = st.radio("Choose an action:", ['Yield Estimation', 'Weather Analysis', 'Inventory Management'])
 
-    if farmer_option == 'Yield Estimation':
+    if franchisee_option == 'Yield Estimation':
         st.header("Yield Estimation")
         st.write("This feature allows you to estimate crop yield based on historical data and current weather trends.")
         # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/Yield_Estimation.png')
+        st.image('features/Media/Images/Yield_Estimation.png')
         # Add the yield estimation script or logic here
 
-    elif farmer_option == 'Weather Analysis':
+    elif franchisee_option == 'Weather Analysis':
         st.header("Weather Analysis")
         st.write("Analyze weather patterns affecting your farm.")
         # Media asset call (example, uncomment when the file is ready)
         # st.image('features/Media/Images/Weather_Analysis.png')
         # Add the weather analysis script or API call here
 
-    elif farmer_option == 'Inventory Management':
+    elif franchisee_option == 'Inventory Management':
         st.header("Inventory Management")
         st.write("Manage your farm inventory including seeds, fertilizers, and tools.")
         # Media asset call (example, uncomment when the file is ready)
