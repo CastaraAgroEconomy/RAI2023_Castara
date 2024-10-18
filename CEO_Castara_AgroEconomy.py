@@ -22,7 +22,7 @@ username = st.text_input("Enter Username")
 password = st.text_input("Enter Password", type="password")
 
 if st.button("Login"):
-    if username == "admin" and password == "admin":  # Mockup credentials
+    if username == "admin" and password == "freemium1":  # Mockup credentials
         st.success(f"Welcome, {username}!")
         st.write(load_text(navigation_text_path))
 
