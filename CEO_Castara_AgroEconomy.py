@@ -1,155 +1,101 @@
 import streamlit as st
 
-# Defining the expanded lists
-roles = {
-    "Management": [
-        "Marketing & Sales Manager",
-        "Customer Relations Manager",
-        "Distribution Manager",
-        "Product & Services Manager",
-        "Facilities & Resources Manager",
-        "Project Manager",
-        "Supply Chain & Partner Manager",
-        "Cost & Expense Accounting Manager",
-        "Revenue Streams Manager",
-        "Franchisee Manager",
-    ],
-    "Franchisee": [
-        "Regional Franchisee",
-        "Local Franchisee",
-        "Operational Manager",
-        "Store Manager",
-        "Sales Manager",
-        "Finance Manager",
-        "Inventory Manager",
-        "Customer Service Manager",
-        "Marketing Specialist",
-        "Support Specialist",
-    ],
-    "Investor": [
-        "Equity Investor",
-        "Angel Investor",
-        "Venture Capitalist",
-        "Private Equity Investor",
-        "Crowdfunding Investor",
-        "Institutional Investor",
-        "Limited Partner",
-        "General Partner",
-        "Board Member",
-        "Strategic Advisor",
-    ],
-    "Supplier": [
-        "Primary Supplier",
-        "Logistics Partner",
-        "Service Provider",
-        "Raw Material Supplier",
-        "Tech Provider",
-        "Secondary Supplier",
-        "Sustainability Consultant",
-        "Supply Chain Manager",
-        "Vendor Manager",
-        "Quality Control Specialist",
-    ],
-    "Customer": [
-        "B2B Customer",
-        "B2C Customer",
-        "Wholesale Buyer",
-        "Retail Buyer",
-        "Frequent Buyer",
-        "Seasonal Buyer",
-        "Corporate Buyer",
-        "Distributor",
-        "End Consumer",
-        "Local Consumer",
+# Mock Login System
+def login():
+    """Simulate a login system"""
+    st.title("Castara AgroEconomy Venture Login")
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+    if st.button("Login"):
+        if username == "admin" and password == "password":
+            st.session_state["authenticated"] = True
+            st.success("Login successful!")
+        else:
+            st.error("Invalid credentials. Please try again.")
+
+# Media asset display
+def display_media_asset():
+    """Display media asset on a cleared screen"""
+    st.image("path_to_media_asset.jpg", caption="Castara AgroEconomy Venture")
+
+# Role selection
+def role_selection():
+    """Display user role selection on a cleared screen"""
+    roles = [
+        "Franchisee", "Management", "Investor", 
+        "Agronomist", "Operations Coordinator", 
+        "Supply Chain Coordinator", "IT Specialist", "Finance Manager", 
+        "Research and Development", "Sales and Marketing"
     ]
-}
+    return st.selectbox("Select User Role", roles)
 
-actions = {
-    "Operations": [
-        "Process Orders",
-        "Track Shipments",
-        "Inventory Management",
-        "Facility Management",
-        "Supplier Coordination",
-        "Contract Management",
-        "Resource Allocation",
-        "Operational Audit",
-        "Logistics Optimization",
-        "Franchise Management",
-    ],
-    "Finance": [
-        "Budget Allocation",
-        "Cash Flow Monitoring",
-        "Expense Management",
-        "Revenue Forecasting",
-        "Investment Planning",
-        "Financial Reporting",
-        "Capital Allocation",
-        "Cost Control",
-        "Payroll Management",
-        "Tax Compliance",
-    ],
-    "Marketing": [
-        "Market Research",
-        "Campaign Planning",
-        "Brand Management",
-        "Customer Segmentation",
-        "Ad Budgeting",
-        "Social Media Strategy",
-        "Partnership Development",
-        "Lead Generation",
-        "PR Management",
-        "Customer Feedback Analysis",
-    ],
-    "Sales": [
-        "Sales Forecasting",
-        "Price Optimization",
-        "Customer Acquisition",
-        "Client Relationship Management",
-        "Order Processing",
-        "Performance Analysis",
-        "Lead Conversion",
-        "Cross-Selling Strategies",
-        "Sales Training",
-        "Partnership Sales",
-    ],
-    "HR": [
-        "Employee Recruitment",
-        "Training Programs",
-        "Payroll Management",
-        "Performance Appraisal",
-        "Employee Retention",
-        "Conflict Resolution",
-        "Workforce Planning",
-        "Policy Implementation",
-        "Employee Benefits Management",
-        "Career Development",
+# Sub-role selection
+def sub_role_selection(role):
+    """Display sub-role selection based on user role"""
+    sub_roles = {
+        "Franchisee": ["Owner", "Operator", "Worker", "Consultant", "Partner"],
+        "Management": ["Marketing Manager", "Customer Relations Manager", "Operations Manager", "Product Manager", "Finance Manager"],
+        "Investor": ["Equity Investor", "Angel Investor", "Venture Capitalist", "Private Investor", "Crowdfunder"],
+        "Agronomist": ["Field Agronomist", "Soil Scientist", "Plant Breeder", "Crop Advisor", "Agro Researcher"],
+        "Operations Coordinator": ["Logistics", "Field Supervisor", "Harvest Supervisor", "Distribution Coordinator", "Operations Assistant"],
+        # Fill out the other roles with appropriate sub-roles
+    }
+    return st.selectbox("Select Sub-Role", sub_roles.get(role, []))
+
+# Action selection
+def action_selection():
+    """Display action selection on a cleared screen"""
+    actions = [
+        "Initiate Process", "Monitor Operations", "Manage Resources", 
+        "Analyze Data", "Conduct Research", 
+        "Market Products", "Manage Supply Chain", "Oversee Finance", 
+        "Research Innovation", "Negotiate Contracts"
     ]
-}
+    return st.selectbox("Select Action", actions)
 
-# Streamlit app setup
-st.title("Castara AgroEconomy Venture Navigation System")
-st.write("Select the User role, Sub-role, Action, and Activity to begin your journey.")
+# Activity selection
+def activity_selection(action):
+    """Display activity selection based on action"""
+    activities = {
+        "Initiate Process": ["Start Farm Cycle", "Plan Schedule", "Request Supplies", "Assign Workers", "Allocate Resources"],
+        "Monitor Operations": ["Check Soil", "Monitor Crops", "Check Weather", "Monitor Equipment", "Review Tasks"],
+        "Manage Resources": ["Review Budgets", "Approve Requests", "Allocate Materials", "Order Inventory", "Authorize Expenses"],
+        # Add more activities corresponding to actions
+    }
+    return st.selectbox("Select Activity", activities.get(action, []))
 
-# Step 1: User Role selection
-selected_role = st.selectbox("Select User Role", list(roles.keys()))
-
-# Step 2: Sub-role selection
-if selected_role:
-    selected_sub_role = st.selectbox("Select Sub-role", roles[selected_role])
-
-# Step 3: Action selection
-selected_action_category = st.selectbox("Select Action", list(actions.keys()))
-
-# Step 4: Activity selection
-if selected_action_category:
-    selected_activity = st.selectbox("Select Activity", actions[selected_action_category])
-
-# Button to validate combination and show outcome
-if st.button("Submit"):
-    if selected_role and selected_sub_role and selected_action_category and selected_activity:
-        # Here we could add rules or checks for valid combinations
-        st.success(f"Navigating to {selected_role} > {selected_sub_role} > {selected_action_category} > {selected_activity}")
-        # This is where the navigation would occur or the appropriate page load would be triggered
+# Main logic to control the flow
+def main():
+    # Login system
+    if "authenticated" not in st.session_state:
+        login()
     else:
-        st.error("Please complete all selections to proceed.")
+        # Show media asset after login
+        display_media_asset()
+
+        # Clear the screen for role selection
+        st.write("### Please select your User Role")
+        selected_role = role_selection()
+        st.write(f"You selected: {selected_role}")
+
+        # Clear the screen for sub-role selection based on role
+        if selected_role:
+            st.write("### Please select your Sub-Role")
+            selected_sub_role = sub_role_selection(selected_role)
+            st.write(f"You selected: {selected_sub_role}")
+
+        # Clear the screen for action selection
+        if selected_sub_role:
+            st.write("### Please select an Action")
+            selected_action = action_selection()
+            st.write(f"You selected: {selected_action}")
+
+        # Clear the screen for activity selection based on action
+        if selected_action:
+            st.write("### Please select an Activity")
+            selected_activity = activity_selection(selected_action)
+            st.write(f"You selected: {selected_activity}")
+
+# Running the app
+if __name__ == "__main__":
+    main()
