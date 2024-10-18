@@ -1,4 +1,3 @@
-st.write( ⚠️ - Navigation Instructions")
-st.writd(" ")
-st.write(" Refer to the top Left hand side and the top Right hand side of the screen of devices held in portrait mode. the '>' icon and the '<' icon are used to navigate between the various selection list menus. Note they are not 'forward' & 'back' buttons, both take the user to the next list.")
-st.write(" ")
+⚠️ - Navigation Instructions
+
+Refer to the top Left hand side and the top Right hand side of the screen of devices held in portrait mode. the '>' icon and the '<' icon are used to navigate between the various selection list menus. Note they are not 'forward' & 'back' buttons, both take the user to the next list.
