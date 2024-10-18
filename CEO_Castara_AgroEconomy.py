@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import numpy as np
 
 # Defining maximum configuration values for n, m, x, y
 n = 10  # Maximum number of user roles
@@ -38,7 +37,7 @@ sub_roles = {
         "Revenue Streams Manager", "Franchisee Manager", "Quality Assurance Manager", "Financial Reporting Manager", "Risk & Compliance Manager", 
         "Technology Manager", "Sustainability Officer"
     ],
-    # Add sub-roles for remaining user roles similarly...
+    # Add sub-roles for other roles...
 }
 
 # Actions (C)
@@ -59,54 +58,22 @@ activities = {
     ],
     "Optimize Supply Chain": [
         "Review Supplier Contracts", "Analyze Shipping Efficiency", "Track Delivery Times", "Manage Inventory Levels", "Assess Packaging Options",
-        "Negotiate New Contracts", "Evaluate Supplier Performance", "Monitor Transport Costs", "Coordinate with Vendors", "Optimize Warehouse Operations", 
-        "Improve Order Fulfillment", "Update Vendor Agreements", "Evaluate Import/Export Regulations", "Track Shipping Delays", "Improve Forecasting Accuracy",
-        "Review Distribution Networks", "Implement Automation", "Manage Logistics Partners", "Optimize Stock Levels", "Plan for Seasonal Variations"
+        "Negotiate New Contracts", "Evaluate Supplier Performance"
     ],
-    # Add activities for other actions similarly...
+    # Add entries for other actions...
 }
 
-# AI-powered Inference Engine (AI-p IE) - placeholder for logic to filter valid combinations
-def infer_valid_combinations(selected_role, selected_sub_role, selected_action, selected_activity):
-    # Placeholder logic: replace this with actual AI inference rules to determine valid paths
-    if selected_role in roles and selected_sub_role in sub_roles[selected_role] and selected_action in actions and selected_activity in activities[selected_action]:
-        return True  # Assume valid for now
-    return False
+# Error handling: Ensure all actions are represented in activities dictionary
+for action in actions:
+    if action not in activities:
+        activities[action] = ["No specific activities available"]
 
-# Streamlit UI for selections
-st.title("Castara AgroEconomy Venture Navigation")
+# Create all combinations of roles, sub-roles, actions, and activities
+all_combinations = [(r, sr, a, act) for r in roles for sr in sub_roles.get(r, []) for a in actions for act in activities.get(a, [])]
 
-# Role selection
-selected_role = st.selectbox("Select a User Role", roles)
+# Display the first 10 combinations for preview
+st.write("Sample Combinations:")
+st.write(all_combinations[:10])
 
-# Sub-role selection based on the selected role
-if selected_role:
-    selected_sub_role = st.selectbox(f"Select a Sub-Role for {selected_role}", sub_roles[selected_role])
-
-# Action selection
-selected_action = st.selectbox("Select an Action", actions)
-
-# Activity selection based on the selected action
-if selected_action:
-    selected_activity = st.selectbox(f"Select an Activity for {selected_action}", activities[selected_action])
-
-# Display valid combination status using AI-p IE
-if selected_role and selected_sub_role and selected_action and selected_activity:
-    valid_combination = infer_valid_combinations(selected_role, selected_sub_role, selected_action, selected_activity)
-    if valid_combination:
-        st.success(f"Valid combination: {selected_role}, {selected_sub_role}, {selected_action}, {selected_activity}")
-    else:
-        st.error("Invalid combination")
-
-# Option to explore all possible combinations
-st.header("Explore All Combinations")
-
-# Generate combinations of all possible selections
-all_combinations = [(r, sr, a, act) for r in roles for sr in sub_roles[r] for a in actions for act in activities[a]]
-
-# Display combinations in a dataframe
-combinations_df = pd.DataFrame(all_combinations, columns=["User Role", "Sub-Role", "Action", "Activity"])
-st.write(combinations_df)
-
-# Option to download the combinations
-st.download_button(label="Download All Combinations", data=combinations_df.to_csv(index=False), file_name="combinations.csv")
+# Display total combinations count
+st.write(f"Total number of combinations: {len(all_combinations)}")
