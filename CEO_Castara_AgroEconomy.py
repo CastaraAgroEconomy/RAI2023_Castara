@@ -46,10 +46,10 @@ def reset_session():
 # Login screen logic
 if st.session_state.step == 'login':
     login_credentials = st.text_input("Enter your credentials (Username/Password)", type="password")
-    if login_credentials:
+    if login_credentials and st.button("Login"):
         st.success("Login successful!")
-        st.session_state.step = 'role_selection'
-        st.experimental_rerun()
+        st.session_state.step = 'role_selection'  # Set the next step but don't force rerun yet.
+        # No st.experimental_rerun() here as Streamlit refreshes naturally on user input.
 
 # Role Selection
 if st.session_state.step == 'role_selection':
@@ -65,7 +65,6 @@ if st.session_state.step == 'role_selection':
             st.session_state.step = 'sub_role_selection'
         else:
             st.session_state.step = 'role_selection'
-        st.experimental_rerun()
 
 # Sub-Role Selection
 if st.session_state.step == 'sub_role_selection':
@@ -90,7 +89,6 @@ if st.session_state.step == 'sub_role_selection':
             st.session_state.step = 'action_selection'
         else:
             st.session_state.step = 'sub_role_selection'
-        st.experimental_rerun()
 
 # Action Selection
 if st.session_state.step == 'action_selection':
@@ -106,7 +104,6 @@ if st.session_state.step == 'action_selection':
             st.session_state.step = 'activity_selection'
         else:
             st.session_state.step = 'action_selection'
-        st.experimental_rerun()
 
 # Activity Selection
 if st.session_state.step == 'activity_selection':
