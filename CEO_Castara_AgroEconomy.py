@@ -1,79 +1,155 @@
 import streamlit as st
-import pandas as pd
 
-# Defining maximum configuration values for n, m, x, y
-n = 10  # Maximum number of user roles
-x = 15  # Maximum number of sub-roles per user role
-m = 20  # Maximum number of actions
-y = 20  # Maximum number of activities per action
-
-# User roles (A)
-roles = [
-    "Franchise Owner",
-    "Franchisee",
-    "Management",
-    "Investor",
-    "Consultant",
-    "Agronomist",
-    "Supply Chain Manager",
-    "Financial Analyst",
-    "Customer Relations",
-    "Technical Support"
-]
-
-# Sub-user roles (B) associated with each user role (Bn)
-sub_roles = {
-    "Franchise Owner": [
-        "Strategic Planner", "Operational Leader", "Growth Advisor", "Investment Planner", "Risk Manager",
-        "Compliance Officer", "Brand Strategist", "Revenue Optimizer", "Expense Controller", "Human Resource Lead"
+# Defining the expanded lists
+roles = {
+    "Management": [
+        "Marketing & Sales Manager",
+        "Customer Relations Manager",
+        "Distribution Manager",
+        "Product & Services Manager",
+        "Facilities & Resources Manager",
+        "Project Manager",
+        "Supply Chain & Partner Manager",
+        "Cost & Expense Accounting Manager",
+        "Revenue Streams Manager",
+        "Franchisee Manager",
     ],
     "Franchisee": [
-        "Retail Manager", "Local Operations Manager", "Sales Supervisor", "Stock Controller", "Regional Liaison",
-        "Logistics Coordinator", "Franchise Development Officer", "Training Facilitator", "Customer Service Leader", "Marketing Director"
+        "Regional Franchisee",
+        "Local Franchisee",
+        "Operational Manager",
+        "Store Manager",
+        "Sales Manager",
+        "Finance Manager",
+        "Inventory Manager",
+        "Customer Service Manager",
+        "Marketing Specialist",
+        "Support Specialist",
     ],
-    "Management": [
-        "Marketing & Sales Manager", "Customer Relations Manager", "Distribution Manager", "Product & Services Manager", 
-        "Facilities & Resources Manager", "Project Manager", "Supply Chain and Partner Manager", "Cost & Expense Accounting Manager", 
-        "Revenue Streams Manager", "Franchisee Manager", "Quality Assurance Manager", "Financial Reporting Manager", "Risk & Compliance Manager", 
-        "Technology Manager", "Sustainability Officer"
+    "Investor": [
+        "Equity Investor",
+        "Angel Investor",
+        "Venture Capitalist",
+        "Private Equity Investor",
+        "Crowdfunding Investor",
+        "Institutional Investor",
+        "Limited Partner",
+        "General Partner",
+        "Board Member",
+        "Strategic Advisor",
     ],
-    # Add sub-roles for other roles...
+    "Supplier": [
+        "Primary Supplier",
+        "Logistics Partner",
+        "Service Provider",
+        "Raw Material Supplier",
+        "Tech Provider",
+        "Secondary Supplier",
+        "Sustainability Consultant",
+        "Supply Chain Manager",
+        "Vendor Manager",
+        "Quality Control Specialist",
+    ],
+    "Customer": [
+        "B2B Customer",
+        "B2C Customer",
+        "Wholesale Buyer",
+        "Retail Buyer",
+        "Frequent Buyer",
+        "Seasonal Buyer",
+        "Corporate Buyer",
+        "Distributor",
+        "End Consumer",
+        "Local Consumer",
+    ]
 }
 
-# Actions (C)
-actions = [
-    "Monitor Crop Growth", "Optimize Supply Chain", "Generate Financial Reports", "Manage Staff", "Develop New Products", 
-    "Review Marketing Strategy", "Adjust Franchisee Agreements", "Oversee Risk Management", "Allocate Resources", "Evaluate Franchisee Performance", 
-    "Handle Customer Complaints", "Update Inventory", "Manage External Partnerships", "Analyze Market Trends", "Conduct Training", 
-    "Review Financial Projections", "Implement Technology Solutions", "Plan Expansion", "Monitor Legal Compliance", "Execute Marketing Campaigns"
-]
-
-# Activities (D) associated with each action (Dn)
-activities = {
-    "Monitor Crop Growth": [
-        "Check Soil Quality", "Analyze Crop Yield", "Review Water Usage", "Evaluate Pest Control Measures", "Monitor Weather Impact",
-        "Inspect Plant Health", "Record Growth Metrics", "Generate Crop Reports", "Update Irrigation Settings", "Plan Fertilizer Use", 
-        "Check for Disease Outbreak", "Adjust Planting Schedules", "Evaluate Seed Varieties", "Monitor Harvest Timelines", "Optimize Growth Environments",
-        "Ensure Regulatory Compliance", "Compare to Historical Data", "Coordinate with Agronomists", "Manage Field Equipment", "Track Crop Maturity"
+actions = {
+    "Operations": [
+        "Process Orders",
+        "Track Shipments",
+        "Inventory Management",
+        "Facility Management",
+        "Supplier Coordination",
+        "Contract Management",
+        "Resource Allocation",
+        "Operational Audit",
+        "Logistics Optimization",
+        "Franchise Management",
     ],
-    "Optimize Supply Chain": [
-        "Review Supplier Contracts", "Analyze Shipping Efficiency", "Track Delivery Times", "Manage Inventory Levels", "Assess Packaging Options",
-        "Negotiate New Contracts", "Evaluate Supplier Performance"
+    "Finance": [
+        "Budget Allocation",
+        "Cash Flow Monitoring",
+        "Expense Management",
+        "Revenue Forecasting",
+        "Investment Planning",
+        "Financial Reporting",
+        "Capital Allocation",
+        "Cost Control",
+        "Payroll Management",
+        "Tax Compliance",
     ],
-    # Add entries for other actions...
+    "Marketing": [
+        "Market Research",
+        "Campaign Planning",
+        "Brand Management",
+        "Customer Segmentation",
+        "Ad Budgeting",
+        "Social Media Strategy",
+        "Partnership Development",
+        "Lead Generation",
+        "PR Management",
+        "Customer Feedback Analysis",
+    ],
+    "Sales": [
+        "Sales Forecasting",
+        "Price Optimization",
+        "Customer Acquisition",
+        "Client Relationship Management",
+        "Order Processing",
+        "Performance Analysis",
+        "Lead Conversion",
+        "Cross-Selling Strategies",
+        "Sales Training",
+        "Partnership Sales",
+    ],
+    "HR": [
+        "Employee Recruitment",
+        "Training Programs",
+        "Payroll Management",
+        "Performance Appraisal",
+        "Employee Retention",
+        "Conflict Resolution",
+        "Workforce Planning",
+        "Policy Implementation",
+        "Employee Benefits Management",
+        "Career Development",
+    ]
 }
 
-# Error handling: Ensure all actions are represented in activities dictionary
-for action in actions:
-    if action not in activities:
-        activities[action] = ["No specific activities available"]
+# Streamlit app setup
+st.title("Castara AgroEconomy Venture Navigation System")
+st.write("Select the User role, Sub-role, Action, and Activity to begin your journey.")
 
-# Create all combinations of roles, sub-roles, actions, and activities
-all_combinations = [(r, sr, a, act) for r in roles for sr in sub_roles.get(r, []) for a in actions for act in activities.get(a, [])]
+# Step 1: User Role selection
+selected_role = st.selectbox("Select User Role", list(roles.keys()))
 
-# Display the first 10 combinations for preview
-st.write("Sample Combinations:")
-st.write(all_combinations[:10])
+# Step 2: Sub-role selection
+if selected_role:
+    selected_sub_role = st.selectbox("Select Sub-role", roles[selected_role])
 
-# Display total combinations count
-st.write(f"Total number of combinations: {len(all_combinations)}")
+# Step 3: Action selection
+selected_action_category = st.selectbox("Select Action", list(actions.keys()))
+
+# Step 4: Activity selection
+if selected_action_category:
+    selected_activity = st.selectbox("Select Activity", actions[selected_action_category])
+
+# Button to validate combination and show outcome
+if st.button("Submit"):
+    if selected_role and selected_sub_role and selected_action_category and selected_activity:
+        # Here we could add rules or checks for valid combinations
+        st.success(f"Navigating to {selected_role} > {selected_sub_role} > {selected_action_category} > {selected_activity}")
+        # This is where the navigation would occur or the appropriate page load would be triggered
+    else:
+        st.error("Please complete all selections to proceed.")
