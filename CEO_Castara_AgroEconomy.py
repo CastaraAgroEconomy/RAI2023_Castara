@@ -46,10 +46,9 @@ def reset_session():
 # Login screen logic
 if st.session_state.step == 'login':
     login_credentials = st.text_input("Enter your credentials (Username/Password)", type="password")
-    if login_credentials and st.button("Login"):
+    if login_credentials and st.button("Login", key="login_button"):
         st.success("Login successful!")
         st.session_state.step = 'role_selection'  # Set the next step but don't force rerun yet.
-        # No st.experimental_rerun() here as Streamlit refreshes naturally on user input.
 
 # Role Selection
 if st.session_state.step == 'role_selection':
@@ -57,7 +56,7 @@ if st.session_state.step == 'role_selection':
     roles = ['Franchisee', 'Manager', 'Investor', 'Supplier', 'Researcher', 'AI Specialist', 'Supply Chain Analyst', 'Market Strategist', 'No further option']
     
     st.header("Select User Role")
-    selected_role = st.radio("Choose a Role:", roles)
+    selected_role = st.radio("Choose a Role:", roles, key="role_selection")
     
     if selected_role:
         st.session_state.selected_role = selected_role
@@ -81,7 +80,7 @@ if st.session_state.step == 'sub_role_selection':
     }
     
     st.header(f"Select Sub-role for {st.session_state.selected_role}")
-    selected_sub_role = st.radio(f"Choose a Sub-role under {st.session_state.selected_role}:", sub_roles[st.session_state.selected_role])
+    selected_sub_role = st.radio(f"Choose a Sub-role under {st.session_state.selected_role}:", sub_roles[st.session_state.selected_role], key="sub_role_selection")
     
     if selected_sub_role:
         st.session_state.selected_sub_role = selected_sub_role
@@ -96,7 +95,7 @@ if st.session_state.step == 'action_selection':
     actions = ['Plan', 'Execute', 'Monitor', 'No further option']
     
     st.header(f"Select Action for {st.session_state.selected_sub_role}")
-    selected_action = st.radio("Choose an Action:", actions)
+    selected_action = st.radio("Choose an Action:", actions, key="action_selection")
     
     if selected_action:
         st.session_state.selected_action = selected_action
@@ -115,18 +114,18 @@ if st.session_state.step == 'activity_selection':
     }
     
     st.header(f"Select Activity under {st.session_state.selected_action}")
-    selected_activity = st.radio(f"Choose an Activity under {st.session_state.selected_action}:", activities[st.session_state.selected_action])
+    selected_activity = st.radio(f"Choose an Activity under {st.session_state.selected_action}:", activities[st.session_state.selected_action], key="activity_selection")
     
     if selected_activity:
         st.session_state.selected_activity = selected_activity
         st.write(f"Final selection: **{st.session_state.selected_role} -> {st.session_state.selected_sub_role} -> {st.session_state.selected_action} -> {st.session_state.selected_activity}**")
-        if st.button("Log Out"):
+        if st.button("Log Out", key="logout_button_after_activity"):
             logout()
 
 # Option to log out
-if st.session_state.step != 'login' and st.button("Log Out"):
+if st.session_state.step != 'login' and st.button("Log Out", key="logout_button"):
     reset_session()
 
 # Load Help video
-if st.button("Help"):
+if st.button("Help", key="help_button"):
     st.video('Assets/Media/Video/Help.mp4')
