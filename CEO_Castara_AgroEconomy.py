@@ -16,7 +16,7 @@ def login():
 # Media asset display
 def display_media_asset():
     """Display media asset on a cleared screen"""
-    st.image("features/Assets/Media/Images/Cover_page.jpg", caption="Castara AgroEconomy Venture")
+    st.image("Assets/Media/Images/Cover_page.jpg", caption="Castara AgroEconomy Venture")
 
 # Role selection
 def role_selection():
