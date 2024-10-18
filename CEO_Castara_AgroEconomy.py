@@ -1,113 +1,60 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
 
-# Placeholder text for navigation instructions
-st.write("⚠️ - Note: use the navigation icons ‘>’ & ‘<‘ at the top left-hand and right-hand side of your screen in portrait mode to navigate between menus and sub-menus.")
+# Defining maximum configuration values for n, m, x, y
+n = 10  # Maximum number of user roles
+x = 15  # Maximum number of sub-roles per user role
+m = 20  # Maximum number of actions
+y = 20  # Maximum number of activities per action
 
-# Main header
-st.title("Castara AgroEconomy")
+# Initialize the matrices
+roles = [f"User Role {i+1}" for i in range(n)]
+sub_roles = {role: [f"Sub-Role {j+1}" for j in range(x)] for role in roles}
+actions = [f"Action {i+1}" for i in range(m)]
+activities = {action: [f"Activity {j+1}" for j in range(y)] for action in actions}
 
-# Main menu options for user roles
-user_role = st.radio("Select your user role:", ['Franchisee', 'Administrator', 'Researcher', 'Consultant'])
+# AI-powered Inference Engine (AI-p IE) - initial placeholder for logic to filter valid combinations
+def infer_valid_combinations(selected_role, selected_sub_role, selected_action, selected_activity):
+    # Placeholder logic: replace this with actual AI inference rules to determine valid paths
+    if selected_role in roles and selected_sub_role in sub_roles[selected_role] and selected_action in actions and selected_activity in activities[selected_action]:
+        return True  # Assume valid for now
+    return False
 
-# Conditional menus based on the selected user role
-if user_role == 'Franchisee':
-    st.header("Franchisee Dashboard")
-    franchisee_option = st.radio("Choose an action:", ['Yield Estimation', 'Weather Analysis', 'Inventory Management'])
+# Streamlit UI for selections
+st.title("Castara AgroEconomy Venture Navigation")
 
-    if franchisee_option == 'Yield Estimation':
-        st.header("Yield Estimation")
-        st.write("This feature allows you to estimate crop yield based on historical data and current weather trends.")
-        # Media asset call (example, uncomment when the file is ready)
-        st.image('features/Media/Images/Yield_Estimation.jpg')
-        # Add the yield estimation script or logic here
+# Role selection
+selected_role = st.selectbox("Select a User Role", roles)
 
-    elif franchisee_option == 'Weather Analysis':
-        st.header("Weather Analysis")
-        st.write("Analyze weather patterns affecting your farm.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/Weather_Analysis.png')
-        # Add the weather analysis script or API call here
+# Sub-role selection based on the selected role
+if selected_role:
+    selected_sub_role = st.selectbox(f"Select a Sub-Role for {selected_role}", sub_roles[selected_role])
 
-    elif franchisee_option == 'Inventory Management':
-        st.header("Inventory Management")
-        st.write("Manage your farm inventory including seeds, fertilizers, and tools.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/Inventory_Management.png')
-        # Add the inventory management script or logic here
+# Action selection
+selected_action = st.selectbox("Select an Action", actions)
 
-elif user_role == 'Administrator':
-    st.header("Administrator Dashboard")
-    admin_option = st.radio("Choose an action:", ['User Management', 'System Logs', 'Data Export'])
+# Activity selection based on the selected action
+if selected_action:
+    selected_activity = st.selectbox(f"Select an Activity for {selected_action}", activities[selected_action])
 
-    if admin_option == 'User Management':
-        st.header("User Management")
-        st.write("Manage the system's user accounts and permissions.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/User_Management.png')
-        # Add the user management script or logic here
+# Display valid combination status using AI-p IE
+if selected_role and selected_sub_role and selected_action and selected_activity:
+    valid_combination = infer_valid_combinations(selected_role, selected_sub_role, selected_action, selected_activity)
+    if valid_combination:
+        st.success(f"Valid combination: {selected_role}, {selected_sub_role}, {selected_action}, {selected_activity}")
+    else:
+        st.error("Invalid combination")
 
-    elif admin_option == 'System Logs':
-        st.header("System Logs")
-        st.write("View system logs and activity for troubleshooting.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/System_Logs.png')
-        # Add the system logs script or logic here
+# Option to explore all possible combinations
+st.header("Explore All Combinations")
 
-    elif admin_option == 'Data Export':
-        st.header("Data Export")
-        st.write("Export system data for backup or analysis.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/Data_Export.png')
-        # Add the data export script or logic here
+# Generate combinations of all possible selections
+all_combinations = [(r, sr, a, act) for r in roles for sr in sub_roles[r] for a in actions for act in activities[a]]
 
-elif user_role == 'Researcher':
-    st.header("Researcher Dashboard")
-    researcher_option = st.radio("Choose an action:", ['Field Studies', 'Data Analysis', 'External Data Integration'])
+# Display combinations in a dataframe
+combinations_df = pd.DataFrame(all_combinations, columns=["User Role", "Sub-Role", "Action", "Activity"])
+st.write(combinations_df)
 
-    if researcher_option == 'Field Studies':
-        st.header("Field Studies")
-        st.write("Access and manage field study data.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/Field_Studies.png')
-        # Add the field studies script or logic here
-
-    elif researcher_option == 'Data Analysis':
-        st.header("Data Analysis")
-        st.write("Analyze agricultural data for insights.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/Data_Analysis.png')
-        # Add the data analysis script or logic here
-
-    elif researcher_option == 'External Data Integration':
-        st.header("External Data Integration")
-        st.write("Integrate data from external platforms for advanced research.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/External_Data_Integration.png')
-        # Add the API integration or script here
-
-elif user_role == 'Consultant':
-    st.header("Consultant Dashboard")
-    consultant_option = st.radio("Choose an action:", ['Client Reports', 'Market Trends', 'Project Management'])
-
-    if consultant_option == 'Client Reports':
-        st.header("Client Reports")
-        st.write("Generate and review reports for your clients.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/Client_Reports.png')
-        # Add the client report script or logic here
-
-    elif consultant_option == 'Market Trends':
-        st.header("Market Trends")
-        st.write("Analyze current market trends for crops and commodities.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/Market_Trends.png')
-        # Add the market trend script or logic here
-
-    elif consultant_option == 'Project Management':
-        st.header("Project Management")
-        st.write("Manage ongoing projects and tasks.")
-        # Media asset call (example, uncomment when the file is ready)
-        # st.image('features/Media/Images/Project_Management.png')
-        # Add the project management script or logic here
-
-# Note: Implement navigation shortcuts for logging out or jumping between sub-features when needed.
+# Option to download the combinations
+st.download_button(label="Download All Combinations", data=combinations_df.to_csv(index=False), file_name="combinations.csv")
