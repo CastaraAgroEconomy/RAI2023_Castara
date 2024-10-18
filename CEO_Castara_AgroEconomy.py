@@ -1,112 +1,74 @@
 import streamlit as st
 
-# Media asset display
-def display_media_asset():
-    """Display media asset on a cleared screen"""
-    st.image("Assets/Media/Images/Cover_page.jpg", caption="Castara AgroEconomy Venture")
+# Function to load media assets
+def load_image(image_path):
+    from PIL import Image
+    return Image.open(image_path)
 
-# Mock Login System
-def login():
-    """Simulate a login system"""
-    st.title("Castara AgroEconomy Venture Login")
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
-    if st.button("Login"):
-        if username == "admin" and password == "password":
-            st.session_state["authenticated"] = True
-            st.success("Login successful!")
-            st.session_state["step"] = 1  # Start at the role selection step
-        else:
-            st.error("Invalid credentials. Please try again.")
+def load_text(text_path):
+    with open(text_path, 'r') as file:
+        return file.read()
 
+# Image and text file paths
+cover_image_path = 'Assets/Media/Images/Cover_page.jpg'
+navigation_text_path = 'Assets/Media/Text/Navigation.txt'
 
-# Role selection
-def role_selection():
-    """Display user role selection on a cleared screen"""
-    roles = [
-        "Franchisee", "Management", "Investor", 
-        "Agronomist", "Operations Coordinator", 
-        "Supply Chain Coordinator", "IT Specialist", "Finance Manager", 
-        "Research and Development", "Sales and Marketing"
-    ]
-    selected_role = st.selectbox("Select User Role", roles)
-    if st.button("Next"):
-        st.session_state["role"] = selected_role
-        st.session_state["step"] = 2  # Move to the sub-role selection step
+# Initial login routine
+st.title("Welcome to the Castara AgroEconomy Venture App")
+st.image(load_image(cover_image_path), use_column_width=True)
 
-# Sub-role selection
-def sub_role_selection():
-    """Display sub-role selection based on user role"""
-    sub_roles = {
-        "Franchisee": ["Owner", "Operator", "Worker", "Consultant", "Partner"],
-        "Management": ["Marketing Manager", "Customer Relations Manager", "Operations Manager", "Product Manager", "Finance Manager"],
-        "Investor": ["Equity Investor", "Angel Investor", "Venture Capitalist", "Private Investor", "Crowdfunder"],
-        "Agronomist": ["Field Agronomist", "Soil Scientist", "Plant Breeder", "Crop Advisor", "Agro Researcher"],
-        "Operations Coordinator": ["Logistics", "Field Supervisor", "Harvest Supervisor", "Distribution Coordinator", "Operations Assistant"],
-    }
-    selected_sub_role = st.selectbox("Select Sub-Role", sub_roles.get(st.session_state["role"], []))
-    if st.button("Next"):
-        st.session_state["sub_role"] = selected_sub_role
-        st.session_state["step"] = 3  # Move to the action selection step
+# Login credentials (just a mockup for now)
+username = st.text_input("Enter Username")
+password = st.text_input("Enter Password", type="password")
 
-# Action selection
-def action_selection():
-    """Display action selection on a cleared screen"""
-    actions = [
-        "Initiate Process", "Monitor Operations", "Manage Resources", 
-        "Analyze Data", "Conduct Research", 
-        "Market Products", "Manage Supply Chain", "Oversee Finance", 
-        "Research Innovation", "Negotiate Contracts"
-    ]
-    selected_action = st.selectbox("Select Action", actions)
-    if st.button("Next"):
-        st.session_state["action"] = selected_action
-        st.session_state["step"] = 4  # Move to the activity selection step
+if st.button("Login"):
+    if username == "admin" and password == "admin":  # Mockup credentials
+        st.success(f"Welcome, {username}!")
+        st.write(load_text(navigation_text_path))
 
-# Activity selection
-def activity_selection():
-    """Display activity selection based on action"""
-    activities = {
-        "Initiate Process": ["Start Farm Cycle", "Plan Schedule", "Request Supplies", "Assign Workers", "Allocate Resources"],
-        "Monitor Operations": ["Check Soil", "Monitor Crops", "Check Weather", "Monitor Equipment", "Review Tasks"],
-        "Manage Resources": ["Review Budgets", "Approve Requests", "Allocate Materials", "Order Inventory", "Authorize Expenses"],
-    }
-    selected_activity = st.selectbox("Select Activity", activities.get(st.session_state["action"], []))
-    if st.button("Finish"):
-        st.session_state["activity"] = selected_activity
-        st.success(f"Process complete! You selected: {st.session_state['role']}, {st.session_state['sub_role']}, {st.session_state['action']}, {st.session_state['activity']}")
+        # Navigation with radio buttons
+        section = st.radio("Choose a section", ["User Role", "Sub-User Role", "Action", "Activity"])
 
-# Main logic to control the flow
-def main():
+        if section == "User Role":
+            roles = ['Franchisee', 'Manager', 'Investor', 'Supplier', 'Researcher', 'AI Specialist', 'Supply Chain Analyst', 'Market Strategist', 'Finance Officer', 'HR Specialist']
+            selected_role = st.selectbox("Select a User Role", roles)
+            st.write(f"You selected: {selected_role}")
 
-    display_media_asset()
-    
-    # Login system
-    if "authenticated" not in st.session_state:
-        login()
+        elif section == "Sub-User Role":
+            sub_roles = {
+                'Franchisee': ['Owner', 'Field Operator', 'Site Manager'],
+                'Manager': ['Operations', 'Logistics', 'Performance Manager'],
+                'Investor': ['Private Equity', 'Venture Capitalist', 'Angel Investor'],
+                'Supplier': ['Raw Materials', 'Equipment', 'Logistics Support'],
+                'Researcher': ['Crop Scientist', 'Agronomist', 'Economist'],
+                'AI Specialist': ['Data Scientist', 'ML Engineer', 'AI Systems Developer'],
+                'Supply Chain Analyst': ['Logistics Coordinator', 'Distribution Planner', 'Procurement Officer'],
+                'Market Strategist': ['Brand Manager', 'Sales Executive', 'Product Developer'],
+                'Finance Officer': ['Accountant', 'Financial Analyst', 'Auditor'],
+                'HR Specialist': ['Recruitment Officer', 'Employee Relations', 'Training Coordinator']
+            }
+            role = st.radio("Choose a Role to filter Sub-User Roles", list(sub_roles.keys()))
+            selected_sub_role = st.selectbox(f"Select a Sub-User Role for {role}", sub_roles[role])
+            st.write(f"You selected: {selected_sub_role}")
+
+        elif section == "Action":
+            actions = ['Initiate Process', 'Monitor Operations', 'Manage Resources', 'Analyze Data', 'Conduct Research', 'Market Products', 'Manage Supply Chain', 'Oversee Finance']
+            selected_action = st.selectbox("Select an Action", actions)
+            st.write(f"You selected: {selected_action}")
+
+        elif section == "Activity":
+            activities = {
+                'Initiate Process': ['Request Supplies', 'Approve Budget', 'Allocate Resources'],
+                'Monitor Operations': ['Track Crop Health', 'Monitor Weather', 'Assess Yield Performance'],
+                'Manage Resources': ['Distribute Equipment', 'Schedule Labor', 'Manage Energy Use'],
+                'Analyze Data': ['Run Financial Reports', 'Analyze Crop Data', 'Generate KPIs'],
+                'Conduct Research': ['Test New Seeds', 'Conduct Soil Tests', 'Run Trials'],
+                'Market Products': ['Develop Campaign', 'Track Sales', 'Analyze Consumer Feedback'],
+                'Manage Supply Chain': ['Coordinate Logistics', 'Negotiate Contracts', 'Monitor Deliveries'],
+                'Oversee Finance': ['Approve Funding', 'Review Transactions', 'Analyze Investment Performance']
+            }
+            action = st.radio("Choose an Action to filter Activities", list(activities.keys()))
+            selected_activity = st.selectbox(f"Select an Activity for {action}", activities[action])
+            st.write(f"You selected: {selected_activity}")
     else:
-        # Show media asset after login
-        display_media_asset()
-
-        # Step-based navigation for each selection screen
-        step = st.session_state.get("step", 1)
-
-        if step == 1:
-            st.write("### Please select your User Role")
-            role_selection()
-
-        elif step == 2:
-            st.write("### Please select your Sub-Role")
-            sub_role_selection()
-
-        elif step == 3:
-            st.write("### Please select an Action")
-            action_selection()
-
-        elif step == 4:
-            st.write("### Please select an Activity")
-            activity_selection()
-
-# Running the app
-if __name__ == "__main__":
-    main()
+        st.error("Invalid credentials. Please try again.")
