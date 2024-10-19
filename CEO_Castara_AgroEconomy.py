@@ -1,82 +1,103 @@
 import streamlit as st
 
-# Define global variables for tracking user selections
-selected_role = None
-selected_subrole = None
-selected_action = None
-selected_activity = None
+# Placeholder for valid credentials (admin/password for testing)
+VALID_USERNAME = "admin"
+VALID_PASSWORD = "password"
 
-# Display the cover page and login first
-st.image('Assets/Media/Images/Cover_page.jpg')
+# Define the main function that will control the flow
+def main():
+    # Display cover page image
+    st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
+    
+    # Call login function
+    if 'logged_in' not in st.session_state:
+        st.session_state.logged_in = False
+        
+    if not st.session_state.logged_in:
+        login()  # Go to login page if not logged in
+    else:
+        user_role_selection()  # Proceed to user role selection if logged in
 
-# Login section
-# Login section
-if "authenticated" not in st.session_state:
+# Login function
+def login():
+    st.title("Login")
+    
+    # Input fields for username and password
     username = st.text_input("Enter your username")
     password = st.text_input("Enter your password", type="password")
     
+    # Login button
     if st.button("Login"):
-        if username == "admin" and password == "password":  # Simple validation
-            st.session_state.authenticated = True
-            st.session_state.username = username  # Store username in session state
-            st.write("Login successful!")
+        if username == VALID_USERNAME and password == VALID_PASSWORD:
+            st.session_state.logged_in = True
+            st.success("Login successful!")  # Display login success
+            st.experimental_rerun()  # Rerun the script after successful login
         else:
-            st.write("Invalid credentials, please try again.")
-else:
-    # Use the stored username from session state
-    st.write(f"Welcome {st.session_state.username}!")
+            st.error("Invalid credentials. Please try again.")
     
-    # Radio button selection system for user journey
-    if selected_role is None:
-        st.write("Choose a User Role:")
-        selected_role = st.radio("Select Role", ["Franchisee", "Investor", "Management"])
+# User role selection screen
+def user_role_selection():
+    st.title("Select Your Role")
+
+    roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
     
-    if selected_role and selected_subrole is None:
-        st.write(f"Selected Role: {selected_role}")
-        st.write("Choose a Sub-Role:")
-        if selected_role == "Franchisee":
-            selected_subrole = st.radio("Select Sub-Role", ["Owner", "Manager", "Staff"])
-        elif selected_role == "Investor":
-            selected_subrole = st.radio("Select Sub-Role", ["Partner", "Shareholder", "Advisory"])
-        elif selected_role == "Management":
-            selected_subrole = st.radio("Select Sub-Role", ["Operations", "Finance", "HR"])
+    # Display radio buttons for role selection
+    selected_role = st.radio("Choose a role", roles)
     
-    if selected_subrole and selected_action is None:
-        st.write(f"Selected Sub-Role: {selected_subrole}")
-        st.write("Choose an Action:")
-        selected_action = st.radio("Select Action", ["Plan", "Monitor", "Report"])
+    if st.button("Proceed"):
+        st.write(f"You selected {selected_role}")
+        # Call the next step or function after role selection
+        sub_role_selection(selected_role)
+
+# Sub-role selection based on the selected user role
+def sub_role_selection(role):
+    st.title(f"Select Sub-role for {role}")
     
-    if selected_action and selected_activity is None:
-        st.write(f"Final selection: {selected_role} -> {selected_subrole} -> {selected_action}")
-        st.write("Choose an Activity under Plan:")
-        selected_activity = st.radio("Select Activity", ["Develop Strategy", "Resource Allocation", "No further option"])
+    # Define sub-roles for each user role (example data)
+    sub_roles = {
+        "Franchisee": ["Owner", "Operator"],
+        "Management": ["CEO", "COO", "CFO"],
+        "Investor": ["Equity Partner", "Angel Investor"],
+        "Employee": ["Staff", "Manager"],
+        "Admin": ["Super Admin", "Tech Support"]
+    }
+    
+    if role in sub_roles:
+        sub_role = st.radio("Choose a sub-role", sub_roles[role])
         
-        if selected_activity:
-            st.write(f"Final selection: {selected_role} -> {selected_subrole} -> {selected_action} -> {selected_activity}")
-            
-            if st.button("Next"):
-                st.write(f"You selected: {selected_role} -> {selected_subrole} -> {selected_action} -> {selected_activity}")
-                st.write("Proceeding to the next stage...")
-                # Placeholder for next step logic based on valid combination
+        if st.button("Proceed to Actions"):
+            st.write(f"You selected the sub-role: {sub_role}")
+            action_selection(role, sub_role)
 
-    # Log out button
-    if st.button("Log Out"):
-        del st.session_state['authenticated']
-        st.write("Logged out successfully. Please login again.")
-        st.experimental_rerun()
+# Action selection screen
+def action_selection(role, sub_role):
+    st.title(f"Actions available for {role} - {sub_role}")
 
-    # Help button
-    if st.button("Help"):
-        st.write("Help page is under development.")
-        # Placeholder for future Help page logic
+    actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile"]
+    
+    selected_action = st.radio("Choose an action", actions)
+    
+    if st.button("Proceed to Activity"):
+        st.write(f"You selected the action: {selected_action}")
+        activity_selection(role, sub_role, selected_action)
 
-    # Clear screen and return to the start if invalid combination selected (logic placeholder)
-    if selected_role and selected_subrole and selected_action and selected_activity:
-        if selected_role != "Franchisee" or selected_subrole != "Owner" or selected_action != "Plan" or selected_activity != "Develop Strategy":
-            st.write("Invalid combination of choices selected. Please review and revise accordingly.")
-            # Reset all selections
-            selected_role = None
-            selected_subrole = None
-            selected_action = None
-            selected_activity = None
-            st.experimental_rerun()
+# Activity selection screen
+def activity_selection(role, sub_role, action):
+    st.title(f"Activities for {role} - {sub_role} - {action}")
+    
+    activities = ["Update Settings", "View Analytics", "Export Data", "Manage Users"]
+    
+    selected_activity = st.radio("Choose an activity", activities)
+    
+    if st.button("Finalize"):
+        st.write(f"Final choice: Role={role}, Sub-role={sub_role}, Action={action}, Activity={selected_activity}")
+        st.success("Journey completed successfully!")
+        st.button("Logout", on_click=logout)
+
+# Logout function
+def logout():
+    st.session_state.logged_in = False
+    st.experimental_rerun()
+
+if __name__ == "__main__":
+    main()
