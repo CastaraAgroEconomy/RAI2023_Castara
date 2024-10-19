@@ -31,7 +31,7 @@ def login():
         if username == VALID_USERNAME and password == VALID_PASSWORD:
             st.session_state.logged_in = True
             st.success("Login successful!")  # Display login success
-            st.experimental_rerun()  # Rerun the script after successful login
+            user_role_selection()  # Instead of rerunning, continue to next step
         else:
             st.error("Invalid credentials. Please try again.")
     
@@ -97,7 +97,7 @@ def activity_selection(role, sub_role, action):
 # Logout function
 def logout():
     st.session_state.logged_in = False
-    st.experimental_rerun()
+    main()  # Return to the main flow
 
 if __name__ == "__main__":
     main()
