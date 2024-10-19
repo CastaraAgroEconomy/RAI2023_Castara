@@ -10,6 +10,7 @@ selected_activity = None
 st.image('Assets/Media/Images/Cover_page.jpg')
 
 # Login section
+# Login section
 if "authenticated" not in st.session_state:
     username = st.text_input("Enter your username")
     password = st.text_input("Enter your password", type="password")
@@ -17,11 +18,13 @@ if "authenticated" not in st.session_state:
     if st.button("Login"):
         if username == "admin" and password == "password":  # Simple validation
             st.session_state.authenticated = True
+            st.session_state.username = username  # Store username in session state
             st.write("Login successful!")
         else:
             st.write("Invalid credentials, please try again.")
 else:
-    st.write(f"Welcome {username}!")
+    # Use the stored username from session state
+    st.write(f"Welcome {st.session_state.username}!")
     
     # Radio button selection system for user journey
     if selected_role is None:
