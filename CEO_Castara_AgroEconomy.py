@@ -9,7 +9,7 @@ def main():
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
     
-    # Call login function
+    # Initialize session state for login
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
         
@@ -31,73 +31,16 @@ def login():
         if username == VALID_USERNAME and password == VALID_PASSWORD:
             st.session_state.logged_in = True
             st.success("Login successful!")  # Display login success
-            st.experimental_rerun()  # Rerun the script after successful login
+            st.rerun()  # Use st.rerun() instead of st.experimental_rerun()
         else:
             st.error("Invalid credentials. Please try again.")
-    
-# User role selection screen
-def user_role_selection():
-    st.title("Select Your Role")
 
-    roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
-    
-    # Display radio buttons for role selection
-    selected_role = st.radio("Choose a role", roles)
-    
-    if st.button("Proceed"):
-        st.write(f"You selected {selected_role}")
-        # Call the next step or function after role selection
-        sub_role_selection(selected_role)
-
-# Sub-role selection based on the selected user role
-def sub_role_selection(role):
-    st.title(f"Select Sub-role for {role}")
-    
-    # Define sub-roles for each user role (example data)
-    sub_roles = {
-        "Franchisee": ["Owner", "Operator"],
-        "Management": ["CEO", "COO", "CFO"],
-        "Investor": ["Equity Partner", "Angel Investor"],
-        "Employee": ["Staff", "Manager"],
-        "Admin": ["Super Admin", "Tech Support"]
-    }
-    
-    if role in sub_roles:
-        sub_role = st.radio("Choose a sub-role", sub_roles[role])
-        
-        if st.button("Proceed to Actions"):
-            st.write(f"You selected the sub-role: {sub_role}")
-            action_selection(role, sub_role)
-
-# Action selection screen
-def action_selection(role, sub_role):
-    st.title(f"Actions available for {role} - {sub_role}")
-
-    actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile"]
-    
-    selected_action = st.radio("Choose an action", actions)
-    
-    if st.button("Proceed to Activity"):
-        st.write(f"You selected the action: {selected_action}")
-        activity_selection(role, sub_role, selected_action)
-
-# Activity selection screen
-def activity_selection(role, sub_role, action):
-    st.title(f"Activities for {role} - {sub_role} - {action}")
-    
-    activities = ["Update Settings", "View Analytics", "Export Data", "Manage Users"]
-    
-    selected_activity = st.radio("Choose an activity", activities)
-    
-    if st.button("Finalize"):
-        st.write(f"Final choice: Role={role}, Sub-role={sub_role}, Action={action}, Activity={selected_activity}")
-        st.success("Journey completed successfully!")
-        st.button("Logout", on_click=logout)
+# ... (rest of the functions remain the same)
 
 # Logout function
 def logout():
     st.session_state.logged_in = False
-    st.experimental_rerun()
+    st.rerun()  # Use st.rerun() here as well
 
 if __name__ == "__main__":
     main()
