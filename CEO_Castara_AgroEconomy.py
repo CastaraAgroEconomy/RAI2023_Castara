@@ -3,7 +3,7 @@ import streamlit as st
 # A placeholder user database
 users = {
     'admin': 'password123',
-    'guest': 'password456',
+    'user1': 'password456',
 }
 
 # Placeholder for user roles and other selections
@@ -17,8 +17,10 @@ activities = ['Activity1', 'Activity2', 'Activity3']
 
 # Function to clear the screen
 def clear_screen():
-    st.session_state['clear'] = True
-    st.experimental_rerun()
+    # Instead of using st.experimental_rerun, we'll update the session state directly
+    for key in ['role', 'action', 'activity']:
+        if key in st.session_state:
+            del st.session_state[key]
 
 # Function to display the user role options
 def display_role_options(user):
@@ -26,7 +28,6 @@ def display_role_options(user):
     selected_role = st.radio("Role", roles[user])
     if st.button("Next"):
         st.session_state['role'] = selected_role
-        clear_screen()
 
 # Function to display the action options
 def display_action_options():
@@ -34,7 +35,6 @@ def display_action_options():
     selected_action = st.radio("Action", actions)
     if st.button("Next"):
         st.session_state['action'] = selected_action
-        clear_screen()
 
 # Function to display the activity options
 def display_activity_options():
@@ -42,16 +42,15 @@ def display_activity_options():
     selected_activity = st.radio("Activity", activities)
     if st.button("Next"):
         st.session_state['activity'] = selected_activity
-        clear_screen()
 
 # Function to handle logout
 def logout():
     st.session_state.clear()
-    st.experimental_rerun()
+    st.experimental_rerun()  # We only need to rerun when logging out to reset the app
 
 # Main function to handle user login and navigation
 def main():
-    if 'role' not in st.session_state:
+    if 'username' not in st.session_state:
         # Login logic
         st.title("Login")
         username = st.text_input("Username")
@@ -59,7 +58,7 @@ def main():
         if st.button("Login"):
             if username in users and users[username] == password:
                 st.session_state['username'] = username
-                clear_screen()
+                clear_screen()  # This clears everything after login
             else:
                 st.error("Invalid username or password.")
     else:
