@@ -1,5 +1,3 @@
-Updated Streamlit Script
-
 import streamlit as st
 
 # Placeholder for valid credentials (admin/password for testing)
