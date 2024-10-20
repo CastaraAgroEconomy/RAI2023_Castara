@@ -1,103 +1,100 @@
 import streamlit as st
 
-# Placeholder for valid credentials (admin/password for testing)
-VALID_USERNAME = "admin"
-VALID_PASSWORD = "password"
+# Dummy database of users and roles
+users = {"admin": {"password": "password", "role": "Admin"},
+         "user1": {"password": "password1", "role": "Sub-Role 1"},
+         "user2": {"password": "password2", "role": "Sub-Role 2"}}
 
-# Define the main function that will control the flow
-def main():
-    # Display cover page image
-    st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
-    
-    # Call login function
-    if 'logged_in' not in st.session_state:
-        st.session_state.logged_in = False
-        
-    if not st.session_state.logged_in:
-        login()  # Go to login page if not logged in
-    else:
-        user_role_selection()  # Proceed to user role selection if logged in
+# Placeholder actions and activities for different roles
+actions = {"Admin": ["Manage Users", "View Reports"],
+           "Sub-Role 1": ["Submit Report", "View Own Reports"],
+           "Sub-Role 2": ["Submit Feedback", "View Feedback"]}
+
+activities = {"Manage Users": ["Add User", "Delete User"],
+              "View Reports": ["Daily Report", "Weekly Report"],
+              "Submit Report": ["Submit Daily", "Submit Weekly"],
+              "View Own Reports": ["Own Daily Report", "Own Weekly Report"],
+              "Submit Feedback": ["Submit General Feedback", "Submit Specific Feedback"],
+              "View Feedback": ["View All Feedback", "View Own Feedback"]}
+
+# Function to clear the screen
+def clear_screen():
+    st.empty()
 
 # Login function
-def login():
-    st.title("Login")
-    
-    # Input fields for username and password
-    username = st.text_input("Enter your username")
-    password = st.text_input("Enter your password", type="password")
-    
-    # Login button
-    if st.button("Login"):
-        if username == VALID_USERNAME and password == VALID_PASSWORD:
-            st.session_state.logged_in = True
-            st.success("Login successful!")  # Display login success
-            user_role_selection()  # Instead of rerunning, continue to next step
-        else:
-            st.error("Invalid credentials. Please try again.")
-    
-# User role selection screen
-def user_role_selection():
-    st.title("Select Your Role")
+def login(username, password):
+    if username in users and users[username]["password"] == password:
+        st.session_state['username'] = username
+        st.session_state['role'] = users[username]["role"]
+        st.success(f"Login successful! Welcome {username}.")
+        return True
+    else:
+        st.error("Invalid credentials. Please try again.")
+        return False
 
-    roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
-    
-    # Display radio buttons for role selection
-    selected_role = st.radio("Choose a role", roles)
-    
+# Function to select role
+def select_role():
+    st.subheader(f"User Role: {st.session_state['role']}")
+    st.write("Proceed to the next step by selecting an action.")
+    if st.button("Next"):
+        clear_screen()
+        select_action()
+
+# Function to select action
+def select_action():
+    st.subheader("Select an Action:")
+    action = st.radio("Choose an action:", actions[st.session_state['role']])
+    st.session_state['action'] = action
     if st.button("Proceed"):
-        st.write(f"You selected {selected_role}")
-        # Call the next step or function after role selection
-        sub_role_selection(selected_role)
+        clear_screen()
+        select_activity()
 
-# Sub-role selection based on the selected user role
-def sub_role_selection(role):
-    st.title(f"Select Sub-role for {role}")
-    
-    # Define sub-roles for each user role (example data)
-    sub_roles = {
-        "Franchisee": ["Owner", "Operator"],
-        "Management": ["CEO", "COO", "CFO"],
-        "Investor": ["Equity Partner", "Angel Investor"],
-        "Employee": ["Staff", "Manager"],
-        "Admin": ["Super Admin", "Tech Support"]
-    }
-    
-    if role in sub_roles:
-        sub_role = st.radio("Choose a sub-role", sub_roles[role])
-        
-        if st.button("Proceed to Actions"):
-            st.write(f"You selected the sub-role: {sub_role}")
-            action_selection(role, sub_role)
+# Function to select activity
+def select_activity():
+    st.subheader(f"Select an Activity for {st.session_state['action']}:")
+    activity = st.radio("Choose an activity:", activities[st.session_state['action']])
+    st.session_state['activity'] = activity
+    if st.button("Proceed to Action"):
+        clear_screen()
+        run_selected_function()
 
-# Action selection screen
-def action_selection(role, sub_role):
-    st.title(f"Actions available for {role} - {sub_role}")
-
-    actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile"]
-    
-    selected_action = st.radio("Choose an action", actions)
-    
-    if st.button("Proceed to Activity"):
-        st.write(f"You selected the action: {selected_action}")
-        activity_selection(role, sub_role, selected_action)
-
-# Activity selection screen
-def activity_selection(role, sub_role, action):
-    st.title(f"Activities for {role} - {sub_role} - {action}")
-    
-    activities = ["Update Settings", "View Analytics", "Export Data", "Manage Users"]
-    
-    selected_activity = st.radio("Choose an activity", activities)
-    
-    if st.button("Finalize"):
-        st.write(f"Final choice: Role={role}, Sub-role={sub_role}, Action={action}, Activity={selected_activity}")
-        st.success("Journey completed successfully!")
-        st.button("Logout", on_click=logout)
+# Function to run the selected function/script
+def run_selected_function():
+    st.subheader(f"Running: {st.session_state['activity']}")
+    st.write(f"Executing {st.session_state['activity']}... (Placeholder for real functionality)")
+    # Add more specific functionality for each activity here as needed.
 
 # Logout function
 def logout():
-    st.session_state.logged_in = False
-    main()  # Return to the main flow
+    st.session_state.clear()
+    st.success("You have been logged out.")
+
+# Main app flow
+def main():
+    st.title("Castara AgroEconomy App")
+    
+    # If the user is logged in
+    if 'username' in st.session_state:
+        st.sidebar.write(f"Logged in as: {st.session_state['username']}")
+        if st.sidebar.button("Logout"):
+            logout()
+            return
+
+        # Navigate through the user's journey
+        if 'action' in st.session_state:
+            select_activity()
+        elif 'role' in st.session_state:
+            select_action()
+        else:
+            select_role()
+
+    else:
+        st.subheader("Login to continue")
+        username = st.text_input("Enter your username")
+        password = st.text_input("Enter your password", type="password")
+        if st.button("Login"):
+            if login(username, password):
+                clear_screen()
 
 if __name__ == "__main__":
     main()
