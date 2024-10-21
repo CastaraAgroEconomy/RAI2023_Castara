@@ -70,7 +70,7 @@ def user_role_selection(selected_role):
         st.session_state.go_user = True
         selected_sub_role = " "
         sub_role_selection(selected_role, selected_sub_role)
-        st.rerun()
+        # st.rerun()
     else:
         st.write(" ⚠️ - press button to continue")
 
@@ -108,7 +108,7 @@ def sub_role_selection(selected_role, selected_sub_role):
            st.write(f"You selected the sub-role: {selected_sub_role}")
            selected_action = " "
            action_selection(selected_role, selected_sub_role, selected_action)
-           st.rerun()
+           # st.rerun()
         else:
            st.write(" ⚠️ - press button to continue")
 
@@ -140,7 +140,7 @@ def action_selection(selected_role, selected_sub_role, selected_action):
         st.write(f"You selected the action: {selected_action}")
         selected_activity = " "
         activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
-        st.rerun
+        # st.rerun
     else:
         st.write(" ⚠️ - press button to continue")
 
