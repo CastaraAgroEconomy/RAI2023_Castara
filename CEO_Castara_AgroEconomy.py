@@ -73,6 +73,8 @@ def sub_role_selection(selected_role):
         if st.button("Choose Action"):
             st.write(f"You selected the sub-role: {selected_sub_role}")
             action_selection(selected_role, selected_sub_role)
+    else 
+       st.write(" ⚠️ - No sub-role selected")
 
 # Action selection screen
 def action_selection(selected_role, selected_sub_role):
