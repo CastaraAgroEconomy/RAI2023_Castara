@@ -19,10 +19,10 @@ def main():
     if not st.session_state.logged_in:
         login()  # Go to login page if not logged in
     else:
-        selected_role = " "
-        selected_sub_role = " "
-        selected_action = " "
-        sekected_activity = " "
+        selected_role == " "
+        selected_sub_role == " "
+        selected_action == " "
+        sekected_activity == " "
         
         user_role_selection(selected_role)  # Proceed to user role selection if logged in
         sub_role_selection(selected_role, selected_sub_role)
