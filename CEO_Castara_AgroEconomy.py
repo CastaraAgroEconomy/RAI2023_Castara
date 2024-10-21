@@ -21,12 +21,7 @@ def main():
     else:
         selected_role = " "
         user_role_selection(selected_role)  # Proceed to user role selection if logged in
-        selected_sub_role = " "
-        sub_role_selection(selected_role, selected_sub_role)
-        selected_action = " "
-        action_selection(selected_role, selected_sub_role, selected_action)
-        sekected_activity = " "
-        activity_selection(selected_role, selected_sub_role, selected_activity)
+
 
 # Login function
 def login():
@@ -59,6 +54,8 @@ def user_role_selection(selected_role):
     if st.button("Proceed"):
         st.write(f"You selected {selected_role}")
         # Call the next step or function after role selection made in the main function
+        selected_sub_role = " "
+        sub_role_selection(selected_role, selected_sub_role)
     else:
         st.write(" ⚠️ - press button to continue")
 
@@ -80,6 +77,8 @@ def sub_role_selection(selected_role, selected_sub_role):
         selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
         if st.button("Choose Action"):
            st.write(f"You selected the sub-role: {selected_sub_role}")
+           selected_action = " "
+           action_selection(selected_role, selected_sub_role, selected_action)
         else:
            st.write(" ⚠️ - press button to continue")
 
@@ -94,6 +93,8 @@ def action_selection(selected_role, selected_sub_role, selected_action):
     
     if st.button("choose Activity"):
         st.write(f"You selected the action: {selected_action}")
+        selected_activity = " "
+        activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
     else:
         st.write(" ⚠️ - press button to continue")
 
