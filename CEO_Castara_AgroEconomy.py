@@ -48,10 +48,10 @@ def login():
         
     if not st.session_state.go_user:
         selected_user = " "
-        select_user_role()  # Go to user_role page if list not selected
+        user_role_selection(selected_user)  # Go to user_role page if list not selected
     else:
         selected_sub_role = " "
-        user_role_selection(selected_role)  # Go to user role selection if go_user set
+        sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
 
 
 # User role selection screen
@@ -79,10 +79,10 @@ def user_role_selection(selected_role):
         
     if not st.session_state.go_sub_role:
         selected_sub_role = " "
-        select_sub_role(selected_role) # Go to sub-user role page if go_sub_role not set
+        select_sub_role(selected_role, selected_sub_role) # Go to sub-user role page if go_sub_role not set
     else:
-        selected_sub_role = " "
-        sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_sub_role set
+        selected_action = " "
+        action_selection(selected_role, selected_sub_role, selected_action)  # Go to action selection page if go_sub_role set
 
 
 # Sub-role selection based on the selected user role
@@ -110,15 +110,15 @@ def sub_role_selection(selected_role, selected_sub_role):
 
 
   # Call action function
-    if 'go_action' not in st.session_state:
-        st.session_state.go_action = False
+    if 'go_activity' not in st.session_state:
+        st.session_state.go_activity = False
         
-    if not st.session_state.go_action:
-        selected_action = " "
-        select_action(selected_role, selected_user_sub_role) # Go to sub_user_role page if go_user_sub_role not set
+    if not st.session_state.go_activity:
+        selected_activity = " "
+        select_activity(selected_role, selected_user_sub_role) # Go to activity page if go_activity not set
     else:
-        selected_action = " "
-        action_selection(selected_role, selected_sub_user_role, selected_action)  # Go to action selection if go_action set
+        selected_activity = " "
+        activity_selection(selected_role, selected_sub_user_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
 
 
 
