@@ -55,9 +55,9 @@ def user_role_selection():
         sub_role_selection(selected_role)
 
 # Sub-role selection based on the selected user role
-def sub_role_selection(role):
+def sub_role_selection(selected_role):
     # clear_display()
-    st.title(f"Select Sub-role for {role}")
+    st.title(f"Select Sub-role for {selected_role}")
     
     # Define sub-roles for each user role (example data)
     sub_roles = {
@@ -68,16 +68,16 @@ def sub_role_selection(role):
         "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
 
-    if  role in sub_roles:
-        sub_role = st.radio("Choose a sub-role", sub_roles[role])
+    if  selected_role in sub_roles:
+        selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
         if st.button("Choose Action"):
             st.write(f"You selected the sub-role: {sub_role}")
-            action_selection(role, sub_role)
+            action_selection(selected_role, selected_sub_role)
 
 # Action selection screen
-def action_selection(role, sub_role):
+def action_selection(selected_role, selected_sub_role):
     # clear_display()
-    st.title(f"Actions available for {role} - {sub_role}")
+    st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
     actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile", "API calls"]
     
@@ -85,32 +85,32 @@ def action_selection(role, sub_role):
     
     if st.button("choose Activity"):
         st.write(f"You selected the action: {selected_action}")
-        activity_selection(role, sub_role, selected_action)
+        activity_selection(selected_role, selected_sub_role, selected_action)
 
 # Activity selection screen
-def activity_selection(role, sub_role, action):
+def activity_selection(selected_role, selected_sub_role, selected_action):
     # clear_display()
-    st.title(f"Activities for {role} - {sub_role} - {action}")
+    st.title(f"Activities for {selected_role} - {selectes_sub_role} - {selected_action}")
     
     activities = ["Update Settings", "View Analytics", "Export Data", "Manage Users", "Pull sensor data", "Analyze Sensor data", "Adjust component", "Calibrate"]
     
     selected_activity = st.radio("Choose an activity", activities)
     
     if st.button("Finalize"):
-        is_valid, next_selection = validate_selection(role, sub_role, action, selected_activity)
+        is_valid, next_selection = validate_selection(selected_role, selected_sub_role, selected_action, selected_activity)
         
         if is_valid:
-            st.write(f"Final choice: Role={role}, Sub-role={sub_role}, Action={action}, Activity={selected_activity}")
+            st.write(f"Final choice: Role={selected_role}, Sub-role={selected_sub_role}, Action={selected_action}, Activity={selected_activity}")
             st.success("Journey completed successfully!")
             st.button("Logout", on_click=logout)
         else:
             st.error("Invalid combination. Please go back and change your selection.")
-            if next_selection == "role":
+            if next_selection == "selected_role":
                 user_role_selection()
-            elif next_selection == "sub_role":
-                sub_role_selection(role)
-            elif next_selection == "action":
-                action_selection(role, sub_role)
+            elif next_selection == "selected_sub_role":
+                sub_role_selection(selected_role)
+            elif next_selection == "selected_action":
+                action_selection(selected_role, selected_sub_role)
             else:
                 st.error("Unexpected error. Please start over.")
                 user_role_selection()
