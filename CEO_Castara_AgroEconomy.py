@@ -1,4 +1,4 @@
-import streamlit as st
+himport streamlit as st
 from features.Truth_Table.truth_table_logic import validate_selection
 from features.Utility.Clear_screen import clear_display
 
@@ -11,7 +11,9 @@ def main():
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
     
-    # Call login function
+    # Call login flag function to set flag and select login and user_role
+    def Call_login_flag()
+
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
         
@@ -20,11 +22,11 @@ def main():
     else:
         selected_role = " "
         user_role_selection(selected_role)  # Proceed to user role selection if logged in
+    return
 
 
 # Login function
 def login():
-    # clear_display()
     st.title("Castara AgroEconomy venture")
     
     # Input fields for username and password
@@ -40,7 +42,9 @@ def login():
             st.error("Invalid credentials. Please try again.")
     return # Return to calling function
 
-  # Call user_role function
+
+# Call user_role flag function to set flag and run to select role and sub_role 
+def Call_user_role_flag()
     if 'go_user' not in st.session_state:
         st.session_state.go_user = False
         
@@ -50,11 +54,10 @@ def login():
     else:
         selected_sub_role = " "
         sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
-
+    return
 
 # User role selection screen
 def user_role_selection(selected_role):
-    # clear_display()
     st.title("Select Your Role")
 
     roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
@@ -72,7 +75,8 @@ def user_role_selection(selected_role):
         st.write(" ⚠️ - press button to continue")
     return 
     
-# Call user_sub_role function
+# Call user sub_role flag function to set the flag and run to select sub_role and action
+def Call_sub_role_flag()
     if 'go_sub_role' not in st.session_state:
         st.session_state.go_sub_role = False
         
@@ -82,6 +86,7 @@ def user_role_selection(selected_role):
     else:
         selected_action = " "
         action_selection(selected_role, selected_sub_role, selected_action)  # Go to action selection page if go_sub_role set
+    return
 
 
 # Sub-role selection based on the selected user role
@@ -109,7 +114,8 @@ def sub_role_selection(selected_role, selected_sub_role):
            st.write(" ⚠️ - press button to continue")
         return
 
-  # Call action function
+# Call action flag function to set flag and select action and activities
+def Call_action_flag()
     if 'go_action' not in st.session_state:
         st.session_state.go_action = False
         
@@ -119,7 +125,7 @@ def sub_role_selection(selected_role, selected_sub_role):
     else:
         selected_activity = " "
         activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
-
+    return
 
 
 # Action selection screen
