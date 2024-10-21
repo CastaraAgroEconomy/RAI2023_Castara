@@ -79,10 +79,10 @@ def user_role_selection(selected_role):
         
     if not st.session_state.go_user_sub_role:
         selected_sub_role = " "
-        user_role_selection(selected_role))  # Go to sub_user_role page if go_user_sub_role not set
+        select_user_sub_role(selected_role) # Go to sub_user_role page if go_user_sub_role not set
     else:
         selected_sub_role = " "
-        user_sub_role_selection(selected_role, selected_su_user_role)  # Proceed to user role selection if go_sub_user_role set
+        user_sub_role_selection(selected_role, selected_sub_user_role)  # Go to sub-user role selection if go_sub_user_role set
 
 
 
