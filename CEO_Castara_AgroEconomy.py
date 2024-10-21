@@ -63,7 +63,7 @@ def user_role_selection(selected_role):
         st.write(" ⚠️ - press button to continue")
 
 # Sub-role selection based on the selected user role
-def sub_role_selection(selected_role):
+def sub_role_selection(selected_role, selected_sub_role):
     # clear_display()
     st.title(f"Select Sub-role for {selected_role}")
     
@@ -84,7 +84,7 @@ def sub_role_selection(selected_role):
            st.write(" ⚠️ - press button to continue")
 
 # Action selection screen
-def action_selection(selected_role, selected_sub_role):
+def action_selection(selected_role, selected_sub_role, selected_action):
     # clear_display()
     st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
@@ -98,7 +98,7 @@ def action_selection(selected_role, selected_sub_role):
         st.write(" ⚠️ - press button to continue")
 
 # Activity selection screen
-def activity_selection(selected_role, selected_sub_role, selected_action):
+def activity_selection(selected_role, selected_sub_role, selected_action, selected_activity):
     # clear_display()
     st.title(f"Activities for {selected_role} - {selectes_sub_role} - {selected_action}")
     
