@@ -41,7 +41,7 @@ def login():
     
 # User role selection screen
 def user_role_selection():
-    clear_display()
+    # clear_display()
     st.title("Select Your Role")
 
     roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
@@ -56,7 +56,7 @@ def user_role_selection():
 
 # Sub-role selection based on the selected user role
 def sub_role_selection(role):
-    clear_display()
+    # clear_display()
     st.title(f"Select Sub-role for {role}")
     
     # Define sub-roles for each user role (example data)
@@ -68,7 +68,7 @@ def sub_role_selection(role):
         "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
 
-    if sub_roles in sub_role:
+    if sub_role in sub_roles:
         sub_role = st.radio("Choose a sub-role", sub_roles[role])
         if st.button("Proceed to Actions"):
             st.write(f"You selected the sub-role: {sub_role}")
@@ -76,7 +76,7 @@ def sub_role_selection(role):
 
 # Action selection screen
 def action_selection(role, sub_role):
-    clear_display()
+    # clear_display()
     st.title(f"Actions available for {role} - {sub_role}")
 
     actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile"]
@@ -89,7 +89,7 @@ def action_selection(role, sub_role):
 
 # Activity selection screen
 def activity_selection(role, sub_role, action):
-    clear_display()
+    # clear_display()
     st.title(f"Activities for {role} - {sub_role} - {action}")
     
     activities = ["Update Settings", "View Analytics", "Export Data", "Manage Users"]
