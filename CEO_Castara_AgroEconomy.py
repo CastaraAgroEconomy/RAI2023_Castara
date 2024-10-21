@@ -12,7 +12,7 @@ def main():
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
     
     # Call login flag function to set flag and select login and user_role
-    def Call_login_flag()
+    def Call_login_flag():
 
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
@@ -44,7 +44,7 @@ def login():
 
 
 # Call user_role flag function to set flag and run to select role and sub_role 
-def Call_user_role_flag()
+def Call_user_role_flag():
     if 'go_user' not in st.session_state:
         st.session_state.go_user = False
         
@@ -76,7 +76,7 @@ def user_role_selection(selected_role):
     return 
     
 # Call user sub_role flag function to set the flag and run to select sub_role and action
-def Call_sub_role_flag()
+def Call_sub_role_flag():
     if 'go_sub_role' not in st.session_state:
         st.session_state.go_sub_role = False
         
@@ -115,7 +115,7 @@ def sub_role_selection(selected_role, selected_sub_role):
         return
 
 # Call action flag function to set flag and select action and activities
-def Call_action_flag()
+def Call_action_flag():
     if 'go_action' not in st.session_state:
         st.session_state.go_action = False
         
