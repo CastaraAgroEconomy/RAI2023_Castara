@@ -60,7 +60,7 @@ def user_role_selection(selected_role):
         st.write(f"You selected {selected_role}")
         # Call the next step or function after role selection made in the main function
     else:
-        st.write(" ⚠️ - No sub-role selected")
+        st.write(" ⚠️ - press button to continue")
 
 # Sub-role selection based on the selected user role
 def sub_role_selection(selected_role):
@@ -81,7 +81,7 @@ def sub_role_selection(selected_role):
         if st.button("Choose Action"):
            st.write(f"You selected the sub-role: {selected_sub_role}")
         else:
-           st.write(" ⚠️ - No Action selected")
+           st.write(" ⚠️ - press button to continue")
 
 # Action selection screen
 def action_selection(selected_role, selected_sub_role):
@@ -95,7 +95,7 @@ def action_selection(selected_role, selected_sub_role):
     if st.button("choose Activity"):
         st.write(f"You selected the action: {selected_action}")
     else:
-        st.write(" ⚠️ - No Activity selected")
+        st.write(" ⚠️ - press button to continue")
 
 # Activity selection screen
 def activity_selection(selected_role, selected_sub_role, selected_action):
@@ -121,9 +121,12 @@ def activity_selection(selected_role, selected_sub_role, selected_action):
                 sub_role_selection(selected_role)
             elif next_selection == "selected_action":
                 action_selection(selected_role, selected_sub_role)
+            elif next_selection == "selected_activity":
+                activity_selection(selected_role, selected_sub_role, selected_action)
             else:
                 st.error("Unexpected error. Please start over.")
-                user_role_selection()
+                user_role = ""
+                user_role_selection(user_role)
 
 
 # Logout function
