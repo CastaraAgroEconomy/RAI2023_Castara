@@ -140,7 +140,7 @@ def action_selection(selected_role, selected_sub_role, selected_action):
         st.write(f"You selected the action: {selected_action}")
         selected_activity = " "
         activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
-       return # Return to calling function
+        return # Return to calling function
     else:
         st.write(" ⚠️ - press button to continue")
 
