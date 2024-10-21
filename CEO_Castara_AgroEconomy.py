@@ -119,10 +119,10 @@ def sub_role_selection(selected_role, selected_sub_role):
         
     if not st.session_state.go_action:
         selected_action = " "
-        action_selection(selected_role, selected_user_sub_role) # Go to activity page if go_activity not set
+        action_selection(selected_role, selected_sub_role) # Go to activity page if go_activity not set
     else:
         selected_activity = " "
-        activity_selection(selected_role, selected_sub_user_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
+        activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
 
 
 
