@@ -1,4 +1,5 @@
 import streamlit as st
+from feathers.TruthTable.truth_table_logic import validate_selection
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
@@ -90,9 +91,24 @@ def activity_selection(role, sub_role, action):
     selected_activity = st.radio("Choose an activity", activities)
     
     if st.button("Finalize"):
-        st.write(f"Final choice: Role={role}, Sub-role={sub_role}, Action={action}, Activity={selected_activity}")
-        st.success("Journey completed successfully!")
-        st.button("Logout", on_click=logout)
+        is_valid, next_selection = validate_selection(role, sub_role, action, selected_activity)
+        
+        if is_valid:
+            st.write(f"Final choice: Role={role}, Sub-role={sub_role}, Action={action}, Activity={selected_activity}")
+            st.success("Journey completed successfully!")
+            st.button("Logout", on_click=logout)
+        else:
+            st.error("Invalid combination. Please go back and change your selection.")
+            if next_selection == "role":
+                user_role_selection()
+            elif next_selection == "sub_role":
+                sub_role_selection(role)
+            elif next_selection == "action":
+                action_selection(role, sub_role)
+            else:
+                st.error("Unexpected error. Please start over.")
+                user_role_selection()
+
 
 # Logout function
 def logout():
