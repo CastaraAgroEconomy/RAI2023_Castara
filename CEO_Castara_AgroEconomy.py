@@ -12,7 +12,6 @@ def main():
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
 
     Call_login_flag()
-    Call_user_role_flag()
     
 # Call login flag function to set flag and select login and user_role
 def Call_login_flag():
@@ -99,7 +98,6 @@ def Call_sub_role_flag():
 def sub_role_selection(selected_role, selected_sub_role):
     
     Call_sub_role_flag()
-    Call_action_flag()
 
     st.title(f"Select Sub-role for {selected_role}")
     
@@ -141,7 +139,6 @@ def Call_action_flag():
 def action_selection(selected_role, selected_sub_role, selected_action):
 
     Call_action_flag()
-    Call_activity_flag()
     
     st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
