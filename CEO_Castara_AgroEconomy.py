@@ -8,7 +8,7 @@ VALID_PASSWORD = "password"
 
 # Define the main function that will control the flow
 def main():
-    clear_display()
+    # clear_display()
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
     
@@ -23,7 +23,7 @@ def main():
 
 # Login function
 def login():
-    clear_display()
+    # clear_display()
     st.title("Castara AgroEconomy venture - Login")
     
     # Input fields for username and password
@@ -68,7 +68,7 @@ def sub_role_selection(role):
         "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
 
-    if sub_role in sub_roles:
+    if sub_roles in sub_role:
         sub_role = st.radio("Choose a sub-role", sub_roles[role])
         if st.button("Proceed to Actions"):
             st.write(f"You selected the sub-role: {sub_role}")
