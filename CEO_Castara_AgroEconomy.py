@@ -26,7 +26,7 @@ def main():
         selected_action = ""
         action_selection(selected_role, selected_sub_role, selected_action)
         sekected_activity = ""
-        activity_selection(selected_role, selected_sub_role, selected_action)
+        activity_selection(selected_role, selected_sub_role, selected_activity)
 
 # Login function
 def login():
