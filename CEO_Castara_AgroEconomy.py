@@ -16,7 +16,6 @@ def main():
         st.session_state.logged_in = False
         
     if not st.session_state.logged_in:
-        clear_display()
         login()  # Go to login page if not logged in
     else:
         selected_role = " "
