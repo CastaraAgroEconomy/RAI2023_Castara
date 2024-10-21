@@ -10,8 +10,11 @@ VALID_PASSWORD = "password"
 def main():
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
+
+    Call_login_flag()
+    Call_user_role_flag()
     
-    # Call login flag function to set flag and select login and user_role
+# Call login flag function to set flag and select login and user_role
     def Call_login_flag():
 
     if 'logged_in' not in st.session_state:
@@ -58,6 +61,9 @@ def Call_user_role_flag():
 
 # User role selection screen
 def user_role_selection(selected_role):
+
+    Call_user_role_flag()
+    
     st.title("Select Your Role")
 
     roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
@@ -91,7 +97,10 @@ def Call_sub_role_flag():
 
 # Sub-role selection based on the selected user role
 def sub_role_selection(selected_role, selected_sub_role):
-    # clear_display()
+    
+    Call_sub_role_flag()
+    Call_action_flag()
+
     st.title(f"Select Sub-role for {selected_role}")
     
     # Define sub-roles for each user role (example data)
@@ -130,7 +139,10 @@ def Call_action_flag():
 
 # Action selection screen
 def action_selection(selected_role, selected_sub_role, selected_action):
-    # clear_display()
+
+    Call_action_flag()
+    Call_activity_flag()
+    
     st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
     actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile", "API calls"]
@@ -149,7 +161,6 @@ def action_selection(selected_role, selected_sub_role, selected_action):
 
 # Activity selection screen
 def activity_selection(selected_role, selected_sub_role, selected_action, selected_activity):
-    # clear_display()
     st.title(f"Activities for {selected_role} - {selectes_sub_role} - {selected_action}")
     
     activity = ["Update Settings", "View Analytics", "Export Data", "Manage Users", "Pull sensor data", "Analyze Sensor data", "Adjust component", "Calibrate"]
