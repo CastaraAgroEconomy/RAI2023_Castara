@@ -125,8 +125,8 @@ def activity_selection(selected_role, selected_sub_role, selected_action):
                 activity_selection(selected_role, selected_sub_role, selected_action)
             else:
                 st.error("Unexpected error. Please start over.")
-                user_role = ""
-                user_role_selection(user_role)
+                return
+                
 
 
 # Logout function
