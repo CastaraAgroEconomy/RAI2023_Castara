@@ -37,7 +37,7 @@ def login():
         if username == VALID_USERNAME and password == VALID_PASSWORD:
             st.session_state.logged_in = True
             st.success("Login successful !")  # Display login success
-            st.rerun()  # Use st.rerun() instead of st.experimental_rerun()
+            # st.rerun()  # Use st.rerun() instead of st.experimental_rerun()
         else:
             st.error("Invalid credentials. Please try again.")
 
