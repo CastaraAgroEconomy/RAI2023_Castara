@@ -53,7 +53,6 @@ def user_role_selection():
         st.write(f"You selected {selected_role}")
         # Call the next step or function after role selection
         sub_role_selection(selected_role)
-        st.rerun()
 
 # Sub-role selection based on the selected user role
 def sub_role_selection(selected_role):
@@ -74,9 +73,8 @@ def sub_role_selection(selected_role):
         if st.button("Choose Action"):
            st.write(f"You selected the sub-role: {selected_sub_role}")
            action_selection(selected_role, selected_sub_role)
-           st.rerun()
-    else:
-       st.write(" ⚠️ - No sub-role selected")
+        else:
+           st.write(" ⚠️ - No sub-role selected")
 
 # Action selection screen
 def action_selection(selected_role, selected_sub_role):
