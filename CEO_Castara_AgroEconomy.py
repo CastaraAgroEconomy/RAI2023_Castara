@@ -1,5 +1,6 @@
 import streamlit as st
 from features.Truth_Table.truth_table_logic import validate_selection
+from features.Utility.Clear_screen import Clear_display
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
@@ -57,15 +58,16 @@ def sub_role_selection(role):
     # Define sub-roles for each user role (example data)
     sub_roles = {
         "Franchisee": ["Owner", "Operator"],
-        "Management": ["CEO", "COO", "CFO"],
-        "Investor": ["Equity Partner", "Angel Investor"],
-        "Employee": ["Staff", "Manager"],
-        "Admin": ["Super Admin", "Tech Support"]
+        "Management": ["CEO", "COO", "CFO", "CMO"],
+        "Investor": ["General Partner", "Limited Partner", "Angel Investor"],
+        "Employee": ["Facility Ops Staff","Technician", "Researcher", "Manager"],
+        "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
-    
-    if role in sub_roles:
+
+    clear_display():
+
+    if sub_role in sub_roles:
         sub_role = st.radio("Choose a sub-role", sub_roles[role])
-        
         if st.button("Proceed to Actions"):
             st.write(f"You selected the sub-role: {sub_role}")
             action_selection(role, sub_role)
@@ -75,6 +77,8 @@ def action_selection(role, sub_role):
     st.title(f"Actions available for {role} - {sub_role}")
 
     actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile"]
+
+    clear_display()
     
     selected_action = st.radio("Choose an action", actions)
     
