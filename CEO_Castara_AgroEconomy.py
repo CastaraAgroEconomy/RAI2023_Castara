@@ -19,13 +19,13 @@ def main():
     if not st.session_state.logged_in:
         login()  # Go to login page if not logged in
     else:
-        selected_role = ""
+        selected_role = " "
         user_role_selection(selected_role)  # Proceed to user role selection if logged in
-        selected_sub_role = ""
+        selected_sub_role = " "
         sub_role_selection(selected_role, selected_sub_role)
-        selected_action = ""
+        selected_action = " "
         action_selection(selected_role, selected_sub_role, selected_action)
-        sekected_activity = ""
+        sekected_activity = " "
         activity_selection(selected_role, selected_sub_role, selected_activity)
 
 # Login function
@@ -116,7 +116,8 @@ def activity_selection(selected_role, selected_sub_role, selected_action, select
         else:
             st.error("Invalid combination. Please go back and change your selection.")
             if next_selection == "selected_role":
-                user_role_selection()
+                selected_role = " "
+                user_role_selection(selected_role)
             elif next_selection == "selected_sub_role":
                 sub_role_selection(selected_role)
             elif next_selection == "selected_action":
