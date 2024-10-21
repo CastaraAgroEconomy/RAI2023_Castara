@@ -49,7 +49,7 @@ def user_role_selection():
     # Display radio buttons for role selection
     selected_role = st.radio("Choose a role", roles)
     
-    if st.button("Proceed to title"):
+    if st.button("Proceed"):
         st.write(f"You selected {selected_role}")
         # Call the next step or function after role selection
         sub_role_selection(selected_role)
@@ -70,7 +70,7 @@ def sub_role_selection(role):
 
     if  role in sub_roles:
         sub_role = st.radio("Choose a sub-role", sub_roles[role])
-        if st.button("Proceed to Actions"):
+        if st.button("Choose Action"):
             st.write(f"You selected the sub-role: {sub_role}")
             action_selection(role, sub_role)
 
@@ -83,7 +83,7 @@ def action_selection(role, sub_role):
     
     selected_action = st.radio("Choose an action", actions)
     
-    if st.button("Proceed to Activity"):
+    if st.button("choose Activity"):
         st.write(f"You selected the action: {selected_action}")
         activity_selection(role, sub_role, selected_action)
 
