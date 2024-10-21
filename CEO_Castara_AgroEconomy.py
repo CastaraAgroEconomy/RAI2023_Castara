@@ -1,6 +1,6 @@
 import streamlit as st
 from features.Truth_Table.truth_table_logic import validate_selection
-from features.Utility.Clear_screen import Clear_display
+from features.Utility.Clear_screen import clear_display
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
@@ -8,6 +8,7 @@ VALID_PASSWORD = "password"
 
 # Define the main function that will control the flow
 def main():
+    clear_display():
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
     
@@ -22,7 +23,8 @@ def main():
 
 # Login function
 def login():
-    st.title("Login")
+    clear_display():
+    st.title("Castara AgroEconomy venture - Login")
     
     # Input fields for username and password
     username = st.text_input("Enter your username")
@@ -32,13 +34,14 @@ def login():
     if st.button("Login"):
         if username == VALID_USERNAME and password == VALID_PASSWORD:
             st.session_state.logged_in = True
-            st.success("Login successful!")  # Display login success
+            st.success("Login successful !")  # Display login success
             st.rerun()  # Use st.rerun() instead of st.experimental_rerun()
         else:
             st.error("Invalid credentials. Please try again.")
     
 # User role selection screen
 def user_role_selection():
+    clear_display():
     st.title("Select Your Role")
 
     roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
@@ -53,6 +56,7 @@ def user_role_selection():
 
 # Sub-role selection based on the selected user role
 def sub_role_selection(role):
+    clear_display():
     st.title(f"Select Sub-role for {role}")
     
     # Define sub-roles for each user role (example data)
@@ -64,8 +68,6 @@ def sub_role_selection(role):
         "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
 
-    clear_display():
-
     if sub_role in sub_roles:
         sub_role = st.radio("Choose a sub-role", sub_roles[role])
         if st.button("Proceed to Actions"):
@@ -74,11 +76,10 @@ def sub_role_selection(role):
 
 # Action selection screen
 def action_selection(role, sub_role):
+    clear_display():
     st.title(f"Actions available for {role} - {sub_role}")
 
     actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile"]
-
-    clear_display()
     
     selected_action = st.radio("Choose an action", actions)
     
@@ -88,6 +89,7 @@ def action_selection(role, sub_role):
 
 # Activity selection screen
 def activity_selection(role, sub_role, action):
+    clear_display():
     st.title(f"Activities for {role} - {sub_role} - {action}")
     
     activities = ["Update Settings", "View Analytics", "Export Data", "Manage Users"]
