@@ -24,7 +24,7 @@ def main():
 # Login function
 def login():
     # clear_display()
-    st.title("Castara AgroEconomy venture - Login")
+    st.title("Castara AgroEconomy venture")
     
     # Input fields for username and password
     username = st.text_input("Enter your username")
@@ -71,7 +71,7 @@ def sub_role_selection(selected_role):
     if  selected_role in sub_roles:
         selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
         if st.button("Choose Action"):
-            st.write(f"You selected the sub-role: {sub_role}")
+            st.write(f"You selected the sub-role: {selected_sub_role}")
             action_selection(selected_role, selected_sub_role)
 
 # Action selection screen
