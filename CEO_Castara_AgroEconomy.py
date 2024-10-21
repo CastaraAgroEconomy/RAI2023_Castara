@@ -49,7 +49,6 @@ def login():
     if not st.session_state.go_user:
         selected_role = " "
         user_role_selection(selected_role)  # Go to user_role page if list not selected
-        st.rerun()
     else:
         selected_sub_role = " "
         sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
