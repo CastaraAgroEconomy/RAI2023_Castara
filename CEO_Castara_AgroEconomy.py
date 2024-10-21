@@ -40,7 +40,20 @@ def login():
             st.rerun()  # Use st.rerun() instead of st.experimental_rerun()
         else:
             st.error("Invalid credentials. Please try again.")
-    
+
+
+  # Call user_role function
+    if 'go_user' not in st.session_state:
+        st.session_state.go_user = False
+        
+    if not st.session_state.go_user:
+        selected_user = " "
+        select_user_role()  # Go to user_role page if list not selected
+    else:
+        selected_sub_role = " "
+        user_role_selection(selected_role)  # Go to user role selection if go_user set
+
+
 # User role selection screen
 def user_role_selection(selected_role):
     # clear_display()
@@ -58,6 +71,20 @@ def user_role_selection(selected_role):
         sub_role_selection(selected_role, selected_sub_role)
     else:
         st.write(" ⚠️ - press button to continue")
+
+
+  # Call user_sub_role function
+    if 'go_user_sub_role' not in st.session_state:
+        st.session_state.go_user_sub_role = False
+        
+    if not st.session_state.go_user_sub_role:
+        selected_sub_role = " "
+        user_role_selection(selected_role))  # Go to sub_user_role page if go_user_sub_role not set
+    else:
+        selected_sub_role = " "
+        user_sub_role_selection(selected_role, selected_su_user_role)  # Proceed to user role selection if go_sub_user_role set
+
+
 
 # Sub-role selection based on the selected user role
 def sub_role_selection(selected_role, selected_sub_role):
