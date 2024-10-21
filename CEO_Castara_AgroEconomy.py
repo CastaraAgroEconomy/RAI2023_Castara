@@ -19,7 +19,15 @@ def main():
     if not st.session_state.logged_in:
         login()  # Go to login page if not logged in
     else:
-        user_role_selection()  # Proceed to user role selection if logged in
+        selected_role = None
+        selected_sub_role = None
+        selected_action = None
+        sekected_activity = None
+        
+        user_role_selection(selected_role)  # Proceed to user role selection if logged in
+        sub_role_selection(selected_role, selected_sub_role)
+        action_selection(selected_role, selected_sub_role, selected_action)
+        activity_selection(selected_role, selected_sub_role, selected_action)
 
 # Login function
 def login():
@@ -51,8 +59,9 @@ def user_role_selection():
     
     if st.button("Proceed"):
         st.write(f"You selected {selected_role}")
-        # Call the next step or function after role selection
-        sub_role_selection(selected_role)
+        # Call the next step or function after role selection made in the main function
+    else:
+        st.write(" ⚠️ - No sub-role selected")
 
 # Sub-role selection based on the selected user role
 def sub_role_selection(selected_role):
@@ -72,9 +81,8 @@ def sub_role_selection(selected_role):
         selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
         if st.button("Choose Action"):
            st.write(f"You selected the sub-role: {selected_sub_role}")
-           action_selection(selected_role, selected_sub_role)
         else:
-           st.write(" ⚠️ - No sub-role selected")
+           st.write(" ⚠️ - No Action selected")
 
 # Action selection screen
 def action_selection(selected_role, selected_sub_role):
@@ -87,7 +95,8 @@ def action_selection(selected_role, selected_sub_role):
     
     if st.button("choose Activity"):
         st.write(f"You selected the action: {selected_action}")
-        activity_selection(selected_role, selected_sub_role, selected_action)
+    else:
+        st.write(" ⚠️ - No Activity selected")
 
 # Activity selection screen
 def activity_selection(selected_role, selected_sub_role, selected_action):
