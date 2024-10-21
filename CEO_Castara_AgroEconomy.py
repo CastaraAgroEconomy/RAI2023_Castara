@@ -49,7 +49,7 @@ def user_role_selection():
     # Display radio buttons for role selection
     selected_role = st.radio("Choose a role", roles)
     
-    if st.button("Proceed"):
+    if st.button("Proceed to title"):
         st.write(f"You selected {selected_role}")
         # Call the next step or function after role selection
         sub_role_selection(selected_role)
@@ -79,7 +79,7 @@ def action_selection(role, sub_role):
     # clear_display()
     st.title(f"Actions available for {role} - {sub_role}")
 
-    actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile"]
+    actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile", "API calls"]
     
     selected_action = st.radio("Choose an action", actions)
     
@@ -92,7 +92,7 @@ def activity_selection(role, sub_role, action):
     # clear_display()
     st.title(f"Activities for {role} - {sub_role} - {action}")
     
-    activities = ["Update Settings", "View Analytics", "Export Data", "Manage Users"]
+    activities = ["Update Settings", "View Analytics", "Export Data", "Manage Users", "Pull sensor data", "Analyze Sensor data", "Adjust component", "Calibrate"]
     
     selected_activity = st.radio("Choose an activity", activities)
     
