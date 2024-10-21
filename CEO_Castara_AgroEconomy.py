@@ -1,5 +1,5 @@
 import streamlit as st
-from feathers.TruthTable.truth_table_logic import validate_selection
+from features.Truth_Table.truth_table_logic import validate_selection
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
