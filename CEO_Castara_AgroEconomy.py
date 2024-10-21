@@ -8,7 +8,6 @@ VALID_PASSWORD = "password"
 
 # Define the main function that will control the flow
 def main():
-    # clear_display()
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
     
@@ -17,6 +16,7 @@ def main():
         st.session_state.logged_in = False
         
     if not st.session_state.logged_in:
+        clear_display()
         login()  # Go to login page if not logged in
     else:
         selected_role = " "
@@ -39,7 +39,7 @@ def login():
             st.success("Login successful !")  # Display login success
         else:
             st.error("Invalid credentials. Please try again.")
-        return # Return to calling function
+    return # Return to calling function
 
   # Call user_role function
     if 'go_user' not in st.session_state:
