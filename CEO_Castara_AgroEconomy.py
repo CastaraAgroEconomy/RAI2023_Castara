@@ -15,7 +15,7 @@ def main():
     Call_user_role_flag()
     
 # Call login flag function to set flag and select login and user_role
-    def Call_login_flag():
+def Call_login_flag():
 
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
