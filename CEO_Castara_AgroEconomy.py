@@ -8,7 +8,7 @@ VALID_PASSWORD = "password"
 
 # Define the main function that will control the flow
 def main():
-    clear_display()
+    # clear_display()
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
     
@@ -25,7 +25,7 @@ def main():
 
 # Login function
 def login():
-    clear_display()
+    # clear_display()
     st.title("Castara AgroEconomy venture")
     
     # Input fields for username and password
@@ -56,7 +56,7 @@ def login():
 
 # User role selection screen
 def user_role_selection(selected_role):
-    clear_display()
+    # clear_display()
     st.title("Select Your Role")
 
     roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
