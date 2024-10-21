@@ -8,7 +8,7 @@ VALID_PASSWORD = "password"
 
 # Define the main function that will control the flow
 def main():
-    # clear_display()
+    clear_display()
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
     
@@ -25,7 +25,7 @@ def main():
 
 # Login function
 def login():
-    # clear_display()
+    clear_display()
     st.title("Castara AgroEconomy venture")
     
     # Input fields for username and password
@@ -49,6 +49,7 @@ def login():
     if not st.session_state.go_user:
         selected_role = " "
         user_role_selection(selected_role)  # Go to user_role page if list not selected
+        st.rerun()
     else:
         selected_sub_role = " "
         sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
@@ -56,7 +57,7 @@ def login():
 
 # User role selection screen
 def user_role_selection(selected_role):
-    # clear_display()
+    clear_display()
     st.title("Select Your Role")
 
     roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
@@ -69,6 +70,7 @@ def user_role_selection(selected_role):
         # Call the next step or function after role selection made in the main function
         selected_sub_role = " "
         sub_role_selection(selected_role, selected_sub_role)
+        st.rerun()
     else:
         st.write(" ⚠️ - press button to continue")
 
@@ -105,6 +107,7 @@ def sub_role_selection(selected_role, selected_sub_role):
            st.write(f"You selected the sub-role: {selected_sub_role}")
            selected_action = " "
            action_selection(selected_role, selected_sub_role, selected_action)
+           st.rerun()
         else:
            st.write(" ⚠️ - press button to continue")
 
@@ -135,6 +138,7 @@ def action_selection(selected_role, selected_sub_role, selected_action):
         st.write(f"You selected the action: {selected_action}")
         selected_activity = " "
         activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
+        st.rerun
     else:
         st.write(" ⚠️ - press button to continue")
 
