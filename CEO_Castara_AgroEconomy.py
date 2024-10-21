@@ -67,7 +67,7 @@ def sub_role_selection(selected_role):
         "Employee": ["Facility Ops Staff","Technician", "Researcher", "Manager"],
         "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
-
+    st.write(" ⚠️ - EXECUTION REACHES HERE")
     if selected_role in sub_roles:
         selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
         if st.button("Choose Action"):
