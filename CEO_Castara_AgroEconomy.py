@@ -68,6 +68,7 @@ def user_role_selection(selected_role):
     if st.button("Proceed"):
         st.write(f"You selected {selected_role}")
         # Call the next step or function after role selection made in the main function
+        st.session_state.go_user = True
         selected_sub_role = " "
         sub_role_selection(selected_role, selected_sub_role)
         st.rerun()
@@ -104,6 +105,7 @@ def sub_role_selection(selected_role, selected_sub_role):
     if selected_role in sub_roles:
         selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
         if st.button("Choose Action"):
+           st.session_state.go_sub_role = True
            st.write(f"You selected the sub-role: {selected_sub_role}")
            selected_action = " "
            action_selection(selected_role, selected_sub_role, selected_action)
@@ -135,6 +137,7 @@ def action_selection(selected_role, selected_sub_role, selected_action):
     selected_action = st.radio("Choose an action", actions)
     
     if st.button("choose Activity"):
+        st.session_state.go_action = True
         st.write(f"You selected the action: {selected_action}")
         selected_activity = " "
         activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
@@ -155,6 +158,7 @@ def activity_selection(selected_role, selected_sub_role, selected_action, select
         is_valid, next_selection = validate_selection(selected_role, selected_sub_role, selected_action, selected_activity)
         
         if is_valid:
+            st.session_state.go_activity = True
             st.write(f"Final choice: Role={selected_role}, Sub-role={selected_sub_role}, Action={selected_action}, Activity={selected_activity}")
             st.success("Journey completed successfully!")
             st.button("Logout", on_click=logout)
