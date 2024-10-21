@@ -165,13 +165,20 @@ def activity_selection(selected_role, selected_sub_role, selected_action, select
             st.error("Invalid combination. Please go back and change your selection.")
             if next_selection == "selected_role":
                 selected_role = " "
+                st.session_state.go_user = False
                 user_role_selection(selected_role)
             elif next_selection == "selected_sub_role":
-                sub_role_selection(selected_role)
+                selected_sub_role = " "
+                st.session_state.go_sub_role = False
+                sub_role_selection(selected_role, selected_sub_role)
             elif next_selection == "selected_action":
-                action_selection(selected_role, selected_sub_role)
+                selected_action = " "
+                st.session_state.go_action = False
+                action_selection(selected_role, selected_sub_role, selected_action)
             elif next_selection == "selected_activity":
-                activity_selection(selected_role, selected_sub_role, selected_action)
+                selected_activity = " "
+                st.session_state.go_activity = False
+                activity_selection(selected_role, selected_sub_role, selected_action, selecity_activity)
             else:
                 st.error("Unexpected error. Please start over.")
                 return
