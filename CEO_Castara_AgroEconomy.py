@@ -90,7 +90,7 @@ def main():
     
     selected_action = st.radio("Choose an action", actions)
     
-    action_selection(selected_role, selected_sub_role, selected_action)
+    # action_selection(selected_role, selected_sub_role, selected_action)
     if st.button("choose Activity"):
         st.session_state.go_action = True
         st.write(f"You selected the action: {selected_action}")
