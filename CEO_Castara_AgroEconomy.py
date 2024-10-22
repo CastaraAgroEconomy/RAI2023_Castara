@@ -34,8 +34,6 @@ def main():
 # Inital Dashboard display section
 
 
-
-
     
 # Call login flag function to set flag and select login and user_role
 def Call_login_flag(selected_role):
