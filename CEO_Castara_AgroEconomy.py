@@ -16,13 +16,13 @@ def main():
     Call_login_flag()
     login()
 
-    Call_user_role_flag()
+    Call_user_role_flag(selected_role, selected_sub_role)
     user_role_selection(selected_role)
 
-    Call_sub_role_flag()
+    Call_sub_role_flag(selected_role, selected_sub_role, selected_action)
     sub_role_selection(selected_role, selected_sub_role)
 
-    Call_action_flag()
+    Call_action_flag(selected_role, selected_sub_role, selected_action, selected_activity)
     action_selection(selected_role, selected_sub_role, selected_action)
 
     activity_selection(selected_role,selected_sub_role, selected_action, selected_activity)
@@ -39,11 +39,11 @@ def Call_login_flag():
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
         
-   # if not st.session_state.logged_in:
-   #     login()  # Go to login page if not logged in
+    #  if not st.session_state.logged_in:
+    #     login()  # Go to login page if not logged in
     else:
          selected_role = " "
-   #     user_role_selection(selected_role)  # Proceed to user role selection if logged in
+    #    user_role_selection(selected_role)  # Proceed to user role selection if logged in
     return
 
 
@@ -66,13 +66,13 @@ def login():
 
 
 # Call user_role flag function to set flag and run to select role and sub_role 
-def Call_user_role_flag():
+def Call_user_role_flag(selected_role, selected_sub_role):
     if 'go_user' not in st.session_state:
         st.session_state.go_user = False
         
     if not st.session_state.go_user:
         selected_role = " "
-    #    user_role_selection(selected_role)  # Go to user_role page if list not selected
+    #   user_role_selection(selected_role)  # Go to user_role page if list not selected
     else:
         selected_sub_role = " "
     #   sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
