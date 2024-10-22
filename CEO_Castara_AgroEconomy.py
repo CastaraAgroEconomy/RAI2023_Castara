@@ -35,7 +35,7 @@ def main():
             st.error("Invalid credentials. Please try again.")
 
     
-    clear_display(placeholder)
+    clear_display():
 
     
     # Call_user_role_flag(selected_role, selected_sub_role)
@@ -58,7 +58,7 @@ def main():
         st.write("⚠️ - press button to continue")
 
     
-    clear_display(placeholder)
+    clear_display():
 
     
     # Call_sub_role_flag(selected_role, selected_sub_role, selected_action)
@@ -86,7 +86,7 @@ def main():
         st.write("⚠️ - press button to continue")
 
     
-    clear_display(placeholder)
+    clear_display():
 
     
     # Call_action_flag(selected_role, selected_sub_role, selected_action, selected_activity)
@@ -106,7 +106,7 @@ def main():
         st.write("⚠️ - press button to continue")
 
     
-    clear_display(placeholder)
+    clear_display():
 
 
   # Activity selection screen
