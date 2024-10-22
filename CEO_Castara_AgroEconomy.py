@@ -181,7 +181,7 @@ def action_selection(selected_role, selected_sub_role, selected_action):
 
 # Activity selection screen
 def activity_selection(selected_role, selected_sub_role, selected_action, selected_activity):
-    st.title(f"Activities for {selected_role} - {selectes_sub_role} - {selected_action}")
+    st.title(f"Activities for {selected_role} - {selected_sub_role} - {selected_action}")
     
     activity = ["Update Settings", "View Analytics", "Export Data", "Manage Users", "Pull sensor data", "Analyze Sensor data", "Adjust component", "Calibrate"]
     
