@@ -133,16 +133,16 @@ def sub_role_selection(selected_role, selected_sub_role):
         "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
 
-    if selected_role in sub_roles:
-        selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
-        if st.button("Choose Action"):
-           st.session_state.go_sub_role = True
-           st.write(f"You selected the sub-role: {selected_sub_role}")
-    #      selected_action = " "
-    #      action_selection(selected_role, selected_sub_role, selected_action)
-        else:
-           st.write("⚠️ - press button to continue")
-        return
+
+    selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
+    if st.button("Choose Action"):
+        st.session_state.go_sub_role = True
+        st.write(f"You selected the sub-role: {selected_sub_role}")
+    #   selected_action = " "
+    #   action_selection(selected_role, selected_sub_role, selected_action)
+    else:
+        st.write("⚠️ - press button to continue")
+    return
 
 # Call action flag function to set flag and select action and activities
 def Call_action_flag(selected_role, selected_sub_role, selected_action,selected_activity):
