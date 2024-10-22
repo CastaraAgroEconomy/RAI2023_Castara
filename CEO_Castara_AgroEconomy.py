@@ -78,6 +78,7 @@ def Call_user_role_flag(selected_role, selected_sub_role):
         if not st.session_state.go_user:
     #      selected_role = " "
     #      user_role_selection(selected_role)  # Go to user_role page if list not selected
+           st.write(st.write("⚠️ - Select a role")
     else:
     #   selected_sub_role = " "
     #   sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
@@ -112,6 +113,7 @@ def Call_sub_role_flag():
         if not st.session_state.go_sub_role:
     #      selected_sub_role = " "
     #      sub_role_selection(selected_role, selected_sub_role) # Go to sub-user role page if go_sub_role not set
+           st.write("⚠️ - Select a sub-role")
     else:
     #    selected_action = " "
     #    action_selection(selected_role, selected_sub_role, selected_action)  # Go to action selection page if go_sub_role set
@@ -152,6 +154,7 @@ def Call_action_flag():
         if not st.session_state.go_action:
     #      selected_action = " "
     #      action_selection(selected_role, selected_sub_role) # Go to activity page if go_activity not set
+           st.write("⚠️ - Select an action")
     else:
     #   selected_activity = " "
     #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
