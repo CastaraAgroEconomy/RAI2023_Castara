@@ -75,9 +75,9 @@ def Call_user_role_flag(selected_role, selected_sub_role):
     if 'go_user' not in st.session_state:
         st.session_state.go_user = False
         
-    if not st.session_state.go_user:
-    #   selected_role = " "
-    #   user_role_selection(selected_role)  # Go to user_role page if list not selected
+       if not st.session_state.go_user:
+    #     selected_role = " "
+    #     user_role_selection(selected_role)  # Go to user_role page if list not selected
     else:
     #   selected_sub_role = " "
     #   sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
@@ -109,9 +109,9 @@ def Call_sub_role_flag():
     if 'go_sub_role' not in st.session_state:
         st.session_state.go_sub_role = False
         
-    if not st.session_state.go_sub_role:
-    #    selected_sub_role = " "
-    #    sub_role_selection(selected_role, selected_sub_role) # Go to sub-user role page if go_sub_role not set
+       if not st.session_state.go_sub_role:
+    #     selected_sub_role = " "
+    #     sub_role_selection(selected_role, selected_sub_role) # Go to sub-user role page if go_sub_role not set
     else:
     #    selected_action = " "
     #    action_selection(selected_role, selected_sub_role, selected_action)  # Go to action selection page if go_sub_role set
@@ -149,9 +149,9 @@ def Call_action_flag():
     if 'go_action' not in st.session_state:
         st.session_state.go_action = False
         
-    if not st.session_state.go_action:
-    #    selected_action = " "
-    #    action_selection(selected_role, selected_sub_role) # Go to activity page if go_activity not set
+        if not st.session_state.go_action:
+    #      selected_action = " "
+    #      action_selection(selected_role, selected_sub_role) # Go to activity page if go_activity not set
     else:
     #   selected_activity = " "
     #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
