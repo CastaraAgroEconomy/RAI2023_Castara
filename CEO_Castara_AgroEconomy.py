@@ -6,6 +6,28 @@ from features.Utility.Clear_screen import clear_display
 VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
+Call_login_flag()
+login()
+
+Call_user_role_flag()
+user_role_selection()
+
+Call_sub_role_flag()
+sub_role_selection()
+
+Call_action_flag()
+action_selection()
+
+activity_selection()
+
+
+
+
+
+
+
+
+
 # Define the main function that will control the flow
 def main():
     # Display cover page image
