@@ -101,50 +101,50 @@ def main():
     
  
    # Action selection screen
-   st.title(f"Actions available for {selected_role} - {selected_sub_role}")
+        st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
-   actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile", "API calls"]
+        actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile", "API calls"]
     
-   selected_action = st.radio("Choose an action", actions)
+        selected_action = st.radio("Choose an action", actions)
 
 
 
   # Activity selection screen
 
-    st.title(f"Activities for {selected_role} - {selected_sub_role} - {selected_action}")
+       st.title(f"Activities for {selected_role} - {selected_sub_role} - {selected_action}")
     
-    activity = ["Update Settings", "View Analytics", "Export Data", "Manage Users", "Pull sensor data", "Analyze Sensor data", "Adjust component", "Calibrate"]
+       activity = ["Update Settings", "View Analytics", "Export Data", "Manage Users", "Pull sensor data", "Analyze Sensor data", "Adjust component", "Calibrate"]
     
-    selected_activity = st.radio("Choose an activity", activity)
+       selected_activity = st.radio("Choose an activity", activity)
     
-    if st.button("Finalize"):
-        is_valid, next_selection = validate_selection(selected_role, selected_sub_role, selected_action, selected_activity)
+       if st.button("Finalize"):
+          is_valid, next_selection = validate_selection(selected_role, selected_sub_role, selected_action, selected_activity)
         
-        if is_valid:
-            st.session_state.go_activity = True
-            st.write(f"Final choice: Role={selected_role}, Sub-role={selected_sub_role}, Action={selected_action}, Activity={selected_activity}")
-            st.success("Journey completed successfully!")
-            st.button("Logout", on_click=logout)
-        else:
-            st.error("Invalid combination. Please go back and change your selection.")
-            if next_selection == "selected_role":
-                selected_role = " "
-                st.session_state.go_user = False
+          if is_valid:
+              st.session_state.go_activity = True
+              st.write(f"Final choice: Role={selected_role}, Sub-role={selected_sub_role}, Action={selected_action}, Activity={selected_activity}")
+              st.success("Journey completed successfully!")
+              st.button("Logout", on_click=logout)
+          else:
+              st.error("Invalid combination. Please go back and change your selection.")
+              if next_selection == "selected_role":
+                  selected_role = " "
+                  st.session_state.go_user = False
             #   user_role_selection(selected_role)
-            elif next_selection == "selected_sub_role":
-                selected_sub_role = " "
-                st.session_state.go_sub_role = False
-            #   sub_role_selection(selected_role, selected_sub_role)
-            elif next_selection == "selected_action":
+              elif next_selection == "selected_sub_role":
+                  selected_sub_role = " "
+                  st.session_state.go_sub_role = False
+            #     sub_role_selection(selected_role, selected_sub_role)
+              elif next_selection == "selected_action":
                 selected_action = " "
                 st.session_state.go_action = False
             #   action_selection(selected_role, selected_sub_role, selected_action)
-            elif next_selection == "selected_activity":
-                selected_activity = " "
-                st.session_state.go_activity = False
-            #   activity_selection(selected_role, selected_sub_role, selected_action, selecity_activity)
-            else:
-                st.error("Unexpected error. Please start over.")
+              elif next_selection == "selected_activity":
+                  selected_activity = " "
+                  st.session_state.go_activity = False
+            #     activity_selection(selected_role, selected_sub_role, selected_action, selecity_activity)
+              else:
+                  st.error("Unexpected error. Please start over.")
 
 
 
