@@ -80,14 +80,12 @@ def main():
     else:
         st.write("⚠️ - press button to continue")
     
-
     
     # Call_action_flag(selected_role, selected_sub_role, selected_action, selected_activity)
     # Action selection screen
     st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
     actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile", "API calls"]
-    
     selected_action = st.radio("Choose an action", actions)
     
     # action_selection(selected_role, selected_sub_role, selected_action)
@@ -100,12 +98,6 @@ def main():
         st.write("⚠️ - press button to continue")
     
  
-   # Action selection screen
-        st.title(f"Actions available for {selected_role} - {selected_sub_role}")
-
-        actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile", "API calls"]
-    
-        selected_action = st.radio("Choose an action", actions)
 
 
   # Activity selection screen
