@@ -71,7 +71,7 @@ def main():
         
     selected_sub_role = st.radio("Choose a sub-role", sub_roles[{selected_role}])
 
-    sub_role_selection(selected_role, selected_sub_role)
+    # sub_role_selection(selected_role, selected_sub_role)
     if st.button("Choose Action"):
         st.session_state.go_sub_role = True
         st.write(f"You selected the sub-role: {selected_sub_role}")
@@ -108,7 +108,6 @@ def main():
         selected_action = st.radio("Choose an action", actions)
 
 
-
   # Activity selection screen
 
        st.title(f"Activities for {selected_role} - {selected_sub_role} - {selected_action}")
@@ -136,15 +135,19 @@ def main():
                   st.session_state.go_sub_role = False
             #     sub_role_selection(selected_role, selected_sub_role)
               elif next_selection == "selected_action":
-                selected_action = " "
-                st.session_state.go_action = False
-            #   action_selection(selected_role, selected_sub_role, selected_action)
+                  selected_action = " "
+                  st.session_state.go_action = False
+            #     action_selection(selected_role, selected_sub_role, selected_action)
               elif next_selection == "selected_activity":
                   selected_activity = " "
                   st.session_state.go_activity = False
             #     activity_selection(selected_role, selected_sub_role, selected_action, selecity_activity)
               else:
                   st.error("Unexpected error. Please start over.")
+
+
+
+
 
 
 
