@@ -11,8 +11,11 @@ def main():
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
 
-# Navigation section start App with null role
+# Navigation section start App with null parameters
     selected_role = " "
+    selected_sub_role = " "
+    selected_action = " "
+    selected_activity = " "
 
     Call_login_flag(selected_role)
     login()
@@ -43,7 +46,7 @@ def Call_login_flag(selected_role):
     #  if not st.session_state.logged_in:
     #     login()  # Go to login page if not logged in
     else:
-         selected_role = " "
+    #    selected_role = " "
     #    user_role_selection(selected_role)  # Proceed to user role selection if logged in
     return
 
@@ -72,10 +75,10 @@ def Call_user_role_flag(selected_role, selected_sub_role):
         st.session_state.go_user = False
         
     if not st.session_state.go_user:
-        selected_role = " "
+    #   selected_role = " "
     #   user_role_selection(selected_role)  # Go to user_role page if list not selected
     else:
-        selected_sub_role = " "
+    #   selected_sub_role = " "
     #   sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
     return
 
@@ -93,7 +96,7 @@ def user_role_selection(selected_role):
         st.write(f"You selected {selected_role}")
     #   Call the next step or function after role selection made in the main function
         st.session_state.go_user = True
-        selected_sub_role = " "
+    #   selected_sub_role = " "
     #   sub_role_selection(selected_role, selected_sub_role)
     else:
         st.write(" ⚠️ - press button to continue")
@@ -105,10 +108,10 @@ def Call_sub_role_flag():
         st.session_state.go_sub_role = False
         
     if not st.session_state.go_sub_role:
-        selected_sub_role = " "
+    #    selected_sub_role = " "
     #    sub_role_selection(selected_role, selected_sub_role) # Go to sub-user role page if go_sub_role not set
     else:
-        selected_action = " "
+    #    selected_action = " "
     #    action_selection(selected_role, selected_sub_role, selected_action)  # Go to action selection page if go_sub_role set
     return
 
@@ -132,7 +135,7 @@ def sub_role_selection(selected_role, selected_sub_role):
         if st.button("Choose Action"):
            st.session_state.go_sub_role = True
            st.write(f"You selected the sub-role: {selected_sub_role}")
-           selected_action = " "
+    #      selected_action = " "
     #      action_selection(selected_role, selected_sub_role, selected_action)
         else:
            st.write(" ⚠️ - press button to continue")
@@ -144,10 +147,10 @@ def Call_action_flag():
         st.session_state.go_action = False
         
     if not st.session_state.go_action:
-        selected_action = " "
+    #    selected_action = " "
     #    action_selection(selected_role, selected_sub_role) # Go to activity page if go_activity not set
     else:
-        selected_activity = " "
+    #   selected_activity = " "
     #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
     return
 
