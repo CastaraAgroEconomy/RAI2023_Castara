@@ -20,6 +20,11 @@ def main():
     
     Call_login_flag(selected_role)
     login()
+    
+    # Input fields for username and password
+    username = st.text_input("Enter your username")
+    password = st.text_input("Enter your password", type="password")
+    
     # Login button
     if st.button("Login"):
         if username == VALID_USERNAME and password == VALID_PASSWORD:
@@ -91,10 +96,6 @@ def Call_login_flag(selected_role):
 # Login function
 def login():
     st.title("Castara AgroEconomy venture")
-    
-    # Input fields for username and password
-    username = st.text_input("Enter your username")
-    password = st.text_input("Enter your password", type="password")
     
     return # Return to calling function
 
