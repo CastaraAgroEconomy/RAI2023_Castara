@@ -93,7 +93,7 @@ def user_role_selection(selected_role):
         # Call the next step or function after role selection made in the main function
         st.session_state.go_user = True
         selected_sub_role = " "
-        sub_role_selection(selected_role, selected_sub_role)
+    #    sub_role_selection(selected_role, selected_sub_role)
     else:
         st.write(" ⚠️ - press button to continue")
     return 
@@ -105,17 +105,15 @@ def Call_sub_role_flag():
         
     if not st.session_state.go_sub_role:
         selected_sub_role = " "
-        sub_role_selection(selected_role, selected_sub_role) # Go to sub-user role page if go_sub_role not set
+    #    sub_role_selection(selected_role, selected_sub_role) # Go to sub-user role page if go_sub_role not set
     else:
         selected_action = " "
-        action_selection(selected_role, selected_sub_role, selected_action)  # Go to action selection page if go_sub_role set
+    #    action_selection(selected_role, selected_sub_role, selected_action)  # Go to action selection page if go_sub_role set
     return
 
 
 # Sub-role selection based on the selected user role
 def sub_role_selection(selected_role, selected_sub_role):
-    
-    Call_action_flag()
 
     st.title(f"Select Sub-role for {selected_role}")
     
@@ -134,7 +132,7 @@ def sub_role_selection(selected_role, selected_sub_role):
            st.session_state.go_sub_role = True
            st.write(f"You selected the sub-role: {selected_sub_role}")
            selected_action = " "
-           action_selection(selected_role, selected_sub_role, selected_action)
+    #      action_selection(selected_role, selected_sub_role, selected_action)
         else:
            st.write(" ⚠️ - press button to continue")
         return
@@ -146,17 +144,15 @@ def Call_action_flag():
         
     if not st.session_state.go_action:
         selected_action = " "
-        action_selection(selected_role, selected_sub_role) # Go to activity page if go_activity not set
+    #    action_selection(selected_role, selected_sub_role) # Go to activity page if go_activity not set
     else:
         selected_activity = " "
-        activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
+    #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
     return
 
 
 # Action selection screen
 def action_selection(selected_role, selected_sub_role, selected_action):
-
-    Call_activity_flag()
     
     st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
@@ -168,7 +164,7 @@ def action_selection(selected_role, selected_sub_role, selected_action):
         st.session_state.go_action = True
         st.write(f"You selected the action: {selected_action}")
         selected_activity = " "
-        activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
+    #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
     else:
         st.write(" ⚠️ - press button to continue")
     return # Return to calling function
@@ -195,19 +191,19 @@ def activity_selection(selected_role, selected_sub_role, selected_action, select
             if next_selection == "selected_role":
                 selected_role = " "
                 st.session_state.go_user = False
-                user_role_selection(selected_role)
+            #   user_role_selection(selected_role)
             elif next_selection == "selected_sub_role":
                 selected_sub_role = " "
                 st.session_state.go_sub_role = False
-                sub_role_selection(selected_role, selected_sub_role)
+            #   sub_role_selection(selected_role, selected_sub_role)
             elif next_selection == "selected_action":
                 selected_action = " "
                 st.session_state.go_action = False
-                action_selection(selected_role, selected_sub_role, selected_action)
+            #   action_selection(selected_role, selected_sub_role, selected_action)
             elif next_selection == "selected_activity":
                 selected_activity = " "
                 st.session_state.go_activity = False
-                activity_selection(selected_role, selected_sub_role, selected_action, selecity_activity)
+            #   activity_selection(selected_role, selected_sub_role, selected_action, selecity_activity)
             else:
                 st.error("Unexpected error. Please start over.")
         return
