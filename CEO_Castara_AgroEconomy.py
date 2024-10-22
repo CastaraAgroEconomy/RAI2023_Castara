@@ -135,7 +135,7 @@ def sub_role_selection(selected_role, selected_sub_role):
 
     if selected_role == " ":
        selected_role = "franchisee" # sets default 
-       st.write("⚠️ - default sub-role set")
+       st.write(f"selected role: {selected_role}")
         
     selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
     if st.button("Choose Action"):
