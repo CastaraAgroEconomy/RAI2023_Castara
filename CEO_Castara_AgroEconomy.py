@@ -133,7 +133,6 @@ def sub_role_selection(selected_role, selected_sub_role):
         "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
 
-
     selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
     if st.button("Choose Action"):
         st.session_state.go_sub_role = True
