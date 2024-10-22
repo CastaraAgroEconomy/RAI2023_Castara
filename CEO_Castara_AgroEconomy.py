@@ -78,7 +78,7 @@ def Call_user_role_flag(selected_role, selected_sub_role):
         if not st.session_state.go_user:
     #      selected_role = " "
     #      user_role_selection(selected_role)  # Go to user_role page if list not selected
-           st.write(st.write("⚠️ - Select a role")
+           st.write("⚠️ - Select a role")
     else:
     #   selected_sub_role = " "
     #   sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
@@ -102,7 +102,7 @@ def user_role_selection(selected_role):
     #   selected_sub_role = " "
     #   sub_role_selection(selected_role, selected_sub_role)
     else:
-        st.write(" ⚠️ - press button to continue")
+        st.write("⚠️ - press button to continue")
     return 
     
 # Call user sub_role flag function to set the flag and run to select sub_role and action
@@ -143,7 +143,7 @@ def sub_role_selection(selected_role, selected_sub_role):
     #      selected_action = " "
     #      action_selection(selected_role, selected_sub_role, selected_action)
         else:
-           st.write(" ⚠️ - press button to continue")
+           st.write("⚠️ - press button to continue")
         return
 
 # Call action flag function to set flag and select action and activities
@@ -177,7 +177,7 @@ def action_selection(selected_role, selected_sub_role, selected_action):
         selected_activity = " "
     #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
     else:
-        st.write(" ⚠️ - press button to continue")
+        st.write("⚠️ - press button to continue")
     return # Return to calling function
 
 
