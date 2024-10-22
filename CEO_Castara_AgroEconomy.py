@@ -6,34 +6,32 @@ from features.Utility.Clear_screen import clear_display
 VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
-Call_login_flag()
-login()
-
-Call_user_role_flag()
-user_role_selection()
-
-Call_sub_role_flag()
-sub_role_selection()
-
-Call_action_flag()
-action_selection()
-
-activity_selection()
-
-
-
-
-
-
-
-
-
 # Define the main function that will control the flow
 def main():
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
 
+# Navigation section
+    
+    Call_login_flag()
+    login()
+
     Call_user_role_flag()
+    user_role_selection()
+
+    Call_sub_role_flag()
+    sub_role_selection()
+
+    Call_action_flag()
+    action_selection()
+
+    activity_selection()
+
+# Inital Dashboard display section
+
+
+
+
     
 # Call login flag function to set flag and select login and user_role
 def Call_login_flag():
@@ -41,11 +39,11 @@ def Call_login_flag():
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
         
-    if not st.session_state.logged_in:
-        login()  # Go to login page if not logged in
+   # if not st.session_state.logged_in:
+   #     login()  # Go to login page if not logged in
     else:
-        selected_role = " "
-        user_role_selection(selected_role)  # Proceed to user role selection if logged in
+         selected_role = " "
+   #     user_role_selection(selected_role)  # Proceed to user role selection if logged in
     return
 
 
@@ -74,16 +72,14 @@ def Call_user_role_flag():
         
     if not st.session_state.go_user:
         selected_role = " "
-        user_role_selection(selected_role)  # Go to user_role page if list not selected
+    #    user_role_selection(selected_role)  # Go to user_role page if list not selected
     else:
         selected_sub_role = " "
-        sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
+    #   sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
     return
 
 # User role selection screen
 def user_role_selection(selected_role):
-
-    Call_user_role_flag()
     
     st.title("Select Your Role")
 
