@@ -34,6 +34,8 @@ def main():
         else:
             st.error("Invalid credentials. Please try again.")
 
+    
+    clear_display()
 
     
     # Call_user_role_flag(selected_role, selected_sub_role)
@@ -54,8 +56,11 @@ def main():
     #   sub_role_selection(selected_role, selected_sub_role)
     else:
         st.write("⚠️ - press button to continue")
-    
 
+    
+    clear_display()
+
+    
     # Call_sub_role_flag(selected_role, selected_sub_role, selected_action)
     # Sub-role selection based on the selected user role
     st.title(f"Select Sub-role for {selected_role}")
@@ -79,7 +84,10 @@ def main():
     #   action_selection(selected_role, selected_sub_role, selected_action)
     else:
         st.write("⚠️ - press button to continue")
+
     
+    clear_display()
+
     
     # Call_action_flag(selected_role, selected_sub_role, selected_action, selected_activity)
     # Action selection screen
@@ -96,8 +104,9 @@ def main():
     #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
     else:
         st.write("⚠️ - press button to continue")
+
     
- 
+    clear_display()
 
 
   # Activity selection screen
