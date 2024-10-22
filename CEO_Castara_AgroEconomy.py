@@ -45,9 +45,10 @@ def Call_login_flag(selected_role):
         
     #  if not st.session_state.logged_in:
     #  login()  # Go to login page if not logged in
-    else
+    else:
     #    selected_role = " "
     #    user_role_selection(selected_role)  # Proceed to user role selection if logged in
+    st.write("⚠️ - Already logged in")
     return
 
 
