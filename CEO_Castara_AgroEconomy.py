@@ -17,15 +17,15 @@ def main():
     login()
 
     Call_user_role_flag()
-    user_role_selection()
+    user_role_selection(selected_role)
 
     Call_sub_role_flag()
-    sub_role_selection()
+    sub_role_selection(selected_role, selected_sub_role)
 
     Call_action_flag()
-    action_selection()
+    action_selection(selected_role, selected_sub_role, selected_action)
 
-    activity_selection()
+    activity_selection(selected_role,selected_sub_role, selected_action, selected_activity)
 
 # Inital Dashboard display section
 
@@ -90,10 +90,10 @@ def user_role_selection(selected_role):
     
     if st.button("Proceed"):
         st.write(f"You selected {selected_role}")
-        # Call the next step or function after role selection made in the main function
+    #   Call the next step or function after role selection made in the main function
         st.session_state.go_user = True
         selected_sub_role = " "
-    #    sub_role_selection(selected_role, selected_sub_role)
+    #   sub_role_selection(selected_role, selected_sub_role)
     else:
         st.write(" ⚠️ - press button to continue")
     return 
