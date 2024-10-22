@@ -18,8 +18,9 @@ def main():
     selected_activity = " "
 
     
-    Call_login_flag(selected_role)
-    login()
+    # Call_login_flag(selected_role)
+    # Login function
+    st.title("Castara AgroEconomy venture")
     
     # Input fields for username and password
     username = st.text_input("Enter your username")
@@ -33,9 +34,17 @@ def main():
         else:
             st.error("Invalid credentials. Please try again.")
 
+
     
-    Call_user_role_flag(selected_role, selected_sub_role)
-    user_role_selection(selected_role)
+    # Call_user_role_flag(selected_role, selected_sub_role)
+    # User role selection screen
+    st.title("Select Your Role")
+
+    roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
+    
+    # Display radio buttons for role selection
+    selected_role = st.radio("Choose a role", roles)
+    
     # Proceed button
     if st.button("Proceed"):
         st.write(f"You selected {selected_role}")
@@ -45,10 +54,24 @@ def main():
     #   sub_role_selection(selected_role, selected_sub_role)
     else:
         st.write("⚠️ - press button to continue")
-    return 
     
 
-    Call_sub_role_flag(selected_role, selected_sub_role, selected_action)
+    # Call_sub_role_flag(selected_role, selected_sub_role, selected_action)
+    # Sub-role selection based on the selected user role
+    st.title(f"Select Sub-role for {selected_role}")
+
+    # Define sub-roles for each user role (example data)
+    sub_roles = {
+        "Franchisee": ["Owner", "Operator"],
+        "Management": ["CEO", "COO", "CFO", "CMO"],
+        "Investor": ["General Partner", "Limited Partner", "Angel Investor"],
+        "Employee": ["Facility Ops Staff","Technician", "Researcher", "Manager"],
+        "Admin": ["General Admin", "Super Admin", "IT Support"]
+    }
+        
+    selected_sub_role = st.radio("Choose a sub-role", sub_roles[{selected_role}])
+
+    
     sub_role_selection(selected_role, selected_sub_role)
     if st.button("Choose Action"):
         st.session_state.go_sub_role = True
@@ -93,12 +116,6 @@ def Call_login_flag(selected_role):
     return
 
 
-# Login function
-def login():
-    st.title("Castara AgroEconomy venture")
-    
-    return # Return to calling function
-
 
 # Call user_role flag function to set flag and run to select role and sub_role 
 def Call_user_role_flag(selected_role, selected_sub_role):
@@ -115,16 +132,7 @@ def Call_user_role_flag(selected_role, selected_sub_role):
         st.write("⚠️ - default pre-selected, you may change")
     return
 
-# User role selection screen
-def user_role_selection(selected_role):
-    
-    st.title("Select Your Role")
 
-    roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
-    
-    # Display radio buttons for role selection
-    selected_role = st.radio("Choose a role", roles)
-    
     
     
 # Call user sub_role flag function to set the flag and run to select sub_role and action
@@ -143,23 +151,8 @@ def Call_sub_role_flag(selected_role, selected_sub_role, selected_action):
     return
 
 
-# Sub-role selection based on the selected user role
-def sub_role_selection(selected_role, selected_sub_role):
 
-    st.title(f"Select Sub-role for {selected_role}")
 
-    # Define sub-roles for each user role (example data)
-    sub_roles = {
-        "Franchisee": ["Owner", "Operator"],
-        "Management": ["CEO", "COO", "CFO", "CMO"],
-        "Investor": ["General Partner", "Limited Partner", "Angel Investor"],
-        "Employee": ["Facility Ops Staff","Technician", "Researcher", "Manager"],
-        "Admin": ["General Admin", "Super Admin", "IT Support"]
-    }
-        
-    selected_sub_role = st.radio("Choose a sub-role", sub_roles[{selected_role}])
-
-    return
 
 # Call action flag function to set flag and select action and activities
 def Call_action_flag(selected_role, selected_sub_role, selected_action,selected_activity):
