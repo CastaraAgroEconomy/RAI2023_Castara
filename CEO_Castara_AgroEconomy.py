@@ -11,9 +11,10 @@ def main():
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
 
-# Navigation section
-    
-    Call_login_flag()
+# Navigation section start App with null role
+    selected_role = " "
+
+    Call_login_flag(selected_role)
     login()
 
     Call_user_role_flag(selected_role, selected_sub_role)
@@ -34,7 +35,7 @@ def main():
 
     
 # Call login flag function to set flag and select login and user_role
-def Call_login_flag():
+def Call_login_flag(selected_role):
 
     if 'logged_in' not in st.session_state:
         st.session_state.logged_in = False
