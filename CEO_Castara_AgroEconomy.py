@@ -104,7 +104,7 @@ def user_role_selection(selected_role):
     return 
     
 # Call user sub_role flag function to set the flag and run to select sub_role and action
-def Call_sub_role_flag():
+def Call_sub_role_flag(selected_role, selected_sub_role, selected_action):
     if 'go_sub_role' not in st.session_state:
         st.session_state.go_sub_role = False
         
@@ -145,7 +145,7 @@ def sub_role_selection(selected_role, selected_sub_role):
         return
 
 # Call action flag function to set flag and select action and activities
-def Call_action_flag():
+def Call_action_flag(selected_role, selected_sub_role, selected_action,selected_activity):
     if 'go_action' not in st.session_state:
         st.session_state.go_action = False
         
