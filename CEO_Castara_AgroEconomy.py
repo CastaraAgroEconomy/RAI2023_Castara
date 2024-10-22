@@ -185,7 +185,7 @@ def activity_selection(selected_role, selected_sub_role, selected_action, select
     
     activity = ["Update Settings", "View Analytics", "Export Data", "Manage Users", "Pull sensor data", "Analyze Sensor data", "Adjust component", "Calibrate"]
     
-    selected_activity = st.radio("Choose an activity", activities)
+    selected_activity = st.radio("Choose an activity", activity)
     
     if st.button("Finalize"):
         is_valid, next_selection = validate_selection(selected_role, selected_sub_role, selected_action, selected_activity)
