@@ -123,6 +123,7 @@ def Call_sub_role_flag(selected_role, selected_sub_role, selected_action):
 def sub_role_selection(selected_role, selected_sub_role):
 
     st.title(f"Select Sub-role for {selected_role}")
+    st.write(f"selected role: {selected_role}")
     
     # Define sub-roles for each user role (example data)
     sub_roles = {
@@ -132,9 +133,6 @@ def sub_role_selection(selected_role, selected_sub_role):
         "Employee": ["Facility Ops Staff","Technician", "Researcher", "Manager"],
         "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
-
-
-    st.write(f"selected role: {selected_role}")
         
     selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
     if st.button("Choose Action"):
