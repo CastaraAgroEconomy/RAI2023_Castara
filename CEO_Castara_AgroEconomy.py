@@ -46,7 +46,7 @@ def Call_login_flag(selected_role):
     else:
     #    selected_role = " "
     #    user_role_selection(selected_role)  # Proceed to user role selection if logged in
-         st.write("⚠️ - Already logged in")
+         st.write("⚠️ - you are already logged in")
     return
 
 
@@ -80,7 +80,7 @@ def Call_user_role_flag(selected_role, selected_sub_role):
     else:
     #   selected_sub_role = " "
     #   sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
-        st.write("⚠️ - user's role already selected & set")
+        st.write("⚠️ - default pre-selected, you may change")
     return
 
 # User role selection screen
@@ -115,7 +115,7 @@ def Call_sub_role_flag(selected_role, selected_sub_role, selected_action):
     else:
     #    selected_action = " "
     #    action_selection(selected_role, selected_sub_role, selected_action)  # Go to action selection page if go_sub_role set
-         st.write("⚠️ - user's sub role already selected & set")
+         st.write("⚠️ - default pre-selected, you may change")
     return
 
 
@@ -123,8 +123,7 @@ def Call_sub_role_flag(selected_role, selected_sub_role, selected_action):
 def sub_role_selection(selected_role, selected_sub_role):
 
     st.title(f"Select Sub-role for {selected_role}")
-    st.write(f"selected role: {selected_role}")
-    
+
     # Define sub-roles for each user role (example data)
     sub_roles = {
         "Franchisee": ["Owner", "Operator"],
@@ -156,7 +155,7 @@ def Call_action_flag(selected_role, selected_sub_role, selected_action,selected_
     else:
     #   selected_activity = " "
     #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
-        st.write("⚠️ - Action already selected & set")
+        st.write("⚠️ - default pre-selected, you may change")
     return
 
 
