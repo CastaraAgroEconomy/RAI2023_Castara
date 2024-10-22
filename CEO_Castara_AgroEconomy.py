@@ -17,18 +17,56 @@ def main():
     selected_action = " "
     selected_activity = " "
 
+    
     Call_login_flag(selected_role)
     login()
+    # Login button
+    if st.button("Login"):
+        if username == VALID_USERNAME and password == VALID_PASSWORD:
+            st.session_state.logged_in = True
+            st.success("Login successful !")  # Display login success
+        else:
+            st.error("Invalid credentials. Please try again.")
 
+    
     Call_user_role_flag(selected_role, selected_sub_role)
     user_role_selection(selected_role)
+    # Proceed button
+    if st.button("Proceed"):
+        st.write(f"You selected {selected_role}")
+    #   Call the next step or function after role selection made in the main function
+        st.session_state.go_user = True
+    #   selected_sub_role = " "
+    #   sub_role_selection(selected_role, selected_sub_role)
+    else:
+        st.write("⚠️ - press button to continue")
+    return 
+    
 
     Call_sub_role_flag(selected_role, selected_sub_role, selected_action)
     sub_role_selection(selected_role, selected_sub_role)
+    if st.button("Choose Action"):
+        st.session_state.go_sub_role = True
+        st.write(f"You selected the sub-role: {selected_sub_role}")
+    #   selected_action = " "
+    #   action_selection(selected_role, selected_sub_role, selected_action)
+    else:
+        st.write("⚠️ - press button to continue")
+    
 
+    
     Call_action_flag(selected_role, selected_sub_role, selected_action, selected_activity)
     action_selection(selected_role, selected_sub_role, selected_action)
-
+    if st.button("choose Activity"):
+        st.session_state.go_action = True
+        st.write(f"You selected the action: {selected_action}")
+        selected_activity = " "
+    #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
+    else:
+        st.write("⚠️ - press button to continue")
+    
+    
+    
     activity_selection(selected_role,selected_sub_role, selected_action, selected_activity)
 
 # Inital Dashboard display section
@@ -58,13 +96,6 @@ def login():
     username = st.text_input("Enter your username")
     password = st.text_input("Enter your password", type="password")
     
-    # Login button
-    if st.button("Login"):
-        if username == VALID_USERNAME and password == VALID_PASSWORD:
-            st.session_state.logged_in = True
-            st.success("Login successful !")  # Display login success
-        else:
-            st.error("Invalid credentials. Please try again.")
     return # Return to calling function
 
 
@@ -93,15 +124,7 @@ def user_role_selection(selected_role):
     # Display radio buttons for role selection
     selected_role = st.radio("Choose a role", roles)
     
-    if st.button("Proceed"):
-        st.write(f"You selected {selected_role}")
-    #   Call the next step or function after role selection made in the main function
-        st.session_state.go_user = True
-    #   selected_sub_role = " "
-    #   sub_role_selection(selected_role, selected_sub_role)
-    else:
-        st.write("⚠️ - press button to continue")
-    return 
+    
     
 # Call user sub_role flag function to set the flag and run to select sub_role and action
 def Call_sub_role_flag(selected_role, selected_sub_role, selected_action):
@@ -133,14 +156,8 @@ def sub_role_selection(selected_role, selected_sub_role):
         "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
         
-    selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
-    if st.button("Choose Action"):
-        st.session_state.go_sub_role = True
-        st.write(f"You selected the sub-role: {selected_sub_role}")
-    #   selected_action = " "
-    #   action_selection(selected_role, selected_sub_role, selected_action)
-    else:
-        st.write("⚠️ - press button to continue")
+    selected_sub_role = st.radio("Choose a sub-role", sub_roles[{selected_role}])
+
     return
 
 # Call action flag function to set flag and select action and activities
@@ -168,13 +185,7 @@ def action_selection(selected_role, selected_sub_role, selected_action):
     
     selected_action = st.radio("Choose an action", actions)
     
-    if st.button("choose Activity"):
-        st.session_state.go_action = True
-        st.write(f"You selected the action: {selected_action}")
-        selected_activity = " "
-    #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
-    else:
-        st.write("⚠️ - press button to continue")
+    
     return # Return to calling function
 
 
