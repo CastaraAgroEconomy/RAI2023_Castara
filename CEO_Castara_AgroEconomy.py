@@ -81,6 +81,7 @@ def Call_user_role_flag(selected_role, selected_sub_role):
     else:
     #   selected_sub_role = " "
     #   sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
+        st.write("⚠️ - user's role already selected & set")
     return
 
 # User role selection screen
@@ -114,6 +115,7 @@ def Call_sub_role_flag():
     else:
     #    selected_action = " "
     #    action_selection(selected_role, selected_sub_role, selected_action)  # Go to action selection page if go_sub_role set
+         st.write("⚠️ - user's sub role already selected & set")
     return
 
 
@@ -153,6 +155,7 @@ def Call_action_flag():
     else:
     #   selected_activity = " "
     #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
+        st.write("⚠️ - Action already selected & set")
     return
 
 
