@@ -69,7 +69,7 @@ def main():
         "Admin": ["General Admin", "Super Admin", "IT Support"]
     }
         
-    selected_sub_role = st.radio("Choose a sub-role", sub_roles[{selected_role}])
+    selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
 
     # sub_role_selection(selected_role, selected_sub_role)
     if st.button("Choose Action"):
@@ -103,9 +103,7 @@ def main():
   # Activity selection screen
 
     st.title(f"Activities for {selected_role} - {selected_sub_role} - {selected_action}")
-    
     activity = ["Update Settings", "View Analytics", "Export Data", "Manage Users", "Pull sensor data", "Analyze Sensor data", "Adjust component", "Calibrate"]
-    
     selected_activity = st.radio("Choose an activity", activity)
     
     if st.button("Finalize"):
