@@ -1,3 +1,7 @@
+# Updated menu List [A], [B], [C], [D], 
+# which produce a (14,30,30,35) four dimensional Matrix,
+# Truth Table with 441,000 combinations
+
 import itertools
 import pandas as pd
 
