@@ -1,1 +1,1 @@
-# copied content to replace this
+# sub-folder for API scripts that enable external platform integrated features
