@@ -2,7 +2,7 @@
 import numpy as np
 
 class TruthTable:
-    def __init__(self, n=10, x=10, m=10, y=10):
+    def __init__(self, n=14, x=30, m=30, y=35):
         self.n = n
         self.x = x
         self.m = m
@@ -43,6 +43,8 @@ truth_table = TruthTable()
 
 def validate_selection(role, sub_role, action, activity):
     # Map selections to indices (this mapping should be consistent with your main script)
+   
+    # This section to be changed so as to call external script function containing expanded 4 lists
     roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
     sub_roles = {
         "Franchisee": ["Owner", "Operator"],
@@ -53,7 +55,12 @@ def validate_selection(role, sub_role, action, activity):
     }
     actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile"]
     activities = ["Update Settings", "View Analytics", "Export Data", "Manage Users"]
-
+    # The above 10 lines of code to be replaced by code which call an external function containing 
+    # List [A] = 14 roles
+    # List [B] = 30 sub-roles
+    # List [C] = 30 actions
+    # List [D] = 35 activities
+    
     n = roles.index(role)
     x = sub_roles[role].index(sub_role)
     m = actions.index(action)
