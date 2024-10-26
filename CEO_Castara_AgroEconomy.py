@@ -42,7 +42,9 @@ def main():
     # User role selection screen
     st.title("Select Your Role")
 
-    roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
+    roles = [Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
+     "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
+     "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
     
     # Display radio buttons for role selection
     selected_role = st.radio("Choose a role", roles)
