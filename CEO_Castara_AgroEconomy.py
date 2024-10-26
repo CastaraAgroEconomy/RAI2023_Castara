@@ -68,13 +68,11 @@ def main():
     st.title(f"Select Sub-role for {selected_role}")
 
     # Define sub-roles for each user role (example data)
-    sub_roles = {
-        "Franchisee": ["Owner", "Operator"],
-        "Management": ["CEO", "COO", "CFO", "CMO"],
-        "Investor": ["General Partner", "Limited Partner", "Angel Investor"],
-        "Employee": ["Facility Ops Staff","Technician", "Researcher", "Manager"],
-        "Admin": ["General Admin", "Super Admin", "IT Support"]
-    }
+    sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director",
+     "Operations Director", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader",
+     "Environmental Systems Manager", "Nutrient Systems Manager", "Data Analytics Manager", "Production Supervisor",
+     "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", "Franchise Owner",
+     "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager"]
         
     selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
 
