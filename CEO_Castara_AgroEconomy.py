@@ -18,7 +18,6 @@ def main():
     selected_activity = " "
 
     
-    # Call_login_flag(selected_role)
     # Login function
     st.title("Castara AgroEconomy venture")
     
@@ -38,7 +37,6 @@ def main():
     clear_display()
 
     
-    # Call_user_role_flag(selected_role, selected_sub_role)
     # User role selection screen
     st.title("Select Your Role")
 
@@ -63,7 +61,6 @@ def main():
     clear_display()
 
     
-    # Call_sub_role_flag(selected_role, selected_sub_role, selected_action)
     # Sub-role selection based on the selected user role
     st.title(f"Select Sub-role for {selected_role}")
 
@@ -89,7 +86,6 @@ def main():
     clear_display()
 
     
-    # Call_action_flag(selected_role, selected_sub_role, selected_action, selected_activity)
     # Action selection screen
     st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
@@ -153,78 +149,7 @@ def main():
                 st.error("Unexpected error. Please start over.")
 
 
-
-# Inital Dashboard display section
-
-
-    
-# Call login flag function to set flag and select login and user_role
-def Call_login_flag(selected_role):
-
-    if 'logged_in' not in st.session_state:
-        st.session_state.logged_in = False
-        
-    #  if not st.session_state.logged_in:
-    #  login()  # Go to login page if not logged in
-    else:
-    #    selected_role = " "
-    #    user_role_selection(selected_role)  # Proceed to user role selection if logged in
-         st.write("⚠️ - you are already logged in")
-    return
-
-
-
-# Call user_role flag function to set flag and run to select role and sub_role 
-def Call_user_role_flag(selected_role, selected_sub_role):
-    if 'go_user' not in st.session_state:
-        st.session_state.go_user = False
-        
-        if not st.session_state.go_user:
-    #      selected_role = " "
-    #      user_role_selection(selected_role)  # Go to user_role page if list not selected
-           st.write("⚠️ - Select a role")
-    else:
-    #   selected_sub_role = " "
-    #   sub_role_selection(selected_role, selected_sub_role)  # Go to sub-user role selection if go_user set
-        st.write("⚠️ - default pre-selected, you may change")
-    return
-
-
-    
-    
-# Call user sub_role flag function to set the flag and run to select sub_role and action
-def Call_sub_role_flag(selected_role, selected_sub_role, selected_action):
-    if 'go_sub_role' not in st.session_state:
-        st.session_state.go_sub_role = False
-        
-        if not st.session_state.go_sub_role:
-    #      selected_sub_role = " "
-    #      sub_role_selection(selected_role, selected_sub_role) # Go to sub-user role page if go_sub_role not set
-           st.write("⚠️ - Select a sub-role")
-    else:
-    #    selected_action = " "
-    #    action_selection(selected_role, selected_sub_role, selected_action)  # Go to action selection page if go_sub_role set
-         st.write("⚠️ - default pre-selected, you may change")
-    return
-
-
-
-
-# Call action flag function to set flag and select action and activities
-def Call_action_flag(selected_role, selected_sub_role, selected_action,selected_activity):
-    if 'go_action' not in st.session_state:
-        st.session_state.go_action = False
-        
-        if not st.session_state.go_action:
-    #      selected_action = " "
-    #      action_selection(selected_role, selected_sub_role) # Go to activity page if go_activity not set
-           st.write("⚠️ - Select an action")
-    else:
-    #   selected_activity = " "
-    #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)  # Go to activity selection page if go_activity set
-        st.write("⚠️ - default pre-selected, you may change")
-    return
-
+# Truth Table Validation function call
 
 
 # Logout function
