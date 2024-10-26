@@ -38,7 +38,7 @@ def main():
 
     
     # User role selection screen
-    st.title("Select Your Role")
+    placeholder.st.title("Select Your Role")
 
     roles = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
      "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
@@ -62,7 +62,7 @@ def main():
 
     
     # Sub-role selection based on the selected user role
-    st.title(f"Select Sub-role for {selected_role}")
+    placeholder.st.title(f"Select Sub-role for {selected_role}")
 
     # Define sub-roles for each user role (example data)
     sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director",
@@ -87,7 +87,7 @@ def main():
 
     
     # Action selection screen
-    st.title(f"Actions available for {selected_role} - {selected_sub_role}")
+    placeholder.st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
     actions = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management",
      "Plant Health Assessment", "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections",
@@ -110,7 +110,7 @@ def main():
 
   # Activity selection screen
 
-    st.title(f"Activities for {selected_role} - {selected_sub_role} - {selected_action}")
+    placeholder.st.title(f"Activities for {selected_role} - {selected_sub_role} - {selected_action}")
     activity = [pH Level Monitoring", "Electrical Conductivity (EC) Testing", "Temperature Control Adjustment",
      "Humidity Level Management", "Light Intensity Calibration", "Nutrient Mix Preparation", "Water Quality Testing",
      "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization",
@@ -150,6 +150,11 @@ def main():
 
 
 # Truth Table Validation function call
+
+
+
+# Call appropiiate feature function for User's journey
+
 
 
 # Logout function
