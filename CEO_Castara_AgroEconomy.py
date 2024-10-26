@@ -42,7 +42,7 @@ def main():
     # User role selection screen
     st.title("Select Your Role")
 
-    roles = [Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
+    roles = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
      "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
      "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
     
@@ -93,7 +93,10 @@ def main():
     # Action selection screen
     st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
-    actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile", "API calls"]
+    actions = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management",
+     "Plant Health Assessment", "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections",
+     "Harvest Scheduling", "Data Collection & Analysis", "Compliance Monitoring", "System Troubleshooting",
+     "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination"]
     selected_action = st.radio("Choose an action", actions)
     
     # action_selection(selected_role, selected_sub_role, selected_action)
