@@ -117,7 +117,12 @@ def main():
   # Activity selection screen
 
     st.title(f"Activities for {selected_role} - {selected_sub_role} - {selected_action}")
-    activity = ["Update Settings", "View Analytics", "Export Data", "Manage Users", "Pull sensor data", "Analyze Sensor data", "Adjust component", "Calibrate"]
+    activity = [pH Level Monitoring", "Electrical Conductivity (EC) Testing", "Temperature Control Adjustment",
+     "Humidity Level Management", "Light Intensity Calibration", "Nutrient Mix Preparation", "Water Quality Testing",
+     "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization",
+     "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management",
+     "Growth Data Recording", "Team Schedule Creation", "Maintenance Log Updates", "Quality Check Documentation",
+     "Compliance Report Generation"]
     selected_activity = st.radio("Choose an activity", activity)
     
     if st.button("Finalize"):
