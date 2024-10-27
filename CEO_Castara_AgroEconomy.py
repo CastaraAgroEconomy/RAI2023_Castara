@@ -2,10 +2,7 @@ import streamlit as st
 from features.Truth_Table.truth_table_logic import validate_selection
 # from features.Utility.Clear_screen import clear_display
 
-# Function to clear the display
-def clear_display():
-    placeholder = st.empty()
-return placeholder
+placeholder = st.empty()
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
@@ -39,7 +36,7 @@ def main():
             st.error("Invalid credentials. Please try again.")
 
     
-    clear_display()
+    placeholder.empty()
 
     
     # User role selection screen
@@ -64,7 +61,7 @@ def main():
         st.write("⚠️ - press button to continue")
 
     
-    clear_display()
+    placeholder.empty()
 
     
     # Sub-role selection based on the selected user role
@@ -90,16 +87,16 @@ def main():
         st.write("⚠️ - press button to continue")
 
     
-    clear_display()
+    placeholder.empty()
 
     
     # Action selection screen
     st.title(f"Actions available for {selected_role} - {selected_sub_role}")
 
     actions = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management", 
-     "Plant Health Assessment", "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections", 
-     "Harvest Scheduling", "Data Collection & Analysis", "Compliance Monitoring", "System Troubleshooting", 
-     "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination"]
+    "Plant Health Assessment", "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections", 
+    "Harvest Scheduling", "Data Collection & Analysis", "Compliance Monitoring", "System Troubleshooting", 
+    "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination"]
     selected_action = st.radio("Choose an action", actions)
     
     # action_selection(selected_role, selected_sub_role, selected_action)
@@ -108,12 +105,12 @@ def main():
        st.write(f"You selected the action: {selected_action}")
        st.session_state.selected_action = selected_action
        selected_activity = " "
-    #   activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
+    #  activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
     else:
         st.write("⚠️ - press button to continue")
 
     
-    clear_display()
+    placeholder.empty()
 
 
   # Activity selection screen
