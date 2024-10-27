@@ -1,5 +1,5 @@
 import streamlit as st
-from features.Truth_Table.truth_table_logic import validate_selection
+# from features.Truth_Table.truth_table_logic import validate_selection
 # from features.Utility.Clear_screen import clear_display
 
 placeholder = st.empty()
@@ -156,7 +156,7 @@ def main():
 
 
 
-# Call appropiiate feature function for User's journey
+# Call appropriate feature function for User's journey
 
 
 
