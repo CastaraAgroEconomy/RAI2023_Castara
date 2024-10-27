@@ -77,7 +77,7 @@ def main():
     "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", "Franchise Owner", 
     "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager"]
         
-    selected_sub_role = st.radio("Choose a sub-role", sub_roles[selected_role])
+    selected_sub_role = st.radio("Choose a sub-role", sub_roles)
 
     # sub_role_selection(selected_role, selected_sub_role)
     if st.button("Choose Action"):
