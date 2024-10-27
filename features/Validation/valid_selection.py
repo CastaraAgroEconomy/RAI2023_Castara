@@ -2,8 +2,14 @@
 # which produce a (14,30,30,35) four dimensional Matrix,
 # Truth Table with 441,000 combinations
 
+import streamlit as st
 import itertools
 import pandas as pd
+
+selected_role = st.session_state.selected_role
+selected_sub_role = st.session_state.selected_sub_role
+selected_action = st.session_state. selected_action
+selected_activity = st.session_state.selected_activity
 
 # Define the matrices
 A = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
@@ -29,24 +35,24 @@ D = ["pH Level Monitoring", "Electrical Conductivity (EC) Testing", "Temperature
      "Compliance Report Generation"]
 
 # Example rules for validation
-def is_valid_combination(role, job_title, action, activity):
+def is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity):
     # Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
     if action == "System Design & Optimization" and role not in ["Agricultural Engineers", "System Technicians"]:
         return 0
     # Rule 2: Franchise Operators should not perform technical activities like Nutrient Mix Preparation
-    if role == "Franchise Operators" and activity in ["Nutrient Mix Preparation", "pH Level Monitoring"]:
+    if selected_role == "Franchise Operators" and activity in ["Nutrient Mix Preparation", "pH Level Monitoring"]:
         return 0
     # Rule 3: Plant Scientists should focus on Plant Health Assessment and Growth Cycle Planning
-    if role == "Plant Scientists" and action not in ["Plant Health Assessment", "Growth Cycle Planning"]:
+    if selected_role == "Plant Scientists" and action not in ["Plant Health Assessment", "Growth Cycle Planning"]:
         return 0
     # Rule 4: Quality Assurance Manager should focus on Quality Control Inspections and Compliance Monitoring
-    if job_title == "Quality Assurance Manager" and action not in ["Quality Control Inspections", "Compliance Monitoring"]:
+    if selected_sub_role == "Quality Assurance Manager" and action not in ["Quality Control Inspections", "Compliance Monitoring"]:
         return 0
     # Rule 5: Franchise Owners should focus on business-related actions like Franchise Performance Review
-    if role == "Franchise Operators" and action not in ["Franchise Performance Review", "Business Expansion Planning"]:
+    if selected_role == "Franchise Operators" and action not in ["Franchise Performance Review", "Business Expansion Planning"]:
         return 0
     # Rule 6: Operations Managers should handle actions like Production Planning and Team Coordination
-    if role == "Operations Managers" and action not in ["Production Planning", "Team Coordination"]:
+    if selected_role == "Operations Managers" and action not in ["Production Planning", "Team Coordination"]:
         return 0
     # Add more rules as needed based on your business logic
     
