@@ -2,6 +2,10 @@
 import streamlit as st
 import numpy as np
 
+st.write("⚠️ - Truth Table that determines if selected combination is valid, has not yet been integrated.")
+return
+
+
 class TruthTable:
     def __init__(self, n=14, x=30, m=30, y=35):
         self.n = n
@@ -45,7 +49,6 @@ class TruthTable:
         else:
             return "activity"
 
-st.write("⚠️ - Truth Table that determines if selected combination is valid, has not yet been integrated.")
 
 # Initialize the truth table
 truth_table = TruthTable()
