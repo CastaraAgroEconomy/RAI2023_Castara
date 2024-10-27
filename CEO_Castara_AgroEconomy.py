@@ -5,7 +5,7 @@ from features.Truth_Table.truth_table_logic import validate_selection
 # Function to clear the display
 def clear_display():
     placeholder = st.empty()
-    return placeholder
+return placeholder
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
