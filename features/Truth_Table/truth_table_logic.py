@@ -4,6 +4,10 @@ import numpy as np
 
 st.write("⚠️ - Truth Table that determines if selected combination is valid, is being tested.")
 
+selected_role = st.session_state.selected_role
+selected_sub_role = st.session_state.selected_sub_role
+selected_action = st.session_state.selected_action
+selected_activity = st.session_state.selected_activity
 
 class TruthTable:
     def __init__(self, n=14, x=30, m=30, y=35):
@@ -25,12 +29,6 @@ class TruthTable:
                         # Example rule shown: combination is valid if all indices are even
                         # if n % 2 == 0 and x % 2 == 0 and m % 2 == 0 and y % 2 == 0:
                         #    self.table[n, x, m, y] = 1
-
-                        selected_role = st.session_state.selected_role
-                        selected_sub_role = st.session_state.selected_sub_role
-                        selected_action = st.session_state.selected_action
-                        selected_role = st.session_state.selected_role
-
     
                         # For the actual rules, 
                         # the external script containing actual rules, 
