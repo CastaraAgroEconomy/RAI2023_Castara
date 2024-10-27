@@ -2,8 +2,7 @@
 import streamlit as st
 import numpy as np
 
-st.write("⚠️ - Truth Table that determines if selected combination is valid, has not yet been integrated.")
-return
+st.write("⚠️ - Truth Table that determines if selected combination is valid, is being tested.")
 
 
 class TruthTable:
@@ -26,11 +25,17 @@ class TruthTable:
                         # Example rule shown: combination is valid if all indices are even
                         # if n % 2 == 0 and x % 2 == 0 and m % 2 == 0 and y % 2 == 0:
                         #    self.table[n, x, m, y] = 1
-        
+
+                        selected_role = st.session_state.selected_role
+                        selected_sub_role = st.session_state.selected_sub_role
+                        selected_action = st.session_state.selected_action
+                        selected_role = st.session_state.selected_role
+
+    
                         # For the actual rules, 
                         # the external script containing actual rules, 
                         # "Rules.py" is to be called out instead.
-
+    
 
     def is_valid_combination(self, n, x, m, y):
         return self.table[n, x, m, y] == 1
@@ -53,21 +58,14 @@ class TruthTable:
 # Initialize the truth table
 truth_table = TruthTable()
 
-def validate_selection(role, sub_role, action, activity):
+def validate_selection(selected_role, selected_sub_role, selected_action, selected_activity):
     # Map selections to indices (this mapping should be consistent with your main script)
    
-    # This section to be changed so as to call external script function containing expanded 4 lists
-    roles = ["Franchisee", "Management", "Investor", "Employee", "Admin"]
-    sub_roles = {
-        "Franchisee": ["Owner", "Operator"],
-        "Management": ["CEO", "COO", "CFO"],
-        "Investor": ["Equity Partner", "Angel Investor"],
-        "Employee": ["Staff", "Manager"],
-        "Admin": ["Super Admin", "Tech Support"]
-    }
-    actions = ["View Dashboard", "Manage Finances", "Access Reports", "Edit Profile"]
-    activities = ["Update Settings", "View Analytics", "Export Data", "Manage Users"]
-    # The above 10 lines of code to be replaced by code which call an external function containing 
+    # This section changed to call external script function containing expanded 4 lists and valid selection rules 
+
+    Rules(selected_role, selected_sub_role, selected_action, selected_activity)
+    
+    # The above 10 lines of code to be replaced by code which calls an external function containing 
     # List [A] = 14 roles
     # List [B] = 30 sub-roles
     # List [C] = 30 actions
