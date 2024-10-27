@@ -65,7 +65,7 @@ def validate_selection(selected_role, selected_sub_role, selected_action, select
 
     Rules(selected_role, selected_sub_role, selected_action, selected_activity)
     
-    # The above 10 lines of code to be replaced by code which calls an external function containing 
+    # The above previous lines of code, now replaced by these lines of code, calls an external function containing 
     # List [A] = 14 roles
     # List [B] = 30 sub-roles
     # List [C] = 30 actions
