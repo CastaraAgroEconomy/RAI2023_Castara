@@ -26,7 +26,7 @@ class TruthTable:
                         # For the actual rules, 
                         # the external script containing actual rules, 
                         # "Rules.py" is to be called out instead.
-                        st.write("⚠️ - Truth Table that determines if selected combination is valid, has not yet been integrated.")
+
 
     def is_valid_combination(self, n, x, m, y):
         return self.table[n, x, m, y] == 1
@@ -44,6 +44,8 @@ class TruthTable:
             return "action"
         else:
             return "activity"
+
+st.write("⚠️ - Truth Table that determines if selected combination is valid, has not yet been integrated.")
 
 # Initialize the truth table
 truth_table = TruthTable()
