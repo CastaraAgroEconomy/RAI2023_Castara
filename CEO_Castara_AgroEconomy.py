@@ -111,7 +111,7 @@ def main():
   # Activity selection screen
 
     placeholder.st.title(f"Activities for {selected_role} - {selected_sub_role} - {selected_action}")
-    activity = [pH Level Monitoring", "Electrical Conductivity (EC) Testing", "Temperature Control Adjustment",
+    activity = ["pH Level Monitoring", "Electrical Conductivity (EC) Testing", "Temperature Control Adjustment",
      "Humidity Level Management", "Light Intensity Calibration", "Nutrient Mix Preparation", "Water Quality Testing",
      "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization",
      "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management",
