@@ -67,12 +67,12 @@ truth_table = []
 
 # Validate each combination based on the rules
 for combination in combinations:
-    role, job_title, action, activity = combination
-    valid = is_valid_combination(role, job_title, action, activity)
+    selected_role, selected_sub_role, selected_action, selected_activity = combination
+    valid = is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
     truth_table.append(combination + (valid,))
 
 # Convert to a pandas DataFrame
-df = pd.DataFrame(truth_table, columns=['Role (A)', 'Job Title/Position (B)', 'Action (C)', 'Activity (D)', 'Valid/Invalid (R)'])
+df = pd.DataFrame(truth_table, columns=['Role (A)', 'Job Title/function (B)', 'Action (C)', 'Activity (D)', 'Valid/Invalid (R)'])
 
 # Save the truth table to a CSV file for further analysis or processing
 df.to_csv('expanded_truth_table.csv', index=False)
