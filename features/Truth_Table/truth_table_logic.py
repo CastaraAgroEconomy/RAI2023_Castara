@@ -1,4 +1,5 @@
 # Truth Table generating script created by Claude 3.5 Sonnet
+import streamlit as st
 import numpy as np
 
 class TruthTable:
