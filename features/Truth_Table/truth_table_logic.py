@@ -19,12 +19,13 @@ class TruthTable:
                     for y in range(self.y):
                         
                         # Example rule shown: combination is valid if all indices are even
-                        if n % 2 == 0 and x % 2 == 0 and m % 2 == 0 and y % 2 == 0:
-                            self.table[n, x, m, y] = 1
+                        # if n % 2 == 0 and x % 2 == 0 and m % 2 == 0 and y % 2 == 0:
+                        #    self.table[n, x, m, y] = 1
         
                         # For the actual rules, 
                         # the external script containing actual rules, 
                         # "Rules.py" is to be called out instead.
+                        st.write("⚠️ - Truth Table that determines if selected combination is valid, has not yet been integrated.")
 
     def is_valid_combination(self, n, x, m, y):
         return self.table[n, x, m, y] == 1
