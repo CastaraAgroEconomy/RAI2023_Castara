@@ -42,7 +42,7 @@ combinations = list(itertools.product(A, B, C, D))
 R = []
 
 # Apply rules for validation
-Rules(selected_role, Selected_sub_role, selected_action, selected_activity)
+Rules(selected_role, selected_sub_role, selected_action, selected_activity)
 
 # Validate each combination based on the rules
 for combination in combinations:
