@@ -18,7 +18,7 @@ if 'selected_action' not in st.session_state:
 if 'selected_activity' not in st.session_state:
     st.session_state.selected_activity = None
 
-
+from features.Validation.Rules import check_select
 
 # Define the matrices
 A = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
@@ -51,7 +51,7 @@ combinations = list(itertools.product(A, B, C, D))
 R = []
 
 # Apply rules for validation
-Rules(selected_role, selected_sub_role, selected_action, selected_activity)
+check_select(selected_role, selected_sub_role, selected_action, selected_activity)
 
 # Validate each combination based on the rules
 for combination in combinations:
