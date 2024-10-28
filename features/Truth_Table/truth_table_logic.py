@@ -4,10 +4,10 @@ import numpy as np
 
 st.write("⚠️ - Truth Table that determines if selected combination is valid, is being tested.")
 
-selected_role = st.session_state.selected_role
-selected_sub_role = st.session_state.selected_sub_role
-selected_action = st.session_state.selected_action
-selected_activity = st.session_state.selected_activity
+selected_role = st.session_state.get('selected_role', None)
+selected_sub_role = st.session_state.get('selected_sub_role', None)
+selected_action = st.session_state.get('selected_action', None)
+selected_activity = st.session_state.get('selected_activity', None)
 R_go = False
 
 class TruthTable:
