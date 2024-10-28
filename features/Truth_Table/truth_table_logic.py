@@ -19,6 +19,8 @@ if 'self' not in st.session_state:
 
 R_go = False
 
+from features.Validation.valid_selection import go_valid
+
 st.write("⚠️ - Truth Table that determines if selected combination is valid, is being tested.")
 
 class TruthTable:
@@ -80,6 +82,8 @@ def validate_selection(selected_role, selected_sub_role, selected_action, select
     # List  [C] = 30 actions
     # List  [D] = 35 activities
     # Table [R] = 441000 combinations
+
+    go_valid(R_go, select_role, select_sub_role, select_action, select_activity)
     
     n = roles.index(role)
     x = sub_roles[role].index(sub_role)
