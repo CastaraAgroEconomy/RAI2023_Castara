@@ -3,10 +3,19 @@
 
 import streamlit as st
 
-selected_role = session_state.get('selected_role', None)
-selected_sub_role = session_state.get('selected_sub_role', None)
-selected_action = session_state.get('selected_action', None)
-selected_activity = session_state.get('selected_activity', None)
+if 'selected_role' not in st.session_state:
+    st.session_state.selected_role = None
+    
+if 'selected_sub_role' not in st.session_state:
+    st.session_state.selected_sub_role = None
+
+if 'selected_action' not in st.session_state:
+    st.session_state.selected_action = None
+
+if 'selected_activity' not in st.session_state:
+    st.session_state.selected_activity = None
+
+
 
 def is_valid_combination(suggested_role, selected_sub_role, selected_action, selected_activity):
     # Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
