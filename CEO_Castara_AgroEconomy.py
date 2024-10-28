@@ -146,15 +146,11 @@ def finalize_selection(activity):
         selected_sub_role = " "
         selected_action = " "
         selected_activity = " "
-        Proceed = False
         select_role(content_placeholder)
         content_placeholder = st.empty()
-        Choose Action = False
         select_sub_role(content_placeholder)
-        Choose Activity = False
         content_placeholder = st.empty()
         select_action(content_placeholder)
-        Finalize = False
         content_placeholder = st.empty()
         select_activity(content_placeholder)
         content_placeholder = st.empty()
