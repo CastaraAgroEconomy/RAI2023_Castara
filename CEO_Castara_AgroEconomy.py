@@ -1,39 +1,41 @@
 import streamlit as st
 
-if 'selected_role' not in st.session_state:
+
+
+# Define the main function that controls the flow
+def main():
+
+    if 'selected_role' not in st.session_state:
     st.session_state.selected_role = None
     
-if 'selected_sub_role' not in st.session_state:
+    if 'selected_sub_role' not in st.session_state:
     st.session_state.selected_sub_role = None
 
-if 'selected_action' not in st.session_state:
+    if 'selected_action' not in st.session_state:
     st.session_state.selected_action = None
 
-if 'selected_activity' not in st.session_state:
+    if 'selected_activity' not in st.session_state:
     st.session_state.selected_activity = None
 
-if 'self' not in st.session_state:
+    if 'self' not in st.session_state:
     st.session_state.self = None
 
-if 'R_go' not in st.session_state:
+    if 'R_go' not in st.session_state:
     st.session_state.R_go = False
 
 # from features.Truth_Table.truth_table_logic import generated_table
 # from features.Validation.valid_selection import check_for_valid_match
 
 # Placeholder for valid credentials (admin/password for testing)
-VALID_USERNAME = "admin"
-VALID_PASSWORD = "password"
+    VALID_USERNAME = "admin"
+    VALID_PASSWORD = "password"
 
 # Initialize session state variables
-if "stage" not in st.session_state:
-    st.session_state.stage = "login"
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
-
-# Define the main function that controls the flow
-def main():
-    content_placeholder = st.empty()  # Create a single placeholder for all content
+    if "stage" not in st.session_state:
+        st.session_state.stage = "login"
+    if "logged_in" not in st.session_state:
+        st.session_state.logged_in = False
+        content_placeholder = st.empty()  # Create a single placeholder for all content
     
     # Stage-based rendering using the placeholder
     if st.session_state.stage == "login":
