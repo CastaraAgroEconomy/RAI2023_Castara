@@ -34,7 +34,7 @@ class TruthTable:
         self.table = np.zeros((n, x, m, y), dtype=int)
         self.generate_table()
 
-    def generate_table(self, selected_role, selected_sub_role, selected_action, selected_activity):
+    def generate_table(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
         # This is where we would implement the AI logic to generate the truth table
         # For now, we'll use a simple rule-based system as a placeholder
         for n in range(self.n):
@@ -72,7 +72,8 @@ R = TruthTable(
     st.session_state.selected_role,
     st.session_state.selected_sub_role,
     st.session_state.selected_action,
-    st.session_state.selected_activity)
+    st.session_state.selected_activity,
+    st.session_state.R_go)
 
 def validate_selection(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
     # Map selections to indices (this mapping should be consistent with your main script)
