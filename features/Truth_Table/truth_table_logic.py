@@ -25,17 +25,11 @@ class TruthTable:
             for x in range(self.x):
                 for m in range(self.m):
                     for y in range(self.y):
-                        
-                        # Example rule shown: combination is valid if all indices are even
-                        # if n % 2 == 0 and x % 2 == 0 and m % 2 == 0 and y % 2 == 0:
-                        #    self.table[n, x, m, y] = 1
     
                         # For the actual rules, 
                         # the external script containing actual rules, 
                         # "Rules.py" is to be called out instead.
-
-                        Rules(selected_role, selected_sub_role, selected_action, selected_activity)
-    
+                        # said script is called up by 
 
     def is_valid_combination(self, n, x, m, y):
         return self.table[n, x, m, y] == 1
