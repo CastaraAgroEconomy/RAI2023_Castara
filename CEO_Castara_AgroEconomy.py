@@ -25,8 +25,8 @@ def main():
     if 'R_go' not in st.session_state:
         st.session_state.R_go = False
 
-# from features.Truth_Table.truth_table_logic import generated_table
-# from features.Validation.valid_selection import check_for_valid_match
+   from features.Truth_Table.truth_table_logic import generated_table
+   from features.Validation.valid_selection import check_for_valid_match
 
 # Initialize session state variables
     if "stage" not in st.session_state:
@@ -129,10 +129,10 @@ def set_stage(stage, key, value):
 
 def finalize_selection(activity):
     st.session_state.selected_activity = activity
-    # generated_table(selected_role, selected_sub_role, selected_action, selected_activity)
-    # check_for_valid_match(R_go, selected_role, selected_sub_role, selected_action, selected_activity)
+    generated_table(selected_role, selected_sub_role, selected_action, selected_activity)
+    check_for_valid_match(R_go, selected_role, selected_sub_role, selected_action, selected_activity)
 
-    if R_go:
+    if R_go == True:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
         f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
         f"Activity={st.session_state.selected_activity}") 
