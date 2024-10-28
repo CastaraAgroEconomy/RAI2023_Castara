@@ -35,7 +35,7 @@ class TruthTable:
         self.table = np.zeros((n, x, m, y), dtype=int)
         self.generate_table()
 
-    def generate_table(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
+    def generate_table(self, n, x, m, y, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
         # This is where we would implement the AI logic to generate the truth table
         # For now, we'll use a simple rule-based system as a placeholder
         for n in range(self.n):
