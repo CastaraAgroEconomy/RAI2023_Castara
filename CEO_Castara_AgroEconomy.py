@@ -138,10 +138,11 @@ def finalize_selection(activity):
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
         st.button("Logout", on_click=logout)
     else:
-        st.write("⚠️ - Testing system navigation; returning to first list")
+        st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
         st.write(" ")
         st.write(" ")
-        st.write("⚠️ - System will log you out, you will need to login again")
+        st.write("⚠️ - Currently, you will need to logout and login again, to select different options.")
+        st.write("In future, the system will return you to the list containing the first invalid entry for the prior valid list selections")
         st.button("Logout", on_click=logout)
         
 
