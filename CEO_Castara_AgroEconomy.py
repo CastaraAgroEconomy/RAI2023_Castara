@@ -123,7 +123,7 @@ def set_stage(stage, key, value):
 
 def finalize_selection(activity):
     st.session_state.selected_activity = activity
-    generated_truth_table(selected_role, selected_sub_role, selected_action, selected_activity)
+    generated_table(selected_role, selected_sub_role, selected_action, selected_activity)
     check_for_valid_match(selected_role, selected_sub_role, selected_action, selected_activity)
 
     if session_state.R_go == true:
