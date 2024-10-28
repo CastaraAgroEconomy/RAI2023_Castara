@@ -29,8 +29,10 @@ class TruthTable:
                         # For the actual rules, 
                         # the external script containing actual rules, 
                         # "Rules.py" is to be called out instead.
-                        # said script is called up by 
-
+                        # said script is called up by thefunction valid_selection
+    
+                        valid_selection()
+    
     def is_valid_combination(self, n, x, m, y):
         return self.table[n, x, m, y] == 1
 
@@ -50,14 +52,10 @@ class TruthTable:
 
 
 # Initialize the truth table
-truth_table = TruthTable()
+R_valid = TruthTable()
 
 def validate_selection(selected_role, selected_sub_role, selected_action, selected_activity):
     # Map selections to indices (this mapping should be consistent with your main script)
-   
-    # This section changed to call external script function containing expanded 4 lists 
-
-    # MATRIX Call ups
     
     # The above previous lines of code, now replaced by these lines of code, calls an external function containing 
     # List [A] = 14 roles
@@ -70,8 +68,8 @@ def validate_selection(selected_role, selected_sub_role, selected_action, select
     m = actions.index(action)
     y = activities.index(activity)
 
-    if truth_table.is_valid_combination(n, x, m, y):
+    if R_valid.is_valid_combination(n, x, m, y):
         return True, None
     else:
-        next_selection = truth_table.get_next_valid_selection(n, x, m, y)
+        next_selection = R_valid.get_next_valid_selection(n, x, m, y)
         return False, next_selection
