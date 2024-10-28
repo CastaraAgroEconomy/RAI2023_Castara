@@ -16,7 +16,7 @@ if 'self' not in st.session_state:
     st.session_state.self = None
 
 if 'R_go' not in st.session_state:
-    st.session_state.R_go = False
+    st.session_state.R_go == False
 
 # from features.Truth_Table.truth_table_logic import generated_table
 # from features.Validation.valid_selection import check_for_valid_match
