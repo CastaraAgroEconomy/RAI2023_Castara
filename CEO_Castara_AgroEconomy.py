@@ -125,10 +125,11 @@ def main():
     
     if st.button("Finalize"):
         st.session_state.selected_activity = selected_activity  
+        
+        # Change required to next line. Use session_state values in lieu of calling valid_selection function
         is_valid, next_selection = validate_selection(selected_role, selected_sub_role, selected_action, selected_activity)
         
         if is_valid:
-        #   st.session_state.go_activity = True
             st.write(f"Final choice: Role={selected_role}, Sub-role={selected_sub_role}, Action={selected_action}, Activity={selected_activity}")
             st.success("Journey completed successfully!")
             st.button("Logout", on_click=logout)
@@ -136,20 +137,12 @@ def main():
             st.error("Invalid combination. Please go back and change your selection.")
             if next_selection == "selected_role":
                 selected_role = " "
-            #   st.session_state.go_user = False
-            #   user_role_selection(selected_role)
             elif next_selection == "selected_sub_role":
                 selected_sub_role = " "
-            #   st.session_state.go_sub_role = False
-            #   sub_role_selection(selected_role, selected_sub_role)
             elif next_selection == "selected_action":
                 selected_action = " "
-            #   st.session_state.go_action = False
-            #   action_selection(selected_role, selected_sub_role, selected_action)
             elif next_selection == "selected_activity":
                 selected_activity = " "
-            #   st.session_state.go_activity = False
-            #   activity_selection(selected_role, selected_sub_role, selected_action, selecity_activity)
             else:
                 st.error("Unexpected error. Please start over.")
 
