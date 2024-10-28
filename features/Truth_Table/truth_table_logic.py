@@ -18,7 +18,7 @@ if 'self' not in st.session_state:
     st.session_state.self = None
 
 if 'R_go' not in session_state:
-    st.session_stateR_go = False
+    st.session_state.R_go = False
 
 from features.Validation.valid_selection import go_valid
 
