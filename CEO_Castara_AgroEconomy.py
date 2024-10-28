@@ -125,7 +125,7 @@ def main():
     if st.button("Finalize"):
         st.session_state.selected_activity = selected_activity  
         
-        # Change required to next line. Use session_state values in lieu of calling valid_selection function
+        # Change required to next line. Set and use session_state values in lieu of calling valid_selection function
         is_valid, next_selection = validate_selection(selected_role, selected_sub_role, selected_action, selected_activity)
         
         if is_valid:
