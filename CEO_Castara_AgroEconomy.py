@@ -6,7 +6,7 @@ VALID_PASSWORD = "password"
 
 # Define the main function that controls the flow
 def main():
-
+    
     if 'selected_role' not in st.session_state:
         st.session_state.selected_role = None
     
@@ -24,9 +24,9 @@ def main():
 
     if 'R_go' not in st.session_state:
         st.session_state.R_go = False
-
-   from features.Truth_Table.truth_table_logic import generated_table
-   from features.Validation.valid_selection import check_for_valid_match
+        
+    from features.Truth_Table.truth_table_logic import generated_table
+    from features.Validation.valid_selection import check_for_valid_match
 
 # Initialize session state variables
     if "stage" not in st.session_state:
