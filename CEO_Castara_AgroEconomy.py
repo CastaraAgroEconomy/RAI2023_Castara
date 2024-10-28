@@ -140,7 +140,7 @@ def finalize_selection(activity):
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
         st.button("Logout", on_click=logout)
     else:
-        st.write("⚠️ - Test system navigation ; returning to first list")
+        st.write("⚠️ - Testing system navigation; returning to first list")
         content_placeholder = st.empty()
         selected_role = " "
         selected_sub_role = " "
@@ -149,12 +149,12 @@ def finalize_selection(activity):
         Proceed = False
         select_role(content_placeholder)
         content_placeholder = st.empty()
-        = False
-        select_sub_role(content_placeholder)
         Action = False
+        select_sub_role(content_placeholder)
+        Activity = False
         content_placeholder = st.empty()
         select_action(content_placeholder)
-        Activity = False
+        Finalize = False
         content_placeholder = st.empty()
         select_activity(content_placeholder)
         return
