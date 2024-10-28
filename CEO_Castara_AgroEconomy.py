@@ -4,6 +4,18 @@ import streamlit as st
 VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
+if 'n' not in st.session_state:
+    session_state.n = 0
+
+if 'x' not in st.session_state:
+    session_state.x = 0
+
+if 'm' not in st.session_state:
+    session_state.m = 0
+
+if 'y' not in st.session_state:
+    session_state.y = 0
+
 if 'selected_role' not in st.session_state:
     st.session_state.selected_role = None
     
@@ -129,7 +141,7 @@ def set_stage(stage, key, value):
 
 def finalize_selection(activity):
     st.session_state.selected_activity = activity
-    gen_table(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
+    gen_table(self, n, x, m, y, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
 
     if 'R_go' == 1:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
