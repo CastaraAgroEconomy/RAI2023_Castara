@@ -10,7 +10,7 @@ def main():
     placeholder = st.empty()
     
     # Display cover page image
-    placeholder.st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
+    st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
 
 # Navigation section start App with null parameters
     selected_role = " "
@@ -20,51 +20,47 @@ def main():
 
     
     # Login function
-    placeholder.st.title("Castara AgroEconomy venture")
+    st.title("Castara AgroEconomy venture")
     
     # Input fields for username and password
     username = placeholder.st.text_input("Enter your username")
     password = placeholder.st.text_input("Enter your password", type="password")
     
     # Login button
-    if placeholder.st.button("Login"):
+    if st.button("Login"):
         if username == VALID_USERNAME and password == VALID_PASSWORD:
             st.session_state.logged_in = True
             st.success("Login successful !")  # Display login success
         else:
-            placeholder.st.error("Invalid credentials. Please try again.")
+            st.error("Invalid credentials. Please try again.")
 
     
     placeholder.empty()
 
     
     # User role selection screen
-    placeholder.st.title("Select Your Role")
+    st.title("Select Your Role")
 
     roles = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers", 
     "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists", 
     "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
     
     # Display radio buttons for role selection
-    selected_role = placeholder.st.radio("Choose a role", roles)
+    selected_role = st.radio("Choose a role", roles)
     
     # Proceed button
-    if placeholder.st.button("Proceed"):
-        placeholder.st.write(f"You selected {selected_role}")
+    if st.button("Proceed"):
+        st.write(f"You selected {selected_role}")
         st.session_state.selected_role = selected_role
-    #   Call the next step or function after role selection made in the main function
-    #   st.session_state.go_user = True
-    #   selected_sub_role = " "
-    #   sub_role_selection(selected_role, selected_sub_role)
     else:
-        placeholder.st.write("⚠️ - press button to continue")
+        st.write("⚠️ - press button to continue")
 
     
     placeholder.empty()
 
     
     # Sub-role selection based on the selected user role
-    placeholder.st.title(f"Select Sub-role for {selected_role}")
+    st.title(f"Select Sub-role for {selected_role}")
 
     # Define sub-roles for each user role (example data)
     sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", 
@@ -77,11 +73,8 @@ def main():
 
     # sub_role_selection(selected_role, selected_sub_role)
     if st.button("Choose Action"):
-    #   st.session_state.go_sub_role = True
         st.write(f"You selected the sub-role: {selected_sub_role}")
         st.session_state.selected_sub_role = selected_sub_role
-    #   selected_action = " "
-    #   action_selection(selected_role, selected_sub_role, selected_action)
     else:
         st.write("⚠️ - press button to continue")
 
@@ -100,11 +93,9 @@ def main():
     
     # action_selection(selected_role, selected_sub_role, selected_action)
     if st.button("choose Activity"):
-    #  st.session_state.go_action = True
        st.write(f"You selected the action: {selected_action}")
        st.session_state.selected_action = selected_action
        selected_activity = " "
-    #  activity_selection(selected_role, selected_sub_role, selected_action, selected_activity)
     else:
         st.write("⚠️ - press button to continue")
 
@@ -126,7 +117,7 @@ def main():
     if st.button("Finalize"):
         st.session_state.selected_activity = selected_activity  
         
-        # Change required to next line. Set and use session_state values in lieu of calling valid_selection function
+    # Change required to next line. Set and use session_state values in lieu of calling valid_selection function
         is_valid == st.session_state.R_go_nogo
         
         if is_valid:
