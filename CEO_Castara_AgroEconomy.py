@@ -5,16 +5,16 @@ VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
 if 'n' not in st.session_state:
-    st.session_state.n = 0
+    st.session_state.n = 1
 
 if 'x' not in st.session_state:
-    st.session_state.x = 0
+    st.session_state.x = 1
 
 if 'm' not in st.session_state:
-    st.session_state.m = 0
+    st.session_state.m = 1
 
 if 'y' not in st.session_state:
-    st.session_state.y = 0
+    st.session_state.y = 1
 
 if 'selected_role' not in st.session_state:
     st.session_state.selected_role = None
