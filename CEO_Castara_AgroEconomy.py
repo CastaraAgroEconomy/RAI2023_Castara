@@ -1,5 +1,4 @@
 import streamlit as st
-from features.Truth_Table.truth_table_logic import generated_truth_table
 from features.Validation.valid_selection import check_for_valid_match
 
 if 'selected_role' not in st.session_state:
@@ -13,6 +12,8 @@ if 'selected_action' not in st.session_state:
 
 if 'selected_activity' not in st.session_state:
     st.session_state.selected_activity = None
+
+from features.Truth_Table.truth_table_logic import generated_truth_table
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
