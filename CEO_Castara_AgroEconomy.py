@@ -15,8 +15,11 @@ if 'selected_activity' not in st.session_state:
 if 'self' not in st.session_state:
     st.session_state.self = None
 
+if 'R_go' not in st.session_state:
+    st.session_state.R_go = False
+
 # from features.Truth_Table.truth_table_logic import generated_table
-# from features.Validation.valid_selection import check_for_valid_match
+  from features.Validation.valid_selection import check_for_valid_match
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
@@ -127,7 +130,7 @@ def set_stage(stage, key, value):
 def finalize_selection(activity):
     st.session_state.selected_activity = activity
 #   generated_table(self, selected_role, selected_sub_role, selected_action, selected_activity)
-#   check_for_valid_match(selected_role, selected_sub_role, selected_action, selected_activity)
+    check_for_valid_match(R_go, selected_role, selected_sub_role, selected_action, selected_activity)
 
     if session_state.R_go == true:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
