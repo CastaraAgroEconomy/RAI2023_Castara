@@ -23,8 +23,8 @@ def main():
     st.title("Castara AgroEconomy venture")
     
     # Input fields for username and password
-    username = placeholder.st.text_input("Enter your username")
-    password = placeholder.st.text_input("Enter your password", type="password")
+    username = st.text_input("Enter your username")
+    password = st.text_input("Enter your password", type="password")
     
     # Login button
     if st.button("Login"):
