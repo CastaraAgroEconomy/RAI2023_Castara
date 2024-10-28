@@ -2,6 +2,18 @@
 import streamlit as st
 import numpy as np
 
+if 'n' not in st.session_state:
+    st.session_state.n = 1
+
+if 'x' not in st.session_state:
+    st.session_state.x = 1
+
+if 'm' not in st.session_state:
+    st.session_state.m = 1
+
+if 'y' not in st.session_state:
+    st.session_state.y = 1
+
 if 'selected_role' not in st.session_state:
     st.session_state.selected_role = None
     
@@ -48,7 +60,7 @@ class TruthTable:
                         # "Rules.py" is to be called out instead.
                         # said script is called up by thefunction valid_selection
     
-                        validate_selection(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
+                        validate_selection(self, n, x, m, y, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
     
     def is_valid_combination(self, n, x, m, y):
         R_go = 1
