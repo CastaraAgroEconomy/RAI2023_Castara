@@ -157,6 +157,11 @@ def finalize_selection(activity):
         Finalize = False
         content_placeholder = st.empty()
         select_activity(content_placeholder)
+        content_placeholder = st.empty()
+        selected_role = " "
+        selected_sub_role = " "
+        selected_action = " "
+        selected_activity = " "
         return
 
 # Logout function
