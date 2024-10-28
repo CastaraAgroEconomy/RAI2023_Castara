@@ -23,10 +23,6 @@ st.write("⚠️ - Truth Table that determines if selected combination is valid,
 
 class TruthTable:
     def __init__(self, n=14, x=30, m=30, y=35, selected_role, selected_sub_role, selected_action, selected_activity):
-        self.selected_role = selected_role
-        self.selected_sub_role = selected_sub_role
-        self.selected_action = selected_action
-        self.selected_activity = selected_activity
         
         self.n = n
         self.x = x
@@ -35,7 +31,7 @@ class TruthTable:
         self.table = np.zeros((n, x, m, y), dtype=int)
         self.generate_table()
 
-    def generate_table(self, selected_role, selected_sub_role, selected_action, selected_activity):
+    def generate_table(selected_role, selected_sub_role, selected_action, selected_activity):
         # This is where we would implement the AI logic to generate the truth table
         # For now, we'll use a simple rule-based system as a placeholder
         for n in range(self.n):
@@ -91,7 +87,11 @@ def validate_selection(selected_role, selected_sub_role, selected_action, select
     y = activities.index(activity)
 
     if R.is_valid_combination(n, x, m, y):
-        st.session_state.R_go = True        
+        st.session_state.R_go = True
+        selected_role == st.session_state.selected_role
+        selected_sub_role == st.session_state.selected_sub_role
+        selected_action == st.session_state.selected_action
+        selected_activity == st.session_state.selected_activity
         return True, None
     else:
         next_selection = R.get_next_valid_selection(n, x, m, y)
