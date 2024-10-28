@@ -1,6 +1,8 @@
 import streamlit as st
 
-
+# Placeholder for valid credentials (admin/password for testing)
+VALID_USERNAME = "admin"
+VALID_PASSWORD = "password"
 
 # Define the main function that controls the flow
 def main():
@@ -25,10 +27,6 @@ def main():
 
 # from features.Truth_Table.truth_table_logic import generated_table
 # from features.Validation.valid_selection import check_for_valid_match
-
-# Placeholder for valid credentials (admin/password for testing)
-    VALID_USERNAME = "admin"
-    VALID_PASSWORD = "password"
 
 # Initialize session state variables
     if "stage" not in st.session_state:
