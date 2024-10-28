@@ -11,7 +11,12 @@ selected_activity = st.session_state.get('selected_activity', None)
 R_go = False
 
 class TruthTable:
-    def __init__(self, n=14, x=30, m=30, y=35):
+    def __init__(self, n=14, x=30, m=30, y=35, selected_role, selected_sub_role, selected_action, selected_activity):
+        self.selected_role = selected_role
+        self.selected_sub_role = selected_sub_role
+        self.selected_action = selected_action
+        self.selected_activity = selected_activity
+        
         self.n = n
         self.x = x
         self.m = m
