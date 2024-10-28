@@ -35,7 +35,7 @@ def main():
         st.session_state.stage = "login"
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
-        content_placeholder = st.empty()  # Create a single placeholder for all content
+    content_placeholder = st.empty()  # Create a single placeholder for all content
     
     # Stage-based rendering using the placeholder
     if st.session_state.stage == "login":
