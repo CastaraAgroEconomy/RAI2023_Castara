@@ -4,26 +4,26 @@ import streamlit as st
 VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
-    if 'selected_role' not in st.session_state:
-        st.session_state.selected_role = None
+if 'selected_role' not in st.session_state:
+    st.session_state.selected_role = None
     
-    if 'selected_sub_role' not in st.session_state:
-        st.session_state.selected_sub_role = None
+if 'selected_sub_role' not in st.session_state:
+    st.session_state.selected_sub_role = None
 
-    if 'selected_action' not in st.session_state:
-        st.session_state.selected_action = None
+if 'selected_action' not in st.session_state:
+    st.session_state.selected_action = None
 
-    if 'selected_activity' not in st.session_state:
-        st.session_state.selected_activity = None
+if 'selected_activity' not in st.session_state:
+    st.session_state.selected_activity = None
 
-    if 'self' not in st.session_state:
-        st.session_state.self = None
+if 'self' not in st.session_state:
+    st.session_state.self = None
 
-    if 'R_go' not in st.session_state:
-        st.session_state.R_go = False
+if 'R_go' not in st.session_state:
+    st.session_state.R_go = False
         
-    from features.Truth_Table.truth_table_logic import generated_table
-    from features.Validation.valid_selection import check_for_valid_match
+from features.Truth_Table.truth_table_logic import generated_table
+from features.Validation.valid_selection import check_for_valid_match
 
 # Define the main function that controls the flow
 def main():
