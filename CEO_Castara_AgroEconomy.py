@@ -156,6 +156,7 @@ def finalize_selection(activity):
         content_placeholder = st.empty()
         selected_activity = " "
         selected_activity(content_placeholder)
+        return
         
         st.write("⚠️ - System reboots after one reselection, you will need to login again")
         st.button("Logout", on_click=logout)
