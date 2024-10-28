@@ -10,21 +10,29 @@ if "stage" not in st.session_state:
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 
+# Define the main function that controls the flow
 def main():
-    # Stage-based rendering
+    content_placeholder = st.empty()  # Create a single placeholder for all content
+    
+    # Stage-based rendering using the placeholder
     if st.session_state.stage == "login":
-        login()
+        with content_placeholder.container():
+            login(content_placeholder)
     elif st.session_state.stage == "role_selection":
-        select_role()
+        with content_placeholder.container():
+            select_role(content_placeholder)
     elif st.session_state.stage == "sub_role_selection":
-        select_sub_role()
+        with content_placeholder.container():
+            select_sub_role(content_placeholder)
     elif st.session_state.stage == "action_selection":
-        select_action()
+        with content_placeholder.container():
+            select_action(content_placeholder)
     elif st.session_state.stage == "activity_selection":
-        select_activity()
+        with content_placeholder.container():
+            select_activity(content_placeholder)
 
 # Login function
-def login():
+def login(content_placeholder):
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
     st.title("Castara AgroEconomy Venture")
 
@@ -42,7 +50,7 @@ def login():
             st.error("Invalid credentials. Please try again.")
 
 # Role selection screen
-def select_role():
+def select_role(content_placeholder):
     st.title("Select Your Role")
     roles = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
              "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
@@ -54,7 +62,7 @@ def select_role():
         st.session_state.stage = "sub_role_selection"  # Move to the next stage
 
 # Sub-role selection screen
-def select_sub_role():
+def select_sub_role(content_placeholder):
     st.title(f"Select Sub-role for {st.session_state.selected_role}")
     sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director",
                  "Operations Director", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader",
@@ -68,7 +76,7 @@ def select_sub_role():
         st.session_state.stage = "action_selection"  # Move to the next stage
 
 # Action selection screen
-def select_action():
+def select_action(content_placeholder):
     st.title(f"Actions available for {st.session_state.selected_role} - {st.session_state.selected_sub_role}")
     actions = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management",
                "Plant Health Assessment", "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections",
@@ -81,7 +89,7 @@ def select_action():
         st.session_state.stage = "activity_selection"  # Move to the next stage
 
 # Activity selection screen
-def select_activity():
+def select_activity(content_placeholder):
     st.title(f"Activity for {st.session_state.selected_role} - {st.session_state.selected_sub_role} - {st.session_state.selected_action}")
     activities = ["pH Level Monitoring", "Electrical Conductivity (EC) Testing", "Temperature Control Adjustment",
                   "Humidity Level Management", "Light Intensity Calibration", "Nutrient Mix Preparation", "Water Quality Testing",
