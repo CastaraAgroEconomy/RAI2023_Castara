@@ -2,10 +2,18 @@
 import streamlit as st
 import numpy as np
 
-selected_role = st.session_state.get('selected_role', None)
-selected_sub_role = st.session_state.get('selected_sub_role', None)
-selected_action = st.session_state.get('selected_action', None)
-selected_activity = st.session_state.get('selected_activity', None)
+if 'selected_role' not in st.session_state:
+    st.session_state.selected_role = None
+    
+if 'selected_sub_role' not in st.session_state:
+    st.session_state.selected_sub_role = None
+
+if 'selected_action' not in st.session_state:
+    st.session_state.selected_action = None
+
+if 'selected_activity' not in st.session_state:
+    st.session_state.selected_activity = None
+
 R_go = False
 
 st.write("⚠️ - Truth Table that determines if selected combination is valid, is being tested.")
