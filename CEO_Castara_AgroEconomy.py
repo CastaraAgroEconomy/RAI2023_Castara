@@ -4,9 +4,6 @@ import streamlit as st
 VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
-# Define the main function that controls the flow
-def main():
-    
     if 'selected_role' not in st.session_state:
         st.session_state.selected_role = None
     
@@ -27,6 +24,9 @@ def main():
         
     from features.Truth_Table.truth_table_logic import generated_table
     from features.Validation.valid_selection import check_for_valid_match
+
+# Define the main function that controls the flow
+def main():
 
 # Initialize session state variables
     if "stage" not in st.session_state:
