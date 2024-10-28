@@ -6,10 +6,10 @@ import streamlit as st
 import itertools
 import pandas as pd
 
-selected_role = st.session_state.selected_role
-selected_sub_role = st.session_state.selected_sub_role
-selected_action = st.session_state. selected_action
-selected_activity = st.session_state.selected_activity
+selected_role = st.session_state.get('selected_role', None)
+selected_sub_role = st.session_state.get('selected_sub_role', None)
+selected_action = st.session_state.get('selected_action', None)
+selected_activity = st.session_state.get('selected_activity', None)
 
 # Define the matrices
 A = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
