@@ -70,7 +70,9 @@ def validate_selection(selected_role, selected_sub_role, selected_action, select
     y = activities.index(activity)
 
     if R.is_valid_combination(n, x, m, y):
+        session_state.R_go_nogo = True        
         return True, None
     else:
         next_selection = R.get_next_valid_selection(n, x, m, y)
+        session_state.R_go_nogo = False
         return False, next_selection
