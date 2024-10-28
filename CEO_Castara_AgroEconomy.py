@@ -126,7 +126,7 @@ def main():
         st.session_state.selected_activity = selected_activity  
         
         # Change required to next line. Set and use session_state values in lieu of calling valid_selection function
-        is_valid = st.session_state.R_go_nogo
+        is_valid == st.session_state.R_go_nogo
         
         if is_valid:
             st.write(f"Final choice: Role={selected_role}, Sub-role={selected_sub_role}, Action={selected_action}, Activity={selected_activity}")
