@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
@@ -11,7 +10,7 @@ def main():
     placeholder = st.empty()
     
     # Display cover page image
-    st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
+    placeholder.st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
 
 # Navigation section start App with null parameters
     selected_role = " "
@@ -21,51 +20,51 @@ def main():
 
     
     # Login function
-    st.title("Castara AgroEconomy venture")
+    placeholder.st.title("Castara AgroEconomy venture")
     
     # Input fields for username and password
-    username = st.text_input("Enter your username")
-    password = st.text_input("Enter your password", type="password")
+    username = placeholder.st.text_input("Enter your username")
+    password = placeholder.st.text_input("Enter your password", type="password")
     
     # Login button
-    if st.button("Login"):
+    if placeholder.st.button("Login"):
         if username == VALID_USERNAME and password == VALID_PASSWORD:
             st.session_state.logged_in = True
             st.success("Login successful !")  # Display login success
         else:
-            st.error("Invalid credentials. Please try again.")
+            placeholder.st.error("Invalid credentials. Please try again.")
 
     
     placeholder.empty()
 
     
     # User role selection screen
-    st.title("Select Your Role")
+    placeholder.st.title("Select Your Role")
 
     roles = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers", 
     "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists", 
     "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
     
     # Display radio buttons for role selection
-    selected_role = st.radio("Choose a role", roles)
+    selected_role = placeholder.st.radio("Choose a role", roles)
     
     # Proceed button
-    if st.button("Proceed"):
-        st.write(f"You selected {selected_role}")
+    if placeholder.st.button("Proceed"):
+        placeholder.st.write(f"You selected {selected_role}")
         st.session_state.selected_role = selected_role
     #   Call the next step or function after role selection made in the main function
     #   st.session_state.go_user = True
     #   selected_sub_role = " "
     #   sub_role_selection(selected_role, selected_sub_role)
     else:
-        st.write("⚠️ - press button to continue")
+        placeholder.st.write("⚠️ - press button to continue")
 
     
     placeholder.empty()
 
     
     # Sub-role selection based on the selected user role
-    st.title(f"Select Sub-role for {selected_role}")
+    placeholder.st.title(f"Select Sub-role for {selected_role}")
 
     # Define sub-roles for each user role (example data)
     sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", 
