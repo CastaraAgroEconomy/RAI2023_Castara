@@ -18,14 +18,15 @@ if 'self' not in st.session_state:
     st.session_state.self = None
 
 if 'R_go' not in session_state:
-    st.session_state.R_go = False
+    st.session_state.R_go = 0
 
 from features.Validation.valid_selection import go_valid
+
 
 st.write("⚠️ - Truth Table that determines if selected combination is valid, is being tested.")
 
 class TruthTable:
-    def __init__(self, n=14, x=30, m=30, y=35, selected_role, selected_sub_role, selected_action, selected_activity):
+    def __init__(self, n=14, x=30, m=30, y=35, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
         
         self.n = n
         self.x = x
@@ -50,10 +51,13 @@ class TruthTable:
                         validate_selection(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
     
     def is_valid_combination(self, n, x, m, y):
+        R_go = 1
         return self.table[n, x, m, y] == 1
 
     def get_next_valid_selection(self, n, x, m, y):
+        R_go = 0
         if self.is_valid_combination(n, x, m, y):
+            R_go = 1
             return None  # Current selection is valid
         
         # Check which dimension is invalid and return the appropriate list
@@ -93,7 +97,7 @@ def validate_selection(self, R_go, selected_role, selected_sub_role, selected_ac
     y = activities.index(activity)
 
     if R.is_valid_combination(n, x, m, y):
-        st.session_state.R_go = True
+        st.session_state.R_go = 1
         selected_role == st.session_state.selected_role
         selected_sub_role == st.session_state.selected_sub_role
         selected_action == st.session_state.selected_action
@@ -101,5 +105,5 @@ def validate_selection(self, R_go, selected_role, selected_sub_role, selected_ac
         return True, None
     else:
         next_selection = R.get_next_valid_selection(n, x, m, y)
-        st.session_state.R_go = False
+        st.session_state.R_go = 0
         return False, next_selection
