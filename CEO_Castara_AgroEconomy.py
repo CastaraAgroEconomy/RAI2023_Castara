@@ -141,6 +141,7 @@ def finalize_selection(activity):
         st.button("Logout", on_click=logout)
     else:
         st.write("⚠️ - Test system navigation ; returning to first list")
+        content_placeholder = st.empty()
         select_role(content_placeholder)
         return
 
