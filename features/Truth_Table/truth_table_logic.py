@@ -31,7 +31,7 @@ class TruthTable:
                         # "Rules.py" is to be called out instead.
                         # said script is called up by thefunction valid_selection
     
-                        valid_selection()
+                        validate_selection(selected_role, selected_sub_role, selected_action, selected_activity)
     
     def is_valid_combination(self, n, x, m, y):
         return self.table[n, x, m, y] == 1
@@ -52,24 +52,25 @@ class TruthTable:
 
 
 # Initialize the truth table
-R_valid = TruthTable()
+R = TruthTable()
 
 def validate_selection(selected_role, selected_sub_role, selected_action, selected_activity):
     # Map selections to indices (this mapping should be consistent with your main script)
     
     # The above previous lines of code, now replaced by these lines of code, calls an external function containing 
-    # List [A] = 14 roles
-    # List [B] = 30 sub-roles
-    # List [C] = 30 actions
-    # List [D] = 35 activities
+    # List  [A] = 14 roles
+    # List  [B] = 30 sub-roles
+    # List  [C] = 30 actions
+    # List  [D] = 35 activities
+    # Table [R] = 441000 combinations
     
     n = roles.index(role)
     x = sub_roles[role].index(sub_role)
     m = actions.index(action)
     y = activities.index(activity)
 
-    if R_valid.is_valid_combination(n, x, m, y):
+    if R.is_valid_combination(n, x, m, y):
         return True, None
     else:
-        next_selection = R_valid.get_next_valid_selection(n, x, m, y)
+        next_selection = R.get_next_valid_selection(n, x, m, y)
         return False, next_selection
