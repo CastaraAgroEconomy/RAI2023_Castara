@@ -18,12 +18,15 @@ if 'selected_action' not in st.session_state:
 if 'selected_activity' not in st.session_state:
     st.session_state.selected_activity = None
 
+if 'self' not in session_state:
+    st.session_state.self = None
+
 if 'R_go' not in st.session_state:
     st.session_state.R_go = False
 
 from features.Validation.Rules import check_select
 
-def valid_selection(R_go, selected_role, selected_sub_role,selected_action, selected_activity)
+def valid_selection(self, R_go, selected_role, selected_sub_role,selected_action, selected_activity)
 
 # Define the matrices
    A = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
