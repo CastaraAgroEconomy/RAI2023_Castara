@@ -14,6 +14,9 @@ if 'selected_action' not in st.session_state:
 if 'selected_activity' not in st.session_state:
     st.session_state.selected_activity = None
 
+if 'self' not in st.session_state:
+    st.session_state.self = None
+
 R_go = False
 
 st.write("⚠️ - Truth Table that determines if selected combination is valid, is being tested.")
