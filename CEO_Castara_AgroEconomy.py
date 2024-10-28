@@ -126,8 +126,8 @@ def set_stage(stage, key, value):
 
 def finalize_selection(activity):
     st.session_state.selected_activity = activity
-    generated_table(self, selected_role, selected_sub_role, selected_action, selected_activity)
-    check_for_valid_match(selected_role, selected_sub_role, selected_action, selected_activity)
+#   generated_table(self, selected_role, selected_sub_role, selected_action, selected_activity)
+#   check_for_valid_match(selected_role, selected_sub_role, selected_action, selected_activity)
 
     if session_state.R_go == true:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
