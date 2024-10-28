@@ -1,6 +1,5 @@
 import streamlit as st
 
-placeholder = st.empty()
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
@@ -8,6 +7,9 @@ VALID_PASSWORD = "password"
 
 # Define the main function that will control the flow
 def main():
+
+    placeholder = st.empty()
+    
     # Display cover page image
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
 
