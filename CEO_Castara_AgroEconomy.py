@@ -1,5 +1,4 @@
 import streamlit as st
-# from features.Utility.Clear_screen import clear_display
 
 placeholder = st.empty()
 
