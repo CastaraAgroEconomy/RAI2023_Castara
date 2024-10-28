@@ -34,24 +34,24 @@ D = ["pH Level Monitoring", "Electrical Conductivity (EC) Testing", "Temperature
      "Growth Data Recording", "Team Schedule Creation", "Maintenance Log Updates", "Quality Check Documentation",
      "Compliance Report Generation"]
 
-# Example rules for validation
-
-Rules(selected_role, Selected_sub_role, selected_action, selected_activity)
 
 # Generate all combinations
 combinations = list(itertools.product(A, B, C, D))
 
 # Initialize the truth table
-truth_table = []
+R = []
+
+# Apply rules for validation
+Rules(selected_role, Selected_sub_role, selected_action, selected_activity)
 
 # Validate each combination based on the rules
 for combination in combinations:
     selected_role, selected_sub_role, selected_action, selected_activity = combination
     valid = is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
-    truth_table.append(combination + (valid,))
+    R.append(combination + (valid,))
 
 # Convert to a pandas DataFrame
-df = pd.DataFrame(truth_table, columns=['Role (A)', 'Job Title/function (B)', 'Action (C)', 'Activity (D)', 'Valid/Invalid (R)'])
+df = pd.DataFrame(R, columns=['Role (A)', 'Job Title/function (B)', 'Action (C)', 'Activity (D)', 'Valid/Invalid (1/0)'])
 
 # Save the truth table to a CSV file for further analysis or processing
 df.to_csv('expanded_truth_table.csv', index=False)
