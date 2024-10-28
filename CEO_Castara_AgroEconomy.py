@@ -144,18 +144,22 @@ def finalize_selection(activity):
         content_placeholder = st.empty()
         selected_role = " "
         selected_role(content_placeholder)
+        return
         content_placeholder = st.empty()      
         selected_sub_role = " "
         selected_sub_role(content_placeholder)
+        return
         content_placeholder = st.empty()
         selected_action = " "
         selected_action(content_placeholder)
+        return
         content_placeholder = st.empty()
         selected_activity = " "
         selected_activity(content_placeholder)
+        
         st.write("⚠️ - System reboots after one reselection, you will need to login again")
-        st.button("Logout", on_click=logout)        
-        return
+        st.button("Logout", on_click=logout)
+        
 
 # Logout function
 def logout():
