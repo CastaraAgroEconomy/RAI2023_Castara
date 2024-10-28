@@ -146,6 +146,9 @@ def main():
                 st.error("Unexpected error. Please start over.")
 
 
+    placeholder.empty()
+
+
 
 # Call appropriate feature function for User's journey
 
