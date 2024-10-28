@@ -34,7 +34,7 @@ class TruthTable:
         self.table = np.zeros((n, x, m, y), dtype=int)
         self.generate_table()
 
-    def generate_table(selected_role, selected_sub_role, selected_action, selected_activity):
+    def generate_table(self, selected_role, selected_sub_role, selected_action, selected_activity):
         # This is where we would implement the AI logic to generate the truth table
         # For now, we'll use a simple rule-based system as a placeholder
         for n in range(self.n):
@@ -47,7 +47,7 @@ class TruthTable:
                         # "Rules.py" is to be called out instead.
                         # said script is called up by thefunction valid_selection
     
-                        validate_selection(selected_role, selected_sub_role, selected_action, selected_activity)
+                        validate_selection(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
     
     def is_valid_combination(self, n, x, m, y):
         return self.table[n, x, m, y] == 1
@@ -74,7 +74,7 @@ R = TruthTable(
     st.session_state.selected_action,
     st.session_state.selected_activity)
 
-def validate_selection(selected_role, selected_sub_role, selected_action, selected_activity):
+def validate_selection(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
     # Map selections to indices (this mapping should be consistent with your main script)
     
     # The above previous lines of code, now replaced by these lines of code, calls an external function containing 
