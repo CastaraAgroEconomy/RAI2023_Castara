@@ -142,16 +142,16 @@ def finalize_selection(activity):
     else:
         st.write("⚠️ - Testing system navigation; returning to first list")
         content_placeholder = st.empty()
-        selected_role = None
+        selected_role = " "
         selected_role()
         content_placeholder = st.empty()      
-        selected_sub_role = None
+        selected_sub_role = " "
         selected_sub_role()
         content_placeholder = st.empty()
-        selected_action = None
+        selected_action = " "
         selected_action()
         content_placeholder = st.empty()
-        selected_activity = None
+        selected_activity = " "
         selected_activity()
         content_placeholder = st.empty()
         return
