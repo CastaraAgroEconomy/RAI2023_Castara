@@ -149,9 +149,7 @@ def main():
     placeholder.empty()
 
 
-
 # Call appropriate feature function for User's journey
-
 
 
 # Logout function
