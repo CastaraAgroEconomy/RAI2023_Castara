@@ -142,6 +142,10 @@ def finalize_selection(activity):
     else:
         st.write("⚠️ - Test system navigation ; returning to first list")
         content_placeholder = st.empty()
+        selected_role = " "
+        selected_sub_role = " "
+        selected_action = " "
+        selected_activity = " "
         select_role(content_placeholder)
         return
 
