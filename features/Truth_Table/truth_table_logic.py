@@ -8,7 +8,7 @@ selected_role = st.session_state.selected_role
 selected_sub_role = st.session_state.selected_sub_role
 selected_action = st.session_state.selected_action
 selected_activity = st.session_state.selected_activity
-R_go_nogo = False
+R_go = False
 
 class TruthTable:
     def __init__(self, n=14, x=30, m=30, y=35):
@@ -71,9 +71,9 @@ def validate_selection(selected_role, selected_sub_role, selected_action, select
     y = activities.index(activity)
 
     if R.is_valid_combination(n, x, m, y):
-        st.session_state.R_go_nogo = True        
+        st.session_state.R_go = True        
         return True, None
     else:
         next_selection = R.get_next_valid_selection(n, x, m, y)
-        st.session_state.R_go_nogo = False
+        st.session_state.R_go = False
         return False, next_selection
