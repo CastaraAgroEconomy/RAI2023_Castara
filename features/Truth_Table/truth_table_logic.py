@@ -58,7 +58,11 @@ class TruthTable:
 
 
 # Initialize the truth table
-R = TruthTable()
+R = TruthTable(
+    st.session_state.selected_role,
+    st.session_state.selected_sub_role,
+    st.session_state.selected_action,
+    st.session_state.selected_activity)
 
 def validate_selection(selected_role, selected_sub_role, selected_action, selected_activity):
     # Map selections to indices (this mapping should be consistent with your main script)
