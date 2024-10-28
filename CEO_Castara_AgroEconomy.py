@@ -140,6 +140,8 @@ def finalize_selection(activity):
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
         st.button("Logout", on_click=logout)
     else:
+        st.write('⚠️ - Test system navigation ; returning to first list")
+        select_role(content_placeholder)
         return
 
 # Logout function
