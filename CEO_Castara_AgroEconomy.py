@@ -131,7 +131,7 @@ def finalize_selection(activity):
     st.session_state.selected_activity = activity
     # gen_tab(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
     # check_for_valid_match(R_go, selected_role, selected_sub_role, selected_action, selected_activity)
-    'R_go' == True
+    
 
     if 'R_go' == True:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
