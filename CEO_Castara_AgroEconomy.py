@@ -40,14 +40,17 @@ def login(content_placeholder):
     username = st.text_input("Enter your username")
     password = st.text_input("Enter your password", type="password")
 
-    # Login button
-    if st.button("Login"):
-        if username == VALID_USERNAME and password == VALID_PASSWORD:
-            st.session_state.logged_in = True
-            st.success("Login successful!")
-            st.session_state.stage = "role_selection"  # Move to the next stage
-        else:
-            st.error("Invalid credentials. Please try again.")
+    # Login button with on_click function to advance stage
+    if st.button("Login", on_click=lambda: login_check(username, password)):
+        pass  # Placeholder to hold button logic; action is in login_check
+
+def login_check(username, password):
+    if username == VALID_USERNAME and password == VALID_PASSWORD:
+        st.session_state.logged_in = True
+        st.session_state.stage = "role_selection"  # Move to the next stage
+        st.success("Login successful!")
+    else:
+        st.error("Invalid credentials. Please try again.")
 
 # Role selection screen
 def select_role(content_placeholder):
@@ -57,9 +60,8 @@ def select_role(content_placeholder):
              "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
     selected_role = st.radio("Choose a role", roles)
 
-    if st.button("Proceed"):
-        st.session_state.selected_role = selected_role
-        st.session_state.stage = "sub_role_selection"  # Move to the next stage
+    if st.button("Proceed", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
+        pass
 
 # Sub-role selection screen
 def select_sub_role(content_placeholder):
@@ -71,9 +73,8 @@ def select_sub_role(content_placeholder):
                  "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager"]
     selected_sub_role = st.radio("Choose a sub-role", sub_roles)
 
-    if st.button("Choose Action"):
-        st.session_state.selected_sub_role = selected_sub_role
-        st.session_state.stage = "action_selection"  # Move to the next stage
+    if st.button("Choose Action", on_click=lambda: set_stage("action_selection", "selected_sub_role", selected_sub_role)):
+        pass
 
 # Action selection screen
 def select_action(content_placeholder):
@@ -84,9 +85,8 @@ def select_action(content_placeholder):
                "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination"]
     selected_action = st.radio("Choose an action", actions)
 
-    if st.button("Choose Activity"):
-        st.session_state.selected_action = selected_action
-        st.session_state.stage = "activity_selection"  # Move to the next stage
+    if st.button("Choose Activity", on_click=lambda: set_stage("activity_selection", "selected_action", selected_action)):
+        pass
 
 # Activity selection screen
 def select_activity(content_placeholder):
@@ -99,13 +99,19 @@ def select_activity(content_placeholder):
                   "Compliance Report Generation"]
     selected_activity = st.radio("Choose an activity", activities)
 
-    if st.button("Finalize"):
-        st.session_state.selected_activity = selected_activity
-        # Here you would add any validation for your selections, if necessary
-        st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
-                   f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
-                   f"Activity={st.session_state.selected_activity}")
-        st.button("Logout", on_click=logout)
+    if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
+        pass
+
+def set_stage(stage, key, value):
+    st.session_state[key] = value
+    st.session_state.stage = stage
+
+def finalize_selection(activity):
+    st.session_state.selected_activity = activity
+    st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
+               f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
+               f"Activity={st.session_state.selected_activity}")
+    st.button("Logout", on_click=logout)
 
 # Logout function
 def logout():
