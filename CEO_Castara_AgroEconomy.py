@@ -20,7 +20,7 @@ if 'self' not in st.session_state:
     st.session_state.self = None
 
 if 'R_go' not in st.session_state:
-    st.session_state.R_go = False
+    st.session_state.R_go = 0
         
 from features.Truth_Table.truth_table_logic import gen_table
 
