@@ -6,22 +6,22 @@ import streamlit as st
 def main():
 
     if 'selected_role' not in st.session_state:
-    st.session_state.selected_role = None
+        st.session_state.selected_role = None
     
     if 'selected_sub_role' not in st.session_state:
-    st.session_state.selected_sub_role = None
+        st.session_state.selected_sub_role = None
 
     if 'selected_action' not in st.session_state:
-    st.session_state.selected_action = None
+        st.session_state.selected_action = None
 
     if 'selected_activity' not in st.session_state:
-    st.session_state.selected_activity = None
+        st.session_state.selected_activity = None
 
     if 'self' not in st.session_state:
-    st.session_state.self = None
+        st.session_state.self = None
 
     if 'R_go' not in st.session_state:
-    st.session_state.R_go = False
+        st.session_state.R_go = False
 
 # from features.Truth_Table.truth_table_logic import generated_table
 # from features.Validation.valid_selection import check_for_valid_match
