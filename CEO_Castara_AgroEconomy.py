@@ -22,7 +22,7 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = False
         
-from features.Truth_Table.truth_table_logic import generated_table
+from features.Truth_Table.truth_table_logic import gen_tab
 from features.Validation.valid_selection import check_for_valid_match
 
 # Define the main function that controls the flow
@@ -129,7 +129,7 @@ def set_stage(stage, key, value):
 
 def finalize_selection(activity):
     st.session_state.selected_activity = activity
-    generated_table(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
+    gen_tab(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
     check_for_valid_match(R_go, selected_role, selected_sub_role, selected_action, selected_activity)
 
     if R_go == True:
