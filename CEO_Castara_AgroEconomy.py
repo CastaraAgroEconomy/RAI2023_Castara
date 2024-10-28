@@ -141,24 +141,9 @@ def finalize_selection(activity):
         st.button("Logout", on_click=logout)
     else:
         st.write("⚠️ - Testing system navigation; returning to first list")
-        content_placeholder = st.empty()
-        selected_role = " "
-        selected_role(content_placeholder)
-        return
-        content_placeholder = st.empty()      
-        selected_sub_role = " "
-        selected_sub_role(content_placeholder)
-        return
-        content_placeholder = st.empty()
-        selected_action = " "
-        selected_action(content_placeholder)
-        return
-        content_placeholder = st.empty()
-        selected_activity = " "
-        selected_activity(content_placeholder)
-        return
-        
-        st.write("⚠️ - System reboots after one reselection, you will need to login again")
+        st.write(" ")
+        st.write(" ")
+        st.write("⚠️ - System will log you out, you will need to login again")
         st.button("Logout", on_click=logout)
         
 
