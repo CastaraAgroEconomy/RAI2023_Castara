@@ -28,7 +28,7 @@ def login_screen():
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
     if st.button("Login"):
-        if username == "user" and password == "pass":  # Replace with actual authentication
+        if username == "admin" and password == "password":  # Replace with actual authentication
             st.session_state.is_logged_in = True
             st.success("Login successful! Proceed to make your selections.")
         else:
