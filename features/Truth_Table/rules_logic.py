@@ -33,7 +33,8 @@ class TruthTable:
                     for y in range(self.y):
                         # Validate each possible combination and update table
                         is_valid = validate_choice(n, x, m, y)
-                        self.table[n, x, m, y] = int(is_valid)  # Set to 1 if valid, 0 if not
+                        self.table[n, x, m, y] = int(bool(is_valid))  # Set to 1 if valid, 0 if not
+
 
     def is_valid_combination(self, n, x, m, y):
         return self.table[n, x, m, y] == 1
