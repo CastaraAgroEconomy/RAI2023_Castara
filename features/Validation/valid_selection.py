@@ -41,7 +41,7 @@ def get_actions():
 def get_activities():
     return D
 
-def validate_combination(selected_role, selected_sub_role, selected_action, selected_activity):
+def validate_selection(selected_role, selected_sub_role, selected_action, selected_activity):
     """Validate the selection by checking if the combination matches valid rules."""
     is_valid = is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
     return is_valid, None if is_valid else "selection"
