@@ -35,7 +35,7 @@ if 'R_go' not in session_state:
 from features.Validation.valid_selection import go_valid
 
 
-st.write("⚠️ - Truth Table that determines if selected combination is valid, is being tested.")
+
 
 class TruthTable:
     def __init__(self, n=14, x=30, m=30, y=35, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
@@ -50,6 +50,8 @@ class TruthTable:
     def generate_table(self, n, x, m, y, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
         # This is where we would implement the AI logic to generate the truth table
         # For now, we'll use a simple rule-based system as a placeholder
+        st.write("⚠️ - Truth Table that determines if selected combination is valid, is being created.")
+        
         for n in range(self.n):
             for x in range(self.x):
                 for m in range(self.m):
