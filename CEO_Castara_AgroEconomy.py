@@ -1,4 +1,5 @@
 # Main Script and function call for the Castara AgroEconomy Mobile App.
+import streamlit as st
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
