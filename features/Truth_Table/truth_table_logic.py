@@ -102,7 +102,7 @@ def validate_selection(self, R_go, selected_role, selected_sub_role, selected_ac
     # List  [D] = 35 activities
     # Table [R] = 441000 combinations
 
-    go_valid(R_go, select_role, select_sub_role, select_action, select_activity
+    go_valid(self, R_go, select_role, select_sub_role, select_action, select_activity
     
     n = roles.index(role)
     x = sub_roles[role].index(sub_role)
