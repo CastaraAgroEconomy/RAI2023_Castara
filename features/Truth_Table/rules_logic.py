@@ -3,7 +3,7 @@
 import streamlit as st
 import numpy as np
 
-from features.Validation.valid_selection.py import validate_choice
+from features.Validation.valid_selection import validate_choice
 
 # Initialize session state variables if not already present
 for key, default in {
