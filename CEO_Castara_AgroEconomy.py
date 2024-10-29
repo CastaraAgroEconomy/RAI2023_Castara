@@ -88,7 +88,7 @@ def login_check(username, password):
 # Role selection screen
 def select_role(content_placeholder):
     st.title("Select Your Role")
-    roles = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
+    roles = ["Agricultural Engineers", "Horticulturists", "System Specialists", "Plant Scientists", "Operations Managers",
              "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
              "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
     selected_role = st.radio("Choose a role", roles)
@@ -99,7 +99,7 @@ def select_role(content_placeholder):
 # Sub-role selection screen
 def select_sub_role(content_placeholder):
     st.title(f"Select Sub-role for {st.session_state.selected_role}")
-    sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director",
+    sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "System Technicians", "Plant Science Director",
                  "Operations Director", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader",
                  "Environmental Systems Manager", "Nutrient Systems Manager", "Data Analytics Manager", "Production Supervisor",
                  "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", "Franchise Owner",
