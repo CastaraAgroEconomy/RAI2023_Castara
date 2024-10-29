@@ -34,7 +34,7 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
         
-from features.Truth_Table.truth_table_logic import gen_table
+# from features.Truth_Table.truth_table_logic import gen_table
 
 
 # Define the main function that controls the flow
