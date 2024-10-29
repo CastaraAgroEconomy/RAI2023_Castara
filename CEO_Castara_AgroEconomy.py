@@ -153,8 +153,8 @@ def finalize_selection(activity):
         st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
         st.write(" ")
         st.write(" ")
-        st.write("⚠️ - Currently, you will need to logout and login again, to select different options.")
-        st.write("In future, the system will return you to the list which causes the first invalid combination to result as a result of a selection from that list")
+        st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
+        st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
         st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
         st.button("Logout", on_click=logout)
         
