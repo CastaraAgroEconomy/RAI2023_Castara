@@ -49,21 +49,22 @@ class TruthTable:
         else:
             return "activity"
 
+
 # Function to validate selection
 def validate_selection(n, x, m, y):
-    # Replace with actual validation logic as per `go_valid`
-     valid = validate_choice(
+    # Uses the validate_choice function to determine if selection is valid
+    is_valid = validate_choice(
         st.session_state.selected_role,
         st.session_state.selected_sub_role,
         st.session_state.selected_action,
         st.session_state.selected_activity
     )
     
-    if valid:
+    if is_valid:
         st.session_state.R_go = 1
-        st.session_state.table[n, x, m, y] = 1
     else:
         st.session_state.R_go = 0
+    return is_valid
 
 # Initialize the TruthTable
 R = TruthTable()
