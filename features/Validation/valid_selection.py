@@ -28,7 +28,7 @@ from features.Validation.Rules import check_select
 
 
 
-def valid_selection(self, R_go, selected_role, selected_sub_role,selected_action, selected_activity)
+def valid_selection(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
 
 # Define the matrices
    A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Managers",
