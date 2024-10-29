@@ -35,7 +35,7 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
         
-from features.Truth_Table.truth_table_logic import generate_table
+# from features.Truth_Table.truth_table_logic import generate_table
 
 # Define the main function that controls the flow
 def main():
@@ -141,7 +141,7 @@ def set_stage(stage, key, value):
 
 def finalize_selection(activity):
     st.session_state.selected_activity = activity
-    generate_table(self, n, x, m, y, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
+    # generate_table(self, n, x, m, y, R_go, selected_role, selected_sub_role, selected_action, selected_activity)
 
     if st.session_state.R_go == 1:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
