@@ -92,7 +92,7 @@ R = TruthTable(
     st.session_state.selected_activity,
     st.session_state.R_go)
 
-def validate_selection(self, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
+def validate_selection(self, n, x, m, y, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
     # Map selections to indices (this mapping should be consistent with your main script)
     
     # The above previous lines of code, now replaced by these lines of code, calls an external function containing 
