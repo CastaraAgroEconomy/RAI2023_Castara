@@ -45,7 +45,7 @@ def role_selection_screen():
     st.session_state.selected_role = st.selectbox("Select Role", roles)
     if st.button("Confirm Role"):
         st.session_state.current_list = 'sub_role'
-        st.experimental_rerun()
+        st.rerun()
 
 def sub_role_selection_screen():
     st.header(f"Step 2: Select a Sub-Role (Role selected: {st.session_state.selected_role})")
@@ -61,7 +61,7 @@ def sub_role_selection_screen():
             st.session_state.current_list = 'action'
         else:
             st.warning("Invalid selection based on Role. Please select a valid Sub-Role.")
-        st.experimental_rerun()
+        st.rerun()
 
 def action_selection_screen():
     st.header(f"Step 3: Select an Action (Sub-Role selected: {st.session_state.selected_sub_role})")
@@ -75,7 +75,7 @@ def action_selection_screen():
             st.session_state.current_list = 'activity'
         else:
             st.warning("Invalid selection based on Role and Sub-Role. Please select a valid Action.")
-        st.experimental_rerun()
+        st.rerun()
 
 def activity_selection_screen():
     st.header(f"Step 4: Select an Activity (Action selected: {st.session_state.selected_action})")
@@ -92,7 +92,7 @@ def activity_selection_screen():
             st.session_state.validation_passed = True
         else:
             st.warning("Invalid selection based on Role, Sub-Role, and Action. Please select a valid Activity.")
-        st.experimental_rerun()
+        st.rerun()
 
 # Main application logic
 if not st.session_state.is_logged_in:
@@ -100,7 +100,7 @@ if not st.session_state.is_logged_in:
 else:
     if st.button("Logout"):
         st.session_state.is_logged_in = False
-        st.experimental_rerun()
+        st.rerun()
 
     # Display the correct selection screen based on the current stage
     if st.session_state.current_list == 'role':
