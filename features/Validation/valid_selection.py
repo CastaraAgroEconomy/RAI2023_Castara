@@ -10,24 +10,27 @@ A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Sc
      "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
      "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
 
-B = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "System Technician",
-     "Plant Science Director", "Operations Director", "Maintenance Supervisor", "Quality Assurance Manager",
-     "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", "Data Analytics Manager",
-     "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector",
-     "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer",
-     "Investment Manager"]
+B = [“Head of Agricultural Engineering”, “Lead Horticulturist”, “Systems Integration Engineer”, “Plant Science Director”, “Operations Director”, 
+     “Maintenance Supervisor”, “Quality Assurance Manager”, “Harvest Team Leader”, “Environmental Systems Manager”, “Nutrient Systems Manager”, 
+     “Data Analytics Manager”, “Production Supervisor”, “Food Safety Compliance Officer”, “Automation Engineer”, “Plant Health Inspector”, 
+     “Franchise Owner”, “Regional Franchise Manager”, “Franchise Operations Director”, “Chief Investment Officer”, “Investment Manager”, 
+     “Portfolio Manager”, “Executive Director”, “Chief Operations Officer”, “Chief Financial Officer”, “Business Development Manager”, 
+     “Franchise Development Director”, “Investment Analyst”, “Financial Controller”, “Franchise Compliance Manager”, “Investor Relations Manager”]
 
-C = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management",
-     "Plant Health Assessment", "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections",
-     "Harvest Scheduling", "Data Collection & Analysis", "Compliance Monitoring", "System Troubleshooting",
-     "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination"]
+C = [“System Design & Optimization”, “Environmental Parameter Monitoring”, “Nutrient Solution Management”, “Plant Health Assessment”, “Growth Cycle Planning”, 
+     “Equipment Maintenance”, “Quality Control Inspections”, “Harvest Scheduling”, “Data Collection & Analysis”, “Compliance Monitoring”, 
+     “System Troubleshooting”, “Resource Usage Optimization”, “Production Planning”, “Safety Protocol Implementation”, “Team Coordination”, 
+     “Investment Performance Monitoring”, “Franchise Performance Review”, “Financial Analysis”, “Business Expansion Planning”, “Franchise Agreement Management”, 
+     “Risk Assessment”, “Return on Investment Analysis”, “Franchise Standards Enforcement”, “Capital Allocation”, “Market Analysis”, “Investor Reporting”, 
+     “Franchise Training Program Management”, “Performance Metrics Review”, “Strategic Planning”, “Compliance Auditing” ]
 
-D = ["pH Level Monitoring", "Electrical Conductivity (EC) Testing", "Temperature Control Adjustment",
-     "Humidity Level Management", "Light Intensity Calibration", "Nutrient Mix Preparation", "Water Quality Testing",
-     "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization",
-     "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management",
-     "Growth Data Recording", "Team Schedule Creation", "Maintenance Log Updates", "Quality Check Documentation",
-     "Compliance Report Generation"]
+D = [“pH Level Monitoring”, "EC - Electrical Conductivity - Testing”, “Temperature Control Adjustment” “Humidity Level Management”, “Light Intensity Calibration”, 
+     “Nutrient Mix Preparation”, “Water Quality Testing”, “Growth Rate Documentation”, “Equipment Sanitization”, “System Flow Rate Checks”, “Plant Spacing Optimization”, 
+     “Harvest Weight Recording”, “Equipment Calibration”, “Safety Inspection Rounds”, “Inventory Management”, “Growth Data Recording”, “Team Schedule Creation”, 
+     “Maintenance Log Updates”, “Quality Check Documentation”, “Compliance Report Generation”, “Investment Portfolio Review”, “Franchise Audit Execution”, 
+     “Financial Statement Analysis”, “Market Research Documentation”, “Franchise Agreement Review”, “Risk Assessment Reports”, “ROI Calculations”, “Standards Compliance Checks”, 
+     “Capital Distribution Planning”, “Market Trend Analysis”, “Investor Report Generation”, “Training Program Development”, “Performance Metric Tracking”, 
+     “Strategy Document Creation”, “Compliance Report Filing”]
 
 def get_roles():
     return A
