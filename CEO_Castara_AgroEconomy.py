@@ -102,11 +102,15 @@ def select_role(content_placeholder):
 # Sub-role selection screen
 def select_sub_role(content_placeholder):
     st.title(f"Select Sub-role for {st.session_state.selected_role}")
-    sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "System Technicians", "Plant Science Director",
-                 "Operations Director", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader",
-                 "Environmental Systems Manager", "Nutrient Systems Manager", "Data Analytics Manager", "Production Supervisor",
-                 "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", "Franchise Owner",
-                 "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager"]
+    
+    sub_roles = [“Head of Agricultural Engineering”, “Lead Horticulturist”, “Systems Integration Engineer”, “Plant Science Director”, 
+    “Operations Director”, “Maintenance Supervisor”, “Quality Assurance Manager”, “Harvest Team Leader”, “Environmental Systems Manager”, 
+    “Nutrient Systems Manager”, “Data Analytics Manager”, “Production Supervisor”, “Food Safety Compliance Officer”, “Automation Engineer”, 
+    “Plant Health Inspector”, “Franchise Owner”, “Regional Franchise Manager”, “Franchise Operations Director”, “Chief Investment Officer”, 
+    “Investment Manager”, “Portfolio Manager”, “Executive Director”, “Chief Operations Officer”, “Chief Financial Officer”, “Business Development Manager”, 
+    “Franchise Development Director”, “Investment Analyst”, “Financial Controller”, “Franchise Compliance Manager”, 
+    “Investor Relations Manager”]
+    
     selected_sub_role = st.radio("Choose a sub-role", sub_roles)
 
     if st.button("Choose Action", on_click=lambda: set_stage("action_selection", "selected_sub_role", selected_sub_role)):
