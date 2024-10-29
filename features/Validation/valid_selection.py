@@ -3,7 +3,7 @@
 
 import itertools
 import pandas as pd
-from features.Validation.Rules.py import is_valid_combination()
+from features.Validation.Rules.py import is_valid_combination
 
 # Define lists A, B, C, and D
 A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Managers",
@@ -41,7 +41,7 @@ def get_actions():
 def get_activities():
     return D
 
-def validate_selection(selected_role, selected_sub_role, selected_action, selected_activity):
+def validate_choice(selected_role, selected_sub_role, selected_action, selected_activity):
     """Validate the selection by checking if the combination matches valid rules."""
     is_valid = is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
     return is_valid, None if is_valid else "selection"
