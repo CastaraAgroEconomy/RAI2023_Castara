@@ -26,10 +26,12 @@ class TruthTable:
 
     def generate_table(self):
         st.write("⚠️ - Pre-build for Truth Table that determines if selected combinations are valid.")
+        
         for n in range(self.n):
             for x in range(self.x):
                 for m in range(self.m):
                     for y in range(self.y):
+                        
                         # Validate selection and update table accordingly
                         validate_selection(n, x, m, y)
 
