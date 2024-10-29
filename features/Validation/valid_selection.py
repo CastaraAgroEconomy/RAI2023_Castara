@@ -31,11 +31,11 @@ from features.Validation.Rules import check_select
 def valid_selection(self, R_go, selected_role, selected_sub_role,selected_action, selected_activity)
 
 # Define the matrices
-   A = ["Agricultural Engineers", "Horticulturists", "System Technicians", "Plant Scientists", "Operations Managers",
+   A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Managers",
         "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
         "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
 
-   B = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director",
+   B = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "System Technician", "Plant Science Director",
         "Operations Director", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader",
         "Environmental Systems Manager", "Nutrient Systems Manager", "Data Analytics Manager", "Production Supervisor",
         "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", "Franchise Owner",
