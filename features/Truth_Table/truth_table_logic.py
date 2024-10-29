@@ -2,7 +2,7 @@
 
 import streamlit as st
 import numpy as np
-from features.Validation.valid_selection import go_valid
+from features/Validation/valid_selection.py import go_valid
 
 # Initialize session state variables if not already present
 for key, default in {
