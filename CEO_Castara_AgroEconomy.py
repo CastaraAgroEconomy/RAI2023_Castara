@@ -35,7 +35,7 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
         
-from RAI2023-Castara.features.Truth_Table.truth_table_logic import generate_table
+from features.Truth_Table.truth_table_logic import generate_table
 
 # Define the main function that controls the flow
 def main():
