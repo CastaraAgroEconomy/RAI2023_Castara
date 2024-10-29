@@ -50,7 +50,7 @@ class TruthTable:
     def generate_table(self, n, x, m, y, R_go, selected_role, selected_sub_role, selected_action, selected_activity):
         # This is where we would implement the AI logic to generate the truth table
         # For now, we'll use a simple rule-based system as a placeholder
-        st.write("⚠️ - Truth Table that determines if selected combination is valid, is being created.")
+        st.write("⚠️ - preBuild for Truth Table that determines if selected combination are valid.")
         
         for n in range(self.n):
             for x in range(self.x):
