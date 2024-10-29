@@ -146,7 +146,6 @@ def set_stage(stage, key, value):
 
 def finalize_selection(activity):
     st.session_state.selected_activity = activity
-    generate_table(self)
 
     if st.session_state.R_go == 1:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
