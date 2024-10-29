@@ -76,36 +76,64 @@ def sub_role_selection_screen():
     if st.button("Back to Role Selection"):
         role_selection_screen()  # Call the function for the role selection screen
 
+
 def action_selection_screen():
-    st.header(f"Step 3: Select an Action (Sub-Role selected: {st.session_state.selected_sub_role})")
-    actions = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management",
-               "Plant Health Assessment", "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections",
-               "Harvest Scheduling", "Data Collection & Analysis", "Compliance Monitoring", "System Troubleshooting",
-               "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination"]
+    st.header("Select Action")
+    
+    # Dropdown to select the action
     st.session_state.selected_action = st.selectbox("Select Action", actions)
-    if st.button("Confirm Action"):
-        if validate_selection(st.session_state.selected_role, st.session_state.selected_sub_role, st.session_state.selected_action):
-            st.session_state.current_list = 'activity'
+
+    # Button to validate the selection
+    if st.button("Validate Selection"):
+        # Call validate_selection with required parameters
+        valid, next_selection = validate_selection(
+            st.session_state.selected_role,
+            st.session_state.selected_sub_role,
+            st.session_state.selected_action,
+            st.session_state.selected_activity
+        )
+
+        if not valid:
+            st.error(f"The selected combination is invalid. Please select a valid {next_selection}.")
+            # Logic to handle invalid selections (e.g., show previous selection again)
         else:
-            st.warning("Invalid selection based on Role and Sub-Role. Please select a valid Action.")
-        st.rerun()
+            st.success("Selection is valid.")
+            # Proceed to the next screen or function
+            activity_selection_screen()  # Replace with your function to show the next selection screen
+
+    # Option to go back to the previous screen
+    if st.button("Back to Sub-Role Selection"):
+        sub_role_selection_screen()  # Call the function for the sub-role selection screen
+    
+    
 
 def activity_selection_screen():
-    st.header(f"Step 4: Select an Activity (Action selected: {st.session_state.selected_action})")
-    activities = ["pH Level Monitoring", "Electrical Conductivity (EC) Testing", "Temperature Control Adjustment",
-                  "Humidity Level Management", "Light Intensity Calibration", "Nutrient Mix Preparation", "Water Quality Testing",
-                  "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization",
-                  "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management",
-                  "Growth Data Recording", "Team Schedule Creation", "Maintenance Log Updates", "Quality Check Documentation",
-                  "Compliance Report Generation"]
+    st.header("Select Activity")
+    
+    # Dropdown to select the activity
     st.session_state.selected_activity = st.selectbox("Select Activity", activities)
-    if st.button("Confirm Activity"):
-        if validate_selection(st.session_state.selected_role, st.session_state.selected_sub_role, st.session_state.selected_action, st.session_state.selected_activity):
-            st.success("All selections are valid! Proceed to additional features.")
-            st.session_state.validation_passed = True
+
+    # Button to validate the selection
+    if st.button("Validate Selection"):
+        # Call validate_selection with required parameters
+        valid, next_selection = validate_selection(
+            st.session_state.selected_role,
+            st.session_state.selected_sub_role,
+            st.session_state.selected_action,
+            st.session_state.selected_activity
+        )
+
+        if not valid:
+            st.error(f"The selected combination is invalid. Please select a valid {next_selection}.")
+            # Logic to handle invalid selections (e.g., show previous selection again)
         else:
-            st.warning("Invalid selection based on Role, Sub-Role, and Action. Please select a valid Activity.")
-        st.rerun()
+            st.success("Selection is valid.")
+            # Finalize selections or call a function to enable features/modules
+            finalize_selections()  # Replace with your function to handle final selections
+
+    # Option to go back to the previous screen
+    if st.button("Back to Action Selection"):
+        action_selection_screen()  # Call the function for the action selection screen
 
 # Main application logic
 if not st.session_state.is_logged_in:
