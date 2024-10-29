@@ -121,10 +121,14 @@ def select_sub_role(content_placeholder):
 # Action selection screen
 def select_action(content_placeholder):
     st.title(f"Actions available for {st.session_state.selected_role} - {st.session_state.selected_sub_role}")
-    actions = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management",
-               "Plant Health Assessment", "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections",
-               "Harvest Scheduling", "Data Collection & Analysis", "Compliance Monitoring", "System Troubleshooting",
-               "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination"]
+    
+    actions = [“System Design & Optimization”, “Environmental Parameter Monitoring”, “Nutrient Solution Management”, “Plant Health Assessment”, 
+    “Growth Cycle Planning”, “Equipment Maintenance”, “Quality Control Inspections”, “Harvest Scheduling”, “Data Collection & Analysis”, 
+    “Compliance Monitoring”, “System Troubleshooting”, “Resource Usage Optimization”, “Production Planning”, “Safety Protocol Implementation”, 
+    “Team Coordination”, “Investment Performance Monitoring”, “Franchise Performance Review”, “Financial Analysis”, “Business Expansion Planning”, 
+    “Franchise Agreement Management”, “Risk Assessment”, “Return on Investment Analysis”, “Franchise Standards Enforcement”, “Capital Allocation”, 
+    “Market Analysis”, “Investor Reporting”, “Franchise Training Program Management”, “Performance Metrics Review”, “Strategic Planning”, “Compliance Auditing” ]
+    
     selected_action = st.radio("Choose an action", actions)
 
     if st.button("Choose Activity", on_click=lambda: set_stage("activity_selection", "selected_action", selected_action)):
