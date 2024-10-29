@@ -1,23 +1,6 @@
-# Validation Rules for conversion to Truth Table "0"s and "1"s
-# Example rules for validation
+# Defines the rules for determining if a combination of selected options is a valud one.
 
-import streamlit as st
-
-if 'selected_role' not in st.session_state:
-    st.session_state.selected_role = None
-    
-if 'selected_sub_role' not in st.session_state:
-    st.session_state.selected_sub_role = None
-
-if 'selected_action' not in st.session_state:
-    st.session_state.selected_action = None
-
-if 'selected_activity' not in st.session_state:
-    st.session_state.selected_activity = None
-
-
-
-def is_valid_combination(suggested_role, selected_sub_role, selected_action, selected_activity):
+def is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity):
     # Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
     if selected_action == "System Design & Optimization" and selected_role not in ["Agricultural Engineers", "System Technicians"]:
         return 0
@@ -36,8 +19,6 @@ def is_valid_combination(suggested_role, selected_sub_role, selected_action, sel
     # Rule 6: Operations Managers should handle actions like Production Planning and Team Coordination
     if selected_role == "Operations Managers" and selected_action not in ["Production Planning", "Team Coordination"]:
         return 0
-      
-    # Add more rules as needed based on your business logic
     
     # Default valid if no rule invalidates it
     return 1
