@@ -22,24 +22,24 @@ class TruthTable:
         self.m = m
         self.y = y
         self.table = np.zeros((n, x, m, y), dtype=int)
-        self.generate_table()
+        self.generate_table()  # Automatically builds the Truth Table on initialization
 
     def generate_table(self):
-        st.write("⚠️ - Pre-build for Truth Table that determines if selected combinations are valid.")
+        st.write("⚠️ - Generating Truth Table with predefined validation rules.")
         
         for n in range(self.n):
             for x in range(self.x):
                 for m in range(self.m):
                     for y in range(self.y):
-                        
-                        # Validate selection and update table accordingly
-                        validate_selection(n, x, m, y)
+                        # Validate each possible combination and update table
+                        is_valid = validate_choice(n, x, m, y)
+                        self.table[n, x, m, y] = int(is_valid)  # Set to 1 if valid, 0 if not
 
     def is_valid_combination(self, n, x, m, y):
         return self.table[n, x, m, y] == 1
 
     def get_next_valid_selection(self, n, x, m, y):
-        # Determine which dimension is invalid and return
+        # Determines the next level with invalid choices and returns it
         if self.table[n, :, :, :].max() == 0:
             return "role"
         elif self.table[n, x, :, :].max() == 0:
