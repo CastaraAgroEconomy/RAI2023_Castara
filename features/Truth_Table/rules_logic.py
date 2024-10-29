@@ -65,6 +65,7 @@ def validate_selection(n, x, m, y):
     else:
         st.session_state.R_go = 0
     return is_valid
+    
 
 # Initialize the TruthTable
 R = TruthTable()
