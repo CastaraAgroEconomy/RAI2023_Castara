@@ -23,7 +23,7 @@ if 'validation_passed' not in st.session_state:
 
 # Login screen setup
 def login_screen():
-    st.image("Assets.Media.Images.cover_page.jpg", use_column_width=True)
+    st.image("Assets/Media/Images/Cover_page.jpg", use_column_width=True)
     st.title("Login")
     username = st.text_input("Username")
     password = st.text_input("Password", type="password")
