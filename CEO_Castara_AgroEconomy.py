@@ -137,12 +137,15 @@ def select_action(content_placeholder):
 # Activity selection screen
 def select_activity(content_placeholder):
     st.title(f"Activity for {st.session_state.selected_role} - {st.session_state.selected_sub_role} - {st.session_state.selected_action}")
-    activities = ["pH Level Monitoring", "Electrical Conductivity (EC) Testing", "Temperature Control Adjustment",
-                  "Humidity Level Management", "Light Intensity Calibration", "Nutrient Mix Preparation", "Water Quality Testing",
-                  "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization",
-                  "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management",
-                  "Growth Data Recording", "Team Schedule Creation", "Maintenance Log Updates", "Quality Check Documentation",
-                  "Compliance Report Generation"]
+    
+    activities = [“pH Level Monitoring”, "EC - Electrical Conductivity - Testing”, “Temperature Control Adjustment” “Humidity Level Management”, 
+    “Light Intensity Calibration”, “Nutrient Mix Preparation”, “Water Quality Testing”, “Growth Rate Documentation”, “Equipment Sanitization”, 
+    “System Flow Rate Checks”, “Plant Spacing Optimization”, “Harvest Weight Recording”, “Equipment Calibration”, “Safety Inspection Rounds”, 
+    “Inventory Management”, “Growth Data Recording”, “Team Schedule Creation”, “Maintenance Log Updates”, “Quality Check Documentation”, 
+    “Compliance Report Generation”, “Investment Portfolio Review”, “Franchise Audit Execution”, “Financial Statement Analysis”, “Market Research Documentation”, 
+    “Franchise Agreement Review”, “Risk Assessment Reports”, “ROI Calculations”, “Standards Compliance Checks”, “Capital Distribution Planning”, 
+    “Market Trend Analysis”, “Investor Report Generation”, “Training Program Development”, “Performance Metric Tracking”, “Strategy Document Creation”, “Compliance Report Filing”]
+    
     selected_activity = st.radio("Choose an activity", activities)
 
     if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
