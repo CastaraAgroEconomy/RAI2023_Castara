@@ -91,9 +91,11 @@ def login_check(username, password):
 # Role selection screen
 def select_role(content_placeholder):
     st.title("Select Your Role")
+    
     roles = ["Agricultural Engineers", "Horticulturists", "System Specialists", "Plant Scientists", "Operations Managers",
              "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
              "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
+    
     selected_role = st.radio("Choose a role", roles)
 
     if st.button("Proceed", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
