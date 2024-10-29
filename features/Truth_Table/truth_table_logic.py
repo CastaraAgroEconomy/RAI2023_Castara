@@ -3,7 +3,7 @@
 import streamlit as st
 import numpy as np
 
-from features.Validation.valid_selection import go_valid
+# from features.Validation.valid_selection import go_valid
 
 # Initialize session state variables if not already present
 for key, default in {
@@ -50,7 +50,7 @@ class TruthTable:
 # Function to validate selection
 def validate_selection(n, x, m, y):
     # Replace with actual validation logic as per `go_valid`
-    valid = go_valid(
+     valid = go_valid(
         st.session_state.selected_role,
         st.session_state.selected_sub_role,
         st.session_state.selected_action,
