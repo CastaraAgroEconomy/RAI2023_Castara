@@ -35,10 +35,10 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
-from features.Truth_Table.rules_logic import generate_table
-
 # Creates and initializes the TruthTable instance
 R = TruthTable(n=14, x=30, m=30, y=35)
+
+from features.Truth_Table.rules_logic import generate_table
 
 # Define the main function that controls the flow
 def main():
