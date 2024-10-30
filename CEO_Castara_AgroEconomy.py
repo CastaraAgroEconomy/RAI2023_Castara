@@ -37,7 +37,7 @@ if 'R_go' not in st.session_state:
 
 from features.Truth_Table.rules_logic import generate_table
 
-R = TruthTable()  # Initialize TruthTable
+# R = TruthTable()  # Initialize TruthTable
 
 
 # Define the main function that controls the flow
@@ -66,10 +66,6 @@ def main():
     elif st.session_state.stage == "activity_selection":
         with content_placeholder.container():
             select_activity(content_placeholder)
-
-
-
-
 
 
 # Login function
@@ -165,7 +161,7 @@ def finalize_selection(selected_activity):
     st.session_state.selected_activity = selected_activity
 
     st.write(" ")
-    st.write("⚠️ - validating selected combination ..... ")
+    st.write("⚠️ - validating selected combination ...... ")
 
     R.generate_table()  # Generates the Truth Table
 
