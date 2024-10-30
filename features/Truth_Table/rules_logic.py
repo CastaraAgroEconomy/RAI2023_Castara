@@ -31,7 +31,7 @@ class TruthTable:
         self.table = np.zeros((n, x, m, y), dtype=int)
         self.generate_table()  # Automatically builds the Truth Table on initialization
 
-    def generate_table():
+    def generate_table(self):
         st.write("⚠️ - Generating Truth Table with predefined validation rules.")
         
         for n in range(self.n):
