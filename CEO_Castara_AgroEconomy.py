@@ -35,7 +35,7 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
-from features.Truth_Table.rules_logic import generate_table
+#from features.Truth_Table.rules_logic import generate_table
 
 # R = TruthTable()  # Initialize TruthTable
 
@@ -151,7 +151,7 @@ def select_activity(content_placeholder):
 
     if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
         pass
-        st.rerun()
+        
 
 def set_stage(stage, key, value):
     st.session_state[key] = value
