@@ -9,6 +9,9 @@ import streamlit as st
 import numpy as np
 from features.Validation.Rules import is_valid_combination
 
+# Initialize the TruthTable
+R = TruthTable()
+
 # Initialize session state variables if not already present
 for key, default in {
     'n': 1, 'x': 1, 'm': 1, 'y': 1,
@@ -46,6 +49,11 @@ class TruthTable:
     
     def get_next_valid_selection(self, n, x, m, y):
         # Determines the next level with invalid choices and returns it
+
+        st.write(" ")
+        st.write("⚠️ - Checking for valid combinations .... "
+
+        
         if self.table[n, :, :, :].max() == 0:
             return "role"
         elif self.table[n, x, :, :].max() == 0:
@@ -59,6 +67,10 @@ class TruthTable:
 # Function to validate selection
 def validate_selection(n, x, m, y):
     # Uses the validate_choice function to determine if selection is valid
+
+        st.write(" ")
+        st.write("⚠️ - Recording valid combinations .... "
+    
     is_valid = is_valid_combination(
         st.session_state.selected_role,
         st.session_state.selected_sub_role,
@@ -73,8 +85,6 @@ def validate_selection(n, x, m, y):
     return is_valid
     
 
-# Initialize the TruthTable
-R = TruthTable()
 
 st.write(" ")
 st.write("⚠️ - Truth Table populated .... ")
@@ -82,7 +92,6 @@ st.write("⚠️ - Truth Table populated .... ")
 st.write(" ")
 st.write("⚠️ - Returning to central App execution ..... ")
 
-return
 
 # Example usage
 #def finalize_selection():
