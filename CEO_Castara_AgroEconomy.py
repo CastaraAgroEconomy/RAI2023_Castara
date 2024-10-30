@@ -71,6 +71,7 @@ def main():
 
 
 
+
 # Login function
 def login(content_placeholder):
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
