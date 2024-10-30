@@ -6,8 +6,6 @@
 
 import streamlit as st
 import numpy as np
-# import itertools
-# import pandas as pd
 
 from features.Validation.Rules import is_valid_combination
 
@@ -41,7 +39,13 @@ class TruthTable:
                 for m in range(self.m):
                     for y in range(self.y):
                         # Update this to call `is_valid_combination` correctly
-                        is_valid = is_valid_combination(n, x, m, y)  # Adjust as needed
+                        is_valid = is_valid_combination(
+                            st.session_state.selected_role,
+                            st.session_state.selected_sub_role,
+                            st.session_state.selected_action,
+                            st.session_state.selected_activity
+                        )
+                        
                         self.table[n, x, m, y] = int(bool(is_valid))  # Set to 1 if valid, 0 if not
 
         
