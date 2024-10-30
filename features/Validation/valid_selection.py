@@ -1,8 +1,8 @@
 # This script defines the options in the four lists 
 # and provides functions to validate user selections against a Truth Table
 
-import itertools
-import pandas as pd
+# import itertools
+# import pandas as pd
 from features.Validation.Rules import is_valid_combination
 
 # Define lists A, B, C, and D
