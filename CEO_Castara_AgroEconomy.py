@@ -163,7 +163,7 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - validating selected combination ...... ")
 
-    R.generate_table()  # Generates the Truth Table
+    # R.generate_table()  # Generates the Truth Table
 
     if st.session_state.R_go == 1:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
