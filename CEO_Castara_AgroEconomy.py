@@ -160,9 +160,9 @@ def set_stage(stage, key, value):
     st.session_state[key] = value
     st.session_state.stage = stage
 
-def finalize_selection(activity):
+def finalize_selection(selected_activity):
     
-    st.session_state.selected_activity = activity
+    st.session_state.selected_activity = selected_activity
 
     st.write(" ")
     st.write("⚠️ - validating selected combination ..... ")
