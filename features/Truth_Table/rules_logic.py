@@ -1,8 +1,12 @@
-# This script creates the base Truth Table to track valid and invalid combinations of options based upon predefined rules
+# This script does the following: -
+#	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
+#	2.	Validates each combination using the is_valid_combination function from Rules.py.
+#	3.	Checks selections in the finalize_selection function, with error handling to guide users back to the selection that needs adjustment.
+#	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
+
 
 import streamlit as st
 import numpy as np
-
 from features.Validation.Rules import is_valid_combination
 
 # Initialize session state variables if not already present
@@ -31,8 +35,8 @@ class TruthTable:
             for x in range(self.x):
                 for m in range(self.m):
                     for y in range(self.y):
-                        # Validate each possible combination and update table
-                        is_valid = is_valid_combination(n, x, m, y)
+                        # Update this to call `is_valid_combination` correctly
+                        is_valid = is_valid_combination(n, x, m, y)  # Adjust as needed
                         self.table[n, x, m, y] = int(bool(is_valid))  # Set to 1 if valid, 0 if not
 
     def get_next_valid_selection(self, n, x, m, y):
@@ -76,7 +80,7 @@ def finalize_selection():
         st.session_state.y
     )
     
-    if R.is_valid_combination(n, x, m, y):
+    if validate_selection(n, x, m, y):
         st.success("Valid combination!")
     else:
         next_step = R.get_next_valid_selection(n, x, m, y)
