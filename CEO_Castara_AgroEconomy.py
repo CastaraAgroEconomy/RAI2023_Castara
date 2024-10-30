@@ -67,6 +67,10 @@ def main():
         with content_placeholder.container():
             select_activity(content_placeholder)
 
+
+
+
+
 # Login function
 def login(content_placeholder):
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
