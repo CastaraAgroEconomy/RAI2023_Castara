@@ -3,6 +3,7 @@
 import streamlit as st
 import numpy as np
 
+from features.Validation.Rules import is_valid_combination
 
 # Initialize session state variables if not already present
 for key, default in {
@@ -53,7 +54,7 @@ class TruthTable:
 # Function to validate selection
 def validate_selection(n, x, m, y):
     # Uses the validate_choice function to determine if selection is valid
-    is_valid = validate_choice(
+    is_valid = is_valid_combination(
         st.session_state.selected_role,
         st.session_state.selected_sub_role,
         st.session_state.selected_action,
