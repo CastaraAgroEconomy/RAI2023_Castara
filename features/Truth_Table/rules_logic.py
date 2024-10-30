@@ -39,8 +39,10 @@ class TruthTable:
                         is_valid = is_valid_combination(n, x, m, y)  # Adjust as needed
                         self.table[n, x, m, y] = int(bool(is_valid))  # Set to 1 if valid, 0 if not
 
-        st.write("⚠️ - Initial Table complete ... ")
+        
         st.write(" ")
+        st.write("⚠️ - Initial Table complete ... ")
+
     
     def get_next_valid_selection(self, n, x, m, y):
         # Determines the next level with invalid choices and returns it
@@ -74,8 +76,9 @@ def validate_selection(n, x, m, y):
 # Initialize the TruthTable
 R = TruthTable()
 
-st.write("⚠️ - Truth Table populated .... ")
 st.write(" ")
+st.write("⚠️ - Truth Table populated .... ")
+
 
 # Example usage
 def finalize_selection():
@@ -85,6 +88,7 @@ def finalize_selection():
         st.session_state.m,
         st.session_state.y
     )
+
     
     if validate_selection(n, x, m, y):
         st.success("Valid combination!")
