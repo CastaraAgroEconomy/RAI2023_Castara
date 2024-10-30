@@ -24,13 +24,13 @@ C = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutr
      "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", "Market Analysis", "Investor Reporting",
      "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing” ]
 
-D = [“pH Level Monitoring”, "EC - Electrical Conductivity - Testing”, “Temperature Control Adjustment” “Humidity Level Management”, “Light Intensity Calibration”, 
-     “Nutrient Mix Preparation”, “Water Quality Testing”, “Growth Rate Documentation”, “Equipment Sanitization”, “System Flow Rate Checks”, “Plant Spacing Optimization”, 
-     “Harvest Weight Recording”, “Equipment Calibration”, “Safety Inspection Rounds”, “Inventory Management”, “Growth Data Recording”, “Team Schedule Creation”, 
-     “Maintenance Log Updates”, “Quality Check Documentation”, “Compliance Report Generation”, “Investment Portfolio Review”, “Franchise Audit Execution”, 
-     “Financial Statement Analysis”, “Market Research Documentation”, “Franchise Agreement Review”, “Risk Assessment Reports”, “ROI Calculations”, “Standards Compliance Checks”, 
-     “Capital Distribution Planning”, “Market Trend Analysis”, “Investor Report Generation”, “Training Program Development”, “Performance Metric Tracking”, 
-     “Strategy Document Creation”, “Compliance Report Filing”]
+D = ["pH Level Monitoring", "EC - Electrical Conductivity - Testing", "Temperature Control Adjustment", "Humidity Level Management", "Light Intensity Calibration", 
+     "Nutrient Mix Preparation", "Water Quality Testing", "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization", 
+     "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management", "Growth Data Recording", "Team Schedule Creation", 
+     "Maintenance Log Updates", "Quality Check Documentation", "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", 
+     "Financial Statement Analysis", "Market Research Documentation", "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", 
+     "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
+     "Strategy Document Creation", "Compliance Report Filing"]
 
 def get_roles():
     return A
