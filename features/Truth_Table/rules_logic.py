@@ -22,6 +22,7 @@ for key, default in {
     if key not in st.session_state:
         st.session_state[key] = default
 
+
 class TruthTable:
     def __init__(self, n=14, x=30, m=30, y=35):
         self.n = n
@@ -29,29 +30,33 @@ class TruthTable:
         self.m = m
         self.y = y
         self.table = np.zeros((n, x, m, y), dtype=int)
-        self.generate_table()  # Automatically builds the Truth Table on initialization
+        self.generate_table()
 
     def generate_table(self):
-        st.write("⚠️ - Generating Truth Table with predefined validation rules.")
-        
+        st.write(" - Generating Truth Table with predefined validation rules.")
         for n in range(self.n):
             for x in range(self.x):
                 for m in range(self.m):
                     for y in range(self.y):
-                        # Update this to call `is_valid_combination` correctly
                         is_valid = is_valid_combination(
                             st.session_state.selected_role,
                             st.session_state.selected_sub_role,
                             st.session_state.selected_action,
                             st.session_state.selected_activity
                         )
-                        
-                        self.table[n, x, m, y] = int(bool(is_valid))  # Set to 1 if valid, 0 if not
-
-        
+                        self.table[n, x, m, y] = int(bool(is_valid))
         st.write(" ")
-        st.write("⚠️ - Initial Table complete ... ")
+        st.write(" - Initial Table complete ... ")
 
+    
+
+
+
+
+
+
+
+    
     
     def get_next_valid_selection(self, n, x, m, y):
         # Determines the next level with invalid choices and returns it
