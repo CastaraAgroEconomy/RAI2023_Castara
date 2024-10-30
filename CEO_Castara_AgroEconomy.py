@@ -161,7 +161,12 @@ def set_stage(stage, key, value):
     st.session_state.stage = stage
 
 def finalize_selection(activity):
+    
     st.session_state.selected_activity = activity
+
+    st.write(" ")
+    st.write("⚠️ - validating selected combination ..... ")
+
     R.generate_table()  # Generates the Truth Table
 
     if st.session_state.R_go == 1:
