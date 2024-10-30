@@ -47,15 +47,6 @@ class TruthTable:
                         self.table[n, x, m, y] = int(bool(is_valid))
         st.write(" ")
         st.write(" - Initial Table complete ... ")
-
-    
-
-
-
-
-
-
-
     
     
     def get_next_valid_selection(self, n, x, m, y):
