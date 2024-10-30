@@ -4,9 +4,11 @@
 #	3.	Checks selections in the finalize_selection function, with error handling to guide users back to the selection that needs adjustment.
 #	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
 
-
 import streamlit as st
 import numpy as np
+import itertools
+import pandas as pd
+
 from features.Validation.Rules import is_valid_combination
 
 # Initialize the TruthTable
