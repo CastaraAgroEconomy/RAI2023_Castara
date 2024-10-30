@@ -3,7 +3,6 @@
 import streamlit as st
 import numpy as np
 
-from features.Validation.valid_selection import validate_choice
 
 # Initialize session state variables if not already present
 for key, default in {
@@ -32,7 +31,7 @@ class TruthTable:
                 for m in range(self.m):
                     for y in range(self.y):
                         # Validate each possible combination and update table
-                        is_valid = validate_choice(n, x, m, y)
+                        is_valid = is_valid_combination(n, x, m, y)
                         self.table[n, x, m, y] = int(bool(is_valid))  # Set to 1 if valid, 0 if not
 
 
