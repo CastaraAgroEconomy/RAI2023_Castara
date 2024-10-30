@@ -151,6 +151,7 @@ def select_activity(content_placeholder):
 
     if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
         pass
+        st.rerun()
 
 def set_stage(stage, key, value):
     st.session_state[key] = value
