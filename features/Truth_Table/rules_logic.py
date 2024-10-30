@@ -82,6 +82,8 @@ st.write("⚠️ - Truth Table populated .... ")
 st.write(" ")
 st.write("⚠️ - Returning to central App execution ..... ")
 
+return
+
 # Example usage
 #def finalize_selection():
 #    n, x, m, y = (
