@@ -10,12 +10,12 @@ A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Sc
      "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
      "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
 
-B = [“Head of Agricultural Engineering”, “Lead Horticulturist”, “Systems Integration Engineer”, “Plant Science Director”, “Operations Director”, 
-     “Maintenance Supervisor”, “Quality Assurance Manager”, “Harvest Team Leader”, “Environmental Systems Manager”, “Nutrient Systems Manager”, 
-     “Data Analytics Manager”, “Production Supervisor”, “Food Safety Compliance Officer”, “Automation Engineer”, “Plant Health Inspector”, 
-     “Franchise Owner”, “Regional Franchise Manager”, “Franchise Operations Director”, “Chief Investment Officer”, “Investment Manager”, 
-     “Portfolio Manager”, “Executive Director”, “Chief Operations Officer”, “Chief Financial Officer”, “Business Development Manager”, 
-     “Franchise Development Director”, “Investment Analyst”, “Financial Controller”, “Franchise Compliance Manager”, “Investor Relations Manager”]
+B = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", "Operations Director", 
+     "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", 
+     "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
+     "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
+     "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
+     "Franchise Development Director", "Investment Analyst", "Financial Controller”, “Franchise Compliance Manager", "Investor Relations Manager"]
 
 C = [“System Design & Optimization”, “Environmental Parameter Monitoring”, “Nutrient Solution Management”, “Plant Health Assessment”, “Growth Cycle Planning”, 
      “Equipment Maintenance”, “Quality Control Inspections”, “Harvest Scheduling”, “Data Collection & Analysis”, “Compliance Monitoring”, 
