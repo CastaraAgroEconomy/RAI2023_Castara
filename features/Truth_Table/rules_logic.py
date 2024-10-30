@@ -35,10 +35,6 @@ class TruthTable:
                         is_valid = is_valid_combination(n, x, m, y)
                         self.table[n, x, m, y] = int(bool(is_valid))  # Set to 1 if valid, 0 if not
 
-
-    def is_valid_combination(self, n, x, m, y):
-        return self.table[n, x, m, y] == 1
-
     def get_next_valid_selection(self, n, x, m, y):
         # Determines the next level with invalid choices and returns it
         if self.table[n, :, :, :].max() == 0:
