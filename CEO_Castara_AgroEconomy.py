@@ -37,7 +37,7 @@ if 'R_go' not in st.session_state:
 
 from features.Truth_Table.rules_logic import generate_table
 
-# R = TruthTable()  # Initialize TruthTable
+R = TruthTable()  # Initialize TruthTable
 
 
 # Define the main function that controls the flow
