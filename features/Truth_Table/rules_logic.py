@@ -6,8 +6,8 @@
 
 import streamlit as st
 import numpy as np
-import itertools
-import pandas as pd
+# import itertools
+# import pandas as pd
 
 from features.Validation.Rules import is_valid_combination
 
