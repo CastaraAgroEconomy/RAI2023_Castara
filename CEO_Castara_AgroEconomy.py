@@ -35,8 +35,8 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
-# from features.Truth_Table.rules_logic import generate_table
-# R = TruthTable()  # Initialize TruthTable
+from features.Truth_Table.rules_logic import generate_table
+R = TruthTable()  # Initialize TruthTable
 
 
 # Define the main function that controls the flow
@@ -163,7 +163,7 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - validating selected combination ...... ")
 
-    # R.generate_table()  # Generates the Truth Table
+    R.generate_table(self)  # Generates the Truth Table
 
     if st.session_state.R_go == 1:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
