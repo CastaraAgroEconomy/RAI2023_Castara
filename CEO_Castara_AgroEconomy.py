@@ -43,9 +43,13 @@ if 'R_go' not in st.session_state:
 try:
     from features.Truth_Table.rules_logic import TruthTable
 except Exception as e:
+    
+try:    
     st.write(f"Import error details: {str(e)}")
+    R = TruthTable(n=14, x=30, m=30, y=35)
+except Exception as e:
 
-R = TruthTable(n=14, x=30, m=30, y=35)
+
 
 # Define the main function that controls the flow
 def main():
