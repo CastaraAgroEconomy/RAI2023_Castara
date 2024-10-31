@@ -44,7 +44,7 @@ def main():
         st.session_state.R_go = 0
 
 # App session's initilization :-
-    from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
+    from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable except Exception as e: st.write(f"Import error details: {str(e)}")
 
 
 # Initialize session state variables
