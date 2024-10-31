@@ -6,39 +6,41 @@ import numpy as np
 VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
-if 'n' not in st.session_state:
-    st.session_state.n = 1
-
-if 'x' not in st.session_state:
-    st.session_state.x = 1
-
-if 'm' not in st.session_state:
-    st.session_state.m = 1
-
-if 'y' not in st.session_state:
-    st.session_state.y = 1
-
-if 'selected_role' not in st.session_state:
-    st.session_state.selected_role = None
-    
-if 'selected_sub_role' not in st.session_state:
-    st.session_state.selected_sub_role = None
-
-if 'selected_action' not in st.session_state:
-    st.session_state.selected_action = None
-
-if 'selected_activity' not in st.session_state:
-    st.session_state.selected_activity = None
-
-if 'self' not in st.session_state:
-    st.session_state.self = None
-
-if 'R_go' not in st.session_state:
-    st.session_state.R_go = 0
-    
 
 # Define the main function that controls the flow
 def main():
+
+#   Initilization of session variables
+
+    if 'n' not in st.session_state:
+        st.session_state.n = 1
+
+    if 'x' not in st.session_state:
+        st.session_state.x = 1
+
+    if 'm' not in st.session_state:
+        st.session_state.m = 1
+
+    if 'y' not in st.session_state:
+        st.session_state.y = 1
+
+    if 'selected_role' not in st.session_state:
+        st.session_state.selected_role = None
+    
+    if 'selected_sub_role' not in st.session_state:
+        st.session_state.selected_sub_role = None
+
+    if 'selected_action' not in st.session_state:
+        st.session_state.selected_action = None
+
+    if 'selected_activity' not in st.session_state:
+        st.session_state.selected_activity = None
+
+    if 'self' not in st.session_state:
+        st.session_state.self = None
+
+    if 'R_go' not in st.session_state:
+        st.session_state.R_go = 0
 
 # App session's initilization :-
 #   from features.Truth_Table.rules_logic import TruthTable
