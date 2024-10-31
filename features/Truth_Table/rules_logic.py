@@ -7,7 +7,7 @@
 import streamlit as st
 import numpy as np
 
-from .features.Validation.Rules import validate_choice
+from RAI2023_Castara.features.Validation.Rules import validate_choice
 
 # Initialize session state variables if not already present
 for key, default in {
