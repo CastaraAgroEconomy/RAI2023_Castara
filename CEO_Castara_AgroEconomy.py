@@ -40,13 +40,12 @@ if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
 # Main script of App session's initilization of first sub-module :-
-try:
-    from features.Truth_Table.rules_logic import TruthTable
-    
-    st.write(f"Import error details: {str(e)}")
-    R = TruthTable(n=14, x=30, m=30, y=35)
 
-except Exception as e:
+from features.Truth_Table.rules_logic import TruthTable
+
+R = TruthTable(n=14, x=30, m=30, y=35)
+
+
 
 
 
