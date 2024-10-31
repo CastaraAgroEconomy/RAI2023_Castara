@@ -41,12 +41,9 @@ if 'R_go' not in st.session_state:
 
 # Main script of App session's initilization of first sub-module :-
 
-from features.Truth_Table.rules_logic import TruthTable
+# from features.Truth_Table.rules_logic import TruthTable
 
-R = TruthTable(n=14, x=30, m=30, y=35)
-
-
-
+# R = TruthTable(n=14, x=30, m=30, y=35)
 
 
 # Define the main function that controls the flow
@@ -174,7 +171,7 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - Selected combination to be validated .... ")
 
-    R.generate_table(n=14, x=30, m=30, y=35)  # Generates the Truth Table
+    # R.generate_table(n=14, x=30, m=30, y=35)  # Generates the Truth Table
     n, x, m, y = (
        st.session_state.n,
        st.session_state.x,
