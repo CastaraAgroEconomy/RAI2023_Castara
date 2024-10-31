@@ -48,7 +48,7 @@ except Exception as e:
 
 from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
 
-R = TruthTable(n, x, m, y)
+R = TruthTable()
 
 
 
@@ -184,7 +184,7 @@ def finalize_selection(selected_activity):
        st.session_state.y
     )
     
-    R.generate_table(n, x, m, y)  # Generates the Truth Table
+    R.generate_table()  # Generates the Truth Table
 
     if st.session_state.R_go == 1:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
