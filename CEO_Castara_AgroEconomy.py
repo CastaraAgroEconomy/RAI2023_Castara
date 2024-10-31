@@ -43,10 +43,10 @@ def main():
         st.session_state.R_go = 0
 
 # App session's initilization :-
-    from features.Truth_Table.rules_logic import TruthTable
+#   from features.Truth_Table.rules_logic import TruthTable
     
 # Creates and initializes the TruthTable instance
-    R = TruthTable(n=14, x=30, m=30, y=35)
+#   R = TruthTable(n=14, x=30, m=30, y=35)
 
 # Initialize session state variables
     if "stage" not in st.session_state:
@@ -169,7 +169,7 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - validating selected combination ...... ")
 
-    R.generate_table(n,x,m,y)  # Generates the Truth Table
+#   R.generate_table(n,x,m,y)  # Generates the Truth Table
     n, x, m, y = (
        st.session_state.n,
        st.session_state.x,
