@@ -4,7 +4,7 @@
 # import itertools
 # import pandas as pd
 
-from .features.Validation.Rules import is_valid_combination
+from RAI2023_Castara.features.Validation.Rules import is_valid_combination
 
 # Define lists A, B, C, and D
 A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Managers",
