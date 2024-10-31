@@ -40,12 +40,7 @@ if 'R_go' not in st.session_state:
 
 # Main script of App session's initilization of first sub-module :-
 
-
-#try:
 from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
-
-#except Exception as e:
-    #st.write(f"Import error details: {str(e)}")
 
 R = TruthTable
 
