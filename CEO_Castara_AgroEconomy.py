@@ -167,7 +167,7 @@ def finalize_selection(selected_activity):
     st.session_state.selected_activity = selected_activity
 
     st.write(" ")
-    st.write("⚠️ - validating selected combination ...... ")
+    st.write("⚠️ - Selected combination  to be validated ...... ")
 
     R.generate_table(n,x,m,y)  # Generates the Truth Table
     n, x, m, y = (
@@ -182,11 +182,12 @@ def finalize_selection(selected_activity):
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
         f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
         f"Activity={st.session_state.selected_activity}") 
+        st.write(" ")
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
         st.button("Logout", on_click=logout)
     else:
-        st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
         st.write(" ")
+        st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
         st.write(" ")
         st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
         st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
