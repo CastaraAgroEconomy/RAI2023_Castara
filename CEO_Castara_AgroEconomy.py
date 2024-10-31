@@ -41,7 +41,7 @@ if 'R_go' not in st.session_state:
 
 R = TruthTable(n=14, x=30, m=30, y=35)
 
-# App session's initilization :-
+# Main script of App session's initilization of first sub-module :-
 try:
     from features.Truth_Table.rules_logic import TruthTable
 except Exception as e:
