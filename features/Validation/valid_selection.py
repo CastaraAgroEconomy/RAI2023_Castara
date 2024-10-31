@@ -47,5 +47,5 @@ def get_activities():
 def validate_choice(selected_role, selected_sub_role, selected_action, selected_activity):
     """Validate the selection by checking if the combination matches valid rules."""
     st.write(" ")
-    st.write("⚠️ - Validating selected combination against Truth Table .... ")
+    st.write("⚠️ - Preparing to validate selected combination .... ")
     return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
