@@ -171,7 +171,7 @@ def finalize_selection(selected_activity):
     st.session_state.selected_activity = selected_activity
 
     st.write(" ")
-    st.write("⚠️ - Selected combination to be validated ...... ")
+    st.write("⚠️ - Selected combination to be validated .... ")
 
     R.generate_table(n,x,m,y)  # Generates the Truth Table
     n, x, m, y = (
