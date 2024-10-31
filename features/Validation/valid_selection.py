@@ -48,4 +48,4 @@ def validate_choice(selected_role, selected_sub_role, selected_action, selected_
     """Validate the selection by checking if the combination matches valid rules."""
     st.write(" ")
     st.write("⚠️ - Preparing to validate selected choices as a combination .... ")
-    return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
+    return is_valid_combination(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
