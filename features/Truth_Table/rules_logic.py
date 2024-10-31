@@ -10,7 +10,7 @@ import numpy as np
 from features.Validation.Rules import is_valid_combination
 
 # Initialize the TruthTable
-R = TruthTable(n=14, x=30, m=30, y=35)
+# R = TruthTable(n=14, x=30, m=30, y=35)
 
 # Initialize session state variables if not already present
 for key, default in {
