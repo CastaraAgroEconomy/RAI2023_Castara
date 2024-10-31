@@ -47,7 +47,7 @@ try:
 except Exception as e:
     st.write(f"Import error details: {str(e)}")
 
-R = TruthTable()
+R = TruthTable
 
 
 
