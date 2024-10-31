@@ -184,8 +184,8 @@ def finalize_selection(selected_activity):
 #	3.	Checks selections in the finalize_selection function, with error handling to guide users back to the selection that needs adjustment.
 #	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
 
-import streamlit as st
-import numpy as np
+
+
 
 from RAI2023_Castara.features.Validation.Rules import validate_choice
 
@@ -236,7 +236,7 @@ class TruthTable:
 
     
     def get_next_valid_selection(self, n, x, m, y):
-        # Determines the next level with invalid choices and returns it
+#   Determines the next level with invalid choices and returns it
         
         if self.table[n, :, :, :].max() == 0:
             return "role"
@@ -249,24 +249,24 @@ class TruthTable:
 
 
 # Function to validate selection
-   def validate_selection(n, x, m, y):
+    def validate_selection(n, x, m, y):
 # Uses the validate_choice function to determine if selection is valid
 
-       st.write(" ")
-       st.write("⚠️ - Confirming valid combination; searching .... ")
+        st.write(" ")
+        st.write("⚠️ - Confirming valid combination; searching .... ")
     
-       is_valid = is_valid_combination(
-           st.session_state.selected_role,
-           st.session_state.selected_sub_role,
-           st.session_state.selected_action,
-           st.session_state.selected_activity
-       )
+        is_valid = is_valid_combination(
+            st.session_state.selected_role,
+            st.session_state.selected_sub_role,
+            st.session_state.selected_action,
+            st.session_state.selected_activity
+        )
     
-       if is_valid:
-           st.session_state.R_go = 1
-       else:
-           st.session_state.R_go = 0
-       return is_valid
+        if is_valid:
+            st.session_state.R_go = 1
+        else:
+            st.session_state.R_go = 0
+        return is_valid
     
 
 
