@@ -41,7 +41,7 @@ if 'R_go' not in st.session_state:
 def main():
 
 # App session's initilization :-
-    from features.Truth_Table.rules_logic import generate_table
+    from features.Truth_Table.rules_logic import TruthTable
     
 # Creates and initializes the TruthTable instance
     R = TruthTable(n=14, x=30, m=30, y=35)
