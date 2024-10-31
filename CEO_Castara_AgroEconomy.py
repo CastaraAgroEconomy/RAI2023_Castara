@@ -53,6 +53,7 @@ def main():
         st.session_state.stage = "login"
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
+        
     content_placeholder = st.empty()  # Create a single placeholder for all content
     
     # Stage-based rendering using the placeholder
@@ -167,7 +168,7 @@ def finalize_selection(selected_activity):
     st.session_state.selected_activity = selected_activity
 
     st.write(" ")
-    st.write("⚠️ - Selected combination  to be validated ...... ")
+    st.write("⚠️ - Selected combination to be validated ...... ")
 
     R.generate_table(n,x,m,y)  # Generates the Truth Table
     n, x, m, y = (
