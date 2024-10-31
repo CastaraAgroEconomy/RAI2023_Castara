@@ -38,9 +38,11 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
-# Main script of App session's initilization of first sub-module :-
 
+# Was Main script of App session's initilization of first sub-module :-
 # from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
+# R = TruthTable()
+# Was provided call to rules_logic.py
 
 
 # Define the main function that controls the flow
@@ -175,8 +177,11 @@ def finalize_selection(selected_activity):
        st.session_state.y
     )
 
-
+    # Was call to function in first module
     # generate_table(n, x, m, y) # Generates the Truth Table
+
+
+# Was first Module :-
 
     # This script does the following: -
 #	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
@@ -184,10 +189,7 @@ def finalize_selection(selected_activity):
 #	3.	Checks selections in the finalize_selection function, with error handling to guide users back to the selection that needs adjustment.
 #	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
 
-
-
-
-from RAI2023_Castara.features.Validation.Rules import validate_choice
+# from RAI2023_Castara.features.Validation.Rules import validate_choice
 
 # Initialize session state variables if not already present
 for key, default in {
@@ -198,7 +200,6 @@ for key, default in {
 }.items():
     if key not in st.session_state:
         st.session_state[key] = default
-
 
 class TruthTable:
     def __init__(self, n=14, x=30, m=30, y=35):
@@ -225,16 +226,12 @@ class TruthTable:
         st.write(" ")
         st.write(" - Initial Table complete ... ")
 
-
-
         if validate_selection(n, x, m, y):
             st.success("Valid combination!")
         else:
             next_step = R.get_next_valid_selection(n, x, m, y)
             st.error(f"Invalid combination. Please re-select your {next_step}.")
-    
-
-    
+        
     def get_next_valid_selection(self, n, x, m, y):
 #   Determines the next level with invalid choices and returns it
         
@@ -246,7 +243,6 @@ class TruthTable:
             return "action"
         else:
             return "activity"
-
 
 # Function to validate selection
     def validate_selection(n, x, m, y):
@@ -268,30 +264,39 @@ class TruthTable:
             st.session_state.R_go = 0
         return is_valid
     
-
-
     st.write(" ") 
     st.write("⚠️ - Truth Table populated .... ")
 
     st.write(" ")
     st.write("⚠️ - Returning to central App execution ..... ")
 
+# End of first Module :
 
-    if st.session_state.R_go == 1:
-        st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
-        f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
-        f"Activity={st.session_state.selected_activity}") 
-        st.write(" ")
-        st.write("⚠️ - When implemented, appropriate feature will activate at this point")
-        st.button("Logout", on_click=logout)
-    else:
-        st.write(" ")
-        st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
-        st.write(" ")
-        st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
-        st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
-        st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
-        st.button("Logout", on_click=logout)
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+if st.session_state.R_go == 1:
+    st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
+    f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
+    f"Activity={st.session_state.selected_activity}") 
+    st.write(" ")
+    st.write("⚠️ - When implemented, appropriate feature will activate at this point")
+    st.button("Logout", on_click=logout)
+else:
+    st.write(" ")
+    st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
+    st.write(" ")
+    st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
+    st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
+    st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
+    st.button("Logout", on_click=logout)
         
 
 # Logout function
