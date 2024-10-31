@@ -40,8 +40,10 @@ if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
 # App session's initilization :-
-from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable 
-except Exception as e: st.write(f"Import error details: {str(e)}")
+try:
+    from features.Truth_Table.rules_logic import TruthTable
+except Exception as e:
+    st.write(f"Import error details: {str(e)}")
 
 
 # Define the main function that controls the flow
