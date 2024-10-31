@@ -6,7 +6,6 @@ import numpy as np
 VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
-
 #   Initilization of session variables
 
 if 'n' not in st.session_state:
@@ -41,7 +40,7 @@ if 'R_go' not in st.session_state:
 
 # Main script of App session's initilization of first sub-module :-
 
-from features.Truth_Table.rules_logic import TruthTable
+from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
 
 R = TruthTable()
 
