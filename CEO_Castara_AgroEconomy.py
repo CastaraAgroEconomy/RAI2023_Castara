@@ -42,10 +42,8 @@ if 'R_go' not in st.session_state:
 
 try:
     from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
-    R = TruthTable()
 except Exception as e:
-
-
+    R = TruthTable()
 
 # Define the main function that controls the flow
 def main():
