@@ -38,7 +38,7 @@ class TruthTable:
             for x in range(self.x):
                 for m in range(self.m):
                     for y in range(self.y):
-                        is_valid = is_valid_combination(
+                        is_valid = valid_choice(
                             st.session_state.selected_role,
                             st.session_state.selected_sub_role,
                             st.session_state.selected_action,
