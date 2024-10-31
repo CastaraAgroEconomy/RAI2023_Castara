@@ -9,7 +9,7 @@ import numpy as np
 
 from RAI2023_Castara.features.Validation.Rules import validate_choice
 
-R = generate_table(n=14, x=30, m=30, y=35)
+R = generate_table()
 
 # Initialize session state variables if not already present
 for key, default in {
