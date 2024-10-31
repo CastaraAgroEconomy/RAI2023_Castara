@@ -42,11 +42,10 @@ if 'R_go' not in st.session_state:
 # Main script of App session's initilization of first sub-module :-
 try:
     from features.Truth_Table.rules_logic import TruthTable
-except Exception as e:
     
-try:    
     st.write(f"Import error details: {str(e)}")
     R = TruthTable(n=14, x=30, m=30, y=35)
+
 except Exception as e:
 
 
