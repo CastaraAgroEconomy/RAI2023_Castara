@@ -309,7 +309,7 @@ C = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutr
      "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination", 
      "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", 
      "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", "Market Analysis", "Investor Reporting",
-     "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing” ]
+     "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing" ]
 
 D = ["pH Level Monitoring", "EC - Electrical Conductivity - Testing", "Temperature Control Adjustment", "Humidity Level Management", "Light Intensity Calibration", 
      "Nutrient Mix Preparation", "Water Quality Testing", "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization", 
