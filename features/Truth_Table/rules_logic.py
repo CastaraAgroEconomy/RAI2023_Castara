@@ -47,7 +47,16 @@ class TruthTable:
                         self.table[n, x, m, y] = int(bool(is_valid))
         st.write(" ")
         st.write(" - Initial Table complete ... ")
+
+
+
+        if validate_selection(n, x, m, y):
+            st.success("Valid combination!")
+        else:
+            next_step = R.get_next_valid_selection(n, x, m, y)
+            st.error(f"Invalid combination. Please re-select your {next_step}.")
     
+
     
     def get_next_valid_selection(self, n, x, m, y):
         # Determines the next level with invalid choices and returns it
