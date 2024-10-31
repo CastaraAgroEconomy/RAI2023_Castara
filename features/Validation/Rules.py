@@ -1,6 +1,11 @@
 # Defines the rules for determining if a combination of selected options is a valud one.
+import streamlit as st
 
 def is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity):
+    
+    st.write(" ")
+    st.write("⚠️ - One moment please, verifying validity of combination picked from list .... ")
+
     # Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
     if selected_action == "System Design & Optimization" and selected_role not in ["Agricultural Engineers", "System Technicians"]:
         return 0
