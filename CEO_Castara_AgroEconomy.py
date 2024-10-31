@@ -176,11 +176,11 @@ def finalize_selection(selected_activity):
     )
     
 
-       if validate_selection(n, x, m, y):
-          st.success("Valid combination!")
-       else:
-          next_step = R.get_next_valid_selection(n, x, m, y)
-          st.error(f"Invalid combination. Please re-select your {next_step}.")
+    if validate_selection(n, x, m, y):
+        st.success("Valid combination!")
+    else:
+        next_step = R.get_next_valid_selection(n, x, m, y)
+        st.error(f"Invalid combination. Please re-select your {next_step}.")
 
     if st.session_state.R_go == 1:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
