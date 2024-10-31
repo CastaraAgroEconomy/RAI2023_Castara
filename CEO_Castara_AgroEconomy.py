@@ -1,5 +1,6 @@
 # Main Script and function call for the Castara AgroEconomy Mobile App.
 import streamlit as st
+import numpy as np
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
@@ -34,14 +35,16 @@ if 'self' not in st.session_state:
 
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
-
-# from features.Truth_Table.rules_logic import generate_table
-
-# Creates and initializes the TruthTable instance
-# R = TruthTable(n=14, x=30, m=30, y=35)
+    
 
 # Define the main function that controls the flow
 def main():
+
+# App session's initilization :-
+    from features.Truth_Table.rules_logic import generate_table
+    
+# Creates and initializes the TruthTable instance
+    R = TruthTable(n=14, x=30, m=30, y=35)
 
 # Initialize session state variables
     if "stage" not in st.session_state:
