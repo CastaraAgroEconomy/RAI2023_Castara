@@ -247,7 +247,9 @@ class TruthTable:
             return "activity"
 
 # Function to validate selection
+    
     def validate_selection(n, x, m, y):
+        
 # Uses the validate_choice function to determine if selection is valid
 
         st.write(" ")
@@ -345,7 +347,7 @@ def validate_choice(selected_role, selected_sub_role, selected_action, selected_
 # ==========================
     
 # Defines the rules for determining if a combination of selected options is a valud one.
-import streamlit as st
+# import streamlit as st
 
 def is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity):
     
