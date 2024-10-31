@@ -40,7 +40,7 @@ if 'R_go' not in st.session_state:
 
 # Main script of App session's initilization of first sub-module :-
 
-# from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
+from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
 # R = TruthTable()
 
 # Define the main function that controls the flow
