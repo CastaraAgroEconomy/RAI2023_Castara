@@ -39,7 +39,7 @@ if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
 
-# Was Main script of App session's initilization of first sub-module :-
+# Was Main script of App session's initilization of first Module :-
 # from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
 # R = TruthTable()
 # Was provided call to rules_logic.py
@@ -113,7 +113,7 @@ def select_sub_role(content_placeholder):
     st.title(f"Select Sub-role for {st.session_state.selected_role}")
     
     sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", 
-    "Operations Director", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", 
+    "Operations Director", "Operations Manager", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", 
     "Nutrient Systems Manager", "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", 
     "Plant Health Inspector", "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", 
     "Investment Manager", "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
@@ -192,7 +192,7 @@ def finalize_selection(selected_activity):
 #	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
 
 # from RAI2023_Castara.features.Validation.Rules import validate_choice
-
+R = validate_table()
 # Initialize session state variables if not already present
 for key, default in {
     'n': 1, 'x': 1, 'm': 1, 'y': 1,
@@ -293,12 +293,12 @@ class TruthTable:
 # from RAI2023_Castara.features.Validation.Rules import is_valid_combination
 
 # Define lists A, B, C, and D
-A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Managers",
+A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
      "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
      "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
 
 B = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", "Operations Director", 
-     "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", 
+     "Operations Managers", Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", 
      "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
      "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
      "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
