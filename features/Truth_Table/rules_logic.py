@@ -57,7 +57,6 @@ class TruthTable:
     
     def get_next_valid_selection(self, n, x, m, y):
         # Determines the next level with invalid choices and returns it
-
         
         if self.table[n, :, :, :].max() == 0:
             return "role"
