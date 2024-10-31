@@ -39,7 +39,7 @@ if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
 # App session's initilization :-
-from .features.Truth_Table.rules_logic import TruthTable
+from RAI2023-Castara.features.Truth_Table.rules_logic import TruthTable
     
 # Creates and initializes the TruthTable instance
 R = TruthTable(n=14, x=30, m=30, y=35)
