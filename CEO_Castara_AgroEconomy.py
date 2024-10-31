@@ -6,10 +6,6 @@ import numpy as np
 VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
-
-# Define the main function that controls the flow
-def main():
-
 #   Initilization of session variables
 
     if 'n' not in st.session_state:
@@ -47,6 +43,10 @@ def main():
     
 # Creates and initializes the TruthTable instance
     R = TruthTable(n=14, x=30, m=30, y=35)
+
+
+# Define the main function that controls the flow
+def main():
 
 # Initialize session state variables
     if "stage" not in st.session_state:
