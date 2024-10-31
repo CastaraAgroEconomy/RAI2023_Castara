@@ -7,7 +7,7 @@
 import streamlit as st
 import numpy as np
 
-from features.Validation.Rules import is_valid_combination
+from .features.Validation.Rules import is_valid_combination
 
 # Initialize the TruthTable
 # R = TruthTable(n=14, x=30, m=30, y=35)
