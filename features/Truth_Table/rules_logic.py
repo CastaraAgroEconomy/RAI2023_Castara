@@ -61,9 +61,6 @@ class TruthTable:
     def get_next_valid_selection(self, n, x, m, y):
         # Determines the next level with invalid choices and returns it
 
-        st.write(" ")
-        st.write("⚠️ - Checking for valid combinations .... "
-
         
         if self.table[n, :, :, :].max() == 0:
             return "role"
@@ -80,7 +77,7 @@ def validate_selection(n, x, m, y):
     # Uses the validate_choice function to determine if selection is valid
 
         st.write(" ")
-        st.write("⚠️ - Recording valid combinations .... "
+        st.write("⚠️ - Confirming valid combination; searching .... "
     
     is_valid = is_valid_combination(
         st.session_state.selected_role,
