@@ -3,6 +3,7 @@
 
 # import itertools
 # import pandas as pd
+
 from RAI2023_Castara.features.Validation.Rules import is_valid_combination
 
 # Define lists A, B, C, and D
