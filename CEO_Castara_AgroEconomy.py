@@ -42,7 +42,7 @@ if 'R_go' not in st.session_state:
 
 from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
 
-R = TruthTable
+R = TruthTable(n, x, m, y)
 
 
 
@@ -171,14 +171,14 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - Selected combination to be validated .... ")
 
-    R.generate_table()  # Generates the Truth Table
     n, x, m, y = (
        st.session_state.n,
        st.session_state.x,
        st.session_state.m,
        st.session_state.y
     )
-
+    
+    R.generate_table(n, x, m, y)  # Generates the Truth Table
 
     if st.session_state.R_go == 1:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
