@@ -7,7 +7,7 @@
 import streamlit as st
 import numpy as np
 
-from RAI2023_Castara.features.Validation.Rules import valid_choice
+from RAI2023_Castara.features.Validation.Rules import validate_choice
 
 # Initialize the TruthTable
 R = TruthTable(n=14, x=30, m=30, y=35)
