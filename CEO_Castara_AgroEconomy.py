@@ -42,7 +42,7 @@ if 'R_go' not in st.session_state:
 
 from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
 
-R = TruthTable()
+R = TruthTable
 
 
 
