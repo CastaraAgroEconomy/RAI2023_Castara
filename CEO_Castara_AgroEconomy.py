@@ -40,7 +40,7 @@ if 'R_go' not in st.session_state:
 
 # Main script of App session's initilization of first sub-module :-
 
-# from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
+from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
 
 
 # Define the main function that controls the flow
@@ -175,7 +175,7 @@ def finalize_selection(selected_activity):
        st.session_state.y
     )
     
-    # R.generate_table(n, x, m, y) # Generates the Truth Table
+    generate_table(n, x, m, y) # Generates the Truth Table
 
     if st.session_state.R_go == 1:
         st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
