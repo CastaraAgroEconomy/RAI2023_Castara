@@ -93,19 +93,3 @@ st.write("⚠️ - Truth Table populated .... ")
 
 st.write(" ")
 st.write("⚠️ - Returning to central App execution ..... ")
-
-
-# Example usage
-#def finalize_selection():
-#    n, x, m, y = (
-#        st.session_state.n,
-#        st.session_state.x,
-#        st.session_state.m,
-#        st.session_state.y
-#    )
-    
-#    if validate_selection(n, x, m, y):
-#        st.success("Valid combination!")
-#    else:
-#        next_step = R.get_next_valid_selection(n, x, m, y)
-#        st.error(f"Invalid combination. Please re-select your {next_step}.")
