@@ -72,8 +72,8 @@ class TruthTable:
 def validate_selection(n, x, m, y):
     # Uses the validate_choice function to determine if selection is valid
 
-        st.write(" ")
-        st.write("⚠️ - Confirming valid combination; searching .... ")
+    st.write(" ")
+    st.write("⚠️ - Confirming valid combination; searching .... ")
     
     is_valid = is_valid_combination(
         st.session_state.selected_role,
