@@ -44,7 +44,7 @@ def main():
 #   from features.Truth_Table.rules_logic import TruthTable
     
 # Creates and initializes the TruthTable instance
-    R = TruthTable(n=14, x=30, m=30, y=35)
+#   R = TruthTable(n=14, x=30, m=30, y=35)
 
 # Initialize session state variables
     if "stage" not in st.session_state:
