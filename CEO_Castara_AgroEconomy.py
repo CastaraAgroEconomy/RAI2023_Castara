@@ -39,7 +39,7 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
-R = TruthTable(n, x, m, y)
+R = TruthTable()
 
 # Main script of App session's initilization of first sub-module :-
 try:
