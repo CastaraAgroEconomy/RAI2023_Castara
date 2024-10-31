@@ -45,6 +45,7 @@ from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
 R = TruthTable()
 
 
+
 # Define the main function that controls the flow
 def main():
 
