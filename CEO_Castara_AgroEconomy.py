@@ -46,7 +46,7 @@ try:
 except Exception as e:
     st.write(f"Import error details: {str(e)}")
 
-from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
+from .features.Truth_Table.rules_logic import TruthTable
 
 R = TruthTable()
 
