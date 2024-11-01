@@ -103,7 +103,9 @@ def main():
             st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             if st.button("Logout", on_click=lambda: logout()):
                 pass
-            st.session_state.clear()
+                st.session_state.clear()
+                st.session_state.stage = "login"
+                st.session_state.logged_in = False     
     return
     
 # ===================
