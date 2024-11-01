@@ -460,7 +460,7 @@ def finalize_selection(selected_activity):
 
 
 # Show System is working function
-def System_working()
+def System_working():
     live = st.session_state.live
     live = live + "."
     st.write(f'{live})
