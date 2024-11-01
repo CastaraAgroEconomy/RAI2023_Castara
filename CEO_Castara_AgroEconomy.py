@@ -121,13 +121,11 @@ def main():
 
 def Module_1():
 
-    # This script does the following: -
+# This script does the following: -
 #	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
 #	2.	Validates each combination using the is_valid_combination function from Rules.py.
 #	3.	Checks selections in the finalize_selection function, with error handling to guide users back to the selection that needs adjustment.
 #	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
-
-# from RAI2023_Castara.features.Validation.Rules import validate_choice
 
 # Initialize session state variables if not already present
     for key, default in {
@@ -427,7 +425,6 @@ def select_activity(content_placeholder):
 
 #   Begin selection validity check
     Module_1()
-    
     return
         
 
