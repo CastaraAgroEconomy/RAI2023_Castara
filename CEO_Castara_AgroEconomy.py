@@ -469,7 +469,7 @@ def System_working():
     while st.session_state.counter < 7:
         # Append a dot to 'live' string
         live = st.session_state.live
-        live += " ."
+        live += " > "
         st.session_state.live = live
         st.write(st.session_state.live)
         
