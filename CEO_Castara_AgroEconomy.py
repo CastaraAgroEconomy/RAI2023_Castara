@@ -1,6 +1,7 @@
 # Main Script and function call for the Castara AgroEconomy Mobile App.
 import streamlit as st
 import numpy as np
+import time as te
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
@@ -188,7 +189,7 @@ def Module_1():
 
             st.write(" ")
             st.write("⚠️ - Confirming valid combination; searching .... ")
-
+            te.time.sleep(3)
             Module_2()
             
             is_valid = is_valid_combination(
@@ -200,10 +201,11 @@ def Module_1():
 
             st.write(" ") 
             st.write("⚠️ - Truth Table consulted .... ")
-
+            te.time.sleep(1)
             st.write(" ")
             st.write("⚠️ - Returning execution to central App ..... ")
-    
+            te.time.sleep(2)
+            
             if is_valid:
                 st.session_state.R_go = 1
             else:
@@ -277,7 +279,7 @@ def Module_2():
         """Validate the selection by checking if the combination matches valid rules."""
         st.write(" ")
         st.write("⚠️ - Preparing to validate selected choices as a combination .... ")
-       
+        te.time.sleep(3)
         Module_3()
         
         return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
@@ -301,7 +303,7 @@ def Module_3():
     
         st.write(" ")
         st.write("⚠️ - One moment please, verifying validity of combination picked from list against Truth Table.... ")
-
+       te.time.sleep(3)
     # Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
         if selected_action == "System Design & Optimization" and selected_role not in ["Agricultural Engineers", "System Technicians"]:
             return 0
@@ -421,8 +423,9 @@ def select_activity(content_placeholder):
 
     if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
         pass
-        st.write("⚠️ - Passing control over to validity check Modules ")
-
+    st.write("⚠️ - Passing control over to validity check Modules ")
+    te.time.sleep(3)
+    
 #   Begin selection validity check
     Module_1()
     return
@@ -438,6 +441,7 @@ def finalize_selection(selected_activity):
     st.session_state.selected_activity = selected_activity
     st.write(" ")
     st.write("⚠️ - Selected combination to be validated .... ")
+    te.time.sleep(3)
     return
 
 
