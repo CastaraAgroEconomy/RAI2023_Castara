@@ -191,24 +191,24 @@ def Module_1():
                 st.session_state.selected_action,
                 st.session_state.selected_activity
             )
+
+            st.write(" ") 
+            st.write("⚠️ - Truth Table populated .... ")
+
+            st.write(" ")
+            st.write("⚠️ - Returning to central App execution ..... ")
     
             if is_valid:
                 st.session_state.R_go = 1
             else:
                 st.session_state.R_go = 0
             return is_valid
-    
-        st.write(" ") 
-        st.write("⚠️ - Truth Table populated .... ")
 
-        st.write(" ")
-        st.write("⚠️ - Returning to central App execution ..... ")
-
-        return
         
 # =====================
 # End of first Module :
 # ===================== 
+
 
 
 # ==========================
