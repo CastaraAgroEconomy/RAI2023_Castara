@@ -75,7 +75,7 @@ def main():
     elif st.session_state.stage == "action_selection":
         with content_placeholder.container():
             select_action(content_placeholder)
-    elif st.session_state.return_to_main == False
+    elif st.session_state.return_to_main == False:
            if st.session_state.stage == "activity_selection":
               with content_placeholder.container():
                   select_activity(content_placeholder)
