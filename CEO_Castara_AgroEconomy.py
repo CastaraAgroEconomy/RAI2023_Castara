@@ -72,7 +72,11 @@ def main():
     elif st.session_state.stage == "activity_selection":
         with content_placeholder.container():
             select_activity(content_placeholder)
+            Module_1()
 
+
+
+    
 # =======================
 # Return to main Module :-
 # =======================
@@ -84,8 +88,8 @@ def main():
         st.write(" ")
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
         st.button("Logout", on_click=logout)
-        pass        
-    elif
+        pass
+    else:
         st.write(" ")
         st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
         st.write(" ")
@@ -94,7 +98,7 @@ def main():
         st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
         st.button("Logout", on_click=logout)
         pass
-        Module_1()
+        return
     
     
 # ===================
@@ -178,7 +182,9 @@ def Module_1():
 
             st.write(" ")
             st.write("⚠️ - Confirming valid combination; searching .... ")
-    
+
+            Module_2():
+            
             is_valid = is_valid_combination(
                 st.session_state.selected_role,
                 st.session_state.selected_sub_role,
@@ -263,6 +269,7 @@ def Module_2():
         """Validate the selection by checking if the combination matches valid rules."""
         st.write(" ")
         st.write("⚠️ - Preparing to validate selected choices as a combination .... ")
+        Module_3
         return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
     return
