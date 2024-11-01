@@ -38,6 +38,8 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
+if 'return_to_main' not in st.session_state:
+    st.session_state.return_to_main = False
 
 
 # The two instructions beliw were part if the  Main script of 
@@ -73,9 +75,11 @@ def main():
     elif st.session_state.stage == "action_selection":
         with content_placeholder.container():
             select_action(content_placeholder)
-    elif st.session_state.stage == "activity_selection":
-        with content_placeholder.container():
-            select_activity(content_placeholder)
+    elif
+        if st.session_state.return_to_main == False
+           if st.session_state.stage == "activity_selection":
+              with content_placeholder.container():
+                  select_activity(content_placeholder)
 
              
 # =======================
@@ -209,6 +213,8 @@ def Module_1():
             else:
                 st.session_state.R_go = 0
             return is_valid
+            
+    st.session_state.return_to_main = True
     return
         
 # =====================
