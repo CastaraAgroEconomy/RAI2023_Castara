@@ -42,7 +42,7 @@ if 'return_to_main' not in st.session_state:
     st.session_state.return_to_main = False
 
 if 'live' not in st.session_state:
-    st.session_state.live = None
+    st.session_state.live = " "
 
 
 # The two instructions beliw were part if the  Main script of 
@@ -471,7 +471,7 @@ def System_working():
         st.write(st.session_state.live)
         st.session_state.counter += 1
     
-    st.session_state.live = None
+    st.session_state.live = " "
     return
 
 
