@@ -436,7 +436,7 @@ def select_activity(content_placeholder):
         pass
         
     st.write("⚠️ - Passing control over to validity check Modules ")
-    te.time.sleep(3)
+    te.time.sleep(2):
     
 #   Begin selection validity check
     Module_1()
