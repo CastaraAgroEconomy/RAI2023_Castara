@@ -107,7 +107,7 @@ def main():
                 pass
                 st.session_state.stage = None
                 st.session_state.logged_in = False     
-    return
+
     
 # ===================
 # End of main Module :-
