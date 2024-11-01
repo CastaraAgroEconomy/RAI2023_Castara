@@ -421,6 +421,7 @@ def select_activity(content_placeholder):
 
     if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
         pass
+        st.write("⚠️ - Passing control over to validity check Modules ")
 
 #   Begin selection validity check
     Module_1()
