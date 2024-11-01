@@ -212,49 +212,49 @@ def main():
 
 # Define lists A, B, C, and D
 
-A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
-     "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
-     "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
+    A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
+         "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
+         "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
 
-B = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", "Operations Director", 
-     "Operations Managers", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", 
-     "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
-     "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
-     "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
-     "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager"] 
+    B = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", "Operations Director", 
+         "Operations Managers", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", 
+         "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
+         "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
+         "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
+         "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager"] 
 
-C = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management", "Plant Health Assessment", "Growth Cycle Planning", 
-     "Equipment Maintenance", "Quality Control Inspections", "Harvest Scheduling", "Data Collection & Analysis", "Compliance Monitoring",
-     "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination", 
-     "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", 
-     "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", "Market Analysis", "Investor Reporting",
-     "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing" ]
+    C = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management", "Plant Health Assessment", "Growth Cycle Planning", 
+         "Equipment Maintenance", "Quality Control Inspections", "Harvest Scheduling", "Data Collection & Analysis", "Compliance Monitoring",
+         "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination", 
+         "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", 
+         "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", "Market Analysis", "Investor Reporting",
+         "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing" ]
 
-D = ["pH Level Monitoring", "EC - Electrical Conductivity - Testing", "Temperature Control Adjustment", "Humidity Level Management", "Light Intensity Calibration", 
-     "Nutrient Mix Preparation", "Water Quality Testing", "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization", 
-     "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management", "Growth Data Recording", "Team Schedule Creation", 
-     "Maintenance Log Updates", "Quality Check Documentation", "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", 
-     "Financial Statement Analysis", "Market Research Documentation", "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", 
-     "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
-     "Strategy Document Creation", "Compliance Report Filing"]
+    D = ["pH Level Monitoring", "EC - Electrical Conductivity - Testing", "Temperature Control Adjustment", "Humidity Level Management", "Light Intensity Calibration", 
+         "Nutrient Mix Preparation", "Water Quality Testing", "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization", 
+         "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management", "Growth Data Recording", "Team Schedule Creation", 
+         "Maintenance Log Updates", "Quality Check Documentation", "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", 
+         "Financial Statement Analysis", "Market Research Documentation", "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", 
+         "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
+         "Strategy Document Creation", "Compliance Report Filing"]
 
-def get_roles():
-    return A
+    def get_roles():
+        return A
 
-def get_sub_roles():
-    return B
+    def get_sub_roles():
+        return B
 
-def get_actions():
-    return C
+    def get_actions():
+        return C
 
-def get_activities():
-    return D
+    def get_activities():
+        return D
 
-def validate_choice(selected_role, selected_sub_role, selected_action, selected_activity):
-    """Validate the selection by checking if the combination matches valid rules."""
-    st.write(" ")
-    st.write("⚠️ - Preparing to validate selected choices as a combination .... ")
-    return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
+    def validate_choice(selected_role, selected_sub_role, selected_action, selected_activity):
+        """Validate the selection by checking if the combination matches valid rules."""
+        st.write(" ")
+        st.write("⚠️ - Preparing to validate selected choices as a combination .... ")
+        return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
 # ======================
 # End of second Module :
@@ -268,40 +268,36 @@ def validate_choice(selected_role, selected_sub_role, selected_action, selected_
 # Defines the rules for determining if a combination of selected options is a valud one.
 # import streamlit as st
 
-def is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity):
+    def is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity):
     
-    st.write(" ")
-    st.write("⚠️ - One moment please, verifying validity of combination picked from list against Truth Table.... ")
+        st.write(" ")
+        st.write("⚠️ - One moment please, verifying validity of combination picked from list against Truth Table.... ")
 
     # Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
-    if selected_action == "System Design & Optimization" and selected_role not in ["Agricultural Engineers", "System Technicians"]:
-        return 0
+        if selected_action == "System Design & Optimization" and selected_role not in ["Agricultural Engineers", "System Technicians"]:
+            return 0
     # Rule 2: Franchise Operators should not perform technical activities like Nutrient Mix Preparation
-    if selected_role == "Franchise Operators" and selected_activity in ["Nutrient Mix Preparation", "pH Level Monitoring"]:
-        return 0
+        if selected_role == "Franchise Operators" and selected_activity in ["Nutrient Mix Preparation", "pH Level Monitoring"]:
+            return 0
     # Rule 3: Plant Scientists should focus on Plant Health Assessment and Growth Cycle Planning
-    if selected_role == "Plant Scientists" and selected_action not in ["Plant Health Assessment", "Growth Cycle Planning"]:
-        return 0
+        if selected_role == "Plant Scientists" and selected_action not in ["Plant Health Assessment", "Growth Cycle Planning"]:
+            return 0
     # Rule 4: Quality Assurance Manager should focus on Quality Control Inspections and Compliance Monitoring
-    if selected_sub_role == "Quality Assurance Manager" and selected_action not in ["Quality Control Inspections", "Compliance Monitoring"]:
-        return 0
+        if selected_sub_role == "Quality Assurance Manager" and selected_action not in ["Quality Control Inspections", "Compliance Monitoring"]:
+            return 0
     # Rule 5: Franchise Owners should focus on business-related actions like Franchise Performance Review
-    if selected_role == "Franchise Operators" and selected_action not in ["Franchise Performance Review", "Business Expansion Planning"]:
-        return 0
+        if selected_role == "Franchise Operators" and selected_action not in ["Franchise Performance Review", "Business Expansion Planning"]:
+            return 0
     # Rule 6: Operations Managers should handle actions like Production Planning and Team Coordination
-    if selected_role == "Operations Managers" and selected_action not in ["Production Planning", "Team Coordination"]:
-        return 0
+        if selected_role == "Operations Managers" and selected_action not in ["Production Planning", "Team Coordination"]:
+            return 0
     
     # Default valid if no rule invalidates it
-    return 1
+        return 1
 
 # =====================
 # End of Third Module :
 # =====================
-
-
-
-
 
 
 
@@ -419,16 +415,10 @@ def finalize_selection(selected_activity):
        st.session_state.y
     )
     return
-
     # Was call to function in first module
     # generate_table(n, x, m, y) # Generates the Truth Table
     
 
-
-
-
-
-        
 
 # Logout function
 def logout():
