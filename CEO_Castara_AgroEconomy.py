@@ -79,11 +79,10 @@ def main():
            if st.session_state.stage == "activity_selection":
               with content_placeholder.container():
                   select_activity(content_placeholder)
-
              
-# =======================
-# Return to main Module :-
-# =======================
+# =========================
+# Returned to main Module :-
+# =========================
    
     if st.session_state.R_go == 1:
         with content_placeholder.container():
