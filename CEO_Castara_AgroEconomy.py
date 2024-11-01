@@ -38,7 +38,7 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
-R = generate_table(n=14, x=31, m=30, y=35)
+R = (n=14, x=31, m=30, y=35)
 
 # Was Main script of App session's initilization of first Module :-
 # from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
