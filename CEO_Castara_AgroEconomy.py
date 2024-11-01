@@ -453,14 +453,14 @@ def finalize_selection(selected_activity):
     st.write("⚠️ - Selected combination being validated ")
 
     st.write(" ")
-    System_working(live)
+    System_working()
     
     Module_1()
     return
 
 
 
-def System_working(live):
+def System_working():
     # Initialize counter if it doesn't exist
     if 'counter' not in st.session_state:
         st.session_state.counter = 0
