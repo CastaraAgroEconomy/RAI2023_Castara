@@ -100,7 +100,7 @@ def main():
             st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             st.button("Logout", on_click=logout)
             pass
-            st.session_state.stage = None
+            st.session_state.stage = "login"
     return
     
 # ===================
