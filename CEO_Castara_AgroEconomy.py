@@ -76,7 +76,7 @@ def main():
     elif st.session_state.stage == "activity_selection":
         with content_placeholder.container():
             select_activity(content_placeholder)
-            Module_1()
+
              
 # =======================
 # Return to main Module :-
@@ -419,6 +419,10 @@ def select_activity(content_placeholder):
 
     if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
         pass
+
+#   Begin selection validity check
+    Module_1()
+    
     return
         
 
@@ -428,22 +432,13 @@ def set_stage(stage, key, value):
     return
 
 
-def finalize_selection(selected_activity):
-    
+def finalize_selection(selected_activity): 
     st.session_state.selected_activity = selected_activity
-
     st.write(" ")
     st.write("⚠️ - Selected combination to be validated .... ")
-
-    n, x, m, y = (
-       st.session_state.n,
-       st.session_state.x,
-       st.session_state.m,
-       st.session_state.y
-    )
-    # Was the initial 'truth' table generation call to the generation function in first module
-    # generate_table() # Generates the Truth Table   
     return
+
+
 
 # Logout function
 def logout():
