@@ -90,6 +90,8 @@ def main():
             st.write(" ")
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
             st.session_state.logged_in = True
+            st.session_state.R_go = 0
+            st.session_state.stage = "role_selection"
     else:
         with content_placeholder.container():        
             st.write(" ")
@@ -100,6 +102,7 @@ def main():
             st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             st.button("Logout", on_click=logout)
             pass
+            st.session_state.clear()
             st.session_state.stage = "login"
             st.session_state.logged_in = False
     return
