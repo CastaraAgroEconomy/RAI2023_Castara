@@ -38,6 +38,7 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
+R = generate_table(n=14, x=31, m=30, y=35)
 
 # Was Main script of App session's initilization of first Module :-
 # from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
@@ -72,6 +73,35 @@ def main():
     elif st.session_state.stage == "activity_selection":
         with content_placeholder.container():
             select_activity(content_placeholder)
+
+
+
+# =======================
+# Return to main Module :-
+# =======================
+   
+    if st.session_state.R_go == 1:
+        st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
+        f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
+        f"Activity={st.session_state.selected_activity}") 
+        st.write(" ")
+        st.write("⚠️ - When implemented, appropriate feature will activate at this point")
+        st.button("Logout", on_click=logout)
+    else:
+        st.write(" ")
+        st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
+        st.write(" ")
+        st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
+        st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
+        st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
+        st.button("Logout", on_click=logout)
+
+# ===================
+# End of main Module :-
+# ===================
+
+
+
 
 
 # Login function
@@ -192,7 +222,7 @@ def finalize_selection(selected_activity):
 #	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
 
 # from RAI2023_Castara.features.Validation.Rules import validate_choice
-R = TruthTable()
+
 # Initialize session state variables if not already present
 for key, default in {
     'n': 1, 'x': 1, 'm': 1, 'y': 1,
@@ -381,25 +411,7 @@ def is_valid_combination(selected_role, selected_sub_role, selected_action, sele
 # =====================
 
 
-# =======================
-# Return to main Module :-
-# =======================
-   
-if st.session_state.R_go == 1:
-    st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
-    f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
-    f"Activity={st.session_state.selected_activity}") 
-    st.write(" ")
-    st.write("⚠️ - When implemented, appropriate feature will activate at this point")
-    st.button("Logout", on_click=logout)
-else:
-    st.write(" ")
-    st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
-    st.write(" ")
-    st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
-    st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
-    st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
-    st.button("Logout", on_click=logout)
+
         
 
 # Logout function
