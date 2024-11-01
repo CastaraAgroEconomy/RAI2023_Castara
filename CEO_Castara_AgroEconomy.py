@@ -282,7 +282,7 @@ def Module_2():
 # Begining of Third Module :-
 # ==========================
 
-def Module_3
+def Module_3():
 
 # Defines the rules for determining if a combination of selected options is a valud one.
 # import streamlit as st
