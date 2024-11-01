@@ -461,19 +461,26 @@ def finalize_selection(selected_activity):
 
 
 def System_working():
+    # Initialize counter if it doesn't exist
     if 'counter' not in st.session_state:
         st.session_state.counter = 0
 
-    if st.session_state.counter < 10:
+# Start a loop to increment the counter while function executes
+    while st.session_state.counter < 7:
+        # Append a dot to 'live' string
         live = st.session_state.live
-        live += "."
+        live += " ."
         st.session_state.live = live
         st.write(st.session_state.live)
+        
+# Increment the counter and pause for a brief moment
         st.session_state.counter += 1
-    
-    st.session_state.live = " "
-    return
+        time.sleep(0.5)  # Adds a half-second delay for real-time effect
 
+# Reset 'live' and 'counter' after loop finishes
+    st.session_state.live = " "
+    st.session_state.counter = 0
+    return
 
 
 # Logout function
