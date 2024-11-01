@@ -460,7 +460,7 @@ def finalize_selection(selected_activity):
 
 
 
-def System_working(live):
+def System_working():
     if 'counter' not in st.session_state:
         st.session_state.counter = 0
 
