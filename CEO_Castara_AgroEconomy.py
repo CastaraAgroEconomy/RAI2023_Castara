@@ -73,8 +73,6 @@ def main():
         with content_placeholder.container():
             select_activity(content_placeholder)
 
-
-
 # =======================
 # Return to main Module :-
 # =======================
