@@ -84,6 +84,7 @@ def main():
         st.write(" ")
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
         st.button("Logout", on_click=logout)
+        pass        
     elif
         st.write(" ")
         st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
@@ -93,7 +94,7 @@ def main():
         st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
         st.button("Logout", on_click=logout)
         pass
-        return
+        Module_1()
     
     
 # ===================
@@ -104,7 +105,8 @@ def main():
 # =========================
 # Beginning of first Module :-
 # =========================
-def Module_1
+
+def Module_1():
 
     # This script does the following: -
 #	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
@@ -207,7 +209,7 @@ def Module_1
 # Beginning of second Module :-
 # ==========================
 
-def Module_2
+def Module_2():
 
 # This script defines the options in the four lists 
 # and provides functions to validate user selections against a Truth Table
