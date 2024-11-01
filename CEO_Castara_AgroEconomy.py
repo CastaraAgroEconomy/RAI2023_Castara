@@ -192,7 +192,7 @@ def finalize_selection(selected_activity):
 #	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
 
 # from RAI2023_Castara.features.Validation.Rules import validate_choice
-R = validate_table()
+R = TruthTable()
 # Initialize session state variables if not already present
 for key, default in {
     'n': 1, 'x': 1, 'm': 1, 'y': 1,
