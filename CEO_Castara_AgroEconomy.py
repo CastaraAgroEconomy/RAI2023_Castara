@@ -85,8 +85,6 @@ def main():
             f"Activity={st.session_state.selected_activity}") 
             st.write(" ")
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
-            st.button("Logout", on_click=logout)
-            pass
     else:
         with content_placeholder.container():        
             st.write(" ")
@@ -95,11 +93,12 @@ def main():
             st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
             st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
             st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
-            st.button("Logout", on_click=logout)
-            pass    
+
+    st.button("Logout", on_click=logout)
+    pass
+    st.session_state.stage = "login
+    st.session_state.logged_in = False     
     return
-    
-    
 # ===================
 # End of main Module :-
 # ===================
