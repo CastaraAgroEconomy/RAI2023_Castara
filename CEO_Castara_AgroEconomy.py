@@ -103,7 +103,6 @@ def main():
 
 
 
-
 # Login function
 def login(content_placeholder):
     st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
@@ -116,6 +115,7 @@ def login(content_placeholder):
     # Login button with on_click function to advance stage
     if st.button("Login", on_click=lambda: login_check(username, password)):
         pass  # Placeholder to hold button logic; action is in login_check
+    return
 
 def login_check(username, password):
     if username == VALID_USERNAME and password == VALID_PASSWORD:
@@ -124,6 +124,7 @@ def login_check(username, password):
         st.success("Login successful!")
     else:
         st.error("Invalid credentials. Please try again.")
+    return
 
 # Role selection screen
 def select_role(content_placeholder):
