@@ -96,8 +96,7 @@ def main():
 
     st.button("Logout", on_click=logout)
     pass
-    st.session_state.stage = "login"
-    st.session_state.logged_in = False     
+    st.session_state.clear()
     return
 # ===================
 # End of main Module :-
