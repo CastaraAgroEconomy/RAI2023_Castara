@@ -199,10 +199,10 @@ def Module_1():
             )
 
             st.write(" ") 
-            st.write("⚠️ - Truth Table populated .... ")
+            st.write("⚠️ - Truth Table consulted .... ")
 
             st.write(" ")
-            st.write("⚠️ - Returning to central App execution ..... ")
+            st.write("⚠️ - Returning execution to central App ..... ")
     
             if is_valid:
                 st.session_state.R_go = 1
