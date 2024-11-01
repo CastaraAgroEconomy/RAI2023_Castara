@@ -1,7 +1,6 @@
 # Main Script and function call for the Castara AgroEconomy Mobile App.
 import streamlit as st
 import numpy as np
-import time as te
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
@@ -170,7 +169,7 @@ def Module_1():
                             self.table[n, x, m, y] = int(bool(is_valid))
             
             st.write(" ")
-            st.write(" - Initial Table complete ... ")
+            st.write("⚠️ - Initial Table complete ")
             
             if validate_selection(n, x, m, y):
                 st.success("Valid combination!")
@@ -453,18 +452,24 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - Selected combination to be validated ")
 
+    st.write(" ")
+    System_working()
     Module_1()
     
     return
 
 
 
-# Show System is working function
-def System_working():
-    live = st.session_state.live
-    live = live + "."
-    st.write(f'{live})
-    st.session_state.live = live
+def System_working(live):
+    if 'counter' not in st.session_state:
+        st.session_state.counter = 0
+
+    if st.session_state.counter < 10:
+        st.session_state.live += "."
+        st.session_state.counter += 1
+    
+    st.write(st.session_state.live)
+    st.session_state.live = None
     return
 
 
