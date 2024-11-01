@@ -101,8 +101,8 @@ def main():
             st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
             st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
             st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
-            st.button("Logout", on_click=lambda: logout()):
-            pass
+            if st.button("Logout", on_click=lambda: logout()):
+                pass
             st.session_state.clear()
     return
     
