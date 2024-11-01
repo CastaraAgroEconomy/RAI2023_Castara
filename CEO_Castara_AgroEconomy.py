@@ -469,8 +469,8 @@ def System_working(live):
     while st.session_state.counter < 7:
         # Append a dot to 'live' string
         live = st.session_state.live
-        live = live +  " > "
-        st.write(live)
+        live = live +  " . "
+        st.write({live})
         
 # Increment the counter and pause for a brief moment
         st.session_state.counter += 1
