@@ -7,6 +7,7 @@ VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
 
+
 # The two instructions beliw were part if the  Main script of 
 # the App session's initilization of the first Module :-
 # from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
@@ -103,8 +104,6 @@ def main():
             st.button("Logout", on_click=logout)
             pass
             st.session_state.clear()
-            st.session_state.stage = "login"
-            st.session_state.logged_in = False
     return
     
 # ===================
