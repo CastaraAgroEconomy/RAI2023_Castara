@@ -84,7 +84,7 @@ def main():
         st.write(" ")
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
         st.button("Logout", on_click=logout)
-    elif:
+    elif
         st.write(" ")
         st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
         st.write(" ")
