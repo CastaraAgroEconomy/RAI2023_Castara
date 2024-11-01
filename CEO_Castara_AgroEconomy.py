@@ -90,8 +90,11 @@ def main():
             st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
             f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
             f"Activity={st.session_state.selected_activity}") 
+            
             st.write(" ")
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
+            te.time.sleep(1)
+            
             st.session_state.logged_in = True
             st.session_state.stage = "role_selection"
             st.session_state.R_go = 0
@@ -99,10 +102,16 @@ def main():
         with content_placeholder.container():        
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
+            te.time.sleep(1)
+            
             st.write(" ")
             st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
+            
+            st.write(" ")
             st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
             st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
+            te.time.sleep(1)
+            
             if st.button("Logout", on_click=lambda: logout()):
                 pass
                 st.session_state.stage = None
@@ -159,9 +168,11 @@ def Module_1():
                                 st.session_state.selected_activity
                             )
                             self.table[n, x, m, y] = int(bool(is_valid))
+            
             st.write(" ")
             st.write(" - Initial Table complete ... ")
-
+            te.time.sleep(2)
+            
             if validate_selection(n, x, m, y):
                 st.success("Valid combination!")
             else:
@@ -303,7 +314,7 @@ def Module_3():
     
         st.write(" ")
         st.write("⚠️ - One moment please, verifying validity of combination picked from list against Truth Table.... ")
-       te.time.sleep(3)
+        te.time.sleep(3)
     # Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
         if selected_action == "System Design & Optimization" and selected_role not in ["Agricultural Engineers", "System Technicians"]:
             return 0
@@ -423,6 +434,7 @@ def select_activity(content_placeholder):
 
     if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
         pass
+        
     st.write("⚠️ - Passing control over to validity check Modules ")
     te.time.sleep(3)
     
