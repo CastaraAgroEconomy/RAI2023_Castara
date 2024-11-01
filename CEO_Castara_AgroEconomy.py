@@ -465,10 +465,12 @@ def System_working():
         st.session_state.counter = 0
 
     if st.session_state.counter < 10:
-        st.session_state.live += "."
+        live = st.session_state.live
+        live += "."
+        st.session_state.live = live
+        st.write(st.session_state.live)
         st.session_state.counter += 1
     
-    st.write(st.session_state.live)
     st.session_state.live = None
     return
 
