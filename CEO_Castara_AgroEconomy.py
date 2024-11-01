@@ -470,8 +470,7 @@ def System_working():
         # Append a dot to 'live' string
         live = st.session_state.live
         live = live +  " > "
-        st.session_state.live = live
-        st.write(st.session_state.live)
+        st.write(live)
         
 # Increment the counter and pause for a brief moment
         st.session_state.counter += 1
