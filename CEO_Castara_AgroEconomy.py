@@ -95,6 +95,7 @@ def main():
         pass
         return
     
+    
 # ===================
 # End of main Module :-
 # ===================
@@ -103,6 +104,7 @@ def main():
 # =========================
 # Beginning of first Module :-
 # =========================
+def Module_1
 
     # This script does the following: -
 #	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
@@ -154,6 +156,7 @@ def main():
                 st.error(f"Invalid combination. Please re-select your {next_step}.")
         
         def get_next_valid_selection(self, n, x, m, y):
+            
 #   Determines the next level with invalid choices and returns it
         
             if self.table[n, :, :, :].max() == 0:
@@ -193,6 +196,8 @@ def main():
         st.write(" ")
         st.write("⚠️ - Returning to central App execution ..... ")
 
+        return
+        
 # =====================
 # End of first Module :
 # ===================== 
@@ -201,6 +206,8 @@ def main():
 # ==========================
 # Beginning of second Module :-
 # ==========================
+
+def Module_2
 
 # This script defines the options in the four lists 
 # and provides functions to validate user selections against a Truth Table
@@ -256,6 +263,7 @@ def main():
         st.write("⚠️ - Preparing to validate selected choices as a combination .... ")
         return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
+    return
 # ======================
 # End of second Module :
 # ======================
@@ -264,7 +272,9 @@ def main():
 # ==========================
 # Begining of Third Module :-
 # ==========================
-    
+
+def Module_3
+
 # Defines the rules for determining if a combination of selected options is a valud one.
 # import streamlit as st
 
