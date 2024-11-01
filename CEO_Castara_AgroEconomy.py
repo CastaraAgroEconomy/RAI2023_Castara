@@ -91,8 +91,8 @@ def main():
             st.write(" ")
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
             st.session_state.logged_in = True
-            st.session_state.R_go = 0
             st.session_state.stage = "role_selection"
+            st.session_state.R_go = 0
     else:
         with content_placeholder.container():        
             st.write(" ")
