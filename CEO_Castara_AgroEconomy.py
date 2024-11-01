@@ -454,8 +454,8 @@ def finalize_selection(selected_activity):
 
     st.write(" ")
     System_working()
-    Module_1()
     
+    Module_1()
     return
 
 
