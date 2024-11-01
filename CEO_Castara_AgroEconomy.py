@@ -448,9 +448,9 @@ def finalize_selection(selected_activity):
 
 #   Begin selection validity check
     st.write(" ")
-    st.write("⚠️ - Passing control over to validity check Modules ")
+    st.write("⚠️ - Control passed to validity check Modules ")
     st.write(" ")
-    st.write("⚠️ - Selected combination to be validated ")
+    st.write("⚠️ - Selected combination being validated ")
 
     st.write(" ")
     System_working()
@@ -469,7 +469,7 @@ def System_working():
     while st.session_state.counter < 7:
         # Append a dot to 'live' string
         live = st.session_state.live
-        live += " > "
+        live = live +  " > "
         st.session_state.live = live
         st.write(st.session_state.live)
         
