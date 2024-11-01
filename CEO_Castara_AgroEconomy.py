@@ -1,7 +1,6 @@
 # Main Script and function call for the Castara AgroEconomy Mobile App.
 import streamlit as st
 import numpy as np
-import time as te
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
@@ -476,7 +475,6 @@ def System_working():
         
 # Increment the counter and pause for a brief moment
         st.session_state.counter += 1
-        te.time.sleep(0.5)  # Adds a half-second delay for real-time effect
 
 # Reset 'live' and 'counter' after loop finishes
     st.session_state.live = " "
