@@ -93,7 +93,6 @@ def main():
             
             st.write(" ")
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
-            te.time.sleep(1)
             
             st.session_state.logged_in = True
             st.session_state.stage = "role_selection"
@@ -102,7 +101,6 @@ def main():
         with content_placeholder.container():        
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
-            te.time.sleep(1)
             
             st.write(" ")
             st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
@@ -110,12 +108,11 @@ def main():
             st.write(" ")
             st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
             st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
-            te.time.sleep(1)
             
             if st.button("Logout", on_click=lambda: logout()):
                 pass
-                st.session_state.stage = None
-                st.session_state.logged_in = False     
+            st.session_state.stage = None
+            st.session_state.logged_in = False     
 
     
 # ===================
@@ -171,7 +168,6 @@ def Module_1():
             
             st.write(" ")
             st.write(" - Initial Table complete ... ")
-            te.time.sleep(2)
             
             if validate_selection(n, x, m, y):
                 st.success("Valid combination!")
@@ -200,7 +196,7 @@ def Module_1():
 
             st.write(" ")
             st.write("⚠️ - Confirming valid combination; searching .... ")
-            te.time.sleep(3)
+
             Module_2()
             
             is_valid = is_valid_combination(
@@ -212,10 +208,10 @@ def Module_1():
 
             st.write(" ") 
             st.write("⚠️ - Truth Table consulted .... ")
-            te.time.sleep(1)
+    
             st.write(" ")
             st.write("⚠️ - Returning execution to central App ..... ")
-            te.time.sleep(2)
+    
             
             if is_valid:
                 st.session_state.R_go = 1
@@ -288,9 +284,10 @@ def Module_2():
 
     def validate_choice(selected_role, selected_sub_role, selected_action, selected_activity):
         """Validate the selection by checking if the combination matches valid rules."""
+        
         st.write(" ")
         st.write("⚠️ - Preparing to validate selected choices as a combination .... ")
-        te.time.sleep(3)
+        
         Module_3()
         
         return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
@@ -314,7 +311,7 @@ def Module_3():
     
         st.write(" ")
         st.write("⚠️ - One moment please, verifying validity of combination picked from list against Truth Table.... ")
-        te.time.sleep(3)
+
     # Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
         if selected_action == "System Design & Optimization" and selected_role not in ["Agricultural Engineers", "System Technicians"]:
             return 0
@@ -434,12 +431,7 @@ def select_activity(content_placeholder):
 
     if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
         pass
-        
-    st.write("⚠️ - Passing control over to validity check Modules ")
-    te.time.sleep(2)
     
-#   Begin selection validity check
-    Module_1()
     return
         
 
@@ -451,9 +443,15 @@ def set_stage(stage, key, value):
 
 def finalize_selection(selected_activity): 
     st.session_state.selected_activity = selected_activity
+
+#   Begin selection validity check
+    st.write(" ")
+    st.write("⚠️ - Passing control over to validity check Modules ")
     st.write(" ")
     st.write("⚠️ - Selected combination to be validated .... ")
-    te.time.sleep(3)
+
+    Module_1()
+    
     return
 
 
