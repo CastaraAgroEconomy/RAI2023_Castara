@@ -79,22 +79,24 @@ def main():
 # =======================
    
     if st.session_state.R_go == 1:
-        st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
-        f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
-        f"Activity={st.session_state.selected_activity}") 
-        st.write(" ")
-        st.write("⚠️ - When implemented, appropriate feature will activate at this point")
-        st.button("Logout", on_click=logout)
-        pass
+        with content_placeholder.container():
+            st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
+            f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
+            f"Activity={st.session_state.selected_activity}") 
+            st.write(" ")
+            st.write("⚠️ - When implemented, appropriate feature will activate at this point")
+            st.button("Logout", on_click=logout)
+            pass
     else:
-        st.write(" ")
-        st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
-        st.write(" ")
-        st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
-        st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
-        st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
-        st.button("Logout", on_click=logout)
-        pass    
+        with content_placeholder.container():        
+            st.write(" ")
+            st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
+            st.write(" ")
+            st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
+            st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
+            st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
+            st.button("Logout", on_click=logout)
+            pass    
     return
     
     
