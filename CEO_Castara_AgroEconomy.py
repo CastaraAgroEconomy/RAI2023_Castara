@@ -441,11 +441,9 @@ def finalize_selection(selected_activity):
        st.session_state.m,
        st.session_state.y
     )
-    return
     # Was call to function in first module
-    # generate_table(n, x, m, y) # Generates the Truth Table
-    
-
+    generate_table(n, x, m, y) # Generates the Truth Table   
+return
 
 # Logout function
 def logout():
