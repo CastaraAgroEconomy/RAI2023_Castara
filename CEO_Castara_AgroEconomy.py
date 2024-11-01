@@ -38,7 +38,6 @@ if 'self' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
-R = (n, x, m, y)
 
 # Was Main script of App session's initilization of first Module :-
 # from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
@@ -101,117 +100,6 @@ def main():
 # ===================
 
 
-
-
-# Login function
-def login(content_placeholder):
-    st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
-    st.title("Castara AgroEconomy Venture")
-
-    # Input fields for username and password
-    username = st.text_input("Enter your username")
-    password = st.text_input("Enter your password", type="password")
-
-    # Login button with on_click function to advance stage
-    if st.button("Login", on_click=lambda: login_check(username, password)):
-        pass  # Placeholder to hold button logic; action is in login_check
-    return
-
-def login_check(username, password):
-    if username == VALID_USERNAME and password == VALID_PASSWORD:
-        st.session_state.logged_in = True
-        st.session_state.stage = "role_selection"  # Move to the next stage
-        st.success("Login successful!")
-    else:
-        st.error("Invalid credentials. Please try again.")
-    return
-
-# Role selection screen
-def select_role(content_placeholder):
-    st.title("Select Your Role")
-    
-    roles = ["Agricultural Engineers", "Horticulturists", "System Specialists", "Plant Scientists", "Operations Managers",
-             "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
-             "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
-    
-    selected_role = st.radio("Choose a role", roles)
-
-    if st.button("Proceed", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
-        pass
-
-# Sub-role selection screen
-def select_sub_role(content_placeholder):
-    st.title(f"Select Sub-role for {st.session_state.selected_role}")
-    
-    sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", 
-    "Operations Director", "Operations Manager", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", 
-    "Nutrient Systems Manager", "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", 
-    "Plant Health Inspector", "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", 
-    "Investment Manager", "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
-    "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", 
-    "Investor Relations Manager"]
-    
-    selected_sub_role = st.radio("Choose a sub-role", sub_roles)
-
-    if st.button("Choose Action", on_click=lambda: set_stage("action_selection", "selected_sub_role", selected_sub_role)):
-        pass
-
-# Action selection screen
-def select_action(content_placeholder):
-    st.title(f"Actions available for {st.session_state.selected_role} - {st.session_state.selected_sub_role}")
-    
-    actions = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management", "Plant Health Assessment", 
-    "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections", "Harvest Scheduling", "Data Collection & Analysis", 
-    "Compliance Monitoring", "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", 
-    "Team Coordination", "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", 
-    "Franchise Agreement Management", "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", 
-    "Market Analysis", "Investor Reporting", "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing" ]
-    
-    selected_action = st.radio("Choose an action", actions)
-
-    if st.button("Choose Activity", on_click=lambda: set_stage("activity_selection", "selected_action", selected_action)):
-        pass
-
-# Activity selection screen
-def select_activity(content_placeholder):
-    st.title(f"Activity for {st.session_state.selected_role} - {st.session_state.selected_sub_role} - {st.session_state.selected_action}")
-    
-    activities = ["pH Level Monitoring", "EC - Electrical Conductivity - Testing", "Temperature Control Adjustment", "Humidity Level Management", 
-    "Light Intensity Calibration", "Nutrient Mix Preparation", "Water Quality Testing", "Growth Rate Documentation", "Equipment Sanitization", 
-    "System Flow Rate Checks", "Plant Spacing Optimization", "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", 
-    "Inventory Management", "Growth Data Recording", "Team Schedule Creation", "Maintenance Log Updates", "Quality Check Documentation", 
-    "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", "Market Research Documentation", 
-    "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", "Capital Distribution Planning", 
-    "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", "Strategy Document Creation", "Compliance Report Filing"]
-    
-    selected_activity = st.radio("Choose an activity", activities)
-
-    if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
-        pass
-        
-
-def set_stage(stage, key, value):
-    st.session_state[key] = value
-    st.session_state.stage = stage
-
-def finalize_selection(selected_activity):
-    
-    st.session_state.selected_activity = selected_activity
-
-    st.write(" ")
-    st.write("⚠️ - Selected combination to be validated .... ")
-
-    n, x, m, y = (
-       st.session_state.n,
-       st.session_state.x,
-       st.session_state.m,
-       st.session_state.y
-    )
-
-    # Was call to function in first module
-    # generate_table(n, x, m, y) # Generates the Truth Table
-
-
 # =========================
 # Beginning of first Module :-
 # =========================
@@ -225,90 +113,89 @@ def finalize_selection(selected_activity):
 # from RAI2023_Castara.features.Validation.Rules import validate_choice
 
 # Initialize session state variables if not already present
-for key, default in {
-    'n': 1, 'x': 1, 'm': 1, 'y': 1,
-    'selected_role': None, 'selected_sub_role': None,
-    'selected_action': None, 'selected_activity': None,
-    'self': None, 'R_go': 0
-}.items():
-    if key not in st.session_state:
-        st.session_state[key] = default
+    for key, default in {
+        'n': 1, 'x': 1, 'm': 1, 'y': 1,
+        'selected_role': None, 'selected_sub_role': None,
+        'selected_action': None, 'selected_activity': None,
+        'self': None, 'R_go': 0
+    }.items():
+        if key not in st.session_state:
+            st.session_state[key] = default
 
-class TruthTable:
-    def __init__(self, n=14, x=30, m=30, y=35):
-        self.n = n
-        self.x = x
-        self.m = m
-        self.y = y
-        self.table = np.zeros((n, x, m, y), dtype=int)
-        self.generate_table()
+    class TruthTable:
+        def __init__(self, n=14, x=30, m=30, y=35):
+            self.n = n
+            self.x = x
+            self.m = m
+            self.y = y
+            self.table = np.zeros((n, x, m, y), dtype=int)
+            self.generate_table()
 
-    def generate_table(self):
-        st.write(" - Generating Truth Table with predefined validation rules.")
-        for n in range(self.n):
-            for x in range(self.x):
-                for m in range(self.m):
-                    for y in range(self.y):
-                        is_valid = valid_choice(
-                            st.session_state.selected_role,
-                            st.session_state.selected_sub_role,
-                            st.session_state.selected_action,
-                            st.session_state.selected_activity
-                        )
-                        self.table[n, x, m, y] = int(bool(is_valid))
-        st.write(" ")
-        st.write(" - Initial Table complete ... ")
+        def generate_table(self):
+            st.write(" - Generating Truth Table with predefined validation rules.")
+            for n in range(self.n):
+                for x in range(self.x):
+                    for m in range(self.m):
+                        for y in range(self.y):
+                            is_valid = valid_choice(
+                                st.session_state.selected_role,
+                                st.session_state.selected_sub_role,
+                                st.session_state.selected_action,
+                                st.session_state.selected_activity
+                            )
+                            self.table[n, x, m, y] = int(bool(is_valid))
+            st.write(" ")
+            st.write(" - Initial Table complete ... ")
 
-        if validate_selection(n, x, m, y):
-            st.success("Valid combination!")
-        else:
-            next_step = R.get_next_valid_selection(n, x, m, y)
-            st.error(f"Invalid combination. Please re-select your {next_step}.")
+            if validate_selection(n, x, m, y):
+                st.success("Valid combination!")
+            else:
+                next_step = R.get_next_valid_selection(n, x, m, y)
+                st.error(f"Invalid combination. Please re-select your {next_step}.")
         
-    def get_next_valid_selection(self, n, x, m, y):
+        def get_next_valid_selection(self, n, x, m, y):
 #   Determines the next level with invalid choices and returns it
         
-        if self.table[n, :, :, :].max() == 0:
-            return "role"
-        elif self.table[n, x, :, :].max() == 0:
-            return "sub_role"
-        elif self.table[n, x, m, :].max() == 0:
-            return "action"
-        else:
-            return "activity"
+            if self.table[n, :, :, :].max() == 0:
+                return "role"
+            elif self.table[n, x, :, :].max() == 0:
+                return "sub_role"
+            elif self.table[n, x, m, :].max() == 0:
+                return "action"
+            else:
+                return "activity"
 
 # Function to validate selection
     
-    def validate_selection(n, x, m, y):
+        def validate_selection(n, x, m, y):
         
 # Uses the validate_choice function to determine if selection is valid
 
-        st.write(" ")
-        st.write("⚠️ - Confirming valid combination; searching .... ")
+            st.write(" ")
+            st.write("⚠️ - Confirming valid combination; searching .... ")
     
-        is_valid = is_valid_combination(
-            st.session_state.selected_role,
-            st.session_state.selected_sub_role,
-            st.session_state.selected_action,
-            st.session_state.selected_activity
-        )
+            is_valid = is_valid_combination(
+                st.session_state.selected_role,
+                st.session_state.selected_sub_role,
+                st.session_state.selected_action,
+                st.session_state.selected_activity
+            )
     
-        if is_valid:
-            st.session_state.R_go = 1
-        else:
-            st.session_state.R_go = 0
-        return is_valid
+            if is_valid:
+                st.session_state.R_go = 1
+            else:
+                st.session_state.R_go = 0
+            return is_valid
     
-    st.write(" ") 
-    st.write("⚠️ - Truth Table populated .... ")
+        st.write(" ") 
+        st.write("⚠️ - Truth Table populated .... ")
 
-    st.write(" ")
-    st.write("⚠️ - Returning to central App execution ..... ")
+        st.write(" ")
+        st.write("⚠️ - Returning to central App execution ..... ")
 
 # =====================
 # End of first Module :
 # ===================== 
-
 
 
 # ==========================
@@ -324,6 +211,7 @@ class TruthTable:
 # from RAI2023_Castara.features.Validation.Rules import is_valid_combination
 
 # Define lists A, B, C, and D
+
 A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
      "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
      "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
@@ -410,6 +298,133 @@ def is_valid_combination(selected_role, selected_sub_role, selected_action, sele
 # =====================
 # End of Third Module :
 # =====================
+
+
+
+
+
+
+
+# Login function
+def login(content_placeholder):
+    st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
+    st.title("Castara AgroEconomy Venture")
+
+    # Input fields for username and password
+    username = st.text_input("Enter your username")
+    password = st.text_input("Enter your password", type="password")
+
+    # Login button with on_click function to advance stage
+    if st.button("Login", on_click=lambda: login_check(username, password)):
+        pass  # Placeholder to hold button logic; action is in login_check
+    return
+
+def login_check(username, password):
+    if username == VALID_USERNAME and password == VALID_PASSWORD:
+        st.session_state.logged_in = True
+        st.session_state.stage = "role_selection"  # Move to the next stage
+        st.success("Login successful!")
+    else:
+        st.error("Invalid credentials. Please try again.")
+    return
+
+# Role selection screen
+def select_role(content_placeholder):
+    st.title("Select Your Role")
+    
+    roles = ["Agricultural Engineers", "Horticulturists", "System Specialists", "Plant Scientists", "Operations Managers",
+             "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
+             "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
+    
+    selected_role = st.radio("Choose a role", roles)
+
+    if st.button("Proceed", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
+        pass
+    return
+    
+
+# Sub-role selection screen
+def select_sub_role(content_placeholder):
+    st.title(f"Select Sub-role for {st.session_state.selected_role}")
+    
+    sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", 
+    "Operations Director", "Operations Manager", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", 
+    "Nutrient Systems Manager", "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", 
+    "Plant Health Inspector", "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", 
+    "Investment Manager", "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
+    "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", 
+    "Investor Relations Manager"]
+    
+    selected_sub_role = st.radio("Choose a sub-role", sub_roles)
+
+    if st.button("Choose Action", on_click=lambda: set_stage("action_selection", "selected_sub_role", selected_sub_role)):
+        pass
+    return
+    
+
+# Action selection screen
+def select_action(content_placeholder):
+    st.title(f"Actions available for {st.session_state.selected_role} - {st.session_state.selected_sub_role}")
+    
+    actions = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management", "Plant Health Assessment", 
+    "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections", "Harvest Scheduling", "Data Collection & Analysis", 
+    "Compliance Monitoring", "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", 
+    "Team Coordination", "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", 
+    "Franchise Agreement Management", "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", 
+    "Market Analysis", "Investor Reporting", "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing" ]
+    
+    selected_action = st.radio("Choose an action", actions)
+
+    if st.button("Choose Activity", on_click=lambda: set_stage("activity_selection", "selected_action", selected_action)):
+        pass
+    return
+    
+
+# Activity selection screen
+def select_activity(content_placeholder):
+    st.title(f"Activity for {st.session_state.selected_role} - {st.session_state.selected_sub_role} - {st.session_state.selected_action}")
+    
+    activities = ["pH Level Monitoring", "EC - Electrical Conductivity - Testing", "Temperature Control Adjustment", "Humidity Level Management", 
+    "Light Intensity Calibration", "Nutrient Mix Preparation", "Water Quality Testing", "Growth Rate Documentation", "Equipment Sanitization", 
+    "System Flow Rate Checks", "Plant Spacing Optimization", "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", 
+    "Inventory Management", "Growth Data Recording", "Team Schedule Creation", "Maintenance Log Updates", "Quality Check Documentation", 
+    "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", "Market Research Documentation", 
+    "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", "Capital Distribution Planning", 
+    "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", "Strategy Document Creation", "Compliance Report Filing"]
+    
+    selected_activity = st.radio("Choose an activity", activities)
+
+    if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
+        pass
+    return
+        
+
+def set_stage(stage, key, value):
+    st.session_state[key] = value
+    st.session_state.stage = stage
+return
+
+
+def finalize_selection(selected_activity):
+    
+    st.session_state.selected_activity = selected_activity
+
+    st.write(" ")
+    st.write("⚠️ - Selected combination to be validated .... ")
+
+    n, x, m, y = (
+       st.session_state.n,
+       st.session_state.x,
+       st.session_state.m,
+       st.session_state.y
+    )
+    return
+
+    # Was call to function in first module
+    # generate_table(n, x, m, y) # Generates the Truth Table
+    
+
+
 
 
 
