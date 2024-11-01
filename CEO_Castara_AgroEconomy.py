@@ -448,37 +448,15 @@ def finalize_selection(selected_activity):
 
 #   Begin selection validity check
     st.write(" ")
-    st.write("⚠️ - Control passed to validity check Modules ")
+    st.write("⚠️ - Control passed to validity checker ")
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
 
-    st.write(" ")
-    System_working()
+    
     
     Module_1()
     return
 
-
-
-def System_working():
-    # Initialize counter if it doesn't exist
-    if 'counter' not in st.session_state:
-        st.session_state.counter = 0
-
-# Start a loop to increment the counter while function executes
-    while st.session_state.counter < 7:
-        # Append a dot to 'live' string
-        live = st.session_state.live
-        live = live +  " . "
-        st.write({live})
-        
-# Increment the counter and pause for a brief moment
-        st.session_state.counter += 1
-
-# Reset 'live' and 'counter' after loop finishes
-    st.session_state.live = " "
-    st.session_state.counter = 0
-    return
 
 
 # Logout function
