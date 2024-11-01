@@ -7,15 +7,16 @@ VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
 
 
-
-
-# Was Main script of App session's initilization of first Module :-
+# The two instructions beliw were part if the  Main script of 
+# the App session's initilization of the first Module :-
 # from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
 # R = TruthTable()
-# Was provided call to rules_logic.py
+# They provided for call up of rules_logic.py
+
 
 
 # Define the main function that controls the flow
+
 def main():
 
     #   Initilization of session variables
@@ -50,6 +51,7 @@ def main():
     if 'R_go' not in st.session_state:
         st.session_state.R_go = 0
 
+    
 # Initialize session state variables
     if "stage" not in st.session_state:
         st.session_state.stage = "login"
@@ -100,9 +102,11 @@ def main():
     pass
     st.session_state.clear()
     return
+    
 # ===================
 # End of main Module :-
 # ===================
+
 
 
 # =========================
@@ -203,6 +207,7 @@ def Module_1():
                 st.session_state.R_go = 0
             return is_valid
 
+    return
         
 # =====================
 # End of first Module :
@@ -268,7 +273,9 @@ def Module_2():
         """Validate the selection by checking if the combination matches valid rules."""
         st.write(" ")
         st.write("⚠️ - Preparing to validate selected choices as a combination .... ")
+       
         Module_3()
+        
         return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
     return
