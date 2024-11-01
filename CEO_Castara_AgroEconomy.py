@@ -183,7 +183,7 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Confirming valid combination; searching .... ")
 
-            Module_2():
+            Module_2()
             
             is_valid = is_valid_combination(
                 st.session_state.selected_role,
@@ -269,7 +269,7 @@ def Module_2():
         """Validate the selection by checking if the combination matches valid rules."""
         st.write(" ")
         st.write("⚠️ - Preparing to validate selected choices as a combination .... ")
-        Module_3
+        Module_3()
         return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
     return
