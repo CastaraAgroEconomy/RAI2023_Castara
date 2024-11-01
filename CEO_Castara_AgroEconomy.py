@@ -398,7 +398,7 @@ def select_activity(content_placeholder):
 def set_stage(stage, key, value):
     st.session_state[key] = value
     st.session_state.stage = stage
-return
+    return
 
 
 def finalize_selection(selected_activity):
