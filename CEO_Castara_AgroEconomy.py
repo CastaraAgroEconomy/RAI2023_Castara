@@ -355,7 +355,7 @@ def login_check(username, password):
 def select_role(content_placeholder):
     st.title("Select Your Role")
     
-    roles = ["Agricultural Engineers", "Horticulturists", "System Specialists", "Plant Scientists", "Operations Managers",
+    roles = ["Agricultural Engineers", "Horticulturists", "System Specialists", "Plant Scientists", "Operations Personnel",
              "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
              "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
     
@@ -442,7 +442,7 @@ def finalize_selection(selected_activity):
        st.session_state.y
     )
     # Was the initial 'truth' table generation call to the generation function in first module
-    # generate_table(n, x, m, y) # Generates the Truth Table   
+    # generate_table() # Generates the Truth Table   
     return
 
 # Logout function
