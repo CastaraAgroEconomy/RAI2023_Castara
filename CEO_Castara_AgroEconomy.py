@@ -42,6 +42,9 @@ if 'R_go' not in st.session_state:
 if 'return_to_main' not in st.session_state:
     st.session_state.return_to_main = False
 
+if 'live' not in st.session_state:
+    st.session_state.live = None
+
 
 # The two instructions beliw were part if the  Main script of 
 # the App session's initilization of the first Module :-
@@ -153,7 +156,7 @@ def Module_1():
             self.generate_table()
 
         def generate_table(self):
-            st.write(" - Generating Truth Table with predefined validation rules.")
+            st.write("⚠️ - Generating Truth Table with predefined validation rules")
             for n in range(self.n):
                 for x in range(self.x):
                     for m in range(self.m):
@@ -195,7 +198,7 @@ def Module_1():
 # Uses the validate_choice function to determine if selection is valid
 
             st.write(" ")
-            st.write("⚠️ - Confirming valid combination; searching .... ")
+            st.write("⚠️ - Confirming valid combination; searching")
 
             Module_2()
             
@@ -207,10 +210,10 @@ def Module_1():
             )
 
             st.write(" ") 
-            st.write("⚠️ - Truth Table consulted .... ")
+            st.write("⚠️ - Truth Table consulted ")
     
             st.write(" ")
-            st.write("⚠️ - Returning execution to central App ..... ")
+            st.write("⚠️ - Returning execution to central App ")
     
             
             if is_valid:
@@ -286,7 +289,7 @@ def Module_2():
         """Validate the selection by checking if the combination matches valid rules."""
         
         st.write(" ")
-        st.write("⚠️ - Preparing to validate selected choices as a combination .... ")
+        st.write("⚠️ - Preparing to validate selected choices as a combination ")
         
         Module_3()
         
@@ -310,7 +313,7 @@ def Module_3():
     def is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity):
     
         st.write(" ")
-        st.write("⚠️ - One moment please, verifying validity of combination picked from list against Truth Table.... ")
+        st.write("⚠️ - One moment please, verifying validity of combination picked from list against Truth Table  ")
 
     # Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
         if selected_action == "System Design & Optimization" and selected_role not in ["Agricultural Engineers", "System Technicians"]:
@@ -448,10 +451,20 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - Passing control over to validity check Modules ")
     st.write(" ")
-    st.write("⚠️ - Selected combination to be validated .... ")
+    st.write("⚠️ - Selected combination to be validated ")
 
     Module_1()
     
+    return
+
+
+
+# Show System is working function
+def System_working()
+    live = st.session_state.live
+    live = live + "."
+    st.write(f'{live})
+    st.session_state.live = live
     return
 
 
