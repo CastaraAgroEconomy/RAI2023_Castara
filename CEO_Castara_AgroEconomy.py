@@ -187,8 +187,13 @@ def Module_1():
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
                 
+            # Create instance after class definition
+            st.write(">> Debug 9A - About to create TruthTable instance")
+            truth_table = TruthTable()  # This line was missing
+            st.write(">> Debug 9b - TruthTable instance created")
+
             
-            st.write("⚠️ Debug 9: Table generation complete")
+            st.write(">> Debug 9c: Table generation complete")
             
             st.write(" ")
             st.write("⚠️ - Initial Table complete ")
