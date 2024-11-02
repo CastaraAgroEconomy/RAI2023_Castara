@@ -451,9 +451,6 @@ def finalize_selection(selected_activity):
     st.write("⚠️ - Control passed to validity checker ")
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
-
-    st.spinner("Processing...")
-    for _ in range(10):
     
     Module_1()
     return
