@@ -452,7 +452,7 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
 
-    st.spinner("Processing..."):
+    st.spinner("Processing...")
         for _ in range(10):
     
     Module_1()
