@@ -186,6 +186,7 @@ def Module_1():
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
+                
             
         st.write("⚠️ Debug 9: Table generation complete")
             
