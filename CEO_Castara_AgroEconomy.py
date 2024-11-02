@@ -1,4 +1,5 @@
 # Main Script and function call for the Castara AgroEconomy Mobile App.
+import time
 import streamlit as st
 import numpy as np
 
@@ -452,10 +453,19 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
 
-    
+    st.write(" ")
+    System_working()
     
     Module_1()
     return
+
+
+
+def System_working():
+    with st.spinner("Processing..."):
+        for _ in range(10):
+            # Simulate work being done with a small delay
+            time.sleep(0.5)
 
 
 
