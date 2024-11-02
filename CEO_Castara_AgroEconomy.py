@@ -148,6 +148,9 @@ def Module_1():
         if key not in st.session_state:
             st.session_state[key] = default
 
+    st.write(" ")
+    st.write("⚠️ - Defining Truth Table Class")
+    
     class TruthTable:
         def __init__(self, n=14, x=30, m=30, y=35):
             self.n = n
