@@ -166,9 +166,9 @@ def Module_1():
             st.write(" >> debug 4 - general table creation completed ")
 
         
- #          Create instance after class definition
-            st.write(">> Debug 9a - About to create TruthTable instance")
-            generate_table = TruthTable  # This line was missing         
+#   Create instance after class definition
+    st.write(">> Debug 9a - About to create TruthTable instance")
+    generate_table = TruthTable  # This line was missing         
         
 
 def generate_table(self):
