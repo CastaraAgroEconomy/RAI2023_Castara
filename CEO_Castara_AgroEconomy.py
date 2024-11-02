@@ -135,6 +135,7 @@ def Module_1():
 #	3.	Checks selections in the finalize_selection function, with error handling to guide users back to the selection that needs adjustment.
 #	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
 
+    st.write(" ")
     st.write("⚠️ - Entered Module 1")
     
 # Initialize session state variables if not already present
@@ -248,6 +249,7 @@ def Module_2():
 
 # Define lists A, B, C, and D
 
+    st.write(" ")
     st.write("⚠️ - Entered Module 2 ")
     
     A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
@@ -315,6 +317,7 @@ def Module_3():
 
     def is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity):
     
+        st.write(" ")
         st.write("⚠️ - Entered Module 3 ")
         
         st.write(" ")
