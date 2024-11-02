@@ -186,10 +186,10 @@ def Module_1():
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
-                
-            # Create instance after class definition
-            st.write(">> Debug 9A - About to create TruthTable instance")
-            truth_table = TruthTable()  # This line was missing
+            
+# Create instance after class definition
+            st.write(">> Debug 9a - About to create TruthTable instance")
+            generate_table = TruthTable()  # This line was missing
             st.write(">> Debug 9b - TruthTable instance created")
 
             
