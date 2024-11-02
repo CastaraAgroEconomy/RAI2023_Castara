@@ -168,6 +168,7 @@ def Module_1():
             st.write(" >> debug 5 - Repopulating general table")
             st.write("⚠️ - Generating Truth Table with predefined validation rules")
             for n in range(self.n):
+                st.write(f">> Debug 6: Processing n={n}")
                 for x in range(self.x):
                     for m in range(self.m):
                         for y in range(self.y):
