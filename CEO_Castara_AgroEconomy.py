@@ -188,7 +188,7 @@ def Module_1():
                 raise  # This will show the full error traceback
                 
             
-        st.write("⚠️ Debug 9: Table generation complete")
+            st.write("⚠️ Debug 9: Table generation complete")
             
             st.write(" ")
             st.write("⚠️ - Initial Table complete ")
