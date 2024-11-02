@@ -151,10 +151,6 @@ def Module_1():
     st.write(" ")
     st.write("⚠️ - Defining Truth Table Class")
     
-#   Create instance after class definition
-    st.write(">> Debug 9a - About to create TruthTable instance")
-    generate_table = TruthTable  # This line was missing  
-    
     
     class TruthTable:
         def __init__(self, n=14, x=31, m=30, y=35):
@@ -169,7 +165,13 @@ def Module_1():
             self.generate_table()
             st.write(" >> debug 4 - general table creation completed ")
 
-        def generate_table(self):
+        
+ #          Create instance after class definition
+            st.write(">> Debug 9a - About to create TruthTable instance")
+            generate_table = TruthTable  # This line was missing         
+        
+
+def generate_table(self):
             st.write(" >> debug 5 - Repopulating general table")
             st.write("⚠️ - Generating Truth Table with predefined validation rules")
             try:
