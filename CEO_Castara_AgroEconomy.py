@@ -172,12 +172,14 @@ def Module_1():
                 for x in range(self.x):
                     for m in range(self.m):
                         for y in range(self.y):
+                            st.write(f">> Debug 7: Processing point ({n},{x},{m},{y})")
                             is_valid = valid_choice(
                                 st.session_state.selected_role,
                                 st.session_state.selected_sub_role,
                                 st.session_state.selected_action,
                                 st.session_state.selected_activity
                             )
+                            st.write(">> Debug 8: valid_choice returned")
                             self.table[n, x, m, y] = int(bool(is_valid))
             
             st.write(" ")
