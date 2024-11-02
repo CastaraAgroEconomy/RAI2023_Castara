@@ -151,6 +151,11 @@ def Module_1():
     st.write(" ")
     st.write("⚠️ - Defining Truth Table Class")
     
+#   Create instance after class definition
+    st.write(">> Debug 9a - About to create TruthTable instance")
+    generate_table = TruthTable()  # This line was missing  
+    
+    
     class TruthTable:
         def __init__(self, n=14, x=31, m=30, y=35):
             st.write(" >> debug 1 - defined __init__ ")
@@ -186,13 +191,7 @@ def Module_1():
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
-            
-# Create instance after class definition
-            st.write(">> Debug 9a - About to create TruthTable instance")
-            generate_table = TruthTable()  # This line was missing
-            st.write(">> Debug 9b - TruthTable instance created")
-
-            
+    
             st.write(">> Debug 9c: Table generation complete")
             
             st.write(" ")
