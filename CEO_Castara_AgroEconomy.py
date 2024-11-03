@@ -170,44 +170,44 @@ def Module_1():
 
             st.write("⚠️ - Generating Truth Table with predefined validation rules")
 
-def generate_table(self):
-    st.write("debug 5 - Repopulating general table")
-    try:
-        for n in range(self.n):
-            st.write(f"debug 6: Processing n={n}")
-            for x in range(self.x):
-                for m in range(self.m):
-                    for y in range(self.y):
-                        st.write(f"debug 7: Processing point ({n},{x},{m},{y})")
-                        is_valid = valid_choice(
-                            st.session_state.selected_role,
-                            st.session_state.selected_sub_role,
-                            st.session_state.selected_action,
-                            st.session_state.selected_activity
-                        )
-                        st.write("debug 8: valid_choice returned")
-                        self.table[n, x, m, y] = int(bool(is_valid))
+        def generate_table(self):
+            st.write("debug 5 - Repopulating general table")
+            try:
+                for n in range(self.n):
+                    st.write(f"debug 6: Processing n={n}")
+                    for x in range(self.x):
+                        for m in range(self.m):
+                            for y in range(self.y):
+                                st.write(f"debug 7: Processing point ({n},{x},{m},{y})")
+                                is_valid = valid_choice(
+                                    st.session_state.selected_role,
+                                    st.session_state.selected_sub_role,
+                                    st.session_state.selected_action,
+                                    st.session_state.selected_activity
+                                )
+                                st.write("debug 8: valid_choice returned")
+                                self.table[n, x, m, y] = int(bool(is_valid))
             
-    except Exception as e:
-        st.error(f"Error in generate_table: {str(e)}")
-        raise  # This will show the full error traceback
+            except Exception as e:
+                st.error(f"Error in generate_table: {str(e)}")
+                raise  # This will show the full error traceback
 
-#   Create instance after class definition
-        st.write("debug 9 - About to create TruthTable instance")
-        truth_table = TruthTable()  # This line was missing         
-        st.write("debug 10: Table generation complete")
+#       Create instance after class definition
+            st.write("debug 9 - About to create TruthTable instance")
+            truth_table = TruthTable()  # This line was missing         
+            st.write("debug 10: Table generation complete")
         
-        st.write(" ")
-        st.write("⚠️ - Initial Table complete ")
+            st.write(" ")
+            st.write("⚠️ - Initial Table complete ")
             
-        if validate_selection(n, x, m, y):
-            st.success("Valid combination!")
-        else:
-            next_step = get_next_valid_selection(n, x, m, y)
-            st.error(f"Invalid combination. Please re-select your {next_step}.")
+            if validate_selection(n, x, m, y):
+                st.success("Valid combination!")
+            else:
+                next_step = get_next_valid_selection(n, x, m, y)
+                st.error(f"Invalid combination. Please re-select your {next_step}.")
 
-    st.session_state.return_to_main = True
-    return
+        st.session_state.return_to_main = True
+        return
     
 def get_next_valid_selection(self, n, x, m, y):
             
