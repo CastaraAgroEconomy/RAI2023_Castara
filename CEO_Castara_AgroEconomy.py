@@ -154,11 +154,14 @@ def Module_1():
     
     class TruthTable:
         def __init__(self, n=14, x=31, m=30, y=35):
+            
             st.write(" >> debug 1 - defined __init__ ")
+            
             self.n = n
             self.x = x
             self.m = m
             self.y = y
+            
             st.write(" >> debug 2 - about to create np table of zeros")
             self.table = np.zeros((n, x, m, y), dtype=int)
             st.write(" >> debug 3 - array created ")
