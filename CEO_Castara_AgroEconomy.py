@@ -250,9 +250,9 @@ def Module_1():
             
 
 #   Create instance after class definition
-            st.write("debug 9 - About to create TruthTable instance")
-            truth_table = TruthTable()  # This line was missing         
-            st.write("debug 10: Table generation complete")
+    st.write("debug 9 - About to create TruthTable instance")
+    truth_table = TruthTable()  # This line was missing         
+    st.write("debug 10: Table generation complete")
 
 
         
