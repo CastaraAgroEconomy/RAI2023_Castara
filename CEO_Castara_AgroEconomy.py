@@ -210,51 +210,48 @@ def Module_1():
             return
 
         
-        def get_next_valid_selection(self, n, x, m, y):
+            def get_next_valid_selection(self, n, x, m, y):
             
-#       Function to identify the next level within invalid choices and returns it
+#           Function to identify the next level within invalid choices and returns it
         
-            if self.table[n, :, :, :].max() == 0:
-                return "role"
-            elif self.table[n, x, :, :].max() == 0:
-                return "sub_role"
-            elif self.table[n, x, m, :].max() == 0:
-                return "action"
-            else:
-                return "activity"
+                if self.table[n, :, :, :].max() == 0:
+                    return "role"
+                elif self.table[n, x, :, :].max() == 0:
+                    return "sub_role"
+                elif self.table[n, x, m, :].max() == 0:
+                    return "action"
+                else:
+                    return "activity"
 
+    
+            def validate_selection(n, x, m, y):
+
+#           Function to validate selection       
+#           Uses the validate_choice function to determine if selection is valid
+
+                st.write(" ")
+                st.write("⚠️ - Confirming valid combination; searching")
+
+                Module_2()
+            
+                is_valid = is_valid_combination(
+                    st.session_state.selected_role,
+                    st.session_state.selected_sub_role,
+                    st.session_state.selected_action,
+                    st.session_state.selected_activity
+                )
+
+                st.write(" ") 
+                st.write("⚠️ - Truth Table consulted ")
+    
+                st.write(" ")
+                st.write("⚠️ - Returning execution to central App ")
         
-
-    
-        def validate_selection(n, x, m, y):
-
-#       Function to validate selection       
-#       Uses the validate_choice function to determine if selection is valid
-
-            st.write(" ")
-            st.write("⚠️ - Confirming valid combination; searching")
-
-            Module_2()
-            
-            is_valid = is_valid_combination(
-                st.session_state.selected_role,
-                st.session_state.selected_sub_role,
-                st.session_state.selected_action,
-                st.session_state.selected_activity
-            )
-
-            st.write(" ") 
-            st.write("⚠️ - Truth Table consulted ")
-    
-            st.write(" ")
-            st.write("⚠️ - Returning execution to central App ")
-    
-            
-            if is_valid:
-                st.session_state.R_go = 1
-            else:
-                st.session_state.R_go = 0
-            return is_valid
+                if is_valid:
+                    st.session_state.R_go = 1
+                else:
+                    st.session_state.R_go = 0
+                return is_valid
             
    
         
