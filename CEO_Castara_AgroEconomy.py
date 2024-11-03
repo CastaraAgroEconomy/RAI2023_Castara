@@ -329,8 +329,6 @@ def validate_choice(selected_role, selected_sub_role, selected_action, selected_
         
     return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
-return
-
 # ======================
 # End of second Module :
 # ======================
