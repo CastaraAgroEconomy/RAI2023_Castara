@@ -166,10 +166,6 @@ def Module_1():
             st.write(" >> debug 4 - general table creation completed ")
 
         
-#   Create instance after class definition
-    st.write(">> Debug 9a - About to create TruthTable instance")
-#    generate_table = TruthTable  # This line was missing         
-        
 
 def generate_table(self):
     st.write(" >> debug 5 - Repopulating general table")
@@ -194,7 +190,10 @@ def generate_table(self):
         st.error(f"Error in generate_table: {str(e)}")
         raise  # This will show the full error traceback
     
-        st.write(">> Debug 9c: Table generation complete")
+#   Create instance after class definition
+        st.write(">> Debug 9a - About to create TruthTable instance")
+        generate_table = TruthTable  # This line was missing         
+        st.write(">> Debug 9b: Table generation complete")
             
         st.write(" ")
         st.write("⚠️ - Initial Table complete ")
@@ -204,7 +203,10 @@ def generate_table(self):
         else:
             next_step = get_next_valid_selection(n, x, m, y)
             st.error(f"Invalid combination. Please re-select your {next_step}.")
-        
+
+
+
+    
     def get_next_valid_selection(self, n, x, m, y):
             
 #   Determines the next level with invalid choices and returns it
