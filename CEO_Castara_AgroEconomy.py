@@ -207,7 +207,7 @@ def Module_1():
                 st.error(f"Invalid combination. Please re-select your {next_step}.")
 
         st.session_state.return_to_main = True
-            return
+        return
 
         
         def get_next_valid_selection(self, n, x, m, y):
