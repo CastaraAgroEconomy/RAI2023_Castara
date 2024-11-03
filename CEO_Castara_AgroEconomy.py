@@ -207,7 +207,7 @@ def Module_1():
 
 
         def validate_choice(selected_role, selected_sub_role, selected_action, selected_activity):
-        """Validate the selection by checking if the combination matches valid rules."""
+            """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")
             st.write("⚠️ - Preparing to validate selected choices as a combination ")
