@@ -168,10 +168,10 @@ def Module_1():
             self.generate_table()
             st.write("debug 4 - general table creation completed ")
 
+            st.write("⚠️ - Generating Truth Table with predefined validation rules")
 
 def generate_table(self):
     st.write("debug 5 - Repopulating general table")
-    st.write("⚠️ - Generating Truth Table with predefined validation rules")
     try:
         for n in range(self.n):
             st.write(f"debug 6: Processing n={n}")
