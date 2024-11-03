@@ -236,18 +236,18 @@ def generate_table(self):
             st.session_state.selected_activity
         )
 
-            st.write(" ") 
-            st.write("⚠️ - Truth Table consulted ")
+        st.write(" ") 
+        st.write("⚠️ - Truth Table consulted ")
     
-            st.write(" ")
-            st.write("⚠️ - Returning execution to central App ")
+        st.write(" ")
+        st.write("⚠️ - Returning execution to central App ")
     
             
-            if is_valid:
-                st.session_state.R_go = 1
-            else:
-                st.session_state.R_go = 0
-            return is_valid
+        if is_valid:
+            st.session_state.R_go = 1
+        else:
+            st.session_state.R_go = 0
+        return is_valid
             
     st.session_state.return_to_main = True
     return
