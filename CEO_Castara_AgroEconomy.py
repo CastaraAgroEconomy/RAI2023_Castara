@@ -176,7 +176,7 @@ def generate_table(self):
     st.write("⚠️ - Generating Truth Table with predefined validation rules")
     try:
         for n in range(self.n):
-        st.write(f">> Debug 6: Processing n={n}")
+            st.write(f">> Debug 6: Processing n={n}")
             for x in range(self.x):
                 for m in range(self.m):
                     for y in range(self.y):
