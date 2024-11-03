@@ -172,23 +172,23 @@ def Module_1():
         
 
 def generate_table(self):
-            st.write(" >> debug 5 - Repopulating general table")
-            st.write("⚠️ - Generating Truth Table with predefined validation rules")
-            try:
-                for n in range(self.n):
-                    st.write(f">> Debug 6: Processing n={n}")
-                    for x in range(self.x):
-                        for m in range(self.m):
-                            for y in range(self.y):
-                                st.write(f">> Debug 7: Processing point ({n},{x},{m},{y})")
-                                is_valid = valid_choice(
-                                    st.session_state.selected_role,
-                                    st.session_state.selected_sub_role,
-                                    st.session_state.selected_action,
-                                    st.session_state.selected_activity
-                                )
-                                st.write(">> Debug 8: valid_choice returned")
-                                self.table[n, x, m, y] = int(bool(is_valid))
+    st.write(" >> debug 5 - Repopulating general table")
+    st.write("⚠️ - Generating Truth Table with predefined validation rules")
+    try:
+        for n in range(self.n):
+        st.write(f">> Debug 6: Processing n={n}")
+            for x in range(self.x):
+                for m in range(self.m):
+                    for y in range(self.y):
+                        st.write(f">> Debug 7: Processing point ({n},{x},{m},{y})")
+                        is_valid = valid_choice(
+                            st.session_state.selected_role,
+                            st.session_state.selected_sub_role,
+                            st.session_state.selected_action,
+                            st.session_state.selected_activity
+                        )
+                        st.write(">> Debug 8: valid_choice returned")
+                        self.table[n, x, m, y] = int(bool(is_valid))
             
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
