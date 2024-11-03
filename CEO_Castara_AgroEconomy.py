@@ -193,9 +193,9 @@ def generate_table(self):
         raise  # This will show the full error traceback
 
 #   Create instance after class definition
-        st.write(">> Debug 9a - About to create TruthTable instance")
+        st.write(">> Debug 9 - About to create TruthTable instance")
         truth_table = TruthTable()  # This line was missing         
-        st.write(">> Debug 0: Table generation complete")
+        st.write(">> Debug 10: Table generation complete")
         
         st.write(" ")
         st.write("⚠️ - Initial Table complete ")
