@@ -206,8 +206,8 @@ def generate_table(self):
             next_step = get_next_valid_selection(n, x, m, y)
             st.error(f"Invalid combination. Please re-select your {next_step}.")
 
-st.session_state.return_to_main = True
-return
+    st.session_state.return_to_main = True
+    return
     
 def get_next_valid_selection(self, n, x, m, y):
             
