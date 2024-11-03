@@ -155,37 +155,37 @@ def Module_1():
     class TruthTable:
         def __init__(self, n=14, x=31, m=30, y=35):
             
-            st.write(" >> debug 1 - defined __init__ ")
+            st.write("debug 1 - defined __init__ ")
             
             self.n = n
             self.x = x
             self.m = m
             self.y = y
             
-            st.write(" >> debug 2 - about to create np table of zeros")
+            st.write("debug 2 - about to create np table of zeros")
             self.table = np.zeros((n, x, m, y), dtype=int)
-            st.write(" >> debug 3 - array created ")
+            st.write("debug 3 - array created ")
             self.generate_table()
-            st.write(" >> debug 4 - general table creation completed ")
+            st.write("debug 4 - general table creation completed ")
 
 
 def generate_table(self):
-    st.write(" >> debug 5 - Repopulating general table")
+    st.write("debug 5 - Repopulating general table")
     st.write("⚠️ - Generating Truth Table with predefined validation rules")
     try:
         for n in range(self.n):
-            st.write(f">> Debug 6: Processing n={n}")
+            st.write(f"debug 6: Processing n={n}")
             for x in range(self.x):
                 for m in range(self.m):
                     for y in range(self.y):
-                        st.write(f">> Debug 7: Processing point ({n},{x},{m},{y})")
+                        st.write(f"debug 7: Processing point ({n},{x},{m},{y})")
                         is_valid = valid_choice(
                             st.session_state.selected_role,
                             st.session_state.selected_sub_role,
                             st.session_state.selected_action,
                             st.session_state.selected_activity
                         )
-                        st.write(">> Debug 8: valid_choice returned")
+                        st.write("debug 8: valid_choice returned")
                         self.table[n, x, m, y] = int(bool(is_valid))
             
     except Exception as e:
@@ -193,9 +193,9 @@ def generate_table(self):
         raise  # This will show the full error traceback
 
 #   Create instance after class definition
-        st.write(">> Debug 9 - About to create TruthTable instance")
+        st.write("debug 9 - About to create TruthTable instance")
         truth_table = TruthTable()  # This line was missing         
-        st.write(">> Debug 10: Table generation complete")
+        st.write("debug 10: Table generation complete")
         
         st.write(" ")
         st.write("⚠️ - Initial Table complete ")
