@@ -150,6 +150,12 @@ def Module_1():
 
     st.write(" ")
     st.write("⚠️ - Defining Truth Table Class")
+
+
+#   Create instance after class definition
+    st.write(">> Debug 9a - About to create TruthTable instance")
+    generate_table = TruthTable  # This line was missing         
+    st.write(">> Debug 0: Table generation complete")
     
     
     class TruthTable:
@@ -189,11 +195,6 @@ def generate_table(self):
     except Exception as e:
         st.error(f"Error in generate_table: {str(e)}")
         raise  # This will show the full error traceback
-    
-#   Create instance after class definition
-        st.write(">> Debug 9a - About to create TruthTable instance")
-        generate_table = TruthTable  # This line was missing         
-        st.write(">> Debug 9b: Table generation complete")
             
         st.write(" ")
         st.write("⚠️ - Initial Table complete ")
@@ -203,7 +204,6 @@ def generate_table(self):
         else:
             next_step = get_next_valid_selection(n, x, m, y)
             st.error(f"Invalid combination. Please re-select your {next_step}.")
-
 
 
     
