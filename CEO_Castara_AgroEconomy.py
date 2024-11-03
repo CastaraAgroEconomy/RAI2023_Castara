@@ -150,12 +150,6 @@ def Module_1():
 
     st.write(" ")
     st.write("⚠️ - Defining Truth Table Class")
-
-
-#   Create instance after class definition
-    st.write(">> Debug 9a - About to create TruthTable instance")
-    generate_table = TruthTable  # This line was missing         
-    st.write(">> Debug 0: Table generation complete")
     
     
     class TruthTable:
@@ -171,7 +165,6 @@ def Module_1():
             self.generate_table()
             st.write(" >> debug 4 - general table creation completed ")
 
-        
 
 def generate_table(self):
     st.write(" >> debug 5 - Repopulating general table")
@@ -195,7 +188,12 @@ def generate_table(self):
     except Exception as e:
         st.error(f"Error in generate_table: {str(e)}")
         raise  # This will show the full error traceback
-            
+
+#   Create instance after class definition
+        st.write(">> Debug 9a - About to create TruthTable instance")
+        truth_table = TruthTable()  # This line was missing         
+        st.write(">> Debug 0: Table generation complete")
+        
         st.write(" ")
         st.write("⚠️ - Initial Table complete ")
             
@@ -205,54 +203,54 @@ def generate_table(self):
             next_step = get_next_valid_selection(n, x, m, y)
             st.error(f"Invalid combination. Please re-select your {next_step}.")
 
-
+st.session_state.return_to_main = True
+return
     
-    def get_next_valid_selection(self, n, x, m, y):
+def get_next_valid_selection(self, n, x, m, y):
             
-#   Determines the next level with invalid choices and returns it
+#   Function to identify the next level within invalid choices and returns it
         
-        if self.table[n, :, :, :].max() == 0:
-            return "role"
-        elif self.table[n, x, :, :].max() == 0:
-            return "sub_role"
-        elif self.table[n, x, m, :].max() == 0:
-            return "action"
-        else:
-            return "activity"
+    if self.table[n, :, :, :].max() == 0:
+        return "role"
+    elif self.table[n, x, :, :].max() == 0:
+        return "sub_role"
+    elif self.table[n, x, m, :].max() == 0:
+        return "action"
+    else:
+        return "activity"
 
 #   Function to validate selection
     
-    def validate_selection(n, x, m, y):
+def validate_selection(n, x, m, y):
         
 #   Uses the validate_choice function to determine if selection is valid
 
-        st.write(" ")
-        st.write("⚠️ - Confirming valid combination; searching")
+    st.write(" ")
+    st.write("⚠️ - Confirming valid combination; searching")
 
-        Module_2()
+    Module_2()
             
-        is_valid = is_valid_combination(
-            st.session_state.selected_role,
-            st.session_state.selected_sub_role,
-            st.session_state.selected_action,
-            st.session_state.selected_activity
-        )
+    is_valid = is_valid_combination(
+        st.session_state.selected_role,
+        st.session_state.selected_sub_role,
+        st.session_state.selected_action,
+        st.session_state.selected_activity
+    )
 
-        st.write(" ") 
-        st.write("⚠️ - Truth Table consulted ")
+    st.write(" ") 
+    st.write("⚠️ - Truth Table consulted ")
     
-        st.write(" ")
-        st.write("⚠️ - Returning execution to central App ")
+    st.write(" ")
+    st.write("⚠️ - Returning execution to central App ")
     
             
-        if is_valid:
-            st.session_state.R_go = 1
-        else:
-            st.session_state.R_go = 0
-        return is_valid
+    if is_valid:
+        st.session_state.R_go = 1
+    else:
+        st.session_state.R_go = 0
+    return is_valid
             
-    st.session_state.return_to_main = True
-    return
+   
         
 # =====================
 # End of first Module :
