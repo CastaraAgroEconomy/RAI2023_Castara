@@ -211,9 +211,6 @@ def Module_1():
         def is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity): 
         
             st.write(" ")
-            st.write("⚠️ - Entered Module 3 ")
-        
-            st.write(" ")
             st.write("⚠️ - One moment please, verifying validity of combination picked from list against Truth Table  ")
 
     #       Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
