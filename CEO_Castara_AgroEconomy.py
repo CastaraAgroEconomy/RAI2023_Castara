@@ -166,6 +166,7 @@ def Module_1():
             self.table = np.zeros((n, x, m, y), dtype=int)
             st.write("debug 3 - array created ")
             self.generate_table()
+            
             st.write("debug 4 - general table creation completed ")
 
             st.write("⚠️ - Generating Truth Table with predefined validation rules")
@@ -174,11 +175,11 @@ def Module_1():
             st.write("debug 5 - Repopulating general table")
             try:
                 for n in range(self.n):
-                    st.write(f"debug 6: Processing n={n}")
+                    st.write(f"debug 6: Processing n={n+1}")
                     for x in range(self.x):
                         for m in range(self.m):
                             for y in range(self.y):
-                                st.write(f"debug 7: Processing point ({n},{x},{m},{y})")
+                                st.write(f"debug 7: Processing row ({n+1},{x+1},{m+1},{y+1})")
                                 is_valid = self.validate_choice(
                                     st.session_state.selected_role,
                                     st.session_state.selected_sub_role,
