@@ -247,12 +247,6 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Preparing to validate chosen items")
             st.write(".... as a four item combination")
-        
-            self.is_valid_combination(st.session_state.selected_role, 
-                                      st.session_state.selected_sub_role, 
-                                      st.session_stats.selected_action, 
-                                      st.session_state.selected_activity
-                                     )
 
             return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
