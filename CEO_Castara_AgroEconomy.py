@@ -215,7 +215,8 @@ def Module_1():
             st.write(" ")
             st.write(".... verifying validity of combination")
             st.write(".... picked from list, against Truth Table")
-
+            st.write(" ")
+            
     #       Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
             if self.selected_action == "System Design & Optimization" and self.selected_role not in ["Agricultural Engineers", "System Technicians"]:
                 return 0
