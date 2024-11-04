@@ -243,13 +243,13 @@ def Module_1():
             st.write("⚠️ - Preparing to validate chosen items")
             st.write("   .... as a four item combination")
 
-            if validate_selection(self, n, x, m, y):
+            if self.validate_selection(self, n, x, m, y):
                 st.success("Valid combination!")
             else:
                 next_step = get_next_valid_selection(self, n, x, m, y)
                 st.error(f"Invalid combination. Please re-select your {next_step}.")
 
-            return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
+            return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
 
         
