@@ -179,7 +179,7 @@ def Module_1():
                     for x in range(self.x):
                         for m in range(self.m):
                             for y in range(self.y):
-                                st.write(f"debug 7: Processing row ({n+1},{x+1},{m+1},{y+1})")
+                                st.write(f"debug 7: Validating selection against ({n},{x},{m},{y})")
                                 is_valid = self.validate_choice(
                                     st.session_state.selected_role,
                                     st.session_state.selected_sub_role,
