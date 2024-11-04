@@ -214,7 +214,7 @@ def Module_1():
         
             Module_3()
         
-            return is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity)
+            return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
 
         
