@@ -181,6 +181,10 @@ def Module_1():
                             for y in range(self.y):
                                 st.write(f"debug 7: Validating selection against ({n},{x},{m},{y})")
                                 is_valid = self.validate_choice(
+                                    st.session_state.n 
+                                    st.session_state.x
+                                    st.session_stats.m
+                                    st.session_state.y
                                     st.session_state.selected_role,
                                     st.session_state.selected_sub_role,
                                     st.session_state.selected_action,
@@ -237,7 +241,7 @@ def Module_1():
 
         
         
-        def validate_choice(self, selected_role, selected_sub_role, selected_action, selected_activity):
+        def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
             """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")
