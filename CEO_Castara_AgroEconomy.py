@@ -206,15 +206,15 @@ def Module_1():
 
 
 
-        def valid_choice(selected_role, selected_sub_role, selected_action, selected_activity):
-            """Validate the selection by checking if the combination matches valid rules."""
+            def valid_choice(selected_role, selected_sub_role, selected_action, selected_activity):
+                """Validate the selection by checking if the combination matches valid rules."""
         
-            st.write(" ")
-            st.write("⚠️ - Preparing to validate selected choices as a combination ")
+                st.write(" ")
+                st.write("⚠️ - Preparing to validate selected choices as a combination ")
         
-            Module_3()
+                Module_3()
         
-            return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
+                return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
 
         
