@@ -212,7 +212,7 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Preparing to validate chosen items as a four item combination ")
         
-            Module_3()
+            self.Module_3()
         
             return is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity)
 
@@ -231,6 +231,7 @@ def Module_1():
             else:
                 return "activity"
 
+        
     
         def validate_selection(self, n, x, m, y):
 
