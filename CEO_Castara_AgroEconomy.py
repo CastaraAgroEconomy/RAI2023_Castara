@@ -241,10 +241,10 @@ def Module_1():
             """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")
-            st.write("⚠️ - Preparing to validate chosen items")
-            st.write("   .... as a four item combination")
+            st.write("⚠️ - Validating chosen items")
+            st.write("     .... as a four item combination")
 
-            if validate_selection(self, n, x, m, y):
+            if self.validate_selection(self, n, x, m, y):
                 st.success("Valid combination!")
             else:
                 next_step = get_next_valid_selection(self, n, x, m, y)
