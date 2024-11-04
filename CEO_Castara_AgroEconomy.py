@@ -203,9 +203,9 @@ def Module_1():
 
             st.session_state.return_to_main = True
             return
+        
 
-    
-    
+        
 #       Function to compare selections versus Truth Table data
 
         def is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity): 
@@ -217,29 +217,29 @@ def Module_1():
             st.write("⚠️ - One moment please, verifying validity of combination picked from list against Truth Table  ")
 
     #       Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
-                if self.selected_action == "System Design & Optimization" and self.selected_role not in ["Agricultural Engineers", "System Technicians"]:
-                    return 0
+            if self.selected_action == "System Design & Optimization" and self.selected_role not in ["Agricultural Engineers", "System Technicians"]:
+                return 0
     #       Rule 2: Franchise Operators should not perform technical activities like Nutrient Mix Preparation
-                if self.selected_role == "Franchise Operators" and self.selected_activity in ["Nutrient Mix Preparation", "pH Level Monitoring"]:
-                    return 0
+            if self.selected_role == "Franchise Operators" and self.selected_activity in ["Nutrient Mix Preparation", "pH Level Monitoring"]:
+                return 0
     #       Rule 3: Plant Scientists should focus on Plant Health Assessment and Growth Cycle Planning
-                if self.selected_role == "Plant Scientists" and self.selected_action not in ["Plant Health Assessment", "Growth Cycle Planning"]:
-                    return 0
+            if self.selected_role == "Plant Scientists" and self.selected_action not in ["Plant Health Assessment", "Growth Cycle Planning"]:
+                return 0
     #       Rule 4: Quality Assurance Manager should focus on Quality Control Inspections and Compliance Monitoring
-                if self.selected_sub_role == "Quality Assurance Manager" and self.selected_action not in ["Quality Control Inspections", "Compliance Monitoring"]:
-                    return 0
+            if self.selected_sub_role == "Quality Assurance Manager" and self.selected_action not in ["Quality Control Inspections", "Compliance Monitoring"]:
+                return 0
     #       Rule 5: Franchise Owners should focus on business-related actions like Franchise Performance Review
-                if self.selected_role == "Franchise Operators" and self.selected_action not in ["Franchise Performance Review", "Business Expansion Planning"]:
-                    return 0
+            if self.selected_role == "Franchise Operators" and self.selected_action not in ["Franchise Performance Review", "Business Expansion Planning"]:
+                return 0
     #       Rule 6: Operations Managers should handle actions like Production Planning and Team Coordination
-                if self.selected_role == "Operations Managers" and self.selected_action not in ["Production Planning", "Team Coordination"]:
-                    return 0
+            if self.selected_role == "Operations Managers" and self.selected_action not in ["Production Planning", "Team Coordination"]:
+                return 0
     
     #       Default valid if no rule invalidates it
-                return 1
+            return 1
+
+
         
-        
-   
         
         def validate_choice(self, selected_role, selected_sub_role, selected_action, selected_activity):
             """Validate the selection by checking if the combination matches valid rules."""
@@ -247,9 +247,9 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Preparing to validate chosen items as a four item combination ")
         
-            self.Module_3()
-        
-            return is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity)
+            self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
+
+            return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
 
         
