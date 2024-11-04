@@ -211,7 +211,10 @@ def Module_1():
         def is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity): 
         
             st.write(" ")
-            st.write("⚠️ - One moment please, verifying validity of combination picked from list against Truth Table  ")
+            st.write("⚠️ - One moment please ")
+            st.write(" ")
+            st.write(".... verifying validity of combination")
+            st.write(".... picked from list, against Truth Table")
 
     #       Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
             if self.selected_action == "System Design & Optimization" and self.selected_role not in ["Agricultural Engineers", "System Technicians"]:
@@ -242,9 +245,14 @@ def Module_1():
             """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")
-            st.write("⚠️ - Preparing to validate chosen items as a four item combination ")
+            st.write("⚠️ - Preparing to validate chosen items")
+            st.write(".... as a four item combination")
         
-            self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
+            self.is_valid_combination(st.session_state.selected_role, 
+                                      st.session_state.selected_sub_role, 
+                                      st.session_stats.selected_action, 
+                                      st.session_state.selected_activity
+                                     )
 
             return is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
