@@ -179,13 +179,13 @@ def Module_1():
                         for m in range(self.m):
                             for y in range(self.y):
                                 st.write(f"debug 7: Processing point ({n},{x},{m},{y})")
-                                is_valid = valid_choice(
+                                is_valid = validate_choice(
                                     st.session_state.selected_role,
                                     st.session_state.selected_sub_role,
                                     st.session_state.selected_action,
                                     st.session_state.selected_activity
                                 )
-                                st.write("debug 8: valid choice returned")
+                                st.write("debug 8: validated choice returned")
                                 self.table[n, x, m, y] = int(bool(is_valid))
             
             except Exception as e:
@@ -206,11 +206,11 @@ def Module_1():
 
 
 
-            def valid_choice(selected_role, selected_sub_role, selected_action, selected_activity):
+            def validate_choice(selected_role, selected_sub_role, selected_action, selected_activity):
                 """Validate the selection by checking if the combination matches valid rules."""
         
                 st.write(" ")
-                st.write("⚠️ - Preparing to validate selected choices as a combination ")
+                st.write("⚠️ - Preparing to validate chosen items as a four item combination ")
         
                 Module_3()
         
