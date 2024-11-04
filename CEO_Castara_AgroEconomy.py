@@ -185,7 +185,7 @@ def Module_1():
                                     st.session_state.selected_action,
                                     st.session_state.selected_activity
                                 )
-                                st.write("debug 8: valid_choice returned")
+                                st.write("debug 8: valid choice returned")
                                 self.table[n, x, m, y] = int(bool(is_valid))
             
             except Exception as e:
@@ -206,7 +206,7 @@ def Module_1():
 
 
 
-        def validate_choice(selected_role, selected_sub_role, selected_action, selected_activity):
+        def valid_choice(selected_role, selected_sub_role, selected_action, selected_activity):
             """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")
