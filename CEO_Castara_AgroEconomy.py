@@ -183,7 +183,7 @@ def Module_1():
                                 is_valid = self.validate_choice(
                                     st.session_state.n,
                                     st.session_state.x,
-                                    st.session_stats.m,
+                                    st.session_state.m,
                                     st.session_state.y,
                                     st.session_state.selected_role,
                                     st.session_state.selected_sub_role,
