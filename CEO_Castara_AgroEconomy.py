@@ -273,7 +273,7 @@ def Module_1():
 
         
     
-        def validate_selection(self, n, x, m, y, selected_role, selected_sub-role, selected_action, selected_activity):
+        def validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
 
 #       Function to validate selection       
 #       Uses the validate_choice function to determine if selection is valid
