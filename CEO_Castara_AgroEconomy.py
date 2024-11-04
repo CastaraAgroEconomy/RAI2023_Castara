@@ -276,7 +276,7 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Confirming valid combination; searching")
             
-            is_valid = self.is_valid_combination(
+            is_valid = is_valid_combination(
                 st.session_state.selected_role,
                 st.session_state.selected_sub_role,
                 st.session_state.selected_action,
