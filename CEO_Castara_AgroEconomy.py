@@ -195,10 +195,10 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Initial Table complete ")
             
-            if validate_selection(n, x, m, y):
+            if validate_selection(self, n, x, m, y):
                 st.success("Valid combination!")
             else:
-                next_step = get_next_valid_selection(n, x, m, y)
+                next_step = get_next_valid_selection(self, n, x, m, y)
                 st.error(f"Invalid combination. Please re-select your {next_step}.")
 
             st.session_state.return_to_main = True
