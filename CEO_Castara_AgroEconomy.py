@@ -211,7 +211,7 @@ def Module_1():
     class TruthTable:
         def __init__(self, n=2, x=2, m=2, y=2):
             
-            st.write("debug 1 - defined __init__ ")
+            st.write("debug 1 - defined 'init' ")
             
             self.n = n
             self.x = x
@@ -299,7 +299,7 @@ def Module_1():
         
             if is_valid:
                 st.session_state.R_go = 1
-                st.success("Proceeding to feature")
+                st.success("👌 Proceeding to feature")
             else:
                 st.session_state.R_go = 0
                 st.error(f" the selected combination {n},{x},{m},{y} is invalid")
@@ -353,15 +353,15 @@ def Module_1():
                 return 0
     
 #           Default valid if no rule invalidates it
-            st.success("Valid selection combination ! ")
+            st.success("Selected combination not invalid ! ")
             return 1
                 
             
 
 #   Create instance after class definition
-    st.write("debug 0 - About to create TruthTable instance")
+    st.write("debug 0 - Creating TruthTable instance")
     truth_table = TruthTable()  # This line was missing         
-    st.write("debug 9: Table generation complete")
+    st.write("debug 9: Table generation completed")
 
 
         
