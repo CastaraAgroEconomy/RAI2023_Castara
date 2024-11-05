@@ -141,8 +141,8 @@ def Module_1():
 # Initialize session state variables if not already present
     for key, default in {
         'n': 1, 'x': 1, 'm': 1, 'y': 1,
-        'selected_role': None, 'selected_sub_role': None,
-        'selected_action': None, 'selected_activity': None,
+        'selected_role': A, 'selected_sub_role': B,
+        'selected_action': C, 'selected_activity': D,
         'self': None, 'R_go': 0
     }.items():
         if key not in st.session_state:
@@ -153,7 +153,7 @@ def Module_1():
     
     
     class TruthTable:
-        def __init__(self, n2, x=2, m=2, y=2):
+        def __init__(self, n=14, x=31, m=30, y=35):
             
             st.write("debug 1 - defined __init__ ")
             
