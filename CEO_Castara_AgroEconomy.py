@@ -30,7 +30,7 @@ if 'selected_action' not in st.session_state:
     st.session_state.selected_action = st.session_state.C[0]
 
 if 'selected_activity' not in st.session_state:
-        st.session_state.selected_activity = st.session_state.D[0
+    st.session_state.selected_activity = st.session_state.D[0]
 
 if 'self' not in st.session_state:
     st.session_state.self = None
