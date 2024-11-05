@@ -220,12 +220,12 @@ def Module_1():
             
             st.write("debug 2 - about to create empty table")
             self.table = np.zeros((n, x, m, y), dtype=int)
-            st.write("debug 3 - array created ")
+            st.write("debug 3 - Empty array created ")
             
-            st.write("⚠️ - Generating Truth Table")
-            st.write("..... in accordance with predefined validation rules")
+            st.write("⚠️ - Generating Truth Table in accordance")
+            st.write("..... with predefined validation rules")
             self.generate_table()
-            st.write("debug 4 - general table creation completed ")
+            st.write("debug 4 - Truth Table about to be created ")
 
 
         def generate_table(self):
@@ -255,7 +255,7 @@ def Module_1():
                 raise  # This will show the full error traceback
         
             st.write(" ")
-            st.write("⚠️ - Truth Table and valudity check completed ")
+            st.write("⚠️ - Truth Table and validity check completed ")
             
             st.session_state.return_to_main = True
             return
@@ -266,7 +266,7 @@ def Module_1():
             """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")
-            st.write("⚠️ - Validating chosen items")
+            st.write("⚠️ - Validating chosen items from lists")
             st.write("     .... as a four item combination")
 
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
@@ -296,9 +296,6 @@ def Module_1():
 
             st.write(" ") 
             st.write("⚠️ - Truth Table consulted ")
-    
-            st.write(" ")
-            st.write("⚠️ - Returning execution to central App ")
         
             if is_valid:
                 st.session_state.R_go = 1
