@@ -8,49 +8,9 @@ VALID_PASSWORD = "password"
 
 #   Initilization of session variables
 
-if 'n' not in st.session_state:
-    st.session_state.n = 1
-
-if 'x' not in st.session_state:
-    st.session_state.x = 1
-
-if 'm' not in st.session_state:
-    st.session_state.m = 1
-
-if 'y' not in st.session_state:
-    st.session_state.y = 1
-
-if 'selected_role' not in st.session_state:
-    st.session_state.selected_role = st.session_state.A[0]
-    
-if 'selected_sub_role' not in st.session_state:
-    st.session_state.selected_sub_role = st.session_state.B[0]
-
-if 'selected_action' not in st.session_state:
-    st.session_state.selected_action = st.session_state.C[0]
-
-if 'selected_activity' not in st.session_state:
-    st.session_state.selected_activity = st.session_state.D[0]
-
-if 'self' not in st.session_state:
-    st.session_state.self = None
-
-if 'R_go' not in st.session_state:
-    st.session_state.R_go = 0
-
-if 'return_to_main' not in st.session_state:
-    st.session_state.return_to_main = False
-
-if 'live' not in st.session_state:
-    st.session_state.live = " "
-
-
-
-
 # ==========================
 # Beginning of second Module :-
 # ==========================
-
 
 # This script defines the options in the four lists 
 # and provides functions to validate user selections against a Truth Table
@@ -110,10 +70,48 @@ if 'selected_action' not in st.session_state and 'C' in st.session_state and st.
 if 'selected_activity' not in st.session_state and 'D' in st.session_state and st.session_state.D:
     st.session_state.selected_activity = st.session_state.D[0]
 
-
 # ======================
 # End of second Module :
 # ======================
+
+
+# Iniitaluzation of other variables in session_stats :-
+
+if 'n' not in st.session_state:
+    st.session_state.n = 1
+
+if 'x' not in st.session_state:
+    st.session_state.x = 1
+
+if 'm' not in st.session_state:
+    st.session_state.m = 1
+
+if 'y' not in st.session_state:
+    st.session_state.y = 1
+
+if 'selected_role' not in st.session_state:
+    st.session_state.selected_role = st.session_state.A[0]
+    
+if 'selected_sub_role' not in st.session_state:
+    st.session_state.selected_sub_role = st.session_state.B[0]
+
+if 'selected_action' not in st.session_state:
+    st.session_state.selected_action = st.session_state.C[0]
+
+if 'selected_activity' not in st.session_state:
+    st.session_state.selected_activity = st.session_state.D[0]
+
+if 'self' not in st.session_state:
+    st.session_state.self = None
+
+if 'R_go' not in st.session_state:
+    st.session_state.R_go = 0
+
+if 'return_to_main' not in st.session_state:
+    st.session_state.return_to_main = False
+
+if 'live' not in st.session_state:
+    st.session_state.live = " "
 
 
 
