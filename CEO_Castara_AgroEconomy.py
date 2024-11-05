@@ -15,13 +15,8 @@ VALID_PASSWORD = "password"
 # This script defines the options in the four lists 
 # and provides functions to validate user selections against a Truth Table
 
-# Define lists A, B, C, and D
-
-st.write(" ")
-st.write("⚠️ - Entered Module 2")
-st.write(" ..... defining list of choices")
     
-# Initialize matrices in session_state if not already there
+# Initialize matrices A, B, C & D in session_state if not already there
 
 if 'A' not in st.session_state:
     st.session_state.A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
