@@ -260,43 +260,7 @@ def Module_1():
             return
         
 
-        
-#       Function to compare selections versus Truth Table data
 
-        def is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity): 
-        
-            st.write(" ")
-            st.write("⚠️ - One moment please ")
-            st.write(" ")
-            st.write(".... verifying validity of combination")
-            st.write(".... picked from list, against Truth Table")
-            st.write(" ")
-            
-    #       Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
-            if selected_action == "System Design & Optimization" and selected_role not in ["Agricultural Engineers", "System Technicians"]:
-                return 0
-    #       Rule 2: Franchise Operators should not perform technical activities like Nutrient Mix Preparation
-            if selected_role == "Franchise Operators" and selected_activity in ["Nutrient Mix Preparation", "pH Level Monitoring"]:
-                return 0
-    #       Rule 3: Plant Scientists should focus on Plant Health Assessment and Growth Cycle Planning
-            if selected_role == "Plant Scientists" and selected_action not in ["Plant Health Assessment", "Growth Cycle Planning"]:
-                return 0
-    #       Rule 4: Quality Assurance Manager should focus on Quality Control Inspections and Compliance Monitoring
-            if selected_sub_role == "Quality Assurance Manager" and selected_action not in ["Quality Control Inspections", "Compliance Monitoring"]:
-                return 0
-    #       Rule 5: Franchise Owners should focus on business-related actions like Franchise Performance Review
-            if selected_role == "Franchise Operators" and selected_action not in ["Franchise Performance Review", "Business Expansion Planning"]:
-                return 0
-    #       Rule 6: Operations Managers should handle actions like Production Planning and Team Coordination
-            if selected_role == "Operations Managers" and selected_action not in ["Production Planning", "Team Coordination"]:
-                return 0
-    
-    #       Default valid if no rule invalidates it
-            return 1
-
-
-        
-        
         def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
             """Validate the selection by checking if the combination matches valid rules."""
         
@@ -312,27 +276,12 @@ def Module_1():
 
             return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
-
         
-        def get_next_valid_selection(self, n, x, m, y):
-            
-#       Function to identify the next level within invalid choices and returns it
         
-            if self.table[n, :, :, :].max() == 0:
-                return "role"
-            elif self.table[n, x, :, :].max() == 0:
-                return "sub_role"
-            elif self.table[n, x, m, :].max() == 0:
-                return "action"
-            else:
-                return "activity"
-
-        
-    
         def validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
 
-#       Function to validate selection       
-#       Uses the validate_choice function to determine if selection is valid
+#           Function to validate selection       
+#           Uses the validate_choice function to determine if selection is valid
 
             st.write(" ")
             st.write("⚠️ - Confirming valid combination; searching")
@@ -355,6 +304,57 @@ def Module_1():
             else:
                 st.session_state.R_go = 0
             return is_valid
+
+
+    
+        def get_next_valid_selection(self, n, x, m, y):
+
+#           Function to identify the next level within invalid choices and returns it
+
+            if self.table[n, :, :, :].max() == 0:
+                return "role"
+            elif self.table[n, x, :, :].max() == 0:
+                return "sub_role"
+            elif self.table[n, x, m, :].max() == 0:
+                return "action"
+            else:
+                return "activity"
+
+        
+       
+
+        def is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity): 
+
+#           Function to compare selections versus Truth Table data
+            st.write(" ")
+            st.write("⚠️ - One moment please ")
+            st.write(" ")
+            st.write(".... verifying validity of combination")
+            st.write(".... picked from list, against Truth Table")
+            st.write(" ")
+            
+#           Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
+            if selected_action == "System Design & Optimization" and selected_role not in ["Agricultural Engineers", "System Technicians"]:
+                return 0
+#           Rule 2: Franchise Operators should not perform technical activities like Nutrient Mix Preparation
+            if selected_role == "Franchise Operators" and selected_activity in ["Nutrient Mix Preparation", "pH Level Monitoring"]:
+                return 0
+#           Rule 3: Plant Scientists should focus on Plant Health Assessment and Growth Cycle Planning
+            if selected_role == "Plant Scientists" and selected_action not in ["Plant Health Assessment", "Growth Cycle Planning"]:
+                return 0
+#           Rule 4: Quality Assurance Manager should focus on Quality Control Inspections and Compliance Monitoring
+            if selected_sub_role == "Quality Assurance Manager" and selected_action not in ["Quality Control Inspections", "Compliance Monitoring"]:
+                return 0
+#           Rule 5: Franchise Owners should focus on business-related actions like Franchise Performance Review
+            if selected_role == "Franchise Operators" and selected_action not in ["Franchise Performance Review", "Business Expansion Planning"]:
+                return 0
+#           Rule 6: Operations Managers should handle actions like Production Planning and Team Coordination
+            if selected_role == "Operations Managers" and selected_action not in ["Production Planning", "Team Coordination"]:
+                return 0
+    
+#           Default valid if no rule invalidates it
+            return 1
+                
             
 
 #   Create instance after class definition
