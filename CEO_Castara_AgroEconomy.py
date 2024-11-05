@@ -109,6 +109,8 @@ if 'selected_action' not in st.session_state and 'C' in st.session_state and st.
 
 if 'selected_activity' not in st.session_state and 'D' in st.session_state and st.session_state.D:
     st.session_state.selected_activity = st.session_state.D[0]
+
+
 # ======================
 # End of second Module :
 # ======================
