@@ -405,28 +405,20 @@ def login_check(username, password):
 def select_role(content_placeholder):
     st.title("Select Your Role")
     
-    roles = ["Agricultural Engineers", "Horticulturists", "System Specialists", "Plant Scientists", "Operations Personnel",
-             "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
-             "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
+    roles = A # refers to list defined in Module 2 for accomodated User roles
     
     selected_role = st.radio("Choose a role", roles)
 
     if st.button("Proceed", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
         pass
     return
-    
+     
 
 # Sub-role selection screen
 def select_sub_role(content_placeholder):
     st.title(f"Select Sub-role for {st.session_state.selected_role}")
     
-    sub_roles = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", 
-    "Operations Director", "Operations Manager", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", 
-    "Nutrient Systems Manager", "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", 
-    "Plant Health Inspector", "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", 
-    "Investment Manager", "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
-    "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", 
-    "Investor Relations Manager"]
+    sub_roles = B # refers to list defined in Module 2 for accomodated User roles respective job functions (sub roles)
     
     selected_sub_role = st.radio("Choose a sub-role", sub_roles)
 
@@ -439,12 +431,7 @@ def select_sub_role(content_placeholder):
 def select_action(content_placeholder):
     st.title(f"Actions available for {st.session_state.selected_role} - {st.session_state.selected_sub_role}")
     
-    actions = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management", "Plant Health Assessment", 
-    "Growth Cycle Planning", "Equipment Maintenance", "Quality Control Inspections", "Harvest Scheduling", "Data Collection & Analysis", 
-    "Compliance Monitoring", "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", 
-    "Team Coordination", "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", 
-    "Franchise Agreement Management", "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", 
-    "Market Analysis", "Investor Reporting", "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing" ]
+    actions = C # refers to list defined in Module 2 for allowable actions for the given Users, their roles and associated functions
     
     selected_action = st.radio("Choose an action", actions)
 
@@ -457,13 +444,7 @@ def select_action(content_placeholder):
 def select_activity(content_placeholder):
     st.title(f"Activity for {st.session_state.selected_role} - {st.session_state.selected_sub_role} - {st.session_state.selected_action}")
     
-    activities = ["pH Level Monitoring", "EC - Electrical Conductivity - Testing", "Temperature Control Adjustment", "Humidity Level Management", 
-    "Light Intensity Calibration", "Nutrient Mix Preparation", "Water Quality Testing", "Growth Rate Documentation", "Equipment Sanitization", 
-    "System Flow Rate Checks", "Plant Spacing Optimization", "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", 
-    "Inventory Management", "Growth Data Recording", "Team Schedule Creation", "Maintenance Log Updates", "Quality Check Documentation", 
-    "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", "Market Research Documentation", 
-    "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", "Capital Distribution Planning", 
-    "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", "Strategy Document Creation", "Compliance Report Filing"]
+    activities = D # refers to list defined in Module 2 for accomodated activities allowable for actions
     
     selected_activity = st.radio("Choose an activity", activities)
 
