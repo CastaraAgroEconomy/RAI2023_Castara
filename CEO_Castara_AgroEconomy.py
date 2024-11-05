@@ -51,6 +51,10 @@ if 'D' not in st.session_state:
                           "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
                           "Strategy Document Creation", "Compliance Report Filing"]
 
+#  Initialize Truth Table Result matrix
+if 'R' not in st.session_state:
+    st.session_state.R = [n=14, x=31, m=30, y=35]
+
 
 
 # Initialize defaults for selected items only if matrices are loaded
@@ -230,11 +234,11 @@ def Module_1():
         def generate_table(self):
             st.write("debug 5 - Repopulating general table")
             try:
-                for n+1 in range(self.n):
+                for n in range(self.n):
                     st.write(f"debug 6: Processing n={n+1}")
-                    for x+1 in range(self.x):
-                        for m+1 in range(self.m):
-                            for y+1 in range(self.y):
+                    for x in range(self.x):
+                        for m in range(self.m):
+                            for y in range(self.y):
                                 st.write(f"debug 7: Validating selection against ({n},{x},{m},{y})")
                                 is_valid = self.validate_choice(
                                     st.session_state.n,
@@ -283,7 +287,8 @@ def Module_1():
 #           Uses the validate_choice function to determine if selection is valid
 
             st.write(" ")
-            st.write("⚠️ - Confirming valid combination; searching")
+            st.write("⚠️ - Confirming combination is valid")
+            st.write(" ..... searching")
             
             is_valid = self.is_valid_combination(
                 st.session_state.selected_role,
@@ -300,8 +305,10 @@ def Module_1():
         
             if is_valid:
                 st.session_state.R_go = 1
+                st.success("Proceeding to feature")
             else:
                 st.session_state.R_go = 0
+                st.error(f" the selected combination {n},{x},{m},{y} is invalid")
             return is_valid
 
 
