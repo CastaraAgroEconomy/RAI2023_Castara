@@ -51,11 +51,6 @@ if 'D' not in st.session_state:
                           "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
                           "Strategy Document Creation", "Compliance Report Filing"]
 
-#  Initialize Truth Table Result matrix
-if 'R' not in st.session_state:
-    st.session_state.R = [n==14, x==31, m==30, y==35]
-
-
 
 # Initialize defaults for selected items only if matrices are loaded
 if 'selected_role' not in st.session_state and 'A' in st.session_state and st.session_state.A:
@@ -201,9 +196,10 @@ def Module_1():
     st.write("⚠️ - Entered Module 1")
     
 # Initialize session state variables if not already present
+    
     for key, default in {
         'n': 1, 'x': 1, 'm': 1, 'y': 1,
-        'self': None, 'R_go': 0
+        'self': None, 'R_go': 0, 'return_to_main' : False, 'live' : " "
     }.items():
         if key not in st.session_state:
             st.session_state[key] = default
@@ -222,17 +218,18 @@ def Module_1():
             self.m = m
             self.y = y
             
-            st.write("debug 2 - about to create np table of zeros")
+            st.write("debug 2 - about to create empty table")
             self.table = np.zeros((n, x, m, y), dtype=int)
             st.write("debug 3 - array created ")
-            self.generate_table()
             
+            st.write("⚠️ - Generating Truth Table")
+            st.write("..... in accordance with predefined validation rules")
+            self.generate_table()
             st.write("debug 4 - general table creation completed ")
 
-            st.write("⚠️ - Generating Truth Table with predefined validation rules")
 
         def generate_table(self):
-            st.write("debug 5 - Repopulating general table")
+            st.write("debug 5 - Repopulating array to create Truth table")
             try:
                 for n in range(self.n):
                     st.write(f"debug 6: Processing n={n+1}")
@@ -251,14 +248,14 @@ def Module_1():
                                     st.session_state.selected_activity
                                 )
                                 st.write("debug 8: validated choice returned")
-                                self.table[n, x, m, y] = int(bool(is_valid))
+                                self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
             
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
         
             st.write(" ")
-            st.write("⚠️ - Initial Table complete ")
+            st.write("⚠️ - Truth Table and valudity check completed ")
             
             st.session_state.return_to_main = True
             return
