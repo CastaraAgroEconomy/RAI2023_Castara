@@ -413,7 +413,7 @@ def login_check(username, password):
 def select_role(content_placeholder):
     st.title("Select Your Role")
     
-    roles = A # refers to list defined in Module 2 for accomodated User roles
+    roles = session_state.A # refers to list defined in Module 2 for accomodated User roles
     
     selected_role = st.radio("Choose a role", roles)
 
@@ -426,7 +426,7 @@ def select_role(content_placeholder):
 def select_sub_role(content_placeholder):
     st.title(f"Select Sub-role for {st.session_state.selected_role}")
     
-    sub_roles = B # refers to list defined in Module 2 for accomodated User roles respective job functions (sub roles)
+    sub_roles = session_state.B # refers to list defined in Module 2 for accomodated User roles respective job functions (sub roles)
     
     selected_sub_role = st.radio("Choose a sub-role", sub_roles)
 
@@ -439,7 +439,7 @@ def select_sub_role(content_placeholder):
 def select_action(content_placeholder):
     st.title(f"Actions available for {st.session_state.selected_role} - {st.session_state.selected_sub_role}")
     
-    actions = C # refers to list defined in Module 2 for allowable actions for the given Users, their roles and associated functions
+    actions = session_state.C # refers to list defined in Module 2 for allowable actions for the given Users, their roles and associated functions
     
     selected_action = st.radio("Choose an action", actions)
 
@@ -452,7 +452,7 @@ def select_action(content_placeholder):
 def select_activity(content_placeholder):
     st.title(f"Activity for {st.session_state.selected_role} - {st.session_state.selected_sub_role} - {st.session_state.selected_action}")
     
-    activities = D # refers to list defined in Module 2 for accomodated activities allowable for actions
+    activities = session_state.D # refers to list defined in Module 2 for accomodated activities allowable for actions
     
     selected_activity = st.radio("Choose an activity", activities)
 
