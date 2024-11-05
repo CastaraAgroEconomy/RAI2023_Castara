@@ -225,7 +225,7 @@ def Module_1():
             st.write("⚠️ - Generating Truth Table in accordance")
             st.write("..... with predefined validation rules")
             self.generate_table()
-            st.write("debug 4 - Truth Table about to be created ")
+            st.write("debug 4 - Truth Table & validity check complete ")
 
 
         def generate_table(self):
@@ -317,7 +317,7 @@ def Module_1():
         
             if is_valid:
                 st.session_state.R_go = 1
-                st.success("👌 combination is a valid selection")
+                st.write("👌 combination is a valid selection")
             else:
                 st.session_state.R_go = 0
                 st.error(f" the selected combination {n},{x},{m},{y} is invalid")
