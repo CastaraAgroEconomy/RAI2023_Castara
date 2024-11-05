@@ -265,7 +265,7 @@ def Module_1():
             else:
                 if st.session.state.R_go == False:
                    if st.session_state.n == 2 and st.session_state.y < 2:
-                       st.write(" .....  Continuing to process)"
+                       st.write(" .....  Continuing to process")
                        st.session_state.return_to_main = False
                        return
                    else:
