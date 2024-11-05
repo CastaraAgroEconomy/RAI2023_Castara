@@ -21,16 +21,16 @@ if 'y' not in st.session_state:
     st.session_state.y = 1
 
 if 'selected_role' not in st.session_state:
-    st.session_state.selected_role = None
+    st.session_state.selected_role = st.session_state.A[0]
     
 if 'selected_sub_role' not in st.session_state:
-    st.session_state.selected_sub_role = None
+    st.session_state.selected_sub_role = st.session_state.B[0]
 
 if 'selected_action' not in st.session_state:
-    st.session_state.selected_action = None
+    st.session_state.selected_action = st.session_state.C[0]
 
 if 'selected_activity' not in st.session_state:
-    st.session_state.selected_activity = None
+        st.session_state.selected_activity = st.session_state.D[0
 
 if 'self' not in st.session_state:
     st.session_state.self = None
@@ -45,11 +45,72 @@ if 'live' not in st.session_state:
     st.session_state.live = " "
 
 
-# The two instructions beliw were part if the  Main script of 
-# the App session's initilization of the first Module :-
-# from RAI2023_Castara.features.Truth_Table.rules_logic import TruthTable
-# R = TruthTable()
-# They provided for call up of rules_logic.py
+
+
+# ==========================
+# Beginning of second Module :-
+# ==========================
+
+def Module_2():
+
+# This script defines the options in the four lists 
+# and provides functions to validate user selections against a Truth Table
+
+# Define lists A, B, C, and D
+
+    st.write(" ")
+    st.write("⚠️ - Entered Module 2")
+    st.write(" ..... defining list of choices")
+    
+        # Initialize matrices in session_state if not already there
+    if 'A' not in st.session_state:
+        st.session_state.A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
+         "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
+         "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
+
+        # Initialize matrices in session_state if not already there
+    if 'B' not in st.session_state:
+        st.session_state.B = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", "Operations Director", 
+         "Operations Managers", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", 
+         "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
+         "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
+         "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
+         "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager"] 
+
+    # Initialize matrices in session_state if not already there
+    if 'C' not in st.session_state:
+        st.session_state.C = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management", "Plant Health Assessment", "Growth Cycle Planning", 
+         "Equipment Maintenance", "Quality Control Inspections", "Harvest Scheduling", "Data Collection & Analysis", "Compliance Monitoring",
+         "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination", 
+         "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", 
+         "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", "Market Analysis", "Investor Reporting",
+         "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing" ]
+
+    # Initialize matrices in session_state if not already there
+    if 'D' not in st.session_state:
+        st.session_state.D = ["pH Level Monitoring", "EC - Electrical Conductivity - Testing", "Temperature Control Adjustment", "Humidity Level Management", "Light Intensity Calibration", 
+         "Nutrient Mix Preparation", "Water Quality Testing", "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization", 
+         "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management", "Growth Data Recording", "Team Schedule Creation", 
+         "Maintenance Log Updates", "Quality Check Documentation", "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", 
+         "Financial Statement Analysis", "Market Research Documentation", "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", 
+         "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
+         "Strategy Document Creation", "Compliance Report Filing"]
+
+    def get_roles():
+        return A
+
+    def get_sub_roles():
+        return B
+
+    def get_actions():
+        return C
+
+    def get_activities():
+        return D
+
+# ======================
+# End of second Module :
+# ======================
 
 
 
@@ -129,6 +190,8 @@ def main():
 
 def Module_1():
 
+    Module_2()
+
 # This script does the following: -
 #	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
 #	2.	Validates each combination using the is_valid_combination function from Rules.py.
@@ -141,17 +204,6 @@ def Module_1():
 # Initialize session state variables if not already present
     for key, default in {
         'n': 1, 'x': 1, 'm': 1, 'y': 1,
-    
-#       Initialize session state variables for selections if not already set, using the first element as the default
-    if 'selected_role' not in st.session_state:
-        st.session_state.selected_role = st.session_state.A[0],
-    if 'selected_sub_role' not in st.session_state:
-        st.session_state.selected_sub_role = st.session_state.B[0],
-    if 'selected_action' not in st.session_state:
-        st.session_state.selected_action = st.session_state.C[0],
-    if 'selected_activity' not in st.session_state:
-        st.session_state.selected_activity = st.session_state.D[0],
-        
         'self': None, 'R_go': 0
     }.items():
         if key not in st.session_state:
@@ -320,77 +372,6 @@ def Module_1():
 # =====================
 # End of first Module :
 # ===================== 
-
-
-
-# ==========================
-# Beginning of second Module :-
-# ==========================
-
-def Module_2():
-
-# This script defines the options in the four lists 
-# and provides functions to validate user selections against a Truth Table
-
-# import itertools
-# import pandas as pd
-
-# from RAI2023_Castara.features.Validation.Rules import is_valid_combination
-
-# Define lists A, B, C, and D
-
-    st.write(" ")
-    st.write("⚠️ - Entered Module 2 ")
-    
-        # Initialize matrices in session_state if not already there
-    if 'A' not in st.session_state:
-        st.session_state.A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
-         "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
-         "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
-
-        # Initialize matrices in session_state if not already there
-    if 'B' not in st.session_state:
-        st.session_state.B = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", "Operations Director", 
-         "Operations Managers", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", 
-         "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
-         "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
-         "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
-         "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager"] 
-
-    # Initialize matrices in session_state if not already there
-    if 'C' not in st.session_state:
-        st.session_state.C = ["System Design & Optimization", "Environmental Parameter Monitoring", "Nutrient Solution Management", "Plant Health Assessment", "Growth Cycle Planning", 
-         "Equipment Maintenance", "Quality Control Inspections", "Harvest Scheduling", "Data Collection & Analysis", "Compliance Monitoring",
-         "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination", 
-         "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", 
-         "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", "Market Analysis", "Investor Reporting",
-         "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing" ]
-
-    # Initialize matrices in session_state if not already there
-    if 'D' not in st.session_state:
-        st.session_state.D = ["pH Level Monitoring", "EC - Electrical Conductivity - Testing", "Temperature Control Adjustment", "Humidity Level Management", "Light Intensity Calibration", 
-         "Nutrient Mix Preparation", "Water Quality Testing", "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization", 
-         "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management", "Growth Data Recording", "Team Schedule Creation", 
-         "Maintenance Log Updates", "Quality Check Documentation", "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", 
-         "Financial Statement Analysis", "Market Research Documentation", "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", 
-         "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
-         "Strategy Document Creation", "Compliance Report Filing"]
-
-    def get_roles():
-        return A
-
-    def get_sub_roles():
-        return B
-
-    def get_actions():
-        return C
-
-    def get_activities():
-        return D
-
-# ======================
-# End of second Module :
-# ======================
 
 
 
