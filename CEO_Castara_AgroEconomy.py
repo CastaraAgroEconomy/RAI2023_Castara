@@ -230,11 +230,11 @@ def Module_1():
         def generate_table(self):
             st.write("debug 5 - Repopulating general table")
             try:
-                for n in range(self.n):
+                for n+1 in range(self.n):
                     st.write(f"debug 6: Processing n={n+1}")
-                    for x in range(self.x):
-                        for m in range(self.m):
-                            for y in range(self.y):
+                    for x+1 in range(self.x):
+                        for m+1 in range(self.m):
+                            for y+1 in range(self.y):
                                 st.write(f"debug 7: Validating selection against ({n},{x},{m},{y})")
                                 is_valid = self.validate_choice(
                                     st.session_state.n,
@@ -270,11 +270,12 @@ def Module_1():
 
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
                 st.success("Valid combination!")
+                return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
             else:
                 next_step = get_next_valid_selection(self, n, x, m, y)
                 st.error(f"Invalid combination. Please re-select your {next_step}.")
+            return 
 
-            return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
 
         
         
