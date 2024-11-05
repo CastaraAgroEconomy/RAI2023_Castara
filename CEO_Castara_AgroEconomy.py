@@ -53,7 +53,7 @@ if 'D' not in st.session_state:
 
 #  Initialize Truth Table Result matrix
 if 'R' not in st.session_state:
-    st.session_state.R = [n=14, x=31, m=30, y=35]
+    st.session_state.R = [n==14, x==31, m==30, y==35]
 
 
 
@@ -75,7 +75,7 @@ if 'selected_activity' not in st.session_state and 'D' in st.session_state and s
 # ======================
 
 
-# Iniitaluzation of other variables in session_stats :-
+# Initalization of other variables in session_stats :-
 
 if 'n' not in st.session_state:
     st.session_state.n = 1
