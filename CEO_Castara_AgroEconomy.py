@@ -262,14 +262,14 @@ def Module_1():
                     st.write(" ..... Access to feature granted 👍")
                     st.session_state.return_to_main = True
                     return
-            elif:
+            elif
                 if st.session.state.R_go == False:
                    if st.session_state.n == 2 and st.session_state.y < 2:
                        st.write(" .....  Continuing to process)"
                        st.session_state.return_to_main = False
                        return
                    else
-                       if st.session_state.n == 2 and session_state.y == 2:
+                       if st.session_state.n == 2 and st.session_state.y == 2:
                            st.write(" ..... Access to feature denied 👎")
                            st.session_state.return_to_main = True
                            return
