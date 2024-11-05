@@ -328,8 +328,9 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - One moment please ")
             st.write(" ")
-            st.write(".... verifying validity of combination")
-            st.write(".... picked from list, against Truth Table")
+            st.write("..... verifying validity of combination,")
+            st.write("..... picked from list,")
+            st.write("..... against Truth Table")
             st.write(" ")
             
 #           Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
@@ -352,7 +353,7 @@ def Module_1():
                 return 0
     
 #           Default valid if no rule invalidates it
-            st.success("Valid four item selection combination ! ")
+            st.success("Valid selection combination ! ")
             return 1
                 
             
