@@ -141,8 +141,17 @@ def Module_1():
 # Initialize session state variables if not already present
     for key, default in {
         'n': 1, 'x': 1, 'm': 1, 'y': 1,
-        'selected_role': A, 'selected_sub_role': B,
-        'selected_action': C, 'selected_activity': D,
+    
+#       Initialize session state variables for selections if not already set, using the first element as the default
+        if 'selected_role' not in st.session_state:
+            st.session_state.selected_role = st.session_state.A[0] if 'A' in st.session_state else None,
+        if 'selected_sub_role' not in st.session_state:
+            st.session_state.selected_sub_role = st.session_state.B[0] if 'B' in st.session_state else None,
+        if 'selected_action' not in st.session_state:
+            st.session_state.selected_action = st.session_state.C[0] if 'C' in st.session_state else None,
+        if 'selected_activity' not in st.session_state:
+            st.session_state.selected_activity = st.session_state.D[0] if 'D' in st.session_state else None,
+        
         'self': None, 'R_go': 0
     }.items():
         if key not in st.session_state:
