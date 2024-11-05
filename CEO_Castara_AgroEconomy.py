@@ -153,7 +153,7 @@ def Module_1():
     
     
     class TruthTable:
-        def __init__(self, n=14, x=31, m=30, y=35):
+        def __init__(self, n2, x=2, m=2, y=2):
             
             st.write("debug 1 - defined __init__ ")
             
