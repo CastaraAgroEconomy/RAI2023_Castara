@@ -256,9 +256,27 @@ def Module_1():
         
             st.write(" ")
             st.write("⚠️ - Truth Table and validity check completed ")
+
+            if st.session_state_R_go = True 
+                if st.session_state.n = 2 and st.session_state.y = 2
+                    st.write(" ..... Access to feature granted 👍")
+                    st.session_state.return_to_main = True
+                    return
+            elif
+                if st.session.state.R_go = False 
+                   if st.session_state.n = 2 and st.session_state.y < 2
+                       st.write(" .....  Continuing to process)"
+                       st.session_state.return_to_main = False
+                       return
+                   else
+                       if st.session_state.n = 2 and session_state.y = 2
+                           st.write(" ..... Access to feature denied 👎")
+                           st.session_state.return_to_main = True
+                           return
+                
+                
+                
             
-            st.session_state.return_to_main = True
-            return
         
 
 
@@ -299,7 +317,7 @@ def Module_1():
         
             if is_valid:
                 st.session_state.R_go = 1
-                st.success("👌 Proceeding to feature")
+                st.success("👌 combination is a valid selection")
             else:
                 st.session_state.R_go = 0
                 st.error(f" the selected combination {n},{x},{m},{y} is invalid")
