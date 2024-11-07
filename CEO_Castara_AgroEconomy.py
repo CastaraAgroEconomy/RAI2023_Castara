@@ -290,7 +290,7 @@ def Module_1():
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
                 return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
             else:
-                next_step = get_next_valid_selection(self, n, x, m, y)
+                next_step = self.get_next_valid_selection(self, n, x, m, y)
                 st.write(f"Invalid combination. Please re-select your {next_step}.")
             return 
 
