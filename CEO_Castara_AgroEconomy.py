@@ -136,10 +136,15 @@ def main():
         with content_placeholder.container():
             select_action(content_placeholder)
     elif st.session_state.return_to_main == False:
-           if st.session_state.stage == "activity_selection":
-              with content_placeholder.container():
-                  select_activity(content_placeholder)
-             
+            with content_placeholder.container():
+                select_activity(content_placeholder)
+    elif st.session_state.return_to_main == False:
+                    with content_placeholder.container():
+                        finalize_selection (content_placeholder)
+
+    
+
+
 # =========================
 # Returned to main Module :-
 # =========================
@@ -156,7 +161,7 @@ def main():
             st.session_state.logged_in = True
             st.session_state.stage = "role_selection"
             st.session_state.R_go = 0
-    elif st.session_state.stage == "activity_selection":
+    elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():        
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
@@ -328,9 +333,12 @@ def Module_1():
             elif self.table[n, x, :, :].max() == 0:
                 st.session_state.stage = "action_selection"
                 return "Action"
-            else:
+            elif self.table[n, x, m, :].max() == 0:
                 st.session_state.stage = "activity_selection"
-                return
+                return "Activity"
+            else: 
+                st.session_state.stage = "finalize_selection"
+                return "Validate"
 
 
 
