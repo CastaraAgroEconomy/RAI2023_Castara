@@ -330,9 +330,12 @@ def Module_1():
                 return "Action"
             elif self.table[n, x, m, :].max() == 0:
                 st.session_state.stage = "activity_selection"
-                return "Activity"
+                return
 
-       
+
+
+
+        
 
         def is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity): 
 
