@@ -271,10 +271,6 @@ def Module_1():
                        st.session_state.return_to_main = True
                        return
                 
-                
-                
-            
-        
 
 
         def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
@@ -288,8 +284,8 @@ def Module_1():
                 return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
             else:
                 next_step = self.get_next_valid_selection(n, x, m, y)
-                st.write("⚠️ - Invalid combination.")
-                st.write(f"..... Please re-select your {next_step}.")
+                st.write("⚠️ - Invalid combination")
+                st.write(f"..... please re-select your {next_step}.")
             return 
 
 
@@ -318,7 +314,7 @@ def Module_1():
                 st.write("👌 combination is a valid selection")
             else:
                 st.session_state.R_go = 0
-                st.write(f" the selected combination {n+1},{x+1},{m+1},{y+1} is invalid")
+                st.write(f" the selected combination {n},{x},{m},{y} is invalid")
             return is_valid
 
 
