@@ -418,22 +418,22 @@ def select_role(content_placeholder):
     
     roles = st.session_state.A # refers to list defined in Module 2 for accomodated User roles
     
-    selected_role = st.radio("Choose a role", roles)
+    selected_role = st.radio("Choose a Role", roles)
 
-    if st.button("Proceed", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
+    if st.button("Choose Job Function next", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
         pass
     return
      
 
 # Sub-role selection screen
 def select_sub_role(content_placeholder):
-    st.title(f"Select Sub-role for {st.session_state.selected_role}")
+    st.title(f" Select Job Function for {st.session_state.selected_role}")
     
     sub_roles = st.session_state.B # refers to list defined in Module 2 for accomodated User roles respective job functions (sub roles)
     
-    selected_sub_role = st.radio("Choose a sub-role", sub_roles)
+    selected_sub_role = st.radio("Choose a Job Function", sub_roles)
 
-    if st.button("Choose Action", on_click=lambda: set_stage("action_selection", "selected_sub_role", selected_sub_role)):
+    if st.button("Choose an Action next", on_click=lambda: set_stage("action_selection", "selected_sub_role", selected_sub_role)):
         pass
     return
     
@@ -444,9 +444,9 @@ def select_action(content_placeholder):
     
     actions = st.session_state.C # refers to list defined in Module 2 for allowable actions for the given Users, their roles and associated functions
     
-    selected_action = st.radio("Choose an action", actions)
+    selected_action = st.radio("Choose an Action", actions)
 
-    if st.button("Choose Activity", on_click=lambda: set_stage("activity_selection", "selected_action", selected_action)):
+    if st.button("Choose an Activity next", on_click=lambda: set_stage("activity_selection", "selected_action", selected_action)):
         pass
     return
     
@@ -459,7 +459,7 @@ def select_activity(content_placeholder):
     
     selected_activity = st.radio("Choose an activity", activities)
 
-    if st.button("Finalize", on_click=lambda: finalize_selection(selected_activity)):
+    if st.button("Validate", on_click=lambda: finalize_selection(selected_activity)):
         pass
     
     return
