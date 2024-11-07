@@ -257,13 +257,13 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Truth Table and validity check completed ")
 
-            if st.session_state.R_go == 1
+            if st.session_state.R_go == 1:
                 if st.session_state.n == 2 and st.session_state.y == 2:
                     st.write(" ..... Access to feature granted 👍")
                     st.session_state.return_to_main = True
                     return
             else:
-                if st.session.state.R_go == 0
+                if st.session.state.R_go == 0:
                    if st.session_state.n == 2 and st.session_state.y < 2:
                        st.write(" .....  Continuing to process")
                        st.session_state.return_to_main = False
