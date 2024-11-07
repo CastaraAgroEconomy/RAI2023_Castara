@@ -247,15 +247,13 @@ def Module_1():
                                     st.session_state.selected_action,
                                     st.session_state.selected_activity
                                 )
-                                st.write("debug 8: validated choice returned")
+                                st.write("⚠️ - Validation of chosen combination completed")
                                 self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
             
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
         
-            st.write(" ")
-            st.write("⚠️ - Truth Table and validity check completed ")
 
             if st.session_state.R_go == 1:
                 if st.session_state.n == 2 and st.session_state.y == 2:
@@ -269,10 +267,9 @@ def Module_1():
                        st.session_state.return_to_main = False
                        return
                    else:
-                       if st.session_state.n == 2 and st.session_state.y == 2:
-                           st.write(" ..... Access to feature denied 👎")
-                           st.session_state.return_to_main = True
-                           return
+                       st.write(" ..... Access to feature denied 👎")
+                       st.session_state.return_to_main = True
+                       return
                 
                 
                 
