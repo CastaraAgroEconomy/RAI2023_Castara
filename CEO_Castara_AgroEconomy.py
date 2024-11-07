@@ -26,11 +26,11 @@ if 'A' not in st.session_state:
 # Initialize matrices in session_state if not already there
 if 'B' not in st.session_state:
     st.session_state.B = ["Head of Agricultural Engineering", "Lead Horticulturist", "Systems Integration Engineer", "Plant Science Director", "Operations Director", 
-                          "Operations Managers", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", 
+                          "Operations Manager", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", 
                           "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
                           "Franchise Owner", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
                           "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
-                          "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager"] 
+                          "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager", "Limited Partner"] 
 
 # Initialize matrices in session_state if not already there
 if 'C' not in st.session_state:
@@ -376,10 +376,9 @@ def Module_1():
 #           Rule 7: Investors should have Job Functions like Investment Analyst, Investor Relations Manager and Limited Partner
             if selected_role == "Investors" and selected_sub_role not in ["Investment Analyst", "Investor Relations Manager", "Limited Partner"]:
                 return 0       
-#           Rule 8: Investors should handle actions like Investment Analyst, Investor Relations Manager and Limited Partner
+#           Rule 8: Investors should handle actions like Investment Performance Monitoring, Franchise Performance Review, Financial Analysis, Risk Assessment, Return on Investment Analysis, Capital Allocation, Market Analysis, Investor Reporting, Performance Metrics Review, Compliance Auditing
             if selected_role == "Operations Managers" and selected_action not in ["Investment Analyst", "Investor Relations Manager", "Limited Partner"]:
-                return 0
-            
+                return 0            
 #           Rule 9: Investors should access financial activities like Investment Portfolio Review, Franchise Audit Execution, Financial Statement Analysis, 
 #                   Risk Assessment Reports, ROI Calculations, Market Trend Analysis, Investor Report Generation, Performance Metric Tracking
             if selected_role == "Investors" and selected_activity not in ["Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", 
