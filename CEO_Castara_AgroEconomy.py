@@ -325,7 +325,7 @@ def Module_1():
 
 
     
-        def get_next_valid_selection(self, n, x, m, y):
+        def get_next_valid_selection(n, x, m, y):
 
 #           Function to identify the next level within invalid choices and returns it
 
