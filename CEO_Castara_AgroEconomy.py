@@ -342,9 +342,6 @@ def Module_1():
 
 
 
-
-        
-
         def is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity): 
 
 #           Function to compare selections versus Truth Table data
@@ -376,8 +373,10 @@ def Module_1():
 #           Rule 7: Investors should have Job Functions like Investment Analyst, Investor Relations Manager and Limited Partner
             if selected_role == "Investors" and selected_sub_role not in ["Investment Analyst", "Investor Relations Manager", "Limited Partner"]:
                 return 0       
-#           Rule 8: Investors should handle actions like Investment Performance Monitoring, Franchise Performance Review, Financial Analysis, Risk Assessment, Return on Investment Analysis, Capital Allocation, Market Analysis, Investor Reporting, Performance Metrics Review, Compliance Auditing
-            if selected_role == "Operations Managers" and selected_action not in ["Investment Analyst", "Investor Relations Manager", "Limited Partner"]:
+#           Rule 8: Investors should handle actions like Investment Performance Monitoring, Franchise Performance Review, Financial Analysis, Risk Assessment, 
+#                   Return on Investment Analysis, Capital Allocation, Market Analysis, Investor Reporting, Performance Metrics Review, Compliance Auditing
+            if selected_role == "Investors" and selected_action not in ["Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Risk Assessment", 
+                                                                        "Return on Investment Analysis", "Capital Allocation", "Market Analysis", "Investor Reporting", "Performance Metrics Review", "Compliance Auditing"]:
                 return 0            
 #           Rule 9: Investors should access financial activities like Investment Portfolio Review, Franchise Audit Execution, Financial Statement Analysis, 
 #                   Risk Assessment Reports, ROI Calculations, Market Trend Analysis, Investor Report Generation, Performance Metric Tracking
