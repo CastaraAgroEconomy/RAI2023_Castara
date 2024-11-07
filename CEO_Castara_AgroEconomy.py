@@ -232,7 +232,7 @@ def Module_1():
             st.write("debug 5 - Repopulating array to create Truth table")
             try:
                 for n in range(1, self.n): 
-                    st.write(f"debug 6: Processing n={n+1}")
+                    st.write(f"debug 6: Processing n={n}")
                     for x in range(1, self.x):
                         for m in range(1, self.m):
                             for y in range(1, self.y):
@@ -291,7 +291,7 @@ def Module_1():
                 return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
             else:
                 next_step = get_next_valid_selection(self, n, x, m, y)
-                st.error(f"Invalid combination. Please re-select your {next_step}.")
+                st.write(f"Invalid combination. Please re-select your {next_step}.")
             return 
 
 
@@ -330,13 +330,13 @@ def Module_1():
 #           Function to identify the next level within invalid choices and returns it
 
             if self.table[n, :, :, :].max() == 0:
-                return "role"
+                return "Role"
             elif self.table[n, x, :, :].max() == 0:
-                return "sub_role"
+                return "Job Function"
             elif self.table[n, x, m, :].max() == 0:
-                return "action"
+                return "Action"
             else:
-                return "activity"
+                return "Activity"
 
        
 
