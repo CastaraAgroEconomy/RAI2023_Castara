@@ -290,7 +290,7 @@ def Module_1():
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
                 return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
             else:
-                next_step = self.get_next_valid_selection(self, n, x, m, y)
+                next_step = self.get_next_valid_selection(n, x, m, y)
                 st.write(f"Invalid combination. Please re-select your {next_step}.")
             return 
 
@@ -325,7 +325,7 @@ def Module_1():
 
 
     
-        def get_next_valid_selection(n, x, m, y):
+        def get_next_valid_selection(self, n, x, m, y):
 
 #           Function to identify the next level within invalid choices and returns it
 
@@ -428,7 +428,7 @@ def select_role(content_placeholder):
     
     selected_role = st.radio("Choose a Role", roles)
 
-    if st.button("Choose Job Function next", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
+    if st.button("Choose a Job Function next", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
         pass
     return
      
