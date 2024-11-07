@@ -156,7 +156,7 @@ def main():
             st.session_state.logged_in = True
             st.session_state.stage = "role_selection"
             st.session_state.R_go = 0
-    elif st.session_state.stage == "select_activity"
+    elif st.session_state.stage == "activity_selection"
         with content_placeholder.container():        
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
@@ -323,13 +323,13 @@ def Module_1():
 #           Function to identify the next level within invalid choices and returns it
 
             if self.table[n, :, :, :].max() == 0:
-                st.session_state.stage = "selected_sub_role"
+                st.session_state.stage = "sub_role_selection"
                 return "Job Function"
             elif self.table[n, x, :, :].max() == 0:
-                st.session_state.stage = "selected_action"
+                st.session_state.stage = "action_selection"
                 return "Action"
             elif self.table[n, x, m, :].max() == 0:
-                st.session_state.stage = "selectedactivity"
+                st.session_state.stage = "activity_selection"
                 return "Activity"
 
        
