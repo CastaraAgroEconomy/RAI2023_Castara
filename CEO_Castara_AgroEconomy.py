@@ -156,7 +156,7 @@ def main():
             st.session_state.logged_in = True
             st.session_state.stage = "role_selection"
             st.session_state.R_go = 0
-    elif st.session_state.stage == "activity_selection"
+    elif st.session_state.stage == "activity_selection":
         with content_placeholder.container():        
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
