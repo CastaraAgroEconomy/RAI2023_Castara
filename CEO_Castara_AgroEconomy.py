@@ -372,7 +372,8 @@ def Module_1():
 #           Rule 7: Investors should access financial actions like Investment Portfolio Review, Franchise Audit Execution, Financial Statement Analysis, 
 #                   Risk Assessment Reports, ROI Calculations, Market Trend Analysis, Investor Report Generation, Performance Metric Tracking
             if selected_role == "Investors" and selected_activity not in ["Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", 
-#                   "Risk Assessment Reports", "ROI Calculations", "Market Trend Analysis", "Investor Report Generation", "Performance Metric Tracking"]:
+                                                                          "Risk Assessment Reports", "ROI Calculations", "Market Trend Analysis", "Investor Report Generation", 
+                                                                          "Performance Metric Tracking"]:
                 return 0
             
             
