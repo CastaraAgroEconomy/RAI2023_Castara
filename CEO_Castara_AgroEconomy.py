@@ -263,7 +263,7 @@ def Module_1():
                     st.session_state.return_to_main = True
                     return
             else:
-                if st.session.state.R_go == 0:
+                if st.session_state.R_go == 0:
                    if st.session_state.n == 2 and st.session_state.y < 2:
                        st.write(" .....  Continuing to process")
                        st.session_state.return_to_main = False
@@ -285,13 +285,14 @@ def Module_1():
         
             st.write(" ")
             st.write("⚠️ - Validating chosen items from lists")
-            st.write("     .... as a four item combination")
+            st.write("..... as a four item combination")
 
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
                 return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
             else:
                 next_step = self.get_next_valid_selection(n, x, m, y)
-                st.write(f"Invalid combination. Please re-select your {next_step}.")
+                st.write("⚠️ - Invalid combination.")
+                st.write(f"..... Please re-select your {next_step}.")
             return 
 
 
@@ -330,12 +331,10 @@ def Module_1():
 #           Function to identify the next level within invalid choices and returns it
 
             if self.table[n, :, :, :].max() == 0:
-                return "Role"
-            elif self.table[n, x, :, :].max() == 0:
                 return "Job Function"
-            elif self.table[n, x, m, :].max() == 0:
+            elif self.table[n, x, :, :].max() == 0:
                 return "Action"
-            else:
+            elif self.table[n, x, m, :].max() == 0:
                 return "Activity"
 
        
