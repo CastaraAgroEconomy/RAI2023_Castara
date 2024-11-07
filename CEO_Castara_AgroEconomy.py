@@ -328,7 +328,7 @@ def Module_1():
             elif self.table[n, x, :, :].max() == 0:
                 st.session_state.stage = "action_selection"
                 return "Action"
-            elif self.table[n, x, m, :].max() == 0:
+            else:
                 st.session_state.stage = "activity_selection"
                 return
 
