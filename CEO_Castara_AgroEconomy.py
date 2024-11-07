@@ -162,10 +162,10 @@ def main():
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
             
             st.write(" ")
-            st.write("⚠️ - Currently, you will need to logout and login again, to select different combinations of options.")
+            st.write("⚠️ - Currently, you will need to logout and login again, to select different User Role")
             
             st.write(" ")
-            st.write("In future, the system will return you to the list which causes the first invalid combination to occur as a result of a selection from that list")
+            st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
             st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             
             if st.button("Logout", on_click=lambda: logout()):
