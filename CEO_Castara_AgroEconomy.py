@@ -156,7 +156,7 @@ def main():
             st.session_state.logged_in = True
             st.session_state.stage = "role_selection"
             st.session_state.R_go = 0
-    elif st.session_state.stage == "select_activity":
+    elif st.session_state.stage == "select_activity"
         with content_placeholder.container():        
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
@@ -323,10 +323,13 @@ def Module_1():
 #           Function to identify the next level within invalid choices and returns it
 
             if self.table[n, :, :, :].max() == 0:
+                st.session_state.stage = "selected_sub_role"
                 return "Job Function"
             elif self.table[n, x, :, :].max() == 0:
+                st.session_state.stage = "selected_action"
                 return "Action"
             elif self.table[n, x, m, :].max() == 0:
+                st.session_state.stage = "selectedactivity"
                 return "Activity"
 
        
@@ -413,7 +416,7 @@ def login_check(username, password):
 
 # Role selection screen
 def select_role(content_placeholder):
-    st.title("Select Your Role")
+    st.header("Select Your Role")
     
     roles = st.session_state.A # refers to list defined in Module 2 for accomodated User roles
     
@@ -426,7 +429,7 @@ def select_role(content_placeholder):
 
 # Sub-role selection screen
 def select_sub_role(content_placeholder):
-    st.title(f" Select Job Function for {st.session_state.selected_role}")
+    st.header(f" Select Job Function for {st.session_state.selected_role}")
     
     sub_roles = st.session_state.B # refers to list defined in Module 2 for accomodated User roles respective job functions (sub roles)
     
@@ -439,7 +442,7 @@ def select_sub_role(content_placeholder):
 
 # Action selection screen
 def select_action(content_placeholder):
-    st.title(f"Actions available for {st.session_state.selected_role} - {st.session_state.selected_sub_role}")
+    st.header(f"Actions available for {st.session_state.selected_role} - {st.session_state.selected_sub_role}")
     
     actions = st.session_state.C # refers to list defined in Module 2 for allowable actions for the given Users, their roles and associated functions
     
@@ -452,15 +455,14 @@ def select_action(content_placeholder):
 
 # Activity selection screen
 def select_activity(content_placeholder):
-    st.title(f"Activity for {st.session_state.selected_role} - {st.session_state.selected_sub_role} - {st.session_state.selected_action}")
+    st.header(f"Activity for {st.session_state.selected_role} - {st.session_state.selected_sub_role} - {st.session_state.selected_action}")
     
     activities = st.session_state.D # refers to list defined in Module 2 for accomodated activities allowable for actions
     
     selected_activity = st.radio("Choose an activity", activities)
 
     if st.button("Validate", on_click=lambda: finalize_selection(selected_activity)):
-        pass
-    
+        pass 
     return
         
 
