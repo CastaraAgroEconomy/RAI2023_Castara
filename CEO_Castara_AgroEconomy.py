@@ -231,11 +231,11 @@ def Module_1():
         def generate_table(self):
             st.write("debug 5 - Repopulating array to create Truth table")
             try:
-                for n in range(self.{n+1}):
+                for n in range(1, self.n): 
                     st.write(f"debug 6: Processing n={n+1}")
-                    for x in range(self.{x+1}):
-                        for m in range(self.{m+1}):
-                            for y in range(self.{y+1}):
+                    for x in range(1, self.x):
+                        for m in range(1, self.m):
+                            for y in range(1, self.y):
                                 st.write(f"debug 7: Validating selection against ({n},{x},{m},{y})")
                                 is_valid = self.validate_choice(
                                     st.session_state.n,
