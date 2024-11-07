@@ -320,7 +320,7 @@ def Module_1():
                 st.write("👌 combination is a valid selection")
             else:
                 st.session_state.R_go = 0
-                st.error(f" the selected combination {n},{x},{m},{y} is invalid")
+                st.write(f" the selected combination {n+1},{x+1},{m+1},{y+1} is invalid")
             return is_valid
 
 
@@ -347,8 +347,7 @@ def Module_1():
             st.write("⚠️ - One moment please ")
             st.write(" ")
             st.write("..... verifying validity of combination,")
-            st.write("..... picked from list,")
-            st.write("..... against Truth Table")
+            st.write("..... picked from list against Truth Table")
             st.write(" ")
             
 #           Rule 1: Only Agricultural Engineers and System Technicians can perform System Design & Optimization
