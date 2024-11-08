@@ -371,6 +371,23 @@ def Module_1():
             if selected_role == "Operations Managers" and selected_action not in ["Production Planning", "Team Coordination"]:
                 return 0
 
+
+            
+            
+            
+            
+            
+#           Rule 37: Management Personnel should 
+            if selected_role == "Management Personnel" and selected_sub_role not in [""]:
+                return 0       
+#           Rule 38: Management Personnel should 
+            if selected_role == "Management Personnel" and selected_action not in [""]:
+                return 0       
+#           Rule 39: Management Personnel should 
+            if selected_role == "Management Personnel" and selected_activity not in [""]:
+                return 0       
+
+            
 #           Rule 40: Investors should have Job Functions like Investment Analyst, Investor Relations Manager and Limited Partner
             if selected_role == "Investors" and selected_sub_role not in ["Investment Analyst", "Investor Relations Manager", "Limited Partner"]:
                 return 0       
@@ -378,7 +395,7 @@ def Module_1():
 #                   Return on Investment Analysis, Capital Allocation, Market Analysis, Investor Reporting, Performance Metrics Review, Compliance Auditing
             if selected_role == "Investors" and selected_action not in ["Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Risk Assessment", 
                                                                         "Return on Investment Analysis", "Capital Allocation", "Market Analysis", "Investor Reporting", "Performance Metrics Review", "Compliance Auditing"]:
-                return 0            
+                return 0                                                      
 #           Rule 42: Investors should access financial activities like Investment Portfolio Review, Franchise Audit Execution, Financial Statement Analysis, 
 #                   Risk Assessment Reports, ROI Calculations, Market Trend Analysis, Investor Report Generation, Performance Metric Tracking
             if selected_role == "Investors" and selected_activity not in ["Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", 
