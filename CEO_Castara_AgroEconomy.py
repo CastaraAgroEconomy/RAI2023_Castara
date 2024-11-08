@@ -377,6 +377,18 @@ def Module_1():
 
 
 
+
+#           Rule 31: Franchisees should 
+            if selected_role == "Franchisees" and selected_sub_role not in [""]:
+                return 0       
+#           Rule 32: Franchisees should 
+            if selected_role == "Franchisees" and selected_action not in [""]:
+                return 0       
+#           Rule 33: Franchisees should 
+            if selected_role == "Franchisees" and selected_activity not in [""]:
+                return 0       
+
+
 #           Rule 34: Franchisors should 
             if selected_role == "Franchisors" and selected_sub_role not in [""]:
                 return 0       
