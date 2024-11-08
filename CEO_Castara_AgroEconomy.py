@@ -21,7 +21,7 @@ VALID_PASSWORD = "password"
 if 'A' not in st.session_state:
     st.session_state.A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
                           "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
-                          "Nutrient Management Specialists", "Franchise Operators", "Franchisors", "Management Personnel", "Investors"]
+                          "Nutrient Management Specialists", "Franchisors", "Franchisees", "Management Personnel", "Investors"]
 
 # Initialize matrices in session_state if not already there
 if 'B' not in st.session_state:
