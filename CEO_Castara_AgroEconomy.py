@@ -375,7 +375,15 @@ def Module_1():
 
 
 
-
+#           Rule 28: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
+                return 0       
+#           Rule 29: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
+                return 0       
+#           Rule 30: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return 0
 
 
 #           Rule 31: Franchisees should 
@@ -386,7 +394,7 @@ def Module_1():
                 return 0       
 #           Rule 33: Franchisees should 
             if selected_role == "Franchisees" and selected_activity not in [""]:
-                return 0       
+                return 0    
 
 
 #           Rule 34: Franchisors should 
@@ -425,7 +433,7 @@ def Module_1():
                                                                           "Risk Assessment Reports", "ROI Calculations", "Market Trend Analysis", "Investor Report Generation", 
                                                                           "Performance Metric Tracking"]:
                 return 0
-            
+
             
 #           Default valid if no rule invalidates it
             st.success("Selected combination not invalid ! ")
