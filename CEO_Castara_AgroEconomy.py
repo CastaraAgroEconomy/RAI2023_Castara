@@ -397,13 +397,13 @@ def Module_1():
                 return 0    
 
 
-#           Rule 34: Franchisors should 
-            if selected_role == "Franchisors" and selected_sub_role not in [""]:
+#           Rule 34: Franchisors should have job functions like Franchise Owner,
+            if selected_role == "Franchisors" and selected_sub_role not in ["Franchise Owner",]:
                 return 0       
-#           Rule 35: Franchisors should 
+#           Rule 35: Franchisors should have actions like 
             if selected_role == "Franchisors" and selected_action not in [""]:
                 return 0       
-#           Rule 36: Franchisors should 
+#           Rule 36: Franchisors should have activities like
             if selected_role == "Franchisors" and selected_activity not in [""]:
                 return 0       
             
