@@ -29,7 +29,7 @@ if 'B' not in st.session_state:
                           "Operations Manager", "Maintenance Supervisor", "Quality Assurance Manager", "Harvest Team Leader", "Environmental Systems Manager", "Nutrient Systems Manager", 
                           "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
                           "Franchise Owner", "Franchise Operator", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
-                          "Portfolio Manager", "Executive Director", "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
+                          "Portfolio Manager", "Chief Executive Officer",  "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
                           "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager", "Limited Partner"] 
 
 # Initialize matrices in session_state if not already there
@@ -438,7 +438,9 @@ def Module_1():
                 return 0       
             
               
-#           Rule 37: Management Personnel should 
+#           Rule 37: Management Personnel should have job functions like Head of Agricultural Engineering, Plant Science Director, Operations Director, Operations Manager, Quality Assurance Manager, 
+#                    Environmental Systems Manager, Nutrient Systems Manager, Data Analytics Manager, Regional Franchise Manager, Franchise Operations Director, Investment Manager, Portfolio Manager,
+#                    Business Development Director, Chief Executive Officer, Chief Marketing Officer, Chief Operations Officer, Chief Financial Officer, 
             if selected_role == "Management Personnel" and selected_sub_role not in [""]:
                 return 0       
 #           Rule 38: Management Personnel should 
