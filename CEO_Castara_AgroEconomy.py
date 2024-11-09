@@ -448,11 +448,9 @@ def Module_1():
                                 "Franchise Compliance Manager", "Investor Relations Manager"]:
                 return 0       
 #           Rule 38: Management Personnel should handle actions like Franchise Training Program Management, Performance Metrics Review, Strategic Planning, Capital Allocation,  Investment Performance Monitoring, Franchise Performance Review, 
-#                    Financial Analysis, Business Expansion Planning, Franchise Agreement Management, Risk Assessment, Return on Investment Analysis
-
-
+#                    Financial Analysis, Business Expansion Planning, Franchise Agreement Management, Risk Assessment, Return on Investment Analysis, Production Planning
             if selected_role == "Management Personnel" and selected_action not in ["Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Capital Allocation", "Investment Performance Monitoring", "Franchise Performance Review", 
-                                "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", "Risk Assessment", "Return on Investment Analysis"]:
+                                "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", "Risk Assessment", "Return on Investment Analysis", "Production Planning"]:
                 return 0       
 #           Rule 39: Management Personnel should 
             if selected_role == "Management Personnel" and selected_activity not in [""]:
