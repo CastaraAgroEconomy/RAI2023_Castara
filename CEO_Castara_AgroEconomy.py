@@ -441,8 +441,11 @@ def Module_1():
 #           Rule 37: Management Personnel should have job functions like Head of Agricultural Engineering, Plant Science Director, Operations Director, Operations Manager, Quality Assurance Manager, 
 #                    Environmental Systems Manager, Nutrient Systems Manager, Data Analytics Manager, Regional Franchise Manager, Franchise Operations Director, Investment Manager, Portfolio Manager,
 #                    Business Development Director, Business Development Manager, Chief Executive Officer, Chief Marketing Officer, Chief Operations Officer, Chief Financial Officer, Franchise Development Director,
-#                    Franchise Compliance Manager, Investor Relations Manager,             
-            if selected_role == "Management Personnel" and selected_sub_role not in [""]:
+#                    Franchise Compliance Manager, Investor Relations Manager            
+            if selected_role == "Management Personnel" and selected_sub_role not in ["Head of Agricultural Engineering", "Plant Science Director", "Operations Director", "Operations Manager", "Quality Assurance Manager", 
+                                "Environmental Systems Manager", "Nutrient Systems Manager", "Data Analytics Manager", "Regional Franchise Manager", "Franchise Operations Director", "Investment Manager", "Portfolio Manager",
+                                "Business Development Director", "Business Development Manager", "Chief Executive Officer", "Chief Marketing Officer", "Chief Operations Officer", "Chief Financial Officer", "Franchise Development Director",
+                                "Franchise Compliance Manager", "Investor Relations Manager"]:
                 return 0       
 #           Rule 38: Management Personnel should 
             if selected_role == "Management Personnel" and selected_action not in [""]:
