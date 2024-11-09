@@ -371,8 +371,38 @@ def Module_1():
             if selected_role == "Operations Managers" and selected_action not in ["Production Planning", "Team Coordination"]:
                 return 0
 
+        
+#           Rule 19: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
+                return 0       
+#           Rule 20: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
+                return 0       
+#           Rule 21: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return 0
+    
 
+#           Rule 22: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
+                return 0       
+#           Rule 23: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
+                return 0       
+#           Rule 24: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return 0
+            
 
+#           Rule 25: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
+                return 0       
+#           Rule 26: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
+                return 0       
+#           Rule 27: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return 0
 
 
 #           Rule 28: Nutrient Management Specialists should 
