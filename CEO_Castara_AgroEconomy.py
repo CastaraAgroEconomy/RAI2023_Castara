@@ -452,8 +452,10 @@ def Module_1():
             if selected_role == "Management Personnel" and selected_action not in ["Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Capital Allocation", "Investment Performance Monitoring", "Franchise Performance Review", 
                                 "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", "Risk Assessment", "Return on Investment Analysis", "Production Planning"]:
                 return 0       
-#           Rule 39: Management Personnel should 
-            if selected_role == "Management Personnel" and selected_activity not in [""]:
+#           Rule 39: Management Personnel should access management activity functions like Strategy Document Creation, Training Program Development, Investor Report Generation, Market Trend Analysis, Capital Distribution Planning, ROI Calculations, Risk Assessment Reports, 
+#                    Franchise Agreement Review, Financial Statement Analysis, Franchise Audit Execution, Investment Portfolio Review, Inventory Management
+            if selected_role == "Management Personnel" and selected_activity not in ["Strategy Document Creation", "Training Program Development", "Investor Report Generation", "Market Trend Analysis", "Capital Distribution Planning", "ROI Calculations", "Risk Assessment Reports", 
+                                "Franchise Agreement Review", "Financial Statement Analysis", "Franchise Audit Execution", "Investment Portfolio Review", "Inventory Management"]:
                 return 0       
 
             
