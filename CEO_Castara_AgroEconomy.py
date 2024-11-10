@@ -509,7 +509,7 @@ def Module_1():
             if selected_role == "Franchisors" and selected_action not in ["Compliance Auditing", "Strategic Planning", "Performance Metrics Review", "Franchise Training Program Management", "Investor Reporting", "Market Analysis", 
                                 "Franchise Standards Enforcement", "Franchise Agreement Management", "Business Expansion Planning", "Financial Analysis", "Franchise Performance Review"]:
                 return 0       
-#           Rule 36: Franchisors should have activities like
+#           Rule 36: Franchisors should be able to access activities like 
             if selected_role == "Franchisors" and selected_activity not in [""]:
                 return 0       
             
@@ -528,7 +528,7 @@ def Module_1():
             if selected_role == "Management Personnel" and selected_action not in ["Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Capital Allocation", "Investment Performance Monitoring", "Franchise Performance Review", 
                                 "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", "Risk Assessment", "Return on Investment Analysis", "Production Planning"]:
                 return 0       
-#           Rule 39: Management Personnel should access management activity functions like Strategy Document Creation, Training Program Development, Investor Report Generation, Market Trend Analysis, Capital Distribution Planning, ROI Calculations, Risk Assessment Reports, 
+#           Rule 39: Management Personnel should be able to access management activity functions like Strategy Document Creation, Training Program Development, Investor Report Generation, Market Trend Analysis, Capital Distribution Planning, ROI Calculations, Risk Assessment Reports, 
 #                    Franchise Agreement Review, Financial Statement Analysis, Franchise Audit Execution, Investment Portfolio Review, Inventory Management
             if selected_role == "Management Personnel" and selected_activity not in ["Strategy Document Creation", "Training Program Development", "Investor Report Generation", "Market Trend Analysis", "Capital Distribution Planning", "ROI Calculations", "Risk Assessment Reports", 
                                 "Franchise Agreement Review", "Financial Statement Analysis", "Franchise Audit Execution", "Investment Portfolio Review", "Inventory Management"]:
@@ -543,7 +543,7 @@ def Module_1():
             if selected_role == "Investors" and selected_action not in ["Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Risk Assessment", 
                                                                         "Return on Investment Analysis", "Capital Allocation", "Market Analysis", "Investor Reporting", "Performance Metrics Review", "Compliance Auditing"]:
                 return 0                                                      
-#           Rule 42: Investors should access financial activities like Investment Portfolio Review, Franchise Audit Execution, Financial Statement Analysis, 
+#           Rule 42: Investors should be able to access financial activities like Investment Portfolio Review, Franchise Audit Execution, Financial Statement Analysis, 
 #                   Risk Assessment Reports, ROI Calculations, Market Trend Analysis, Investor Report Generation, Performance Metric Tracking
             if selected_role == "Investors" and selected_activity not in ["Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", 
                                                                           "Risk Assessment Reports", "ROI Calculations", "Market Trend Analysis", "Investor Report Generation", 
