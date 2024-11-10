@@ -505,7 +505,7 @@ def Module_1():
                      "Chief Financial Officer", "Chief Operations Officer", "Chief Marketing Officer", "Business Development Director", "Franchise Operations Director", "Regional Franchise Manager", "Franchise Operator",
                      "Operations Manager", "Operations Director"]:
                 return 0       
-#           Rule 35: Franchisors should have actions like 
+#           Rule 35: Franchisors should handle actions like Compliance Auditing, 
             if selected_role == "Franchisors" and selected_action not in [""]:
                 return 0       
 #           Rule 36: Franchisors should have activities like
