@@ -434,7 +434,7 @@ def Module_1():
 #           Rule 16: Nutrient Management Specialists should 
             if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
                 return            
-            Rule 17: Nutrient Management Specialists should 
+ #          Rule 17: Nutrient Management Specialists should 
             if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
                 return 0       
 #           Rule 18: Nutrient Management Specialists should 
@@ -497,8 +497,10 @@ def Module_1():
                 return 0    
 
 
-#           Rule 34: Franchisors should have job functions like Franchise Owner, Investor Relations Manager, Franchise Compliance Manager, Financial Controller, Franchise Development Director, Business Development Manager,
-#                    Chief Financial Officer, Chief Operations Officer, Chief Marketing Officer,          
+#           Rule 34: Franchisors should have job functions like Franchise Owner, Franchise Compliance Manager, Financial Controller, Franchise Development Director, Business Development Manager,
+#                    Chief Financial Officer, Chief Operations Officer, Chief Marketing Officer, Business Development Director, Franchise Operations Director, Regional Franchise Manager, Franchise Operator,
+#                    Operations Manager, Operations Director
+#                    
             if selected_role == "Franchisors" and selected_sub_role not in ["Franchise Owner",]:
                 return 0       
 #           Rule 35: Franchisors should have actions like 
