@@ -505,8 +505,9 @@ def Module_1():
                      "Operations Manager", "Operations Director"]:
                 return 0       
 #           Rule 35: Franchisors should handle actions like Compliance Auditing, Strategic Planning, Performance Metrics Review, Franchise Training Program Management, Investor Reporting, Market Analysis, 
-#           Franchise Standards Enforcement, Franchise Agreement Management, Business Expansion Planning, Financial Analysis, Franchise Performance Review, 
-            if selected_role == "Franchisors" and selected_action not in [""]:
+#           Franchise Standards Enforcement, Franchise Agreement Management, Business Expansion Planning, Financial Analysis, Franchise Performance Review
+            if selected_role == "Franchisors" and selected_action not in ["Compliance Auditing", "Strategic Planning", "Performance Metrics Review", "Franchise Training Program Management", "Investor Reporting", "Market Analysis", 
+                                "Franchise Standards Enforcement", "Franchise Agreement Management", "Business Expansion Planning", "Financial Analysis", "Franchise Performance Review"]:
                 return 0       
 #           Rule 36: Franchisors should have activities like
             if selected_role == "Franchisors" and selected_activity not in [""]:
