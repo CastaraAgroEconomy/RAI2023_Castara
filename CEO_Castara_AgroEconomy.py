@@ -501,7 +501,9 @@ def Module_1():
 #                    Chief Financial Officer, Chief Operations Officer, Chief Marketing Officer, Business Development Director, Franchise Operations Director, Regional Franchise Manager, Franchise Operator,
 #                    Operations Manager, Operations Director
 #                    
-            if selected_role == "Franchisors" and selected_sub_role not in ["Franchise Owner",]:
+            if selected_role == "Franchisors" and selected_sub_role not in ["Franchise Owner", "Franchise Compliance Manager", "Financial Controller", "Franchise Development Director", "Business Development Manager",
+                     "Chief Financial Officer", "Chief Operations Officer", "Chief Marketing Officer", "Business Development Director", "Franchise Operations Director", "Regional Franchise Manager", "Franchise Operator",
+                     "Operations Manager", "Operations Director"]:
                 return 0       
 #           Rule 35: Franchisors should have actions like 
             if selected_role == "Franchisors" and selected_action not in [""]:
