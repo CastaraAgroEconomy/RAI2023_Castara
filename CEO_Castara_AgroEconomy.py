@@ -369,8 +369,44 @@ def Module_1():
                 return 0
 #           Rule 6: Operations Managers should handle actions like Production Planning and Team Coordination
             if selected_role == "Operations Managers" and selected_action not in ["Production Planning", "Team Coordination"]:
+                return Rule 19: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
+                return 0       
+
+
+
+#           Rule 10: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return 0       
+#           Rule 11: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return 0
+#           Rule 12: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
                 return 0
 
+            
+#           Rule 13: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return 0       
+#           Rule 14: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return 0
+#           Rule 15: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return 0
+            
+            
+#           Rule 16: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return            
+            Rule 17: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
+                return 0       
+#           Rule 18: Nutrient Management Specialists should 
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+                return 0
+            
         
 #           Rule 19: Nutrient Management Specialists should 
             if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
