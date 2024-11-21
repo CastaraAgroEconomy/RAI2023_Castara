@@ -500,7 +500,7 @@ def Module_1():
 #           Rule 34: Franchisors should have job functions like Franchise Owner, Franchise Compliance Manager, Financial Controller, Franchise Development Director, Business Development Manager,
 #                    Chief Financial Officer, Chief Operations Officer, Chief Marketing Officer, Business Development Director, Franchise Operations Director, Regional Franchise Manager, Franchise Operator,
 #                    Operations Manager, Operations Director
-                     if selected_role == "Franchisors" and selected_sub_role not in ["Franchise Owner", "Franchise Compliance Manager", "Financial Controller", "Franchise Development Director", "Business Development Manager",
+            if selected_role == "Franchisors" and selected_sub_role not in ["Franchise Owner", "Franchise Compliance Manager", "Financial Controller", "Franchise Development Director", "Business Development Manager",
                      "Chief Financial Officer", "Chief Operations Officer", "Chief Marketing Officer", "Business Development Director", "Franchise Operations Director", "Regional Franchise Manager", "Franchise Operator",
                      "Operations Manager", "Operations Director"]:
                 return 0       
