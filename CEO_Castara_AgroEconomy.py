@@ -454,24 +454,24 @@ def Module_1():
     
 
 #           Rule 22: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
+            if selected_role == "Harvest Workers" and selected_sub_role not in [""]:
                 return 0       
 #           Rule 23: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
+            if selected_role == "Harvest Workers" and selected_action not in [""]:
                 return 0       
 #           Rule 24: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Harvest Workers" and selected_activity not in [""]:
                 return 0
             
 
 #           Rule 25: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
+            if selected_role == "Climate Control Specialists" and selected_sub_role not in [""]:
                 return 0       
 #           Rule 26: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
+            if selected_role == "Climate Control Specialists" and selected_action not in [""]:
                 return 0       
 #           Rule 27: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Climate Control Specialists" and selected_activity not in [""]:
                 return 0
 
 
