@@ -432,24 +432,24 @@ def Module_1():
             
             
 #           Rule 16: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Maintenance Staff" and selected_activity not in [""]:
                 return            
  #          Rule 17: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
+            if selected_role == "Maintenance Staff" and selected_action not in [""]:
                 return 0       
 #           Rule 18: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Maintenance Staff" and selected_activity not in [""]:
                 return 0
             
         
 #           Rule 19: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
+            if selected_role == "Quality Control Personnel" and selected_sub_role not in [""]:
                 return 0       
 #           Rule 20: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
+            if selected_role == "Quality Control Personnel" and selected_action not in [""]:
                 return 0       
 #           Rule 21: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Quality Control Personnel" and selected_activity not in [""]:
                 return 0
     
 
