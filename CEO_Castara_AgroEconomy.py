@@ -375,59 +375,59 @@ def Module_1():
 #           NOMINAL RULES :
 
 #           Rule 1: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Agricultural Engineers" and selected_activity not in [""]:
                 return 0       
 #           Rule 2: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Agricultural Engineers" and selected_activity not in [""]:
                 return 0
 #           Rule 3: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Agricultural Engineers" and selected_activity not in [""]:
                 return 0
 
     
 #           Rule 4: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Horticulturists" and selected_activity not in [""]:
                 return 0       
 #           Rule 5: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Horticulturists" and selected_activity not in [""]:
                 return 0
 #           Rule 6: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Horticulturists" and selected_activity not in [""]:
                 return 0
 
             
 
 #           Rule 7: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "System Technicians" and selected_activity not in [""]:
                 return 0       
 #           Rule 8: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "System Technicians" and selected_activity not in [""]:
                 return 0
 #           Rule 9: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "System Technicians" and selected_activity not in [""]:
                 return 0
 
 
 
 #           Rule 10: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Plant Scientists" and selected_activity not in [""]:
                 return 0       
 #           Rule 11: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Plant Scientists" and selected_activity not in [""]:
                 return 0
 #           Rule 12: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Plant Scientists" and selected_activity not in [""]:
                 return 0
 
             
 #           Rule 13: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Operations Personnel" and selected_activity not in [""]:
                 return 0       
 #           Rule 14: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Operations Personnel" and selected_activity not in [""]:
                 return 0
 #           Rule 15: Nutrient Management Specialists should 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+            if selected_role == "Operations Personnel" and selected_activity not in [""]:
                 return 0
             
             
