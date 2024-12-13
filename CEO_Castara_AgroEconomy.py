@@ -573,7 +573,7 @@ def Module_1():
 
 # Login function
 def login(content_placeholder):
-    st.image('Assets/Media/Images/Cover_page.jpg', use_column_width=True)
+    st.image('Assets/Media/Images/Cover_page.jpg')
     st.title("Castara AgroEconomy Venture")
 
     # Input fields for username and password
