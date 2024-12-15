@@ -303,13 +303,13 @@ def Module_1():
             st.write("⚠️ - Confirming combination is valid")
             st.write(" ..... searching")
             
-            is_valid = self.is_valid_combination(n,x,m,y)
+            is_valid = self.is_valid_combination(
                 
-             #  st.session_state.selected_role,
-             #  st.session_state.selected_sub_role,
-             #  st.session_state.selected_action,
-             #  st.session_state.selected_activity
-          #  )
+                st.session_state.n,
+                st.session_state.x,
+                st.session_state.m,
+                st.session_state.y
+             )
 
             st.write(" ") 
             st.write("⚠️ - Truth Table consulted ")
