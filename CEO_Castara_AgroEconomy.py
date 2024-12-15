@@ -402,14 +402,14 @@ def Module_1():
                 return 0
 
             
-#           Rule 13: Operations Personnel should have the job title 
-            if selected_role == "Operations Personnel" and selected_activity not in [""]:
+#           Rule 13: Operations Personnel should have the job title Operations Director, Operations Manager, Production Supervisor, Quality Assurance Manager, Maintenance Supervisor, Data Analytics Manager.
+            if selected_role == "Operations Personnel" and selected_activity not in ["Operations Director, Operations Manager, Production Supervisor, Quality Assurance Manager, Maintenance Supervisor, Data Analytics Manager"]:
                 return 0       
-#           Rule 14: Operations Personnel should be able to handle actions like 
-            if selected_role == "Operations Personnel" and selected_activity not in [""]:
+#           Rule 14: Operations Personnel should be able to handle actions like Production Planning, Team Coordination, Resource Usage Optimization, Safety Protocol Implementation, Data Collection & Analysis, Quality Control Inspections.
+            if selected_role == "Operations Personnel" and selected_activity not in ["Production Planning, Team Coordination, Resource Usage Optimization, Safety Protocol Implementation, Data Collection & Analysis, Quality Control Inspections"]:
                 return 0
-#           Rule 15: Operations Personnel should be able to access activities like 
-            if selected_role == "Operations Personnel" and selected_activity not in [""]:
+#           Rule 15: Operations Personnel should be able to access activities like Team Schedule Creation, Inventory Management, Maintenance Log Updates, Harvest Weight Recording, Compliance Report Generation, Growth Data Recording, Safety Inspection Rounds, Equipment Sanitization.
+            if selected_role == "Operations Personnel" and selected_activity not in ["Team Schedule Creation, Inventory Management, Maintenance Log Updates, Harvest Weight Recording, Compliance Report Generation, Growth Data Recording, Safety Inspection Rounds, Equipment Sanitization"]:
                 return 0
             
             
