@@ -379,14 +379,14 @@ def Module_1():
 
             
 
-#           Rule 7: System Technicians should have the job title 
-            if selected_role == "System Technicians" and selected_activity not in [""]:
+#           Rule 7: System Technicians should have the job title Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Environmental Systems Manager, Data Analytics Manager, Nutrient Systems Manager.
+            if selected_role == "System Technicians" and selected_activity not in ["Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Environmental Systems Manager, Data Analytics Manager, Nutrient Systems Manager"]:
                 return 0       
-#           Rule 8: System Technicians should handle actions like 
-            if selected_role == "System Technicians" and selected_activity not in [""]:
+#           Rule 8: System Technicians should handle actions like System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Equipment Maintenance, Compliance Monitoring, Resource Usage Optimization.
+            if selected_role == "System Technicians" and selected_activity not in ["System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Equipment Maintenance, Compliance Monitoring, Resource Usage Optimization"]:
                 return 0
-#           Rule 9: System Technicians should be able to access activities like
-            if selected_role == "System Technicians" and selected_activity not in [""]:
+#           Rule 9: System Technicians should be able to access activities like Equipment Calibration, System Flow Rate Checks, Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, Maintenance Log Updates, Safety Inspection Rounds, Equipment Sanitization 
+            if selected_role == "System Technicians" and selected_activity not in ["Equipment Calibration, System Flow Rate Checks, Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, Maintenance Log Updates, Safety Inspection Rounds, Equipment Sanitization"]:
                 return 0
 
 
