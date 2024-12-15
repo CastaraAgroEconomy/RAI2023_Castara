@@ -435,36 +435,36 @@ def Module_1():
                 return 0
     
 
-#           Rule 22: Harvest Workers should have the job title like 
-            if selected_role == "Harvest Workers" and selected_sub_role not in [""]:
+#           Rule 22: Harvest Workers should have the job title like Harvest Team Leader, Production Supervisor, Quality Assurance Manager, Plant Health Inspector.
+            if selected_role == "Harvest Workers" and selected_sub_role not in ["Harvest Team Leader, Production Supervisor, Quality Assurance Manager, Plant Health Inspector"]:
                 return 0       
-#           Rule 23: Harvest Workers should be able to handle actions like
-            if selected_role == "Harvest Workers" and selected_action not in [""]:
+#           Rule 23: Harvest Workers should be able to handle actions like Harvest Scheduling, Quality Control Inspections, Data Collection & Analysis, Safety Protocol Implementation, Resource Usage Optimization.
+            if selected_role == "Harvest Workers" and selected_action not in ["Harvest Scheduling, Quality Control Inspections, Data Collection & Analysis, Safety Protocol Implementation, Resource Usage Optimization"]:
                 return 0       
-#           Rule 24: Harvest Workers should be able to access activities like 
-            if selected_role == "Harvest Workers" and selected_activity not in [""]:
+#           Rule 24: Harvest Workers should be able to access activities like Harvest Weight Recording, Equipment Sanitization, Plant Spacing Optimization, Safety Inspection Rounds, Growth Rate Documentation, Team Schedule Creation, Inventory Management.
+            if selected_role == "Harvest Workers" and selected_activity not in ["Harvest Weight Recording, Equipment Sanitization, Plant Spacing Optimization, Safety Inspection Rounds, Growth Rate Documentation, Team Schedule Creation, Inventory Management"]:
                 return 0
             
 
-#           Rule 25: Climate Control Specialists should have the job title 
-            if selected_role == "Climate Control Specialists" and selected_sub_role not in [""]:
+#           Rule 25: Climate Control Specialists should have the job title Environmental Systems Manager, Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Data Analytics Manager.
+            if selected_role == "Climate Control Specialists" and selected_sub_role not in ["Environmental Systems Manager, Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Data Analytics Manager"]:
                 return 0       
-#           Rule 26: Climate Control Specialists should be able to handle actions like 
-            if selected_role == "Climate Control Specialists" and selected_action not in [""]:
+#           Rule 26: Climate Control Specialists should be able to handle actions like Environmental Parameter Monitoring, System Design & Optimization, System Troubleshooting, Resource Usage Optimization, Compliance Monitoring.
+            if selected_role == "Climate Control Specialists" and selected_action not in ["Environmental Parameter Monitoring, System Design & Optimization, System Troubleshooting, Resource Usage Optimization, Compliance Monitoring"]:
                 return 0       
-#           Rule 27: Climate Control Specialists should be able to access activities like 
-            if selected_role == "Climate Control Specialists" and selected_activity not in [""]:
+#           Rule 27: Climate Control Specialists should be able to access activities like Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Safety Inspection Rounds, Compliance Report Generation.
+            if selected_role == "Climate Control Specialists" and selected_activity not in ["Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Safety Inspection Rounds, Compliance Report Generation"]:
                 return 0
 
 
-#           Rule 28: Nutrient Management Specialists should have the job title 
-            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
+#           Rule 28: Nutrient Management Specialists should have the job title Nutrient Systems Manager, Data Analytics Manager, Plant Science Director, Systems Integration Engineer, Quality Assurance Manager.
+            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in ["Nutrient Systems Manager, Data Analytics Manager, Plant Science Director, Systems Integration Engineer, Quality Assurance Manager"]:
                 return 0       
-#           Rule 29: Nutrient Management Specialists should be able to handle actions like 
-            if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
+#           Rule 29: Nutrient Management Specialists should be able to handle actions like Nutrient Solution Management, Environmental Parameter Monitoring, System Troubleshooting, Resource Usage Optimization, Compliance Monitoring.
+            if selected_role == "Nutrient Management Specialists" and selected_action not in ["Nutrient Solution Management, Environmental Parameter Monitoring, System Troubleshooting, Resource Usage Optimization, Compliance Monitoring"]:
                 return 0       
-#           Rule 30: Nutrient Management Specialists should be able to access activities like 
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
+#           Rule 30: Nutrient Management Specialists should be able to access activities like Nutrient Mix Preparation, EC (Electrical Conductivity) Testing, pH Level Monitoring, Water Quality Testing, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Compliance Report Generation.
+            if selected_role == "Nutrient Management Specialists" and selected_activity not in ["Nutrient Mix Preparation, EC (Electrical Conductivity) Testing, pH Level Monitoring, Water Quality Testing, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Compliance Report Generation"]:
                 return 0
 
 
