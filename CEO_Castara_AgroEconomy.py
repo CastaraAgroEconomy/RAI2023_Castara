@@ -402,35 +402,35 @@ def Module_1():
                 return 0
 
             
-#           Rule 13: Nutrient Management Specialists should 
+#           Rule 13: Operations Personnel should have the job title 
             if selected_role == "Operations Personnel" and selected_activity not in [""]:
                 return 0       
-#           Rule 14: Nutrient Management Specialists should 
+#           Rule 14: Operations Personnel should be able to handle actions like 
             if selected_role == "Operations Personnel" and selected_activity not in [""]:
                 return 0
-#           Rule 15: Nutrient Management Specialists should 
+#           Rule 15: Operations Personnel should be able to access activities like 
             if selected_role == "Operations Personnel" and selected_activity not in [""]:
                 return 0
             
             
-#           Rule 16: Nutrient Management Specialists should 
+#           Rule 16: Maintenance Staff should have the job title 
             if selected_role == "Maintenance Staff" and selected_activity not in [""]:
                 return            
- #          Rule 17: Nutrient Management Specialists should 
+ #          Rule 17: Maintenance Staff should be able to handle actions like 
             if selected_role == "Maintenance Staff" and selected_action not in [""]:
                 return 0       
-#           Rule 18: Nutrient Management Specialists should 
+#           Rule 18: Maintenance Staff should be able to access activities like 
             if selected_role == "Maintenance Staff" and selected_activity not in [""]:
                 return 0
             
         
-#           Rule 19: Nutrient Management Specialists should 
+#           Rule 19: Quality Control Personnel should have the job title 
             if selected_role == "Quality Control Personnel" and selected_sub_role not in [""]:
                 return 0       
-#           Rule 20: Nutrient Management Specialists should 
+#           Rule 20: Quality Control Personnel should be able to handle actions like
             if selected_role == "Quality Control Personnel" and selected_action not in [""]:
                 return 0       
-#           Rule 21: Nutrient Management Specialists should 
+#           Rule 21: Quality Control Personnel should be able to access activities like 
             if selected_role == "Quality Control Personnel" and selected_activity not in [""]:
                 return 0
     
