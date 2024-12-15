@@ -413,25 +413,25 @@ def Module_1():
                 return 0
             
             
-#           Rule 16: Maintenance Staff should have the job title 
-            if selected_role == "Maintenance Staff" and selected_sub_role not in [""]:
+#           Rule 16: Maintenance Staff should have the job title Maintenance Supervisor, Automation Engineer, Environmental Systems Manager, Quality Assurance Manager, Systems Integration Engineer.
+            if selected_role == "Maintenance Staff" and selected_sub_role not in ["Maintenance Supervisor, Automation Engineer, Environmental Systems Manager, Quality Assurance Manager, Systems Integration Engineer"]:
                 return            
- #          Rule 17: Maintenance Staff should be able to handle actions like 
-            if selected_role == "Maintenance Staff" and selected_action not in [""]:
+ #          Rule 17: Maintenance Staff should be able to handle actions like Equipment Maintenance, System Troubleshooting, Environmental Parameter Monitoring, Safety Protocol Implementation, Compliance Monitoring, Resource Usage Optimization.
+            if selected_role == "Maintenance Staff" and selected_action not in ["Equipment Maintenance, System Troubleshooting, Environmental Parameter Monitoring, Safety Protocol Implementation, Compliance Monitoring, Resource Usage Optimization"]:
                 return 0       
-#           Rule 18: Maintenance Staff should be able to access activities like 
-            if selected_role == "Maintenance Staff" and selected_activity not in [""]:
+#           Rule 18: Maintenance Staff should be able to access activities like Equipment Calibration, System Flow Rate Checks, Equipment Sanitization, Maintenance Log Updates, Safety Inspection Rounds, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment.
+            if selected_role == "Maintenance Staff" and selected_activity not in ["Equipment Calibration, System Flow Rate Checks, Equipment Sanitization, Maintenance Log Updates, Safety Inspection Rounds, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment"]:
                 return 0
             
         
-#           Rule 19: Quality Control Personnel should have the job title 
-            if selected_role == "Quality Control Personnel" and selected_sub_role not in [""]:
+#           Rule 19: Quality Control Personnel should have the job title Quality Assurance Manager, Food Safety Compliance Officer, Plant Health Inspector, Production Supervisor, Data Analytics Manager.
+            if selected_role == "Quality Control Personnel" and selected_sub_role not in ["Quality Assurance Manager, Food Safety Compliance Officer, Plant Health Inspector, Production Supervisor, Data Analytics Manager"]:
                 return 0       
-#           Rule 20: Quality Control Personnel should be able to handle actions like
-            if selected_role == "Quality Control Personnel" and selected_action not in [""]:
+#           Rule 20: Quality Control Personnel should be able to handle actions like Quality Control Inspections, Compliance Monitoring, Data Collection & Analysis, Safety Protocol Implementation, Resource Usage Optimization.
+            if selected_role == "Quality Control Personnel" and selected_action not in ["Quality Control Inspections, Compliance Monitoring, Data Collection & Analysis, Safety Protocol Implementation, Resource Usage Optimization"]:
                 return 0       
-#           Rule 21: Quality Control Personnel should be able to access activities like 
-            if selected_role == "Quality Control Personnel" and selected_activity not in [""]:
+#           Rule 21: Quality Control Personnel should be able to access activities like Quality Check Documentation, Compliance Report Generation, Safety Inspection Rounds, Growth Rate Documentation, pH Level Monitoring, Equipment Calibration, Harvest Weight Recording, System Flow Rate Checks.
+            if selected_role == "Quality Control Personnel" and selected_activity not in ["Quality Check Documentation, Compliance Report Generation, Safety Inspection Rounds, Growth Rate Documentation, pH Level Monitoring, Equipment Calibration, Harvest Weight Recording, System Flow Rate Checks"]:
                 return 0
     
 
