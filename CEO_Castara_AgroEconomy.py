@@ -21,7 +21,7 @@ VALID_PASSWORD = "password"
 if 'A' not in st.session_state:
     st.session_state.A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
                           "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
-                          "Nutrient Management Specialists", "Franchisors", "Franchisees", "Management Personnel", "Investors"]
+                          "Nutrient Management Specialists", "Franchise Operator", "Franchisor", "Management Personnel", "Investors"]
 
 # Initialize matrices in session_state if not already there
 if 'B' not in st.session_state:
@@ -468,14 +468,14 @@ def Module_1():
                 return 0
 
 
-#           Rule 31: Franchisees should have the job title 
-            if selected_role == "Franchisees" and selected_sub_role not in [""]:
+#           Rule 31: Franchise Operator should have the job title Franchise Owner, Regional Franchise Manager, Franchise Compliance Manager, Business Development Manager, Data Analytics Manager.
+            if selected_role == "Franchise Operator" and selected_sub_role not in ["Franchise Owner, Regional Franchise Manager, Franchise Compliance Manager, Business Development Manager, Data Analytics Manager"]:
                 return 0       
-#           Rule 32: Franchisees should be able to handle actions like 
-            if selected_role == "Franchisees" and selected_action not in [""]:
+#           Rule 32: Franchise Operator should be able to handle actions like Franchise Performance Review, Business Expansion Planning, Compliance Monitoring, Financial Analysis, Team Coordination.
+            if selected_role == "Franchise Operator" and selected_action not in ["Franchise Performance Review, Business Expansion Planning, Compliance Monitoring, Financial Analysis, Team Coordination"]:
                 return 0       
-#           Rule 33: Franchisees should be able to access activities like 
-            if selected_role == "Franchisees" and selected_activity not in [""]:
+#           Rule 33: Franchise Operator should be able to access activities like ROI Calculations, Compliance Report Generation, Team Schedule Creation, Market Research Documentation, Financial Statement Analysis, Performance Metric Tracking, Risk Assessment Reports.
+            if selected_role == "Franchise Operator" and selected_activity not in ["ROI Calculations, Compliance Report Generation, Team Schedule Creation, Market Research Documentation, Financial Statement Analysis, Performance Metric Tracking, Risk Assessment Reports"]:
                 return 0    
 
 
