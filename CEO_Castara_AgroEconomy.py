@@ -435,51 +435,51 @@ def Module_1():
                 return 0
     
 
-#           Rule 22: Nutrient Management Specialists should 
+#           Rule 22: Harvest Workers should have the job title like 
             if selected_role == "Harvest Workers" and selected_sub_role not in [""]:
                 return 0       
-#           Rule 23: Nutrient Management Specialists should 
+#           Rule 23: Harvest Workers should be able to handle actions like
             if selected_role == "Harvest Workers" and selected_action not in [""]:
                 return 0       
-#           Rule 24: Nutrient Management Specialists should 
+#           Rule 24: Harvest Workers should be able to access activities like 
             if selected_role == "Harvest Workers" and selected_activity not in [""]:
                 return 0
             
 
-#           Rule 25: Nutrient Management Specialists should 
+#           Rule 25: Climate Control Specialists should have the job title 
             if selected_role == "Climate Control Specialists" and selected_sub_role not in [""]:
                 return 0       
-#           Rule 26: Nutrient Management Specialists should 
+#           Rule 26: Climate Control Specialists should be able to handle actions like 
             if selected_role == "Climate Control Specialists" and selected_action not in [""]:
                 return 0       
-#           Rule 27: Nutrient Management Specialists should 
+#           Rule 27: Climate Control Specialists should be able to access activities like 
             if selected_role == "Climate Control Specialists" and selected_activity not in [""]:
                 return 0
 
 
-#           Rule 28: Nutrient Management Specialists should 
+#           Rule 28: Nutrient Management Specialists should have the job title 
             if selected_role == "Nutrient Management Specialists" and selected_sub_role not in [""]:
                 return 0       
-#           Rule 29: Nutrient Management Specialists should 
+#           Rule 29: Nutrient Management Specialists should be able to handle actions like 
             if selected_role == "Nutrient Management Specialists" and selected_action not in [""]:
                 return 0       
-#           Rule 30: Nutrient Management Specialists should 
+#           Rule 30: Nutrient Management Specialists should be able to access activities like 
             if selected_role == "Nutrient Management Specialists" and selected_activity not in [""]:
                 return 0
 
 
-#           Rule 31: Franchisees should 
+#           Rule 31: Franchisees should have the job title 
             if selected_role == "Franchisees" and selected_sub_role not in [""]:
                 return 0       
-#           Rule 32: Franchisees should 
+#           Rule 32: Franchisees should be able to handle actions like 
             if selected_role == "Franchisees" and selected_action not in [""]:
                 return 0       
-#           Rule 33: Franchisees should 
+#           Rule 33: Franchisees should be able to access activities like 
             if selected_role == "Franchisees" and selected_activity not in [""]:
                 return 0    
 
 
-#           Rule 34: Franchisors should have job functions like Franchise Owner, Franchise Compliance Manager, Financial Controller, Franchise Development Director, Business Development Manager,
+#           Rule 34: Franchisors should have the job title Franchise Owner, Franchise Compliance Manager, Financial Controller, Franchise Development Director, Business Development Manager,
 #                    Chief Financial Officer, Chief Operations Officer, Chief Marketing Officer, Business Development Director, Franchise Operations Director, Regional Franchise Manager, Franchise Operator,
 #                    Operations Manager, Operations Director
             if selected_role == "Franchisors" and selected_sub_role not in ["Franchise Owner", "Franchise Compliance Manager", "Financial Controller", "Franchise Development Director", "Business Development Manager",
@@ -496,7 +496,7 @@ def Module_1():
                 return 0       
             
               
-#           Rule 37: Management Personnel should have job functions like Head of Agricultural Engineering, Plant Science Director, Operations Director, Operations Manager, Quality Assurance Manager, 
+#           Rule 37: Management Personnel should have the job title Head of Agricultural Engineering, Plant Science Director, Operations Director, Operations Manager, Quality Assurance Manager, 
 #                    Environmental Systems Manager, Nutrient Systems Manager, Data Analytics Manager, Regional Franchise Manager, Franchise Operations Director, Investment Manager, Portfolio Manager,
 #                    Business Development Director, Business Development Manager, Chief Executive Officer, Chief Marketing Officer, Chief Operations Officer, Chief Financial Officer, Franchise Development Director,
 #                    Franchise Compliance Manager, Investor Relations Manager            
@@ -510,14 +510,14 @@ def Module_1():
             if selected_role == "Management Personnel" and selected_action not in ["Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Capital Allocation", "Investment Performance Monitoring", "Franchise Performance Review", 
                                 "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", "Risk Assessment", "Return on Investment Analysis", "Production Planning"]:
                 return 0       
-#           Rule 39: Management Personnel should be able to access management activity functions like Strategy Document Creation, Training Program Development, Investor Report Generation, Market Trend Analysis, Capital Distribution Planning, ROI Calculations, Risk Assessment Reports, 
+#           Rule 39: Management Personnel should be able to access activities like Strategy Document Creation, Training Program Development, Investor Report Generation, Market Trend Analysis, Capital Distribution Planning, ROI Calculations, Risk Assessment Reports, 
 #                    Franchise Agreement Review, Financial Statement Analysis, Franchise Audit Execution, Investment Portfolio Review, Inventory Management
             if selected_role == "Management Personnel" and selected_activity not in ["Strategy Document Creation", "Training Program Development", "Investor Report Generation", "Market Trend Analysis", "Capital Distribution Planning", "ROI Calculations", "Risk Assessment Reports", 
                                 "Franchise Agreement Review", "Financial Statement Analysis", "Franchise Audit Execution", "Investment Portfolio Review", "Inventory Management"]:
                 return 0       
 
             
-#           Rule 40: Investors should have Job Functions like Investment Analyst, Investor Relations Manager and Limited Partner
+#           Rule 40: Investors should have Job title Investment Analyst, Investor Relations Manager and Limited Partner
             if selected_role == "Investors" and selected_sub_role not in ["Investment Analyst", "Investor Relations Manager", "Limited Partner"]:
                 return 0       
 #           Rule 41: Investors should handle actions like Investment Performance Monitoring, Franchise Performance Review, Financial Analysis, Risk Assessment, 
@@ -525,7 +525,7 @@ def Module_1():
             if selected_role == "Investors" and selected_action not in ["Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Risk Assessment", 
                                                                         "Return on Investment Analysis", "Capital Allocation", "Market Analysis", "Investor Reporting", "Performance Metrics Review", "Compliance Auditing"]:
                 return 0                                                      
-#           Rule 42: Investors should be able to access financial activities like Investment Portfolio Review, Franchise Audit Execution, Financial Statement Analysis, 
+#           Rule 42: Investors should be able to access activities like Investment Portfolio Review, Franchise Audit Execution, Financial Statement Analysis, 
 #                   Risk Assessment Reports, ROI Calculations, Market Trend Analysis, Investor Report Generation, Performance Metric Tracking
             if selected_role == "Investors" and selected_activity not in ["Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", 
                                                                           "Risk Assessment Reports", "ROI Calculations", "Market Trend Analysis", "Investor Report Generation", 
