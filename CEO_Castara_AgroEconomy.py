@@ -369,14 +369,14 @@ def Module_1():
                 return 0
 
     
-#           Rule 4: Nutrient Management Specialists should 
-            if selected_role == "Horticulturists" and selected_activity not in [""]:
+#           Rule 4: Horticultralists should have the job title Lead Horticulturist, Plant Science Director, Plant Health Inspector, Quality Assurance Manager, Data Analytics Manager, Nutrient Systems Manager, Harvest Team Leader.
+            if selected_role == "Horticulturists" and selected_sub_role not in ["Lead Horticulturist, Plant Science Director, Plant Health Inspector, Quality Assurance Manager, Data Analytics Manager, Nutrient Systems Manager, Harvest Team Leader"]:
                 return 0       
-#           Rule 5: Nutrient Management Specialists should 
-            if selected_role == "Horticulturists" and selected_activity not in [""]:
+#           Rule 5: Horticulturilists should handle actions like Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Environmental Parameter Monitoring, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization.
+            if selected_role == "Horticulturists" and selected_action not in ["Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Environmental Parameter Monitoring, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization"]:
                 return 0
-#           Rule 6: Nutrient Management Specialists should 
-            if selected_role == "Horticulturists" and selected_activity not in [""]:
+#           Rule 6: Horticultralists should be able to handle activities like Growth Rate Documentation, pH Level Monitoring, Nutrient Mix Preparation, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment, Plant Spacing Optimization, Water Quality Testing.
+            if selected_role == "Horticulturists" and selected_activity not in ["Growth Rate Documentation, pH Level Monitoring, Nutrient Mix Preparation, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment, Plant Spacing Optimization, Water Quality Testing"]:
                 return 0
 
             
