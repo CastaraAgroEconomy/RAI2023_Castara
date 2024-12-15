@@ -304,7 +304,6 @@ def Module_1():
             st.write(" ..... searching")
             
             is_valid = self.is_valid_combination(
-                
                 st.session_state.n,
                 st.session_state.x,
                 st.session_state.m,
@@ -353,8 +352,7 @@ def Module_1():
             st.write("..... picked from list against Truth Table")
             st.write(" ")
 
-            
-                
+                     
 
 #           NOMINAL RULES :
 
@@ -381,25 +379,25 @@ def Module_1():
 
             
 
-#           Rule 7: Nutrient Management Specialists should 
+#           Rule 7: System Technicians should have the job title 
             if selected_role == "System Technicians" and selected_activity not in [""]:
                 return 0       
-#           Rule 8: Nutrient Management Specialists should 
+#           Rule 8: System Technicians should handle actions like 
             if selected_role == "System Technicians" and selected_activity not in [""]:
                 return 0
-#           Rule 9: Nutrient Management Specialists should 
+#           Rule 9: System Technicians should be able to access activities like
             if selected_role == "System Technicians" and selected_activity not in [""]:
                 return 0
 
 
 
-#           Rule 10: Nutrient Management Specialists should 
+#           Rule 10: Plant Scientists should have the job title
             if selected_role == "Plant Scientists" and selected_activity not in [""]:
                 return 0       
-#           Rule 11: Nutrient Management Specialists should 
+#           Rule 11: Plant Scientists should be able to handle actions like
             if selected_role == "Plant Scientists" and selected_activity not in [""]:
                 return 0
-#           Rule 12: Nutrient Management Specialists should 
+#           Rule 12: Plant Scientists should be able to access activities like 
             if selected_role == "Plant Scientists" and selected_activity not in [""]:
                 return 0
 
