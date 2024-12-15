@@ -391,14 +391,14 @@ def Module_1():
 
 
 
-#           Rule 10: Plant Scientists should have the job title
-            if selected_role == "Plant Scientists" and selected_activity not in [""]:
+#           Rule 10: Plant Scientists should have the job title Plant Science Director, Lead Horticulturist, Plant Health Inspector, Nutrient, Systems Manager, Data Analytics Manager, Food Safety Compliance Officer, Quality Assurance Manager.
+            if selected_role == "Plant Scientists" and selected_activity not in ["Plant Science Director, Lead Horticulturist, Plant Health Inspector, Nutrient, Systems Manager, Data Analytics Manager, Food Safety Compliance Officer, Quality Assurance Manager"]:
                 return 0       
-#           Rule 11: Plant Scientists should be able to handle actions like
-            if selected_role == "Plant Scientists" and selected_activity not in [""]:
+#           Rule 11: Plant Scientists should be able to handle actions like Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization, Environmental Parameter Monitoring.
+            if selected_role == "Plant Scientists" and selected_activity not in ["Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization, Environmental Parameter Monitoring"]:
                 return 0
-#           Rule 12: Plant Scientists should be able to access activities like 
-            if selected_role == "Plant Scientists" and selected_activity not in [""]:
+#           Rule 12: Plant Scientists should be able to access activities like Growth Rate Documentation, Nutrient Mix Preparation, Water Quality Testing, pH Level Monitoring, Equipment Calibration, Plant Spacing Optimization, Compliance Report Generation, Light Intensity Calibration.
+            if selected_role == "Plant Scientists" and selected_activity not in ["Growth Rate Documentation, Nutrient Mix Preparation, Water Quality Testing, pH Level Monitoring, Equipment Calibration, Plant Spacing Optimization, Compliance Report Generation, Light Intensity Calibration"]:
                 return 0
 
             
