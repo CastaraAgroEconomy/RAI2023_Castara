@@ -380,10 +380,10 @@ def Module_1():
             
 
 #           Rule 7: System Technicians should have the job title Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Environmental Systems Manager, Data Analytics Manager, Nutrient Systems Manager.
-            if selected_role == "System Technicians" and selected_activity not in ["Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Environmental Systems Manager, Data Analytics Manager, Nutrient Systems Manager"]:
+            if selected_role == "System Technicians" and selected_sub_role not in ["Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Environmental Systems Manager, Data Analytics Manager, Nutrient Systems Manager"]:
                 return 0       
 #           Rule 8: System Technicians should handle actions like System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Equipment Maintenance, Compliance Monitoring, Resource Usage Optimization.
-            if selected_role == "System Technicians" and selected_activity not in ["System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Equipment Maintenance, Compliance Monitoring, Resource Usage Optimization"]:
+            if selected_role == "System Technicians" and selected_action not in ["System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Equipment Maintenance, Compliance Monitoring, Resource Usage Optimization"]:
                 return 0
 #           Rule 9: System Technicians should be able to access activities like Equipment Calibration, System Flow Rate Checks, Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, Maintenance Log Updates, Safety Inspection Rounds, Equipment Sanitization 
             if selected_role == "System Technicians" and selected_activity not in ["Equipment Calibration, System Flow Rate Checks, Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, Maintenance Log Updates, Safety Inspection Rounds, Equipment Sanitization"]:
@@ -392,10 +392,10 @@ def Module_1():
 
 
 #           Rule 10: Plant Scientists should have the job title Plant Science Director, Lead Horticulturist, Plant Health Inspector, Nutrient, Systems Manager, Data Analytics Manager, Food Safety Compliance Officer, Quality Assurance Manager.
-            if selected_role == "Plant Scientists" and selected_activity not in ["Plant Science Director, Lead Horticulturist, Plant Health Inspector, Nutrient, Systems Manager, Data Analytics Manager, Food Safety Compliance Officer, Quality Assurance Manager"]:
+            if selected_role == "Plant Scientists" and selected_sub_role not in ["Plant Science Director, Lead Horticulturist, Plant Health Inspector, Nutrient, Systems Manager, Data Analytics Manager, Food Safety Compliance Officer, Quality Assurance Manager"]:
                 return 0       
 #           Rule 11: Plant Scientists should be able to handle actions like Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization, Environmental Parameter Monitoring.
-            if selected_role == "Plant Scientists" and selected_activity not in ["Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization, Environmental Parameter Monitoring"]:
+            if selected_role == "Plant Scientists" and selected_action not in ["Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization, Environmental Parameter Monitoring"]:
                 return 0
 #           Rule 12: Plant Scientists should be able to access activities like Growth Rate Documentation, Nutrient Mix Preparation, Water Quality Testing, pH Level Monitoring, Equipment Calibration, Plant Spacing Optimization, Compliance Report Generation, Light Intensity Calibration.
             if selected_role == "Plant Scientists" and selected_activity not in ["Growth Rate Documentation, Nutrient Mix Preparation, Water Quality Testing, pH Level Monitoring, Equipment Calibration, Plant Spacing Optimization, Compliance Report Generation, Light Intensity Calibration"]:
@@ -403,10 +403,10 @@ def Module_1():
 
             
 #           Rule 13: Operations Personnel should have the job title Operations Director, Operations Manager, Production Supervisor, Quality Assurance Manager, Maintenance Supervisor, Data Analytics Manager.
-            if selected_role == "Operations Personnel" and selected_activity not in ["Operations Director, Operations Manager, Production Supervisor, Quality Assurance Manager, Maintenance Supervisor, Data Analytics Manager"]:
+            if selected_role == "Operations Personnel" and selected_sub_role not in ["Operations Director, Operations Manager, Production Supervisor, Quality Assurance Manager, Maintenance Supervisor, Data Analytics Manager"]:
                 return 0       
 #           Rule 14: Operations Personnel should be able to handle actions like Production Planning, Team Coordination, Resource Usage Optimization, Safety Protocol Implementation, Data Collection & Analysis, Quality Control Inspections.
-            if selected_role == "Operations Personnel" and selected_activity not in ["Production Planning, Team Coordination, Resource Usage Optimization, Safety Protocol Implementation, Data Collection & Analysis, Quality Control Inspections"]:
+            if selected_role == "Operations Personnel" and selected_action not in ["Production Planning, Team Coordination, Resource Usage Optimization, Safety Protocol Implementation, Data Collection & Analysis, Quality Control Inspections"]:
                 return 0
 #           Rule 15: Operations Personnel should be able to access activities like Team Schedule Creation, Inventory Management, Maintenance Log Updates, Harvest Weight Recording, Compliance Report Generation, Growth Data Recording, Safety Inspection Rounds, Equipment Sanitization.
             if selected_role == "Operations Personnel" and selected_activity not in ["Team Schedule Creation, Inventory Management, Maintenance Log Updates, Harvest Weight Recording, Compliance Report Generation, Growth Data Recording, Safety Inspection Rounds, Equipment Sanitization"]:
@@ -414,7 +414,7 @@ def Module_1():
             
             
 #           Rule 16: Maintenance Staff should have the job title 
-            if selected_role == "Maintenance Staff" and selected_activity not in [""]:
+            if selected_role == "Maintenance Staff" and selected_sub_role not in [""]:
                 return            
  #          Rule 17: Maintenance Staff should be able to handle actions like 
             if selected_role == "Maintenance Staff" and selected_action not in [""]:
