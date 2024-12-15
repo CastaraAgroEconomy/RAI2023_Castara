@@ -19,9 +19,9 @@ VALID_PASSWORD = "password"
 # Initialize matrices A, B, C & D in session_state if not already there
 
 if 'A' not in st.session_state:
-    st.session_state.A = ["Agricultural Engineers", "Horticulturists", "System Specialist", "Plant Scientists", "Operations Personnel",
-                          "Maintenance Staff", "Quality Control Personnel", "Harvest Workers", "Climate Control Specialists",
-                          "Nutrient Management Specialists", "Franchise Operator", "Franchisor", "Management Personnel", "Investors"]
+    st.session_state.A = ["Agricultural Engineer", "Horticulturist", "System Specialist", "Plant Scientist", "Operations Personnel",
+                          "Maintenance Staff", "Quality Control Personnel", "Harvest Worker", "Climate Control Specialist",
+                          "Nutrient Management Specialist", "Franchise Operator", "Franchisor", "Management Personnel", "Investor"]
 
 # Initialize matrices in session_state if not already there
 if 'B' not in st.session_state:
@@ -357,48 +357,48 @@ def Module_1():
 #           NOMINAL RULES :
 
 #           Rule 1: Agricultural Engineers should have the job title Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager.
-            if selected_role == "Agricultural Engineers" and selected_sub_role not in ["Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager"]:
+            if selected_role == "Agricultural Engineer" and selected_sub_role not in ["Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager"]:
                 return 0       
 #           Rule 2: Agricultural Engineers should handle actions like System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Resource Usage Optimization, Production Planning, Compliance Monitoring.
-            if selected_role == "Agricultural Engineers" and selected_action not in ["System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Resource Usage Optimization, Production Planning, Compliance Monitoring"]:
+            if selected_role == "Agricultural Engineer" and selected_action not in ["System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Resource Usage Optimization, Production Planning, Compliance Monitoring"]:
                 return 0
 #           Rule 3: Agricultural Engineers should be able to access activities like pH Level Monitoring, EC (Electrical Conductivity) Testing, Temperature Control Adjustment, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Compliance Report Generation, Team Coordination.
-            if selected_role == "Agricultural Engineers" and selected_activity not in ["pH Level Monitoring, EC (Electrical Conductivity) Testing, Temperature Control Adjustment, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Compliance Report Generation, Team Coordination"]:
+            if selected_role == "Agricultural Engineer" and selected_activity not in ["pH Level Monitoring, EC (Electrical Conductivity) Testing, Temperature Control Adjustment, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Compliance Report Generation, Team Coordination"]:
                 return 0
 
     
 #           Rule 4: Horticultralists should have the job title Lead Horticulturist, Plant Science Director, Plant Health Inspector, Quality Assurance Manager, Data Analytics Manager, Nutrient Systems Manager, Harvest Team Leader.
-            if selected_role == "Horticulturists" and selected_sub_role not in ["Lead Horticulturist, Plant Science Director, Plant Health Inspector, Quality Assurance Manager, Data Analytics Manager, Nutrient Systems Manager, Harvest Team Leader"]:
+            if selected_role == "Horticulturist" and selected_sub_role not in ["Lead Horticulturist, Plant Science Director, Plant Health Inspector, Quality Assurance Manager, Data Analytics Manager, Nutrient Systems Manager, Harvest Team Leader"]:
                 return 0       
 #           Rule 5: Horticulturilists should handle actions like Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Environmental Parameter Monitoring, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization.
-            if selected_role == "Horticulturists" and selected_action not in ["Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Environmental Parameter Monitoring, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization"]:
+            if selected_role == "Horticulturist" and selected_action not in ["Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Environmental Parameter Monitoring, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization"]:
                 return 0
 #           Rule 6: Horticultralists should be able to handle activities like Growth Rate Documentation, pH Level Monitoring, Nutrient Mix Preparation, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment, Plant Spacing Optimization, Water Quality Testing.
-            if selected_role == "Horticulturists" and selected_activity not in ["Growth Rate Documentation, pH Level Monitoring, Nutrient Mix Preparation, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment, Plant Spacing Optimization, Water Quality Testing"]:
+            if selected_role == "Horticulturist" and selected_activity not in ["Growth Rate Documentation, pH Level Monitoring, Nutrient Mix Preparation, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment, Plant Spacing Optimization, Water Quality Testing"]:
                 return 0
 
             
 
 #           Rule 7: System Technicians should have the job title Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Environmental Systems Manager, Data Analytics Manager, Nutrient Systems Manager.
-            if selected_role == "System Technicians" and selected_sub_role not in ["Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Environmental Systems Manager, Data Analytics Manager, Nutrient Systems Manager"]:
+            if selected_role == "System Technician" and selected_sub_role not in ["Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Environmental Systems Manager, Data Analytics Manager, Nutrient Systems Manager"]:
                 return 0       
 #           Rule 8: System Technicians should handle actions like System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Equipment Maintenance, Compliance Monitoring, Resource Usage Optimization.
-            if selected_role == "System Technicians" and selected_action not in ["System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Equipment Maintenance, Compliance Monitoring, Resource Usage Optimization"]:
+            if selected_role == "System Technician" and selected_action not in ["System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Equipment Maintenance, Compliance Monitoring, Resource Usage Optimization"]:
                 return 0
 #           Rule 9: System Technicians should be able to access activities like Equipment Calibration, System Flow Rate Checks, Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, Maintenance Log Updates, Safety Inspection Rounds, Equipment Sanitization 
-            if selected_role == "System Technicians" and selected_activity not in ["Equipment Calibration, System Flow Rate Checks, Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, Maintenance Log Updates, Safety Inspection Rounds, Equipment Sanitization"]:
+            if selected_role == "System Technician" and selected_activity not in ["Equipment Calibration, System Flow Rate Checks, Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, Maintenance Log Updates, Safety Inspection Rounds, Equipment Sanitization"]:
                 return 0
 
 
 
 #           Rule 10: Plant Scientists should have the job title Plant Science Director, Lead Horticulturist, Plant Health Inspector, Nutrient, Systems Manager, Data Analytics Manager, Food Safety Compliance Officer, Quality Assurance Manager.
-            if selected_role == "Plant Scientists" and selected_sub_role not in ["Plant Science Director, Lead Horticulturist, Plant Health Inspector, Nutrient, Systems Manager, Data Analytics Manager, Food Safety Compliance Officer, Quality Assurance Manager"]:
+            if selected_role == "Plant Scientist" and selected_sub_role not in ["Plant Science Director, Lead Horticulturist, Plant Health Inspector, Nutrient, Systems Manager, Data Analytics Manager, Food Safety Compliance Officer, Quality Assurance Manager"]:
                 return 0       
 #           Rule 11: Plant Scientists should be able to handle actions like Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization, Environmental Parameter Monitoring.
-            if selected_role == "Plant Scientists" and selected_action not in ["Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization, Environmental Parameter Monitoring"]:
+            if selected_role == "Plant Scientist" and selected_action not in ["Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization, Environmental Parameter Monitoring"]:
                 return 0
 #           Rule 12: Plant Scientists should be able to access activities like Growth Rate Documentation, Nutrient Mix Preparation, Water Quality Testing, pH Level Monitoring, Equipment Calibration, Plant Spacing Optimization, Compliance Report Generation, Light Intensity Calibration.
-            if selected_role == "Plant Scientists" and selected_activity not in ["Growth Rate Documentation, Nutrient Mix Preparation, Water Quality Testing, pH Level Monitoring, Equipment Calibration, Plant Spacing Optimization, Compliance Report Generation, Light Intensity Calibration"]:
+            if selected_role == "Plant Scientist" and selected_activity not in ["Growth Rate Documentation, Nutrient Mix Preparation, Water Quality Testing, pH Level Monitoring, Equipment Calibration, Plant Spacing Optimization, Compliance Report Generation, Light Intensity Calibration"]:
                 return 0
 
             
@@ -436,35 +436,35 @@ def Module_1():
     
 
 #           Rule 22: Harvest Workers should have the job title like Harvest Team Leader, Production Supervisor, Quality Assurance Manager, Plant Health Inspector.
-            if selected_role == "Harvest Workers" and selected_sub_role not in ["Harvest Team Leader, Production Supervisor, Quality Assurance Manager, Plant Health Inspector"]:
+            if selected_role == "Harvest Worker" and selected_sub_role not in ["Harvest Team Leader, Production Supervisor, Quality Assurance Manager, Plant Health Inspector"]:
                 return 0       
 #           Rule 23: Harvest Workers should be able to handle actions like Harvest Scheduling, Quality Control Inspections, Data Collection & Analysis, Safety Protocol Implementation, Resource Usage Optimization.
-            if selected_role == "Harvest Workers" and selected_action not in ["Harvest Scheduling, Quality Control Inspections, Data Collection & Analysis, Safety Protocol Implementation, Resource Usage Optimization"]:
+            if selected_role == "Harvest Worker" and selected_action not in ["Harvest Scheduling, Quality Control Inspections, Data Collection & Analysis, Safety Protocol Implementation, Resource Usage Optimization"]:
                 return 0       
 #           Rule 24: Harvest Workers should be able to access activities like Harvest Weight Recording, Equipment Sanitization, Plant Spacing Optimization, Safety Inspection Rounds, Growth Rate Documentation, Team Schedule Creation, Inventory Management.
-            if selected_role == "Harvest Workers" and selected_activity not in ["Harvest Weight Recording, Equipment Sanitization, Plant Spacing Optimization, Safety Inspection Rounds, Growth Rate Documentation, Team Schedule Creation, Inventory Management"]:
+            if selected_role == "Harvest Worker" and selected_activity not in ["Harvest Weight Recording, Equipment Sanitization, Plant Spacing Optimization, Safety Inspection Rounds, Growth Rate Documentation, Team Schedule Creation, Inventory Management"]:
                 return 0
             
 
 #           Rule 25: Climate Control Specialists should have the job title Environmental Systems Manager, Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Data Analytics Manager.
-            if selected_role == "Climate Control Specialists" and selected_sub_role not in ["Environmental Systems Manager, Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Data Analytics Manager"]:
+            if selected_role == "Climate Control Specialist" and selected_sub_role not in ["Environmental Systems Manager, Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Data Analytics Manager"]:
                 return 0       
 #           Rule 26: Climate Control Specialists should be able to handle actions like Environmental Parameter Monitoring, System Design & Optimization, System Troubleshooting, Resource Usage Optimization, Compliance Monitoring.
-            if selected_role == "Climate Control Specialists" and selected_action not in ["Environmental Parameter Monitoring, System Design & Optimization, System Troubleshooting, Resource Usage Optimization, Compliance Monitoring"]:
+            if selected_role == "Climate Control Specialist" and selected_action not in ["Environmental Parameter Monitoring, System Design & Optimization, System Troubleshooting, Resource Usage Optimization, Compliance Monitoring"]:
                 return 0       
 #           Rule 27: Climate Control Specialists should be able to access activities like Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Safety Inspection Rounds, Compliance Report Generation.
-            if selected_role == "Climate Control Specialists" and selected_activity not in ["Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Safety Inspection Rounds, Compliance Report Generation"]:
+            if selected_role == "Climate Control Specialist" and selected_activity not in ["Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Safety Inspection Rounds, Compliance Report Generation"]:
                 return 0
 
 
 #           Rule 28: Nutrient Management Specialists should have the job title Nutrient Systems Manager, Data Analytics Manager, Plant Science Director, Systems Integration Engineer, Quality Assurance Manager.
-            if selected_role == "Nutrient Management Specialists" and selected_sub_role not in ["Nutrient Systems Manager, Data Analytics Manager, Plant Science Director, Systems Integration Engineer, Quality Assurance Manager"]:
+            if selected_role == "Nutrient Management Specialist" and selected_sub_role not in ["Nutrient Systems Manager, Data Analytics Manager, Plant Science Director, Systems Integration Engineer, Quality Assurance Manager"]:
                 return 0       
 #           Rule 29: Nutrient Management Specialists should be able to handle actions like Nutrient Solution Management, Environmental Parameter Monitoring, System Troubleshooting, Resource Usage Optimization, Compliance Monitoring.
-            if selected_role == "Nutrient Management Specialists" and selected_action not in ["Nutrient Solution Management, Environmental Parameter Monitoring, System Troubleshooting, Resource Usage Optimization, Compliance Monitoring"]:
+            if selected_role == "Nutrient Management Specialist" and selected_action not in ["Nutrient Solution Management, Environmental Parameter Monitoring, System Troubleshooting, Resource Usage Optimization, Compliance Monitoring"]:
                 return 0       
 #           Rule 30: Nutrient Management Specialists should be able to access activities like Nutrient Mix Preparation, EC (Electrical Conductivity) Testing, pH Level Monitoring, Water Quality Testing, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Compliance Report Generation.
-            if selected_role == "Nutrient Management Specialists" and selected_activity not in ["Nutrient Mix Preparation, EC (Electrical Conductivity) Testing, pH Level Monitoring, Water Quality Testing, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Compliance Report Generation"]:
+            if selected_role == "Nutrient Management Specialist" and selected_activity not in ["Nutrient Mix Preparation, EC (Electrical Conductivity) Testing, pH Level Monitoring, Water Quality Testing, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Compliance Report Generation"]:
                 return 0
 
 
@@ -482,17 +482,17 @@ def Module_1():
 #           Rule 34: Franchisors should have the job title Franchise Owner, Franchise Compliance Manager, Financial Controller, Franchise Development Director, Business Development Manager,
 #                    Chief Financial Officer, Chief Operations Officer, Chief Marketing Officer, Business Development Director, Franchise Operations Director, Regional Franchise Manager, Franchise Operator,
 #                    Operations Manager, Operations Director
-            if selected_role == "Franchisors" and selected_sub_role not in ["Franchise Owner", "Franchise Compliance Manager", "Financial Controller", "Franchise Development Director", "Business Development Manager",
+            if selected_role == "Franchisor" and selected_sub_role not in ["Franchise Owner", "Franchise Compliance Manager", "Financial Controller", "Franchise Development Director", "Business Development Manager",
                      "Chief Financial Officer", "Chief Operations Officer", "Chief Marketing Officer", "Business Development Director", "Franchise Operations Director", "Regional Franchise Manager", "Franchise Operator",
                      "Operations Manager", "Operations Director"]:
                 return 0       
 #           Rule 35: Franchisors should handle actions like Compliance Auditing, Strategic Planning, Performance Metrics Review, Franchise Training Program Management, Investor Reporting, Market Analysis, 
 #           Franchise Standards Enforcement, Franchise Agreement Management, Business Expansion Planning, Financial Analysis, Franchise Performance Review
-            if selected_role == "Franchisors" and selected_action not in ["Compliance Auditing", "Strategic Planning", "Performance Metrics Review", "Franchise Training Program Management", "Investor Reporting", "Market Analysis", 
+            if selected_role == "Franchisor" and selected_action not in ["Compliance Auditing", "Strategic Planning", "Performance Metrics Review", "Franchise Training Program Management", "Investor Reporting", "Market Analysis", 
                                 "Franchise Standards Enforcement", "Franchise Agreement Management", "Business Expansion Planning", "Financial Analysis", "Franchise Performance Review"]:
                 return 0       
 #           Rule 36: Franchisors should be able to access activities like 
-            if selected_role == "Franchisors" and selected_activity not in [""]:
+            if selected_role == "Franchisor" and selected_activity not in [""]:
                 return 0       
             
               
@@ -518,16 +518,16 @@ def Module_1():
 
             
 #           Rule 40: Investors should have Job title Investment Analyst, Investor Relations Manager and Limited Partner
-            if selected_role == "Investors" and selected_sub_role not in ["Investment Analyst", "Investor Relations Manager", "Limited Partner"]:
+            if selected_role == "Investor" and selected_sub_role not in ["Investment Analyst", "Investor Relations Manager", "Limited Partner"]:
                 return 0       
 #           Rule 41: Investors should handle actions like Investment Performance Monitoring, Franchise Performance Review, Financial Analysis, Risk Assessment, 
 #                   Return on Investment Analysis, Capital Allocation, Market Analysis, Investor Reporting, Performance Metrics Review, Compliance Auditing
-            if selected_role == "Investors" and selected_action not in ["Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Risk Assessment", 
+            if selected_role == "Investor" and selected_action not in ["Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Risk Assessment", 
                                                                         "Return on Investment Analysis", "Capital Allocation", "Market Analysis", "Investor Reporting", "Performance Metrics Review", "Compliance Auditing"]:
                 return 0                                                      
 #           Rule 42: Investors should be able to access activities like Investment Portfolio Review, Franchise Audit Execution, Financial Statement Analysis, 
 #                   Risk Assessment Reports, ROI Calculations, Market Trend Analysis, Investor Report Generation, Performance Metric Tracking
-            if selected_role == "Investors" and selected_activity not in ["Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", 
+            if selected_role == "Investor" and selected_activity not in ["Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", 
                                                                           "Risk Assessment Reports", "ROI Calculations", "Market Trend Analysis", "Investor Report Generation", 
                                                                           "Performance Metric Tracking"]:
                 return 0
