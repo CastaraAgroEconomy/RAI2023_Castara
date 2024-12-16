@@ -347,7 +347,7 @@ def Module_1():
 
 
 
-        def is_valid_combination(self, selected_role, selected_sub_role, selected_action, selected_activity): 
+        def is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity): 
 
 #           Function to compare selections versus Truth Table data
             st.write(" ")
@@ -356,8 +356,7 @@ def Module_1():
             st.write("..... verifying validity of combination,")
             st.write("..... picked from list against Truth Table")
             st.write(" ")
-
-                     
+ 
 
 #           NOMINAL RULES :
 
