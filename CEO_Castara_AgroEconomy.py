@@ -308,10 +308,10 @@ def Module_1():
                 st.session_state.n,
                 st.session_state.x,
                 st.session_state.m,
-                st.session_state.y
-                st.session_state.selected_role
-                st.session_state.selected_sub_role
-                st.session_state.selected_action
+                st.session_state.y,
+                st.session_state.selected_role,
+                st.session_state.selected_sub_role,
+                st.session_state.selected_action,
                 st.session_state.selected_activity    
              )
 
