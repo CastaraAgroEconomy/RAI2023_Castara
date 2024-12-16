@@ -227,14 +227,15 @@ def Module_1():
             self.table = np.zeros((n, x, m, y), dtype=int)
             st.write("debug 3 - Empty array created ")
             
-            st.write("⚠️ - Generating Truth Table in accordance")
-            st.write("..... with predefined validation rules")
+            st.write("⚠️ - Generating Truth Table")
+            st.write("..... using predefined validation rules")
             self.generate_table()
-            st.write("debug 4 - Preparing Truth Table for validity check ... ")
+            st.write("debug 4 - Preparing Truth Table to check ... ")
+            st.write("..... selected combination ")
 
 
         def generate_table(self):
-            st.write("debug 5 - Repopulating array to create Truth table")
+            st.write("debug 5 - Repopulating array to create valid Truth table")
             try:
                 for n in range(1, self.n): 
                     st.write(f"debug 6: Processing n={n}")
