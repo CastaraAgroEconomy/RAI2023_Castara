@@ -203,7 +203,7 @@ def Module_1():
 # Initialize session state variables if not already present
     
     for key, default in {
-        'n': 1, 'x': 1, 'm': 1, 'y': 1,
+        'n': 14, 'x': 34, 'm': 30, 'y': 35,
         'self': None, 'R_go': 0, 'return_to_main' : False, 'live' : " "
     }.items():
         if key not in st.session_state:
@@ -223,7 +223,7 @@ def Module_1():
             self.m = m
             self.y = y
             
-            st.write("debug 2 - about to create empty table")
+            st.write("debug 2 - about to create empty array")
             self.table = np.zeros((n, x, m, y), dtype=int)
             st.write("debug 3 - Empty array created ")
             
