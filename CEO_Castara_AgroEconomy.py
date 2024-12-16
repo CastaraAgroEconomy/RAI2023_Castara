@@ -214,7 +214,7 @@ def Module_1():
     
     
     class TruthTable:
-        def __init__(self, n=2, x=2, m=2, y=2):
+        def __init__(self, n=14, x=34, m=30, y=35):
             
             st.write("debug 1 - defined 'init' ")
             
@@ -230,7 +230,7 @@ def Module_1():
             st.write("⚠️ - Generating Truth Table in accordance")
             st.write("..... with predefined validation rules")
             self.generate_table()
-            st.write("debug 4 - Truth Table & validity check complete ")
+            st.write("debug 4 - Preparing Truth Table for validity check ... ")
 
 
         def generate_table(self):
@@ -241,7 +241,7 @@ def Module_1():
                     for x in range(1, self.x):
                         for m in range(1, self.m):
                             for y in range(1, self.y):
-                                st.write(f"debug 7: Validating selection against ({n},{x},{m},{y})")
+                                st.write(f"debug 7: Validating selection array combination element ({n},{x},{m},{y})")
                                 is_valid = self.validate_choice(
                                     st.session_state.n,
                                     st.session_state.x,
@@ -252,7 +252,7 @@ def Module_1():
                                     st.session_state.selected_action,
                                     st.session_state.selected_activity
                                 )
-                                st.write("⚠️ - Validation of chosen combination completed")
+                                st.write("⚠️ - Validation of chosen array combination completed")
                                 self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
             
             except Exception as e:
@@ -261,12 +261,12 @@ def Module_1():
         
 
             if st.session_state.R_go == 1:
-                if st.session_state.n == 2 and st.session_state.y == 2:
+                if st.session_state.n == 14 and st.session_state.y < 36:
                     st.write(" ..... Access to feature granted 👍")
                     st.session_state.return_to_main = True
                     return
             elif st.session_state.R_go == 0:
-                   if st.session_state.n == 2 and st.session_state.y < 2:
+                   if st.session_state.n == 14 and st.session_state.y < 36:
                        st.write(" .....  Continuing to process")
                        st.session_state.return_to_main = False
                        return
