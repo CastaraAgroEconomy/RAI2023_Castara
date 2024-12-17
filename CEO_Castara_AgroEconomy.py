@@ -219,7 +219,6 @@ def Module_1():
     class TruthTable:
         def __init__(self, n=14, x=34, m=30, y=35):
             
-            st.write(" ")
             st.write("debug 1 - defined 'init' ")
             
             self.n = n
@@ -302,7 +301,6 @@ def Module_1():
                 st.session_state.is_valid = 0
             return 
 
-
         
         def validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
 
@@ -361,7 +359,6 @@ def Module_1():
 #           Function to prepare for comparison selections versus Truth Table data
             st.write(" ")
             st.write("⚠️ - One moment please ")
-            st.write(" ")
             st.write("..... verifying validity of combination ")
             st.write("..... picked from list, against Truth Table")
             st.write(" ")
