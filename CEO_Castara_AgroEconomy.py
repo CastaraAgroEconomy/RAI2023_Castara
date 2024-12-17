@@ -231,6 +231,7 @@ def Module_1():
             self.table = np.zeros((n, x, m, y), dtype=int)
             st.write("debug 3 - Empty array created ")
             
+            st.write(" ")
             st.write("⚠️ - Generating Truth Table")
             st.write("..... using predefined validation rules")
             self.generate_table()
@@ -257,6 +258,7 @@ def Module_1():
                                     st.session_state.selected_action,
                                     st.session_state.selected_activity
                                 )
+                                st.write(" ")
                                 st.write("⚠️ - Validation of selected combination completed")
 #                               self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
             
@@ -294,6 +296,7 @@ def Module_1():
                return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
             else:
                 next_step = self.get_next_valid_selection(n, x, m, y)
+                st.write(" "
                 st.write("⚠️ - Invalid combination ")
                 st.write(f"..... please re-select your {next_step}.")
                 st.session_state.is_valid = 0
