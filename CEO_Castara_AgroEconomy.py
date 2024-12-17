@@ -357,9 +357,13 @@ def Module_1():
             st.write("..... picked from list against Truth Table")
             st.write(" ")
  
-
+            
 #           NOMINAL RULES :
 
+#           Initializing - set the balidity to true and allow the rules to invalidate it if it is invalid
+
+            is_valid == True
+            
 #           Rule 1: Agricultural Engineers should have the job title Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager.
             if selected_role == "Agricultural Engineer" and selected_sub_role not in ["Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager"]:
                 return 0       
@@ -536,10 +540,7 @@ def Module_1():
                                                                           "Performance Metric Tracking"]:
                 return 0
 
-            
-#           Default valid if no rule invalidates it
-            st.success("Selected combination not invalid ! ")
-            return 1
+#           End of Nominal Rules
                 
             
 
