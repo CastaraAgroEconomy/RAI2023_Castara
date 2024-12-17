@@ -304,7 +304,7 @@ def Module_1():
             st.write("⚠️ - Confirming combination is valid")
             st.write(" ..... searching")
             
-            is_valid = self.is_valid_combination(
+            st.session_state.is_valid = self.is_valid_combination(
                 st.session_state.n,
                 st.session_state.x,
                 st.session_state.m,
@@ -318,7 +318,7 @@ def Module_1():
             st.write(" ") 
             st.write("⚠️ - Truth Table consulted ")
         
-            if is_valid:
+            if  st.session_state.is_valid:
                 st.session_state.R_go = 1
                 st.write("👌 combination is a valid selection")
             else:
@@ -362,7 +362,7 @@ def Module_1():
 
 #           Initializing - set the balidity to true and allow the rules to invalidate it if it is invalid
 
-            is_valid == True
+            st.session_state.is_valid == True
             
 #           Rule 1: Agricultural Engineers should have the job title Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager.
             if selected_role == "Agricultural Engineer" and selected_sub_role not in ["Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager"]:
