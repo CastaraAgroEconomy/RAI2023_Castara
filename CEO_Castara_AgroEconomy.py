@@ -219,6 +219,7 @@ def Module_1():
     class TruthTable:
         def __init__(self, n=14, x=34, m=30, y=35):
             
+            st.write(" ")
             st.write("debug 1 - defined 'init' ")
             
             self.n = n
@@ -289,10 +290,11 @@ def Module_1():
             st.write("..... as a four element matrix combination")
 
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
-                return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
+               st.session_state.is_valid = 1
+               return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
             else:
                 next_step = self.get_next_valid_selection(n, x, m, y)
-                st.write("⚠️ - Invalid combination")
+                st.write("⚠️ - Invalid combination ")
                 st.write(f"..... please re-select your {next_step}.")
             return 
 
@@ -352,7 +354,7 @@ def Module_1():
 
         def is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity): 
 
-#           Function to compare selections versus Truth Table data
+#           Function to prepare for comparison selections versus Truth Table data
             st.write(" ")
             st.write("⚠️ - One moment please ")
             st.write(" ")
@@ -544,7 +546,7 @@ def Module_1():
             
 
 #   Create instance after class definition
-    st.write("debug 0 - Creating TruthTable instance")
+    st.write("debug 0 - Creating Truth Table instance")
     truth_table = TruthTable()  # This line was missing         
     st.write("debug 9: Table generation completed")
 
