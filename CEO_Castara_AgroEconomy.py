@@ -109,7 +109,7 @@ if 'live' not in st.session_state:
     st.session_state.live = " "
 
 if 'is_valid' not in st.session_state:
-    st.session_state.is_valid = 1
+    st.session_state.is_valid = True
 
 
 
@@ -246,7 +246,7 @@ def Module_1():
                         for m in range(1, self.m):
                             for y in range(1, self.y):
                                 st.write(f"debug 7: Validating selection array combination element ({n},{x},{m},{y})")
-                                is_valid = self.validate_choice(
+                                st.session_state.is_valid = self.validate_choice(
                                     st.session_state.n,
                                     st.session_state.x,
                                     st.session_state.m,
@@ -257,7 +257,7 @@ def Module_1():
                                     st.session_state.selected_activity
                                 )
                                 st.write("⚠️ - Validation of chosen array combination completed")
-                                self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
+                                self.table[n, x, m, y] = int(bool(st.session_state.is_valid)) # converts the result, is_valid, into an integer
             
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
