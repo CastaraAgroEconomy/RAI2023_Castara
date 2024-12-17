@@ -257,7 +257,7 @@ def Module_1():
                                     st.session_state.selected_activity
                                 )
                                 st.write("⚠️ - Validation of chosen array combination completed")
-#                                self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
+#                               self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
             
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
@@ -321,7 +321,7 @@ def Module_1():
             st.write(" ") 
             st.write("⚠️ - Truth Table consulted ")
         
-            if  st.session_state.is_valid = 1
+            if  st.session_state.is_valid == 1:
                 st.session_state.R_go = 1
                 st.write("👌 combination is a valid selection")
             else:
