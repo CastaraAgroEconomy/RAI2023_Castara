@@ -296,6 +296,7 @@ def Module_1():
                 next_step = self.get_next_valid_selection(n, x, m, y)
                 st.write("⚠️ - Invalid combination ")
                 st.write(f"..... please re-select your {next_step}.")
+                st.session_state.is_valid = 0
             return 
 
 
