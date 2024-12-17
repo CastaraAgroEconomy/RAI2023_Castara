@@ -108,6 +108,9 @@ if 'return_to_main' not in st.session_state:
 if 'live' not in st.session_state:
     st.session_state.live = " "
 
+if 'is_valid' not in st.session_state:
+    st.session_state.is_valid = True
+
 
 
 # Define the main function that controls the flow
