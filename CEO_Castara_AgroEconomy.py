@@ -233,19 +233,19 @@ def Module_1():
             st.write("⚠️ - Generating Truth Table")
             st.write("..... using predefined validation rules")
             self.generate_table()
-            st.write("debug 4 - Preparing Truth Table to check ... ")
-            st.write("..... selected combination ")
+            st.write("debug 4 - Preparing dummy Truth Table ... ")
+            st.write("..... to check selected combination ")
 
 
         def generate_table(self):
-            st.write("debug 5 - Repopulating array to create valid Truth table")
+            st.write("debug 5 - Repopulating array to create a valid Truth table")
             try:
                 for n in range(1, self.n): 
                     st.write(f"debug 6: Processing n={n}")
                     for x in range(1, self.x):
                         for m in range(1, self.m):
                             for y in range(1, self.y):
-                                st.write(f"debug 7: Validating selection array combination element ({n},{x},{m},{y})")
+                                st.write(f"debug 7: Validating selected combination element ({n},{x},{m},{y})")
                                 is_valid = self.validate_choice(
                                     st.session_state.n,
                                     st.session_state.x,
@@ -256,7 +256,7 @@ def Module_1():
                                     st.session_state.selected_action,
                                     st.session_state.selected_activity
                                 )
-                                st.write("⚠️ - Validation of chosen array combination completed")
+                                st.write("⚠️ - Validation of selected combination completed")
 #                               self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
             
             except Exception as e:
@@ -285,8 +285,8 @@ def Module_1():
             """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")
-            st.write("⚠️ - Validating chosen items from lists")
-            st.write("..... as a four item combination")
+            st.write("⚠️ - Validating combination of selected items from lists")
+            st.write("..... as a four element matrix combination")
 
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
                 return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
@@ -305,7 +305,7 @@ def Module_1():
 
             st.write(" ")
             st.write("⚠️ - Confirming combination is valid")
-            st.write(" ..... searching")
+            st.write(" ..... searching Truth Table array")
             
             st.session_state.is_valid = self.is_valid_combination(
                 st.session_state.n,
