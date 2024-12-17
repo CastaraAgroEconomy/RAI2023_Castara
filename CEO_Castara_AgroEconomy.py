@@ -246,7 +246,7 @@ def Module_1():
                         for m in range(1, self.m):
                             for y in range(1, self.y):
                                 st.write(f"debug 7: Validating selection array combination element ({n},{x},{m},{y})")
-                                st.session_state.is_valid = self.validate_choice(
+                                is_valid = self.validate_choice(
                                     st.session_state.n,
                                     st.session_state.x,
                                     st.session_state.m,
