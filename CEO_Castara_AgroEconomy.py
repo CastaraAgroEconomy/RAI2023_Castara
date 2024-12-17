@@ -109,7 +109,7 @@ if 'live' not in st.session_state:
     st.session_state.live = " "
 
 if 'is_valid' not in st.session_state:
-    st.session_state.is_valid = True
+    st.session_state.is_valid = 1
 
 
 
@@ -356,8 +356,8 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - One moment please ")
             st.write(" ")
-            st.write("..... verifying validity of combination,")
-            st.write("..... picked from list against Truth Table")
+            st.write("..... verifying validity of combination ")
+            st.write("..... picked from list, against Truth Table")
             st.write(" ")
  
             
@@ -365,7 +365,7 @@ def Module_1():
 
 #           Initializing - set the balidity to true and allow the rules to invalidate it if it is invalid
 
-            st.session_state.is_valid == True
+            st.session_state.is_valid = 1
             
 #           Rule 1: Agricultural Engineers should have the job title Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager.
             if selected_role == "Agricultural Engineer" and selected_sub_role not in ["Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager"]:
