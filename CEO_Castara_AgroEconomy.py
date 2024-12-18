@@ -210,7 +210,7 @@ def Module_1():
     
     for key, default in {
         'n': 14, 'x': 34, 'm': 30, 'y': 35,
-        'self': None, 'suggested_role' : " ", 'suggested_sub_role' : " ", 'suggested_action' : " ", 'suggested_activity' : " ", 'R_go': 0, 'return_to_main' : False, 'live' : " "
+        'self': None, 'selected_role' : " ", 'selected_sub_role' : " ", 'selected_action' : " ", 'selected_activity' : " ", 'R_go': 0, 'return_to_main' : False, 'live' : " "
     }.items():
         if key not in st.session_state:
             st.session_state[key] = default
@@ -228,10 +228,10 @@ def Module_1():
             self.x = x
             self.m = m
             self.y = y
-            self.suggested_role = st.session_state.suggested_role
-            self.suggested_sub_role = st.session_state.suggested_sub_role
-            self.suggested_action = st.session_state.suggested_action
-            self.suggested_activity = st.session_state.suggested_activity
+            self.selected_role = st.session_state_selected_role
+            self.selected_sub_role = st.session_state.selected_sub_role
+            self.selected_action = st.session_state.selected_action
+            self.selected_activity = st.session_state.selected_activity
        
             st.write("debug 2 - about to create empty array")
             self.table = np.zeros((n, x, m, y), dtype=int)
