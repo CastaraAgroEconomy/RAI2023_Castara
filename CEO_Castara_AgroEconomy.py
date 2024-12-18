@@ -204,7 +204,7 @@ def Module_1():
 #	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
 
     st.write(" ")
-    st.write("⚠️ - Entered Module 1")
+    st.write("⚠️ - Entered Module 1 ")
     
 # Initialize session state variables if not already present
     
@@ -235,11 +235,11 @@ def Module_1():
             
             st.write(" ")
             st.write("⚠️ - Generating Truth Table")
-            st.write("..... using predefined rules")
+            st.write("..... without predefined rules")
             
             self.generate_table()
             st.write("debug 4 - Preparing dummy Truth Table ")
-            st.write("..... to check selected combination ")
+            st.write("..... array to be updated with rules ")
 
         def generate_table(self):
             st.write("debug 5 - Repopulating array ")
@@ -297,7 +297,6 @@ def Module_1():
 
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
                st.session_state.validity_check = 1
-               return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
             else:
                 next_step = self.get_next_valid_selection(n, x, m, y)
                 st.write(" ")
@@ -316,17 +315,11 @@ def Module_1():
             st.write("⚠️ - Confirming combination is valid")
             st.write("     searching Truth Table array")
             
-            is_valid = self.is_valid_combination(
-                n,
-                x,
-                m,
-                y,
-                selected_role,
-                selected_sub_role,
-                selected_action,
-                selected_activity    
-             )
-
+            if n==1 and x==1 and m==1 and y==1:
+               is_valid = 1
+            else
+               is_valid = 0
+                
             st.write(" ") 
             st.write("⚠️ - Truth Table consulted ")
 
