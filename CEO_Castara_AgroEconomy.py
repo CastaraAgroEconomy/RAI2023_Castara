@@ -295,7 +295,7 @@ def Module_1():
             st.write("     from lists; Matrix B, C, D ")
             st.write("     as a four element matrix combination")
 
-            if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
+            if validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
                st.session_state.validity_check = 1
             else:
                 next_step = self.get_next_valid_selection(n, x, m, y)
@@ -315,7 +315,7 @@ def Module_1():
             st.write("⚠️ - Confirming combination is valid")
             st.write("     searching Truth Table array")
             
-            if n==1 and x==1 and m==1 and y==1:
+            if is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity): 
                is_valid = 1
             else
                is_valid = 0
