@@ -228,7 +228,11 @@ def Module_1():
             self.x = x
             self.m = m
             self.y = y
-            
+            self.suggested_role = st.session_state.suggested_role
+            self.suggested_sub_role = st.session_state.suggested_sub_role
+            self.suggested_action = st.session_state.suggested_action
+            self.suggested_activity = st.session_state.suggested_activity
+       
             st.write("debug 2 - about to create empty array")
             self.table = np.zeros((n, x, m, y), dtype=int)
             st.write("debug 3 - Empty array created ")
