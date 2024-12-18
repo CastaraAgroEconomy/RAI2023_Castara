@@ -210,7 +210,7 @@ def Module_1():
     
     for key, default in {
         'n': 14, 'x': 34, 'm': 30, 'y': 35,
-        'self': None, 'selected_role' : st.session_state.selected_role, 'selected_sub_role' : st.session_state.selected_sub_role, 'selected_action' : st.session_state.selected_action, 'selected_activity' : st.session_state.selected_activity, 'R_go': 0, 'return_to_main' : False, 'live' : " "
+        'self': None, 'selected_role' : selected_role = st.session_state.get('selected_role', None), 'selected_sub_role' : selected_sub_role = st.session_state.get('selected_sub_role', None), 'selected_action' : selected_action = st.session_state.get('selected_action', None), 'selected_activity' : selected_activith = st.session_state.get('selected_activity', None), 'R_go': 0, 'return_to_main' : False, 'live' : " "
     }.items():
         if key not in st.session_state:
             st.session_state[key] = default
