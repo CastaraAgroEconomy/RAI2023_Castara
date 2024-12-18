@@ -228,7 +228,7 @@ def Module_1():
             self.x = x
             self.m = m
             self.y = y
-            self.selected_role = st.session_state_selected_role
+            self.selected_role = st.session_state.selected_role
             self.selected_sub_role = st.session_state.selected_sub_role
             self.selected_action = st.session_state.selected_action
             self.selected_activity = st.session_state.selected_activity
