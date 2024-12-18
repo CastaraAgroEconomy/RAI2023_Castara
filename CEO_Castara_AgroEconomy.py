@@ -210,7 +210,7 @@ def Module_1():
     
     for key, default in {
         'n': 14, 'x': 34, 'm': 30, 'y': 35,
-        'self': None, suggested_role : " ", suggested_sub_role : " ", suggested_action : " ", suggested_activity : " ", 'R_go': 0, 'return_to_main' : False, 'live' : " "
+        'self': None, 'suggested_role' : " ", 'suggested_sub_role' : " ", 'suggested_action' : " ", 'suggested_activity' : " ", 'R_go': 0, 'return_to_main' : False, 'live' : " "
     }.items():
         if key not in st.session_state:
             st.session_state[key] = default
