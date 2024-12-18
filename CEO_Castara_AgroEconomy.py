@@ -259,7 +259,7 @@ def Module_1():
                                 )
                                 st.write(" ")
                                 st.write("⚠️ - Validation of selected combination completed")
-#                               self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
+                                self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
             
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
