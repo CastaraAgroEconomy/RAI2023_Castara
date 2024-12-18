@@ -220,7 +220,7 @@ def Module_1():
     
     
     class TruthTable:
-        def __init__(self, n=14, x=34, m=30, y=35):
+        def __init__(self, n=14, x=34, m=30, y=35, selected_role, selected_sub_role, selected_action, selected_activity):
             
             st.write("debug 1 - defined 'init' ")
             
