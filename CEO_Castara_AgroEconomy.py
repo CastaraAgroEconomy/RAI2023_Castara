@@ -108,6 +108,9 @@ if 'return_to_main' not in st.session_state:
 if 'live' not in st.session_state:
     st.session_state.live = " "
 
+if 'is_valid' not in st.session_state:
+    st.session_state.is_valid = 0
+
 if 'validity_check' not in st.session_state:
     st.session_state.validity_check = 0
 
@@ -233,14 +236,14 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Generating Truth Table")
             st.write("..... using predefined rules")
+            
             self.generate_table()
-            st.write("debug 4 - Preparing dummy Truth Table ... ")
+            st.write("debug 4 - Preparing dummy Truth Table ")
             st.write("..... to check selected combination ")
-
 
         def generate_table(self):
             st.write("debug 5 - Repopulating array ")
-            st.write("..... to create a valid Truth table")
+            st.write("..... to create a valid Truth table ")
             try:
                 for n in range(1, self.n): 
                     st.write(f"debug 6: Processing n={n}")
@@ -249,17 +252,17 @@ def Module_1():
                             for y in range(1, self.y):
                                 st.write(f"debug 7: Validating selected combination element ({n},{x},{m},{y})")
                                 is_valid = self.validate_choice(
-                                    st.session_state.n,
-                                    st.session_state.x,
-                                    st.session_state.m,
-                                    st.session_state.y,
-                                    st.session_state.selected_role,
-                                    st.session_state.selected_sub_role,
-                                    st.session_state.selected_action,
-                                    st.session_state.selected_activity
+                                    n,
+                                    x,
+                                    m,
+                                    y,
+                                    selected_role,
+                                    selected_sub_role,
+                                    selected_action,
+                                    selected_activity
                                 )
                                 st.write(" ")
-                                st.write("⚠️ - Validation of selected combination completed")
+                                st.write("⚠️ - Validation of selected combination commencing ")
                                 self.table[n, x, m, y] = int(bool(is_valid)) # converts the result, is_valid, into an integer
             
             except Exception as e:
@@ -290,7 +293,7 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Validating combination of selected items ")
             st.write("     from lists; Matrix B, C, D ")
-            st.write("..... as a four element matrix combination")
+            st.write("     as a four element matrix combination")
 
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
                st.session_state.validity_check = 1
@@ -326,6 +329,8 @@ def Module_1():
 
             st.write(" ") 
             st.write("⚠️ - Truth Table consulted ")
+
+            st.session_state.validity_check = is_valid
         
             if  st.session_state.validity_check == 1:
                 st.session_state.R_go = 1
