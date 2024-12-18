@@ -232,14 +232,15 @@ def Module_1():
             
             st.write(" ")
             st.write("⚠️ - Generating Truth Table")
-            st.write("..... using predefined validation rules")
+            st.write("..... using predefined rules")
             self.generate_table()
             st.write("debug 4 - Preparing dummy Truth Table ... ")
             st.write("..... to check selected combination ")
 
 
         def generate_table(self):
-            st.write("debug 5 - Repopulating array to create a valid Truth table")
+            st.write("debug 5 - Repopulating array ")
+            st.write("..... to create a valid Truth table")
             try:
                 for n in range(1, self.n): 
                     st.write(f"debug 6: Processing n={n}")
@@ -287,7 +288,8 @@ def Module_1():
             """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")
-            st.write("⚠️ - Validating combination of selected items from lists")
+            st.write("⚠️ - Validating combination of selected items ")
+            st.write("      from lists; Matrix B, C, D ")
             st.write("..... as a four element matrix combination")
 
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
