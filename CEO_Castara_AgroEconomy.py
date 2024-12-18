@@ -317,7 +317,7 @@ def Module_1():
             
             if is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity): 
                is_valid = 1
-            else
+            else:
                is_valid = 0
                 
             st.write(" ") 
