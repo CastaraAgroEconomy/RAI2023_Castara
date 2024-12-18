@@ -108,8 +108,8 @@ if 'return_to_main' not in st.session_state:
 if 'live' not in st.session_state:
     st.session_state.live = " "
 
-if 'is_valid' not in st.session_state:
-    st.session_state.is_valid = 1
+if 'validity_check' not in st.session_state:
+    st.session_state.validity_check = 0
 
 
 
@@ -289,18 +289,18 @@ def Module_1():
         
             st.write(" ")
             st.write("⚠️ - Validating combination of selected items ")
-            st.write("      from lists; Matrix B, C, D ")
+            st.write("     from lists; Matrix B, C, D ")
             st.write("..... as a four element matrix combination")
 
             if self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
-               st.session_state.is_valid = 1
+               st.session_state.validity_check = 1
                return self.is_valid_combination(selected_role, selected_sub_role, selected_action, selected_activity)
             else:
                 next_step = self.get_next_valid_selection(n, x, m, y)
                 st.write(" ")
                 st.write("⚠️ - Invalid combination ")
                 st.write(f"..... please re-select your {next_step}.")
-                st.session_state.is_valid = 0
+                st.session_state. validity_check = 0
             return 
 
         
@@ -311,29 +311,29 @@ def Module_1():
 
             st.write(" ")
             st.write("⚠️ - Confirming combination is valid")
-            st.write(" ..... searching Truth Table array")
+            st.write("     searching Truth Table array")
             
-            st.session_state.is_valid = self.is_valid_combination(
-                st.session_state.n,
-                st.session_state.x,
-                st.session_state.m,
-                st.session_state.y,
-                st.session_state.selected_role,
-                st.session_state.selected_sub_role,
-                st.session_state.selected_action,
-                st.session_state.selected_activity    
+            is_valid = self.is_valid_combination(
+                n,
+                x,
+                m,
+                y,
+                selected_role,
+                selected_sub_role,
+                selected_action,
+                selected_activity    
              )
 
             st.write(" ") 
             st.write("⚠️ - Truth Table consulted ")
         
-            if  st.session_state.is_valid == 1:
+            if  st.session_state.validity_check == 1:
                 st.session_state.R_go = 1
                 st.write("👌 combination is a valid selection")
             else:
                 st.session_state.R_go = 0
                 st.write(f" the selected combination {n},{x},{m},{y} is invalid")
-            return st.session_state.is_valid
+            return st.session_state.validity_check
 
 
     
