@@ -256,8 +256,6 @@ def Module_1():
                     for x in range(1, self.x):
                         for m in range(1, self.m):
                             for y in range(1, self.y):
-
-                                st.write(f" selected_role is {self.selected_role}")
                                 
                                 st.write(f"debug 7: Validating selected combination element ({n},{x},{m},{y})")
                                 is_valid = self.validate_choice(
@@ -299,6 +297,8 @@ def Module_1():
         def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
             """Validate the selection by checking if the combination matches valid rules."""
         
+            st.write(f" selected_role is  {self.selected_role}")            
+                       
             st.write(" ")
             st.write("⚠️ - Validating combination of selected items ")
             st.write("     from lists; Matrix B, C, D ")
