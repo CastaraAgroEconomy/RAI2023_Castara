@@ -239,10 +239,10 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Generating Truth Table")
             st.write("..... without predefined rules")
-            
-            self.generate_table()
 
             st.write(f" selected_role is {selected_role}")
+            
+            self.generate_table()
             
             st.write("debug 4 - Preparing dummy Truth Table ")
             st.write("..... array to be updated with rules ")
