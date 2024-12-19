@@ -209,7 +209,7 @@ def Module_1():
 # Initialize session state variables if not already present
     
     for key, default in {
-        'n': 14, 'x': 34, 'm': 30, 'y': 35, 'selected_role' : st.session_state.selected_role, 'selected_sub_role' : st.session_state.selected_sub_role, 'selected_action' : st.session_state.selected_action, 'selected_activity' : st.session_state.selected_activity, R_go': 0, 'return_to_main' : False, 'live' : " "
+        'n': 14, 'x': 34, 'm': 30, 'y': 35, 'selected_role' : st.session_state.selected_role, 'selected_sub_role' : st.session_state.selected_sub_role, 'selected_action' : st.session_state.selected_action, 'selected_activity' : st.session_state.selected_activity, R_go': 0, 'return_to_main' : False
         }.items():
         if key not in st.session_state:
             st.session_state[key] = default
