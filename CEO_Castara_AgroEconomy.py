@@ -239,8 +239,6 @@ def Module_1():
             st.write(" ")
             st.write("⚠️ - Generating Truth Table")
             st.write("..... without predefined rules")
-
-            st.write(f" selected_role is {selected_role}")
             
             self.generate_table()
             
@@ -248,6 +246,9 @@ def Module_1():
             st.write("..... array to be updated with rules ")
 
         def generate_table(self):
+
+            st.write(f" selected_role is {self.selected_role}")
+            
             st.write("debug 5 - Repopulating array ")
             st.write("..... to create a valid Truth table ")
             try:
