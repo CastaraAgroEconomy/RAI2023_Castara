@@ -221,7 +221,6 @@ def Module_1():
     class TruthTable:
         def __init__(self, n=14, x=34, m=30, y=35, selected_role = st.session_state.selected_role, selected_sub_role = st.session_state.selected_sub_role, selected_action = st.session_state.selected_action, selected_activity = st.session_state.selected_activity):
 
-            st.write(f" selected_role is {selected_role}")
             st.write("debug 1 - defined 'init' ")
             
             self.n = n
@@ -242,6 +241,9 @@ def Module_1():
             st.write("..... without predefined rules")
             
             self.generate_table()
+
+            st.write(f" selected_role is {selected_role}")
+            
             st.write("debug 4 - Preparing dummy Truth Table ")
             st.write("..... array to be updated with rules ")
 
