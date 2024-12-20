@@ -549,7 +549,7 @@ def Module_1():
             else:
                 return 1
 
-#           End of Nominal Rules return is_valid as 0 or 1
+#        End of Nominal Rules return is_valid as 0 or 1
                         
 #        Create instance after class definition
             st.write("debug 9 - Creating Truth Table instance")
@@ -557,7 +557,7 @@ def Module_1():
  
 
 st.write("debug 10: Table generation & use completed")
-    return 
+return 
 
 
         
