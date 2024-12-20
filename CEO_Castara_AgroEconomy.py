@@ -271,32 +271,32 @@ def Module_1():
                                     st.session_state.C[m],
                                     st.session_state.D[y]
                                 )
-                             
+                            
                                 st.write(" ")
-                                st.write("⚠️ - Validation of selected combination commencing ")
+                                st.write("⚠️ - Validation of selections in progress ")
                                 self.table[n, x, m, y] = int(bool(validity_confirmation))        # converts the result, is_valid, into an integer
-            
+
+                                R_go = st.session_state.R_go
+         
+                                if R_go == 1:
+                                    st.write(" ..... Access to feature granted 👍")
+                                    st.session_state.return_to_main = True
+                                    return
+                                if R_go == 0:
+                                    if n := 14 and y < 35:
+                                        st.write(" .....  Continuing to process")
+                                        st.session_state.return_to_main = False
+                                        return
+                                    if n == 14 and y == 35:
+                                        st.write(" ..... Access to feature denied 👎")
+                                        st.session_state.return_to_main = True
+                                        return
+
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
-        
-            R_go = st.session_state.R_go
-         
-            if R_go == 1:
-                st.write(" ..... Access to feature granted 👍")
-                st.session_state.return_to_main = True
-                return
-            if R_go == 0:
-                if n := 14 and y < 35:
-                    st.write(" .....  Continuing to process")
-                    st.session_state.return_to_main = False
-                    return
-                if n == 14 and y == 35:
-                    st.write(" ..... Access to feature denied 👎")
-                    st.session_state.return_to_main = True
-                    return
-                
 
+#       INFERENCE ENGINE - cascading functions
 
         def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
             """Validate the selection by checking if the combination matches valid rules."""
