@@ -114,6 +114,8 @@ if 'is_valid' not in st.session_state:
 if 'validity_check' not in st.session_state:
     st.session_state.validity_check = 0
 
+if 'validity_confirmation' not in st.session_state:
+    st.session_state.validity_confirmation = 0
 
 
 # Define the main function that controls the flow
@@ -258,7 +260,7 @@ def Module_1():
                             for y in range(1, self.y):
                                 
                                 st.write(f"debug 7: Validating selected combination element ({n},{x},{m},{y})")
-                                is_valid = self.validate_choice(
+                                validity_confimation = self.validate_choice(
                                     n,
                                     x,
                                     m,
