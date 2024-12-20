@@ -263,10 +263,10 @@ def Module_1():
                                     x,
                                     m,
                                     y,
-                                    A[{n}],
-                                    B[{x}],
-                                    C[{m}],
-                                    D[{y}]
+                                    st.session_state.A[{n}],
+                                    st.session_state.B[{x}],
+                                    st.session_state.C[{m}],
+                                    st.session_state.D[{y}]
                                 )
                                 st.write(" ")
                                 st.write("⚠️ - Validation of selected combination commencing ")
