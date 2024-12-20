@@ -274,6 +274,11 @@ def Module_1():
                             
                                 st.write(" ")
                                 st.write("⚠️ - Validation of selections in progress ")
+                                if validity_confirmation == 0:
+                                    st.session_state.R_go = 0
+                                else:
+                                    st.session_state.R_go = 1
+                                
                                 self.table[n, x, m, y] = int(bool(validity_confirmation))        # converts the result, is_valid, into an integer
                              
             except Exception as e:
@@ -315,10 +320,7 @@ def Module_1():
 
             if validity_check == 0:   # condition to be advised
                 next_step = self.get_next_valid_selection(n, x, m, y)
-                st.session_state.R_go = 0
-            else:
-                st.session_state.R_go = 1
-            return 
+            return # valid_confirmation as 0 or 1
 
         
         def validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
@@ -340,7 +342,7 @@ def Module_1():
                 st.write("👌 combination is a valid selection")
             else:
                 st.write(f" the selected combination {n},{x},{m},{y} is invalid")
-            return 
+            return # validity_check as 0 or 1
 
     
         def get_next_valid_selection(self, n, x, m, y):
@@ -552,7 +554,7 @@ def Module_1():
             else:
                 return 1
 
-#           End of Nominal Rules
+#           End of Nominal Rules return is_valid as 0 or 1
                 
             
 
