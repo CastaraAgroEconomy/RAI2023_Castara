@@ -266,7 +266,7 @@ def Module_1():
                                     A[{n}],
                                     B[{x}],
                                     C[{m}],
-                                    D[{y]}
+                                    D[{y}]
                                 )
                                 st.write(" ")
                                 st.write("⚠️ - Validation of selected combination commencing ")
