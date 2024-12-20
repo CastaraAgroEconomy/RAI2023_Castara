@@ -557,7 +557,7 @@ def Module_1():
 #        Create instance after class definition
             st.write("debug 4 - Creating Truth Table instance")
             truth_table = TruthTable()  # This line was missing       
-            retur
+            return
 
             st.write("debug 9: Table generation & use completed")
     
