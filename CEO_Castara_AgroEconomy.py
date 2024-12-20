@@ -260,7 +260,7 @@ def Module_1():
                             for y in range(1, self.y):
                                 
                                 st.write(f"debug 7: Validating selected combination element ({n},{x},{m},{y})")
-                                validity_confimation = self.validate_choice(
+                                validity_confirmation = self.validate_choice(
                                     n,
                                     x,
                                     m,
