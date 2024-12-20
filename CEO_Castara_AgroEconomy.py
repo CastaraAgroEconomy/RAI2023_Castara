@@ -270,9 +270,10 @@ def Module_1():
                                     st.session_state.C[m],
                                     st.session_state.D[y]
                                 )
+                             
                                 st.write(" ")
                                 st.write("⚠️ - Validation of selected combination commencing ")
-                                self.table[n, x, m, y] = int(bool(validity_confirmation)) # converts the result, is_valid, into an integer
+                                self.table[n, x, m, y] = int(bool(validity_confirmation))        # converts the result, is_valid, into an integer
             
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
@@ -308,7 +309,7 @@ def Module_1():
 
             validity_check = self.validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
-            if validity_check == 0: # condition to be advised
+            if validity_check == 0:   # condition to be advised
                 next_step = self.get_next_valid_selection(self, n, x, m, y)
                 st.session_state.R_go = 0
             else:
