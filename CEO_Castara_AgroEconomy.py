@@ -557,7 +557,7 @@ def Module_1():
  
 
     st.write("debug 10: Table generation & use completed")
-    return 
+    
 
 
         
