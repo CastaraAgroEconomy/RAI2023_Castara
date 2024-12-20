@@ -218,8 +218,7 @@ def Module_1():
 
     st.write(" ")
     st.write("⚠️ - Defining Truth Table Class")
-    
-    
+ 
     class TruthTable:
         def __init__(self, n=14, x=34, m=30, y=35, selected_role = st.session_state.selected_role, selected_sub_role = st.session_state.selected_sub_role, selected_action = st.session_state.selected_action, selected_activity = st.session_state.selected_activity):
 
@@ -244,8 +243,12 @@ def Module_1():
             
             self.generate_table()
             
-            st.write("debug 4+ - preparing & checking Truth Table ")
+            st.write("debug 4a - preparing & checking Truth Table ")
             st.write("..... array to be updated with rules ")
+
+#   Create instance after class definition
+           st.write("debug 4b - Creating Truth Table instance")
+           truth_table = TruthTable()  # This line was missing 
 
         def generate_table(self):
             
@@ -279,9 +282,7 @@ def Module_1():
                                 else:
                                     st.session_state.R_go = 1
                                 return
-                                
-                             #  self.table[n, x, m, y] = int(bool(validity_confirmation))        # converts the result, is_valid, into an integer
-                             
+                                                             
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
@@ -319,7 +320,7 @@ def Module_1():
 
             validity_check = self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
-            if validity_check == 0:   # condition to be advised
+            if validity_check == 0:   # selection not validated, check next Truth Table result
                 next_step = self.get_next_valid_selection(n, x, m, y)
             return # valid_confirmation as 0 or 1
 
@@ -327,7 +328,7 @@ def Module_1():
         def validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
 
 #           Function to validate selection       
-#           Uses the validate_choice function to determine if selection is valid
+#           Used by the validate_choice function to determine if selection is valid
 
             st.write(" ")
             st.write("⚠️ - Confirming combination is valid")
@@ -339,7 +340,7 @@ def Module_1():
             st.write(" ") 
             st.write("⚠️ - Truth Table being consulted ")
 
-            if  is_valid == 1:
+            if  is_valid == 1: # determines that the selected combination is a valid one
                 st.write("👌 combination is a valid selection")
             else:
                 st.write(f" the selected combination {n},{x},{m},{y} is invalid")
@@ -348,7 +349,7 @@ def Module_1():
     
         def get_next_valid_selection(self, n, x, m, y):
 
-#           Function to identify the next level within invalid choices and returns it
+#           Function to identify the list that resulted in an invalid choice and returns to it
 
             if self.table[n, :, :, :].max() == 0:
                 st.session_state.stage = "sub_role_selection"
@@ -364,10 +365,9 @@ def Module_1():
                 return "Validate"
 
 
-
         def is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity): 
 
-#           Function to prepare for comparison selections versus Truth Table data
+#           Function to prepare for comparison of selections versus Truth Table data
             st.write(" ")
             st.write("⚠️ - One moment please ")
             st.write("..... verifying validity of combination ")
@@ -556,12 +556,7 @@ def Module_1():
                 return 1
 
 #           End of Nominal Rules return is_valid as 0 or 1
-                
-            
-
-#   Create instance after class definition
-    st.write("debug 0 - Creating Truth Table instance")
-    truth_table = TruthTable()  # This line was missing         
+                        
     st.write("debug 9: Table generation completed")
     return
 
