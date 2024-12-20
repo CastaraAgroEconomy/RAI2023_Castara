@@ -282,10 +282,6 @@ def Module_1():
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
-
-   #   Create instance after class definition
-            st.write("debug 4b - Creating Truth Table instance")
-            truth_table = TruthTable()  # This line was missing       
             
             R_go = st.session_state.R_go
          
@@ -303,7 +299,10 @@ def Module_1():
                    st.session_state.return_to_main = True
                    return
 
-     
+#       Create instance after class definition
+            st.write("debug 4b - Creating Truth Table instance")
+            truth_table = TruthTable()  # This line was missing       
+          
 #       INFERENCE ENGINE - cascading functions
 
         def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
