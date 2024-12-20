@@ -278,6 +278,7 @@ def Module_1():
                                     st.session_state.R_go = 0
                                 else:
                                     st.session_state.R_go = 1
+                                return
                                 
                              #  self.table[n, x, m, y] = int(bool(validity_confirmation))        # converts the result, is_valid, into an integer
                              
@@ -298,9 +299,9 @@ def Module_1():
                    st.session_state.return_to_main = False
                    return
                 if (n == 14) and y == 35:
-                    st.write(" ..... Access to feature denied 👎")
-                    st.session_state.return_to_main = True
-                    return
+                   st.write(" ..... Access to feature denied 👎")
+                   st.session_state.return_to_main = True
+                   return
 
      
 #       INFERENCE ENGINE - cascading functions
