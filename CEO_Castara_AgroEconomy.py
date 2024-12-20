@@ -280,21 +280,22 @@ def Module_1():
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
 
-            R_go = st.session_state.R_go
+            
+         R_go = st.session_state.R_go
          
-            if R_go == 1:
-                st.write(" ..... Access to feature granted 👍")
-                st.session_state.return_to_main = True
-                return
-            if R_go == 0:
-                if n := 14 and y < 35:
-                    st.write(" .....  Continuing to process")
-                    st.session_state.return_to_main = False
-                    return
-                if n == 14 and y == 35:
-                    st.write(" ..... Access to feature denied 👎")
-                    st.session_state.return_to_main = True
-                    return
+         if R_go == 1:
+             st.write(" ..... Access to feature granted 👍")
+             st.session_state.return_to_main = True
+             return
+         if R_go == 0:
+             if n := 14 and y < 35:
+                 st.write(" .....  Continuing to process")
+                 st.session_state.return_to_main = False
+                 return
+             if n == 14 and y == 35:
+                 st.write(" ..... Access to feature denied 👎")
+                 st.session_state.return_to_main = True
+                 return
 
      
 #       INFERENCE ENGINE - cascading functions
