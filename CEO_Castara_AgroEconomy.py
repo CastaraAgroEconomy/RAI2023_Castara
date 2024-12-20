@@ -279,7 +279,7 @@ def Module_1():
                                 else:
                                     st.session_state.R_go = 1
                                 
-                                self.table[n, x, m, y] = int(bool(validity_confirmation))        # converts the result, is_valid, into an integer
+                             #  self.table[n, x, m, y] = int(bool(validity_confirmation))        # converts the result, is_valid, into an integer
                              
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
