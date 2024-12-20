@@ -111,6 +111,9 @@ if 'live' not in st.session_state:
 if 'is_valid' not in st.session_state:
     st.session_state.is_valid = 0
 
+if 'validity_check' not in st.session_state:
+    st.session_state.validity_check = 0
+
 
 
 # Define the main function that controls the flow
@@ -303,7 +306,7 @@ def Module_1():
 
             validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
-            if is_valid := 0: # condition to be advised
+            if st.session_state.validity_check := 0: # condition to be advised
                 next_step = self.get_next_valid_selection(n, x, m, y)
                 st.write(" ")
                 st.write("⚠️ - Invalid combination ")
@@ -333,7 +336,7 @@ def Module_1():
             else:
                 st.session_state.R_go = 0
                 st.write(f" the selected combination {n},{x},{m},{y} is invalid")
-            return is_valid
+            return st.session_state.validity_check = is_valid
 
 
     
