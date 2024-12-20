@@ -263,10 +263,10 @@ def Module_1():
                                     x,
                                     m,
                                     y,
-                                    selected_role,
-                                    selected_sub_role,
-                                    selected_action,
-                                    selected_activity
+                                    A[{n}],
+                                    B[{x}],
+                                    C[{m}],
+                                    D[{y]}
                                 )
                                 st.write(" ")
                                 st.write("⚠️ - Validation of selected combination commencing ")
