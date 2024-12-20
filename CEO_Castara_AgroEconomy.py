@@ -319,7 +319,7 @@ def Module_1():
             validity_check = self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
             if validity_check == 0:   # selection not validated, check next Truth Table result
-                next_step = self.get_next_valid_selection(n, x, m, y)
+                next_step = self.get_next_valid_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
             return # valid_confirmation as 0 or 1
 
         
