@@ -558,7 +558,7 @@ def Module_1():
 #           End of Nominal Rules return is_valid as 0 or 1
                         
     st.write("debug 9: Table generation completed")
-    return
+    
 
 
         
