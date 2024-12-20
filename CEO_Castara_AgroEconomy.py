@@ -556,8 +556,8 @@ def Module_1():
             truth_table = TruthTable()  # This line was missing       
  
 
-st.write("debug 10: Table generation & use completed")
-return 
+    st.write("debug 10: Table generation & use completed")
+    return 
 
 
         
