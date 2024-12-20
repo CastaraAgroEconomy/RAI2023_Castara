@@ -1,4 +1,4 @@
-# Main Script and function call for the Castara AgroEconomy Mobile App.
+ # Main Script and function call for the Castara AgroEconomy Mobile App.
 import streamlit as st
 import numpy as np
 
@@ -329,15 +329,15 @@ def Module_1():
             st.write(" ") 
             st.write("⚠️ - Truth Table being consulted ")
 
-        
+            validity_check = is_valid
+
             if  is_valid == 1:
                 st.session_state.R_go = 1
                 st.write("👌 combination is a valid selection")
             else:
                 st.session_state.R_go = 0
                 st.write(f" the selected combination {n},{x},{m},{y} is invalid")
-            return validity_check = is_valid
-
+            return 
 
     
         def get_next_valid_selection(self, n, x, m, y):
