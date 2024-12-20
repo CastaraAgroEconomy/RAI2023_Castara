@@ -287,18 +287,18 @@ def Module_1():
             elif st.session_state.R_go == 0:
                    if st.session_state.n == 14 and st.session_state.y < 36:
                        st.write(" .....  Continuing to process")
-                       st.session_state.return_to_main = False
-                       return
+                       st.session_state.return_to_main = False         
                    else:
                        st.write(" ..... Access to feature denied 👎")
                        st.session_state.return_to_main = True
-                       return
+                   return
                 
 
 
         def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
             """Validate the selection by checking if the combination matches valid rules."""
         
+            st.write(" ")      
             st.write(f" selected_role is  {self.selected_role}")            
                        
             st.write(" ")
@@ -309,7 +309,7 @@ def Module_1():
             validity_check = self.validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
             if validity_check == 0: # condition to be advised
-                next_step = self.get_next_valid_selection(n, x, m, y)
+                next_step = self.get_next_valid_selection(self, n, x, m, y)
                 st.session_state.R_go = 0
             else:
                 st.session_state.R_go = 1
