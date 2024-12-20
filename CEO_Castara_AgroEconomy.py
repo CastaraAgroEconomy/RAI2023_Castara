@@ -259,7 +259,7 @@ def Module_1():
                             for y in range(1, self.y):
                                 
                                 st.write(f"debug 7: Validating selected combination")
-                                st.write(".....  of elements, ({n},{x},{m},{y})")
+                                st.write(f".....  of elements, ({n},{x},{m},{y})")
                              
                                 validity_confirmation = self.validate_choice(
                                     n,
@@ -309,7 +309,7 @@ def Module_1():
             st.write(f" confirming that {self.selected_role}")
             st.write(f" who holds the Job title {self.selected_sub_role}")
             st.write(f" is authorized to perform {self.selected_action}")
-            st.write(f" in order to carryout {self.selected_acivity}")
+            st.write(f" in order to carryout {self.selected_activity}")
                        
             st.write(" ")
             st.write("⚠️ - Validating combination of selected items ")
