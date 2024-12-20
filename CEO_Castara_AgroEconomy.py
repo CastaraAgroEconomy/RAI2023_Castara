@@ -245,12 +245,7 @@ def Module_1():
             
             st.write("debug 4a - preparing & checking Truth Table ")
             st.write("..... array to be updated with rules ")
-
-#   Create instance after class definition
-            st.write("debug 4b - Creating Truth Table instance")
-            truth_table = TruthTable()  # This line was missing 
-            return
-     
+               
         def generate_table(self):
             
             st.write("debug 5 - Repopulating array ")
@@ -288,6 +283,9 @@ def Module_1():
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
 
+   #   Create instance after class definition
+            st.write("debug 4b - Creating Truth Table instance")
+            truth_table = TruthTable()  # This line was missing       
             
             R_go = st.session_state.R_go
          
