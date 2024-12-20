@@ -249,7 +249,8 @@ def Module_1():
 #   Create instance after class definition
             st.write("debug 4b - Creating Truth Table instance")
             truth_table = TruthTable()  # This line was missing 
-
+            return
+     
         def generate_table(self):
             
             st.write("debug 5 - Repopulating array ")
@@ -558,7 +559,7 @@ def Module_1():
 #           End of Nominal Rules return is_valid as 0 or 1
                         
     st.write("debug 9: Table generation completed")
-    
+    return 
 
 
         
