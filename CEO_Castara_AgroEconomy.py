@@ -244,7 +244,7 @@ def Module_1():
             
             self.generate_table()
             
-            st.write("debug 4 - Preparing dummy Truth Table ")
+            st.write("debug 4+ - preparing & checking Truth Table ")
             st.write("..... array to be updated with rules ")
 
         def generate_table(self):
@@ -563,6 +563,7 @@ def Module_1():
     st.write("debug 0 - Creating Truth Table instance")
     truth_table = TruthTable()  # This line was missing         
     st.write("debug 9: Table generation completed")
+    return
 
 
         
