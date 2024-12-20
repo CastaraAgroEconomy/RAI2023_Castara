@@ -247,8 +247,8 @@ def Module_1():
             st.write("..... array to be updated with rules ")
 
 #   Create instance after class definition
-           st.write("debug 4b - Creating Truth Table instance")
-           truth_table = TruthTable()  # This line was missing 
+            st.write("debug 4b - Creating Truth Table instance")
+            truth_table = TruthTable()  # This line was missing 
 
         def generate_table(self):
             
