@@ -308,8 +308,11 @@ def Module_1():
 
             validity_check = validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
-            if validity_check := 0: # condition to be advised
+            if validity_check == 0: # condition to be advised
                 next_step = self.get_next_valid_selection(n, x, m, y)
+                st.session_state.R_go = 0
+            else:
+                st.session_state.R_go = 1
             return 
 
         
@@ -329,10 +332,8 @@ def Module_1():
             st.write("⚠️ - Truth Table being consulted ")
 
             if  is_valid == 1:
-                st.session_state.R_go = 1
                 st.write("👌 combination is a valid selection")
             else:
-                st.session_state.R_go = 0
                 st.write(f" the selected combination {n},{x},{m},{y} is invalid")
             return 
 
