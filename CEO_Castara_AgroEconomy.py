@@ -304,13 +304,10 @@ def Module_1():
             st.write("     from lists; Matrix B, C, D ")
             st.write("     as a four element matrix combination")
 
-            validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
+            valid_Check = validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
             if validity_check := 0: # condition to be advised
                 next_step = self.get_next_valid_selection(n, x, m, y)
-                st.write(" ")
-                st.write("⚠️ - Invalid combination ")
-                st.write(f"..... please re-select your {next_step}.")
             return 
 
         
