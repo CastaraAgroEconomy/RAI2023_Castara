@@ -306,9 +306,7 @@ def Module_1():
 
             validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
-            if is_invalid == 1: # condition to be advised
-               st.session_state.validity_check = 1
-            else:
+            if is_valid = 0: # condition to be advised
                 next_step = self.get_next_valid_selection(n, x, m, y)
                 st.write(" ")
                 st.write("⚠️ - Invalid combination ")
@@ -327,25 +325,19 @@ def Module_1():
             st.write("     searching Truth Table array")
 
             
-            is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
-
-            if is_invalid not 0  # condition to be advised 
-               is_valid = 1
-            else:
-               is_valid = 0
+            is_valid = is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
                 
             st.write(" ") 
-            st.write("⚠️ - Truth Table consulted ")
+            st.write("⚠️ - Truth Table being consulted ")
 
-            st.session_state.validity_check = is_valid
         
-            if  st.session_state.validity_check == 1:
+            if  is_valid == 1:
                 st.session_state.R_go = 1
                 st.write("👌 combination is a valid selection")
             else:
                 st.session_state.R_go = 0
                 st.write(f" the selected combination {n},{x},{m},{y} is invalid")
-            return st.session_state.validity_check
+            return is_valid
 
 
     
