@@ -307,10 +307,10 @@ def Module_1():
             st.write("     from lists; Matrix B, C, D ")
             st.write("     as a four element matrix combination")
 
-            validity_check = self.validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
+            validity_check = self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
             if validity_check == 0:   # condition to be advised
-                next_step = self.get_next_valid_selection(self, n, x, m, y)
+                next_step = self.get_next_valid_selection(n, x, m, y)
                 st.session_state.R_go = 0
             else:
                 st.session_state.R_go = 1
@@ -327,7 +327,7 @@ def Module_1():
             st.write("     searching Truth Table array")
 
             
-            is_valid = self.is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
+            is_valid = self.is_valid_combination(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
                 
             st.write(" ") 
             st.write("⚠️ - Truth Table being consulted ")
