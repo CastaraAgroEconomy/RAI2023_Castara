@@ -305,7 +305,10 @@ def Module_1():
             """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")      
-            st.write(f" selected_role is  {self.selected_role}")            
+            st.write(f" confirming that {self.selected_role} ")
+            st.write(f" who holds the Job title {self.selected_sub_role} ")
+            st.write(f" is authorized to perform {self.selected_action} ")
+            st.write(f" in order to carryout {self.suggested_acivity} ")
                        
             st.write(" ")
             st.write("⚠️ - Validating combination of selected items ")
@@ -341,7 +344,7 @@ def Module_1():
             return # validity_check as 0 or 1
 
     
-        def get_next_valid_selection(self, n, x, m, y):
+        def get_next_valid_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
 
 #           Function to identify the list that resulted in an invalid choice and returns to it
 
