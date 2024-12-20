@@ -286,14 +286,15 @@ def Module_1():
                 st.write(" ..... Access to feature granted 👍")
                 st.session_state.return_to_main = True
                 return
-            if R_go == 0 and n := 14 and y < 35:
-                 st.write(" .....  Continuing to process")
-                 st.session_state.return_to_main = False
-                 return
-            if R_go == 0 and n = 14 and y = 35
-                 st.write(" ..... Access to feature denied 👎")
-                 st.session_state.return_to_main = True
-                 return
+            if R_go == 0:
+                if n := 14 and y < 35:
+                    st.write(" .....  Continuing to process")
+                    st.session_state.return_to_main = False
+                    return
+                if n = 14 and y = 35:
+                    st.write(" ..... Access to feature denied 👎")
+                    st.session_state.return_to_main = True
+                    return
                 
 
 
