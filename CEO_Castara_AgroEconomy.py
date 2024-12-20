@@ -304,7 +304,7 @@ def Module_1():
             st.write("     from lists; Matrix B, C, D ")
             st.write("     as a four element matrix combination")
 
-            validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
+            validate_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
             if is_invalid == 1: # condition to be advised
                st.session_state.validity_check = 1
@@ -327,7 +327,7 @@ def Module_1():
             st.write("     searching Truth Table array")
 
             
-            is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
+            is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
             if is_invalid not 0  # condition to be advised 
                is_valid = 1
