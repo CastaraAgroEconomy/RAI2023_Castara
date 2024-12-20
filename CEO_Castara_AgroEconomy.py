@@ -243,7 +243,7 @@ def Module_1():
             
             self.generate_table()
             
-            st.write("debug 4a - preparing & checking Truth Table ")
+            st.write("debug 4 - preparing & checking Truth Table ")
             st.write("..... array to be updated with rules ")
                
         def generate_table(self):
@@ -298,10 +298,6 @@ def Module_1():
                    st.write(" ..... Access to feature denied 👎")
                    st.session_state.return_to_main = True
                    return
-
-#       Create instance after class definition
-            st.write("debug 4b - Creating Truth Table instance")
-            truth_table = TruthTable()  # This line was missing       
           
 #       INFERENCE ENGINE - cascading functions
 
@@ -555,7 +551,12 @@ def Module_1():
 
 #           End of Nominal Rules return is_valid as 0 or 1
                         
-    st.write("debug 9: Table generation completed")
+#        Create instance after class definition
+            st.write("debug 9 - Creating Truth Table instance")
+            truth_table = TruthTable()  # This line was missing       
+ 
+
+st.write("debug 10: Table generation & use completed")
     return 
 
 
