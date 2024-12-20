@@ -260,6 +260,7 @@ def Module_1():
                             for y in range(1, self.y):
                                 
                                 st.write(f"debug 7: Validating selected combination element ({n},{x},{m},{y})")
+                             
                                 validity_confirmation = self.validate_choice(
                                     n,
                                     x,
@@ -281,18 +282,16 @@ def Module_1():
         
 
             if st.session_state.R_go == 1:
-                if st.session_state.n == 14 and st.session_state.y < 36:
-                    st.write(" ..... Access to feature granted 👍")
-                    st.session_state.return_to_main = True
-                    return
-            elif st.session_state.R_go == 0:
-                   if st.session_state.n == 14 and st.session_state.y < 36:
-                       st.write(" .....  Continuing to process")
-                       st.session_state.return_to_main = False         
-                   else:
-                       st.write(" ..... Access to feature denied 👎")
-                       st.session_state.return_to_main = True
-                   return
+                st.write(" ..... Access to feature granted 👍")
+                st.session_state.return_to_main = True
+                return
+            elif st.session_state.R_go == 0 and n := 14 and y < 35:
+                 st.write(" .....  Continuing to process")
+                 st.session_state.return_to_main = False
+            elif sr.session_state.R_go == 0 and n = 14 and y = 35
+                 st.write(" ..... Access to feature denied 👎")
+                 st.session_state.return_to_main = True
+             return
                 
 
 
