@@ -308,7 +308,6 @@ def Module_1():
                 st.write(" ")
                 st.write("⚠️ - Invalid combination ")
                 st.write(f"..... please re-select your {next_step}.")
-                st.session_state. validity_check = 0
             return 
 
         
