@@ -547,6 +547,8 @@ def Module_1():
                                                                           "Risk Assessment Reports", "ROI Calculations", "Market Trend Analysis", "Investor Report Generation", 
                                                                           "Performance Metric Tracking"]:
                 return 0
+            else:
+                return 1
 
 #           End of Nominal Rules
                 
