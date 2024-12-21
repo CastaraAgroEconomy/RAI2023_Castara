@@ -445,13 +445,13 @@ def Module_1():
             
         
 #           Rule 19: Quality Control Personnel should have the job title Quality Assurance Manager, Food Safety Compliance Officer, Plant Health Inspector, Production Supervisor, Data Analytics Manager.
-            if selected_role == "Quality Control Personnel" and selected_sub_role not in ["Quality Assurance Manager, Food Safety Compliance Officer, Plant Health Inspector, Production Supervisor, Data Analytics Manager"]:
+            if selected_role == "Quality Control Personnel" and selected_sub_role not in ["Quality Assurance Manager", "Food Safety Compliance Officer", "Plant Health Inspector", "Production Supervisor", "Data Analytics Manager"]:
                 return 0       
 #           Rule 20: Quality Control Personnel should be able to handle actions like Quality Control Inspections, Compliance Monitoring, Data Collection & Analysis, Safety Protocol Implementation, Resource Usage Optimization.
-            if selected_role == "Quality Control Personnel" and selected_action not in ["Quality Control Inspections, Compliance Monitoring, Data Collection & Analysis, Safety Protocol Implementation, Resource Usage Optimization"]:
+            if selected_role == "Quality Control Personnel" and selected_action not in ["Quality Control Inspections", "Compliance Monitoring", "Data Collection & Analysis", "Safety Protocol Implementation", "Resource Usage Optimization"]:
                 return 0       
 #           Rule 21: Quality Control Personnel should be able to access activities like Quality Check Documentation, Compliance Report Generation, Safety Inspection Rounds, Growth Rate Documentation, pH Level Monitoring, Equipment Calibration, Harvest Weight Recording, System Flow Rate Checks.
-            if selected_role == "Quality Control Personnel" and selected_activity not in ["Quality Check Documentation, Compliance Report Generation, Safety Inspection Rounds, Growth Rate Documentation, pH Level Monitoring, Equipment Calibration, Harvest Weight Recording, System Flow Rate Checks"]:
+            if selected_role == "Quality Control Personnel" and selected_activity not in ["Quality Check Documentation", "Compliance Report Generation", "Safety Inspection Rounds", "Growth Rate Documentation", "pH Level Monitoring", "Equipment Calibration", "Harvest Weight Recording", "System Flow Rate Checks"]:
                 return 0
     
 
