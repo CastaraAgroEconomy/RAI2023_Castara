@@ -238,16 +238,17 @@ def Module_1():
             st.write("debug 3 - Empty array created ")
             
             st.write(" ")
-            st.write("⚠️ - Generating default Truth Table")
+            st.write("⚠️ - First generating default Truth Table")
             st.write("..... without predefined rules")
+            st.write(" ")
+         
+            st.write("debug  - About to prepare Truth Table")
+            st.write("..... updated in accordance with")
+            st.write("..... specified valid selection rules")
+            st.write(" ")
             
             self.generate_table()
             
-            st.write(" ")
-            st.write("debug 0 - preparing Truth Table")
-            st.write("..... to be updated in accordance with")
-            st.write("..... specified valid selection rules")
-            st.write(" ")
                
         def generate_table(self):
             
@@ -276,7 +277,7 @@ def Module_1():
                                 )
                             
                                 st.write(" ")
-                                st.write("⚠️ - Validation of selections in progress ")
+                                st.write("⚠️ - Validation of selections completing ")
                                 if validity_confirmation == 0:
                                     st.session_state.R_go = 0
                                 else:
@@ -344,7 +345,7 @@ def Module_1():
             st.write(f" For {selected_role} with job title {selected_sub_role} ")
             st.write(f" who needs to perform {selected_action} to execute {selected_activity} ")
             st.write(" ")
-            st.write(f" this is the returned value from the rules check :-  {is_valid} ")
+            st.write(f" this is the returned value from the rules check :-  '{is_valid}' ")
             st.write(" ")
 
             if  is_valid == 1: # determines that the selected combination is a valid one
