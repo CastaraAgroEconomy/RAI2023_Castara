@@ -386,7 +386,11 @@ def Module_1():
             st.write(" ")
  
             
-#           NOMINAL RULES :
+#           NOMINAL RULES : for checking :-
+            selected_role = st.session_state.selected_role
+            selected_sub_role = st.session_state.selected_sub_role
+            selected_action = st.session_state.selected_action
+            selected_activity = st.session_state.selected_activity
             
 #           Rule 1: Agricultural Engineers should have the job title Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager.
             if selected_role == "Agricultural Engineer" and selected_sub_role not in ["Head of Agricultural Engineering", "Systems Integration Engineer", "Automation Engineer", "Environmental Systems Manager", "Maintenance Supervisor", "Nutrient Systems Manager", "Quality Assurance Manager"]:
