@@ -343,7 +343,8 @@ def Module_1():
             st.write(" ")
             st.write(f" For {selected_role} with job title {selected_sub_role} ")
             st.write(f" who needs to perform {selected_action} to execute {selected_activity} ")
-            st.write(f" this is the returned value from the rules check {is_valid} ")
+            st.write(" ")
+            st.write(f" this is the returned value from the rules check :-  {is_valid} ")
             st.write(" ")
 
             if  is_valid == 1: # determines that the selected combination is a valid one
@@ -566,7 +567,10 @@ def Module_1():
 #           End of Nominal Rules return is_valid as 0 or 1
                         
 #   Create instance after class definition
-    st.write("debug 4/o - Creating Truth Table instance")
+    st.write(" ")
+    st.write("debug 4/o - External preparation; ")
+    st.write(" .... creating Truth Table instance")
+    st.write(" ")
     truth_table = TruthTable()  # This line was missing       
 
     st.write("debug 9: Table generation & use completed")
