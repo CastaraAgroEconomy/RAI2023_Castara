@@ -295,13 +295,13 @@ def Module_1():
                                 check_C = C[(m-1)],
                                 check_D = D[(y-1)]
 
-                                if check_A = selected_role:
+                                if check_A == selected_role:
                                      selected_role = session_state.selected_role
-                                if check_B = selected_sub_role:
+                                if check_B == selected_sub_role:
                                      selected_sub_role = session_state.selected_role
-                                if check_C = selected_action:
+                                if check_C == selected_action:
                                      selected_action = session_state.selected_action
-                                if check_D = selected_activity:
+                                if check_D == selected_activity:
                                      selected_action = session_state.selected_action
                              
                                 st.write(" ")
