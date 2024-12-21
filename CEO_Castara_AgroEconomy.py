@@ -337,6 +337,7 @@ def Module_1():
                 
             st.write(" ") 
             st.write("⚠️ - Truth Table being consulted ")
+            st.write(f" this is the returned value from the rules check {is_valid} ")
 
             if  is_valid == 1: # determines that the selected combination is a valid one
                 st.write("👌 combination is a valid selection")
