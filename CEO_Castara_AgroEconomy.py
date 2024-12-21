@@ -262,14 +262,14 @@ def Module_1():
                                 st.write(f".....  of elements, ({n},{x},{m},{y})")
                              
                                 validity_confirmation = self.validate_choice(
-                                    n=int(n),
-                                    x=int(x),
-                                    m=int(m),
-                                    y=int(y),
-                                    st.session_state.A[n]=str(A[n]),
-                                    st.session_state.B[x]=str(B[x]),
-                                    st.session_state.C[m]=str(C[m]),
-                                    st.session_state.D[y]=str(D[y])
+                                    n,
+                                    x,
+                                    m,
+                                    y,
+                                    st.session_state.A[n],
+                                    st.session_state.B[x],
+                                    st.session_state.C[m],
+                                    st.session_state.D[y]
                                 )
                             
                                 st.write(" ")
