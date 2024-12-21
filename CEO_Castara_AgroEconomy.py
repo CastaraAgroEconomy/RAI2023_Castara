@@ -159,9 +159,9 @@ def main():
    
     if st.session_state.R_go == 1:
         with content_placeholder.container():
-            st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
-            f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
-            f"Activity={st.session_state.selected_activity}") 
+            st.success(f"Journey completed successfully! Role={selected_role}, "
+            f"Sub-role={selected_sub_role}, Action={selected_action}, "
+            f"Activity={selected_activity}") 
             
             st.write(" ")
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
@@ -169,6 +169,7 @@ def main():
             st.session_state.logged_in = True
             st.session_state.stage = "role_selection"
             st.session_state.R_go = 0
+         
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():        
             st.write(" ")
