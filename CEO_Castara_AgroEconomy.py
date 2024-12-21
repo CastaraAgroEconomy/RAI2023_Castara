@@ -261,8 +261,8 @@ def Module_1():
                         for m in range(1, self.m):
                             for y in range(1, self.y):
                                 
-                                st.write(f"debug 7: Beginning validation of selected combination")
-                                st.write(f".....  of elements, ({n},{x},{m},{y})")
+                                st.write(f"debug 7: Beginning validation of selected")
+                                st.write(f"..... combination of elements, ({n},{x},{m},{y})")
                              
                                 validity_confirmation = self.validate_choice(
                                     n,
