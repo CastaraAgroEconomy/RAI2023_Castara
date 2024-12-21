@@ -224,14 +224,14 @@ def Module_1():
 
             st.write("debug 1 - defined 'init' ")
             
-            self.n = n
-            self.x = x
-            self.m = m
-            self.y = y
-            self.selected_role = selected_role
-            self.selected_sub_role = selected_sub_role
-            self.selected_action = selected_action
-            self.selected_activity = selected_activity
+            self.n = int(n)
+            self.x = int(x)
+            self.m = int(m)
+            self.y = int(y)
+            self.selected_role = str(selected_role)
+            self.selected_sub_role = str(selected_sub_role)
+            self.selected_action = str(selected_action)
+            self.selected_activity = str(selected_activity)
             
             st.write("debug 2 - about to create empty array")
             self.table = np.zeros((n, x, m, y), dtype=int)
