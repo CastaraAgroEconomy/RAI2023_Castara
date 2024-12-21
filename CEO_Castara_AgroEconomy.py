@@ -377,13 +377,13 @@ def Module_1():
 #           NOMINAL RULES :
             
 #           Rule 1: Agricultural Engineers should have the job title Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager.
-            if selected_role == "Agricultural Engineer" and selected_sub_role not in ["Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager"]:
+            if selected_role == "Agricultural Engineer" and selected_sub_role not in ["Head of Agricultural Engineering", "Systems Integration Engineer", "Automation Engineer", "Environmental Systems Manager", "Maintenance Supervisor", "Nutrient Systems Manager", "Quality Assurance Manager"]:
                 return 0       
 #           Rule 2: Agricultural Engineers should handle actions like System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Resource Usage Optimization, Production Planning, Compliance Monitoring.
-            if selected_role == "Agricultural Engineer" and selected_action not in ["System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Resource Usage Optimization, Production Planning, Compliance Monitoring"]:
+            if selected_role == "Agricultural Engineer" and selected_action not in ["System Design & Optimization", "Environmental Parameter Monitoring", "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Compliance Monitoring"]:
                 return 0
 #           Rule 3: Agricultural Engineers should be able to access activities like pH Level Monitoring, EC (Electrical Conductivity) Testing, Temperature Control Adjustment, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Compliance Report Generation, Team Coordination.
-            if selected_role == "Agricultural Engineer" and selected_activity not in ["pH Level Monitoring, EC (Electrical Conductivity) Testing, Temperature Control Adjustment, System Flow Rate Checks, Equipment Calibration, Maintenance Log Updates, Compliance Report Generation, Team Coordination"]:
+            if selected_role == "Agricultural Engineer" and selected_activity not in ["pH Level Monitoring", "EC (Electrical Conductivity Testing", "Temperature Control Adjustment", "System Flow Rate Checks", "Equipment Calibration", "Maintenance Log Updates", "Compliance Report Generation", "Team Coordination"]:
                 return 0
 
     
