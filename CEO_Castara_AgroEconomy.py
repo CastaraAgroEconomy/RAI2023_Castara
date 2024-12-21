@@ -244,7 +244,7 @@ def Module_1():
             self.generate_table()
             
             st.write(" ")
-            st.write("debug 4/i - preparing Truth Table")
+            st.write("debug 0 - preparing Truth Table")
             st.write("..... to be updated in accordance with")
             st.write("..... specified valid selection rules")
             st.write(" ")
@@ -567,13 +567,9 @@ def Module_1():
 #           End of Nominal Rules return is_valid as 0 or 1
                         
 #   Create instance after class definition
-    st.write(" ")
-    st.write("debug 4/o - External preparation; ")
-    st.write(" .... creating Truth Table instance")
-    st.write(" ")
     truth_table = TruthTable()  # This line was missing       
 
-    st.write("debug 9: Table generation & use completed")
+    st.write("debug 9:  Validity of selection completed")
     
 
 
