@@ -242,10 +242,10 @@ def Module_1():
             self.x = int(x)
             self.m = int(m)
             self.y = int(y)
-            self.selected_role = A[0]
-            self.selected_sub_role = B[0]
-            self.selected_action = C[0]
-            self.selected_activity = D[0]
+            self.selected_role = st.session_state.A[0]
+            self.selected_sub_role = st.session_state.B[0]
+            self.selected_action = st.session_state.C[0]
+            self.selected_activity = st.session_state.D[0]
             
             st.write("debug 2 - about to create empty array")
             self.table = np.zeros((n, x, m, y), dtype=int)
