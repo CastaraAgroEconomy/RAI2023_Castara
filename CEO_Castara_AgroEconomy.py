@@ -243,7 +243,7 @@ def Module_1():
             
             self.generate_table()
             
-            st.write("debug 4 - preparing & checking Truth Table ")
+            st.write("debug 4/i - preparing & checking Truth Table ")
             st.write("..... array to be updated with rules ")
                
         def generate_table(self):
@@ -262,14 +262,14 @@ def Module_1():
                                 st.write(f".....  of elements, ({n},{x},{m},{y})")
                              
                                 validity_confirmation = self.validate_choice(
-                                    n,
-                                    x,
-                                    m,
-                                    y,
-                                    st.session_state.A[n],
-                                    st.session_state.B[x],
-                                    st.session_state.C[m],
-                                    st.session_state.D[y]
+                                    n=int(n),
+                                    x=int(x),
+                                    m=int(m),
+                                    y=int(y),
+                                    st.session_state.A[n]=str(A[n]),
+                                    st.session_state.B[x]=str(B[x]),
+                                    st.session_state.C[m]=str(C[m]),
+                                    st.session_state.D[y]=str(D[y])
                                 )
                             
                                 st.write(" ")
@@ -556,7 +556,7 @@ def Module_1():
 #           End of Nominal Rules return is_valid as 0 or 1
                         
 #   Create instance after class definition
-    st.write("debug 4 - Creating Truth Table instance")
+    st.write("debug 4/o - Creating Truth Table instance")
     truth_table = TruthTable()  # This line was missing       
 
     st.write("debug 9: Table generation & use completed")
