@@ -288,7 +288,7 @@ def Module_1():
                                     selected_sub_role
                                     selected_action
                                     selected_activity
-                                 }
+                                )
                                  
                                  check_A = A[(n-1)],
                                  check_B = B[(x-1)],
