@@ -388,25 +388,25 @@ def Module_1():
 
     
 #           Rule 4: Horticultralists should have the job title Lead Horticulturist, Plant Science Director, Plant Health Inspector, Quality Assurance Manager, Data Analytics Manager, Nutrient Systems Manager, Harvest Team Leader.
-            if selected_role == "Horticulturist" and selected_sub_role not in ["Lead Horticulturist, Plant Science Director, Plant Health Inspector, Quality Assurance Manager, Data Analytics Manager, Nutrient Systems Manager, Harvest Team Leader"]:
+            if selected_role == "Horticulturist" and selected_sub_role not in ["Lead Horticulturist", "Plant Science Director", "Plant Health Inspector", "Quality Assurance Manager", "Data Analytics Manager", "Nutrient Systems Manager", "Harvest Team Leader"]:
                 return 0       
 #           Rule 5: Horticulturilists should handle actions like Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Environmental Parameter Monitoring, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization.
-            if selected_role == "Horticulturist" and selected_action not in ["Plant Health Assessment, Growth Cycle Planning, Nutrient Solution Management, Environmental Parameter Monitoring, Data Collection & Analysis, Quality Control Inspections, Resource Usage Optimization"]:
+            if selected_role == "Horticulturist" and selected_action not in ["Plant Health Assessment", "Growth Cycle Planning", "Nutrient Solution Management", "Environmental Parameter Monitoring", "Data Collection & Analysis", "Quality Control Inspections", "Resource Usage Optimization"]:
                 return 0
 #           Rule 6: Horticultralists should be able to handle activities like Growth Rate Documentation, pH Level Monitoring, Nutrient Mix Preparation, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment, Plant Spacing Optimization, Water Quality Testing.
-            if selected_role == "Horticulturist" and selected_activity not in ["Growth Rate Documentation, pH Level Monitoring, Nutrient Mix Preparation, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment, Plant Spacing Optimization, Water Quality Testing"]:
+            if selected_role == "Horticulturist" and selected_activity not in ["Growth Rate Documentation", "pH Level Monitoring", "Nutrient Mix Preparation", "Light Intensity Calibration", "Humidity Level Management", "Temperature Control Adjustment", "Plant Spacing Optimization", "Water Quality Testing"]:
                 return 0
 
             
 
 #           Rule 7: System Technicians should have the job title Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Environmental Systems Manager, Data Analytics Manager, Nutrient Systems Manager.
-            if selected_role == "System Technician" and selected_sub_role not in ["Systems Integration Engineer, Automation Engineer, Maintenance Supervisor, Environmental Systems Manager, Data Analytics Manager, Nutrient Systems Manager"]:
+            if selected_role == "System Technician" and selected_sub_role not in ["Systems Integration Engineer", "Automation Engineer", "Maintenance Supervisor", "Environmental Systems Manager", "Data Analytics Manager", "Nutrient Systems Manager"]:
                 return 0       
 #           Rule 8: System Technicians should handle actions like System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Equipment Maintenance, Compliance Monitoring, Resource Usage Optimization.
-            if selected_role == "System Technician" and selected_action not in ["System Design & Optimization, Environmental Parameter Monitoring, System Troubleshooting, Equipment Maintenance, Compliance Monitoring, Resource Usage Optimization"]:
+            if selected_role == "System Technician" and selected_action not in ["System Design & Optimization", "Environmental Parameter Monitoring", "System Troubleshooting", "Equipment Maintenance", "Compliance Monitoring", "Resource Usage Optimization"]:
                 return 0
 #           Rule 9: System Technicians should be able to access activities like Equipment Calibration, System Flow Rate Checks, Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, Maintenance Log Updates, Safety Inspection Rounds, Equipment Sanitization 
-            if selected_role == "System Technician" and selected_activity not in ["Equipment Calibration, System Flow Rate Checks, Temperature Control Adjustment, Humidity Level Management, Light Intensity Calibration, Maintenance Log Updates, Safety Inspection Rounds, Equipment Sanitization"]:
+            if selected_role == "System Technician" and selected_activity not in ["Equipment Calibration", "System Flow Rate Checks", "Temperature Control Adjustment", "Humidity Level Management", "Light Intensity Calibration", "Maintenance Log Updates", "Safety Inspection Rounds", "Equipment Sanitization"]:
                 return 0
 
 
