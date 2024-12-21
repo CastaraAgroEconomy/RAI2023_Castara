@@ -423,24 +423,24 @@ def Module_1():
 
             
 #           Rule 13: Operations Personnel should have the job title Operations Director, Operations Manager, Production Supervisor, Quality Assurance Manager, Maintenance Supervisor, Data Analytics Manager.
-            if selected_role == "Operations Personnel" and selected_sub_role not in ["Operations Director, Operations Manager, Production Supervisor, Quality Assurance Manager, Maintenance Supervisor, Data Analytics Manager"]:
+            if selected_role == "Operations Personnel" and selected_sub_role not in ["Operations Director", "Operations Manager", "Production Supervisor", "Quality Assurance Manager", "Maintenance Supervisor", "Data Analytics Manager"]:
                 return 0       
 #           Rule 14: Operations Personnel should be able to handle actions like Production Planning, Team Coordination, Resource Usage Optimization, Safety Protocol Implementation, Data Collection & Analysis, Quality Control Inspections.
-            if selected_role == "Operations Personnel" and selected_action not in ["Production Planning, Team Coordination, Resource Usage Optimization, Safety Protocol Implementation, Data Collection & Analysis, Quality Control Inspections"]:
+            if selected_role == "Operations Personnel" and selected_action not in ["Production Planning", "Team Coordination", "Resource Usage Optimization", "Safety Protocol Implementation", "Data Collection & Analysis", "Quality Control Inspections"]:
                 return 0
 #           Rule 15: Operations Personnel should be able to access activities like Team Schedule Creation, Inventory Management, Maintenance Log Updates, Harvest Weight Recording, Compliance Report Generation, Growth Data Recording, Safety Inspection Rounds, Equipment Sanitization.
-            if selected_role == "Operations Personnel" and selected_activity not in ["Team Schedule Creation, Inventory Management, Maintenance Log Updates, Harvest Weight Recording, Compliance Report Generation, Growth Data Recording, Safety Inspection Rounds, Equipment Sanitization"]:
+            if selected_role == "Operations Personnel" and selected_activity not in ["Team Schedule Creation", "Inventory Management", "Maintenance Log Updates", "Harvest Weight Recording", "Compliance Report Generation", "Growth Data Recording", "Safety Inspection Rounds", "Equipment Sanitization"]:
                 return 0
             
             
 #           Rule 16: Maintenance Staff should have the job title Maintenance Supervisor, Automation Engineer, Environmental Systems Manager, Quality Assurance Manager, Systems Integration Engineer.
-            if selected_role == "Maintenance Staff" and selected_sub_role not in ["Maintenance Supervisor, Automation Engineer, Environmental Systems Manager, Quality Assurance Manager, Systems Integration Engineer"]:
+            if selected_role == "Maintenance Staff" and selected_sub_role not in ["Maintenance Supervisor", "Automation Engineer", "Environmental Systems Manager", "Quality Assurance Manager", "Systems Integration Engineer"]:
                 return            
  #          Rule 17: Maintenance Staff should be able to handle actions like Equipment Maintenance, System Troubleshooting, Environmental Parameter Monitoring, Safety Protocol Implementation, Compliance Monitoring, Resource Usage Optimization.
-            if selected_role == "Maintenance Staff" and selected_action not in ["Equipment Maintenance, System Troubleshooting, Environmental Parameter Monitoring, Safety Protocol Implementation, Compliance Monitoring, Resource Usage Optimization"]:
+            if selected_role == "Maintenance Staff" and selected_action not in ["Equipment Maintenance", "System Troubleshooting", "Environmental Parameter Monitoring", "Safety Protocol Implementation", "Compliance Monitoring", "Resource Usage Optimization"]:
                 return 0       
 #           Rule 18: Maintenance Staff should be able to access activities like Equipment Calibration, System Flow Rate Checks, Equipment Sanitization, Maintenance Log Updates, Safety Inspection Rounds, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment.
-            if selected_role == "Maintenance Staff" and selected_activity not in ["Equipment Calibration, System Flow Rate Checks, Equipment Sanitization, Maintenance Log Updates, Safety Inspection Rounds, Light Intensity Calibration, Humidity Level Management, Temperature Control Adjustment"]:
+            if selected_role == "Maintenance Staff" and selected_activity not in ["Equipment Calibration", "System Flow Rate Checks", "Equipment Sanitization", "Maintenance Log Updates", "Safety Inspection Rounds", "Light Intensity Calibration", "Humidity Level Management", "Temperature Control Adjustment"]:
                 return 0
             
         
