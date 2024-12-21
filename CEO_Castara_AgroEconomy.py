@@ -290,27 +290,27 @@ def Module_1():
                                     selected_action,
                                     selected_activity
                                 )
-                                 check_A = A[(n-1)],
-                                 check_B = B[(x-1)],
-                                 check_C = C[(m-1)],
-                                 check_D = D[(y-1)]
+                                check_A = A[(n-1)],
+                                check_B = B[(x-1)]
+                                check_C = C[(m-1)],
+                                check_D = D[(y-1)]
 
-                                 if check_A = selected_role:
-                                      selected_role = session_state.selected_role
-                                 if check_B = selected_sub_role:
-                                      selected_sub_role = session_state.selected_role
-                                 if check_C = selected_action:
-                                      selected_action = session_state.selected_action
-                                 if check_D = selected_activity:
-                                      selected_action = session_state.selected_action
+                                if check_A = selected_role:
+                                     selected_role = session_state.selected_role
+                                if check_B = selected_sub_role:
+                                     selected_sub_role = session_state.selected_role
+                                if check_C = selected_action:
+                                     selected_action = session_state.selected_action
+                                if check_D = selected_activity:
+                                     selected_action = session_state.selected_action
                              
-                                 st.write(" ")
-                                 st.write("⚠️ - Validation of selections completing .... ")
-                                 if validity_confirmation == 0:
-                                     st.session_state.R_go = 0
-                                 else:
-                                     st.session_state.R_go = 1
-                                 return
+                                st.write(" ")
+                                st.write("⚠️ - Validation of selections completing .... ")
+                                if validity_confirmation == 0:
+                                    st.session_state.R_go = 0
+                                else:
+                                    st.session_state.R_go = 1
+                                return
                                                              
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
