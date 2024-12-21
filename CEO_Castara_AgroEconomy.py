@@ -206,7 +206,7 @@ def Module_1():
 #	4.	Maintains existing functionalities (no code removed unnecessarily), ensuring that parts like session state handling, error messaging, and st.success()/st.error() remain.
 
     st.write(" ")
-    st.write("⚠️ - Entered Module 1 ")
+    st.write("⚠️ - Entered verification processing Module ")
     
 # Initialize session state variables if not already present
     
@@ -238,13 +238,16 @@ def Module_1():
             st.write("debug 3 - Empty array created ")
             
             st.write(" ")
-            st.write("⚠️ - Generating Truth Table")
+            st.write("⚠️ - Generating default Truth Table")
             st.write("..... without predefined rules")
             
             self.generate_table()
             
-            st.write("debug 4/i - preparing & checking Truth Table ")
-            st.write("..... array to be updated with rules ")
+            st.write(" ")
+            st.write("debug 4/i - preparing Truth Table")
+            st.write("..... to be updated in accordance with")
+            st.write("..... specified valid selection rules")
+            st.write(" ")
                
         def generate_table(self):
             
@@ -258,7 +261,7 @@ def Module_1():
                         for m in range(1, self.m):
                             for y in range(1, self.y):
                                 
-                                st.write(f"debug 7: Validating selected combination")
+                                st.write(f"debug 7: Beginning validation of selected combination")
                                 st.write(f".....  of elements, ({n},{x},{m},{y})")
                              
                                 validity_confirmation = self.validate_choice(
@@ -306,7 +309,7 @@ def Module_1():
             """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")      
-            st.write(f" confirming that {self.selected_role}")
+            st.write(f" Confirming that {self.selected_role}")
             st.write(f" who holds the Job title {self.selected_sub_role}")
             st.write(f" is authorized to perform {self.selected_action}")
             st.write(f" in order to carryout {self.selected_activity}")
@@ -330,7 +333,7 @@ def Module_1():
 
             st.write(" ")
             st.write("⚠️ - Confirming combination is valid")
-            st.write("     searching Truth Table array")
+            st.write("     by searching Truth Table array")
 
             
             is_valid = self.is_valid_combination(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
