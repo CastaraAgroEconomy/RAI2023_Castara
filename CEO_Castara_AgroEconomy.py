@@ -570,7 +570,7 @@ def Module_1():
 #   Create instance after class definition
     truth_table = TruthTable()  # This line was missing       
 
-    st.write("debug 9:  Validity of selection completed")
+    st.write("debug 9 - Validity of selection completed")
     
 
 
