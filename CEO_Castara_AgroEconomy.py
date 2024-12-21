@@ -617,6 +617,7 @@ def select_role(content_placeholder):
     selected_role = st.radio("Choose a Role", roles)
 
     if st.button("Choose a Job Function next", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
+        st.session_state.selected_role = selected_role
         pass
     return
      
@@ -630,6 +631,7 @@ def select_sub_role(content_placeholder):
     selected_sub_role = st.radio("Choose a Job Function", sub_roles)
 
     if st.button("Choose an Action next", on_click=lambda: set_stage("action_selection", "selected_sub_role", selected_sub_role)):
+        st.session_state.selected_sub_role = selected_sub_role
         pass
     return
     
@@ -643,6 +645,7 @@ def select_action(content_placeholder):
     selected_action = st.radio("Choose an Action", actions)
 
     if st.button("Choose an Activity next", on_click=lambda: set_stage("activity_selection", "selected_action", selected_action)):
+        st.session_state.selected_action = selected_action
         pass
     return
     
@@ -656,9 +659,10 @@ def select_activity(content_placeholder):
     selected_activity = st.radio("Choose an activity", activities)
 
     if st.button("Validate", on_click=lambda: finalize_selection(selected_activity)):
+        st.session_state.selected_activity = selected_activity
         pass 
     return
-        
+       
 
 def set_stage(stage, key, value):
     st.session_state[key] = value
