@@ -266,10 +266,10 @@ def Module_1():
                                     x,
                                     m,
                                     y,
-                                    st.session_state.A[n],
-                                    st.session_state.B[x],
-                                    st.session_state.C[m],
-                                    st.session_state.D[y]
+                                    st.session_state.A[{n-1}],
+                                    st.session_state.B[{x-1}],
+                                    st.session_state.C[{m-1}],
+                                    st.session_state.D[{y-1}]
                                 )
                             
                                 st.write(" ")
