@@ -264,7 +264,8 @@ def Module_1():
                                 
                                 st.write(f"debug 7: Beginning validation of selected")
                                 st.write(f"..... combination of elements, ({n},{x},{m},{y})")
-                             
+
+                                validity_confirmation = 0 # Initialized to 'False'
                                 validity_confirmation = self.validate_choice(
                                     n,
                                     x,
@@ -311,7 +312,7 @@ def Module_1():
         
             st.write(" ")      
             st.write(f" Confirming that {self.selected_role}")
-            st.write(f" who holds the Job title {self.selected_sub_role}")
+            st.write(f" who selects the Job title {self.selected_sub_role}")
             st.write(f" is authorized to perform {self.selected_action}")
             st.write(f" in order to carryout {self.selected_activity}")
                        
@@ -320,6 +321,7 @@ def Module_1():
             st.write("     from lists; Matrix B, C, D ")
             st.write("     as a four element matrix combination")
 
+            validity_check = 0 # Initialized to 'False'
             validity_check = self.validate_selection(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
 
             if validity_check == 0:   # selection not validated, check next Truth Table result
@@ -336,13 +338,14 @@ def Module_1():
             st.write("⚠️ - Confirming combination is valid")
             st.write("     by searching Truth Table array")
 
-            
+
+            is_valid = 0 # Initialized to 'False'
             is_valid = self.is_valid_combination(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
                 
             st.write(" ") 
             st.write("⚠️ - Truth Table being consulted ")
             st.write(" ")
-            st.write(f" For {selected_role} with job title {selected_sub_role} ")
+            st.write(f" For {selected_role} selecting job title {selected_sub_role} ")
             st.write(f" who needs to perform {selected_action} to execute {selected_activity} ")
             st.write(" ")
             st.write(f" this is the returned value from the rules check :-  '{is_valid}' ")
