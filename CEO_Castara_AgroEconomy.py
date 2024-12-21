@@ -338,7 +338,7 @@ def Module_1():
             st.write(" ") 
             st.write("⚠️ - Truth Table being consulted ")
             st.write(" ")
-            st.write(f" For {selecter_role} with job title {selected_sub_role} ")
+            st.write(f" For {selected_role} with job title {selected_sub_role} ")
             st.write(f" who needs to perform {selected_action} to execute {selected_activity} ")
             st.write(f" this is the returned value from the rules check {is_valid} ")
             st.write(" ")
