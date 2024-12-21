@@ -108,6 +108,18 @@ if 'return_to_main' not in st.session_state:
 if 'live' not in st.session_state:
     st.session_state.live = " "
 
+if 'check_A' not in st.session_state:
+    st.session_state.check_A = " "
+
+if 'check_B' not in st.session_state:
+    st.session_state.check_B = " "
+
+if 'check_C' not in st.session_state:
+    st.session_state.check_C = " "
+
+if 'check_D' not in st.session_state:
+    st.session_state.check_D = " "
+
 if 'is_valid' not in st.session_state:
     st.session_state.is_valid = 0
 
@@ -213,7 +225,7 @@ def Module_1():
     
     for key, default in {
         'n': 14, 'x': 34, 'm': 30, 'y': 35, 'selected_role' : st.session_state.selected_role, 'selected_sub_role' : st.session_state.selected_sub_role, 'selected_action' : st.session_state.selected_action, 'selected_activity' : st.session_state.selected_activity, 'R_go': 0, 'return_to_main' : False, 'live' : " "
-        }.items():
+        'check_A' : st.session_state.check_A, 'check_B' : st.session_state.check_B, 'check_C' : st.session_state.check_C, 'check_D' : st.session_state.check_D}.items():
         if key not in st.session_state:
             st.session_state[key] = default
 
@@ -229,10 +241,10 @@ def Module_1():
             self.x = int(x)
             self.m = int(m)
             self.y = int(y)
-            self.selected_role = str(selected_role)
-            self.selected_sub_role = str(selected_sub_role)
-            self.selected_action = str(selected_action)
-            self.selected_activity = str(selected_activity)
+            self.selected_role = str(A(0))
+            self.selected_sub_role = str(B(0))
+            self.selected_action = str(C(0))
+            self.selected_activity = str(D(0))
             
             st.write("debug 2 - about to create empty array")
             self.table = np.zeros((n, x, m, y), dtype=int)
@@ -272,19 +284,33 @@ def Module_1():
                                     x,
                                     m,
                                     y,
-                                    st.session_state.A[(n-1)],
-                                    st.session_state.B[(x-1)],
-                                    st.session_state.C[(m-1)],
-                                    st.session_state.D[(y-1)]
-                                )
-                            
-                                st.write(" ")
-                                st.write("⚠️ - Validation of selections completing .... ")
-                                if validity_confirmation == 0:
+                                    selected_role,
+                                    selected_sub_role
+                                    selected_action
+                                    selected_activity
+                                 }
+                                 
+                                 check_A = A[(n-1)],
+                                 check_B = B[(x-1)],
+                                 check_C = C[(m-1)],
+                                 check_D = D[(y-1)]
+
+                                 if check_A = selected_role:
+                                     selected_role = session_state.selected_role
+                                 if check_B = selected_sub_role:
+                                     selected_sub_role = session_state.selected_role
+                                 if check_C = selected_action:
+                                     selected_action = session_state.selected_action
+                                 if check_D = selected_activity:
+                                     selected_action = session_state.selected_action
+                             
+                                 st.write(" ")
+                                 st.write("⚠️ - Validation of selections completing .... ")
+                                 if validity_confirmation == 0:
                                     st.session_state.R_go = 0
-                                else:
+                                 else:
                                     st.session_state.R_go = 1
-                                return
+                                 return
                                                              
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
