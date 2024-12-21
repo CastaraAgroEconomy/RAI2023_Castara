@@ -511,8 +511,10 @@ def Module_1():
             if selected_role == "Franchisor" and selected_action not in ["Compliance Auditing", "Strategic Planning", "Performance Metrics Review", "Franchise Training Program Management", "Investor Reporting", "Market Analysis", 
                                 "Franchise Standards Enforcement", "Franchise Agreement Management", "Business Expansion Planning", "Financial Analysis", "Franchise Performance Review"]:
                 return 0       
-#           Rule 36: Franchisors should be able to access activities like 
-            if selected_role == "Franchisor" and selected_activity not in [""]:
+#           Rule 36: Franchisors should be able to access activities like Franchise Agreement Review, Market Research Documentation, Compliance Report Generation, ROI Calculations, Training Program Development, Performance Metric Tracking, 
+            Risk Assessment Reports.
+            if selected_role == "Franchisor" and selected_activity not in ["Franchise Agreement Review", "Market Research Documentation", "Compliance Report Generation", "ROI Calculations", "Training Program Development", 
+                                "Performance Metric Tracking", "Risk Assessment Reports"]:
                 return 0       
             
               
