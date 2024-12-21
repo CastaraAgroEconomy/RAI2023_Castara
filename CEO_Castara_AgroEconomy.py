@@ -242,7 +242,7 @@ def Module_1():
             st.write("..... without predefined rules")
             st.write(" ")
          
-            st.write("debug  - About to prepare Truth Table")
+            st.write("debug 4 - About to prepare Truth Table")
             st.write("..... updated in accordance with")
             st.write("..... specified valid selection rules")
             st.write(" ")
@@ -277,7 +277,7 @@ def Module_1():
                                 )
                             
                                 st.write(" ")
-                                st.write("⚠️ - Validation of selections completing ")
+                                st.write("⚠️ - Validation of selections completing .... ")
                                 if validity_confirmation == 0:
                                     st.session_state.R_go = 0
                                 else:
