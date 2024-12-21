@@ -311,10 +311,10 @@ def Module_1():
             """Validate the selection by checking if the combination matches valid rules."""
         
             st.write(" ")      
-            st.write(f" Confirming that {self.selected_role}")
-            st.write(f" who selects the Job title {self.selected_sub_role}")
-            st.write(f" is authorized to perform {self.selected_action}")
-            st.write(f" in order to carryout {self.selected_activity}")
+            st.write(f" Confirming that {selected_role}")
+            st.write(f" who selects the Job title {selected_sub_role}")
+            st.write(f" is authorized to perform {selected_action}")
+            st.write(f" in order to carryout {selected_activity}")
                        
             st.write(" ")
             st.write("⚠️ - Validating combination of selected items ")
