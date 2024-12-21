@@ -507,12 +507,12 @@ def Module_1():
                      "Operations Manager", "Operations Director"]:
                 return 0       
 #           Rule 35: Franchisors should handle actions like Compliance Auditing, Strategic Planning, Performance Metrics Review, Franchise Training Program Management, Investor Reporting, Market Analysis, 
-#           Franchise Standards Enforcement, Franchise Agreement Management, Business Expansion Planning, Financial Analysis, Franchise Performance Review
+#                    Franchise Standards Enforcement, Franchise Agreement Management, Business Expansion Planning, Financial Analysis, Franchise Performance Review
             if selected_role == "Franchisor" and selected_action not in ["Compliance Auditing", "Strategic Planning", "Performance Metrics Review", "Franchise Training Program Management", "Investor Reporting", "Market Analysis", 
                                 "Franchise Standards Enforcement", "Franchise Agreement Management", "Business Expansion Planning", "Financial Analysis", "Franchise Performance Review"]:
                 return 0       
 #           Rule 36: Franchisors should be able to access activities like Franchise Agreement Review, Market Research Documentation, Compliance Report Generation, ROI Calculations, Training Program Development, Performance Metric Tracking, 
-            Risk Assessment Reports.
+#                    Risk Assessment Reports.
             if selected_role == "Franchisor" and selected_activity not in ["Franchise Agreement Review", "Market Research Documentation", "Compliance Report Generation", "ROI Calculations", "Training Program Development", 
                                 "Performance Metric Tracking", "Risk Assessment Reports"]:
                 return 0       
@@ -543,12 +543,12 @@ def Module_1():
             if selected_role == "Investor" and selected_sub_role not in ["Investment Analyst", "Investor Relations Manager", "Limited Partner"]:
                 return 0       
 #           Rule 41: Investors should handle actions like Investment Performance Monitoring, Franchise Performance Review, Financial Analysis, Risk Assessment, 
-#                   Return on Investment Analysis, Capital Allocation, Market Analysis, Investor Reporting, Performance Metrics Review, Compliance Auditing
+#                    Return on Investment Analysis, Capital Allocation, Market Analysis, Investor Reporting, Performance Metrics Review, Compliance Auditing
             if selected_role == "Investor" and selected_action not in ["Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Risk Assessment", 
                                                                         "Return on Investment Analysis", "Capital Allocation", "Market Analysis", "Investor Reporting", "Performance Metrics Review", "Compliance Auditing"]:
                 return 0                                                      
 #           Rule 42: Investors should be able to access activities like Investment Portfolio Review, Franchise Audit Execution, Financial Statement Analysis, 
-#                   Risk Assessment Reports, ROI Calculations, Market Trend Analysis, Investor Report Generation, Performance Metric Tracking
+#                    Risk Assessment Reports, ROI Calculations, Market Trend Analysis, Investor Report Generation, Performance Metric Tracking
             if selected_role == "Investor" and selected_activity not in ["Investment Portfolio Review", "Franchise Audit Execution", "Financial Statement Analysis", 
                                                                           "Risk Assessment Reports", "ROI Calculations", "Market Trend Analysis", "Investor Report Generation", 
                                                                           "Performance Metric Tracking"]:
