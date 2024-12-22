@@ -281,19 +281,20 @@ def Module_1():
 
                                 validity_confirmation = 0 # Initialized to 'False'
                                 validity_confirmation = self.validate_choice(
-                                    n,
-                                    x,
-                                    m,
-                                    y,
-                                    selected_role,
-                                    selected_sub_role,
-                                    selected_action,
-                                    selected_activity
+                                 n,
+                                 x,
+                                 m,
+                                 y,
+                                 self.selected_role,
+                                 self.selected_sub_role,
+                                 self.selected_action,
+                                 self.selected_activity
                                 )
-                                check_A = A[(n-1)],
-                                check_B = B[(x-1)]
-                                check_C = C[(m-1)],
-                                check_D = D[(y-1)]
+                             
+                                check_A = st.session_state.A[(n-1)]
+                                check_B = st.session_state.B[(x-1)]
+                                check_C = st.session_state.C[(m-1)]
+                                check_D = st.session_state.D[(y-1)]
 
                                 if check_A == selected_role:
                                      selected_role = session_state.selected_role
