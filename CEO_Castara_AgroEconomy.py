@@ -134,19 +134,19 @@ def main():
     if st.session_state.stage == "login":
         with content_placeholder.container():
             login(content_placeholder)
-    elif st.session_state.stage == "role_selection":
+    if st.session_state.stage == "role_selection":
         with content_placeholder.container():
             select_role(content_placeholder)
-    elif st.session_state.stage == "sub_role_selection":
+    if st.session_state.stage == "sub_role_selection":
         with content_placeholder.container():
             select_sub_role(content_placeholder)
-    elif st.session_state.stage == "action_selection":
+    if st.session_state.stage == "action_selection":
         with content_placeholder.container():
             select_action(content_placeholder)
-    elif st.session_state.stage == "activity_selection":
+    if st.session_state.stage == "activity_selection":
         with content_placeholder.container():
             select_activity(content_placeholder)
-    elif st.session_state.return_to_main == False:
+    if st.session_state.return_to_main == False:
         with content_placeholder.container():
             finalize_selection (content_placeholder)
 
@@ -155,7 +155,7 @@ def main():
 # Returned to main Module :-
 # =========================
     
-    if (st.session_state.R_go == 1) and (st.session_state.live == 1):
+    if st.session_state.R_go == 1:
         with content_placeholder.container():
             st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
             f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
@@ -173,7 +173,7 @@ def main():
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
                     
-    if (st.session_state.R_go == 0) and (st.session_state.live == 1):
+    if st.session_state.R_go == 0:
         with content_placeholder.container():
             st.success(f"⚠️ - Journey unsuccessfull !  The Role {st.session_state.selected_role},"
             f"with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}, "
