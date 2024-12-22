@@ -157,8 +157,8 @@ def main():
     
     if st.session_state.R_go == 1 and st.session_state.live == 1:
         with content_placeholder.container():
-            st.write(f"⚠️ - Journey completed successfully! Role={st.session_state.selected_role}")
-            st.write(f"..... Sub-role {st.session_state.selected_sub_role} can access {st.session_state.selected_action}")
+            st.write(f"⚠️ - Journey completed successfully ! Role {st.session_state.selected_role}")
+            st.write(f"..... with Sub-role {st.session_state.selected_sub_role} can access {st.session_state.selected_action}")
             st.write(f"..... in order to execute the mission, {st.session_state.selected_activity}")
             
             st.write(" ")
@@ -176,7 +176,7 @@ def main():
     if st.session_state.R_go == 0 and st.session_state.live == 1:
         with content_placeholder.container():
             st.write(f"⚠️ - Journey unsuccessfull !  The Role {st.session_state.selected_role}")
-            st.write(f"..... with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}")
+            st.write(f"..... with Sub-role {st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}")
             st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}") 
 
             st.write(" ")
@@ -603,7 +603,7 @@ def Module_1():
 
     st.write(" ")
     st.write("debug 9 - Validity of selection completed")
-    
+    st.write(" ")
 
 
         
@@ -646,7 +646,7 @@ def select_role(content_placeholder):
     
     selected_role = st.radio("Choose a Role", roles)
 
-    if st.button("Choose a Job title next", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
+    if st.button("Choose a Job Title next", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
         st.session_state.selected_role = selected_role
         pass
     return
