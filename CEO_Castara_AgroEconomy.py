@@ -182,8 +182,6 @@ def main():
             st.write(" ")
             st.write("⚠️ - you will unfortunately be required to make new selections.")
             
-            st.session_state.live = 1
-            
         if st.session_state.logged_in == True:
             st.session_state.stage = "role_selection"
      
