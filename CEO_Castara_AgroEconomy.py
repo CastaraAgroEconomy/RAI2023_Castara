@@ -209,7 +209,7 @@ def main():
             st.write("Execution ended.")
             st.write(" ")
 # To avoid infinite re-rendering, include a Streamlit rerun
-        st.experimental_rerun()  
+        st.rerun()  
 
 
     
