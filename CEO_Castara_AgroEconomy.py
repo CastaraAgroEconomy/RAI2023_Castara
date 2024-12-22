@@ -182,28 +182,28 @@ def main():
             st.write(" ")
             st.write("⚠️ - you will unfortunately be required to make new selections.")
             
-        if st.session_state.logged_in == True:
-            st.session_state.stage = "role_selection"
+            if st.session_state.logged_in == True:
+                st.session_state.stage = "role_selection"
      
-            st.write(" ")
-            st.write("⚠️ - Currently, you will need to logout and login again, to select different User Role")
+                st.write(" ")
+                st.write("⚠️ - Currently, you will need to logout and login again, to select different User Role")
             
-#       st.write(" ")
-#       st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
-#       st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
+#               st.write(" ")
+#               st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
+#               st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             
-        if st.button("Logout", on_click=lambda: logout()):
-            pass
-            st.session_state.stage = None
-            st.session_state.logged_in = False
+            if st.button("Logout", on_click=lambda: logout()):
+                pass
+                st.session_state.stage = None
+                st.session_state.logged_in = False
         
 # Add an "End Execution" button
-        if st.button("End Execution"):
-            st.session_state.live = False  # Update the flag to stop the loop
+            if st.button("End Execution"):
+                st.session_state.live = False  # Update the flag to stop the loop
 # Display a message after the loop ends
-            st.write(" ")
-            st.write("Execution ended.")
-            st.write(" ")
+                st.write(" ")
+                st.write("Execution ended.")
+                st.write(" ")
 
 
     
