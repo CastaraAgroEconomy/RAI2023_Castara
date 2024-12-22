@@ -129,87 +129,84 @@ def main():
         st.session_state.logged_in = False
         
     content_placeholder = st.empty()  # Create a single placeholder for all content
-
-# Main loop logic
-    while st.session_state.live:
         
 # Stage-based rendering using the placeholder
-        if st.session_state.stage == "login":
-            with content_placeholder.container():
-                login(content_placeholder)
-        elif st.session_state.stage == "role_selection":
-            with content_placeholder.container():
-                select_role(content_placeholder)
-        elif st.session_state.stage == "sub_role_selection":
-            with content_placeholder.container():
-                select_sub_role(content_placeholder)
-        elif st.session_state.stage == "action_selection":
-            with content_placeholder.container():
-                select_action(content_placeholder)
-        elif st.session_state.stage == "activity_selection":
-            with content_placeholder.container():
-                select_activity(content_placeholder)
-        elif st.session_state.return_to_main == False:
-            with content_placeholder.container():
-                finalize_selection (content_placeholder)
+    if st.session_state.stage == "login":
+        with content_placeholder.container():
+            login(content_placeholder)
+    elif st.session_state.stage == "role_selection":
+        with content_placeholder.container():
+            select_role(content_placeholder)
+    elif st.session_state.stage == "sub_role_selection":
+        with content_placeholder.container():
+            select_sub_role(content_placeholder)
+    elif st.session_state.stage == "action_selection":
+        with content_placeholder.container():
+            select_action(content_placeholder)
+    elif st.session_state.stage == "activity_selection":
+        with content_placeholder.container():
+            select_activity(content_placeholder)
+    elif st.session_state.return_to_main == False:
+        with content_placeholder.container():
+            finalize_selection (content_placeholder)
 
 
 # =========================
 # Returned to main Module :-
 # =========================
    
-        if st.session_state.R_go == 1:
-            with content_placeholder.container():
-                st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
-                f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
-                f"Activity={st.session_state.selected_activity}") 
+    if st.session_state.R_go == 1:
+        with content_placeholder.container():
+            st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
+            f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
+            f"Activity={st.session_state.selected_activity}") 
             
-                st.write(" ")
-                st.write("⚠️ - When implemented, appropriate feature will activate at this point")
+            st.write(" ")
+            st.write("⚠️ - When implemented, appropriate feature will activate at this point")
             
-                st.session_state.logged_in = True
-                st.session_state.stage = "role_selection"
-                st.session_state.R_go = 0
+            st.session_state.logged_in = True
+            st.session_state.stage = "role_selection"
+            st.session_state.R_go = 0
          
-        elif st.session_state.stage == "finalize_selection":
-            with content_placeholder.container():        
-                st.write(" ")
-                st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
+    elif st.session_state.stage == "finalize_selection":
+        with content_placeholder.container():        
+            st.write(" ")
+            st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
                     
-        else:
-            with content_placeholder.container():
-                st.success(f"⚠️ - Journey unsuccessfull !  The Role {st.session_state.selected_role},"
-                f"with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}, "
-                f"in order to execute and achieve the mission {st.session_state.selected_activity}.") 
+    else:
+        with content_placeholder.container():
+            st.success(f"⚠️ - Journey unsuccessfull !  The Role {st.session_state.selected_role},"
+            f"with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}, "
+            f"in order to execute and achieve the mission {st.session_state.selected_activity}.") 
             
-                st.write(" ")
-                st.write("⚠️ - you will unfortunately be required to make new selections.")
+            st.write(" ")
+            st.write("⚠️ - you will unfortunately be required to make new selections.")
             
-        st.session_state.logged_in = True
-        st.session_state.stage = "role_selection"
-        st.session_state.R_go = 0         
+    st.session_state.logged_in = True
+    st.session_state.stage = "role_selection"
+    st.session_state.R_go = 0         
      
-        st.write(" ")
-        st.write("⚠️ - Currently, you will need to logout and login again, to select different User Role")
+    st.write(" ")
+    st.write("⚠️ - Currently, you will need to logout and login again, to select different User Role")
             
-        st.write(" ")
-        st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
-        st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
+    st.write(" ")
+    st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
+    st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             
-        if st.button("Logout", on_click=lambda: logout()):
-             pass
-             st.session_state.stage = None
-             st.session_state.logged_in = False
+    if st.button("Logout", on_click=lambda: logout()):
+        pass
+        st.session_state.stage = None
+        st.session_state.logged_in = False
         
 # Add an "End Execution" button
-        if st.button("End Execution"):
-            st.session_state.live = False  # Update the flag to stop the loop
+    if st.button("End Execution"):
+        st.session_state.live = False  # Update the flag to stop the loop
 # Display a message after the loop ends
-            st.write(" ")
-            st.write("Execution ended.")
-            st.write(" ")
+        st.write(" ")
+        st.write("Execution ended.")
+        st.write(" ")
 # To avoid infinite re-rendering, include a Streamlit rerun
-        st.rerun()  
+    st.rerun()  
 
 
     
