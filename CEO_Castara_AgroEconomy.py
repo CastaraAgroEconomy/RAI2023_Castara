@@ -308,7 +308,8 @@ def Module_1():
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
-            
+                
+            st.session_state.live = 1
             R_go = st.session_state.R_go
          
             if R_go == 1:
@@ -322,7 +323,6 @@ def Module_1():
                     return
                 if (n == 14) and y == 35:
                     st.write(" ..... Access to feature denied 👎")
-                    st.session_state.live = 2
                     st.session_state.return_to_main = True
                     return
           
