@@ -21,7 +21,7 @@ VALID_PASSWORD = "password"
 if 'A' not in st.session_state:
     st.session_state.A = ["Agricultural Engineer", "Horticulturist", "System Specialist", "Plant Scientist", "Operations Personnel",
                           "Maintenance Staff", "Quality Control Personnel", "Harvest Worker", "Climate Control Specialist",
-                          "Nutrient Management Specialist", "Franchise Operator", "Franchisor", "Management Personnel", "Investor"]
+                          "Nutrient Management Specialist", "Franchise Operator", "Franchisor", "Management Personnel", "Investor", "."]
 
 # Initialize matrices in session_state if not already there
 if 'B' not in st.session_state:
@@ -30,7 +30,7 @@ if 'B' not in st.session_state:
                           "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
                           "Franchise Owner", "Franchise Operator", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
                           "Portfolio Manager", "Chief Executive Officer",  "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
-                          "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager", "Limited Partner"] 
+                          "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager", "Limited Partner", "."] 
 
 # Initialize matrices in session_state if not already there
 if 'C' not in st.session_state:
@@ -39,7 +39,7 @@ if 'C' not in st.session_state:
                           "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination", 
                           "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", 
                           "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", "Market Analysis", "Investor Reporting",
-                          "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing" ]
+                          "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing", "."]
 
 # Initialize matrices in session_state if not already there
 if 'D' not in st.session_state:
@@ -49,7 +49,7 @@ if 'D' not in st.session_state:
                           "Maintenance Log Updates", "Quality Check Documentation", "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", 
                           "Financial Statement Analysis", "Market Research Documentation", "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", 
                           "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
-                          "Strategy Document Creation", "Compliance Report Filing"]
+                          "Strategy Document Creation", "Compliance Report Filing", "."]
 
 
 # Initialize defaults for selected items only if matrices are loaded
@@ -231,7 +231,7 @@ def Module_1():
 # Initialize session state variables if not already present
     
     for key, default in {
-        'n': 14, 'x': 34, 'm': 30, 'y': 35, 'selected_role' : st.session_state.selected_role, 'selected_sub_role' : st.session_state.selected_sub_role, 'selected_action' : st.session_state.selected_action, 'selected_activity' : st.session_state.selected_activity, 'R_go': 0, 'return_to_main' : False, 'live' : " ",
+        'n': 15, 'x': 35, 'm': 31, 'y': 36, 'selected_role' : st.session_state.selected_role, 'selected_sub_role' : st.session_state.selected_sub_role, 'selected_action' : st.session_state.selected_action, 'selected_activity' : st.session_state.selected_activity, 'R_go': 0, 'return_to_main' : False, 'live' : " ",
         }.items():
         
         if key not in st.session_state:
@@ -317,11 +317,11 @@ def Module_1():
                 st.session_state.return_to_main = True
                 return
             if R_go == 0:
-                if (n := 14) and y <= 35:
+                if (n <= 15) and y <= 36:
                     st.write(" .....  Continuing to process")
                     st.session_state.return_to_main = False
                     return
-                if (n == 14) and y == 35:
+                if (n == 15) and y == 36:
                     st.write(" ..... Access to feature denied 👎")
                     st.session_state.return_to_main = True
                     return
