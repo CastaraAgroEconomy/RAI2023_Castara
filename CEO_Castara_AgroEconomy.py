@@ -178,11 +178,13 @@ def main():
             st.success(f"⚠️ - Journey unsuccessfull !  The Role {st.session_state.selected_role},"
             f"with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}, "
             f"in order to execute and achieve the mission {st.session_state.selected_activity}.") 
-            
+
+        with content_placeholder.container():
             st.write(" ")
             st.write("⚠️ - you will unfortunately be required to make new selections.")
             
-            if st.session_state.logged_in == True:
+        if st.session_state.logged_in == True:
+            with content_placeholder.container():
                 st.session_state.stage = "role_selection"
      
                 st.write(" ")
@@ -192,14 +194,16 @@ def main():
 #               st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
 #               st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             
-            if st.button("Logout", on_click=lambda: logout()):
+        if st.button("Logout", on_click=lambda: logout()):
+            with content_placeholder.container():
                 pass
                 st.session_state.stage = None
                 st.session_state.logged_in = False
         
 # Add an "End Execution" button
-            if st.button("End Execution"):
-                st.session_state.live = False  # Update the flag to stop the loop
+        if st.button("End Execution"):
+            with content_placeholder.container():
+                st.session_state.live = 0  # Update the flag to stop the loop
 # Display a message after the loop ends
                 st.write(" ")
                 st.write("Execution ended.")
