@@ -106,7 +106,7 @@ if 'return_to_main' not in st.session_state:
     st.session_state.return_to_main = False
 
 if 'live' not in st.session_state:
-    st.session_state.live = True
+    st.session_state.live = False
 
 if 'is_valid' not in st.session_state:
     st.session_state.is_valid = 0
@@ -154,8 +154,8 @@ def main():
 # =========================
 # Returned to main Module :-
 # =========================
-   
-    if st.session_state.R_go == 1:
+    
+    if (st.session_state.R_go == 1) and st.session_state.live == True:
         with content_placeholder.container():
             st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
             f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
@@ -173,7 +173,7 @@ def main():
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
                     
-    if st.session_state.R_go == 0:
+    if (st.session_state.R_go == 0) and st.session_state.live == True:
         with content_placeholder.container():
             st.success(f"⚠️ - Journey unsuccessfull !  The Role {st.session_state.selected_role},"
             f"with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}, "
@@ -188,24 +188,22 @@ def main():
             st.write(" ")
             st.write("⚠️ - Currently, you will need to logout and login again, to select different User Role")
             
-#        st.write(" ")
-#        st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
-#        st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
+#         st.write(" ")
+#         st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
+#         st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             
-#        if st.button("Logout", on_click=lambda: logout()):
-#            pass
-#            st.session_state.stage = None
-#            st.session_state.logged_in = False
+         if st.button("Logout", on_click=lambda: logout()):
+             pass
+             st.session_state.stage = None
+             st.session_state.logged_in = False
         
 # Add an "End Execution" button
-#        if st.button("End Execution"):
-#            st.session_state.live = False  # Update the flag to stop the loop
+         if st.button("End Execution"):
+             st.session_state.live = False  # Update the flag to stop the loop
 # Display a message after the loop ends
-#            st.write(" ")
-#            st.write("Execution ended.")
-#            st.write(" ")
-
-
+             st.write(" ")
+             st.write("Execution ended.")
+             st.write(" ")
 
 
     
@@ -632,6 +630,7 @@ def login_check(username, password):
         st.session_state.logged_in = True
         st.session_state.stage = "role_selection"  # Move to the next stage
         st.success("Login successful!")
+        st.session_state.live = True
     else:
         st.error("Invalid credentials. Please try again.")
     return
