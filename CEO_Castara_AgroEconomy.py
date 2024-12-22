@@ -157,6 +157,7 @@ def main():
     
     if st.session_state.R_go == 1 and st.session_state.live == 1:
         with content_placeholder.container():
+            
             st.write(f"⚠️ - Journey completed successfully, Role {st.session_state.selected_role}")
             st.write(f"..... with Sub-role {st.session_state.selected_sub_role} can access {st.session_state.selected_action}")
             st.write(f"..... in order to execute the mission, {st.session_state.selected_activity}")
@@ -168,12 +169,14 @@ def main():
             st.session_state.R_go = 0
          
     elif st.session_state.stage == "finalize_selection":
-        with content_placeholder.container():        
+        with content_placeholder.container():
+            
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
                     
     if st.session_state.R_go == 0 and st.session_state.live == 1:
         with content_placeholder.container():
+            
             st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
             st.write(f"..... with Sub-role {st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}")
             st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}") 
@@ -205,6 +208,7 @@ def main():
                 st.write(" ")
                 st.write("Execution ended.")
                 st.write(" ")
+                return
 
 
     
