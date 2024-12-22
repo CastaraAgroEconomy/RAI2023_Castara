@@ -646,7 +646,7 @@ def select_role(content_placeholder):
     
     selected_role = st.radio("Choose a Role", roles)
 
-    if st.button("Choose a Job Function next", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
+    if st.button("Choose a Job title next", on_click=lambda: set_stage("sub_role_selection", "selected_role", selected_role)):
         st.session_state.selected_role = selected_role
         pass
     return
