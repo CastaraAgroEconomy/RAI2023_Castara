@@ -123,10 +123,7 @@ if 'validity_confirmation' not in st.session_state:
 def main():
 
 # Main loop logic
-while st.session_state.live:
-
-# Display a message after the loop ends
-st.write("Execution ended.")
+    while st.session_state.live:
 
 # Initialize session state variables
     if "stage" not in st.session_state:
@@ -210,8 +207,11 @@ st.write("Execution ended.")
     # Add an "End Execution" button
     if st.button("End Execution"):
         st.session_state.live = False  # Update the flag to stop the loop
-
-    # To avoid infinite re-rendering, include a Streamlit rerun
+# Display a message after the loop ends
+        st.write(" ")
+        st.write("Execution ended.")
+        st.write(" ")
+# To avoid infinite re-rendering, include a Streamlit rerun
     st.experimental_rerun()  
 
 
