@@ -182,6 +182,8 @@ def main():
             st.write(" ")
             st.write("⚠️ - you will unfortunately be required to make new selections.")
             
+            st.session_state.live = 1
+            
         if st.session_state.logged_in == True:
             st.session_state.stage = "role_selection"
      
@@ -706,8 +708,6 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
 
-    st.session_state.live = 1
-    
     Module_1()
     return
     
