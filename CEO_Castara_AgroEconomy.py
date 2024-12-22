@@ -21,7 +21,7 @@ VALID_PASSWORD = "password"
 if 'A' not in st.session_state:
     st.session_state.A = ["Agricultural Engineer", "Horticulturist", "System Specialist", "Plant Scientist", "Operations Personnel",
                           "Maintenance Staff", "Quality Control Personnel", "Harvest Worker", "Climate Control Specialist",
-                          "Nutrient Management Specialist", "Franchise Operator", "Franchisor", "Management Personnel", "Investor", "."]
+                          "Nutrient Management Specialist", "Franchise Operator", "Franchisor", "Management Personnel", "Investor", "end of list"]
 
 # Initialize matrices in session_state if not already there
 if 'B' not in st.session_state:
@@ -30,7 +30,7 @@ if 'B' not in st.session_state:
                           "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
                           "Franchise Owner", "Franchise Operator", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
                           "Portfolio Manager", "Chief Executive Officer",  "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
-                          "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager", "Limited Partner", "."] 
+                          "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager", "Limited Partner", "end of list"] 
 
 # Initialize matrices in session_state if not already there
 if 'C' not in st.session_state:
@@ -39,7 +39,7 @@ if 'C' not in st.session_state:
                           "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination", 
                           "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", 
                           "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", "Market Analysis", "Investor Reporting",
-                          "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing", "."]
+                          "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing", "end of list"]
 
 # Initialize matrices in session_state if not already there
 if 'D' not in st.session_state:
@@ -49,7 +49,7 @@ if 'D' not in st.session_state:
                           "Maintenance Log Updates", "Quality Check Documentation", "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", 
                           "Financial Statement Analysis", "Market Research Documentation", "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", 
                           "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
-                          "Strategy Document Creation", "Compliance Report Filing", "."]
+                          "Strategy Document Creation", "Compliance Report Filing", "end of list"]
 
 
 # Initialize defaults for selected items only if matrices are loaded
@@ -179,7 +179,6 @@ def main():
             f"with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}, "
             f"in order to execute and achieve the mission {st.session_state.selected_activity}.") 
 
-        with content_placeholder.container():
             st.write(" ")
             st.write("⚠️ - you will unfortunately be required to make new selections.")
             
@@ -194,15 +193,13 @@ def main():
 #               st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
 #               st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             
-        if st.button("Logout", on_click=lambda: logout()):
-            with content_placeholder.container():
+            if st.button("Logout", on_click=lambda: logout()):
                 pass
                 st.session_state.stage = None
                 st.session_state.logged_in = False
         
 # Add an "End Execution" button
-        if st.button("End Execution"):
-            with content_placeholder.container():
+            if st.button("End Execution"):
                 st.session_state.live = 0  # Update the flag to stop the loop
 # Display a message after the loop ends
                 st.write(" ")
@@ -321,11 +318,11 @@ def Module_1():
                 st.session_state.return_to_main = True
                 return
             if R_go == 0:
-                if (n <= 15) and y <= 36:
+                if (n < 15) and (y < 36):
                     st.write(" .....  Continuing to process")
                     st.session_state.return_to_main = False
                     return
-                if (n == 15) and y == 36:
+                if (n = 15) and (y = 36):
                     st.write(" ..... Access to feature denied 👎")
                     st.session_state.return_to_main = True
                     return
@@ -604,6 +601,7 @@ def Module_1():
 #   Create instance after class definition
     truth_table = TruthTable()  # This line was missing       
 
+    st.write(" ")
     st.write("debug 9 - Validity of selection completed")
     
 
