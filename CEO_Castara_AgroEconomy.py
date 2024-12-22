@@ -174,12 +174,12 @@ def main():
                     
     if st.session_state.R_go == 0 and st.session_state.live == 1:
         with content_placeholder.container():
-            st.write(f"⚠️ - Journey unsuccessfull !  The Role {st.session_state.selected_role}")
+            st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
             st.write(f"..... with Sub-role {st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}")
             st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}") 
 
             st.write(" ")
-            st.write("⚠️ - you will unfortunately be required to make new selections.")
+            st.write("⚠️ - You will unfortunately be required to make new selections.")
             
         if st.session_state.logged_in == True:
             with content_placeholder.container():
@@ -199,6 +199,7 @@ def main():
         
 # Add an "End Execution" button
             if st.button("End Execution"):
+                pass
                 st.session_state.live = 0  # Update the flag to stop the loop
 # Display a message after the loop ends
                 st.write(" ")
