@@ -200,8 +200,7 @@ def main():
              pass
              st.session_state.stage = None
              st.session_state.logged_in = False
-        else:
-
+        
 # Add an "End Execution" button
         if st.button("End Execution"):
             st.session_state.live = False  # Update the flag to stop the loop
