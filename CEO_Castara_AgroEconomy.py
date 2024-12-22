@@ -318,7 +318,7 @@ def Module_1():
                 st.session_state.return_to_main = True
                 return
             if R_go == 0:
-                if (n =< 15) and (y == 36):
+                if (n := 15) and (y := 36):
                     st.write(" .....  Continuing to process")
                     st.session_state.return_to_main = False
                     return
