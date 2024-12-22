@@ -21,7 +21,7 @@ VALID_PASSWORD = "password"
 if 'A' not in st.session_state:
     st.session_state.A = ["Agricultural Engineer", "Horticulturist", "System Specialist", "Plant Scientist", "Operations Personnel",
                           "Maintenance Staff", "Quality Control Personnel", "Harvest Worker", "Climate Control Specialist",
-                          "Nutrient Management Specialist", "Franchise Operator", "Franchisor", "Management Personnel", "Investor", "end of list"]
+                          "Nutrient Management Specialist", "Franchise Operator", "Franchisor", "Management Personnel", "Investor", "Do not select (EOL)"]
 
 # Initialize matrices in session_state if not already there
 if 'B' not in st.session_state:
@@ -30,7 +30,7 @@ if 'B' not in st.session_state:
                           "Data Analytics Manager", "Production Supervisor", "Food Safety Compliance Officer", "Automation Engineer", "Plant Health Inspector", 
                           "Franchise Owner", "Franchise Operator", "Regional Franchise Manager", "Franchise Operations Director", "Chief Investment Officer", "Investment Manager", 
                           "Portfolio Manager", "Chief Executive Officer",  "Chief Operations Officer", "Chief Financial Officer", "Business Development Manager", 
-                          "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager", "Limited Partner", "end of list"] 
+                          "Franchise Development Director", "Investment Analyst", "Financial Controller", "Franchise Compliance Manager", "Investor Relations Manager", "Limited Partner", "Do not select (EOL)"] 
 
 # Initialize matrices in session_state if not already there
 if 'C' not in st.session_state:
@@ -39,7 +39,7 @@ if 'C' not in st.session_state:
                           "System Troubleshooting", "Resource Usage Optimization", "Production Planning", "Safety Protocol Implementation", "Team Coordination", 
                           "Investment Performance Monitoring", "Franchise Performance Review", "Financial Analysis", "Business Expansion Planning", "Franchise Agreement Management", 
                           "Risk Assessment", "Return on Investment Analysis", "Franchise Standards Enforcement", "Capital Allocation", "Market Analysis", "Investor Reporting",
-                          "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing", "end of list"]
+                          "Franchise Training Program Management", "Performance Metrics Review", "Strategic Planning", "Compliance Auditing", "Do not select (EOL)"]
 
 # Initialize matrices in session_state if not already there
 if 'D' not in st.session_state:
@@ -49,7 +49,7 @@ if 'D' not in st.session_state:
                           "Maintenance Log Updates", "Quality Check Documentation", "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", 
                           "Financial Statement Analysis", "Market Research Documentation", "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", 
                           "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
-                          "Strategy Document Creation", "Compliance Report Filing", "end of list"]
+                          "Strategy Document Creation", "Compliance Report Filing", "Do not select (EOL)"]
 
 
 # Initialize defaults for selected items only if matrices are loaded
@@ -310,7 +310,6 @@ def Module_1():
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
                 
-            st.session_state.live = 1
             R_go = st.session_state.R_go
          
             if R_go == 1:
@@ -332,6 +331,7 @@ def Module_1():
         def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
             """Validate the selection by checking if the combination matches valid rules."""
 
+            st.session_state.live = 1
             selected_role = st.session_state.selected_role
             selected_sub_role = st.session_state.selected_sub_role
             selected_action = st.session_state.selected_action
@@ -392,7 +392,7 @@ def Module_1():
 
             if self.table[n, :, :, :].max() == 0:
                 st.session_state.stage = "sub_role_selection"
-                return "Job Function"
+                return "Job Title"
             elif self.table[n, x, :, :].max() == 0:
                 st.session_state.stage = "action_selection"
                 return "Action"
