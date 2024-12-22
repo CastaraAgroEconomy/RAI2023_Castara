@@ -106,7 +106,7 @@ if 'return_to_main' not in st.session_state:
     st.session_state.return_to_main = False
 
 if 'live' not in st.session_state:
-    st.session_state.live = False
+    st.session_state.live = 0
 
 if 'is_valid' not in st.session_state:
     st.session_state.is_valid = 0
@@ -155,7 +155,7 @@ def main():
 # Returned to main Module :-
 # =========================
     
-    if (st.session_state.R_go == 1) and st.session_state.live == True:
+    if st.session_state.R_go == 1 and st.session_state.live == 0:
         with content_placeholder.container():
             st.success(f"Journey completed successfully! Role={st.session_state.selected_role}, "
             f"Sub-role={st.session_state.selected_sub_role}, Action={st.session_state.selected_action}, "
@@ -173,7 +173,7 @@ def main():
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
                     
-    if (st.session_state.R_go == 0) and st.session_state.live == True:
+    if st.session_state.R_go == 0 and st.session_state.live == 0:
         with content_placeholder.container():
             st.success(f"⚠️ - Journey unsuccessfull !  The Role {st.session_state.selected_role},"
             f"with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}, "
