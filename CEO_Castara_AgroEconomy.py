@@ -106,7 +106,7 @@ if 'return_to_main' not in st.session_state:
     st.session_state.return_to_main = False
 
 if 'live' not in st.session_state:
-    st.session_state.live = " "
+    st.session_state.live = True
 
 if 'is_valid' not in st.session_state:
     st.session_state.is_valid = 0
@@ -121,6 +121,12 @@ if 'validity_confirmation' not in st.session_state:
 # Define the main function that controls the flow
 
 def main():
+
+# Main loop logic
+while st.session_state.live:
+
+# Display a message after the loop ends
+st.write("Execution ended.")
 
 # Initialize session state variables
     if "stage" not in st.session_state:
@@ -200,7 +206,14 @@ def main():
          st.session_state.stage = None
          st.session_state.logged_in = False
     else:
-         finalize_selection (content_placeholder)
+
+    # Add an "End Execution" button
+    if st.button("End Execution"):
+        st.session_state.live = False  # Update the flag to stop the loop
+
+    # To avoid infinite re-rendering, include a Streamlit rerun
+    st.experimental_rerun()  
+
 
     
 # ===================
