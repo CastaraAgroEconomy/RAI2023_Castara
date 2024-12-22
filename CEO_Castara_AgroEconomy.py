@@ -122,17 +122,17 @@ if 'validity_confirmation' not in st.session_state:
 
 def main():
 
+# Initialize session state variable
+    if "stage" not in st.session_state:
+        st.session_state.stage = "login"
+    if "logged_in" not in st.session_state:
+        st.session_state.logged_in = False
+        
+    content_placeholder = st.empty()  # Create a single placeholder for all content
+
 # Main loop logic
     while st.session_state.live:
-
-# Initialize session state variables
-        if "stage" not in st.session_state:
-            st.session_state.stage = "login"
-        if "logged_in" not in st.session_state:
-            st.session_state.logged_in = False
         
-        content_placeholder = st.empty()  # Create a single placeholder for all content
-    
 # Stage-based rendering using the placeholder
         if st.session_state.stage == "login":
             with content_placeholder.container():
