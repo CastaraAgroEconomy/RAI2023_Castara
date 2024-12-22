@@ -173,11 +173,11 @@ def main():
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
                     
-#    if st.session_state.R_go == 0:
-#        with content_placeholder.container():
-#            st.success(f"⚠️ - Journey unsuccessfull !  The Role {st.session_state.selected_role},"
-#            f"with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}, "
-#            f"in order to execute and achieve the mission {st.session_state.selected_activity}.") 
+    if st.session_state.R_go == 0:
+        with content_placeholder.container():
+            st.success(f"⚠️ - Journey unsuccessfull !  The Role {st.session_state.selected_role},"
+            f"with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}, "
+            f"in order to execute and achieve the mission {st.session_state.selected_activity}.") 
             
 #            st.write(" ")
 #            st.write("⚠️ - you will unfortunately be required to make new selections.")
