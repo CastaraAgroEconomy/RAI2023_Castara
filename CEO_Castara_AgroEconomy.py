@@ -631,7 +631,7 @@ def login_check(username, password):
         st.session_state.logged_in = True
         st.session_state.stage = "role_selection"  # Move to the next stage
         st.success("Login successful!")
-        st.session_state.live = True
+
     else:
         st.error("Invalid credentials. Please try again.")
     return
