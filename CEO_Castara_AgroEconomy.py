@@ -108,18 +108,6 @@ if 'return_to_main' not in st.session_state:
 if 'live' not in st.session_state:
     st.session_state.live = " "
 
-if 'check_A' not in st.session_state:
-    st.session_state.check_A = " "
-
-if 'check_B' not in st.session_state:
-    st.session_state.check_B = " "
-
-if 'check_C' not in st.session_state:
-    st.session_state.check_C = " "
-
-if 'check_D' not in st.session_state:
-    st.session_state.check_D = " "
-
 if 'is_valid' not in st.session_state:
     st.session_state.is_valid = 0
 
@@ -225,7 +213,7 @@ def Module_1():
     
     for key, default in {
         'n': 14, 'x': 34, 'm': 30, 'y': 35, 'selected_role' : st.session_state.selected_role, 'selected_sub_role' : st.session_state.selected_sub_role, 'selected_action' : st.session_state.selected_action, 'selected_activity' : st.session_state.selected_activity, 'R_go': 0, 'return_to_main' : False, 'live' : " ",
-        'check_A' : st.session_state.check_A, 'check_B' : st.session_state.check_B, 'check_C' : st.session_state.check_C, 'check_D' : st.session_state.check_D}.items():
+        }.items():
         
         if key not in st.session_state:
             st.session_state[key] = default
@@ -261,8 +249,7 @@ def Module_1():
             st.write("..... specified valid selection rules")
             st.write(" ")
             
-            self.generate_table()
-            
+            self.generate_table()          
                
         def generate_table(self):
             
@@ -290,21 +277,7 @@ def Module_1():
                                  self.selected_action,
                                  self.selected_activity
                                 )
-                             
-                                check_A = st.session_state.A[(n-1)]
-                                check_B = st.session_state.B[(x-1)]
-                                check_C = st.session_state.C[(m-1)]
-                                check_D = st.session_state.D[(y-1)]
-
-                                if check_A == selected_role:
-                                     selected_role = session_state.selected_role
-                                if check_B == selected_sub_role:
-                                     selected_sub_role = session_state.selected_role
-                                if check_C == selected_action:
-                                     selected_action = session_state.selected_action
-                                if check_D == selected_activity:
-                                     selected_action = session_state.selected_action
-                             
+                                                          
                                 st.write(" ")
                                 st.write("⚠️ - Validation of selections completing .... ")
                                 if validity_confirmation == 0:
@@ -337,7 +310,13 @@ def Module_1():
 
         def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
             """Validate the selection by checking if the combination matches valid rules."""
-        
+
+            selected_role = st.session_state.selected_role
+            selected_sub_role = st.session_state.selected_sub_role
+            selected_action = st.session_state.selected_action
+            selected_activity = st.session_state.selected_activity
+            
+         
             st.write(" ")      
             st.write(f" Confirming that {selected_role}")
             st.write(f" who selects the Job title {selected_sub_role}")
@@ -414,11 +393,7 @@ def Module_1():
             st.write(" ")
  
             
-#           NOMINAL RULES : for checking :-
-            selected_role = st.session_state.selected_role
-            selected_sub_role = st.session_state.selected_sub_role
-            selected_action = st.session_state.selected_action
-            selected_activity = st.session_state.selected_activity
+#           NOMINAL RULES : for validity checking
             
 #           Rule 1: Agricultural Engineers should have the job title Head of Agricultural Engineering, Systems Integration Engineer, Automation Engineer, Environmental Systems Manager, Maintenance Supervisor, Nutrient Systems Manager, Quality Assurance Manager.
             if selected_role == "Agricultural Engineer" and selected_sub_role not in ["Head of Agricultural Engineering", "Systems Integration Engineer", "Automation Engineer", "Environmental Systems Manager", "Maintenance Supervisor", "Nutrient Systems Manager", "Quality Assurance Manager"]:
