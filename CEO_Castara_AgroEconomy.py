@@ -179,14 +179,14 @@ def main():
             f"with Sub-role={st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}, "
             f"in order to execute and achieve the mission {st.session_state.selected_activity}.") 
             
-#            st.write(" ")
-#            st.write("⚠️ - you will unfortunately be required to make new selections.")
+            st.write(" ")
+            st.write("⚠️ - you will unfortunately be required to make new selections.")
             
-#        if st.session_state.logged_in == True:
-#            st.session_state.stage = "role_selection"
+        if st.session_state.logged_in == True:
+            st.session_state.stage = "role_selection"
      
-#            st.write(" ")
-#            st.write("⚠️ - Currently, you will need to logout and login again, to select different User Role")
+            st.write(" ")
+            st.write("⚠️ - Currently, you will need to logout and login again, to select different User Role")
             
 #        st.write(" ")
 #        st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
