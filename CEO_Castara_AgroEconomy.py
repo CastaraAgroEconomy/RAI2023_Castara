@@ -205,8 +205,8 @@ def main():
         st.write(" ")
         st.write("Execution ended.")
         st.write(" ")
-# To avoid infinite re-rendering, include a Streamlit rerun
-    st.experimental.rerun()  
+
+
 
 
     
