@@ -197,8 +197,10 @@ def main():
             
     if st.button("Logout", on_click=lambda: logout()):
          pass
-    st.session_state.stage = None
-    st.session_state.logged_in = False     
+         st.session_state.stage = None
+         st.session_state.logged_in = False
+    else:
+         finalize_selection (content_placeholder)
 
     
 # ===================
