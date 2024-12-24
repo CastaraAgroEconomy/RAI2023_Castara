@@ -169,7 +169,21 @@ def main():
         st.session_state.logged_in = True
         st.session_state.stage = "role_selection"
 
-         
+            if st.button("Logout", on_click=lambda: logout()):
+                pass
+                st.session_state.stage = None
+                st.session_state.logged_in = False
+        
+# Add an "End Execution" button
+            if st.button("End Execution"):
+                pass
+                st.session_state.live = 0  # Update the flag to stop the loop
+
+# Display a message after the loop ends
+                st.write(" ")
+                st.write("Execution ended.")
+                st.write(" ")
+    
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():
             st.write(" ")
