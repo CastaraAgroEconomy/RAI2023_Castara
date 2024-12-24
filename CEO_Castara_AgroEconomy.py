@@ -217,7 +217,7 @@ def main():
             st.write("Execution ended.")
             st.write(" ")
             
-    st.rerun()
+        st.rerun()
 
 
     
