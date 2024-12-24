@@ -182,7 +182,7 @@ def main():
 # Display a message after the loop ends
             st.write(" ")
             st.write("Execution ended.")
-            pst.write(" ")
+            st.write(" ")
     
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():
