@@ -178,7 +178,7 @@ def main():
                     
     if st.session_state.R_go == 0 and st.session_state.live == 1:
         with content_placeholder.container():
-            st,write(" ")
+            st.write(" ")
             
         st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
         st.write(f"..... with Sub-role {st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}")
