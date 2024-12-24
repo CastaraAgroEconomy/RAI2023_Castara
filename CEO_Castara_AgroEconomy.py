@@ -167,7 +167,6 @@ def main():
             
         st.session_state.logged_in = True
         st.session_state.stage = "role_selection"
-        st.session_state.R_go = 0
 
          
     elif st.session_state.stage == "finalize_selection":
@@ -177,7 +176,7 @@ def main():
         st.write(" ")
         st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
 
-        st.experimental.rerun()
+    st.rerun()
                     
     if st.session_state.R_go == 0 and st.session_state.live == 1:
         with content_placeholder.container():
@@ -218,7 +217,7 @@ def main():
             st.write("Execution ended.")
             st.write(" ")
             
-            st.experimental.rerun()
+    st.rerun()
 
 
     
