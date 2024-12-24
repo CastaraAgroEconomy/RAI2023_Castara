@@ -176,7 +176,6 @@ def main():
         st.write(" ")
         st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
 
-    return
                     
     if st.session_state.R_go == 0 and st.session_state.live == 1:
         with content_placeholder.container():
@@ -216,8 +215,6 @@ def main():
             st.write(" ")
             st.write("Execution ended.")
             st.write(" ")
-            
-        return
 
 
     
