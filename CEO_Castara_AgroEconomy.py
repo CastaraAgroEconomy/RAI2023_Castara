@@ -165,9 +165,11 @@ def main():
         st.write(f"⚠️ - Journey completed successfully, Role {st.session_state.selected_role}")
         st.write(f"..... with Sub-role {st.session_state.selected_sub_role} can access {st.session_state.selected_action}")
         st.write(f"..... in order to execute the mission, {st.session_state.selected_activity}")
+        
         st.write(" ")
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
-            
+        st.write(" ")
+        
         st.session_state.logged_in = True
         st.session_state.stage = "finalize_selection"
 
@@ -194,6 +196,7 @@ def main():
             
         st.write(" ")
         st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
+        st.write(" ")
 
                     
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
@@ -215,6 +218,7 @@ def main():
      
             st.write(" ")
             st.write("⚠️ - Currently, you will need to logout and login again, to select a different User Role")
+            st.write(" ")
             
 #.          st.write(" ")
 #           st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
