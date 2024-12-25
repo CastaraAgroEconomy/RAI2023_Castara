@@ -149,7 +149,7 @@ def main():
     elif st.session_state.stage == "activity_selection":
         with content_placeholder.container():
             select_activity(content_placeholder)
-    elif st.session_state.skip_final == 0
+    elif st.session_state.skip_final == 0:
         with content_placeholder.container():
             finalize_selection (content_placeholder)
 
