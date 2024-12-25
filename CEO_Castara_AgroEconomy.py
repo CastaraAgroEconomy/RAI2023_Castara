@@ -335,7 +335,7 @@ def Module_1():
                                 if validity_confirmation == 0:
                                     st.session_state.R_go = 0
                                 
-                                if validity_combination == 1:
+                                if validity_confirmation == 1:
                                     st.session_state.R_go = 1
                                 
                                 return
