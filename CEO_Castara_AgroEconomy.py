@@ -137,16 +137,16 @@ def main():
     if st.session_state.stage == "login":
         with content_placeholder.container():
             login(content_placeholder)
-    elif st.session_state.stage == "role_selection":
+    elif (st.session_state.skip_final == 0) and st.session_state.stage == "role_selection":
         with content_placeholder.container():
             select_role(content_placeholder)
-    elif st.session_state.stage == "sub_role_selection":
+    elif (st.session_state.skip_final == 0) and st.session_state.stage == "sub_role_selection":
         with content_placeholder.container():
             select_sub_role(content_placeholder)
-    elif st.session_state.stage == "action_selection":
+    elif (st.session_state.skip_final == 0) and st.session_state.stage == "action_selection":
         with content_placeholder.container():
             select_action(content_placeholder)
-    elif st.session_state.stage == "activity_selection":
+    elif (st.session_state.skip_final == 0) and st.session_state.stage == "activity_selection":
         with content_placeholder.container():
             select_activity(content_placeholder)
     elif st.session_state.skip_final == 0:
