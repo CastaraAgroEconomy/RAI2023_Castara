@@ -202,8 +202,8 @@ def main():
             
         st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
         st.write(f"..... with Sub-role {st.session_state.selected_sub_role}, is not authorized to perform the action {st.session_state.selected_action}")
-        st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}") 
-
+        st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}")
+        
         st.write(" ")
         st.write("⚠️ - You will unfortunately be required to make new selections.")
             
