@@ -169,7 +169,7 @@ def main():
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
             
         st.session_state.logged_in = True
-        st.session_state.stage = "role_selection"
+        st.session_state.stage = "finalize_selection"
 
         if st.button("Logout", on_click=lambda: logout()):
             pass
