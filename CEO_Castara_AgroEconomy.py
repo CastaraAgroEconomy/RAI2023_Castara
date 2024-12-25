@@ -99,6 +99,9 @@ if 'selected_activity' not in st.session_state:
 if 'self' not in st.session_state:
     st.session_state.self = None
 
+if 'skip_final' not in st.session_state:
+    st.session_state.skip_final = 0
+
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
@@ -148,7 +151,7 @@ def main():
             select_activity(content_placeholder)
     elif st.session_state.return_to_main == False:
         with content_placeholder.container():
-            if st.session_state.R_go == 0:
+            if st.session_state.skip_final == 0:
                 finalize_selection (content_placeholder)
 
 
@@ -220,11 +223,13 @@ def main():
                 pass
                 st.session_state.stage = None
                 st.session_state.logged_in = False
+                st.session_state.skip_final = 0
         
 # Add an "End Execution" button
             if st.button("End Execution"):
                 pass
                 st.session_state.live = 0  # Update the flag to stop the loop
+                st.session_state.skip_final = 0
 
 # Display a message after the loop ends
                 st.write(" ")
@@ -735,6 +740,7 @@ def finalize_selection(selected_activity):
     st.write("⚠️ - Selected combination being validated ")
 
     Module_1()
+    st.session_state.skip_final = 1
     return
     
 
