@@ -635,6 +635,7 @@ def Module_1():
     st.write(" ")
     st.write("debug 9 - Validity of selection completed")
     st.write(" ")
+    st.session_state.skip_final = 1
 
 
         
@@ -741,7 +742,6 @@ def finalize_selection(selected_activity):
     st.write("⚠️ - Selected combination being validated ")
 
     Module_1()
-    st.session_state.skip_final = 1
     return
     
 
