@@ -331,10 +331,13 @@ def Module_1():
                                                           
                                 st.write(" ")
                                 st.write("⚠️ - Validation of selections completing .... ")
+                                
                                 if validity_confirmation == 0:
                                     st.session_state.R_go = 0
-                                else:
+                                
+                                if validity_combination == 1:
                                     st.session_state.R_go = 1
+                                
                                 return
                                                              
             except Exception as e:
