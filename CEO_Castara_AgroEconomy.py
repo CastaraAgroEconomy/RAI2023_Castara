@@ -785,7 +785,7 @@ if sub_folder not in sys.path:
     importlib.import_module(feature_module)
     feature_module()
     
-    return
+return
     
 
 # Logout function
