@@ -168,7 +168,7 @@ def main():
 # Returned to main Module :-
 # =========================
     
-    
+
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
         with content_placeholder.container():
             st.write(" ")
