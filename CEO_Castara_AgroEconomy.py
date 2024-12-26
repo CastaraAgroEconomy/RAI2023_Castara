@@ -1,7 +1,6 @@
 # Main Script and function call for the Castara AgroEconomy Mobile App.
 import streamlit as st
 import numpy as np
-import importlib
 import sys
 import os
 
@@ -776,7 +775,7 @@ def finalize_selection(selected_activity):
 def launch_pad(feature_module):
     st.header(f" Launching Function for {st.session_state.selected_activity}")
     st.write(" ")
-    importlib.import_module(module_name)
+    importlib.import_module(feature_module)
     call(feature_module)
     
     return
