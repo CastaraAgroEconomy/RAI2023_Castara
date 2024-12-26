@@ -168,8 +168,6 @@ def main():
 # Returned to main Module :-
 # =========================
     
-    st.write(f" R_go flag set to {st.session_state.R_go}")
-    st.write(f" live flag set to {st.session_state.live}")
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
         with content_placeholder.container():
@@ -185,8 +183,9 @@ def main():
 
 # Replace spaces in Activity with "_" and add ".py" at the end to generate feature name
 
-        feature_module = st.session_state.activity.replace(" ", "_") + ".py"
-
+        feature = st.session_state.activity
+        feature_module = feature.replace(" ", "_") + ".py"
+        
         with content_placeholder.container():
             st.write(" ")
             
