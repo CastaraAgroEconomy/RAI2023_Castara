@@ -187,6 +187,8 @@ def main():
 # Modify the value: replace spaces with underscores and add ".py"
 feature_module = st.session_state.activity.replace(" ", "_") + ".py"
 
+     with placeholder()
+        st.write(" ")
         launch_pad(feature_module)
         
         st.session_state.logged_in = True
