@@ -361,11 +361,11 @@ def Module_1():
                                 
                                 if validity_confirmation == 0:
                                     st.session_state.R_go = 0
-                                    return
+                                
                                 if validity_confirmation == 1:
                                     st.session_state.R_go = 1
-                                    return
-                                
+
+                                return
                                                              
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
