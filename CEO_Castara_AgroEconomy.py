@@ -126,6 +126,9 @@ if 'validity_check' not in st.session_state:
 if 'validity_confirmation' not in st.session_state:
     st.session_state.validity_confirmation = 0
 
+if 'feature_call' not in st.session_state:
+    st.session_state.feature_call = "default module name"
+
 
 # Define the main function that controls the flow
 
