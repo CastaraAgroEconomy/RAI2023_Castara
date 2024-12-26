@@ -183,7 +183,7 @@ def main():
 
 # Replace spaces in Activity with "_" and add ".py" at the end to generate feature name
 
-        feature = st.session_state.activity
+        feature = st.session_state.selected_activity
         feature_module = feature.replace(" ", "_") + ".py"
         
         with content_placeholder.container():
