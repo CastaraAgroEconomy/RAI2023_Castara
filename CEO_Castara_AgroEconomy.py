@@ -168,6 +168,9 @@ def main():
 # Returned to main Module :-
 # =========================
     
+    st.write(f" R_go flag set to {st.session_state.R_go}")
+    st.write(f" live flag set to {st.session_state.live}")
+    
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
         with content_placeholder.container():
             st.write(" ")
