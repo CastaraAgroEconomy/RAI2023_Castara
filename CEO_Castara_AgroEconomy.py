@@ -181,7 +181,11 @@ def main():
         st.write(" ")
 
 # Replace spaces in Activity with "_" and add ".py" at the end to generate feature name
-        feature_module = st.session_state.feature_call + ".py"
+# Original value of the activity
+    st.session_state.activity = "Default Activity Name"  # initial default value
+
+# Modify the value: replace spaces with underscores and add ".py"
+feature_module = st.session_state.activity.replace(" ", "_") + ".py"
 
         launch_pad(feature_module)
         
