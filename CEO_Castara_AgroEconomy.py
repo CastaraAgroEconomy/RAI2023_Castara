@@ -243,7 +243,7 @@ def main():
             st.write("⚠️ - Currently, you will need to logout and login again, to select a different User Role")
             st.write(" ")
             
-#.          st.write(" ")
+#           st.write(" ")
 #           st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
 #           st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             
@@ -359,12 +359,6 @@ def Module_1():
                                 st.write(" ")
                                 st.write("⚠️ - Validation of selections completing .... ")
                                 
-                                if validity_confirmation == 0:
-                                    st.session_state.R_go = 0
-                                
-                                if validity_confirmation == 1:
-                                    st.session_state.R_go = 1
-
                                 return
                             
             except Exception as e:
@@ -443,8 +437,10 @@ def Module_1():
 
             if  is_valid == 1: # determines that the selected combination is a valid one
                 st.write("👌 combination is a valid selection")
+                st.session_state.R_go = 1
             else:
                 st.write(f" the selected combination {n},{x},{m},{y} is invalid")
+                st.session_state.R_go = 0
             return # validity_check as 0 or 1
 
     
