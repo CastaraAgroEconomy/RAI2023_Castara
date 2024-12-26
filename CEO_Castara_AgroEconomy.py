@@ -777,7 +777,7 @@ def launch_pad(feature_module):
     import importlib
     
 # Definition of sub-folder where feature module scripts are to be found
-    sub_folder = os.path.join("features", "scripts")
+    sub_folder = "features/scripts"
 
     st.write(" ")
     st.write(f" target script is {sub_folder}.py")
