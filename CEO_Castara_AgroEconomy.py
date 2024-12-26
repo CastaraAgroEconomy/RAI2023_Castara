@@ -130,6 +130,7 @@ if 'feature_call' not in st.session_state:
     st.session_state.feature_call = "default module name"
 
 
+
 # Define the main function that controls the flow
 
 def main():
@@ -763,8 +764,14 @@ def finalize_selection(selected_activity):
 
     Module_1()
     return
-    
 
+
+#   feature access via API
+def launch_pad(feature_module):
+    call(feature_module)
+    
+    return
+    
 
 # Logout function
 def logout():
