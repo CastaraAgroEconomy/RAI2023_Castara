@@ -783,7 +783,7 @@ def launch_pad(feature_module):
     st.write(" ")
 
 # Add the sub-folder to Python's import path
-if 'sub_folder' not in sys.path:
+if sub_folder not in sys.path:
     sys.path.append(sub_folder)
     
     importlib.import_module(feature_module)
