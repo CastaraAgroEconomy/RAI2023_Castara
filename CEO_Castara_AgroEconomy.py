@@ -1,6 +1,12 @@
 # Main Script and function call for the Castara AgroEconomy Mobile App.
 import streamlit as st
 import numpy as np
+import importlib
+import sys
+import os
+
+# Definition of sub-folder where feature module scripts are to be found
+sub_folder = "/features.scripts"
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
