@@ -1,9 +1,6 @@
 # Main Script and function call for the Castara AgroEconomy Mobile App.
 import streamlit as st
 import numpy as np
-import importlib
-import sys
-import os
 
 
 # Placeholder for valid credentials (admin/password for testing)
@@ -774,6 +771,10 @@ def finalize_selection(selected_activity):
 def launch_pad(feature_module):
     st.header(f" Launching Function for {st.session_state.selected_activity}")
     st.write(" ")
+
+    import os
+    import sys
+    import importlib
     
 # Definition of sub-folder where feature module scripts are to be found
     sub_folder = os.path.join("features", "scripts")
