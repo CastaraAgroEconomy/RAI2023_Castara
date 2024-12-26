@@ -774,6 +774,8 @@ def finalize_selection(selected_activity):
 
 #   feature access via API
 def launch_pad(feature_module):
+    st.header(f" Launching Function for {st.session_state.selected_activity}")
+    st.write(" ")
     call(feature_module)
     
     return
