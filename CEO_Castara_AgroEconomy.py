@@ -182,14 +182,14 @@ def main():
 
 # Replace spaces in Activity with "_" and add ".py" at the end to generate feature name
 # Original value of the activity
-    st.session_state.activity = "Default Activity Name"  # initial default value
+        st.session_state.activity = "Default Activity Name"  # initial default value
 
 # Modify the value: replace spaces with underscores and add ".py"
 feature_module = st.session_state.activity.replace(" ", "_") + ".py"
 
-     with placeholder()
-        st.write(" ")
-        launch_pad(feature_module)
+         with content_placeholder.container()
+            st.write(" ")
+            launch_pad(feature_module)
         
         st.session_state.logged_in = True
         st.session_state.stage = "finalize_selection"
