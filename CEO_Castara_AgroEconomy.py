@@ -391,7 +391,6 @@ def Module_1():
         def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
             """Validate the selection by checking if the combination matches valid rules."""
 
-            st.session_state.live = 1
             selected_role = st.session_state.selected_role
             selected_sub_role = st.session_state.selected_sub_role
             selected_action = st.session_state.selected_action
@@ -771,6 +770,7 @@ def finalize_selection(selected_activity):
     st.write("⚠️ - Selected combination being validated ")
 
     Module_1()
+    st.session_state.live = 1
     return
 
 
