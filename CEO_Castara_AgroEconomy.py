@@ -181,10 +181,10 @@ def main():
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
         st.write(" ")
 
-# Replace spaces in Activity with "_" and add ".py" at the end to generate feature name
+# Replace spaces in Activity with "_" to generate feature name
 
         feature = st.session_state.selected_activity
-        feature_module = feature.replace(" ", "_") + ".py"
+        feature_module = feature.replace(" ", "_")
         
         with content_placeholder.container():
             st.write(" ")
