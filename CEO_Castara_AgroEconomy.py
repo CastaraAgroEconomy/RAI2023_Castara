@@ -6,7 +6,7 @@ import sys
 import os
 
 # Definition of sub-folder where feature module scripts are to be found
-sub_folder = "features.scripts"
+sub_folder = os.path.join("features", "scripts")
 
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
