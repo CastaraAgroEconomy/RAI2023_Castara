@@ -175,6 +175,11 @@ def main():
         st.write(" ")
         st.write("⚠️ - When implemented, appropriate feature will activate at this point")
         st.write(" ")
+
+# Replace spaces in Activity with "_" and add ".py" at the end to generate feature name
+        feature_module = st.session_state.feature_call + ".py"
+
+        launch_pad(feature_module)
         
         st.session_state.logged_in = True
         st.session_state.stage = "finalize_selection"
