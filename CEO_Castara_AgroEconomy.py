@@ -776,6 +776,7 @@ def finalize_selection(selected_activity):
 def launch_pad(feature_module):
     st.header(f" Launching Function for {st.session_state.selected_activity}")
     st.write(" ")
+    importlib.import_module(module_name)
     call(feature_module)
     
     return
