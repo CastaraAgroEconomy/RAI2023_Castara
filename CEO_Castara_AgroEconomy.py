@@ -185,7 +185,7 @@ def main():
         st.session_state.activity = "Default Activity Name"  # initial default value
 
 # Modify the value: replace spaces with underscores and add ".py"
-feature_module = st.session_state.activity.replace(" ", "_") + ".py"
+        feature_module = st.session_state.activity.replace(" ", "_") + ".py"
 
         with content_placeholder.container():
             st.write(" ")
