@@ -376,16 +376,18 @@ def Module_1():
                 st.write(" ..... Access to feature granted 👍")
                 st.session_state.return_to_main = True
                 return
+                
             if st.session_state.R_go == 0:
                 if (n := 15) and (y := 36):
                     st.write(" .....  Continuing to process")
                     st.session_state.return_to_main = False
-                    return
+                    
                 if (n == 14) and (y == 36):
                     st.write(" ..... Access to feature denied 👎")
                     st.session_state.return_to_main = True
-                    return
-          
+                    
+                return
+                
 #       INFERENCE ENGINE - cascading functions
 
         def validate_choice(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
