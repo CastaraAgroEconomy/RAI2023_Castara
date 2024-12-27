@@ -179,10 +179,13 @@ def main():
 # Replace spaces in Activity with "_" to generate feature name
 
         feature = st.session_state.selected_activity
-        feature_module = feature.replace(" ", "_")
-        
+        feature_module = feature.replace(" ", "_")  
             
         st.write(f"⚠️ - launching {feature_module}")
+
+        with content_placeholder.container():
+            st.write(" ")
+        
         launch_pad(feature_module)
         
         st.session_state.logged_in = True
@@ -767,9 +770,6 @@ def finalize_selection(selected_activity):
 
 #   Feature access via API
 def launch_pad(feature_module):
-    
-    with content_placeholder.container():
-            st.write(" ")
     
     st.header(f"Launching Function for {st.session_state.selected_activity}")
     st.write(" ")
