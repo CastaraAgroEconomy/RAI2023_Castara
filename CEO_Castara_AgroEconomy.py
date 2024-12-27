@@ -176,14 +176,6 @@ def main():
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
             st.write(" ")
 
-# Replace spaces in Activity with "_" to generate feature name
-
-        feature = st.session_state.selected_activity
-        feature_module = feature.replace(" ", "_")
-
-        if 'feature_module' not in st.session_state:
-            st.session_state.feature_module = feature_module
-            
         st.write(f"⚠️ - launching {feature_module}")
 
         with content_placeholder.container():            
@@ -777,6 +769,15 @@ def launch_pad(content_placeholder):
     import os
     import sys
     import importlib
+    
+# Replace spaces in Activity with "_" to generate feature name
+
+    feature = st.session_state.selected_activity
+    feature_module = feature.replace(" ", "_")
+
+    if 'feature_module' not in st.session_state:
+    st.session_state.feature_module = feature_module
+    
 
 #   Call an external script from a specified sub-folder.
 #   Args:
