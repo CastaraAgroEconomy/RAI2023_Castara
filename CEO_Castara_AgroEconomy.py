@@ -767,29 +767,38 @@ def finalize_selection(selected_activity):
     return
 
 
-#   feature access via API
+#   Feature access via API
 def launch_pad(feature_module):
-    st.header(f" Launching Function for {st.session_state.selected_activity}")
+    st.header(f"Launching Function for {st.session_state.selected_activity}")
     st.write(" ")
 
     import os
     import sys
     import importlib
-    
-# Definition of sub-folder where feature module scripts are to be found
-    sub_folder = " "    
+
+    # Define the sub-folder where feature module scripts are located
     sub_folder = os.path.join("features", "scripts")  # Adjust to the App's folder structure
 
     st.write(" ")
-    st.write(f" target script is {sub_folder}.py")
+    st.write(f"Target script is in: {sub_folder}")
     st.write(" ")
 
-# Add the sub-folder to Python's import path
-if 'sub_folder' not in sys.path:
-    sys.path.append(sub_folder)
-    
-    importlib.import_module(feature_module)
-    feature_module()
+    # Add the sub-folder to Python's import path
+    if sub_folder not in sys.path:
+        sys.path.append(sub_folder)
+
+    try:
+        # Dynamically import the feature module (without .py extension)
+        module_name = feature_module.replace(".py", "")  # Remove .py if present
+        loaded_module = importlib.import_module(module_name)
+
+        # Dynamically access and execute the `main` function from the imported module
+        if hasattr(loaded_module, "main"):
+            loaded_module.main()  # Call the main function of the module
+        else:
+            st.error(f"Module '{module_name}' does not contain a 'main' function.")
+    except Exception as e:
+        st.error(f"An error occurred while launching the feature module '{feature_module}': {str(e)}")
     
 
     
