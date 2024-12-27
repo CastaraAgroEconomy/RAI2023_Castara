@@ -170,17 +170,14 @@ def main():
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
         with content_placeholder.container():
             st.write(" ")
-            
             st.write(f"⚠️ - Journey completed successfully, Role {st.session_state.selected_role}")
             st.write(f"..... with Sub-role {st.session_state.selected_sub_role} can access {st.session_state.selected_action}")
             st.write(f"..... in order to execute the mission, {st.session_state.selected_activity}")
-        
             st.write(" ")
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
             st.write(" ")
 
         st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
-
         with content_placeholder.container():            
             launch_pad(content_placeholder)
         
