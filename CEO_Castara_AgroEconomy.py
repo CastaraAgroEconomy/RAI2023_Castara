@@ -772,39 +772,35 @@ def launch_pad(content_placeholder):
     import sys
     import importlib
 
-#   Define the sub-folder where the feature module is located
+
+#    Dynamically import and execute a feature module.
+#    Args:
+#        feature_module (str): Name of the module (without .py extension).
+
+ #   Define the sub-folder where feature scripts are located
     sub_folder = os.path.join("features", "scripts")
-    
-#   Replace spaces in Activity with "_" to generate feature name
 
-    feature = st.session_state.selected_activity
-    feature_module = feature.replace(" ", "_")
-
-    if 'feature_module' not in st.session_state:
-        st.session_state.feature_module = feature_module
-    
-    st.write(f"Debug 11 - Preparing {feature_module}")
-
-    
-#   Call an external script from a specified sub-folder.
-#   Args:
-#       sub_folder (str): Relative or absolute path to the sub-folder.
-#       script_name (str): Name of the script without the `.py` extension.
-#       [function_name (str): Optional, specific function to call in the script].
-    
-#   Add the sub-folder to the system path if it's not already included
+    # Add sub-folder to sys.path if not already present
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
 
-    
-# Dynamically import the script
-    feature_script = importlib.import_module(feature_module)
-
-    st.write(f"⚠️ - activating {feature_script}")
+    try:
+        # Ensure the module name is correctly formatted
+        module_name = feature_module.replace(".py", "")  # Remove .py if present
         
-    feature_script()  # Call the function
+        # Dynamically import the module
+        feature_script = importlib.import_module(module_name)
+        print(f"Module '{module_name}' imported successfully.")
 
-    
+        # If the module contains a specific function, execute it
+        if hasattr(feature_script, "sub_folder"):  # Replace "main" with your desired function name
+            feature_script()
+        else:
+            print(f"Module '{module_name}' does not have a 'main' function.")
+    except ModuleNotFoundError:
+        print(f"Module '{feature_module}' not found. Please check the module name and location.")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
     return
 
 
