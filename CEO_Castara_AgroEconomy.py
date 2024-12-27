@@ -778,20 +778,25 @@ def launch_pad(content_placeholder):
     import sys
     import importlib
 
-    # Define the sub-folder where feature module scripts are located
-    sub_folder = os.path.join("features", "scripts")  # Adjust to the App's folder structure
-
-    feature_module = st.session_state.feature_module
-    Execute_script = feature_module + ".py"
+#   Call an external script from a specified sub-folder.
+#   Args:
+#       sub_folder (str): Relative or absolute path to the sub-folder.
+#       script_name (str): Name of the script without the `.py` extension.
+#       [function_name (str): Optional, specific function to call in the script].
     
-    st.write(" ")
-    st.write(f"{Execute_script} is in {sub_folder}")
-    st.write(" ")
-
-# Add the sub-folder to Python's import path
+#   Add the sub-folder to the system path if it's not already included
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
+
+    try:
+        # Dynamically import the script
+        feature_script = importlib.import_module(feature_module)
+
+        feature_script()  # Call the function
         
+    except Exception as e:
+        print(f"Error importing '{script_name}': {str(e)}")
+    
     return
 
 
