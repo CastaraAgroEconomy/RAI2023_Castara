@@ -781,16 +781,17 @@ def launch_pad(feature_module):
     # Define the sub-folder where feature module scripts are located
     sub_folder = os.path.join("features", "scripts")  # Adjust to the App's folder structure
 
+    Execute_script = feature_module+".py"
+    
     st.write(" ")
-    st.write(f"Target script is in: {sub_folder}")
+    st.write(f"{Execute_script} is in: {sub_folder}")
     st.write(" ")
 
 # Add the sub-folder to Python's import path
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
         
-    Execute_script = feature_module+"py"
-    
+    return
 
 
     
