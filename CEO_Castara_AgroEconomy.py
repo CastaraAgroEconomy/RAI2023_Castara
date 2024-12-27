@@ -786,8 +786,9 @@ def launch_pad(feature_module):
 # Add the sub-folder to Python's import path
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
-
-    feature_module()
+        
+    Execute_script = sub_folder + feature_module
+    Execute_script()
 
 
     
