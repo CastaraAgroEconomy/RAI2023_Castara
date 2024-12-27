@@ -763,14 +763,19 @@ def finalize_selection(selected_activity):
 
 #   Feature access via API
 def launch_pad(content_placeholder):
+    st.write(" ")
+    
     st.header(f"Launching Function for {st.session_state.selected_activity}")
     st.write(" ")
 
     import os
     import sys
     import importlib
+
+#   Define the sub-folder where the feature module is located
+    sub_folder = os.path.join("features", "scripts")
     
-# Replace spaces in Activity with "_" to generate feature name
+#   Replace spaces in Activity with "_" to generate feature name
 
     feature = st.session_state.selected_activity
     feature_module = feature.replace(" ", "_")
