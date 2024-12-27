@@ -801,7 +801,7 @@ def launch_pad(content_placeholder):
         feature_script()  # Call the function
         
     except Exception as e:
-        print(f"Error importing '{script_name}': {str(e)}")
+        print(f"Error importing '{feature_script}': {str(e)}")
     
     return
 
