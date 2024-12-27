@@ -776,7 +776,7 @@ def launch_pad(content_placeholder):
     feature_module = feature.replace(" ", "_")
 
     if 'feature_module' not in st.session_state:
-    st.session_state.feature_module = feature_module
+        st.session_state.feature_module = feature_module
     
 
 #   Call an external script from a specified sub-folder.
