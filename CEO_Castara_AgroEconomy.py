@@ -186,7 +186,7 @@ def main():
             
         st.write(f"⚠️ - launching {feature_module}")
 
-        with content_placeholder.container():
+        with content_placeholder.container():            
             launch_pad(content_placeholder)
         
         st.session_state.logged_in = True
@@ -771,7 +771,6 @@ def finalize_selection(selected_activity):
 
 #   Feature access via API
 def launch_pad(content_placeholder):
-    
     st.header(f"Launching Function for {st.session_state.selected_activity}")
     st.write(" ")
 
@@ -796,7 +795,6 @@ def launch_pad(content_placeholder):
     return
 
 
-    
 
 # Logout function
 def logout():
