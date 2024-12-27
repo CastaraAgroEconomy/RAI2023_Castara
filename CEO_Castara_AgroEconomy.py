@@ -783,7 +783,9 @@ def launch_pad(content_placeholder):
     if 'feature_module' not in st.session_state:
         st.session_state.feature_module = feature_module
     
+    st.write(f"Debug 11 - Preparing {feature_module}")
 
+    
 #   Call an external script from a specified sub-folder.
 #   Args:
 #       sub_folder (str): Relative or absolute path to the sub-folder.
