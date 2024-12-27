@@ -780,16 +780,16 @@ def launch_pad(content_placeholder):
 
     try:
       # Dynamically import the module
-        feature_script = importlib.import_module(feature_module)
-        print(f"Module '{feature_module}' imported successfully.")
+        target_feature_module = importlib.import_module(feature_module)
+        print(f"Module '{target_feature_module}' imported successfully.")
 
         # If the module contains a specific function, execute it
-        if hasattr(feature_module, "feature_script"):  # Replace "main" with your desired function name
-            feature_module.feature_script()
+        if hasattr(target_feature_module, "feature_script"):  # Replace "main" with your desired function name
+            target_feature_module.feature_script()
         else:
-            print(f"Module '{feature_module}' does not have a 'defined' function.")
+            print(f"Module '{target_feature_module}' does not have a 'defined' function.")
     except ModuleNotFoundError:
-        print(f"Module '{feature_module}' not found. Please check the module name and location.")
+        print(f"Module '{target_feature_module}' not found. Please check the module name and location.")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
     
