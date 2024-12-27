@@ -789,14 +789,13 @@ def launch_pad(feature_module):
 
     try:
         # Dynamically import the feature module (without .py extension)
-        module_name = feature_module.replace(".py", "")  # Remove .py if present
-        loaded_module = importlib.import_module(module_name)
+        loaded_module = importlib.import_module(feature_module)
 
         # Dynamically access and execute the `main` function from the imported module
         if hasattr(loaded_module, "main"):
             loaded_module.main()  # Call the main function of the module
         else:
-            st.error(f"Module '{module_name}' does not contain a 'main' function.")
+            st.error(f"Module '{feature_module}' does not contain a 'main' function.")
     except Exception as e:
         st.error(f"An error occurred while launching the feature module '{feature_module}': {str(e)}")
     
