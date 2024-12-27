@@ -768,8 +768,8 @@ def launch_pad(content_placeholder):
     
 #   Dynamically import and execute a feature module.
 #   Args:
-#   feature_module (str): Name of the module (without .py extension).
-    feature_module = st.session_state.selected_activity
+#   feature_module (str): Name of the module (without .py extension and with underscores in place of spaces).
+    feature_module = st.session_state.selected_activity.replace(" ", "_")
 
 #   Define the sub-folder where feature scripts are located
     sub_folder = os.path.join("features", "scripts")
@@ -780,7 +780,7 @@ def launch_pad(content_placeholder):
 
     try:
       # Dynamically import the module
-        feature_script = importlib.import_module({feature_module})
+        feature_script = importlib.import_module(feature_module)
         print(f"Module '{feature_module}' imported successfully.")
 
         # If the module contains a specific function, execute it
