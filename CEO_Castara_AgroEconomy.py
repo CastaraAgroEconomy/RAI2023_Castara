@@ -186,8 +186,8 @@ def main():
             
         st.write(f"⚠️ - launching {feature_module}")
 
-            with content_placeholder.container():            
-                launch_pad(content_placeholder)
+        with content_placeholder.container():            
+            launch_pad(content_placeholder)
         
         st.session_state.logged_in = True
         st.session_state.stage = "finalize_selection"
