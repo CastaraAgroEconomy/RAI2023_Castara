@@ -790,7 +790,7 @@ def launch_pad(feature_module):
         sys.path.append(sub_folder)
         
     Execute_script = feature_module+"py"
-    Execute_script()
+    
 
 
     
