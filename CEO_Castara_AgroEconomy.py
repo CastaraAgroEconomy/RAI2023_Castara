@@ -181,8 +181,6 @@ def main():
         feature = st.session_state.selected_activity
         feature_module = feature.replace(" ", "_")
         
-        with content_placeholder.container():
-            st.write(" ")
             
         st.write(f"⚠️ - launching {feature_module}")
         launch_pad(feature_module)
@@ -769,6 +767,10 @@ def finalize_selection(selected_activity):
 
 #   Feature access via API
 def launch_pad(feature_module):
+    
+    with content_placeholder.container():
+            st.write(" ")
+    
     st.header(f"Launching Function for {st.session_state.selected_activity}")
     st.write(" ")
 
