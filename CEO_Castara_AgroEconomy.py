@@ -798,6 +798,8 @@ def launch_pad(content_placeholder):
         # Dynamically import the script
         feature_script = importlib.import_module(feature_module)
 
+        st.write(f"⚠️ - activating {feature_script}")
+        
         feature_script()  # Call the function
         
     except Exception as e:
