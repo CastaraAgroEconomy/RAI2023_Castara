@@ -766,16 +766,14 @@ def finalize_selection(selected_activity):
 
 #   Feature access via API
 def launch_pad(content_placeholder):
-    st.write(" ")
-    
     st.header(f"Launching Function for {st.session_state.selected_activity}")
-    st.write(" ")
+    
 
 #    Dynamically import and execute a feature module.
 #    Args:
 #        feature_module (str): Name of the module (without .py extension).
 
- #   Define the sub-folder where feature scripts are located
+#    Define the sub-folder where feature scripts are located
     sub_folder = os.path.join("features", "scripts")
 
     # Add sub-folder to sys.path if not already present
@@ -791,7 +789,7 @@ def launch_pad(content_placeholder):
         print(f"Module '{module_name}' imported successfully.")
 
         # If the module contains a specific function, execute it
-        if hasattr(feature_script, "sub_folder"):  # Replace "main" with your desired function name
+        if hasattr(feature_script, "sub_folder"):  # Substitute the desired function name
             feature_script()
         else:
             print(f"Module '{module_name}' does not have a 'main' function.")
