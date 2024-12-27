@@ -787,7 +787,7 @@ def launch_pad(feature_module):
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
         
-    Execute_script = sub_folder + feature_module
+    Execute_script = feature_module+"py"
     Execute_script()
 
 
