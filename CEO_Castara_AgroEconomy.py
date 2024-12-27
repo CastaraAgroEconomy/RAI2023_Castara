@@ -179,12 +179,15 @@ def main():
 # Replace spaces in Activity with "_" to generate feature name
 
         feature = st.session_state.selected_activity
-        feature_module = feature.replace(" ", "_")  
+        feature_module = feature.replace(" ", "_")
+
+        if 'feature_module' not in st.session_state:
+            st.session_state.feature_module = feature_module
             
         st.write(f"⚠️ - launching {feature_module}")
 
         with content_placeholder.container():
-            launch_pad(feature_module)
+            launch_pad(content_placeholder)
         
         st.session_state.logged_in = True
         st.session_state.stage = "finalize_selection"
@@ -767,7 +770,7 @@ def finalize_selection(selected_activity):
 
 
 #   Feature access via API
-def launch_pad(feature_module):
+def launch_pad(content_placeholder):
     
     st.header(f"Launching Function for {st.session_state.selected_activity}")
     st.write(" ")
@@ -779,6 +782,7 @@ def launch_pad(feature_module):
     # Define the sub-folder where feature module scripts are located
     sub_folder = os.path.join("features", "scripts")  # Adjust to the App's folder structure
 
+    feature_module = st.session_state.feature_module
     Execute_script = feature_module + ".py"
     
     st.write(" ")
