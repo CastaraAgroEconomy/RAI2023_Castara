@@ -1,6 +1,9 @@
 # Main Script and function call for the Castara AgroEconomy Mobile App.
 import streamlit as st
 import numpy as np
+import os
+import sys
+import importlib
 
 
 # Placeholder for valid credentials (admin/password for testing)
@@ -767,11 +770,6 @@ def launch_pad(content_placeholder):
     
     st.header(f"Launching Function for {st.session_state.selected_activity}")
     st.write(" ")
-
-    import os
-    import sys
-    import importlib
-
 
 #    Dynamically import and execute a feature module.
 #    Args:
