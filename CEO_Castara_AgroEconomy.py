@@ -176,9 +176,7 @@ def main():
             st.write(" ")
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
             st.write(" ")
-
-        st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
-        with content_placeholder.container():            
+            st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
             launch_pad(content_placeholder)
         
         st.session_state.logged_in = True
