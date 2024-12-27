@@ -783,22 +783,16 @@ def launch_pad(feature_module):
     st.write(f"Target script is in: {sub_folder}")
     st.write(" ")
 
-    # Add the sub-folder to Python's import path
+# Add the sub-folder to Python's import path
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
 
-    try:
-        # Dynamically import the feature module (without .py extension)
-        loaded_module = importlib.import_module(feature_module)
+# Dynamically import the feature module (without .py extension)
+    loaded_module = importlib.import_module(feature_module)
 
-        # Dynamically access and execute the `main` function from the imported module
-        if hasattr(loaded_module, "main"):
-            loaded_module.main()  # Call the main function of the module
-        else:
-            st.error(f"Module '{feature_module}' does not contain a 'main' function.")
-    except Exception as e:
-        st.error(f"An error occurred while launching the feature module '{feature_module}': {str(e)}")
-    
+# Dynamically access and execute the function from the imported module
+    loaded_module()  # Call the function
+        
 
     
 
