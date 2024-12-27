@@ -792,6 +792,8 @@ def launch_pad(content_placeholder):
         print(f"Module '{feature_module}' not found. Please check the module name and location.")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
+    
+    return
 
 
 # Logout function
