@@ -794,16 +794,14 @@ def launch_pad(content_placeholder):
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
 
-    try:
-        # Dynamically import the script
-        feature_script = importlib.import_module(feature_module)
+    
+# Dynamically import the script
+    feature_script = importlib.import_module(feature_module)
 
-        st.write(f"⚠️ - activating {feature_script}")
+    st.write(f"⚠️ - activating {feature_script}")
         
-        feature_script()  # Call the function
-        
-    except Exception as e:
-        print(f"Error importing 'feature_script': {str(e)}")
+    feature_script()  # Call the function
+
     
     return
 
