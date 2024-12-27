@@ -778,18 +778,23 @@ def launch_pad(content_placeholder):
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
 
-    try: 
+    try:
+        # Ensure the module name is correctly formatted
+        module_name = feature_module.replace(".py", "")  # Remove .py if present
+        
         # Dynamically import the module
         feature_script = importlib.import_module(feature_module)
-        print(f"Module script '{feature_script}' imported successfully.")
+        print(f"Module '{feature_module}' imported successfully.")
 
-        # execute the script
-        feature_script()
-        
+        # If the module contains a specific function, execute it
+        if hasattr(feature_module, "feature_script"):  # Replace "main" with your desired function name
+            feature_module.feature_script()
+        else:
+            print(f"Module '{feature_module}' does not have a 'defined' function.")
+    except ModuleNotFoundError:
+        print(f"Module '{feature_module}' not found. Please check the module name and location.")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
-    return
-
 
 
 # Logout function
