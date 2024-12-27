@@ -168,13 +168,13 @@ def main():
         with content_placeholder.container():
             st.write(" ")
             
-        st.write(f"⚠️ - Journey completed successfully, Role {st.session_state.selected_role}")
-        st.write(f"..... with Sub-role {st.session_state.selected_sub_role} can access {st.session_state.selected_action}")
-        st.write(f"..... in order to execute the mission, {st.session_state.selected_activity}")
+            st.write(f"⚠️ - Journey completed successfully, Role {st.session_state.selected_role}")
+            st.write(f"..... with Sub-role {st.session_state.selected_sub_role} can access {st.session_state.selected_action}")
+            st.write(f"..... in order to execute the mission, {st.session_state.selected_activity}")
         
-        st.write(" ")
-        st.write("⚠️ - When implemented, appropriate feature will activate at this point")
-        st.write(" ")
+            st.write(" ")
+            st.write("⚠️ - When implemented, appropriate feature will activate at this point")
+            st.write(" ")
 
 # Replace spaces in Activity with "_" to generate feature name
 
