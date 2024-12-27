@@ -184,8 +184,6 @@ def main():
         st.write(f"⚠️ - launching {feature_module}")
 
         with content_placeholder.container():
-            st.write(" ")
-            
             launch_pad(feature_module)
         
         st.session_state.logged_in = True
