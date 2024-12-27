@@ -159,7 +159,7 @@ def main():
             select_activity(content_placeholder)
     elif st.session_state.skip_final == 0:
         with content_placeholder.container():
-            finalize_selection (content_placeholder)
+            finalize_selection(content_placeholder)
 
 
 # =========================
@@ -779,11 +779,8 @@ def launch_pad(content_placeholder):
         sys.path.append(sub_folder)
 
     try:
-        # Ensure the module name is correctly formatted
-        module_name = feature_module.replace(".py", "")  # Remove .py if present
-        
-        # Dynamically import the module
-        feature_script = importlib.import_module(feature_module)
+      # Dynamically import the module
+        feature_script = importlib.import_module({feature_module})
         print(f"Module '{feature_module}' imported successfully.")
 
         # If the module contains a specific function, execute it
