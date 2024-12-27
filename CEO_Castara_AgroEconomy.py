@@ -787,13 +787,10 @@ def launch_pad(feature_module):
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
 
-# Define the module name without the `.py` extension
-module_name = feature_module
-
 # Dynamically import the module
-loaded_module = importlib.import_module(module_name)
+    loaded_module = importlib.import_module(feature_module)
 
-loaded_module()
+    loaded_module()
 
 
     
