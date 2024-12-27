@@ -763,36 +763,40 @@ def finalize_selection(selected_activity):
 
 
 #   Feature access via API
-def launch_pad(content_placeholder):
-    st.header(f"Launching Function for {st.session_state.selected_activity}")
+def launch_pad(content_placeholder):   
+#   Clear previous content using the content_placeholder
+    with content_placeholder.container():
+        st.empty()  # Clear the placeholder area
     
-#   Dynamically import and execute a feature module.
-#   Args:
-#   feature_module (str): Name of the module (without .py extension and with underscores in place of spaces).
-    feature_module = st.session_state.selected_activity.replace(" ", "_")
+#   Display header
+    st.header(f"Launching Function for {st.session_state.selected_activity}")
+
+#   Dynamically import and execute a feature module
+    target_feature_module = st.session_state.selected_activity.replace(" ", "_")  # Adjust name formatting if necessary
 
 #   Define the sub-folder where feature scripts are located
     sub_folder = os.path.join("features", "scripts")
 
-    # Add sub-folder to sys.path if not already present
+#   Add sub-folder to sys.path if not already present
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
 
     try:
-      # Dynamically import the module
-        target_feature_module = importlib.import_module(feature_module)
-        print(f"Module '{feature_module}' imported successfully.")
+#   Dynamically import the module (without .py extension)
+        module = importlib.import_module(target_feature_module)
+        st.success(f"Module '{target_feature_module}' imported successfully.")
 
-    # If the module contains a specific function, execute it
-        if hasattr(target_feature_module, "feature_script"):  # Replace "main" with your desired function name
-            target_feature_module.feature_script()
+#   Call the "feature_script" function defined in the target feature module
+        if hasattr(module, "feature_script"):
+            func = getattr(module, "feature_script")  # Get the function named "feature_script"
+            func()  # Call the function
         else:
-            print(f"Module '{feature_module}' does not have a 'defined' function.")
+            st.error(f"The module '{target_feature_module}' does not define a function named 'feature_script'.")
     except ModuleNotFoundError:
-        print(f"Module '{feature_module}' not found. Please check the module name and location.")
+        st.error(f"Module '{target_feature_module}' not found. Please check the module name and location.")
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
-    
+        st.error(f"An error occurred: {str(e)}")
+
     return
 
 
