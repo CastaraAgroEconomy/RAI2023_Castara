@@ -780,7 +780,7 @@ def launch_pad(content_placeholder):
     target_feature_module = st.session_state.selected_activity.replace(" ", "_")  # Adjust name formatting if necessary
 
 #   Define the sub-folder where feature scripts are located
-    sub_folder = os.path.join("features", "scripts")
+    sub_folder = os.path.join("features", "Scripts")
 
 #   Add sub-folder to sys.path if not already present
     if sub_folder not in sys.path:
