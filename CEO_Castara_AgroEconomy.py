@@ -785,7 +785,7 @@ def launch_pad(content_placeholder):
 #   Add sub-folder to sys.path if not already present
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
-    st.write(f"The sub folder path is '{sub_folder}'")
+        st.write(f"The sub folder path is '{sub_folder}'")
     
     try:
 #   Dynamically import the module (without .py extension)
