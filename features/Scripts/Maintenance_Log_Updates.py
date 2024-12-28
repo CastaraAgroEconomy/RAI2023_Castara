@@ -10,7 +10,7 @@ def feature_script():
 #   YouTube video URL
     video_url = "https://www.youtube.com/watch?v="
 
-#   hEmbed the video in the app
+#   Embed the video in the app
     st.video(video_url)
 
     return
