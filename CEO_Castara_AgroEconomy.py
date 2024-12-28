@@ -779,8 +779,6 @@ def launch_pad(content_placeholder):
 #   Dynamically import and execute a feature module
     target_feature_module = st.session_state.selected_activity.replace(" ", "_")  # Adjust name formatting if necessary
 
-    from target_features_module import features_scripts
-    
 #   Define the sub-folder where feature scripts are located
     sub_folder = os.path.join("features", "scripts")
 
