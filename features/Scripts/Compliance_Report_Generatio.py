@@ -3,6 +3,7 @@ import streamlit as st
 
 # Description
 st.write("This app embeds a YouTube video and plays it within the browser.")
+st.write("⚠️ Note: it may take a few seconds before the video begins to play.")
 
 # YouTube video URL
 video_url = "https://www.Youtube.com/watch?v=PvCIl0C93zg"
