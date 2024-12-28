@@ -5,6 +5,12 @@ import os
 import sys
 import importlib
 
+
+# Addition to the root directory to sys.path if not already present
+root_path = os.path.abspath("/mount/src/rai2023_castara")
+if root_path not in sys.path:
+    sys.path.append(root_path)
+
 # Placeholder for valid credentials (admin/password for testing)
 VALID_USERNAME = "admin"
 VALID_PASSWORD = "password"
