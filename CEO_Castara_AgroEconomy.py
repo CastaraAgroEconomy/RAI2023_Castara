@@ -195,7 +195,7 @@ def main():
 #   Add new content
             container = content_placeholder.container()
             with container:
-                launch_pad(content_placeholder)
+                launch_pad(container)
 
         
         st.session_state.logged_in = True
@@ -779,7 +779,7 @@ def finalize_selection(selected_activity):
 
 
 #   Feature access via API
-def launch_pad(content_placeholder):   
+def launch_pad(container):   
     st.header(f"Launching Function for {st.session_state.selected_activity}")
 
 #   Dynamically import and execute a feature module
