@@ -774,7 +774,7 @@ def launch_pad(content_placeholder):
         st.empty()  # Clear the placeholder area
     
 #   Display header
-        st.header(f"Launching Function for {st.session_state.selected_activity}")
+    st.header(f"Launching Function for {st.session_state.selected_activity}")
 
 #   Dynamically import and execute a feature module
     target_feature_module = st.session_state.selected_activity.replace(" ", "_")  # Adjust name formatting if necessary
@@ -785,7 +785,8 @@ def launch_pad(content_placeholder):
 #   Add sub-folder to sys.path if not already present
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
-        st.write(f"The sub folder path is '{sub_folder}'")
+    
+    st.write(f"The sub folder path is '{sub_folder}'")
     
     try:
 #   Dynamically import the module (without .py extension)
