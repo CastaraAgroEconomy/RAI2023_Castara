@@ -769,12 +769,14 @@ def finalize_selection(selected_activity):
 
 #   Feature access via API
 def launch_pad(content_placeholder):   
-#   Clear previous content using the content_placeholder
     with content_placeholder.container():
-        st.empty()  # Clear the placeholder area
+
+#   Clear previous content
+    content_placeholder.empty()  # Clear the placeholder
     
-#   Display header
-    st.header(f"Launching Function for {st.session_state.selected_activity}")
+#  Display new header inside the placeholder
+    with content_placeholder.container():
+        st.header(f"Launching Function for {st.session_state.selected_activity}")
 
 #   Dynamically import and execute a feature module
     target_feature_module = st.session_state.selected_activity.replace(" ", "_")  # Adjust name formatting if necessary
