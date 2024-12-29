@@ -194,8 +194,8 @@ def main():
 #   Display new header inside the placeholder
 #   Add new content
             container = content_placeholder.container()
-                with container:
-                    launch_pad(content_placeholder)
+            with container:
+                launch_pad(content_placeholder)
 
         
         st.session_state.logged_in = True
