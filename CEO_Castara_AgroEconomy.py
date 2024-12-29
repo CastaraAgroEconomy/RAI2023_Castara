@@ -775,8 +775,10 @@ def launch_pad(content_placeholder):
 #   Clear previous content
     content_placeholder.empty()  # Clear the placeholder
     
-#  Display new header inside the placeholder
-    with content_placeholder.container():
+#   Display new header inside the placeholder
+#   Add new content
+    container = content_placeholder.container()
+    with container:
         st.header(f"Launching Function for {st.session_state.selected_activity}")
 
 #   Dynamically import and execute a feature module
