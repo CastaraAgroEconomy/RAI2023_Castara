@@ -769,7 +769,6 @@ def finalize_selection(selected_activity):
 
 #   Feature access via API
 def launch_pad(content_placeholder):   
-    with content_placeholder.container():
 
 #   Clear previous content
     content_placeholder.empty()  # Clear the placeholder
