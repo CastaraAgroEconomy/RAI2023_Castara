@@ -597,7 +597,7 @@ def Module_1():
             if selected_role == "Franchise Operator" and selected_action not in ["Franchise Performance Review", "Business Expansion Planning", "Compliance Monitoring", "Financial Analysis", "Team Coordination"]:
                 return 0       
 #           Rule 33: Franchise Operator should be able to access activities like ROI Calculations, Compliance Report Generation, Team Schedule Creation, Market Research Documentation, Financial Statement Analysis, Performance Metric Tracking, Risk Assessment Reports.
-            if selected_role == "Franchise Operator" and selected_activity not in ["ROI Calculations", "Compliance Report Generation", "Team Schedule Creation", "Market Research Documentation", "Financial Statement Analysis", "Performance Metric Tracking", "Risk Assessment Reports"]:
+            if selected_role == "Franchise Operator" and selected_activity not in ["ROI Calculations", "Compliance Report Generation", "Team Schedule Creation", "Market Research Documentation", "Financial Statement Analysis", "Financial Services Transaction", "Performance Metric Tracking", "Risk Assessment Reports"]:
                 return 0    
 
 
@@ -615,7 +615,7 @@ def Module_1():
                 return 0       
 #           Rule 36: Franchisors should be able to access activities like Franchise Agreement Review, Market Research Documentation, Compliance Report Generation, ROI Calculations, Training Program Development, Performance Metric Tracking, 
 #                    Risk Assessment Reports.
-            if selected_role == "Franchisor" and selected_activity not in ["Franchise Agreement Review", "Market Research Documentation", "Compliance Report Generation", "ROI Calculations", "Training Program Development", 
+            if selected_role == "Franchisor" and selected_activity not in ["Franchise Agreement Review", "Market Research Documentation", "Compliance Report Generation", "ROI Calculations", "Financial Services Transaction", "Training Program Development", 
                                 "Performance Metric Tracking", "Risk Assessment Reports"]:
                 return 0       
             
@@ -637,7 +637,7 @@ def Module_1():
 #           Rule 39: Management Personnel should be able to access activities like Strategy Document Creation, Training Program Development, Investor Report Generation, Market Trend Analysis, Capital Distribution Planning, ROI Calculations, Risk Assessment Reports, 
 #                    Franchise Agreement Review, Financial Statement Analysis, Franchise Audit Execution, Investment Portfolio Review, Inventory Management
             if selected_role == "Management Personnel" and selected_activity not in ["Strategy Document Creation", "Training Program Development", "Investor Report Generation", "Market Trend Analysis", "Capital Distribution Planning", "ROI Calculations", "Risk Assessment Reports", 
-                                "Franchise Agreement Review", "Financial Statement Analysis", "Franchise Audit Execution", "Investment Portfolio Review", "Inventory Management"]:
+                                "Franchise Agreement Review", "Financial Statement Analysis", "Financial Services Transaction", "Franchise Audit Execution", "Investment Portfolio Review", "Inventory Management"]:
                 return 0       
 
             
