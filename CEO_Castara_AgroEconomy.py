@@ -187,7 +187,7 @@ def main():
 
             
 #   Clear previous content
-        content_feature_workpace.empty()  # Clear the placeholder
+        content_feature_workpace = st.empty()  # Clear the placeholder
     
 #   Display fearure header inside the placeholder - cleared screen
         with content_feature_workspace.container():
