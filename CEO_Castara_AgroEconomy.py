@@ -187,11 +187,11 @@ def main():
 
             
 #   Clear previous content
-            content_placeholder.empty()  # Clear the placeholder
+        content_placeholder.empty()  # Clear the placeholder
     
 #   Display fearure header inside the placeholder - cleared screen
-            with content_placeholder.container():
-                launch_pad(content_placeholder)
+        with content_placeholder.container():
+            launch_pad(content_placeholder)
 
         st.session_state.logged_in = True
         st.session_state.stage = "finalize_selection"
