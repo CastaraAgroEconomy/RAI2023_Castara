@@ -197,11 +197,11 @@ def main():
         st.session_state.logged_in = True
         st.session_state.stage = "finalize_selection"
 
-    if st.button("Logout", on_click=lambda: logout()):
-        pass
-        st.session_state.stage = None
-        st.session_state.logged_in = False
-        st.session_state.skip_final = 0
+        if st.button("Logout", on_click=lambda: logout()):
+            pass
+            st.session_state.stage = None
+            st.session_state.logged_in = False
+            st.session_state.skip_final = 0
         
 # Add an "End Execution" button
     if st.button("End Execution"):
@@ -249,11 +249,11 @@ def main():
 #           st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
 #           st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             
-        if st.button("Logout", on_click=lambda: logout()):
-            pass
-            st.session_state.stage = None
-            st.session_state.logged_in = False
-            st.session_state.skip_final = 0
+            if st.button("Logout", on_click=lambda: logout()):
+                pass
+                st.session_state.stage = None
+                st.session_state.logged_in = False
+                st.session_state.skip_final = 0
         
 # Add an "End Execution" button
         if st.button("End Execution"):
