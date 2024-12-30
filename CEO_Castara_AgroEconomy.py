@@ -197,22 +197,21 @@ def main():
         st.session_state.logged_in = True
         st.session_state.stage = "finalize_selection"
 
-        if st.button("Logout", on_click=lambda: logout()):
-            pass
-            st.session_state.stage = None
-            st.session_state.logged_in = False
-            st.session_state.skip_final = 0
+    if st.button("Logout", on_click=lambda: logout()):
+        pass
+        st.session_state.stage = None
+        st.session_state.logged_in = False
+        st.session_state.skip_final = 0
         
 # Add an "End Execution" button
-        if st.button("End Execution"):
-            pass
-            st.session_state.live = 0  # Update the flag to stop the loop
-            st.session_state.skip_final = 0
-
+    if st.button("End Execution"):
+        pass
+        st.session_state.live = 0  # Update the flag to stop the loop
+        st.session_state.skip_final = 0
 # Display a message after the loop ends
-            st.write(" ")
-            st.write("Execution ended.")
-            st.write(" ")
+        st.write(" ")
+        st.write("Execution ended.")
+        st.write(" ")
     
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():
@@ -233,13 +232,15 @@ def main():
         st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}")
         st.write(" ")
         st.write("⚠️ - You will unfortunately be required to make new selections.")
+
+        
+    if (st.session_state.R_go == 0) and (st.session_state.live == 1):
             
         if st.session_state.logged_in == True:
             with content_placeholder.container():
                 st.write(" ")
                 
             st.session_state.stage = "role_selection"
-     
             st.write(" ")
             st.write("⚠️ - Currently, you will need to logout and login again, to select a different User Role")
             st.write(" ")
@@ -248,22 +249,22 @@ def main():
 #           st.write("However, the system will return you to the list which causes the first invalid combination to occur, other than the User's Role, as a result of an invalid item being selected.")
 #           st.write("Eventually, by the launch release, version 1.xx, only valid options will be presented based on the selected option in the prior presented list")
             
-            if st.button("Logout", on_click=lambda: logout()):
-                pass
-                st.session_state.stage = None
-                st.session_state.logged_in = False
-                st.session_state.skip_final = 0
+        if st.button("Logout", on_click=lambda: logout()):
+            pass
+            st.session_state.stage = None
+            st.session_state.logged_in = False
+            st.session_state.skip_final = 0
         
 # Add an "End Execution" button
-            if st.button("End Execution"):
-                pass
-                st.session_state.live = 0  # Update the flag to stop the loop
-                st.session_state.skip_final = 0
+        if st.button("End Execution"):
+            pass
+            st.session_state.live = 0  # Update the flag to stop the loop
+            st.session_state.skip_final = 0
 
 # Display a message after the loop ends
-                st.write(" ")
-                st.write("Execution ended.")
-                st.write(" ")
+            st.write(" ")
+            st.write("Execution ended.")
+            st.write(" ")
 
 
     
