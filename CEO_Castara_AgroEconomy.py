@@ -56,9 +56,9 @@ if 'D' not in st.session_state:
                           "Nutrient Mix Preparation", "Water Quality Testing", "Growth Rate Documentation", "Equipment Sanitization", "System Flow Rate Checks", "Plant Spacing Optimization", 
                           "Harvest Weight Recording", "Equipment Calibration", "Safety Inspection Rounds", "Inventory Management", "Growth Data Recording", "Team Schedule Creation", 
                           "Maintenance Log Updates", "Quality Check Documentation", "Compliance Report Generation", "Investment Portfolio Review", "Franchise Audit Execution", 
-                          "Financial Statement Analysis", "Market Research Documentation", "Franchise Agreement Review", "Risk Assessment Reports", "ROI Calculations", "Standards Compliance Checks", 
-                          "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", "Performance Metric Tracking", 
-                          "Strategy Document Creation", "Compliance Report Filing", "Do not select (EOL)"]
+                          "Financial Statement Analysis", "Financial Services Transaction", "Market Research Documentation", "Franchise Agreement Review", "Risk Assessment Reports", 
+                          "ROI Calculations", "Standards Compliance Checks", "Capital Distribution Planning", "Market Trend Analysis", "Investor Report Generation", "Training Program Development", 
+                          "Performance Metric Tracking", "Strategy Document Creation", "Compliance Report Filing", "Do not select (EOL)"]
 
 
 # Initialize defaults for selected items only if matrices are loaded
@@ -294,7 +294,7 @@ def Module_1():
 # Initialize session state variables if not already present
     
     for key, default in {
-        'n': 15, 'x': 35, 'm': 31, 'y': 36, 'selected_role' : st.session_state.selected_role, 'selected_sub_role' : st.session_state.selected_sub_role, 'selected_action' : st.session_state.selected_action, 'selected_activity' : st.session_state.selected_activity, 'R_go': 0, 'return_to_main' : False, 'live' : 0,
+        'n': 15, 'x': 35, 'm': 31, 'y': 37, 'selected_role' : st.session_state.selected_role, 'selected_sub_role' : st.session_state.selected_sub_role, 'selected_action' : st.session_state.selected_action, 'selected_activity' : st.session_state.selected_activity, 'R_go': 0, 'return_to_main' : False, 'live' : 0,
         }.items():
         
         if key not in st.session_state:
@@ -304,7 +304,7 @@ def Module_1():
     st.write("⚠️ - Defining Truth Table Class")
  
     class TruthTable:
-        def __init__(self, n=14, x=34, m=30, y=35, selected_role = st.session_state.selected_role, selected_sub_role = st.session_state.selected_sub_role, selected_action = st.session_state.selected_action, selected_activity = st.session_state.selected_activity):
+        def __init__(self, n=14, x=34, m=30, y=36, selected_role = st.session_state.selected_role, selected_sub_role = st.session_state.selected_sub_role, selected_action = st.session_state.selected_action, selected_activity = st.session_state.selected_activity):
 
             st.write("debug 1 - defined 'init' ")
             
@@ -376,12 +376,12 @@ def Module_1():
                 return
                 
             if st.session_state.R_go == 0:
-                if (n := 15) and (y := 36):
+                if (n := 15) and (y := 37):
                     st.write(" .....  Continuing to process")
                     st.session_state.return_to_main = False
                     return
                     
-                if (n == 14) and (y == 36):
+                if (n == 14) and (y == 37):
                     st.write(" ..... Access to feature denied 👎")
                     st.session_state.return_to_main = True
                     return
