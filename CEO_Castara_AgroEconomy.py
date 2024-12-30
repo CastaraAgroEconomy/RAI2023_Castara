@@ -195,7 +195,7 @@ def main():
             launch_pad(content_placeholder)
             
         st.session_state.logged_in = True
-        st.session_state.stage = "finalize_selection"
+ #      st.session_state.stage = "finalize_selection"
 
         if st.button("Logout", on_click=lambda: logout()):
             pass
@@ -212,7 +212,7 @@ def main():
             st.write(" ")
             st.write("Execution ended.")
             st.write(" ")
-        return
+        
     
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():
