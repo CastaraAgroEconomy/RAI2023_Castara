@@ -187,11 +187,11 @@ def main():
 
             
 #   Clear previous content
-        content_feature_workpace = st.empty()  # Clear the placeholder
+        content_placeholder = st.empty()  # Clear the placeholder
     
 #   Display fearure header inside the placeholder - cleared screen
-        with content_feature_workspace.container():
-            launch_pad(content_feature_workspace)
+        with content_placeholder.container():
+            launch_pad(content_placeholder)
 
         st.session_state.logged_in = True
         st.session_state.stage = "finalize_selection"
@@ -774,7 +774,7 @@ def finalize_selection(selected_activity):
 
 
 #   Feature access via API
-def launch_pad(content_feature_workspace):   
+def launch_pad(content_placeholder):   
     st.header(f"Launching Function for {st.session_state.selected_activity}")
 
 #   Dynamically import and execute a feature module
