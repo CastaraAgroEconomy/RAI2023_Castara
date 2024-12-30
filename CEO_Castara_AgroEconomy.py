@@ -210,7 +210,8 @@ def main():
             st.session_state.skip_final = 1
 # Display a message after the loop ends
             st.write(" ")
-            st.write("Execution ended.")
+            st.write("🚧 - Execution ended")
+            st.write("⚠️ - Refresh browser display")
             st.write(" ")
         
     
@@ -261,7 +262,8 @@ def main():
 
 # Display a message after the loop ends
                 st.write(" ")
-                st.write("Execution ended.")
+                st.write("🚧 - Execution ended")
+                st.write("⚠️ - Refresh browser display")
                 st.write(" ")
     
             
