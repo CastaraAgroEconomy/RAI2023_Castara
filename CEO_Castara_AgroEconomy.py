@@ -185,16 +185,12 @@ def main():
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
 
-#   Set up for feature launch pad; clear viewing area
-            content_placeholder = st.empty()
             
 #   Clear previous content
             content_placeholder.empty()  # Clear the placeholder
     
-#   Display new header inside the placeholder
-#   Add new content
-            container = content_placeholder.container()
-            with container:
+#   Display fearure header inside the placeholder - cleared screen
+            with content_placeholder.container()
                 launch_pad(container)
 
         
