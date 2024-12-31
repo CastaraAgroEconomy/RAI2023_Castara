@@ -773,9 +773,7 @@ def finalize_selection(selected_activity):
     st.session_state.selected_activity = selected_activity
 
 #   Begin selection validity check
-
-#   Clear screen & provide update notification
-    content_placeholder.st.empty()
+    
     st.write(" ")
     st.write("⚠️ - Control passed to validity checker ")
     st.write(" ")
