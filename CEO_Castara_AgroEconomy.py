@@ -192,25 +192,25 @@ def main():
         with content_placeholder.container():
             launch_pad(content_placeholder)
             
-        st.session_state.logged_in = True
+            st.session_state.logged_in = True
 
-        if st.button("Logout", on_click=lambda: logout()):
-            pass
-            st.session_state.stage = None
-            st.session_state.logged_in = False
-            st.session_state.skip_final = 0
+            if st.button("Logout", on_click=lambda: logout()):
+                pass
+                st.session_state.stage = None
+                st.session_state.logged_in = False
+                st.session_state.skip_final = 0
         
 # Add an "End Execution" button
-        if st.button("End Execution"):
-            pass
-            st.session_state.live = 0  # Update the flag to stop the loop
-            st.session_state.logged_in = False           
-            st.session_state.skip_final = 1
+            if st.button("End Execution"):
+                pass
+                st.session_state.live = 0  # Update the flag to stop the loop
+                st.session_state.logged_in = False           
+                st.session_state.skip_final = 1
 # Display a message after the loop ends
-            st.write(" ")
-            st.write("🚧 - Execution ended")
-            st.write("⚠️ - Refresh browser display")
-            st.write(" ")
+                st.write(" ")
+                st.write("🚧 - Execution ended")
+                st.write("⚠️ - Refresh browser display")
+                st.write(" ")
         
     
     elif st.session_state.stage == "finalize_selection":
