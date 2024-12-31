@@ -277,7 +277,7 @@ def main():
 # Beginning of first Module :-
 # =========================
 
-def Module_1():
+def Module_1(content_placebolder):
     
     content_placeholder = st.empty()
     
@@ -368,10 +368,7 @@ def Module_1():
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
-                
-            content_placeholder = st.empty()
-            content_placeholder.st.empty()
-            
+                  
             if st.session_state.R_go == 1:
                 st.write(" ..... Access to feature granted 👍")
                 st.session_state.return_to_main = True
@@ -764,7 +761,7 @@ def set_stage(stage, key, value):
 
 def finalize_selection(selected_activity): 
     st.session_state.selected_activity = selected_activity
-
+    content_placeholder = st.empty()
 #   Begin selection validity check
     
     st.write(" ")
@@ -772,7 +769,8 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
 
-    Module_1()
+    with content_placeholder.container:
+        Module_1(content_placeholder)
     
     st.session_state.live = 1
     return
