@@ -371,7 +371,7 @@ def Module_1(contemt_placeholder):
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
                 
-             content_placeholder.st.empty()
+            content_placeholder.st.empty()
             
             if st.session_state.R_go == 1:
                 st.write(" ..... Access to feature granted 👍")
