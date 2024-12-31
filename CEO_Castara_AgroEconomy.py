@@ -469,8 +469,6 @@ def Module_1():
 
 
         def is_valid_combination(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity): 
-
-            content_placeholder.st.empty()
             
 #           Function to prepare for comparison of selections versus Truth Table data
             st.write(" ")
