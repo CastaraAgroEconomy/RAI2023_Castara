@@ -170,7 +170,11 @@ def main():
 # =========================
 # Returned to main Module :-
 # =========================
-   
+
+# Clears the screen 
+    content_placeholder = st.empty()
+    content_placeholder.st.empty()
+    
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
         with content_placeholder.container():
             st.write(" ")
@@ -186,6 +190,8 @@ def main():
 
 #   Clear previous content
     content_clearspace = st.empty()  # Clear the placeholder
+    import time
+    time.sleep(2)
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
         content_clearspace.empty()
@@ -277,7 +283,7 @@ def main():
 # Beginning of first Module :-
 # =========================
 
-def Module_1(contemt_placeholder):
+def Module_1():
     
     content_placeholder = st.empty()
     
