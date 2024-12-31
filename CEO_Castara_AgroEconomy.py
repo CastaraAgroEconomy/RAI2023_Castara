@@ -767,6 +767,7 @@ def finalize_selection(selected_activity):
 
     Module_1()
     st.session_state.live = 1
+    return
 
 
 #   Feature access via API
