@@ -775,7 +775,6 @@ def finalize_selection(selected_activity):
     st.session_state.selected_activity = selected_activity
 
     comtent_placeholder = st.empty()
-    content_placeholder.st.empty()
     
 #   Begin selection validity check
     st.write(" ")
