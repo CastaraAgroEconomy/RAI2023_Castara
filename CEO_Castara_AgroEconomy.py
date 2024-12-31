@@ -188,7 +188,7 @@ def main():
 
 #   Clear previous content
     import time
-    time.sleep(1)
+    time.sleep(5)
     
     content_placeholder = st.empty()  # Clear the placeholder    
 
