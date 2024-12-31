@@ -277,7 +277,7 @@ def main():
 # Beginning of first Module :-
 # =========================
 
-def Module_1(content_placeholder):
+def Module_1():
     
 # This script does the following: -
 #	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
@@ -767,8 +767,7 @@ def finalize_selection(selected_activity):
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
 
-    with content_placeholder.container:
-        Module_1(content_placeholder)
+    Module_1()
     
     st.session_state.live = 1
     return
