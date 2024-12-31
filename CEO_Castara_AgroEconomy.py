@@ -771,7 +771,7 @@ def set_stage(stage, key, value):
 
 def finalize_selection(selected_activity): 
     st.session_state.selected_activity = selected_activity
-    content_placeholder = st.empty()
+
     content_placeholder.st.empty()
     
 #   Begin selection validity check
