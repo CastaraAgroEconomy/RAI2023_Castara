@@ -187,6 +187,8 @@ def main():
             st.write(" ")
         
 #   Clear previous content
+    import time
+    time.sleep(2)
     content_clearspace = st.empty()  # Clear the placeholder    
 
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
