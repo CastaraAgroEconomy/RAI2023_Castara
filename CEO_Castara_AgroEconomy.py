@@ -359,7 +359,9 @@ def Module_1():
                                 )
                                                           
                                 st.write(" ")
-                                st.write("⚠️ - Validation of selections completing .... ")                                             
+                                st.write("⚠️ - Validation of selections completing .... ")
+                                return
+                                
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
