@@ -192,46 +192,46 @@ def main():
         with content_placeholder.container():
             launch_pad(content_placeholder)
             
-            st.session_state.logged_in = True
+        st.session_state.logged_in = True
 
-            if st.button("Logout", on_click=lambda: logout()):
-                pass
-                st.session_state.stage = None
-                st.session_state.logged_in = False
-                st.session_state.skip_final = 0
+        if st.button("Logout", on_click=lambda: logout()):
+            pass
+            st.session_state.stage = None
+            st.session_state.logged_in = False
+            st.session_state.skip_final = 0
         
 # Add an "End Execution" button
-            if st.button("End Execution"):
-                pass
-                st.session_state.live = 0  # Update the flag to stop the loop
-                st.session_state.logged_in = False           
-                st.session_state.skip_final = 1
+        if st.button("End Execution"):
+            pass
+            st.session_state.live = 0  # Update the flag to stop the loop
+            st.session_state.logged_in = False           
+            st.session_state.skip_final = 1
 # Display a message after the loop ends
-                st.write(" ")
-                st.write("🚧 - Execution ended")
-                st.write("⚠️ - Refresh browser display")
-                st.write(" ")
+            st.write(" ")
+            st.write("🚧 - Execution ended")
+            st.write("⚠️ - Refresh browser display")
+            st.write(" ")
         
     
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():
             st.write(" ")
             
-        st.write(" ")
-        st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
-        st.write(" ")
+            st.write(" ")
+            st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
+            st.write(" ")
 
                     
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
         with content_placeholder.container():
             st.write(" ")
             
-        st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
-        st.write(f"..... with Sub-role {st.session_state.selected_sub_role},")
-        st.write(f"..... is not authorized to perform the action {st.session_state.selected_action}")
-        st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}")
-        st.write(" ")
-        st.write("⚠️ - You will unfortunately be required to make new selections.")
+            st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
+            st.write(f"..... with Sub-role {st.session_state.selected_sub_role},")
+            st.write(f"..... is not authorized to perform the action {st.session_state.selected_action}")
+            st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}")
+            st.write(" ")
+            st.write("⚠️ - You will unfortunately be required to make new selections.")
 
         
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
