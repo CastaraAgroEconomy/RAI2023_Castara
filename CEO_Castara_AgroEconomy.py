@@ -265,9 +265,6 @@ def main():
                 st.write("🚧 - Execution ended")
                 st.write("⚠️ - Refresh browser display")
                 st.write(" ")
-    
-            
-
 
     
 # ===================
@@ -667,7 +664,7 @@ def Module_1():
     st.write("debug 9 - Validity of selection completed")
     st.write(" ")
     st.session_state.skip_final = 1
-
+    return
 
         
 # =====================
