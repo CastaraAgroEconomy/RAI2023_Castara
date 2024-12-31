@@ -188,7 +188,8 @@ def main():
         
 #   Clear previous content
     content_clearspace = st.empty()  # Clear the placeholder    
-
+    content_clearspace.empty()
+    
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 #   Display fearure header inside the placeholder - cleared screen
         with content_clearspace.container():
