@@ -279,8 +279,6 @@ def main():
 
 def Module_1():
     
-    content_clearspace = st.empty()
-    
 # This script does the following: -
 #	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
 #	2.	Validates each combination using the is_valid_combination function from Rules.py.
@@ -664,7 +662,6 @@ def Module_1():
     st.write(" ")
     st.session_state.skip_final = 1
 
-    content_clearspace.empty()
     return
 
         
