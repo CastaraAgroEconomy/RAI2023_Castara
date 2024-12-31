@@ -761,7 +761,6 @@ def select_activity(content_placeholder):
 
     if st.button("Validate", on_click=lambda: finalize_selection(selected_activity)):
         st.session_state.selected_activity = selected_activity
-        content_placeholder.st.empty()
         pass 
     return
        
