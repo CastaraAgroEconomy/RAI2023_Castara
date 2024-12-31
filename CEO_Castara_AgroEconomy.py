@@ -334,6 +334,7 @@ def Module_1():
             
             st.write("debug 5 - Repopulating array ")
             st.write("..... to create a valid Truth table ")
+
             
             try:
                 for n in range(1, self.n): 
@@ -358,10 +359,7 @@ def Module_1():
                                 )
                                                           
                                 st.write(" ")
-                                st.write("⚠️ - Validation of selections completing .... ")
-                                
-                                return
-                            
+                                st.write("⚠️ - Validation of selections completing .... ")                                             
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
@@ -376,8 +374,7 @@ def Module_1():
                 if (n := 15) and (y := 37):
                     st.write(" .....  Continuing to process")
                     st.session_state.return_to_main = False
-                    return
-                    
+                    return         
                 if (n == 14) and (y == 37):
                     st.write(" ..... Access to feature denied 👎")
                     st.session_state.return_to_main = True
@@ -393,8 +390,7 @@ def Module_1():
             selected_sub_role = st.session_state.selected_sub_role
             selected_action = st.session_state.selected_action
             selected_activity = st.session_state.selected_activity
-            
-         
+                
             st.write(" ")      
             st.write(f" Confirming that {selected_role}")
             st.write(f" who selects the Job title {selected_sub_role}")
@@ -423,7 +419,6 @@ def Module_1():
             st.write("⚠️ - Confirming combination is valid")
             st.write("     by searching Truth Table array")
 
-
             is_valid = 0 # Initialized to 'False'
             is_valid = self.is_valid_combination(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
                 
@@ -446,7 +441,6 @@ def Module_1():
 
     
         def get_next_valid_selection(self, n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity):
-
 #           Function to identify the list that resulted in an invalid choice and returns to it
 
             if self.table[n, :, :, :].max() == 0:
@@ -604,7 +598,7 @@ def Module_1():
             if selected_role == "Franchisor" and selected_sub_role not in ["Franchise Owner", "Franchise Compliance Manager", "Financial Controller", "Franchise Development Director", "Business Development Manager",
                      "Chief Financial Officer", "Chief Operations Officer", "Chief Marketing Officer", "Business Development Director", "Franchise Operations Director", "Regional Franchise Manager", "Franchise Operator",
                      "Operations Manager", "Operations Director"]:
-                return 0       
+                return 0            
 #           Rule 35: Franchisors should handle actions like Compliance Auditing, Strategic Planning, Performance Metrics Review, Franchise Training Program Management, Investor Reporting, Market Analysis, 
 #                    Franchise Standards Enforcement, Franchise Agreement Management, Business Expansion Planning, Financial Analysis, Franchise Performance Review
             if selected_role == "Franchisor" and selected_action not in ["Compliance Auditing", "Strategic Planning", "Performance Metrics Review", "Franchise Training Program Management", "Investor Reporting", "Market Analysis", 
