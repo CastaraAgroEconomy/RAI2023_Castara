@@ -772,7 +772,7 @@ def finalize_selection(selected_activity):
 
 #   Feature access via API
 def launch_pad(content_clearspace):   
-    st.header(f"{st.session_state.selected_activity} function")
+    st.title(f"{st.session_state.selected_activity} function")
 
 #   Dynamically import and execute a feature module
     target_feature_module = st.session_state.selected_activity.replace(" ", "_")  # Adjust name formatting if necessary
