@@ -405,7 +405,7 @@ def Module_1(contemt_placeholder):
             st.write(f" is authorized to perform {selected_action}")
             st.write(f" in order to carryout {selected_activity}")
 
-            content_placeholder.dt.empty)$
+            content_placeholder.st.empty()
             
             st.write(" ")
             st.write("⚠️ - Validating combination of selected items ")
