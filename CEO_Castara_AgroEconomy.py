@@ -405,9 +405,7 @@ def Module_1():
             st.write(f" who selects the Job title {selected_sub_role}")
             st.write(f" is authorized to perform {selected_action}")
             st.write(f" in order to carryout {selected_activity}")
-
-            content_placeholder.st.empty()
-            
+            st.write(" ")
             st.write(" ")
             st.write("⚠️ - Validating combination of selected items ")
             st.write("     from lists; Matrix B, C, D ")
