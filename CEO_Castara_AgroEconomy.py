@@ -184,7 +184,8 @@ def main():
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
-            
+            st.write(" ")
+    
 #   Clear previous content
     content_placeholder = st.empty()  # Clear the placeholder
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
