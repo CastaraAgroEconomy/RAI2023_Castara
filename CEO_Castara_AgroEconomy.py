@@ -752,8 +752,6 @@ def select_action(content_placeholder):
 # Activity selection screen
 def select_activity(content_placeholder):
     st.header(f"Activity for {st.session_state.selected_role} - {st.session_state.selected_sub_role} - {st.session_state.selected_action}")
-
-    content_placeholder = st.empty()
     
     activities = st.session_state.D # refers to list defined in Module 2 for accomodated activities allowable for actions
     
@@ -774,7 +772,7 @@ def set_stage(stage, key, value):
 def finalize_selection(selected_activity): 
     st.session_state.selected_activity = selected_activity
 
-    comtent_placeholder = st.empty()
+    content_placeholder = st.empty()
     
 #   Begin selection validity check
     st.write(" ")
