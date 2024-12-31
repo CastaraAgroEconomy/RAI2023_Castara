@@ -185,14 +185,14 @@ def main():
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
             st.write(" ")
-
+        return
+        
 #   Clear previous content
     content_clearspace = st.empty()  # Clear the placeholder    
 
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 #   Display fearure header inside the placeholder - cleared screen
         with content_clearspace.container():
-            st.write(" ")
             launch_pad(content_clearspace)
             
         st.session_state.logged_in = True
