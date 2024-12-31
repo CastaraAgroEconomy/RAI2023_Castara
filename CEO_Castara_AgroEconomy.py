@@ -430,8 +430,6 @@ def Module_1():
 
             is_valid = 0 # Initialized to 'False'
             is_valid = self.is_valid_combination(n, x, m, y, selected_role, selected_sub_role, selected_action, selected_activity)
-
-            content.placeholder.st.empty()
             
             st.write(" ") 
             st.write("⚠️ - Truth Table being consulted ")
