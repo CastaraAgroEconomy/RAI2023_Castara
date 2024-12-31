@@ -185,7 +185,6 @@ def main():
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
             st.write(" ")
-        return
         
 #   Clear previous content
     content_clearspace = st.empty()  # Clear the placeholder    
