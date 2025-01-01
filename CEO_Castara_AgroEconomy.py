@@ -194,7 +194,7 @@ def main():
 #   Clear the placeholder and launch the next feature
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
         else:
-            if st.button("Continue"):
+            if st.button("Continue", on_click=lambda: Clear_screen):
 #   Set the session state to skip final
                 pass
             st.session_state.skip_final = 1
@@ -209,7 +209,7 @@ def main():
         st.session_state.skip_final = 0
         
 # Add an "End Execution" button
-        if st.button("End Execution"):
+        if st.button("End Execution", on_click=lambda: finalize_selection()):
             pass
             st.session_state.live = 0  # Update the flag to stop the loop
             st.session_state.logged_in = False           
