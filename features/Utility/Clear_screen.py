@@ -1,6 +1,7 @@
 import streamlit.components.v1 as components
+import streamlit as st
 
-def clear_screen():
+def Clear_screen():
     """
     Clears the visible content of the screen in a Streamlit app
     by dynamically calculating the number of blank lines (`st.write(" ")`)
