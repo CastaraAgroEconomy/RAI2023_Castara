@@ -285,9 +285,9 @@ def main():
 # Beginning of first Module :-
 # =========================
 
-def Module_1(content_placebolder, selected_role, selected_sub_role, selected_action, selected_activity):
+def Module_1(selected_role, selected_sub_role, selected_action, selected_activity):
     
-    content_placeholder = st.empty()
+    Clear_screen()
     
 # This script does the following: -
 #	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
@@ -780,9 +780,8 @@ def finalize_selection(content_placeholder):
     selected_sub_role = st.session_state.selected_sub_role
     selected_action = st.session_state.selected_action
     selected_activity = st.session_state.selected_activity
-    
-    with content_placeholder.container():
-        Module_1(content_placeholder, selected_role, selected_sub_role, selected_action, selected_activity)
+
+    Module_1(selected_role, selected_sub_role, selected_action, selected_activity)
     
     st.session_state.live = 1
 
