@@ -377,7 +377,13 @@ def Module_1(content_placebolder):
             except Exception as e:
                 st.error(f"Error in generate_table: {str(e)}")
                 raise  # This will show the full error traceback
-                  
+
+        #   Load latest local variables from session_state global variables
+                selected_role = st.session_state.selected_role
+                selected_sub_role = st.session_state.selected_sub_role
+                selected_action = st.session_state.selected_action
+                selected_activity = st.session_state.selected_activity
+            
             if st.session_state.R_go == 1:
                 st.write(" ..... Access to feature granted 👍")
                 st.session_state.return_to_main = True
@@ -467,10 +473,6 @@ def Module_1(content_placebolder):
                 return "Activity"
             else: 
                 st.session_state.stage = "finalize_selection"
-                selected_role = st.session_state.selected_role
-                selected_sub_role = st.session_state.selected_sub_role
-                selected_action = st.session_state.selected_action
-                selected_activity = st.session_state.selected_activity
                 return "Validate"
 
 
