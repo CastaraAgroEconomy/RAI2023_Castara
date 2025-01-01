@@ -165,10 +165,6 @@ def main():
     elif st.session_state.skip_final == 0:
         with content_placeholder.container():
             finalize_selection(content_placeholder)
-            selected_role = st.session_state.selected_role
-            selected_sub_role = st.session_state.selected_sub_role
-            selected_action = st.session_state.selected_action
-            selected_activity = st.session_state.selected_activity
 
 
 # =========================
@@ -471,6 +467,10 @@ def Module_1(content_placebolder):
                 return "Activity"
             else: 
                 st.session_state.stage = "finalize_selection"
+                selected_role = st.session_state.selected_role
+                selected_sub_role = st.session_state.selected_sub_role
+                selected_action = st.session_state.selected_action
+                selected_activity = st.session_state.selected_activity
                 return "Validate"
 
 
