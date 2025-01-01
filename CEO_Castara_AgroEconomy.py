@@ -787,7 +787,11 @@ def finalize_selection(content_placeholder):
 
 #   Feature access via API
 def launch_pad(content_placeholder):   
-    
+
+#   Button to Trigger Screen Clearing
+    if st.button("Clear Screen"):
+        pass
+        
     Clear_screen()
     
     st.header(f"{st.session_state.selected_activity}")
@@ -835,17 +839,7 @@ def Clear_screen():
 #   Add sub-folder to sys.path if not already present
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
-
-#   st.title("Dynamic Screen Clear Function")
-#   st.write("This app dynamically clears the screen based on the device's resolution.")
-
-#   Button to Trigger Screen Clearing
-    if st.button("Clear Screen"):
-#       result = Clear_screen()
-#       st.header(f"{st.session_state.selected_activity}")
-#       st.json(result)  # Display debug information for testing
-        pass
-        
+     
     return
 
 
