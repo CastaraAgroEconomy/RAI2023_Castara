@@ -201,7 +201,7 @@ def main():
             with content_placeholder.container():
                 if st.button("Continue"):
 #   Set the session state to skip final
-                   st.session_state.skip_final = 1 
+                    st.session_state.skip_final = 1 
                 
                 
         st.session_state.logged_in = True
