@@ -192,9 +192,12 @@ def main():
 #   Display fearure header inside the placeholder - cleared screen
 
         with content_placeholder.container():
-            content_placeholder.empty()
-            launch_pad(content_placeholder)
-            
+            if (st.session_state.skip == 1):
+                content_placeholder.empty()
+                launch_pad(content_placeholder)
+            else:
+                 if st.button("Continue", on_click=lambda: pass):
+                
         st.session_state.logged_in = True
 
         if st.button("Logout", on_click=lambda: logout()):
