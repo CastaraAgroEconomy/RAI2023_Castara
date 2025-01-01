@@ -171,8 +171,6 @@ def main():
 # Returned to main Module :-
 # =========================
     
-#   Clear previous content
-    content_placeholder = st.empty()  # Clear the placeholder
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
         with content_placeholder.container():
@@ -199,17 +197,18 @@ def main():
         else:
             if st.button("Continue"):
 #   Set the session state to skip final
-                st.session_state.skip_final = 1
                 pass
+            st.session_state.skip_final = 1
+        
                 
                 
         st.session_state.logged_in = True
 
         if st.button("Logout", on_click=lambda: logout()):
             pass
-            st.session_state.stage = None
-            st.session_state.logged_in = False
-            st.session_state.skip_final = 0
+        st.session_state.stage = None
+        st.session_state.logged_in = False
+        st.session_state.skip_final = 0
         
 # Add an "End Execution" button
         if st.button("End Execution"):
