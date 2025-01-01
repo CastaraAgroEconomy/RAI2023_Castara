@@ -197,7 +197,7 @@ def main():
                 launch_pad(content_placeholder)
             else:
                 if st.button("Continue"):
-                    content_placeholder.empty()
+#                   content_placeholder.empty()
                     st.session_state.skip_final = 1
                     pass
                 
