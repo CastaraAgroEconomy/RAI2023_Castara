@@ -189,17 +189,19 @@ def main():
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 
-#   Display fearure header inside the placeholder - cleared screen
+#   Display fearure inside the placeholder - cleared screen
 
-        with content_placeholder.container():
-            if (st.session_state.skip_final == 1):
-                content_placeholder.empty()
-                launch_pad(content_placeholder)
-            else:
+#   Check if the final step is skipped
+        if st.session_state.skip_final == 1:
+#   Clear the placeholder and launch the next feature
+            content_placeholder.empty()  # Clear the placeholder outside of the container
+            launch_pad(content_placeholder)  # Pass the placeholder to the next function
+        else:
+#   Render the content inside the placeholder
+            with content_placeholder.container():
                 if st.button("Continue"):
-#                   content_placeholder.empty()
-                    st.session_state.skip_final = 1
-                    pass
+#   Set the session state to skip final
+                   st.session_state.skip_final = 1 
                 
                 
         st.session_state.logged_in = True
