@@ -824,7 +824,7 @@ def launch_pad(content_placeholder):
 
 
 #   Screen clearing Utility
-def Clear_screen()
+def Clear_screen():
 
     import streamlit as st
     from features.Utility.Clear_screen import Clear_screen
