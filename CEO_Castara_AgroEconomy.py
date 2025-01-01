@@ -196,7 +196,7 @@ def main():
                 content_placeholder.empty()
                 launch_pad(content_placeholder)
             else:
-                 if st.button("Continue", on_click=lambda: st.write("...")):
+                 if st.button("Continue", on_click=lambda: None):
                      content_placeholder.empty()
                      pass
                 
