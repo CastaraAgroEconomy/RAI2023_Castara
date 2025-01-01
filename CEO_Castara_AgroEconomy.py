@@ -190,8 +190,9 @@ def main():
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 
 #   Display fearure header inside the placeholder - cleared screen
-        content_placeholder.empty()
+
         with content_placeholder.container():
+            content_placeholder.empty()
             launch_pad(content_placeholder)
             
         st.session_state.logged_in = True
