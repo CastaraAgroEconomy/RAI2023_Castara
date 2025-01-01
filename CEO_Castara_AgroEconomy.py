@@ -820,6 +820,22 @@ def launch_pad(content_placeholder):
     return
 
 
+def Clear_screen()
+
+    from utils.Clear_screen import clear_screen
+
+#   Title and Description
+    st.title("Dynamic Screen Clear Function")
+    st.write("This app dynamically clears the screen based on your device's resolution.")
+
+#   Button to Trigger Screen Clearing
+    if st.button("Clear Screen"):
+        result = Clear_screen()
+        st.header(f"{st.session_state.selected_activity}")
+        st.json(result)  # Display debug information for testing
+     return 
+
+
 # Logout function
 def logout():
     st.session_state.clear()  # Clears all session states for a fresh start
