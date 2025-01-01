@@ -192,7 +192,6 @@ def main():
 #   Check if the final step is skipped
         if st.session_state.skip_final == 1:
 #   Clear the placeholder and launch the next feature
-            content_placeholder.empty()  # Clear the placeholder outside of the container
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
         else:
             if st.button("Continue"):
@@ -200,8 +199,7 @@ def main():
                 pass
             st.session_state.skip_final = 1
         
-                
-                
+                              
         st.session_state.logged_in = True
 
         if st.button("Logout", on_click=lambda: logout()):
