@@ -777,6 +777,11 @@ def finalize_selection(content_placeholder):
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
 
+    selected_role = st.session_state.selected_role
+    selected_sub_role = st.session_state.selected_sub_role
+    selected_action = st.session_state.selected_action
+    selected_activity = st.session_state.selected_activity
+    
     with content_placeholder.container():
         Module_1(content_placeholder, selected_role, selected_sub_role, selected_action, selected_activity)
     
