@@ -196,9 +196,11 @@ def main():
                 content_placeholder.empty()
                 launch_pad(content_placeholder)
             else:
-                 if st.button("Continue", on_click=lambda: None):
-                     content_placeholder.empty()
-                     pass
+                if st.button("Continue"):
+                    content_placeholder.empty()
+                    st.session_state.skip_final = 1
+                    pass
+                
                 
         st.session_state.logged_in = True
 
@@ -213,7 +215,7 @@ def main():
             pass
             st.session_state.live = 0  # Update the flag to stop the loop
             st.session_state.logged_in = False           
-            st.session_state.skip_final = 1
+            st.session_state.skip_final = 0
 # Display a message after the loop ends
             st.write(" ")
             st.write("🚧 - Execution ended")
