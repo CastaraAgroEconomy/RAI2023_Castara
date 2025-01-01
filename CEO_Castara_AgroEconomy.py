@@ -194,7 +194,7 @@ def main():
 #   Check if the final step is skipped
         if st.session_state.skip_final == 1:
 #   Clear the placeholder and launch the next feature
-#           content_placeholder.empty()  # Clear the placeholder outside of the container
+            content_placeholder.empty()  # Clear the placeholder outside of the container
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
         else:
 #   Render the content inside the placeholder
@@ -218,6 +218,10 @@ def main():
             st.session_state.live = 0  # Update the flag to stop the loop
             st.session_state.logged_in = False           
             st.session_state.skip_final = 0
+            selected_role = st.session_state.selected_role
+            selected_sub_role = st.session_state.selected_sub_role
+            selected_action = st.session_state.selected_action
+            selected_activity = st.session_state.selected_activity
 # Display a message after the loop ends
             st.write(" ")
             st.write("🚧 - Execution ended")
