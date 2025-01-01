@@ -747,7 +747,7 @@ def select_activity(content_placeholder):
     
     selected_activity = st.radio("Choose an activity", activities)
 
-    if st.button("Validate", on_click=lambda: finalize_selection(selected_activity)):
+    if st.button("Validate", on_click=lambda: finalize_selection(content_placeholder)):
         st.session_state.selected_activity = selected_activity
         pass 
     return
@@ -759,16 +759,19 @@ def set_stage(stage, key, value):
     return
 
 
-def finalize_selection(selected_activity): 
-    st.session_state.selected_activity = selected_activity
+def finalize_selection(content_placeholder): 
+    
     content_placeholder = st.empty()
-#   Begin selection validity check
+
+    #   Begin selection validity check
     
     st.write(" ")
     st.write("⚠️ - Control passed to validity checker ")
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
 
+    content_placeholder.st.empty()
+    
     with content_placeholder.container:
         Module_1(content_placeholder)
     
