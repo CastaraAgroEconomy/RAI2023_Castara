@@ -769,8 +769,6 @@ def finalize_selection(content_placeholder):
     st.write("⚠️ - Control passed to validity checker ")
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
-
-    content_placeholder.st.empty()
     
     with content_placeholder.container:
         Module_1(content_placeholder)
