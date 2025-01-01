@@ -760,8 +760,6 @@ def set_stage(stage, key, value):
 
 def finalize_selection(content_placeholder): 
     
-    content_placeholder = st.empty()
-
     #   Begin selection validity check
     
     st.write(" ")
