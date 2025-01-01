@@ -841,9 +841,10 @@ def Clear_screen():
 
 #   Button to Trigger Screen Clearing
     if st.button("Clear Screen"):
-        result = Clear_screen()
-        st.header(f"{st.session_state.selected_activity}")
-        st.json(result)  # Display debug information for testing
+#       result = Clear_screen()
+#       st.header(f"{st.session_state.selected_activity}")
+#       st.json(result)  # Display debug information for testing
+        pass
         
     return
 
