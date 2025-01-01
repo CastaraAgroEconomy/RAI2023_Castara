@@ -165,6 +165,10 @@ def main():
     elif st.session_state.skip_final == 0:
         with content_placeholder.container():
             finalize_selection(content_placeholder)
+            selected_role = st.session_state.selected_role
+            selected_sub_role = st.session_state.selected_sub_role
+            selected_action = st.session_state.selected_action
+            selected_activity = st.session_state.selected_activity
 
 
 # =========================
@@ -197,11 +201,10 @@ def main():
             content_placeholder.empty()  # Clear the placeholder outside of the container
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
         else:
-#   Render the content inside the placeholder
-            with content_placeholder.container():
-                if st.button("Continue"):
+            if st.button("Continue"):
 #   Set the session state to skip final
-                    st.session_state.skip_final = 1 
+                st.session_state.skip_final = 1
+                pass
                 
                 
         st.session_state.logged_in = True
@@ -218,10 +221,6 @@ def main():
             st.session_state.live = 0  # Update the flag to stop the loop
             st.session_state.logged_in = False           
             st.session_state.skip_final = 0
-            selected_role = st.session_state.selected_role
-            selected_sub_role = st.session_state.selected_sub_role
-            selected_action = st.session_state.selected_action
-            selected_activity = st.session_state.selected_activity
 # Display a message after the loop ends
             st.write(" ")
             st.write("🚧 - Execution ended")
@@ -786,6 +785,7 @@ def finalize_selection(content_placeholder):
         Module_1(content_placeholder)
     
     st.session_state.live = 1
+
     return
 
 
