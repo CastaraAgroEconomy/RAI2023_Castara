@@ -787,6 +787,9 @@ def finalize_selection(content_placeholder):
 
 #   Feature access via API
 def launch_pad(content_placeholder):   
+    
+    Clear_screen()
+    
     st.header(f"{st.session_state.selected_activity}")
 
 #   Dynamically import and execute a feature module
@@ -820,10 +823,18 @@ def launch_pad(content_placeholder):
     return
 
 
+#   Screen clearing Utility
 def Clear_screen()
 
     import streamlit as st
     from features.Utility.Clear_screen import Clear_screen
+
+#   Define the sub-folder where feature scripts are located
+    sub_folder = os.path.join("features", "Utility")
+    
+#   Add sub-folder to sys.path if not already present
+    if sub_folder not in sys.path:
+        sys.path.append(sub_folder)
 
 #   st.title("Dynamic Screen Clear Function")
 #   st.write("This app dynamically clears the screen based on the device's resolution.")
@@ -833,7 +844,9 @@ def Clear_screen()
         result = Clear_screen()
         st.header(f"{st.session_state.selected_activity}")
         st.json(result)  # Display debug information for testing
+        
     return
+
 
 # Logout function
 def logout():
