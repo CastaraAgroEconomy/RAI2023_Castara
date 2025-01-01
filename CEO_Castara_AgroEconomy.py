@@ -196,7 +196,8 @@ def main():
                 content_placeholder.empty()
                 launch_pad(content_placeholder)
             else:
-                 if st.button("Continue", on_click=lambda: content_placeholder.empty()):
+                 if st.button("Continue", on_click=lambda: st.write("...")):
+                     content_placeholder.empty()
                      pass
                 
         st.session_state.logged_in = True
