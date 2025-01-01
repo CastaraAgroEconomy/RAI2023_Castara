@@ -171,6 +171,10 @@ def main():
 # Returned to main Module :-
 # =========================
     
+#   Clear previous content
+    content_clearspace = st.empty()  # Clear the placeholder
+    content_clearspace.st.empty()
+    
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
         with content_placeholder.container():
             st.write(" ")
@@ -183,16 +187,12 @@ def main():
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
-
-#   Clear previous content
-    content_clearspace = st.empty()  # Clear the placeholder
-    content_clearspace.st.empty()
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 
 #   Display fearure header inside the placeholder - cleared screen
-        with content_clearspace.container():
-            launch_pad(content_clearspace)
+        with content_placeholder.container():
+            launch_pad(content_placeholder)
             
         st.session_state.logged_in = True
 
@@ -778,7 +778,7 @@ def finalize_selection(content_placeholder):
 
 
 #   Feature access via API
-def launch_pad(content_clearspace):   
+def launch_pad(content_placeholder):   
     st.header(f"{st.session_state.selected_activity}")
 
 #   Dynamically import and execute a feature module
