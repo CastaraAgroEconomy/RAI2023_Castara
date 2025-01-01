@@ -770,7 +770,7 @@ def finalize_selection(content_placeholder):
     st.write(" ")
     st.write("⚠️ - Selected combination being validated ")
     
-    with content_placeholder.container:
+    with content_placeholder.container():
         Module_1(content_placeholder)
     
     st.session_state.live = 1
