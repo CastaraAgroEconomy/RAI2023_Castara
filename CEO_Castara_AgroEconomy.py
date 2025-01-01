@@ -822,19 +822,18 @@ def launch_pad(content_placeholder):
 
 def Clear_screen()
 
-    from utils.Clear_screen import clear_screen
+    import streamlit as st
+    from features.Utility.Clear_screen import Clear_screen
 
-#   Title and Description
-    st.title("Dynamic Screen Clear Function")
-    st.write("This app dynamically clears the screen based on your device's resolution.")
+#   st.title("Dynamic Screen Clear Function")
+#   st.write("This app dynamically clears the screen based on the device's resolution.")
 
 #   Button to Trigger Screen Clearing
     if st.button("Clear Screen"):
         result = Clear_screen()
         st.header(f"{st.session_state.selected_activity}")
         st.json(result)  # Display debug information for testing
-     return 
-
+    return
 
 # Logout function
 def logout():
