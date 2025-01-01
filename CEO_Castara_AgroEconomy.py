@@ -195,10 +195,6 @@ def main():
         if st.session_state.skip_final == 1:
 #   Clear the placeholder and launch the next feature
 #           content_placeholder.empty()  # Clear the placeholder outside of the container
-#   Button to Trigger Screen Clearing - replaces above command which does not work as anticipated
-            if st.button("Clear Screen"):
-                pass 
-            Clear_screen()
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
         else:
 #   Render the content inside the placeholder
@@ -791,6 +787,11 @@ def finalize_selection(content_placeholder):
 
 #   Feature access via API
 def launch_pad(content_placeholder):   
+
+#   Button to Trigger Screen Clearing - replaces "content_placeholder.empty()" instruction
+    if st.button("Clear Screen"):
+        pass 
+    Clear_screen()
     
     st.header(f"{st.session_state.selected_activity}")
 
