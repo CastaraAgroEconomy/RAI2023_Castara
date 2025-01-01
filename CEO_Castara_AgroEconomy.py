@@ -184,21 +184,17 @@ def main():
             st.write("⚠️ - When implemented, appropriate feature will activate at this point")
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
+
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
-
 #   Display fearure inside the placeholder - cleared screen
-
+        Clear_screen()
 #   Check if the final step is skipped
         if st.session_state.skip_final == 1:
 #   Clear the placeholder and launch the next feature
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
-        elif st.button("Continue", on_click=lambda: Clear_screen()):
+        elif st.button("Continue", on_click=lambda: " "):
 #   Set the session state to skip final
-
-            
-
-
             st.session_state.skip_final = 1
         
                               
@@ -211,7 +207,7 @@ def main():
         st.session_state.skip_final = 0
         
 # Add an "End Execution" button
-        if st.button("End Execution", on_click=lambda: Clear_screen()):
+        if st.button("End Execution", on_click=lambda: " "):
             pass
             st.session_state.live = 0  # Update the flag to stop the loop
             st.session_state.logged_in = False           
