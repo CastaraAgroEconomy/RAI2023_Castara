@@ -162,7 +162,7 @@ def main():
     elif st.session_state.stage == "activity_selection":
         with content_placeholder.container():
             select_activity(content_placeholder)
-    elif st.session_state.stage == "Checking_selection"
+    elif st.session_state.stage == "Checking_selection":
         with content_placeholder.container():
             finalize_selection(content_placeholder)
 
