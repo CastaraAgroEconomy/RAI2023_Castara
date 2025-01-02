@@ -195,7 +195,7 @@ def main():
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
             pass
         else:
-            st.button("Continue", on_click=lambda: " "):
+            st.button("Continue", on_click=lambda: Clear_screen()):
 #   Set the session state to skip final
             st.session_state.skip_final = 1
             pass
