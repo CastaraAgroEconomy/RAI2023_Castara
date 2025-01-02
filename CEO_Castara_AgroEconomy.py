@@ -172,7 +172,7 @@ def main():
 # =========================
     
     
-    if (st.session_state.R_go == 1) and (st.session_state.live == 1):
+    if (st.session_state.R_go == 1) and (st.session_state.live == 1) and (st.session_state.do_not_skip == 1):
         with content_placeholder.container():
             st.write(" ")
             st.write(f"⚠️ - Journey completed successfully, Role {st.session_state.selected_role}")
@@ -196,6 +196,7 @@ def main():
             if st.button("Continue"):
 #   Set the session state to skip 
                 Display_clearer(content_placeholder)
+                content_placeholder.empty()
                 pass
                 st.session_state.do_not_skip = 1
                 
