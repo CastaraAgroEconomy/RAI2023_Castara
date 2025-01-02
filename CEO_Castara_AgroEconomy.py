@@ -194,8 +194,8 @@ def main():
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
         else:
             if st.button("Continue"):
-#   Set the session state to skip final
-                Display_clearer()
+#   Set the session state to skip 
+                Display_clearer(content_placeholder)
                 pass
                 st.session_state.do_not_skip = 1
                 
@@ -790,7 +790,7 @@ def launch_pad(content_placeholder):
 
 #   Button to Trigger Screen Clearing - replaces "content_placeholder.empty()" instruction
     if st.button("Clear Screen"):
-        Display_clearer()
+        Display_clearer(content_placeholder)
         pass
     
     st.header(f"{st.session_state.selected_activity}")
@@ -827,7 +827,7 @@ def launch_pad(content_placeholder):
 
 
 #   Screen clearing Utility
-def Display_clearer():
+def Display_clearer(content_placeholder):
 
     import streamlit as st
     from features.Utility.Clear_screen import Clear_screen
