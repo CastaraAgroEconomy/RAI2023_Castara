@@ -198,14 +198,15 @@ def main():
                 Display_clearer(content_placeholder)
                 content_placeholder.empty()
                 pass
-                st.session_state.do_not_skip = 1
-                
-        
+                st.session_state.do_not_skip = 1       
                               
         st.session_state.logged_in = True
 
+# log out option
         if st.button("Logout", on_click=lambda: logout()):
             pass
+            
+# Reset flags for log out option
         st.session_state.stage = None
         st.session_state.logged_in = False
         st.session_state.do_not_skip = 0
@@ -213,9 +214,11 @@ def main():
 # Add an "End Execution" button
         if st.button("End Execution"):
             pass
+            
             st.session_state.live = 0  # Update the flag to stop the loop
             st.session_state.logged_in = False           
             st.session_state.do_not_skip = 0
+            
 # Display a message after the loop ends
             st.write(" ")
             st.write("🚧 - Execution ended")
@@ -257,6 +260,7 @@ def main():
             
             if st.button("Logout", on_click=lambda: logout()):
                 pass
+                
                 st.session_state.stage = None
                 st.session_state.logged_in = False
                 st.session_state.do_not_skip = 0
@@ -264,6 +268,7 @@ def main():
 # Add an "End Execution" button
             if st.button("End Execution"):
                 pass
+                
                 st.session_state.live = 0  # Update the flag to stop the loop
                 st.session_state.logged_in = False             
                 st.session_state.do_not_skip = 1
@@ -324,8 +329,8 @@ def Module_1(selected_role, selected_sub_role, selected_action, selected_activit
             
             st.write("debug 2 - about to create empty array")
             self.table = np.zeros((n, x, m, y), dtype=int)
-            st.write("debug 3 - Empty array created ")
             
+            st.write("debug 3 - Empty array created ")
             st.write(" ")
             st.write("⚠️ - First generating default Truth Table")
             st.write("..... without predefined rules")
@@ -338,12 +343,12 @@ def Module_1(selected_role, selected_sub_role, selected_action, selected_activit
             
             self.generate_table()          
                
+       
         def generate_table(self):
             
             st.write("debug 5 - Repopulating array ")
             st.write("..... to create a valid Truth table ")
 
-            
             try:
                 
                 for n in range(1, self.n): 
@@ -661,8 +666,8 @@ def Module_1(selected_role, selected_sub_role, selected_action, selected_activit
 
 #           End of Nominal Rules return is_valid as 0 or 1
                         
-#   Create instance after class definition
-    truth_table = TruthTable()  # This line was missing       
+#   Created instance after class definition
+    truth_table = TruthTable()  # This line was missing previously     
 
     st.write(" ")
     st.write("debug 9 - Validity of selection completed")
@@ -791,8 +796,9 @@ def launch_pad(content_placeholder):
 
 #   Button to Trigger Screen Clearing - replaces "content_placeholder.empty()" instruction
     if st.button("Clear Screen"):
-        Display_clearer(content_placeholder)
         pass
+    Display_clearer(content_placeholder)
+    content_placeholder.empty()
     
     st.header(f"{st.session_state.selected_activity}")
 
