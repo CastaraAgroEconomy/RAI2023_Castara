@@ -108,8 +108,8 @@ if 'selected_activity' not in st.session_state:
 if 'self' not in st.session_state:
     st.session_state.self = None
 
-if 'skip_final' not in st.session_state:
-    st.session_state.skip_final = 0
+if 'do_not_skip' not in st.session_state:
+    st.session_state.do_not_skip = 0
 
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
@@ -187,17 +187,16 @@ def main():
 
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
-#   Display fearure inside the placeholder - cleared screen
-        Display_clearer()
+
 #   Check if the final step is skipped
-        if st.session_state.skip_final == 1:
+        if st.session_state.do_not_skip == 1:
 #   Clear the placeholder and launch the next feature
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
             pass
         else:
             if st.button("Continue", on_click=lambda: None):
 #   Set the session state to skip final
-                st.session_state.skip_final = 1
+                st.session_state.do_not_skip = 1
                 pass
         
                               
@@ -207,14 +206,14 @@ def main():
             pass
         st.session_state.stage = None
         st.session_state.logged_in = False
-        st.session_state.skip_final = 0
+        st.session_state.do_not_skip = 0
         
 # Add an "End Execution" button
         if st.button("End Execution", on_click=lambda: None):
             pass
             st.session_state.live = 0  # Update the flag to stop the loop
             st.session_state.logged_in = False           
-            st.session_state.skip_final = 0
+            st.session_state.do_not_skip = 0
 # Display a message after the loop ends
             st.write(" ")
             st.write("🚧 - Execution ended")
@@ -258,14 +257,14 @@ def main():
                 pass
                 st.session_state.stage = None
                 st.session_state.logged_in = False
-                st.session_state.skip_final = 0
+                st.session_state.do_not_skip = 0
         
 # Add an "End Execution" button
             if st.button("End Execution"):
                 pass
                 st.session_state.live = 0  # Update the flag to stop the loop
                 st.session_state.logged_in = False             
-                st.session_state.skip_final = 1
+                st.session_state.do_not_skip = 1
 
 # Display a message after the loop ends
                 st.write(" ")
@@ -666,7 +665,7 @@ def Module_1(selected_role, selected_sub_role, selected_action, selected_activit
     st.write(" ")
     st.write("debug 9 - Validity of selection completed")
     st.write(" ")
-    st.session_state.skip_final = 1
+    st.session_state.do_not_skip = 1
 
     return
 
@@ -790,8 +789,8 @@ def launch_pad(content_placeholder):
 
 #   Button to Trigger Screen Clearing - replaces "content_placeholder.empty()" instruction
     if st.button("Clear Screen"):
-        pass 
-    Display_clearer()
+        Display_clearer()
+        pass
     
     st.header(f"{st.session_state.selected_activity}")
 
