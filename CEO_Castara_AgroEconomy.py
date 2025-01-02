@@ -185,8 +185,6 @@ def main():
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
 
-        import time
-        time.sleep(3)
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 
@@ -194,14 +192,7 @@ def main():
         if st.session_state.do_not_skip == 1:
 #   Clear the placeholder and launch the next feature
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
-#        else:
-#            if st.button("Continue"):
-#   Set the session state to skip 
-#                Display_clearer(content_placeholder)
-#                content_placeholder.empty()
-#                pass
-#                st.session_state.do_not_skip = 1       
-                              
+                        
         st.session_state.logged_in = True
 
 # log out option
