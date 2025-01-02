@@ -185,6 +185,8 @@ def main():
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
 
+        import time
+        time.sleep(3)
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 
