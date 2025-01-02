@@ -188,14 +188,14 @@ def main():
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 #   Display fearure inside the placeholder - cleared screen
-        Clear_screen()
+        Display_clearer()
 #   Check if the final step is skipped
         if st.session_state.skip_final == 1:
 #   Clear the placeholder and launch the next feature
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
             pass
         else:
-            if st.button("Continue", on_click=lambda: Clear_screen()):
+            if st.button("Continue", on_click=lambda: Display_clearer()):
 #   Set the session state to skip final
                 st.session_state.skip_final = 1
                 pass
@@ -210,7 +210,7 @@ def main():
         st.session_state.skip_final = 0
         
 # Add an "End Execution" button
-        if st.button("End Execution", on_click=lambda: Clear_screen()):
+        if st.button("End Execution", on_click=lambda: Display_clearer()):
             pass
             st.session_state.live = 0  # Update the flag to stop the loop
             st.session_state.logged_in = False           
@@ -286,7 +286,7 @@ def main():
 
 def Module_1(selected_role, selected_sub_role, selected_action, selected_activity):
     
-    Clear_screen()
+    Display_clearer()
     
 # This script does the following: -
 #	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
@@ -793,7 +793,7 @@ def launch_pad(content_placeholder):
 #   Button to Trigger Screen Clearing - replaces "content_placeholder.empty()" instruction
     if st.button("Clear Screen"):
         pass 
-    Clear_screen()
+    Display_clearer()
     
     st.header(f"{st.session_state.selected_activity}")
 
@@ -829,7 +829,7 @@ def launch_pad(content_placeholder):
 
 
 #   Screen clearing Utility
-def Clear_screen():
+def Display_clearer():
 
     import streamlit as st
     from features.Utility.Clear_screen import Clear_screen
@@ -840,6 +840,8 @@ def Clear_screen():
 #   Add sub-folder to sys.path if not already present
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
+
+    Clear_screen()
      
     return
 
