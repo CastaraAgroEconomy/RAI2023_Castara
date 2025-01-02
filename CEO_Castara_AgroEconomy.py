@@ -192,12 +192,12 @@ def main():
         if st.session_state.do_not_skip == 1:
 #   Clear the placeholder and launch the next feature
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
-        else:
-            if st.button("Continue"):
+#        else:
+#            if st.button("Continue"):
 #   Set the session state to skip 
-                Display_clearer(content_placeholder)
-                content_placeholder.empty()
-                pass
+#                Display_clearer(content_placeholder)
+#                content_placeholder.empty()
+#                pass
                 st.session_state.do_not_skip = 1       
                               
         st.session_state.logged_in = True
