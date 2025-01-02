@@ -198,7 +198,7 @@ def main():
 #                Display_clearer(content_placeholder)
 #                content_placeholder.empty()
 #                pass
-                st.session_state.do_not_skip = 1       
+#                st.session_state.do_not_skip = 1       
                               
         st.session_state.logged_in = True
 
