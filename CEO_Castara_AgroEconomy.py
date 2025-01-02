@@ -188,7 +188,7 @@ def main():
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 
-#   Check if the final step is skipped
+#   Check if the step below is to be skipped
         if st.session_state.do_not_skip == 1:
 #   Clear the placeholder and launch the next feature
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
@@ -791,6 +791,7 @@ def launch_pad(content_placeholder):
 #   Button to Trigger Screen Clearing - replaces "content_placeholder.empty()" instruction
     if st.button("Clear Screen"):
         Display_clearer()
+        content_placeholder.empty()
         pass
     
     st.header(f"{st.session_state.selected_activity}")
