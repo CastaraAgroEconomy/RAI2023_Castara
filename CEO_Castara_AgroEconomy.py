@@ -195,6 +195,7 @@ def main():
         else:
             if st.button("Continue"):
 #   Set the session state to skip final
+                Display_clearer()
                 pass
                 st.session_state.do_not_skip = 1
                 
