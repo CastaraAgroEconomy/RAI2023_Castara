@@ -150,19 +150,19 @@ def main():
     if st.session_state.stage == "login":
         with content_placeholder.container():
             login(content_placeholder)
-    elif (st.session_state.skip_final == 0) and st.session_state.stage == "role_selection":
+    elif st.session_state.stage == "role_selection":
         with content_placeholder.container():
             select_role(content_placeholder)
-    elif (st.session_state.skip_final == 0) and st.session_state.stage == "sub_role_selection":
+    elif st.session_state.stage == "sub_role_selection":
         with content_placeholder.container():
             select_sub_role(content_placeholder)
-    elif (st.session_state.skip_final == 0) and st.session_state.stage == "action_selection":
+    elif st.session_state.stage == "action_selection":
         with content_placeholder.container():
             select_action(content_placeholder)
-    elif (st.session_state.skip_final == 0) and st.session_state.stage == "activity_selection":
+    elif st.session_state.stage == "activity_selection":
         with content_placeholder.container():
             select_activity(content_placeholder)
-    elif st.session_state.skip_final == 0:
+    elif st.session_state.stage == "Checking_selection"
         with content_placeholder.container():
             finalize_selection(content_placeholder)
 
@@ -195,7 +195,7 @@ def main():
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
             pass
         else:
-            if st.button("Continue", on_click=lambda: Display_clearer()):
+            if st.button("Continue", on_click=lambda: None):
 #   Set the session state to skip final
                 st.session_state.skip_final = 1
                 pass
@@ -210,7 +210,7 @@ def main():
         st.session_state.skip_final = 0
         
 # Add an "End Execution" button
-        if st.button("End Execution", on_click=lambda: Display_clearer()):
+        if st.button("End Execution", on_click=lambda: None):
             pass
             st.session_state.live = 0  # Update the flag to stop the loop
             st.session_state.logged_in = False           
@@ -285,8 +285,6 @@ def main():
 # =========================
 
 def Module_1(selected_role, selected_sub_role, selected_action, selected_activity):
-    
-    Display_clearer()
     
 # This script does the following: -
 #	1.	Builds the Truth Table by iterating through combinations of n, x, m, and y.
@@ -754,7 +752,7 @@ def select_activity(content_placeholder):
     
     selected_activity = st.radio("Choose an activity", activities)
 
-    if st.button("Validate", on_click=lambda: finalize_selection(content_placeholder)):
+    if st.button("Validate", on_click=lambda: set_stage("Checking_selection", "Validating", selected_activity)):
         st.session_state.selected_activity = selected_activity
         pass 
     return
