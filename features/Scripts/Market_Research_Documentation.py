@@ -7,7 +7,7 @@ def feature_script():
     st.write("⚠️ - Note : the video make take some seconds before it plays.")
 
 #   YouTube video URL
-    video_url = "https://www.youtube.com/watch?v=EfK0SURQ8X0"
+    video_url = "https://www.youtube.com/watch?v=_9Z2cOMHNDw"
 
 #   Embed the video in the app
     st.video(video_url)
