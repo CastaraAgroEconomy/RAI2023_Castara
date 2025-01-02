@@ -791,7 +791,6 @@ def launch_pad(content_placeholder):
 #   Button to Trigger Screen Clearing - replaces "content_placeholder.empty()" instruction
     if st.button("Clear Screen"):
         Display_clearer()
-        content_placeholder.empty()
         pass
     
     st.header(f"{st.session_state.selected_activity}")
@@ -841,6 +840,7 @@ def Display_clearer():
         sys.path.append(sub_folder)
 
     Clear_screen()
+    content_placeholder.empty()
      
     return
 
