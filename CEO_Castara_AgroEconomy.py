@@ -793,7 +793,7 @@ def launch_pad(content_placeholder):
     Display_clearer(content_placeholder)
     content_placeholder.empty()
     
-    st.header(f"{selected_activity}")
+    st.header(f"{st.session_state.selected_activity}")
 
 #   Dynamically import and execute a feature module
     target_feature_module = st.session_state.selected_activity.replace(" ", "_")  # Adjust name formatting if necessary
