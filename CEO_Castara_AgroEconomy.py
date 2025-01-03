@@ -61,7 +61,7 @@ if 'D' not in st.session_state:
                           "Performance Metric Tracking", "Strategy Document Creation", "Compliance Report Filing", "Do not select (EOL)"]
 
 
-# Initialize defaults for selected items
+# Initialize matrix list defaults for selected items
 if 'live' not in st.session_state:
     st.session_state.live = 0
     
@@ -782,14 +782,14 @@ def finalize_selection(content_placeholder):
     st.write(f"{selected_role},{selected_sub_role},{selected_action},{selected_activity}")
     st.write(" ")
     import time
-    time.sleep(6)
+    time.sleep(10)
     
     Module_1(selected_role, selected_sub_role, selected_action, selected_activity)
 
     st.write(f"{selected_role},{selected_sub_role},{selected_action},{selected_activity}")
     st.write(" ")
     import time
-    time.sleep(6)
+    time.sleep(10)
     
     st.session_state.live = 1
 
@@ -802,8 +802,8 @@ def launch_pad(content_placeholder):
 #   Button to Trigger Screen Clearing - replaces "content_placeholder.empty()" instruction
 #    if st.button("Clear Screen"):
 #        pass
-    Display_clearer(content_placeholder)
-    content_placeholder.empty()
+#    Display_clearer(content_placeholder)
+#    content_placeholder.empty()
     
     st.header(f"{st.session_state.selected_activity}")
 
