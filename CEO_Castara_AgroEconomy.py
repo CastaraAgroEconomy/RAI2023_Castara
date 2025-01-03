@@ -62,17 +62,19 @@ if 'D' not in st.session_state:
 
 
 # Initialize defaults for selected items only if matrices are loaded
-if 'selected_role' not in st.session_state and 'A' in st.session_state and st.session_state.A:
-    st.session_state.selected_role = st.session_state.A[0]
+if 'live' not in st.session_state or (st.session_state := 1):
+    
+    if 'selected_role' not in st.session_state and 'A' in st.session_state and st.session_state.A:
+        st.session_state.selected_role = st.session_state.A[0]
 
-if 'selected_sub_role' not in st.session_state and 'B' in st.session_state and st.session_state.B:
-    st.session_state.selected_sub_role = st.session_state.B[0]
+    if 'selected_sub_role' not in st.session_state and 'B' in st.session_state and st.session_state.B:
+        st.session_state.selected_sub_role = st.session_state.B[0]
 
-if 'selected_action' not in st.session_state and 'C' in st.session_state and st.session_state.C:
-    st.session_state.selected_action = st.session_state.C[0]
+    if 'selected_action' not in st.session_state and 'C' in st.session_state and st.session_state.C:
+        st.session_state.selected_action = st.session_state.C[0]
 
-if 'selected_activity' not in st.session_state and 'D' in st.session_state and st.session_state.D:
-    st.session_state.selected_activity = st.session_state.D[0]
+    if 'selected_activity' not in st.session_state and 'D' in st.session_state and st.session_state.D:
+        st.session_state.selected_activity = st.session_state.D[0]
 
 # ======================
 # End of second Module :
@@ -93,17 +95,19 @@ if 'm' not in st.session_state:
 if 'y' not in st.session_state:
     st.session_state.y = 1
 
-if 'selected_role' not in st.session_state:
-    st.session_state.selected_role = st.session_state.A[0]
+if 'live' not in st.session_state or (st.session_state := 1):
+
+    if 'selected_role' not in st.session_state:
+        st.session_state.selected_role = st.session_state.A[0]
     
-if 'selected_sub_role' not in st.session_state:
-    st.session_state.selected_sub_role = st.session_state.B[0]
+    if 'selected_sub_role' not in st.session_state:
+        st.session_state.selected_sub_role = st.session_state.B[0]
 
-if 'selected_action' not in st.session_state:
-    st.session_state.selected_action = st.session_state.C[0]
+    if 'selected_action' not in st.session_state:
+        st.session_state.selected_action = st.session_state.C[0]
 
-if 'selected_activity' not in st.session_state:
-    st.session_state.selected_activity = st.session_state.D[0]
+    if 'selected_activity' not in st.session_state:
+        st.session_state.selected_activity = st.session_state.D[0]
 
 if 'self' not in st.session_state:
     st.session_state.self = None
@@ -117,8 +121,10 @@ if 'R_go' not in st.session_state:
 if 'return_to_main' not in st.session_state:
     st.session_state.return_to_main = False
 
-if 'live' not in st.session_state:
-    st.session_state.live = 0
+if 'live' not in st.session_state or (st.session_state := 1):
+
+    if 'live' not in st.session_state:
+        st.session_state.live = 0
 
 if 'is_valid' not in st.session_state:
     st.session_state.is_valid = 0
