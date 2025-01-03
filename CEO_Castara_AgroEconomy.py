@@ -62,7 +62,7 @@ if 'D' not in st.session_state:
 
 
 # Initialize defaults for selected items only if matrices are loaded
-if 'live' not in st.session_state or (st.session_state := 1):
+if 'live' not in st.session_state or st.session_state := 1:
     
     if 'selected_role' not in st.session_state and 'A' in st.session_state and st.session_state.A:
         st.session_state.selected_role = st.session_state.A[0]
@@ -95,7 +95,7 @@ if 'm' not in st.session_state:
 if 'y' not in st.session_state:
     st.session_state.y = 1
 
-if 'live' not in st.session_state or (st.session_state := 1):
+if 'live' not in st.session_state or st.session_state := 1:
 
     if 'selected_role' not in st.session_state:
         st.session_state.selected_role = st.session_state.A[0]
@@ -121,7 +121,7 @@ if 'R_go' not in st.session_state:
 if 'return_to_main' not in st.session_state:
     st.session_state.return_to_main = False
 
-if 'live' not in st.session_state or (st.session_state := 1):
+if 'live' not in st.session_state or st.session_state := 1:
 
     if 'live' not in st.session_state:
         st.session_state.live = 0
