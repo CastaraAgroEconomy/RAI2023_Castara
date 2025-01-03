@@ -63,6 +63,7 @@ if 'D' not in st.session_state:
 
 # Initialize defaults for selected items
 if 'live' not in st.session_state:
+    st.session_state.live = 0
     
     if 'selected_role' not in st.session_state and 'A' in st.session_state and st.session_state.A:
         st.session_state.selected_role = st.session_state.A[0]
@@ -99,17 +100,10 @@ if 'y' not in st.session_state:
 
 # set local select variables to global values
 if st.session_state.live == 1:
-
-    if 'selected_role' not in st.session_state:
-        selected_role = st.session_state.selected_role
     
-    if 'selected_sub_role' not in st.session_state:
-        selected_sub_role = st.session_state.selected_sub_role
-    
-    if 'selected_action' not in st.session_state:
+        selected_role = st.session_state.selected_role   
+        selected_sub_role = st.session_state.selected_sub_role    
         selected_action = st.session_state.selected_action
-
-    if 'selected_activity' not in st.session_state:
         selected_activity = st.session_state.selected_activity
 
 
