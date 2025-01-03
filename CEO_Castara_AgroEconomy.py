@@ -3,7 +3,7 @@ import streamlit as st
 import numpy as np
 import os
 import sys
-import importlibo
+import importlib
 
 
 # Addition to the root directory to sys.path if not already present
