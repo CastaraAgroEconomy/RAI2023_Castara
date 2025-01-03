@@ -202,7 +202,7 @@ def main():
             pass
             
 # Reset flags for log out option
-        st.session_state.stage = None
+        st.session_state.stage = "login"
         st.session_state.logged_in = False
         st.session_state.do_not_skip = 0
         
@@ -256,7 +256,7 @@ def main():
             if st.button("Logout", on_click=lambda: logout()):
                 pass
                 
-                st.session_state.stage = None
+                st.session_state.stage = "login"
                 st.session_state.logged_in = False
                 st.session_state.do_not_skip = 0
         
