@@ -780,14 +780,14 @@ def finalize_selection(content_placeholder):
     st.write(f"{selected_role},{selected_sub_role},{selected_action},{selected_activity}")
     st.write(" ")
     import time
-    time.sleep(3)
+    time.sleep(6)
     
     Module_1(selected_role, selected_sub_role, selected_action, selected_activity)
 
     st.write(f"{selected_role},{selected_sub_role},{selected_action},{selected_activity}")
     st.write(" ")
     import time
-    time.sleep(3)
+    time.sleep(6)
     
     st.session_state.live = 1
 
