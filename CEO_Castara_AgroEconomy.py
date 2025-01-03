@@ -192,7 +192,7 @@ def main():
 
 #   Check if the step below is to be skipped
         if st.session_state.do_not_skip == 1:
-#   Clear the placeholder and launch the next feature
+#   Launch the feature
             launch_pad(content_placeholder)  # Pass the placeholder to the next function
                         
         st.session_state.logged_in = True
@@ -463,7 +463,7 @@ def Module_1(selected_role, selected_sub_role, selected_action, selected_activit
                 st.session_state.stage = "activity_selection"
                 return "Activity"
             else: 
-                st.session_state.stage = "finalize_selection"
+                st.session_state.stage = "Checking_selection"
                 return "Validate"
 
 
