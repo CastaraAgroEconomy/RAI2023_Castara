@@ -851,9 +851,9 @@ def Display_clearer(content_placeholder):
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
 
-    Clear_screen()
     content_placeholder.empty()
-     
+    Clear_screen()
+      
     return
 
 
