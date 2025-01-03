@@ -788,8 +788,8 @@ def finalize_selection(content_placeholder):
 def launch_pad(content_placeholder):   
 
 #   Button to Trigger Screen Clearing - replaces "content_placeholder.empty()" instruction
-    if st.button("Clear Screen"):
-        pass
+#    if st.button("Clear Screen"):
+#        pass
     Display_clearer(content_placeholder)
     content_placeholder.empty()
     
