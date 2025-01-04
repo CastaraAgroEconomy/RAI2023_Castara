@@ -232,12 +232,12 @@ def main():
         with content_placeholder.container():
             st.write(" ")
             
-            st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
-            st.write(f"..... with Sub-role {st.session_state.selected_sub_role},")
-            st.write(f"..... is not authorized to perform the action {st.session_state.selected_action}")
-            st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}")
-            st.write(" ")
-            st.write("⚠️ - You will unfortunately be required to make new selections.")
+        st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
+        st.write(f"..... with Sub-role {st.session_state.selected_sub_role},")
+        st.write(f"..... is not authorized to perform the action {st.session_state.selected_action}")
+        st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}")
+        st.write(" ")
+        st.write("⚠️ - You will unfortunately be required to make new selections.")
 
         
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
