@@ -193,7 +193,7 @@ def main():
 #   Check if the step below is to be skipped
         if st.session_state.do_not_skip == 1:
 #   Launch the feature
-            launch_pad(content_placeholder)  # Pass the placeholder to the next function
+            launch_pad(content_placeholder)  # Pass the placeholder to the feature function
                         
         st.session_state.logged_in = True
 
@@ -218,7 +218,7 @@ def main():
             st.write(" ")
             st.write("🚧 - Execution ended")
             st.write("⚠️ - Refresh browser display")
-            st.write(" ")
+            st.write("❌ - Logout; to input credentials")
         
     
     elif st.session_state.stage == "finalize_selection":
@@ -272,7 +272,7 @@ def main():
                 st.write(" ")
                 st.write("🚧 - Execution ended")
                 st.write("⚠️ - Refresh browser display")
-                st.write(" ")
+                st.write("❌ - Logout; to input credentials")
 
     
 # ===================
@@ -753,7 +753,7 @@ def select_activity(content_placeholder):
     
     selected_activity = st.radio("Choose an activity", activities)
 
-    if st.button("Validate", on_click=lambda: set_stage("Checking_selection", "Validating", selected_activity)):
+    if st.button("Validate", on_click=lambda: set_stage("Checking_selection", "selected_activity", selected_activity)):
         st.session_state.selected_activity = selected_activity
         pass 
     return
@@ -782,14 +782,14 @@ def finalize_selection(content_placeholder):
     st.write(f"{selected_role},{selected_sub_role},{selected_action},{selected_activity}")
     st.write(" ")
     import time
-    time.sleep(10)
+    time.sleep(20)
     
     Module_1(selected_role, selected_sub_role, selected_action, selected_activity)
 
     st.write(f"{selected_role},{selected_sub_role},{selected_action},{selected_activity}")
     st.write(" ")
     import time
-    time.sleep(10)
+    time.sleep(20)
     
     st.session_state.live = 1
 
