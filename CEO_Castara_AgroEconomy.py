@@ -786,6 +786,7 @@ def finalize_selection(content_placeholder):
 def launch_pad(content_placeholder):   
 
     Display_clearer(content_placeholder)
+    content_placeholder.empty()
     st.header(f"{st.session_state.selected_activity}")
 
 #   Dynamically import and execute a feature module
