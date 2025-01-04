@@ -217,8 +217,6 @@ def main():
 # Display a message after the loop ends
             st.write(" ")
             st.write("🚧 - Execution ended")
-            st.write("⚠️ - Refresh browser display")
-            st.write("❌ - Logout; to input credentials")
         
     
     elif st.session_state.stage == "finalize_selection":
@@ -271,8 +269,6 @@ def main():
 # Display a message after the loop ends
                 st.write(" ")
                 st.write("🚧 - Execution ended")
-                st.write("⚠️ - Refresh browser display")
-                st.write("❌ - Logout; to input credentials")
 
     
 # ===================
@@ -778,18 +774,8 @@ def finalize_selection(content_placeholder):
     selected_sub_role = st.session_state.selected_sub_role
     selected_action = st.session_state.selected_action
     selected_activity = st.session_state.selected_activity
-
-    st.write(f"{selected_role},{selected_sub_role},{selected_action},{selected_activity}")
-    st.write(" ")
-    import time
-    time.sleep(20)
     
     Module_1(selected_role, selected_sub_role, selected_action, selected_activity)
-
-    st.write(f"{selected_role},{selected_sub_role},{selected_action},{selected_activity}")
-    st.write(" ")
-    import time
-    time.sleep(20)
     
     st.session_state.live = 1
 
@@ -798,12 +784,6 @@ def finalize_selection(content_placeholder):
 
 #   Feature access via API
 def launch_pad(content_placeholder):   
-
-#   Button to Trigger Screen Clearing - replaces "content_placeholder.empty()" instruction
-#    if st.button("Clear Screen"):
-#        pass
-#    Display_clearer(content_placeholder)
-#    content_placeholder.empty()
     
     st.header(f"{st.session_state.selected_activity}")
 
