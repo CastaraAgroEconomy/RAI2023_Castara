@@ -222,22 +222,19 @@ def main():
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():
             st.write(" ")
-            
-            st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
             st.write(" ")
 
                     
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
         with content_placeholder.container():
+            st.write(" ")            
+            st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
+            st.write(f"..... with Sub-role {st.session_state.selected_sub_role},")
+            st.write(f"..... is not authorized to perform the action {st.session_state.selected_action}")
+            st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}")
             st.write(" ")
-            
-        st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
-        st.write(f"..... with Sub-role {st.session_state.selected_sub_role},")
-        st.write(f"..... is not authorized to perform the action {st.session_state.selected_action}")
-        st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}")
-        st.write(" ")
-        st.write("⚠️ - You will unfortunately be required to make new selections.")
+            st.write("⚠️ - You will unfortunately be required to make new selections.")
 
         
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
@@ -245,11 +242,10 @@ def main():
         if st.session_state.logged_in == True:
             with content_placeholder.container():
                 st.write(" ")
-                
-            st.session_state.stage = "role_selection"
-            st.write(" ")
-            st.write("⚠️ - Currently, you will need to logout and login again, to select a different User Role")
-            st.write(" ")
+                st.session_state.stage = "role_selection"
+                st.write(" ")
+                st.write("⚠️ - Currently, you will need to logout and login again, to select a different User Role")
+                st.write(" ")
             
             if st.button("Logout", on_click=lambda: logout()):
                 pass
