@@ -217,8 +217,7 @@ def main():
 # Display a message after the loop ends
             st.write(" ")
             st.write("🚧 - Execution ended")
-            
-            st.session_state.stage = "role_selection"
+            st.session_state.stage = "sub_role_selection"  ... # do_not_skip must then be "1"
     
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():
@@ -267,8 +266,7 @@ def main():
 # Display a message after the loop ends
                 st.write(" ")
                 st.write("🚧 - Execution ended")
-
-                st.session_state.stage = "role_selection"
+                st.session_state.stage = "sub_role_selection"
 
     
 # ===================
