@@ -216,7 +216,7 @@ def main():
             
 #   Display a message after the loop ends to restart from Job title entry
             st.write("🚧 - Execution ended")
-            st.session_state.stage = "sub_role_selection"
+            st.session_state.stage = "action_selection"
             
     
     elif st.session_state.stage == "finalize_selection":
@@ -264,7 +264,7 @@ def main():
 
 #   Display a message after the loop ends
                 st.write("🚧 - Execution ended")
-                st.session_state.stage = "sub_role_selection"
+                st.session_state.stage = "action_selection"
                 
 
     
