@@ -210,8 +210,8 @@ def main():
         if st.button("End Execution"):
             pass
             
-            st.session_state.live = 0  # Update the flag to stop the loop
-            st.session_state.logged_in = False           
+            st.session_state.live = 1  # Update the flag to stop the loop
+            st.session_state.logged_in = True           
             st.session_state.do_not_skip = 0
             
 # Display a message after the loop ends
@@ -258,9 +258,9 @@ def main():
             if st.button("End Execution"):
                 pass
                 
-                st.session_state.live = 0  # Update the flag to stop the loop
-                st.session_state.logged_in = False             
-                st.session_state.do_not_skip = 1
+                st.session_state.live = 1  # Update the flag to stop the loop
+                st.session_state.logged_in = True             
+                st.session_state.do_not_skip = 0
 
 
 # Display a message after the loop ends
