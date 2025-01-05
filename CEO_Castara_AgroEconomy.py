@@ -212,7 +212,7 @@ def main():
             
             st.session_state.live = 1  # Update the flag to stop the loop
             st.session_state.logged_in = True           
-            st.session_state.do_not_skip = 0
+            st.session_state.do_not_skip = 1
             
 #   Display a message after the loop ends to restart from Job title entry           
 #           Display_clearer(content_placeholder)
