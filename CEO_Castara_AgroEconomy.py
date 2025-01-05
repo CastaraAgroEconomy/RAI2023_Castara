@@ -197,16 +197,16 @@ def main():
                         
         st.session_state.logged_in = True
 
-# log out option
+#   log out option
         if st.button("Logout", on_click=lambda: logout()):
             pass
             
-# Reset flags for log out option
+#   Reset flags for log out option
         st.session_state.stage = "login"
         st.session_state.logged_in = False
         st.session_state.do_not_skip = 0
         
-# Add an "End Execution" button
+#   Add an "End Execution" button
         if st.button("End Execution"):
             pass
             
@@ -214,13 +214,12 @@ def main():
             st.session_state.logged_in = True           
             st.session_state.do_not_skip = 0
             
-# Display a message after the loop ends            
-# Specify the sub-folder where feature scripts are located    
-           sub_folder = os.path.join("features", "Utility")
-
+#   Display a message after the loop ends to restart from Job title entry          
+#   Specify the sub-folder where feature scripts are located    
+            sub_folder = os.path.join("features", "Utility")
 #   Add sub-folder to sys.path if not already present
-           if sub_folder not in sys.path:
-               sys.path.append(sub_folder)
+            if sub_folder not in sys.path:
+                sys.path.append(sub_folder)
             
             Clear_screen()
             st.write(" ")
@@ -270,11 +269,9 @@ def main():
                 st.session_state.logged_in = True             
                 st.session_state.do_not_skip = 0
 
-
-# Display a message after the loop ends            
-# Specify the sub-folder where feature scripts are located    
+#   Display a message after the loop ends            
+#   Specify the sub-folder where feature scripts are located    
            sub_folder = os.path.join("features", "Utility")
-
 #   Add sub-folder to sys.path if not already present
            if sub_folder not in sys.path:
                sys.path.append(sub_folder)
