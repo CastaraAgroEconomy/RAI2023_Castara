@@ -215,6 +215,14 @@ def main():
             st.session_state.do_not_skip = 0
             
 # Display a message after the loop ends
+            
+# Specify the sub-folder where feature scripts are located    
+           sub_folder = os.path.join("features", "Utility")
+
+#   Add sub-folder to sys.path if not already present
+           if sub_folder not in sys.path:
+               sys.path.append(sub_folder)
+            
             Clear_screen()
             st.write(" ")
             st.write("🚧 - Execution ended")
