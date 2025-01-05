@@ -216,7 +216,7 @@ def main():
             
 #   Display a message after the loop ends to restart from Job title entry          
 #   Specify the sub-folder where feature scripts are located    
-            sub_folder = os.path.join("features", "Utility")
+#           sub_folder = os.path.join("features", "Utility")
 #   Add sub-folder to sys.path if not already present
             if sub_folder not in sys.path:
                 sys.path.append(sub_folder)
@@ -271,7 +271,7 @@ def main():
 
 #   Display a message after the loop ends            
 #   Specify the sub-folder where feature scripts are located    
-           sub_folder = os.path.join("features", "Utility")
+#           sub_folder = os.path.join("features", "Utility")
 #   Add sub-folder to sys.path if not already present
            if sub_folder not in sys.path:
                sys.path.append(sub_folder)
