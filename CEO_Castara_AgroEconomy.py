@@ -217,7 +217,9 @@ def main():
 # Display a message after the loop ends
             st.write(" ")
             st.write("🚧 - Execution ended")
-        
+            
+            set_stage(stage, key, value)
+            st.session_state.stage = stage
     
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():
@@ -262,9 +264,13 @@ def main():
                 st.session_state.logged_in = False             
                 st.session_state.do_not_skip = 1
 
+
 # Display a message after the loop ends
                 st.write(" ")
                 st.write("🚧 - Execution ended")
+
+                set_stage(stage, key, value)
+                st.session_state.stage = stage
 
     
 # ===================
