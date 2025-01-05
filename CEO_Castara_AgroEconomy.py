@@ -219,6 +219,7 @@ def main():
             st.write(" ")
             st.write("🚧 - Execution ended")
             st.session_state.stage = "sub_role_selection"
+            return
     
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():
@@ -268,6 +269,7 @@ def main():
                 st.write(" ")
                 st.write("🚧 - Execution ended")
                 st.session_state.stage = "sub_role_selection"
+                return
 
     
 # ===================
