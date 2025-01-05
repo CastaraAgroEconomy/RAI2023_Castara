@@ -212,14 +212,14 @@ def main():
             
             st.session_state.live = 1  # Update the flag to stop the loop
             st.session_state.logged_in = True           
-            st.session_state.do_not_skip = 0
+            st.session_state.do_not_skip = 1
             
 #   Display a message after the loop ends to restart from Job title entry           
             Display_clearer(content_placeholder)
             st.write(" ")
             st.write("🚧 - Execution ended")
             st.session_state.stage = "sub_role_selection"
-            return
+            
     
     elif st.session_state.stage == "finalize_selection":
         with content_placeholder.container():
@@ -254,7 +254,7 @@ def main():
                 
                 st.session_state.stage = "login"
                 st.session_state.logged_in = False
-                st.session_state.do_not_skip = 0
+                st.session_state.do_not_skip = 1
         
 # Add an "End Execution" button
             if st.button("End Execution"):
@@ -269,7 +269,7 @@ def main():
                 st.write(" ")
                 st.write("🚧 - Execution ended")
                 st.session_state.stage = "sub_role_selection"
-                return
+                
 
     
 # ===================
