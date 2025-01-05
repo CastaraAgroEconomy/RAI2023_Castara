@@ -204,7 +204,7 @@ def main():
 #   Reset flags for log out option
         st.session_state.stage = "login"
         st.session_state.logged_in = False
-        st.session_state.do_not_skip = 0
+        st.session_state.do_not_skip = 1
         
 #   Add an "End Execution" button
         if st.button("End Execution"):
