@@ -264,10 +264,10 @@ def main():
                 st.session_state.do_not_skip = 0
 
 #   Display a message after the loop ends 
-            Display_Clearer(content_placeholder)
-            st.write(" ")
-            st.write("🚧 - Execution ended")
-            st.session_state.stage = "sub_role_selection"
+                Display_Clearer(content_placeholder)
+                st.write(" ")
+                st.write("🚧 - Execution ended")
+                st.session_state.stage = "sub_role_selection"
 
     
 # ===================
