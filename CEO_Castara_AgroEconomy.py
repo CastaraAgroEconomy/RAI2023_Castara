@@ -111,7 +111,7 @@ if 'self' not in st.session_state:
     st.session_state.self = None
 
 if 'do_not_skip' not in st.session_state:
-    st.session_state.do_not_skip = 0
+    st.session_state.do_not_skip = 1
 
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
@@ -204,7 +204,7 @@ def main():
 #   Reset flags for log out option
         st.session_state.stage = "login"
         st.session_state.logged_in = False
-        st.session_state.do_not_skip = 1
+        st.session_state.do_not_skip = 0
         
 #   Add an "End Execution" button
         if st.button("End Execution"):
