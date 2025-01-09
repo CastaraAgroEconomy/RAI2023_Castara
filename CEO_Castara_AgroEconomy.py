@@ -264,7 +264,7 @@ def main():
                 st.session_state.do_not_skip = 0
 
 #   Display a message after the loop ends
-                content_olaceholder.empty()
+                content_placeholder.empty()
                 st.write("🚧 - Execution ended")
                 st.session_state.stage = "sub_role_selection"
                 
