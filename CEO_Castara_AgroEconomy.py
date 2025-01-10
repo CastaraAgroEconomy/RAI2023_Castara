@@ -187,8 +187,9 @@ def main():
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
 
-        if st.button("continue"):
-            pass
+        if do_not_skip == 1:
+            if st.button("continue"):
+                pass
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 
