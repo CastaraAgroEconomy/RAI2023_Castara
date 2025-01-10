@@ -116,12 +116,12 @@ if 'do_not_skip' not in st.session_state:
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
 
-if 'return_to_main' not in st.session_state:
-    st.session_state.return_to_main = False
+#  if 'return_to_main' not in st.session_state:
+#      st.session_state.return_to_main = False
 
-if 'live' not in st.session_state:
-    st.session_state.live = 0
-
+#  if 'live' not in st.session_state:
+#      st.session_state.live = 0
+    
 if 'is_valid' not in st.session_state:
     st.session_state.is_valid = 0
 
@@ -187,6 +187,8 @@ def main():
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
 
+        if st.button("continue"):
+            pass
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 
