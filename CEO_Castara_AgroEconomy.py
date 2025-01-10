@@ -784,7 +784,6 @@ def finalize_selection(content_placeholder):
 #   Feature access via API
 def launch_pad(content_placeholder):   
 
-    content_placeholder.empty()
     Display_clearer(content_placeholder)
     st.header(f"{st.session_state.selected_activity}")
 
@@ -832,8 +831,9 @@ def Display_clearer(content_placeholder):
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
 
+    content_placeholder.empty()    
     Clear_screen()
-#    content_placeholder.empty()     
+
     return
 
 
