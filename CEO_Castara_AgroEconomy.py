@@ -259,7 +259,8 @@ def main():
             st.write(" ")
             st.write("⚠️ - You will unfortunately be required to make new selections.")
 
-        
+        st.session_state.logged_in = True
+    
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
             
         if st.session_state.logged_in == True:
