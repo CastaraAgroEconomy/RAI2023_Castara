@@ -783,7 +783,8 @@ def finalize_selection(content_placeholder):
 
 #   Feature access via API
 def launch_pad(content_placeholder):   
-    
+
+    content_placeholder.empty()
     Display_clearer(content_placeholder)
     st.header(f"{st.session_state.selected_activity}")
 
@@ -832,7 +833,7 @@ def Display_clearer(content_placeholder):
         sys.path.append(sub_folder)
 
     Clear_screen()
-    content_placeholder.empty()     
+#    content_placeholder.empty()     
     return
 
 
