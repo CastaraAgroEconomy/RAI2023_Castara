@@ -114,12 +114,6 @@ if 'do_not_skip' not in st.session_state:
 
 if 'R_go' not in st.session_state:
     st.session_state.R_go = 0
-
-#  if 'return_to_main' not in st.session_state:
-#      st.session_state.return_to_main = False
-
-#  if 'live' not in st.session_state:
-#      st.session_state.live = 0
     
 if 'is_valid' not in st.session_state:
     st.session_state.is_valid = 0
