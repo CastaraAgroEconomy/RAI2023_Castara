@@ -229,6 +229,10 @@ def main():
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
             st.write(" ")
 
+        if st.session_state.do_not_skip == 1:
+            if st.button("continue"):
+                pass
+
 #   log out option
         if st.button("Logout", on_click=lambda: logout()):
             pass
@@ -277,6 +281,10 @@ def main():
                 st.write(" ")
                 st.write("⚠️ - Currently, you will need to logout and login again, to select a different User Role")
                 st.write(" ")
+
+            if st.session_state.do_not_skip == 1:
+                if st.button("continue"):
+                    pass
             
             if st.button("Logout", on_click=lambda: logout()):
                 pass
