@@ -192,7 +192,7 @@ def main():
         st.session_state.logged_in = True   #  Set flag to indicate accessing functions 
 
 #   log out option
-        if st.button("Logout", on_click=lambda: logout()):
+        if st.button("Logout", key="Logout_1", on_click=lambda: logout()):
             pass
       
         #   Reset flags for log out option
@@ -201,7 +201,7 @@ def main():
             st.session_state.do_not_skip = 0
         
 #   Add an "End Execution" button
-        if st.button("End Execution"):
+        if st.button("End Execution", key="End_Execution_1"):
             pass
             
             st.session_state.live = 1  # Update the flag to stop the loop
@@ -222,7 +222,7 @@ def main():
 
 
 #   log out option
-        if st.button("Logout", on_click=lambda: logout()):
+        if st.button("Logout_2", key="Logout_2", on_click=lambda: logout()):
             pass
     
 #   Reset flags for log out option
@@ -231,7 +231,7 @@ def main():
             st.session_state.do_not_skip = 0
         
 #   Add an "End Execution" button
-        if st.button("End Execution"):
+        if st.button("End Execution", key="End_Execution_2"):
             pass
             
             st.session_state.live = 1  # Update the flag to stop the loop
@@ -270,7 +270,7 @@ def main():
 
             st.session_state.logged_in = True
             
-            if st.button("Logout", on_click=lambda: logout()):
+            if st.button("Logout_3", key="Logout_3", on_click=lambda: logout()):
                 pass
                 
                 st.session_state.logged_in = False
@@ -278,7 +278,7 @@ def main():
                 st.session_state.do_not_skip = 0
         
 # Add an "End Execution" button
-            if st.button("End Execution"):
+            if st.button("End Execution", key="End_Execution_3"):
                 pass
                 
                 st.session_state.live = 1  # Update the flag to stop the loop
