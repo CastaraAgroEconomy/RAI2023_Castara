@@ -258,7 +258,6 @@ def main():
                 st.write(" ")
                 st.write("⚠️ - You will unfortunately be required to make new selections.")
       
-            st.session_state.logged_in = True
     
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):            
         if st.session_state.do_not_skip == 1:
@@ -269,6 +268,7 @@ def main():
                 st.write("⚠️ - Currently, you will need to logout and login again, to select a different User Role")
                 st.write(" ")
 
+            st.session_state.logged_in = True
             
             if st.button("Logout", on_click=lambda: logout()):
                 pass
