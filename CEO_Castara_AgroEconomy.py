@@ -188,7 +188,8 @@ def main():
             
 #   Launch the feature
             launch_pad(content_placeholder)  # Pass the placeholder to the feature function
-        st.session_state.logged_in = True
+
+        st.session_state.logged_in = True   #  Set flag to indicate accessing functions 
 
 #   log out option
         if st.button("Logout", on_click=lambda: logout()):
@@ -849,7 +850,7 @@ def Display_clearer(content_placeholder):
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
 
-    content_placeholder.empty()    
+#    content_placeholder.empty()    
     Clear_screen()
 
     return
