@@ -245,17 +245,20 @@ def main():
 
                     
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
-        with content_placeholder.container():
-            st.write(" ")            
-            st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
-            st.write(f"..... with Sub-role {st.session_state.selected_sub_role},")
-            st.write(f"..... is not authorized to perform the action {st.session_state.selected_action}")
-            st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}")
-            st.write(" ")
-            st.write("⚠️ - You will unfortunately be required to make new selections.")
 
+#   Check if the step below is to be skipped
+        if st.session_state.do_not_skip == 1:
         
-#        st.session_state.logged_in = True
+            with content_placeholder.container():
+                st.write(" ")            
+                st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
+                st.write(f"..... with Sub-role {st.session_state.selected_sub_role},")
+                st.write(f"..... is not authorized to perform the action {st.session_state.selected_action}")
+                st.write(f"..... in order to execute and achieve the mission {st.session_state.selected_activity}")
+                st.write(" ")
+                st.write("⚠️ - You will unfortunately be required to make new selections.")
+      
+        st.session_state.logged_in = True
     
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
             
@@ -850,7 +853,7 @@ def Display_clearer(content_placeholder):
     if sub_folder not in sys.path:
         sys.path.append(sub_folder)
 
-#    content_placeholder.empty()    
+    content_placeholder.empty()    
     Clear_screen()
 
     return
