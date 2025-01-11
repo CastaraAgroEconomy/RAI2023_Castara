@@ -861,7 +861,8 @@ def Display_clearer(content_placeholder):
 # Logout function
 def logout():
     st.session_state.clear()  # Clears all session states for a fresh start
-    st.session_state.stage = "login"  # Return to login
 
-if __name__ == "__main__":
+    return
+    
+    if __name__ == "__main__":
     main()
