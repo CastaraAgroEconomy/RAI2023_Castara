@@ -214,12 +214,11 @@ def main():
             st.session_state.stage = "sub_role_selection"
             
     
-    elif st.session_state.stage == "Checking_selection":
+    if st.session_state.stage == "Checking_selection":
         with content_placeholder.container():
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
             st.write(" ")
-
 
 #   log out option
         if st.button("Logout", key="Logout_2", on_click=lambda: logout()):
