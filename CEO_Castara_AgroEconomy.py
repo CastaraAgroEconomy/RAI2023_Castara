@@ -215,6 +215,7 @@ def main():
             
     
     if (st.session_state.stage == "Checking_selection")and (st.session_state.do_not_skip == 0):
+        content_placeholder.empty()    
         with content_placeholder.container():
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
@@ -248,7 +249,7 @@ def main():
 
 #   Check if the step below is to be skipped
         if st.session_state.do_not_skip == 1:
-        
+            content_placeholder.empty()    
             with content_placeholder.container():
                 st.write(" ")            
                 st.write(f"⚠️ - Journey unsuccessfull, the Role {st.session_state.selected_role}")
@@ -853,7 +854,6 @@ def Display_clearer(content_placeholder):
         sys.path.append(sub_folder)
 
     content_placeholder.empty()    
-#    Clear_screen()
 
     return
 
