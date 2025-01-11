@@ -196,11 +196,11 @@ def main():
 #   log out option
         if st.button("Logout", on_click=lambda: logout()):
             pass
-            
-#   Reset flags for log out option
-        st.session_state.stage = "login"
-        st.session_state.logged_in = False
-        st.session_state.do_not_skip = 0
+      
+        #   Reset flags for log out option
+            st.session_state.stage = "login"
+            st.session_state.logged_in = False
+            st.session_state.do_not_skip = 0
         
 #   Add an "End Execution" button
         if st.button("End Execution"):
@@ -229,11 +229,11 @@ def main():
 #   log out option
         if st.button("Logout", on_click=lambda: logout()):
             pass
-            
+    
 #   Reset flags for log out option
-        st.session_state.stage = "login"
-        st.session_state.logged_in = False
-        st.session_state.do_not_skip = 0
+            st.session_state.stage = "login"
+            st.session_state.logged_in = False        
+            st.session_state.do_not_skip = 0
         
 #   Add an "End Execution" button
         if st.button("End Execution"):
@@ -263,7 +263,7 @@ def main():
             if st.button("continue"):
                 pass
         
-        st.session_state.logged_in = True
+#        st.session_state.logged_in = True
     
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
             
@@ -282,8 +282,8 @@ def main():
             if st.button("Logout", on_click=lambda: logout()):
                 pass
                 
-                st.session_state.stage = "login"
                 st.session_state.logged_in = False
+                st.session_state.stage = "login"
                 st.session_state.do_not_skip = 0
         
 # Add an "End Execution" button
