@@ -180,9 +180,6 @@ def main():
             st.write(" ")
             st.write(f"⚠️ - launching {st.session_state.selected_activity} feature")
 
-        if st.session_state.do_not_skip == 1:
-            if st.button("continue"):
-                pass
     
     if (st.session_state.R_go == 1) and (st.session_state.live == 1):
 
@@ -222,9 +219,6 @@ def main():
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
             st.write(" ")
 
-        if st.session_state.do_not_skip == 1:
-            if st.button("continue"):
-                pass
 
 #   log out option
         if st.button("Logout", on_click=lambda: logout()):
@@ -259,9 +253,6 @@ def main():
             st.write(" ")
             st.write("⚠️ - You will unfortunately be required to make new selections.")
 
-        if st.session_state.do_not_skip == 1:
-            if st.button("continue"):
-                pass
         
 #        st.session_state.logged_in = True
     
@@ -275,9 +266,6 @@ def main():
                 st.write("⚠️ - Currently, you will need to logout and login again, to select a different User Role")
                 st.write(" ")
 
-            if st.session_state.do_not_skip == 1:
-                if st.button("continue"):
-                    pass
             
             if st.button("Logout", on_click=lambda: logout()):
                 pass
