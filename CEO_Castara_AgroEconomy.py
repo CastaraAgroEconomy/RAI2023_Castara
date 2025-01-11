@@ -228,7 +228,7 @@ def main():
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
             st.write(" ")
 
-        if st.session_state.do_not_skip == 0:
+        if st.session_state.do_not_skip == 1:
             if st.button("continue"):
                 pass
 
