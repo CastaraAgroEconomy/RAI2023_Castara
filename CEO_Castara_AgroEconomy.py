@@ -107,8 +107,8 @@ if st.session_state.live == 1:
         selected_activity = st.session_state.selected_activity
 
 
-if 'self' not in st.session_state:
-    st.session_state.self = None
+#  if 'self' not in st.session_state:
+#      st.session_state.self = None
 
 if 'do_not_skip' not in st.session_state:
     st.session_state.do_not_skip = 1
@@ -131,8 +131,8 @@ if 'validity_check' not in st.session_state:
 if 'validity_confirmation' not in st.session_state:
     st.session_state.validity_confirmation = 0
 
-if 'feature_module' not in st.session_state:
-    st.session_state.feature_module = "Default Module Name"
+if 'target_feature_module' not in st.session_state:
+    st.session_state.target_feature_module = " "
 
 
 
