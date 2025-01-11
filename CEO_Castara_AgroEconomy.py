@@ -853,7 +853,7 @@ def Display_clearer(content_placeholder):
         sys.path.append(sub_folder)
 
     content_placeholder.empty()    
-    Clear_screen()
+#    Clear_screen()
 
     return
 
