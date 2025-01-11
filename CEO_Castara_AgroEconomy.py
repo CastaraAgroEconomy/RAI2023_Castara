@@ -188,7 +188,7 @@ def main():
             
 #   Launch the feature
             launch_pad(content_placeholder)  # Pass the placeholder to the feature function
-            st.session_state.logged_in = True
+        st.session_state.logged_in = True
 
 #   log out option
         if st.button("Logout", on_click=lambda: logout()):
