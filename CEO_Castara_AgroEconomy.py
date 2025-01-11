@@ -214,7 +214,7 @@ def main():
             st.session_state.stage = "sub_role_selection"
             
     
-    if (st.session_state.stage == "Checking_selection")and (do_not_skip == 0):
+    if (st.session_state.stage == "Checking_selection")and (st.session_state.do_not_skip == 0):
         with content_placeholder.container():
             st.write(" ")
             st.write("⚠️ - Testing system navigation; feature's function not yet implemented.")
