@@ -261,7 +261,7 @@ def main():
             st.session_state.logged_in = True
     
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):            
-        if st.session_state.logged_in == True:
+        if st.session_state.do_not_skip == 1:
             with content_placeholder.container():
                 st.write(" ")
                 st.session_state.stage = "role_selection"
