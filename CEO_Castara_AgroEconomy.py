@@ -222,7 +222,7 @@ def main():
 
 
 #   log out option
-        if st.button("Logout_2", key="Logout_2", on_click=lambda: logout()):
+        if st.button("Logout", key="Logout_2", on_click=lambda: logout()):
             pass
     
 #   Reset flags for log out option
@@ -270,7 +270,7 @@ def main():
 
             st.session_state.logged_in = True
             
-            if st.button("Logout_3", key="Logout_3", on_click=lambda: logout()):
+            if st.button("Logout", key="Logout_3", on_click=lambda: logout()):
                 pass
                 
                 st.session_state.logged_in = False
