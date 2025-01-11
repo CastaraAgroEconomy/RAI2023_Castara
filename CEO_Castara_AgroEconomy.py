@@ -211,9 +211,9 @@ def main():
         st.session_state.do_not_skip = 0
             
 #   Display a message after the loop ends to restart from Job title entry
-            content_placeholder.empty()
-            st.write("🚧 - Execution ended")
-            st.session_state.stage = "sub_role_selection"
+        content_placeholder.empty()
+        st.write("🚧 - Execution ended")
+        st.session_state.stage = "sub_role_selection"
             
     
     elif st.session_state.stage == "Checking_selection":
@@ -239,14 +239,14 @@ def main():
         if st.button("End Execution"):
             pass
             
-            st.session_state.live = 1  # Update the flag to stop the loop
-            st.session_state.logged_in = True           
-            st.session_state.do_not_skip = 0
+        st.session_state.live = 1  # Update the flag to stop the loop
+        st.session_state.logged_in = True           
+        st.session_state.do_not_skip = 0
             
 #   Display a message after the loop ends to restart from Job title entry
-            content_placeholder.empty()
-            st.write("🚧 - Execution ended")
-            st.session_state.stage = "sub_role_selection"
+        content_placeholder.empty()
+        st.write("🚧 - Execution ended")
+        st.session_state.stage = "sub_role_selection"
 
                     
     if (st.session_state.R_go == 0) and (st.session_state.live == 1):
@@ -290,14 +290,14 @@ def main():
             if st.button("End Execution"):
                 pass
                 
-                st.session_state.live = 1  # Update the flag to stop the loop
-                st.session_state.logged_in = True             
-                st.session_state.do_not_skip = 0
+            st.session_state.live = 1  # Update the flag to stop the loop
+            st.session_state.logged_in = True             
+            st.session_state.do_not_skip = 0
 
 #   Display a message after the loop ends
-                content_placeholder.empty()
-                st.write("🚧 - Execution ended")
-                st.session_state.stage = "sub_role_selection"
+            content_placeholder.empty()
+            st.write("🚧 - Execution ended")
+            st.session_state.stage = "sub_role_selection"
                 
 
     
