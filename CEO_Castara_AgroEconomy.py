@@ -1,4 +1,4 @@
-# Main Script and function call for the Castara AgroEconomy Mobile App.
+# Main Script and function calls for the Castara AgroEconomy Mobile App.
 import streamlit as st
 import numpy as np
 import os
